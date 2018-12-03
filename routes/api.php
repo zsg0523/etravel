@@ -13,6 +13,23 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+$api = app('Dingo\Api\Routing\Router');
+
+$api->version('v1', [
+	'namespace' => 'App\Http\Controllers\Api'
+], function($api) {
+	//用户注册
+	$api->post('users','UsersController@store')->name('api.users.store');
+});
+
+
+
+
+
+
+
+$api->version('v2', function($api) {
+	$api->get('version', function() {
+		return response('this is v2 version api');
+	});
 });
