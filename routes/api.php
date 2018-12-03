@@ -24,9 +24,14 @@ $api->version('v1', [
 		'limit' => config('api.rate_limits.sign.limit'),
 		'expires' => config('api.rate_limits.sign.expires'),
 	], function($api) {
-		//用户注册
+		// 用户注册
 		$api->post('users','UsersController@store')->name('api.users.store');
-
+		// 用户登录
+		$api->post('authorizations', 'AuthorizationsController@store')->name('api.authorizations.store');
+		// 刷新token
+		$api->put('authorizations/current','AuthorizationsController@update')->name('api.authorizations.update');
+		// 删除token	
+		$api->delete('authorizations/current','AuthorizationsController@destroy')->name('api.authorizations.destroy');
 	});
 });
 
