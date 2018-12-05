@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Telephone;
 use Illuminate\Http\Request;
-use App\Transformers\Telephonetransformer;
+use App\Transformers\TelephoneTransformer;
 
 class TelephoneController extends Controller
 {
