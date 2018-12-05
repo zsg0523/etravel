@@ -34,7 +34,7 @@ $api->version('v1', [
 		$api->put('authorizations/current','AuthorizationsController@update')->name('api.authorizations.update');
 		// 删除token	
 		$api->delete('authorizations/current','AuthorizationsController@destroy')->name('api.authorizations.destroy');
-
+		
 
 
 
@@ -48,6 +48,10 @@ $api->version('v1', [
 			$api->post('images','ImagesController@store')->name('api.images.store');
 			// 编辑用户资料
 			$api->patch('user','UsersController@update')->name('api.user.update');
+			// 电话簿
+			$api->get('telephone','TelephoneController@index')->name('api.telephone.index');
+			// 旅游基本信息
+			$api->get('travel','TravelsController@index')->name('api.travel.index');
 		});
 
 
