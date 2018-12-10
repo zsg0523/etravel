@@ -17,7 +17,8 @@ $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', [
 	'namespace' => 'App\Http\Controllers\Api',
-	'middleware' => 'serializer:array'
+	// 手动注册模型中间件bindings
+	'middleware' => ['serializer:array','bindings']
 ], function($api) {
 
 	$api->group([
@@ -52,6 +53,14 @@ $api->version('v1', [
 			$api->get('telephone','TelephoneController@index')->name('api.telephone.index');
 			// 旅游基本信息
 			$api->get('travel','TravelsController@index')->name('api.travel.index');
+			// 旅游详情
+			$api->get('travel/{travel}','TravelsController@show')->name('api.travel.show');
+			// 创建旅游信息
+			$api->post('travel','TravelsController@store')->name('api.travel.store');
+			// 更新旅游信息	
+			$api->patch('travel/{travel}','TravelsController@update')->name('api.travel.update');
+			// 删除旅游项目
+			$api->delete('travel/{travel}','TravelsController@destroy')->name('api.travel.destroy');
 		});
 
 

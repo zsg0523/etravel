@@ -24,9 +24,23 @@ class TravelRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'travel_name' => 'required|max:25',
-            'travel_at' => 'required';
-        ];
+
+        switch ($this->method()) {
+            case 'POST':
+                return [
+                    'travel_name' => 'required|max:25',
+                    'travel_introduction' => 'required|max:255',
+                    'travel_at' => 'required|date'
+                ];
+                break;
+            
+            case 'PATCH':
+                return [
+                    'travel_name' => 'string',
+                    'travel_introduction' => 'string',
+                    'travel_at' => 'date'
+                ];
+                break;
+        }
     }
 }

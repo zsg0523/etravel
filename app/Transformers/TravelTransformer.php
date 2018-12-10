@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-05 10:11:20
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-05 10:28:37
+ * @Last Modified time: 2018-12-10 15:39:36
  */
 namespace App\Transformers;
 
@@ -13,6 +13,8 @@ use League\Fractal\TransformerAbstract;
 
 class TravelTransformer extends TransformerAbstract
 {
+	protected $availableIncludes = ['assembly'];
+
 	public function transform(Travel $travel)
 	{
 		return [
@@ -24,4 +26,12 @@ class TravelTransformer extends TransformerAbstract
 			'updated_at' => $travel->updated_at->toDateTimeString(),
 		];
 	}
+
+	public function includeAssembly(Travel $travel)
+	{
+		if($travel->assembly) {
+			return $this->item($travel->assembly, new AssemblyTransformer());
+		}
+	}
+
 }
