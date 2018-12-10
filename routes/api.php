@@ -49,8 +49,18 @@ $api->version('v1', [
 			$api->post('images','ImagesController@store')->name('api.images.store');
 			// 编辑用户资料
 			$api->patch('user','UsersController@update')->name('api.user.update');
+
+
 			// 电话簿
 			$api->get('telephone','TelephoneController@index')->name('api.telephone.index');
+			// 增加联系人电话
+			$api->post('telephone','TelephoneController@store')->name('api.telephone.store');
+			// 更新联系人电话
+			$api->patch('telephone/{telephone}','TelephoneController@update')->name('api.telephone.update');
+			// 删除联系人电话
+			$api->delete('telephone/{telephone}','TelephoneController@destroy')->name('api.telephone.destroy');
+
+
 			// 旅游基本信息
 			$api->get('travel','TravelsController@index')->name('api.travel.index');
 			// 旅游详情
@@ -61,6 +71,8 @@ $api->version('v1', [
 			$api->patch('travel/{travel}','TravelsController@update')->name('api.travel.update');
 			// 删除旅游项目
 			$api->delete('travel/{travel}','TravelsController@destroy')->name('api.travel.destroy');
+
+			
 		});
 
 

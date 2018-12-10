@@ -24,9 +24,20 @@ class TelephoneRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required',
-            'phone' => 'required|mobile'
-        ];
+        switch ($this->method()) {
+            case 'POST':
+                return [
+                    'name' => 'required',
+                    'phone' => 'required|unique:telephones'
+                ];
+                break;
+            
+            case 'PATCH':
+                return [
+                    'name' => 'string',
+                    'phone' => 'unique:telephones'
+                ];
+                break;
+        }
     }
 }
