@@ -84,6 +84,42 @@ $api->version('v1', [
 			// 删除旅游项目
 			$api->delete('travel/{travel}','TravelsController@destroy')->name('api.travel.destroy');
 
+			// 航班信息列表
+			$api->get('flights','FlightsController@index')->name('api.flights.index');
+			// 航班详情
+			$api->get('flight/{flight}','FlightsController@show')->name('api.flights.show');
+			// 新增航班
+			$api->post('flight','FlightsController@store')->name('api.flights.store');	
+			// 更新航班信息
+			$api->patch('flight/{flight}','FlightsController@update')->name('api.flights.update');
+			// 删除航班
+			$api->delete('flight/{flight}','FlightsController@destroy')->name('api.flights.destroy');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		});
 

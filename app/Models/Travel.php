@@ -12,4 +12,9 @@ class Travel extends Model
     {
     	return $this->hasOne(Assembly::class);
     }
+
+    public function flight()
+    {
+    	return $this->hasMany(Flight::class);
+    }
 }
