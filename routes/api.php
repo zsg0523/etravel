@@ -96,9 +96,16 @@ $api->version('v1', [
 			$api->delete('flight/{flight}','FlightsController@destroy')->name('api.flights.destroy');
 
 
-
-
-
+			// 酒店信息
+			$api->get('hotels','HotelsController@index')->name('api.hotels.index');
+			// 酒店详情
+			$api->get('hotel/{hotel}','HotelsController@show')->name('api.hotels.show');
+			// 新增酒店
+			$api->post('hotel','HotelsController@store')->name('api.hotels.store');
+			// 更新酒店信息
+			$api->patch('hotel/{hotel}','HotelsController@update')->name('api.hotels.update');
+			// 删除酒店
+			$api->delete('hotel/{hotel}','HotelsController@destroy')->name('api.hotels.destroy');
 
 
 

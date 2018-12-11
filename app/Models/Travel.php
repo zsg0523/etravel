@@ -17,4 +17,9 @@ class Travel extends Model
     {
     	return $this->hasMany(Flight::class);
     }
+
+    public function hotel()
+    {
+    	return $this->hasMany(Hotel::class);
+    }
 }

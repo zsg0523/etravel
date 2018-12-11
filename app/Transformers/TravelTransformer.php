@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-05 10:11:20
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-11 16:04:01
+ * @Last Modified time: 2018-12-11 18:42:29
  */
 namespace App\Transformers;
 
@@ -13,7 +13,7 @@ use League\Fractal\TransformerAbstract;
 
 class TravelTransformer extends TransformerAbstract
 {
-	protected $availableIncludes = ['assembly','flight'];
+	protected $availableIncludes = ['assembly','flight','hotel'];
 
 	public function transform(Travel $travel)
 	{
@@ -39,6 +39,13 @@ class TravelTransformer extends TransformerAbstract
 	{
 		if($travel->flight){
 			return $this->collection($travel->flight, new FlightTransformer());
+		}
+	}
+
+	public function includeHotel(Travel $travel)
+	{
+		if($travel->hotel){
+			return $this->collection($travel->hotel, new HotelTransformer());
 		}
 	}
 
