@@ -42,4 +42,11 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    /** [student 学生基本信息] */
+    public function student()
+    {
+        return $this->hasOne(Student::class);
+    }
+
 }

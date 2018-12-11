@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-05 10:11:20
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-10 15:39:36
+ * @Last Modified time: 2018-12-10 22:24:30
  */
 namespace App\Transformers;
 
@@ -13,7 +13,7 @@ use League\Fractal\TransformerAbstract;
 
 class TravelTransformer extends TransformerAbstract
 {
-	protected $availableIncludes = ['assembly'];
+	protected $availableIncludes = ['assembly','school'];
 
 	public function transform(Travel $travel)
 	{

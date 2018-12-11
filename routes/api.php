@@ -36,13 +36,18 @@ $api->version('v1', [
 		// 删除token	
 		$api->delete('authorizations/current','AuthorizationsController@destroy')->name('api.authorizations.destroy');
 		
-
+		// 新闻列表
+		$api->get('news','NewsController@index')->name('api.news.index');
+		// 新闻详情
+		$api->get('new/{new}','NewsController@show')->name('api.news.show');
 
 
 
 
 		// 需要 token 验证的接口
 		$api->group(['middleware' => 'api.auth'], function($api) {
+			// 用户列表
+			$api->get('userlist','UsersController@index')->name('api.user.index');
 			// 当前登录用户信息
 			$api->get('user','UsersController@me')->name('api.user.show');
 			// 访问图片资源
@@ -50,6 +55,13 @@ $api->version('v1', [
 			// 编辑用户资料
 			$api->patch('user','UsersController@update')->name('api.user.update');
 
+			
+			// 创建新闻
+			$api->post('new','NewsController@store')->name('api.news.store');
+			// 编辑新闻
+			$api->patch('new/{new}','NewsController@update')->name('api.news.update');
+			// 删除新闻	
+			$api->delete('new/{new}','NewsController@destroy')->name('api.news.destroy');
 
 			// 电话簿
 			$api->get('telephone','TelephoneController@index')->name('api.telephone.index');
@@ -72,7 +84,7 @@ $api->version('v1', [
 			// 删除旅游项目
 			$api->delete('travel/{travel}','TravelsController@destroy')->name('api.travel.destroy');
 
-			
+
 		});
 
 

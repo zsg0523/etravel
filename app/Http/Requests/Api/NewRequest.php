@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests\Api;
 
-use App\Models\Travel;
-use Dingo\Api\Http\FormRequest;
+use Illuminate\Foundation\Http\FormRequest;
 
-class TravelRequest extends FormRequest
+class NewRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,21 +23,18 @@ class TravelRequest extends FormRequest
      */
     public function rules()
     {
-
         switch ($this->method()) {
             case 'POST':
                 return [
-                    'travel_name' => 'required|max:25',
-                    'travel_introduction' => 'required|max:255',
-                    'travel_at' => 'required|date'
+                    'title' => 'required|string|max:50',
+                    'body' => 'required'
                 ];
                 break;
             
             case 'PATCH':
                 return [
-                    'travel_name' => 'string',
-                    'travel_introduction' => 'string',
-                    'travel_at' => 'date'
+                    'title' =>'string',
+                    'body' => 'string'
                 ];
                 break;
         }

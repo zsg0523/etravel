@@ -4,12 +4,19 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Image;
 use App\Models\User;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\UserRequest;
 use App\Transformers\UserTransformer;
 
 class UsersController extends Controller
 {
+    /** [index 用户列表] */
+    public function index()
+    {
+        return $this->response->collection(User::all(), new UserTransformer());
+    }
+
 	/**
 	 * 用户注册
 	 */
