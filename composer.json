@@ -14,8 +14,7 @@
         "liyu/dingo-serializer-switch": "^0.3.0",
         "socialiteproviders/weixin": "^4.0",
         "tymon/jwt-auth": "1.0.0-rc.2",
-        "fzaninotto/faker": "~1.4",
-        "ext-gd": "*"
+        "fzaninotto/faker": "~1.4"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
