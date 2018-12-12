@@ -107,6 +107,16 @@ $api->version('v1', [
 			// 删除酒店
 			$api->delete('hotel/{hotel}','HotelsController@destroy')->name('api.hotels.destroy');
 
+			// 守则列表
+			$api->get('rules','RulesController@index')->name('api.rules.index');
+			// 守则详情
+			$api->get('rule/{rule}','RulesController@show')->name('api.rules.show');
+			// 创建守则
+			$api->post('rule','RulesController@store')->name('api.rules.store');
+			// 更新守则
+			$api->patch('rule/{rule}','RulesController@update')->name('api.rules.update');
+			// 删除守则
+			$api->delete('rule/{rule}','RulesController@destroy')->name('api.rules.destroy');
 
 
 
