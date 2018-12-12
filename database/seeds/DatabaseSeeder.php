@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(StudentsTableSeeder::class);
         // $this->call(NewsTableSeeder::class);
         // $this->call(HotelsTableSeeder::class);
-        $this->call(RulesTableSeeder::class);
+        // $this->call(RulesTableSeeder::class);
+        $this->call(GroupsTableSeeder::class);
     }
 }

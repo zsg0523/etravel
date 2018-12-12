@@ -118,14 +118,20 @@ $api->version('v1', [
 			// 删除守则
 			$api->delete('rule/{rule}','RulesController@destroy')->name('api.rules.destroy');
 
-
-
-
-
-
-
-
-
+			// 所有旅行团 人员安排
+			$api->get('groups','GroupsController@index')->name('api.groups.index');
+			// 单个旅行团 人员安排
+			$api->get('travels/{travel}/groups','GroupsController@travelIndex')->name('api.travels.groups.index');
+			// 单个用户 分组安排
+			$api->get('users/{user}/groups','GroupsController@userIndex')->name('api.users.groups.index');
+			// 单个分组安排详情
+			$api->get('group/{group}','GroupsController@show')->name('api.group.show');
+			// 增加分组安排
+			$api->post('travel/{travel}/user/{user}/group','GroupsController@store')->name('api.group.store');
+			// 更新分组安排
+			$api->patch('travel/{travel}/user/{user}/group/{group}','GroupsController@update')->name('api.group.update');
+			// 删除分组安排
+			$api->delete('travel/{travel}/user/{user}/group/{group}','GroupsController@destroy')->name('api.group.destroy');
 
 
 

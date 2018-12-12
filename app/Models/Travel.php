@@ -22,4 +22,10 @@ class Travel extends Model
     {
     	return $this->hasMany(Hotel::class);
     }
+
+    /** [users 多对多关联关系] */
+    public function groups()
+    {
+        return $this->hasMany(Group::class);
+    }
 }
