@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Rule;
+use App\Models\User;
+use App\Models\Group;
 use App\Models\RuleCategory;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\RuleRequest;

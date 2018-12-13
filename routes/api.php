@@ -120,7 +120,8 @@ $api->version('v1', [
 			// 删除守则
 			$api->delete('rule/{rule}','RulesController@destroy')->name('api.rules.destroy');
 			
-
+			
+			
 			// 所有旅行团 人员安排
 			$api->get('groups','GroupsController@index')->name('api.groups.index');
 			// 单个旅行团 人员安排

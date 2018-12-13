@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model
 {
-	protected $fillable = ['duty','room','group'];
+	protected $fillable = ['duty','room','group','is_promise'];
 
 	public function travel()
 	{
