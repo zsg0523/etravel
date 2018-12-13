@@ -15,7 +15,8 @@ class FlightRequest extends FormRequest
             case 'POST':
                 return [
                     'date' => 'required|date',
-                    'site' => 'required',
+                    'from' => 'required',
+                    'to' => 'required',
                     'flight' => 'required',
                     'takeoff_time' => 'required',
                     'arrival_time' => 'required',
@@ -27,7 +28,8 @@ class FlightRequest extends FormRequest
             case 'PATCH':
                 return [
                     'date' => 'string|date',
-                    'site' => 'string',
+                    'from' => 'string',
+                    'to' => 'string',
                     'flight' => 'string',
                     'takeoff_time' => 'string',
                     'arrival_time' => 'string',
