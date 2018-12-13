@@ -16,6 +16,7 @@ class CreateRuleCategoriesTable extends Migration
         Schema::create('rule_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('rule_category_name');
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }

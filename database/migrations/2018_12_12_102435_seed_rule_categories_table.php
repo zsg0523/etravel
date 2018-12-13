@@ -16,24 +16,35 @@ class SeedRuleCategoriesTable extends Migration
         $categories = [
             [
                 'rule_category_name'        => '在机场',
+                'type' => 10
             ],
             [
                 'rule_category_name'        => '在飞机上',
+                'type' => 10
             ],
             [
                 'rule_category_name'        => '到达当地机场',
+                'type' => 10
             ],
             [
                 'rule_category_name'        => '一般事项',
+                'type' => 10
             ],
             [
                 'rule_category_name'        => '旅游安全',
+                'type' => 10
             ],
             [
                 'rule_category_name'        => '住宿地方',
+                'type' => 10
             ],
             [
                 'rule_category_name'        => '回程后离开香港机场',
+                'type' => 10
+            ],
+            [
+                'rule_category_name'        => '我的承诺',
+                'type' => 20
             ]
         ];
 
@@ -47,6 +58,6 @@ class SeedRuleCategoriesTable extends Migration
      */
     public function down()
     {
-        DB::table('categories')->truncate();
+        DB::table('rule_categories')->truncate();
     }
 }

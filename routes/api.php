@@ -74,7 +74,7 @@ $api->version('v1', [
 
 
 			// 旅游基本信息
-			$api->get('travel','TravelsController@index')->name('api.travel.index');
+			$api->get('travels','TravelsController@index')->name('api.travel.index');
 			// 旅游详情
 			$api->get('travel/{travel}','TravelsController@show')->name('api.travel.show');
 			// 创建旅游信息

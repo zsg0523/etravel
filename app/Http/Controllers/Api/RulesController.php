@@ -14,7 +14,7 @@ class RulesController extends Controller
 	/** [index 团队守则列表] */
     public function index()
     {
-    	return $this->response->collection(RuleCategory::all(), new RuleCategoryTransformer());
+    	return $this->response->collection(RuleCategory::where('type', 10)->get(), new RuleCategoryTransformer());
     }
 
     public function show(Rule $rule)
