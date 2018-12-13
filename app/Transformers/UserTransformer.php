@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-03 18:57:23
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-10 23:56:27
+ * @Last Modified time: 2018-12-13 18:09:12
  */
 namespace App\Transformers;
 
@@ -14,7 +14,7 @@ use League\Fractal\TransformerAbstract;
 
 class UserTransformer extends TransformerAbstract
 {	
-	protected $availableIncludes = ['student','school'];
+	protected $availableIncludes = ['student'];
 
 	public function transform(User $user)
 	{
@@ -35,14 +35,5 @@ class UserTransformer extends TransformerAbstract
 	{
 		return $this->item($user->student, new StudentTransformer());
 	}
-
-	/**
-	 * [includeSchool 获取学校信息]
-	 * @param  User   $user [description]
-	 * @return [type]       [description]
-	 */
-	public function includeSchool(User $user)
-	{
-		return $this->item($user->student->school, new SchoolTransformer());
-	} 
+	
 }

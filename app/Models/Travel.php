@@ -28,4 +28,9 @@ class Travel extends Model
     {
         return $this->hasMany(Group::class);
     }
+
+    public function routes()
+    {
+        return $this->hasMany(Route::class);
+    }
 }

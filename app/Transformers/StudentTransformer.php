@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-10 22:07:43
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-10 23:53:52
+ * @Last Modified time: 2018-12-13 18:11:12
  */
 namespace App\Transformers;
 
@@ -13,7 +13,7 @@ use League\Fractal\TransformerAbstract;
 
 class StudentTransformer extends TransformerAbstract
 {
-	protected $available = ['school'];
+	protected $availableIncludes = ['school'];
 
 	public function transform(Student $student)
 	{
@@ -29,7 +29,11 @@ class StudentTransformer extends TransformerAbstract
 
 	public function includeSchool(Student $student)
 	{
-		return $this->item($student->School, new SchoolTransformer());
+		if($student->school){
+			return $this->item($student->school, new SchoolTransformer());
+		}
 	}
+
+
 	
 }
