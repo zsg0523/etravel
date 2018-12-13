@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-11 15:35:03
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-11 16:06:57
+ * @Last Modified time: 2018-12-13 12:42:19
  */
 namespace App\Transformers;
 
@@ -18,11 +18,12 @@ class FlightTransformer extends TransformerAbstract
 		return [
 			'id' => $flight->id,
 			'date' => $flight->date,
-			'site' => $flight->site,
+			'from' => $flight->from,
+			'to' => $flight->to,
 			'flight' => $flight->flight,
 			'takeoff_time' => $flight->takeoff_time,
 			'arrival_time' => $flight->arrival_time,
-			'is_return' => $flight->is_return ? '返程航班' : '前往航班',
+			'is_return' => $flight->is_return,
 		];
 	}
 }

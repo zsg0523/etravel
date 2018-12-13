@@ -17,8 +17,8 @@ class FlightRequest extends FormRequest
                     'date' => 'required|date',
                     'site' => 'required',
                     'flight' => 'required',
-                    'takeoff_time' => 'required|date',
-                    'arrival_time' => 'required|date',
+                    'takeoff_time' => 'required',
+                    'arrival_time' => 'required',
                     'is_return' => 'required|boolean',
                     'travel_id' => 'required|integer'
                 ];
@@ -29,8 +29,8 @@ class FlightRequest extends FormRequest
                     'date' => 'string|date',
                     'site' => 'string',
                     'flight' => 'string',
-                    'takeoff_time' => 'string|date',
-                    'arrival_time' => 'string|date',
+                    'takeoff_time' => 'string',
+                    'arrival_time' => 'string',
                     'is_return' => 'boolean',
                     'travel_id' => 'integer'
                 ];
