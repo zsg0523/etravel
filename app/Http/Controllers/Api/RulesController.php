@@ -17,6 +17,12 @@ class RulesController extends Controller
     	return $this->response->collection(RuleCategory::where('type', 10)->get(), new RuleCategoryTransformer());
     }
 
+    /** [index 我的承诺] */
+    public function promise()
+    {
+        return $this->response->collection(RuleCategory::where('type', 20)->get(), new RuleCategoryTransformer());
+    }
+
     public function show(Rule $rule)
     {
     	return $this->response->item($rule, new RuleTransformer());

@@ -109,6 +109,8 @@ $api->version('v1', [
 
 			// 守则列表
 			$api->get('rules','RulesController@index')->name('api.rules.index');
+			// 我的承诺
+			$api->get('promise','RulesController@promise')->name('api.promise.index');
 			// 守则详情
 			$api->get('rule/{rule}','RulesController@show')->name('api.rules.show');
 			// 创建守则
@@ -117,6 +119,7 @@ $api->version('v1', [
 			$api->patch('rule/{rule}','RulesController@update')->name('api.rules.update');
 			// 删除守则
 			$api->delete('rule/{rule}','RulesController@destroy')->name('api.rules.destroy');
+			
 
 			// 所有旅行团 人员安排
 			$api->get('groups','GroupsController@index')->name('api.groups.index');
