@@ -120,8 +120,8 @@ $api->version('v1', [
 			// 删除守则
 			$api->delete('rule/{rule}','RulesController@destroy')->name('api.rules.destroy');
 			
-			
-			
+
+
 			// 所有旅行团 人员安排
 			$api->get('groups','GroupsController@index')->name('api.groups.index');
 			// 单个旅行团 人员安排
@@ -138,11 +138,45 @@ $api->version('v1', [
 			$api->delete('travel/{travel}/user/{user}/group/{group}','GroupsController@destroy')->name('api.group.destroy');
 
 
+			// 所有行程安排
+			$api->get('routes','RoutesController@index')->name('api.routes.index');
+			// 旅行团下行程安排
+			$api->get('travel/{travel}/routes','RoutesController@travelIndex')->name('api.travel.routes.index');
+			// 行程详情
+			$api->get('travel/{travel}/route/{route}','RoutesController@show')->name('api.travel.route.show');
+			// 创建行程
+			$api->post('travel/{travel}/route','RoutesController@store')->name('api.travel.route.store');
+			// 更新行程
+			$api->patch('travel/{travel}/route/{route}','RoutesController@update')->name('api.travel.route.update');
+			// 删除行程
+			$api->delete('travel/{travel}/route/{route}','RoutesController@destroy')->name('api.travel.route.destroy');
 
 
-
-
-
+			// 所有景点安排
+			$api->get('sceneries','SceneriesController@index')->name('api.sceneries.index');
+			// 行程下所有景点安排
+			$api->get('route/{route}/sceneries','SceneriesController@routeIndex')->name('api.route.sceneries.index');
+			// 景点安排详情
+			$api->get('route/{route}/scenery/{scenery}','SceneriesController@show')->name('api.route.scenery.show');
+			// 创建景点安排
+			$api->post('route/{route}/scenery','SceneriesController@store')->name('api.route.scenery.store');
+			// 更新景点安排
+			$api->patch('route/{route}/scenery/{scenery}','SceneriesController@update')->name('api.route.scenery.update');
+			// 删除景点安排
+			$api->delete('route/{route}/scenery/{scenery}','SceneriesController@destroy')->name('api.route.scenery.destroy');
+			
+			// 所有膳食安排
+			$api->get('foods','FoodsController@index')->name('api.foods.index');
+			// 行程下所有膳食安排
+			$api->get('route/{route}/foods','FoodsController@routeIndex')->name('api.route.foods.index');
+			// 膳食安排详情
+			$api->get('route/{route}/food/{food}','FoodsController@show')->name('api.route.food.show');
+			// 创建膳食安排
+			$api->post('route/{route}/food','FoodsController@store')->name('api.route.food.store');
+			// 更新膳食安排
+			$api->patch('route/{route}/food/{food}','FoodsController@update')->name('api.route.food.update');
+			// 删除膳食安排
+			$api->delete('route/{route}/food/{food}','FoodsController@destroy')->name('api.route.food.destroy');
 
 
 

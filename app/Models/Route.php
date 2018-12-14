@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Route extends Model
 {
+    protected $fillable = ['day','date','description'];
+
     public function travel()
     {
     	return $this->belongsTo(Travel::class);
