@@ -107,6 +107,21 @@ $api->version('v1', [
 			// 删除酒店
 			$api->delete('hotel/{hotel}','HotelsController@destroy')->name('api.hotels.destroy');
 
+
+			// 分类列表
+			$api->get('categories','RuleCategoriesController@index')->name('api.categories.index');
+			// 某个类型分类
+			$api->get('type/categories','RuleCategoriesController@typeIndex')->name('api.type.categories.index');
+			// 创建分类
+			$api->post('category','RuleCategoriesController@store')->name('api.category.store');
+			// 分类详情
+			$api->get('category/{category}','RuleCategoriesController@show')->name('api.category.show');
+			// 更新分类
+			$api->patch('category/{category}','RuleCategoriesController@update')->name('api.category.update');
+			// 删除分类
+			$api->delete('category/{category}','RuleCategoriesController@destroy')->name('api.category.destroy');
+
+
 			// 守则列表
 			$api->get('rules','RulesController@index')->name('api.rules.index');
 			// 我的承诺
