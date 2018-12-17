@@ -141,10 +141,10 @@ $api->version('v1', [
 			$api->get('groups','GroupsController@index')->name('api.groups.index');
 			// 单个旅行团 人员安排
 			$api->get('travels/{travel}/groups','GroupsController@travelIndex')->name('api.travels.groups.index');
-			// 单个用户 分组安排
+			// 单个用户分组安排
 			$api->get('users/{user}/groups','GroupsController@userIndex')->name('api.users.groups.index');
 			// 单个分组安排详情
-			$api->get('group/{group}','GroupsController@show')->name('api.group.show');
+			$api->get('users/{user}/travels/{travel}/groups/{group}','GroupsController@show')->name('api.users.travels.groups.show');
 			// 增加分组安排
 			$api->post('travel/{travel}/user/{user}/group','GroupsController@store')->name('api.group.store');
 			// 更新分组安排
@@ -219,6 +219,36 @@ $api->version('v1', [
 			$api->patch('studies/{study}/questions/{question}','QuestionsController@update')->name('api.studies.questions.update');
 			// 删除工作纸
 			$api->delete('studies/{study}/questions/{question}','QuestionsController@destroy')->name('api.studies.questions.destroy');
+
+			// 所有答案列表
+			$api->get('answers','AnswersController@index')->name('api.answers.index');
+			// 用户所有答案 
+			$api->get('users/{user}/answers','AnswersController@userIndex')->name('api.users.answers.index');
+			// 问题所有答案
+			$api->get('questions/{question}/answers','AnswersController@questionIndex')->name('api.questions.answers.index');
+			// 答案详情
+			$api->get('questions/{question}/users/{user}/answers/{answer}','AnswersController@show')->name('api.questions.users.answers.show');
+			// 创建答案
+			$api->post('questions/{question}/users/{user}/answers','AnswersController@store')->name('api.questions.users.store');
+			// 更新答案
+			$api->patch('questions/{question}/users/{user}/answers/{answer}','AnswersController@update')->name('api.questions.users.answers.update');
+			// 删除答案
+			$api->delete('questions/{question}/users/{user}/answers/{answer}','AnswersController@destroy')->name('api.questions.users.answers.destroy');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		});
 

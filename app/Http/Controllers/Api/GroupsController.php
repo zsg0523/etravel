@@ -33,8 +33,12 @@ class GroupsController extends Controller
     }
 
     /** [show 用户分组安排详情] */
-    public function show(Group $group)
+    public function show(User $user,Travel $travel, Group $group)
     {
+        if($group->user_id != $user->id || $group->travel_id != $travel->id) {
+            return $this->response->errorBadRequest();
+        }
+        
     	return $this->response->item($group, new GroupTransformer());
     }
 

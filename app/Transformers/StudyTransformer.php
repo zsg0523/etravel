@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-15 10:41:00
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-17 10:27:38
+ * @Last Modified time: 2018-12-17 16:23:42
  */
 namespace App\Transformers;
 
@@ -13,7 +13,7 @@ use League\Fractal\TransformerAbstract;
 
 class StudyTransformer extends TransformerAbstract
 {
-	protected $availableIncludes = ['questions'];
+	protected $availableIncludes = ['questions','route'];
 
 	public function transform(Study $study)
 	{
@@ -31,5 +31,10 @@ class StudyTransformer extends TransformerAbstract
 	public function includeQuestions(Study $study)
 	{
 		return $this->collection($study->questions, new QuestionTransformer());
+	}
+
+	public function includeRoute(Study $study)
+	{
+		return $this->item($study->route, new RouteTransformer());
 	}
 }
