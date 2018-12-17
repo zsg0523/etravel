@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(RoutesTableSeeder::class);
         // $this->call(SceneriesTableSeeder::class);
         // $this->call(FoodsTableSeeder::class);
+        $this->call(StudiesTableSeeder::class);
+        $this->call(QuestionsTableSeeder::class);
     }
 
 }

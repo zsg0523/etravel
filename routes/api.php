@@ -193,9 +193,32 @@ $api->version('v1', [
 			// 删除膳食安排
 			$api->delete('route/{route}/food/{food}','FoodsController@destroy')->name('api.route.food.destroy');
 
+			// 学习工作纸列表
+			$api->get('studies','StudiesController@index')->name('api.studies.index');
+			// 行程下学习工作纸
+			$api->get('routes/{route}/studies','StudiesController@routeIndex')->name('api.routes.studies.index');
+			// 工作纸详情
+			$api->get('routes/{route}/studies/{study}','StudiesController@show')->name('api.routes.studies.show'); 
+			// 创建工作纸
+			$api->post('routes/{route}/studies','StudiesController@store')->name('api.routes.studies.store');
+			// 更新工作纸
+			$api->patch('routes/{route}/studies/{study}','StudiesController@update')->name('api.routes.studies.update');
+			// 删除工作纸
+			$api->delete('routes/{route}/studies/{study}','StudiesController@destroy')->name('api.routes.studies.destroy');
 
 
-
+			// 学习工作纸列表
+			$api->get('questions','QuestionsController@index')->name('api.questions.index');
+			// 行程下学习工作纸
+			$api->get('studies/{study}/questions','QuestionsController@studyIndex')->name('api.studies.questions.index');
+			// 工作纸详情
+			$api->get('studies/{study}/questions/{question}','QuestionsController@show')->name('api.studies.questions.show'); 
+			// 创建工作纸
+			$api->post('studies/{study}/questions','QuestionsController@store')->name('api.studies.questions.store');
+			// 更新工作纸
+			$api->patch('studies/{study}/questions/{question}','QuestionsController@update')->name('api.studies.questions.update');
+			// 删除工作纸
+			$api->delete('studies/{study}/questions/{question}','QuestionsController@destroy')->name('api.studies.questions.destroy');
 
 		});
 
