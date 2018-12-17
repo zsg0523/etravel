@@ -220,6 +220,7 @@ $api->version('v1', [
 			// 删除工作纸
 			$api->delete('studies/{study}/questions/{question}','QuestionsController@destroy')->name('api.studies.questions.destroy');
 
+
 			// 所有答案列表
 			$api->get('answers','AnswersController@index')->name('api.answers.index');
 			// 用户所有答案 
@@ -236,8 +237,16 @@ $api->version('v1', [
 			$api->delete('questions/{question}/users/{user}/answers/{answer}','AnswersController@destroy')->name('api.questions.users.answers.destroy');
 
 
-
-
+			// 感想标题列表
+			$api->get('titles','WriteTitlesController@index')->name('api.titles.index');
+			// 标题详情
+			$api->get('titles/{writetitle}','WriteTitlesController@show')->name('api.titles.show');
+			// 增加感谢标题
+			$api->post('titles','WriteTitlesController@store')->name('api.titles.store');
+			// 更新标题
+			$api->patch('titles/{writetitle}','WriteTitlesController@update')->name('api.titles.update');
+			// 删除标题
+			$api->delete('titles/{writetitle}','WriteTitlesController@destroy')->name('api.titles.destroy');
 
 
 
