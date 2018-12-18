@@ -134,8 +134,12 @@ $api->version('v1', [
 			$api->patch('rule/{rule}','RulesController@update')->name('api.rules.update');
 			// 删除守则
 			$api->delete('rule/{rule}','RulesController@destroy')->name('api.rules.destroy');
-			
 
+			// 检查行李清单
+			$api->post('users/{user}/rules/{rule}/examines','ExaminesController@store')->name('api.users.rules.examines.store');
+			// 更新行李清单
+			$api->patch('users/{user}/rules/{rule}/examines/{examine}','ExaminesController@update')->name('api.users.rules.examines.update');
+			
 
 			// 所有旅行团 人员安排
 			$api->get('groups','GroupsController@index')->name('api.groups.index');

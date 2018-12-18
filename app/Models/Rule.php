@@ -12,4 +12,10 @@ class Rule extends Model
     {
     	return $this->belongsTo(RuleCategory::class);
     }
+
+    public function examines()
+    {
+        return $this->hasMany(Examine::class);
+    }
+
 }
