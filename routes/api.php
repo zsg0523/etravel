@@ -249,9 +249,18 @@ $api->version('v1', [
 			$api->delete('titles/{writetitle}','WriteTitlesController@destroy')->name('api.titles.destroy');
 
 
-
-
-
+			// 所有感想
+			$api->get('summaries','WritesController@index')->name('api.summaries.index');
+			// 用户感想
+			$api->get('users/{user}/summaries','WritesController@userIndex')->name('api.users.summaries.index');
+			// 旅游感想
+			$api->get('travels/{travel}/summaries','WritesController@travelIndex')->name('api.travels.summaries.index');			
+			// 创建感想
+			$api->post('users/{user}/travels/{travel}/writetitles/{title}/summaries','WritesController@store')->name('api.users.travels.store');
+			// 更新感想
+			$api->patch('users/{user}/travels/{travel}/writetitles/{title}/summaries/{write}','WritesController@update')->name('api.users.travels.summaries.update');
+			// 删除感想
+			$api->delete('users/{user}/travels/{travel}/writetitles/{title}/summaries/{write}','WritesController@destroy')->name('api.users.travels.summaries.destroy');
 
 
 

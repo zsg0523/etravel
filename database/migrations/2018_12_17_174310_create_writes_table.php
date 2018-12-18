@@ -18,7 +18,7 @@ class CreateWritesTable extends Migration
             $table->integer('write_title_id')->index();
             $table->integer('user_id')->index();
             $table->integer('travel_id')->index();
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('content');
             $table->timestamps();
         });
