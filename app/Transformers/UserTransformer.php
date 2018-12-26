@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-03 18:57:23
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-26 17:18:39
+ * @Last Modified time: 2018-12-26 17:55:47
  */
 namespace App\Transformers;
 
@@ -34,7 +34,9 @@ class UserTransformer extends TransformerAbstract
 	/** [includeStudent 获取学生信息] */
 	public function includeStudent(User $user)
 	{
-		return $this->item($user->student, new StudentTransformer());
+		if ($user->student) {
+			return $this->item($user->student, new StudentTransformer());
+		}
 	}
 
 	
