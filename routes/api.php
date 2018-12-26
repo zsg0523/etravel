@@ -140,6 +140,7 @@ $api->version('v1', [
 			// 更新行李清单
 			$api->patch('users/{user}/rules/{rule}/examines/{examine}','ExaminesController@update')->name('api.users.rules.examines.update');
 			
+			
 
 			// 所有旅行团 人员安排
 			$api->get('groups','GroupsController@index')->name('api.groups.index');
@@ -258,7 +259,9 @@ $api->version('v1', [
 			// 用户感想
 			$api->get('users/{user}/summaries','WritesController@userIndex')->name('api.users.summaries.index');
 			// 旅游感想
-			$api->get('travels/{travel}/summaries','WritesController@travelIndex')->name('api.travels.summaries.index');			
+			$api->get('travels/{travel}/summaries','WritesController@travelIndex')->name('api.travels.summaries.index');
+			// 用户旅游感想
+			$api->get('users/{user}/travels/{travel}/writetitles/{title}','WritesController@show')->name('api.summaries.show');			
 			// 创建感想
 			$api->post('users/{user}/travels/{travel}/writetitles/{title}/summaries','WritesController@store')->name('api.users.travels.store');
 			// 更新感想

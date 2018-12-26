@@ -18,4 +18,9 @@ class Rule extends Model
         return $this->hasMany(Examine::class);
     }
 
+    public function users()
+    {
+    	return $this->belongsToMany(User::class, 'examines')->withPivot('before', 'after');
+    }
+
 }

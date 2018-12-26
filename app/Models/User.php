@@ -70,6 +70,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Examine::class);
     }
 
+    public function rules()
+    {
+        return $this->belongsToMany(Rule::class, 'examines')->withPivot('before', 'after');
+    }
+
 
 
 

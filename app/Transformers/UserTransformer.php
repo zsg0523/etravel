@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-03 18:57:23
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-13 18:09:12
+ * @Last Modified time: 2018-12-20 16:32:16
  */
 namespace App\Transformers;
 
@@ -35,5 +35,6 @@ class UserTransformer extends TransformerAbstract
 	{
 		return $this->item($user->student, new StudentTransformer());
 	}
+
 	
 }

@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-12 12:19:46
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-18 16:18:02
+ * @Last Modified time: 2018-12-20 15:29:56
  */
 namespace App\Transformers;
 
@@ -19,7 +19,7 @@ class RuleTransformer extends TransformerAbstract
 	{
 		return [
 			'id' => $rule->id,
-			'rule' => $rule->rule
+			'rule' => $rule->rule,
 		];
 	}
 
@@ -27,5 +27,6 @@ class RuleTransformer extends TransformerAbstract
 	{
 		return $this->collection($rule->examines, new ExamineTransformer());
 	}
+
 
 }

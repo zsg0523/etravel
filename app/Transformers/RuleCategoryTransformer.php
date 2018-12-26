@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-12 12:26:10
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-14 12:57:06
+ * @Last Modified time: 2018-12-20 15:22:25
  */
 namespace App\Transformers;
 
@@ -20,7 +20,7 @@ class RuleCategoryTransformer extends TransformerAbstract
 		return [
 			'id' => $rulecategory->id,
 			'type' => $rulecategory->type,
-			'rule_category_name' => $rulecategory->rule_category_name
+			'rule_category_name' => $rulecategory->rule_category_name,
 		];
 	}
 

@@ -19,16 +19,23 @@ class WritesController extends Controller
     	return $this->response->collection(Write::all(), new WriteTransformer());
     }
 
+    /** [userIndex 用户所有总结] */
     public function userIndex(User $user)
     {
     	return $this->response->collection($user->summaries, new WriteTransformer());
     }
 
+
+    /** [travelIndex 旅游内所有用户总结] */
     public function travelIndex(Travel $travel)
     {
     	return $this->response->collection($travel->summaries, new WriteTransformer());
     }
 
+    public function show(User $user, Travel $travel, Write $title)
+    {
+        return $this->response->item($user->summaries()->where('travel_id', $travel->id)->where('write_title_id', $title->id)->get(), new WriteTransformer());
+    }
 
     /** [store 增加感想] */
     public function store(WriteRequest $request, User $user, Travel $travel, WriteTitle $title, Write $write)

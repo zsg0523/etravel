@@ -10,10 +10,11 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Api\RuleRequest;
 use App\Transformers\RuleTransformer;
 use App\Transformers\RuleCategoryTransformer;
+use App\Transformers\ExamineTransformer;
 
 class RulesController extends Controller
 {
-	/** [index 团队守则列表] */
+	/** [index 团队守则分类列表] */
     public function index()
     {
     	return $this->response->collection(RuleCategory::where('type', 10)->get(), new RuleCategoryTransformer());
