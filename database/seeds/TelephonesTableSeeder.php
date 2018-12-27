@@ -29,7 +29,8 @@ class TelephonesTableSeeder extends Seeder
                         $telephone->travel_id = $faker->randomElement($travel_ids);
                      });
 
-
+        // 清空
+        Telephone::truncate();
         // 将数据集合插入数据库
         Telephone::insert($telephones->toArray());
     }
