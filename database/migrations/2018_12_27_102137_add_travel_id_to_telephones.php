@@ -14,7 +14,7 @@ class AddTravelIdToTelephones extends Migration
     public function up()
     {
         Schema::table('telephones', function (Blueprint $table) {
-            $table->integer('travel_id')->after('id')->index();
+            $table->integer('travel_id')->after('id')->nullable()->index();
         });
     }
 
