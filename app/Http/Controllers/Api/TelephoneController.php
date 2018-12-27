@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Telephone;
+use App\Models\Travel;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\TelephoneRequest;
 use App\Transformers\TelephoneTransformer;
@@ -13,6 +14,12 @@ class TelephoneController extends Controller
     public function index()
     {
     	return $this->response->collection(Telephone::all(), new Telephonetransformer());
+    }
+
+    /** [travelIndex 旅行团紧急联系人] */
+    public function travelIndex(Travel $travel)
+    {
+        return $this->response->collection($travel->telephones, new Telephonetransformer());
     }
 
     /** [store 创建联系人电话] */

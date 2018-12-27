@@ -65,14 +65,7 @@ $api->version('v1', [
 			// 删除新闻	
 			$api->delete('new/{new}','NewsController@destroy')->name('api.news.destroy');
 
-			// 电话簿
-			$api->get('telephone','TelephoneController@index')->name('api.telephone.index');
-			// 增加联系人电话
-			$api->post('telephone','TelephoneController@store')->name('api.telephone.store');
-			// 更新联系人电话
-			$api->patch('telephone/{telephone}','TelephoneController@update')->name('api.telephone.update');
-			// 删除联系人电话
-			$api->delete('telephone/{telephone}','TelephoneController@destroy')->name('api.telephone.destroy');
+			
 
 
 			// 旅游基本信息
@@ -85,6 +78,17 @@ $api->version('v1', [
 			$api->patch('travel/{travel}','TravelsController@update')->name('api.travel.update');
 			// 删除旅游项目
 			$api->delete('travel/{travel}','TravelsController@destroy')->name('api.travel.destroy');
+
+			// 所有紧急联系人
+			$api->get('telephones', 'TelephoneController@index')->name('api.telephone.index');
+			// 旅游团紧急联系人
+			$api->get('travels/{travel}/telephones', 'TelephoneController@travelIndex')->name('api.travels.telephones.index');
+			// 增加联系人电话
+			$api->post('telephones', 'TelephoneController@store')->name('api.telephone.store');
+			// 更新联系人电话
+			$api->patch('telephones/{telephone}', 'TelephoneController@update')->name('api.telephone.update');
+			// 删除联系人电话
+			$api->delete('telephones/{telephone}', 'TelephoneController@destroy')->name('api.telephone.destroy');
 
 			// 航班信息列表
 			$api->get('flights','FlightsController@index')->name('api.flights.index');

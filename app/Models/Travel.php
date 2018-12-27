@@ -8,6 +8,11 @@ class Travel extends Model
 {
     protected $fillable = ['travel_name','travel_at','travel_introduction'];
 
+    public function telephones()
+    {
+        return $this->hasMany(Telephone::class);
+    }
+
     public function assembly()
     {
     	return $this->hasOne(Assembly::class);
