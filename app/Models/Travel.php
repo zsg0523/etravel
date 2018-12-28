@@ -8,6 +8,11 @@ class Travel extends Model
 {
     protected $fillable = ['travel_name','travel_at','travel_introduction'];
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'groups');
+    }
+
     public function telephones()
     {
         return $this->hasMany(Telephone::class);

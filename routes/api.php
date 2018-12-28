@@ -68,9 +68,11 @@ $api->version('v1', [
 			
 
 
-			// 旅游基本信息
+			// 旅游团基本信息
 			$api->get('travels','TravelsController@index')->name('api.travel.index');
-			// 旅游详情
+			// 用户的旅游团
+			$api->get('users/{user}/travels', 'TravelsController@userIndex')->name('api.users.travels.index');
+			// 旅游团详情
 			$api->get('travel/{travel}','TravelsController@show')->name('api.travel.show');
 			// 创建旅游信息
 			$api->post('travel','TravelsController@store')->name('api.travel.store');

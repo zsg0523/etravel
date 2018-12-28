@@ -54,6 +54,12 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Group::class);
     }
 
+    /** [users 属于多个用户] */
+    public function travels()
+    {
+        return $this->belongsToMany(Travel::class, 'groups')->withPivot('room', 'group', 'is_promise', 'duty');
+    }
+
     public function answers()
     {
         return $this->hasMany(Answer::class);

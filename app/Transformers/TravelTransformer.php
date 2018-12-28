@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-05 10:11:20
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-13 16:40:22
+ * @Last Modified time: 2018-12-28 18:54:06
  */
 namespace App\Transformers;
 
@@ -24,6 +24,12 @@ class TravelTransformer extends TransformerAbstract
 			'travel_at' => $travel->travel_at,
 			'created_at' => $travel->created_at->toDateTimeString(),
 			'updated_at' => $travel->updated_at->toDateTimeString(),
+			'pivot' => [
+				'duty' => isset($travel->pivot->duty) ? $travel->pivot->duty : '',
+				'is_promise' => isset($travel->pivot->is_promise) ? $travel->pivot->is_promise : '',
+				'group' => isset($travel->pivot->group) ? $travel->pivot->group : '',
+				'room' => isset($travel->pivot->room) ? $travel->pivot->room : '',
+			],
 		];
 	}
 
