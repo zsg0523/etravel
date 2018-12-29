@@ -56,7 +56,6 @@ $api->version('v1', [
 			$api->post('images','ImagesController@store')->name('api.images.store');
 			// 编辑用户资料
 			$api->patch('user','UsersController@update')->name('api.user.update');
-
 			
 			// 创建新闻
 			$api->post('new','NewsController@store')->name('api.news.store');
@@ -65,21 +64,18 @@ $api->version('v1', [
 			// 删除新闻	
 			$api->delete('new/{new}','NewsController@destroy')->name('api.news.destroy');
 
-			
-
-
 			// 旅游团基本信息
 			$api->get('travels','TravelsController@index')->name('api.travel.index');
 			// 用户的旅游团
 			$api->get('users/{user}/travels', 'TravelsController@userIndex')->name('api.users.travels.index');
 			// 旅游团详情
-			$api->get('travel/{travel}','TravelsController@show')->name('api.travel.show');
+			$api->get('travels/{travel}','TravelsController@show')->name('api.travel.show');
 			// 创建旅游信息
-			$api->post('travel','TravelsController@store')->name('api.travel.store');
+			$api->post('travels','TravelsController@store')->name('api.travel.store');
 			// 更新旅游信息	
-			$api->patch('travel/{travel}','TravelsController@update')->name('api.travel.update');
+			$api->patch('travels/{travel}','TravelsController@update')->name('api.travel.update');
 			// 删除旅游项目
-			$api->delete('travel/{travel}','TravelsController@destroy')->name('api.travel.destroy');
+			$api->delete('travels/{travel}','TravelsController@destroy')->name('api.travel.destroy');
 
 			// 所有紧急联系人
 			$api->get('telephones', 'TelephoneController@index')->name('api.telephone.index');
