@@ -49,6 +49,7 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasOne(Student::class);
     }
 
+    /** [groups 用户的分组信息] */
     public function groups()
     {
         return $this->hasMany(Group::class);
@@ -60,12 +61,20 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsToMany(Travel::class, 'groups')->withPivot('room', 'group', 'is_promise', 'duty');
     }
 
+    /** [questions 用户回答学习工作纸问题] */
+    public function questions()
+    {
+        return $this->belongsToMany(Question::class, 'answers');
+    }
+
+    /** [answers 用户工作纸答案] */
     public function answers()
     {
         return $this->hasMany(Answer::class);
     }
 
 
+    /** [summaries 用户总结] */
     public function summaries()
     {
         return $this->hasMany(Write::class);
