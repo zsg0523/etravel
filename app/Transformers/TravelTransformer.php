@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-05 10:11:20
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-28 18:54:06
+ * @Last Modified time: 2018-12-29 17:18:33
  */
 namespace App\Transformers;
 
@@ -22,6 +22,10 @@ class TravelTransformer extends TransformerAbstract
 			'travel_name' => $travel->travel_name,
 			'introduction' => $travel->travel_introduction,
 			'travel_at' => $travel->travel_at,
+			'assembly_at' => $travel->assembly_at,
+			'assembly_station' => $travel->assembly_station,
+			'dissolution_at' => $travel->dissolution_at,
+			'dissolution_station' => $travel->dissolution_station,
 			'created_at' => $travel->created_at->toDateTimeString(),
 			'updated_at' => $travel->updated_at->toDateTimeString(),
 			'pivot' => [
