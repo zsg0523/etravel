@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-03 18:57:23
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-26 17:55:47
+ * @Last Modified time: 2018-12-29 16:18:47
  */
 namespace App\Transformers;
 
@@ -23,6 +23,7 @@ class UserTransformer extends TransformerAbstract
 			'name' => $user->name,
 			'phone' => $user->phone,
 			'email' => $user->email,
+			'phone' => $user->phone,
 			'avatar' => $user->avatar,
 			'introduction' => $user->introduction,
 			'created_at' => $user->created_at->toDateTimeString(),

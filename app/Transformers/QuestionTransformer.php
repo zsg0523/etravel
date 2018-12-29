@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-16 21:15:49
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-17 17:09:24
+ * @Last Modified time: 2018-12-29 11:14:02
  */
 namespace App\Transformers;
 
@@ -20,7 +20,12 @@ class QuestionTransformer extends TransformerAbstract
 		return [
 			'id' => $question->id,
 			'study_id' => $question->study_id,
-			'content' => $question->content
+			'content' => $question->content,
+			'pivot' => [
+				'user_id' => isset($question->pivot->user_id) ? $question->pivot->user_id : '',
+				'answer' => isset($question->pivot->content) ? $question->pivot->content : '',
+				'created_at' => isset($question->pivot->created_at) ? $question->pivot->created_at->diffForHumans() : '',
+			],
 		];
 	}
 

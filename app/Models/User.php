@@ -64,7 +64,7 @@ class User extends Authenticatable implements JWTSubject
     /** [questions 用户回答学习工作纸问题] */
     public function questions()
     {
-        return $this->belongsToMany(Question::class, 'answers');
+        return $this->belongsToMany(Question::class, 'answers')->withPivot('content')->withTimesTamps();
     }
 
     /** [answers 用户工作纸答案] */

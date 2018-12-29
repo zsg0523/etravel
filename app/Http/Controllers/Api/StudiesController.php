@@ -15,7 +15,7 @@ class StudiesController extends Controller
     	return $this->response->collection(Study::all(), new StudyTransformer());
     }
 
-    /** [routeIndex 行程下所有路由] */
+    /** [routeIndex 行程下所有学习工作纸] */
     public function routeIndex(Route $route)
     {
     	return $this->response->collection($route->studies, new StudyTransformer());

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Question;
 use App\Models\Study;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\QuestionRequest;
 use App\Transformers\QuestionTransformer;
@@ -18,6 +19,11 @@ class QuestionsController extends Controller
     public function studyIndex(Study $study)
     {
     	return $this->response->collection($study->questions, new QuestionTransformer());
+    }
+
+    public function userIndex(User $user)
+    {
+        return $this->response->collection($user->questions, new QuestionTransformer());
     }
 
     public function show(Study $study, Question $question)

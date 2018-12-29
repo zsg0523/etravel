@@ -220,17 +220,19 @@ $api->version('v1', [
 			$api->delete('routes/{route}/studies/{study}','StudiesController@destroy')->name('api.routes.studies.destroy');
 
 
-			// 学习工作纸列表
+			// 学习工作纸问题列表
 			$api->get('questions','QuestionsController@index')->name('api.questions.index');
-			// 行程下学习工作纸
+			// 行程下学习工作纸问题
 			$api->get('studies/{study}/questions','QuestionsController@studyIndex')->name('api.studies.questions.index');
-			// 工作纸详情
+			// 用户下学习工作纸问题
+			$api->get('users/{user}/questions', 'QuestionsController@userIndex')->name('api.users.questions.index');
+			// 工作纸问题详情
 			$api->get('studies/{study}/questions/{question}','QuestionsController@show')->name('api.studies.questions.show'); 
-			// 创建工作纸
+			// 创建工作纸问题
 			$api->post('studies/{study}/questions','QuestionsController@store')->name('api.studies.questions.store');
-			// 更新工作纸
+			// 更新工作纸问题
 			$api->patch('studies/{study}/questions/{question}','QuestionsController@update')->name('api.studies.questions.update');
-			// 删除工作纸
+			// 删除工作纸问题
 			$api->delete('studies/{study}/questions/{question}','QuestionsController@destroy')->name('api.studies.questions.destroy');
 
 
