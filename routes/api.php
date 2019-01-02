@@ -166,13 +166,13 @@ $api->version('v1', [
 			// 单个用户分组安排
 			$api->get('users/{user}/groups','GroupsController@userIndex')->name('api.users.groups.index');
 			// 单个分组安排详情
-			$api->get('users/{user}/travels/{travel}/groups/{group}','GroupsController@show')->name('api.users.travels.groups.show');
+			$api->get('travels/{travel}/groups/{group}','GroupsController@show')->name('api.travels.groups.show');
 			// 增加分组安排
-			$api->post('travel/{travel}/user/{user}/group','GroupsController@store')->name('api.group.store');
+			$api->post('travels/{travel}/groups','GroupsController@store')->name('api.group.store');
 			// 更新分组安排
-			$api->patch('travel/{travel}/user/{user}/group/{group}','GroupsController@update')->name('api.group.update');
+			$api->patch('travels/{travel}/groups/{group}','GroupsController@update')->name('api.group.update');
 			// 删除分组安排
-			$api->delete('travel/{travel}/user/{user}/group/{group}','GroupsController@destroy')->name('api.group.destroy');
+			$api->delete('travels/{travel}/groups/{group}','GroupsController@destroy')->name('api.group.destroy');
 
 
 			// 所有行程安排

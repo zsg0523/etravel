@@ -32,10 +32,10 @@ class GroupsController extends Controller
     	return $this->response->collection($groups, new GroupTransformer());
     }
 
-    /** [show 用户分组安排详情] */
-    public function show(User $user,Travel $travel, Group $group)
+    /** [show 单个分组安排详情] */
+    public function show(Travel $travel, Group $group)
     {
-        if($group->user_id != $user->id || $group->travel_id != $travel->id) {
+        if($group->user_id != $this->user()->id || $group->travel_id != $travel->id) {
             return $this->response->errorBadRequest();
         }
         
@@ -43,11 +43,11 @@ class GroupsController extends Controller
     }
 
     /** [store 新建分组] */
-    public function store(GroupRequest $request, Travel $travel, User $user, Group $group)
+    public function store(GroupRequest $request, Travel $travel, Group $group)
     {
     	$group->fill($request->all());
     	$group->travel_id = $travel->id;
-    	$group->user_id = $user->id;
+    	$group->user_id = $this->user()->id;
     	$group->save();
 
     	return $this->response->item($group, new GroupTransformer())->setStatusCode(201);
@@ -55,18 +55,18 @@ class GroupsController extends Controller
     }
 
     /** [update 更新分组安排] */
-    public function update(GroupRequest $request, Travel $travel, User $user, Group $group)
+    public function update(GroupRequest $request, Travel $travel, Group $group)
     {
     	$group->fill($request->all());
     	$group->travel_id = $travel->id;
-    	$group->user_id = $user->id;
+    	$group->user_id = $this->user()->id;
     	$group->update();
 
     	return $this->response->item($group, new GroupTransformer());
     }
 
     /** [destroy 删除分组信息] */
-    public function destroy(Travel $travel, User $user, Group $group)
+    public function destroy(Travel $travel, Group $group)
     {
     	$group->delete();
 
