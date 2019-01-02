@@ -18,9 +18,9 @@ class Travel extends Model
         return $this->hasMany(Telephone::class);
     }
 
-    public function assembly()
+    public function assemblies()
     {
-    	return $this->hasOne(Assembly::class);
+    	return $this->hasMany(Assembly::class);
     }
 
     public function flight()

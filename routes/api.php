@@ -111,6 +111,19 @@ $api->version('v1', [
 			// 删除酒店
 			$api->delete('hotel/{hotel}','HotelsController@destroy')->name('api.hotels.destroy');
 
+			// 领队老师
+			$api->get('leaders', 'LeadersController@index')->name('api.leaders.index');
+			// 领队老师详情
+			$api->get('travels/{travel}/leaders/{assembly}', 'LeadersController@show')->name('api.leaders.show');
+			// 添加领队老师
+			$api->post('travels/{travel}/leaders', 'LeadersController@store')->name('api.leaders.store');
+			// 编辑领队老师
+			$api->patch('travels/{travel}/leaders/{assembly}', 'LeadersController@update')->name('api.leaders.update');
+			// 删除领队老师
+			$api->delete('travels/{travel}/leaders/{assembly}', 'LeadersController@destroy')->name('api.leaders.destroy');
+
+
+
 
 			// 分类列表
 			$api->get('categories','RuleCategoriesController@index')->name('api.categories.index');

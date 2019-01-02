@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-10 11:32:32
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-29 16:27:13
+ * @Last Modified time: 2018-12-29 17:57:54
  */
 namespace App\Transformers;
 
@@ -19,9 +19,9 @@ class AssemblyTransformer extends TransformerAbstract
 		return [
 			'id' => $assembly->id,
 			'travel_id' => $assembly->travel_id,
-			'assembly_station' => $assembly->assembly_station,
-			'assembly_at' => $assembly->assembly_at,
-			'dissolution_at' => $assembly->dissolution_at
+			'leader' => $assembly->leader,
+			'duty' => $assembly->duty,
+			'phone' => $assembly->phone
 		];
 	}
 }
