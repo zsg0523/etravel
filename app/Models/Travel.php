@@ -39,6 +39,11 @@ class Travel extends Model
         return $this->hasMany(Group::class);
     }
 
+    public function rule_categories()
+    {
+        return $this->hasMany(RuleCategory::class);
+    }
+
     public function routes()
     {
         return $this->hasMany(Route::class);

@@ -8,7 +8,7 @@ class Rule extends Model
 {
     protected $fillable = ['rule_category_id','rule'];
 
-    public function category()
+    public function ruleCategory()
     {
     	return $this->belongsTo(RuleCategory::class);
     }

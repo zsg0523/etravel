@@ -130,28 +130,29 @@ $api->version('v1', [
 			// 某个类型分类
 			$api->get('type/categories','RuleCategoriesController@typeIndex')->name('api.type.categories.index');
 			// 创建分类
-			$api->post('category','RuleCategoriesController@store')->name('api.category.store');
+			$api->post('travels/{travel}/categories','RuleCategoriesController@store')->name('api.categories.store');
 			// 分类详情
-			$api->get('category/{category}','RuleCategoriesController@show')->name('api.category.show');
+			$api->get('travels/{travel}/categories/{category}','RuleCategoriesController@show')->name('api.categories.show');
 			// 更新分类
-			$api->patch('category/{category}','RuleCategoriesController@update')->name('api.category.update');
+			$api->patch('travels/{travel}/categories/{category}','RuleCategoriesController@update')->name('api.categories.update');
 			// 删除分类
-			$api->delete('category/{category}','RuleCategoriesController@destroy')->name('api.category.destroy');
+			$api->delete('travels/{travel}/categories/{category}','RuleCategoriesController@destroy')->name('api.categories.destroy');
 
 
 			// 守则列表
 			$api->get('rules','RulesController@index')->name('api.rules.index');
 			// 我的承诺
-			$api->get('promise','RulesController@promise')->name('api.promise.index');
+			$api->get('travels/{travel}/promises','RulesController@promise')->name('api.travels.promises.index');
 			// 守则详情
-			$api->get('rule/{rule}','RulesController@show')->name('api.rules.show');
+			$api->get('rules/{rule}','RulesController@show')->name('api.rules.show');
 			// 创建守则
-			$api->post('rule','RulesController@store')->name('api.rules.store');
+			$api->post('rules','RulesController@store')->name('api.rules.store');
 			// 更新守则
-			$api->patch('rule/{rule}','RulesController@update')->name('api.rules.update');
+			$api->patch('rules/{rule}','RulesController@update')->name('api.rules.update');
 			// 删除守则
-			$api->delete('rule/{rule}','RulesController@destroy')->name('api.rules.destroy');
-
+			$api->delete('rules/{rule}','RulesController@destroy')->name('api.rules.destroy');
+			// 行李清单列表
+			$api->get('travels/{travel}/packages','RulesController@packages')->name('api.travels.packages.index');
 			// 检查行李清单
 			$api->post('users/{user}/rules/{rule}/examines','ExaminesController@store')->name('api.users.rules.examines.store');
 			// 更新行李清单
