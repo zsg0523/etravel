@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-12 12:19:46
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-03 23:37:52
+ * @Last Modified time: 2019-01-04 15:47:20
  */
 namespace App\Transformers;
 
@@ -24,18 +24,22 @@ class RuleTransformer extends TransformerAbstract
 
 	public function transform(Rule $rule)
 	{
-		if (! $this->user_id) {
+		if ($examine = $rule->examines()->where('user_id', $this->user_id)->first()) {
 			return [
 				'id' => $rule->id,
 				'rule_category_id' => $rule->rule_category_id,
-				'rule' => $rule->rule
+				'rule' => $rule->rule,
+				'examines' => $rule->examines()->where('user_id', $this->user_id)->first(),
 			];
 		} else {
 			return [
 				'id' => $rule->id,
 				'rule_category_id' => $rule->rule_category_id,
 				'rule' => $rule->rule,
-				'examines' => $rule->examines()->where('user_id', $this->user_id)->get(),
+				'examines' => [
+					"before" => 0,
+					"after" => 0,
+				],
 			];
 		}
 		

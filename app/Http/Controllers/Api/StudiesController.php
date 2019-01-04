@@ -18,7 +18,7 @@ class StudiesController extends Controller
     /** [routeIndex 行程下所有学习工作纸] */
     public function routeIndex(Route $route)
     {
-    	return $this->response->collection($route->studies, new StudyTransformer());
+    	return $this->response->collection($route->studies, new StudyTransformer($this->user()->id));
     }
 
     /** [show 工作纸详情] */

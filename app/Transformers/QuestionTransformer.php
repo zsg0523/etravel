@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-16 21:15:49
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-29 11:14:02
+ * @Last Modified time: 2019-01-04 15:42:37
  */
 namespace App\Transformers;
 
@@ -15,18 +15,33 @@ class QuestionTransformer extends TransformerAbstract
 {
 	protected $availableIncludes = ['answers','study'];
 
+	protected $user_id;
+
+	public function __construct($user_id)
+	{
+		$this->user_id = $user_id;
+	}
+
 	public function transform(Question $question)
 	{
-		return [
-			'id' => $question->id,
-			'study_id' => $question->study_id,
-			'content' => $question->content,
-			'pivot' => [
-				'user_id' => isset($question->pivot->user_id) ? $question->pivot->user_id : '',
-				'answer' => isset($question->pivot->content) ? $question->pivot->content : '',
-				'created_at' => isset($question->pivot->created_at) ? $question->pivot->created_at->diffForHumans() : '',
-			],
-		];
+		if ($answer = $question->answers()->where('user_id', $this->user_id)->first()) {
+			return [
+				'id' => $question->id,
+				'study_id' => $question->study_id,
+				'content' => $question->content,
+				'is_answer' =>  true,
+				'answer' => $answer
+			];
+		} else {
+			return [
+				'id' => $question->id,
+				'study_id' => $question->study_id,
+				'content' => $question->content,
+				'is_answer' => false,
+				'answer' => $answer
+			];
+		}
+		
 	}
 
 	public function includeAnswers(Question $question)

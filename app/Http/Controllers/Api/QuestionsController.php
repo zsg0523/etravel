@@ -13,17 +13,18 @@ class QuestionsController extends Controller
 {
     public function index()
     {
-    	return $this->response->collection(Question::all(), new QuestionTransformer());
+    	return $this->response->collection(Question::all(), new QuestionTransformer(null));
     }
 
+    /** [studyIndex 工作纸下所有问题] */
     public function studyIndex(Study $study)
     {
-    	return $this->response->collection($study->questions, new QuestionTransformer());
+    	return $this->response->collection($study->questions, new QuestionTransformer($this->user()->id));
     }
 
     public function userIndex(User $user)
     {
-        return $this->response->collection($user->questions, new QuestionTransformer());
+        return $this->response->collection($user->questions, new QuestionTransformer(null));
     }
 
     public function show(Study $study, Question $question)
@@ -31,8 +32,7 @@ class QuestionsController extends Controller
     	if($question->study_id != $study->id) {
     		return $this->response->errorBadRequest();
     	}
-
-    	return $this->response->item($question, new QuestionTransformer());
+    	return $this->response->item($question, new QuestionTransformer(null));
     }
 
     public function store(QuestionRequest $request, Study $study, Question $question)
@@ -41,7 +41,7 @@ class QuestionsController extends Controller
     	$question->study_id = $study->id;
     	$question->save();
 
-    	return $this->response->item($question, new QuestionTransformer())->setStatusCode(201);
+    	return $this->response->item($question, new QuestionTransformer(null))->setStatusCode(201);
     }
 
     public function update(QuestionRequest $request, Study $study, Question $question)
@@ -53,7 +53,7 @@ class QuestionsController extends Controller
     	$question->fill($request->all());
     	$question->update();
 
-    	return $this->response->item($question, new QuestionTransformer());
+    	return $this->response->item($question, new QuestionTransformer(null));
     }
 
 
