@@ -31,6 +31,13 @@ class ExaminesController extends Controller
     	return $this->response->item($examine, new ExamineTransformer());
     }
 
+    /** [destroy 删除行李清单] */
+    public function destroy(Examine $examine)
+    {
+        $examine->delete();
+        return $this->response->noContent();
+    }
+
 
 
 

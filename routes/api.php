@@ -140,23 +140,25 @@ $api->version('v1', [
 
 
 			// 守则列表
-			$api->get('rules','RulesController@index')->name('api.rules.index');
+			$api->get('rules', 'RulesController@index')->name('api.rules.index');
 			// 我的承诺
-			$api->get('travels/{travel}/promises','RulesController@promise')->name('api.travels.promises.index');
+			$api->get('travels/{travel}/promises', 'RulesController@promise')->name('api.travels.promises.index');
 			// 守则详情
-			$api->get('rules/{rule}','RulesController@show')->name('api.rules.show');
+			$api->get('rules/{rule}', 'RulesController@show')->name('api.rules.show');
 			// 创建守则
-			$api->post('rules','RulesController@store')->name('api.rules.store');
+			$api->post('rules', 'RulesController@store')->name('api.rules.store');
 			// 更新守则
-			$api->patch('rules/{rule}','RulesController@update')->name('api.rules.update');
+			$api->patch('rules/{rule}', 'RulesController@update')->name('api.rules.update');
 			// 删除守则
-			$api->delete('rules/{rule}','RulesController@destroy')->name('api.rules.destroy');
+			$api->delete('rules/{rule}', 'RulesController@destroy')->name('api.rules.destroy');
 			// 行李清单列表
-			$api->get('travels/{travel}/packages','RulesController@packages')->name('api.travels.packages.index');
+			$api->get('travels/{travel}/packages', 'RulesController@packages')->name('api.travels.packages.index');
 			// 检查行李清单
-			$api->post('users/{user}/rules/{rule}/examines','ExaminesController@store')->name('api.users.rules.examines.store');
+			$api->post('users/{user}/rules/{rule}/examines', 'ExaminesController@store')->name('api.users.rules.examines.store');
 			// 更新行李清单
-			$api->patch('users/{user}/rules/{rule}/examines/{examine}','ExaminesController@update')->name('api.users.rules.examines.update');
+			$api->patch('users/{user}/rules/{rule}/examines/{examine}', 'ExaminesController@update')->name('api.users.rules.examines.update');
+			// 删除行李清单
+			$api->delete('examines/{examine}', 'ExaminesController@destroy')->name('api.examines.destroy');
 			
 			
 
