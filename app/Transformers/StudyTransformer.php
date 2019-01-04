@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-15 10:41:00
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-04 15:26:23
+ * @Last Modified time: 2019-01-04 19:12:36
  */
 namespace App\Transformers;
 
@@ -17,7 +17,7 @@ class StudyTransformer extends TransformerAbstract
 
 	protected $user_id;
 
-	public function __contructs($user_id)
+	public function __construct($user_id)
 	{
 		$this->user_id = $user_id;
 	}
