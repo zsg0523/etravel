@@ -38,21 +38,21 @@ class WritesController extends Controller
     }
 
     /** [store 增加感想] */
-    public function store(WriteRequest $request, User $user, Travel $travel, WriteTitle $title, Write $write)
+    public function store(WriteRequest $request, Travel $travel, WriteTitle $title, Write $write)
     {
     	$write->fill($request->all());
     	$write->write_title_id = $title->id;
-    	$write->user_id = $user->id;
-    	$write->travel_id = $user->id;
+    	$write->user_id = $this->user()->id;
+    	$write->travel_id = $this->user()->id;
     	$write->save();
 
     	return $this->response->item($write, new WriteTransformer())->setStatusCode(201);
     }
 
     /** [update 更新感想] */
-    public function update(WriteRequest $request, User $user, Travel $travel, WriteTitle $title, Write $write)
+    public function update(WriteRequest $request, Travel $travel, WriteTitle $title, Write $write)
     {
-    	if ($write->user_id != $user->id || $write->travel_id != $travel->id || $write->write_title_id != $title->id) {
+    	if ($write->travel_id != $travel->id || $write->write_title_id != $title->id) {
     		return $this->response->errorBadRequest();
     	}
     	$write->update($request->all());
@@ -61,9 +61,9 @@ class WritesController extends Controller
     }
 
     /** [destroy 删除感想] */
-    public function destroy(WriteRequest $request, User $user, Travel $travel, WriteTitle $title, Write $write)
+    public function destroy(WriteRequest $request, Travel $travel, WriteTitle $title, Write $write)
     {
-    	if ($write->user_id != $user->id || $write->travel_id != $travel->id || $write->write_title_id != $title->id) {
+    	if ($write->travel_id != $travel->id || $write->write_title_id != $title->id) {
     		return $this->response->errorBadRequest();
     	}
 

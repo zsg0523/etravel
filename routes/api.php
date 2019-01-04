@@ -268,7 +268,7 @@ $api->version('v1', [
 			$api->get('titles','WriteTitlesController@index')->name('api.titles.index');
 			// 标题详情
 			$api->get('titles/{writetitle}','WriteTitlesController@show')->name('api.titles.show');
-			// 增加感谢标题
+			// 增加标题
 			$api->post('titles','WriteTitlesController@store')->name('api.titles.store');
 			// 更新标题
 			$api->patch('titles/{writetitle}','WriteTitlesController@update')->name('api.titles.update');
@@ -276,20 +276,20 @@ $api->version('v1', [
 			$api->delete('titles/{writetitle}','WriteTitlesController@destroy')->name('api.titles.destroy');
 
 
-			// 所有感想
+			// 所有旅游所有感想
 			$api->get('summaries','WritesController@index')->name('api.summaries.index');
-			// 用户感想
+			// 用户下所有感想
 			$api->get('users/{user}/summaries','WritesController@userIndex')->name('api.users.summaries.index');
-			// 旅游感想
+			// 旅游下所有感想
 			$api->get('travels/{travel}/summaries','WritesController@travelIndex')->name('api.travels.summaries.index');
-			// 用户旅游感想
-			$api->get('users/{user}/travels/{travel}/writetitles/{title}','WritesController@show')->name('api.summaries.show');			
+			// 用户单篇感想
+			$api->get('users/{user}/travels/{travel}/writetitles/{title}','WritesController@show')->name('api.users.summaries.show');			
 			// 创建感想
-			$api->post('users/{user}/travels/{travel}/writetitles/{title}/summaries','WritesController@store')->name('api.users.travels.store');
+			$api->post('travels/{travel}/writetitles/{title}/summaries','WritesController@store')->name('api.travels.store');
 			// 更新感想
-			$api->patch('users/{user}/travels/{travel}/writetitles/{title}/summaries/{write}','WritesController@update')->name('api.users.travels.summaries.update');
+			$api->patch('travels/{travel}/writetitles/{title}/summaries/{write}','WritesController@update')->name('api.travels.summaries.update');
 			// 删除感想
-			$api->delete('users/{user}/travels/{travel}/writetitles/{title}/summaries/{write}','WritesController@destroy')->name('api.users.travels.summaries.destroy');
+			$api->delete('travels/{travel}/writetitles/{title}/summaries/{write}','WritesController@destroy')->name('api.travels.summaries.destroy');
 
 
 
