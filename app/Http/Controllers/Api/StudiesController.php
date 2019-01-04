@@ -28,7 +28,7 @@ class StudiesController extends Controller
     		return $this->response->errorBadRequest();
     	}
 
-    	return $this->response->item($study, new StudyTransformer());
+    	return $this->response->item($study, new StudyTransformer($this->user()->id));
     }
 
 
@@ -38,7 +38,7 @@ class StudiesController extends Controller
     	$study->route_id = $route->id;
     	$study->save();
 
-    	return $this->response->item($study, new StudyTransformer())->setStatusCode(201);
+    	return $this->response->item($study, new StudyTransformer(null))->setStatusCode(201);
     }
 
     public function update(StudyRequest $request, Route $route, Study $study)
@@ -50,7 +50,7 @@ class StudiesController extends Controller
     	$study->fill($request->all());
     	$study->update();
 
-    	return $this->response->item($study, new StudyTransformer());
+    	return $this->response->item($study, new StudyTransformer(null));
     }
 
     public function destroy(Route $route, Study $study)
