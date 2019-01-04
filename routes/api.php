@@ -232,7 +232,7 @@ $api->version('v1', [
 
 			// 学习工作纸问题列表
 			$api->get('questions','QuestionsController@index')->name('api.questions.index');
-			// 行程下学习工作纸问题
+			// 工作纸下学习工作纸问题
 			$api->get('studies/{study}/questions','QuestionsController@studyIndex')->name('api.studies.questions.index');
 			// 用户下学习工作纸问题
 			$api->get('users/{user}/questions', 'QuestionsController@userIndex')->name('api.users.questions.index');
@@ -253,13 +253,13 @@ $api->version('v1', [
 			// 问题所有答案
 			$api->get('questions/{question}/answers','AnswersController@questionIndex')->name('api.questions.answers.index');
 			// 答案详情
-			$api->get('questions/{question}/users/{user}/answers/{answer}','AnswersController@show')->name('api.questions.users.answers.show');
+			$api->get('questions/{question}/answers/{answer}','AnswersController@show')->name('api.questions.users.answers.show');
 			// 创建答案
-			$api->post('questions/{question}/users/{user}/answers','AnswersController@store')->name('api.questions.users.store');
+			$api->post('questions/{question}/answers','AnswersController@store')->name('api.questions.store');
 			// 更新答案
-			$api->patch('questions/{question}/users/{user}/answers/{answer}','AnswersController@update')->name('api.questions.users.answers.update');
+			$api->patch('questions/{question}/answers/{answer}','AnswersController@update')->name('api.questions.answers.update');
 			// 删除答案
-			$api->delete('questions/{question}/users/{user}/answers/{answer}','AnswersController@destroy')->name('api.questions.users.answers.destroy');
+			$api->delete('questions/{question}/answers/{answer}','AnswersController@destroy')->name('api.questions.answers.destroy');
 
 
 			// 感想标题列表

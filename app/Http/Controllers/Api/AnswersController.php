@@ -11,44 +11,50 @@ use App\Transformers\AnswerTransformer;
 
 class AnswersController extends Controller
 {
+
     public function index()
     {
     	return $this->response->collection(Answer::all(), new AnswerTransformer());
     }
 
+    /** [userIndex 用户的答案] */
     public function userIndex(User $user)
     {
-    	return $this->response->collection($user->answers, new AnswerTransformer());
+    	return $this->response->item($user->questions, new AnswerTransformer());
     }
 
+    /** [questionIndex 问题下所有答案] */
     public function questionIndex(Question $question)
     {
     	return $this->response->collection($question->answers, new AnswerTransformer());
     }
 
-    public function show(Question $question, User $user, Answer $answer)
+    /** [show 答案详情] */
+    public function show(Question $question, Answer $answer)
     {
-    	if($answer->user_id != $user->id || $answer->question_id != $question->id) {
+    	if( $answer->question_id != $question->id ) {
     		return $this->response->errorBadRequest();
     	}
 
     	return $this->response->item($answer, new AnswerTransformer());
     }
 
-    public function store(AnswerRequest $request, Question $question, User $user, Answer $answer)
+    /** [store 创建答案] */
+    public function store(AnswerRequest $request, Question $question, Answer $answer)
     {
     	$answer->fill($request->all());
     	$answer->question_id = $question->id;
-    	$answer->user_id = $question->id;
+    	$answer->user_id = $this->user()->id;
     	$answer->save();
 
     	return $this->response->item($answer, new AnswerTransformer())->setStatusCode(201);
 
     }
 
-    public function update(AnswerRequest $request, Question $question, User $user, Answer $answer)
+    /** [update 编辑答案] */
+    public function update(AnswerRequest $request, Question $question, Answer $answer)
     {
-    	if($answer->user_id != $user->id || $answer->question_id != $question->id) {
+    	if($answer->question_id != $question->id) {
     		return $this->response->errorBadRequest();
     	}
 
@@ -58,9 +64,10 @@ class AnswersController extends Controller
     	return $this->response->item($answer, new AnswerTransformer());
     }
 
-    public function destroy(Question $question, User $user, Answer $answer)
+    /** [destroy 删除答案] */
+    public function destroy(Question $question, Answer $answer)
     {
-    	if($answer->user_id != $user->id || $answer->question_id != $question->id) {
+    	if($answer->question_id != $question->id) {
     		return $this->response->errorBadRequest();
     	}
 
