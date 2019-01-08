@@ -31,6 +31,11 @@ class User extends Authenticatable implements JWTSubject
         'password', 'remember_token',
     ];
 
+    public function isAuthorOf($model)
+    {
+        return $this->id == $model->user_id;
+    }
+
 
     // Rest omitted for brevity
     public function getJWTIdentifier()

@@ -55,17 +55,23 @@ class WritesController extends Controller
     	if ($write->travel_id != $travel->id || $write->write_title_id != $title->id) {
     		return $this->response->errorBadRequest();
     	}
+
+        // 当前访问用户是否有权更新
+        $this->authorize('update', $write);
+
     	$write->update($request->all());
 
     	return $this->response->item($write, new WriteTransformer());
     }
 
     /** [destroy 删除感想] */
-    public function destroy(WriteRequest $request, Travel $travel, WriteTitle $title, Write $write)
+    public function destroy(Travel $travel, WriteTitle $title, Write $write)
     {
     	if ($write->travel_id != $travel->id || $write->write_title_id != $title->id) {
     		return $this->response->errorBadRequest();
     	}
+
+        $this->authorize('delete', $write);
 
     	$write->delete();
 
