@@ -7,7 +7,7 @@ use App\Models\Write;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class WritePolicy
+class WritePolicy extends Policy
 {
     use HandlesAuthorization;
     
