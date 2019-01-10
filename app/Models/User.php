@@ -12,6 +12,7 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +20,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','avatar','introduction'
+        'name', 'email', 'password', 'avatar', 'introduction', 'phone'
     ];
 
     /**
@@ -30,6 +31,35 @@ class User extends Authenticatable implements JWTSubject
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /** [isAuthorOf 判断身份] */
+    public function isAuthorOf($model)
+    {
+        return $this->id == $model->user_id;
+    }
+
+    /** [setPasswordAttribute 修改器修改密码] */
+    public function setPasswordAttribute($value)
+    {
+        if (strlen($value) != 60) {
+            // 不等于 60 ，不做加密处理
+            $value = bcrypt($value);
+        }
+
+        $this->attributes['password'] = $value;
+    }
+
+
+    /** [setAvatarAttribute 修改头像，补全连接地址] */
+    public function setAvatarAttribute($path)
+    {
+        if ( ! starts_with($path, 'http') ) {
+             // 拼接完整的url
+             $path = config('app.url')."/uploads/images/avatars/$path";
+        }
+
+        $this->attributes['avatar'] = $path;
+    }
 
 
     // Rest omitted for brevity
@@ -49,8 +79,58 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasOne(Student::class);
     }
 
+    /** [groups 用户的分组信息] */
     public function groups()
     {
         return $this->hasMany(Group::class);
     }
+
+    /** [users 属于多个用户] */
+    public function travels()
+    {
+        return $this->belongsToMany(Travel::class, 'groups')->withPivot('room', 'group', 'is_promise', 'duty');
+    }
+
+    /** [questions 用户回答学习工作纸问题] */
+    public function questions()
+    {
+        return $this->belongsToMany(Question::class, 'answers')->withPivot('content')->withTimesTamps();
+    }
+
+    /** [answers 用户工作纸答案] */
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
+    }
+
+
+    /** [summaries 用户总结] */
+    public function summaries()
+    {
+        return $this->hasMany(Write::class);
+    }
+
+    public function examines()
+    {
+        return $this->hasMany(Examine::class);
+    }
+
+    public function rules()
+    {
+        return $this->belongsToMany(Rule::class, 'examines')->withPivot('before', 'after');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

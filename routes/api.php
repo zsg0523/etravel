@@ -27,6 +27,8 @@ $api->version('v1', [
 		'expires' => config('api.rate_limits.sign.expires'),
 	], function($api) {
 		// 游客可访问接口
+		// 短信验证码
+		$api->post('verificationCodes', 'VerificationCodesController@store')->name('api.verificationCodes.store'); 
 		// 用户注册
 		$api->post('users','UsersController@store')->name('api.users.store');
 		// 用户登录
@@ -54,7 +56,6 @@ $api->version('v1', [
 			$api->post('images','ImagesController@store')->name('api.images.store');
 			// 编辑用户资料
 			$api->patch('user','UsersController@update')->name('api.user.update');
-
 			
 			// 创建新闻
 			$api->post('new','NewsController@store')->name('api.news.store');
@@ -63,26 +64,29 @@ $api->version('v1', [
 			// 删除新闻	
 			$api->delete('new/{new}','NewsController@destroy')->name('api.news.destroy');
 
-			// 电话簿
-			$api->get('telephone','TelephoneController@index')->name('api.telephone.index');
-			// 增加联系人电话
-			$api->post('telephone','TelephoneController@store')->name('api.telephone.store');
-			// 更新联系人电话
-			$api->patch('telephone/{telephone}','TelephoneController@update')->name('api.telephone.update');
-			// 删除联系人电话
-			$api->delete('telephone/{telephone}','TelephoneController@destroy')->name('api.telephone.destroy');
-
-
-			// 旅游基本信息
+			// 旅游团基本信息
 			$api->get('travels','TravelsController@index')->name('api.travel.index');
-			// 旅游详情
-			$api->get('travel/{travel}','TravelsController@show')->name('api.travel.show');
+			// 用户的旅游团
+			$api->get('users/{user}/travels', 'TravelsController@userIndex')->name('api.users.travels.index');
+			// 旅游团详情
+			$api->get('travels/{travel}','TravelsController@show')->name('api.travel.show');
 			// 创建旅游信息
-			$api->post('travel','TravelsController@store')->name('api.travel.store');
+			$api->post('travels','TravelsController@store')->name('api.travel.store');
 			// 更新旅游信息	
-			$api->patch('travel/{travel}','TravelsController@update')->name('api.travel.update');
+			$api->patch('travels/{travel}','TravelsController@update')->name('api.travel.update');
 			// 删除旅游项目
-			$api->delete('travel/{travel}','TravelsController@destroy')->name('api.travel.destroy');
+			$api->delete('travels/{travel}','TravelsController@destroy')->name('api.travel.destroy');
+
+			// 所有紧急联系人
+			$api->get('telephones', 'TelephoneController@index')->name('api.telephone.index');
+			// 旅游团紧急联系人
+			$api->get('travels/{travel}/telephones', 'TelephoneController@travelIndex')->name('api.travels.telephones.index');
+			// 增加联系人电话
+			$api->post('telephones', 'TelephoneController@store')->name('api.telephone.store');
+			// 更新联系人电话
+			$api->patch('telephones/{telephone}', 'TelephoneController@update')->name('api.telephone.update');
+			// 删除联系人电话
+			$api->delete('telephones/{telephone}', 'TelephoneController@destroy')->name('api.telephone.destroy');
 
 			// 航班信息列表
 			$api->get('flights','FlightsController@index')->name('api.flights.index');
@@ -107,50 +111,71 @@ $api->version('v1', [
 			// 删除酒店
 			$api->delete('hotel/{hotel}','HotelsController@destroy')->name('api.hotels.destroy');
 
+			// 领队老师
+			$api->get('leaders', 'LeadersController@index')->name('api.leaders.index');
+			// 领队老师详情
+			$api->get('travels/{travel}/leaders/{assembly}', 'LeadersController@show')->name('api.leaders.show');
+			// 添加领队老师
+			$api->post('travels/{travel}/leaders', 'LeadersController@store')->name('api.leaders.store');
+			// 编辑领队老师
+			$api->patch('travels/{travel}/leaders/{assembly}', 'LeadersController@update')->name('api.leaders.update');
+			// 删除领队老师
+			$api->delete('travels/{travel}/leaders/{assembly}', 'LeadersController@destroy')->name('api.leaders.destroy');
+
+
+
 
 			// 分类列表
 			$api->get('categories','RuleCategoriesController@index')->name('api.categories.index');
 			// 某个类型分类
 			$api->get('type/categories','RuleCategoriesController@typeIndex')->name('api.type.categories.index');
 			// 创建分类
-			$api->post('category','RuleCategoriesController@store')->name('api.category.store');
+			$api->post('travels/{travel}/categories','RuleCategoriesController@store')->name('api.categories.store');
 			// 分类详情
-			$api->get('category/{category}','RuleCategoriesController@show')->name('api.category.show');
+			$api->get('travels/{travel}/categories/{category}','RuleCategoriesController@show')->name('api.categories.show');
 			// 更新分类
-			$api->patch('category/{category}','RuleCategoriesController@update')->name('api.category.update');
+			$api->patch('travels/{travel}/categories/{category}','RuleCategoriesController@update')->name('api.categories.update');
 			// 删除分类
-			$api->delete('category/{category}','RuleCategoriesController@destroy')->name('api.category.destroy');
+			$api->delete('travels/{travel}/categories/{category}','RuleCategoriesController@destroy')->name('api.categories.destroy');
 
 
 			// 守则列表
-			$api->get('rules','RulesController@index')->name('api.rules.index');
+			$api->get('rules', 'RulesController@index')->name('api.rules.index');
 			// 我的承诺
-			$api->get('promise','RulesController@promise')->name('api.promise.index');
+			$api->get('travels/{travel}/promises', 'RulesController@promise')->name('api.travels.promises.index');
 			// 守则详情
-			$api->get('rule/{rule}','RulesController@show')->name('api.rules.show');
+			$api->get('rules/{rule}', 'RulesController@show')->name('api.rules.show');
 			// 创建守则
-			$api->post('rule','RulesController@store')->name('api.rules.store');
+			$api->post('rules', 'RulesController@store')->name('api.rules.store');
 			// 更新守则
-			$api->patch('rule/{rule}','RulesController@update')->name('api.rules.update');
+			$api->patch('rules/{rule}', 'RulesController@update')->name('api.rules.update');
 			// 删除守则
-			$api->delete('rule/{rule}','RulesController@destroy')->name('api.rules.destroy');
+			$api->delete('rules/{rule}', 'RulesController@destroy')->name('api.rules.destroy');
+			// 行李清单列表
+			$api->get('travels/{travel}/packages', 'RulesController@packages')->name('api.travels.packages.index');
+			// 检查行李清单
+			$api->post('users/{user}/rules/{rule}/examines', 'ExaminesController@store')->name('api.users.rules.examines.store');
+			// 更新行李清单
+			$api->patch('users/{user}/rules/{rule}/examines/{examine}', 'ExaminesController@update')->name('api.users.rules.examines.update');
+			// 删除行李清单
+			$api->delete('examines/{examine}', 'ExaminesController@destroy')->name('api.examines.destroy');
 			
-
+			
 
 			// 所有旅行团 人员安排
 			$api->get('groups','GroupsController@index')->name('api.groups.index');
 			// 单个旅行团 人员安排
 			$api->get('travels/{travel}/groups','GroupsController@travelIndex')->name('api.travels.groups.index');
-			// 单个用户 分组安排
+			// 单个用户分组安排
 			$api->get('users/{user}/groups','GroupsController@userIndex')->name('api.users.groups.index');
 			// 单个分组安排详情
-			$api->get('group/{group}','GroupsController@show')->name('api.group.show');
+			$api->get('travels/{travel}/groups/{group}','GroupsController@show')->name('api.travels.groups.show');
 			// 增加分组安排
-			$api->post('travel/{travel}/user/{user}/group','GroupsController@store')->name('api.group.store');
+			$api->post('travels/{travel}/groups','GroupsController@store')->name('api.group.store');
 			// 更新分组安排
-			$api->patch('travel/{travel}/user/{user}/group/{group}','GroupsController@update')->name('api.group.update');
+			$api->patch('travels/{travel}/groups/{group}','GroupsController@update')->name('api.group.update');
 			// 删除分组安排
-			$api->delete('travel/{travel}/user/{user}/group/{group}','GroupsController@destroy')->name('api.group.destroy');
+			$api->delete('travels/{travel}/groups/{group}','GroupsController@destroy')->name('api.group.destroy');
 
 
 			// 所有行程安排
@@ -192,6 +217,81 @@ $api->version('v1', [
 			$api->patch('route/{route}/food/{food}','FoodsController@update')->name('api.route.food.update');
 			// 删除膳食安排
 			$api->delete('route/{route}/food/{food}','FoodsController@destroy')->name('api.route.food.destroy');
+
+			// 学习工作纸列表
+			$api->get('studies','StudiesController@index')->name('api.studies.index');
+			// 行程下学习工作纸
+			$api->get('routes/{route}/studies','StudiesController@routeIndex')->name('api.routes.studies.index');
+			// 工作纸详情
+			$api->get('routes/{route}/studies/{study}','StudiesController@show')->name('api.routes.studies.show'); 
+			// 创建工作纸
+			$api->post('routes/{route}/studies','StudiesController@store')->name('api.routes.studies.store');
+			// 更新工作纸
+			$api->patch('routes/{route}/studies/{study}','StudiesController@update')->name('api.routes.studies.update');
+			// 删除工作纸
+			$api->delete('routes/{route}/studies/{study}','StudiesController@destroy')->name('api.routes.studies.destroy');
+
+
+			// 学习工作纸问题列表
+			$api->get('questions','QuestionsController@index')->name('api.questions.index');
+			// 工作纸下学习工作纸问题
+			$api->get('studies/{study}/questions','QuestionsController@studyIndex')->name('api.studies.questions.index');
+			// 用户下学习工作纸问题
+			$api->get('users/{user}/questions', 'QuestionsController@userIndex')->name('api.users.questions.index');
+			// 工作纸问题详情
+			$api->get('studies/{study}/questions/{question}','QuestionsController@show')->name('api.studies.questions.show'); 
+			// 创建工作纸问题
+			$api->post('studies/{study}/questions','QuestionsController@store')->name('api.studies.questions.store');
+			// 更新工作纸问题
+			$api->patch('studies/{study}/questions/{question}','QuestionsController@update')->name('api.studies.questions.update');
+			// 删除工作纸问题
+			$api->delete('studies/{study}/questions/{question}','QuestionsController@destroy')->name('api.studies.questions.destroy');
+
+
+			// 所有答案列表
+			$api->get('answers','AnswersController@index')->name('api.answers.index');
+			// 用户所有答案 
+			$api->get('users/{user}/answers','AnswersController@userIndex')->name('api.users.answers.index');
+			// 问题所有答案
+			$api->get('questions/{question}/answers','AnswersController@questionIndex')->name('api.questions.answers.index');
+			// 答案详情
+			$api->get('questions/{question}/answers/{answer}','AnswersController@show')->name('api.questions.users.answers.show');
+			// 创建答案
+			$api->post('questions/{question}/answers','AnswersController@store')->name('api.questions.store');
+			// 更新答案
+			$api->patch('questions/{question}/answers/{answer}','AnswersController@update')->name('api.questions.answers.update');
+			// 删除答案
+			$api->delete('questions/{question}/answers/{answer}','AnswersController@destroy')->name('api.questions.answers.destroy');
+
+
+			// 感想标题列表
+			$api->get('titles','WriteTitlesController@index')->name('api.titles.index');
+			// 标题详情
+			$api->get('titles/{writetitle}','WriteTitlesController@show')->name('api.titles.show');
+			// 增加标题
+			$api->post('titles','WriteTitlesController@store')->name('api.titles.store');
+			// 更新标题
+			$api->patch('titles/{writetitle}','WriteTitlesController@update')->name('api.titles.update');
+			// 删除标题
+			$api->delete('titles/{writetitle}','WriteTitlesController@destroy')->name('api.titles.destroy');
+
+
+			// 所有旅游所有感想
+			$api->get('summaries','WritesController@index')->name('api.summaries.index');
+			// 用户下所有感想
+			$api->get('users/{user}/summaries','WritesController@userIndex')->name('api.users.summaries.index');
+			// 旅游下所有感想
+			$api->get('travels/{travel}/summaries','WritesController@travelIndex')->name('api.travels.summaries.index');
+			// 用户单篇感想
+			$api->get('users/{user}/travels/{travel}/writetitles/{title}','WritesController@show')->name('api.users.summaries.show');			
+			// 创建感想
+			$api->post('travels/{travel}/writetitles/{title}/summaries','WritesController@store')->name('api.travels.store');
+			// 更新感想
+			$api->patch('travels/{travel}/writetitles/{title}/summaries/{write}','WritesController@update')->name('api.travels.summaries.update');
+			// 删除感想
+			$api->delete('travels/{travel}/writetitles/{title}/summaries/{write}','WritesController@destroy')->name('api.travels.summaries.destroy');
+
+
 
 
 

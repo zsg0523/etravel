@@ -56,3 +56,23 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## method
+
+创建项目
+git clone https://github.com/zsg0523/etravel.git
+
+修改配置文件,production,数据库信息
+cp .env.example  .env
+
+生成密钥
+php artisan key:generate
+
+运行数据库迁移并填充（特殊字段报错，请修改 database.php 里的字符集为utf-8）
+php artisan migrate --seed 
+
+JWT 的 secret，这个 secret 很重要，用于最后的签名
+php artisan jwt:secret
+
+为用户 ID 为1的生成一个永久有效的测试token
+php artisan etravel:generate-token

@@ -53,6 +53,13 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
+                                        @can('manage_contents')
+                                            <a class="dropdown-item" href="{{ url(config('administrator.uri')) }}">
+                                              <i class="fas fa-tachometer-alt mr-2"></i>
+                                              管理后台
+                                            </a>
+                                            <div class="dropdown-divider"></div>
+                                        @endcan
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
