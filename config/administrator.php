@@ -62,7 +62,13 @@ return array(
         '用户与权限' => [
             'users',
             'roles',
-            'permissions'
+            'permissions',
+        ],
+        '旅游项目' => [
+            'travels',
+            '重要信息' => [
+                'flights',
+            ],
         ],
     ],
 
