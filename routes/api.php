@@ -291,8 +291,8 @@ $api->version('v1', [
 			// 删除感想
 			$api->delete('travels/{travel}/writetitles/{title}/summaries/{write}','WritesController@destroy')->name('api.travels.summaries.destroy');
 
-
-
+			// 获取经纬度
+			$api->post('geode','GeodesController@store')->name('api.geode.store');
 
 
 

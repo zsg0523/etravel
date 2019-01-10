@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('geocode', function () {
+    return \App\Utilities\GaodeMaps::geocodeAddress('天城路1号', '杭州', '浙江');
+});
