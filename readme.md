@@ -59,20 +59,31 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## method
 
-创建项目
+<!-- 创建项目 -->
 git clone https://github.com/zsg0523/etravel.git
 
-修改配置文件,production,数据库信息
+<!-- 修改配置文件,production,数据库信息 -->
 cp .env.example  .env
 
-生成密钥
+<!-- 生成密钥 -->
 php artisan key:generate
 
-运行数据库迁移并填充（特殊字段报错，请修改 database.php 里的字符集为utf-8）
+<!-- 运行数据库迁移并填充（特殊字段报错，请修改 database.php 里的字符集为utf-8） -->
 php artisan migrate --seed 
 
-JWT 的 secret，这个 secret 很重要，用于最后的签名
+<!-- JWT 的 secret，这个 secret 很重要，用于最后的签名 -->
 php artisan jwt:secret
 
-为用户 ID 为1的生成一个永久有效的测试token
+<!-- 为用户 ID 为1的生成一个永久有效的测试token -->
 php artisan etravel:generate-token
+
+
+
+
+
+
+
+
+
+- 使用Redis缓存，缓解服务器读写压力
+- 接入高德地图三方接口
