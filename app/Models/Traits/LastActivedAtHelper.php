@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-11 12:25:04
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-11 19:02:56
+ * @Last Modified time: 2019-01-11 19:06:35
  * 记录 - 通过中间件过滤用户请求，记录用户访问时间到 redis 按日期区分的哈希表
  * 同步 - 新建命令，计划任务每天运行一次此命令，将昨日哈希表的数据同步到数据库中，并删除
  * 读取 - 优先读取当日哈希表里 Redis 的数据，如果没有则使用数据库的数据
@@ -90,7 +90,7 @@ trait LastActivedAtHelper
     // 	}
  
 
-    }
+    // }
 
 
 
