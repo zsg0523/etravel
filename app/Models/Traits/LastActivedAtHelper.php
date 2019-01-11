@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-11 12:25:04
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-11 16:13:34
+ * @Last Modified time: 2019-01-11 17:36:17
  * 记录 - 通过中间件过滤用户请求，记录用户访问时间到 redis 按日期区分的哈希表
  * 同步 - 新建命令，计划任务每天运行一次此命令，将昨日哈希表的数据同步到数据库中，并删除
  * 读取 - 优先读取当日哈希表里 Redis 的数据，如果没有则使用数据库的数据
@@ -68,29 +68,29 @@ trait LastActivedAtHelper
     }
 
 
-    public function getLastActivedAtAttribute($value)
-    {
-    	// 获取今天的日期
-    	$date = Carbon::now()->toDateString();
+    // public function getLastActivedAtAttribute($value)
+    // {
+    // 	// 获取今天的日期
+    // 	$date = Carbon::now()->toDateString();
 
-    	// 哈希表名称
-    	$hash = $this->hash_prefix . $date;
+    // 	// 哈希表名称
+    // 	$hash = $this->hash_prefix . $date;
 
-    	// 字段名称
-    	$field = $this->field_prefix . $this->id;
+    // 	// 字段名称
+    // 	$field = $this->field_prefix . $this->id;
 
-    	// 优先选择 Redis 的数据,否则读取数据库的数据
-    	$datetime = Redis::hGet($hash, $field) ? : $value;
+    // 	// 优先选择 Redis 的数据,否则读取数据库的数据
+    // 	$datetime = Redis::hGet($hash, $field) ? : $value;
 
-    	if ($datetime) {
-    		return new Carbon($datetime);
-    	} else {
-    		// 使用用户注册时间
-    		return $this->created_at;
-    	}
+    // 	if ($datetime) {
+    // 		return new Carbon($datetime);
+    // 	} else {
+    // 		// 使用用户注册时间
+    // 		return $this->created_at;
+    // 	}
  
 
-    }
+    // }
 
 
 
