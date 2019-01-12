@@ -1,0 +1,64 @@
+/*一些公共样式*/
+.disflex{display: -webkit-flex;display: flex;}
+.tc{text-align: center;}
+.fl{float: left;}
+.fr{float: right;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+p{margin: 0;padding: 0;}
+.yellowbg{background-color: #ffde01;}
+.huise{background-color: #d6d6d6;}
+.overdot{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:2;
+	overflow: hidden;
+}
+.onlink{font-size: 25px;} 
+input[type=checkbox]{margin-top: 14px !important ;outline: none !important ;}
+input[type=checkbox]:focus{outline: none;}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #b3b3b3;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color:#b3b3b3;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color:#b3b3b3;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color:#b3b3b3;
+}
+.checke{
+    position: relative;
+    -webkit-appearance: none;
+    width:44px;
+    height: 22px;
+    line-height: 22px;
+    background: #eee;
+    border-radius: 22px;
+    outline: none;
+    border:none;
+    float: right;
+    margin-top:14px;
+}
+.checke:before{
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ccc;
+    box-shadow: 0px 0px 5px #ddd;
+    transition: all 0.2s linear;
+}
+
+.checke:checked{
+   background: #ffee79;
+}
+.checke:checked:before{
+    background: #ffd801;
+    left: 22px;
+    transition: all 0.2s linear;
+}
