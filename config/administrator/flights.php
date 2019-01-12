@@ -4,14 +4,16 @@
  * @Author: Eden
  * @Date:   2019-01-10 11:17:30
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-10 15:49:42
+ * @Last Modified time: 2019-01-12 16:31:23
  */
 use App\Models\Flight;
 
 return [
 
 	'title' => '航班信息',
+
 	'single' => '航班信息',
+
 	'model' => Flight::class,
 
 	'columns' => [
@@ -103,7 +105,7 @@ return [
 
 	'filters' => [
 		'id' => [
-			'title' => '航班 ID'
+			'title' => 'ID'
 		],
 		'travel' => [
 			'title' => '旅游',
@@ -116,6 +118,7 @@ return [
 	],
 
 	'rules' => [
+		'travel_id' => 'required',
 		'date' => 'required',
 		'from' => 'required',
 		'to' => 'required',
@@ -123,6 +126,10 @@ return [
 		'takeoff_time' => 'required',
 		'arrival_time' => 'required',
 	],
+
+	'messages' => [
+        'travel_id.required' => '请选择旅游项目',
+    ],
 
 
 

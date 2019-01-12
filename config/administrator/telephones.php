@@ -2,19 +2,19 @@
 
 /**
  * @Author: Eden
- * @Date:   2019-01-10 11:17:20
+ * @Date:   2019-01-12 16:19:28
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-12 16:31:18
+ * @Last Modified time: 2019-01-12 16:32:20
  */
-use App\Models\Hotel;
+use App\Models\Telephone;
 
 return [
 
-	'title' => '酒店信息',
+	'title' => '常用电话',
 
-	'single' => '酒店信息',
+	'single' => '联系方式',
 
-	'model' => Hotel::class,
+	'model' => Telephone::class,
 
 	'columns' => [
 
@@ -24,31 +24,24 @@ return [
 
 		'travel' => [
 			'title' => '旅游项目',
-
 			'sortable' => false,
-
 			'output' => function ($value, $model) {
 				return $model->travel->travel_name;
 			}
 		],
 
-		'hotel_name' => [
-			'title' => '酒店名称',
+		'name' => [
+			'title' => '姓名',
 			'sortable' => false,
 		],
 
-		'hotel_address' => [
-			'title' => '酒店地址',
+		'phone' => [
+			'title' => '电话',
 			'sortable' => false,
 		],
 
-		'hotel_date' => [
-			'title' => '住宿日期',
-			'sortable' => false,
-		],
-
-		'hotel_phone' => [
-			'title' => '联系电话',
+		'area_code' => [
+			'title' => '区号',
 			'sortable' => false,
 		],
 
@@ -72,20 +65,16 @@ return [
 			'options_sort_field' => 'id',
 		],
 
-		'hotel_name' => [
-			'title' => '酒店名称',
+		'name' => [
+			'title' => '姓名',
 		],
 
-		'hotel_address' => [
-			'title' => '酒店地址',
+		'phone' => [
+			'title' => '电话',
 		],
 
-		'hotel_date' => [
-			'title' => '住宿日期',
-		],
-
-		'hotel_phone' => [
-			'title' => '联系电话',
+		'area_code' => [
+			'title' => '区号',
 		],
 	],
 
@@ -105,38 +94,15 @@ return [
 
 	'rules' => [
 		'travel_id' => 'required',
-		'hotel_name' => 'required',
-		'hotel_date' => 'required',
-		'hotel_phone' => 'required',
-		'hotel_address' => 'required',
+		'name' => 'required',
+		'phone' => 'required',
+		'area_code' => 'required',
 	],
 
 	'messages' => [
         'travel_id.required' => '请选择旅游项目',
+        'area_code.required' => '请填写区号'
     ],
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ];

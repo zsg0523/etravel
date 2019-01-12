@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
         //          ->hourly();
         
         // 每日零时执行一次,同步用户昨天的活跃时间
-        // $schedule->command('etravel:sync-user-actived-at')->dailyAt('00:00');
+        $schedule->command('etravel:sync-user-actived-at')->dailyAt('00:00');
     }
 
     /**

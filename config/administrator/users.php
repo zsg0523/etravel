@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-09 12:52:11
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-09 16:25:21
+ * @Last Modified time: 2019-01-12 15:49:20
  */
 use App\Models\User;
 
@@ -84,7 +84,7 @@ return [
 	'filters' => [
 		'id' => [
 			// 过滤表单显示条目
-			'title' => '用户 ID'
+			'title' => 'ID'
 		],
 		'name' => [
 			'title' => '用户名'

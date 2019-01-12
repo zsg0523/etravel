@@ -9,7 +9,7 @@ class Telephone extends Model
     protected $fillable = ['name', 'phone', 'area_code', 'travel_id'];
 
     // 
-    public function travle()
+    public function travel()
     {
     	return $this->belongsTo(Travel::class);
     }

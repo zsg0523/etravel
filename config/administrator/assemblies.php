@@ -2,19 +2,19 @@
 
 /**
  * @Author: Eden
- * @Date:   2019-01-10 11:17:20
+ * @Date:   2019-01-10 11:17:25
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-12 16:31:18
+ * @Last Modified time: 2019-01-12 16:30:38
  */
-use App\Models\Hotel;
+use App\Models\Assembly;
 
 return [
 
-	'title' => '酒店信息',
+	'title' => '领队老师',
 
-	'single' => '酒店信息',
+	'single' => '领队老师',
 
-	'model' => Hotel::class,
+	'model' => Assembly::class,
 
 	'columns' => [
 
@@ -24,31 +24,24 @@ return [
 
 		'travel' => [
 			'title' => '旅游项目',
-
 			'sortable' => false,
-
 			'output' => function ($value, $model) {
 				return $model->travel->travel_name;
 			}
 		],
 
-		'hotel_name' => [
-			'title' => '酒店名称',
+		'leader' => [
+			'title' => '领队',
 			'sortable' => false,
 		],
 
-		'hotel_address' => [
-			'title' => '酒店地址',
-			'sortable' => false,
-		],
-
-		'hotel_date' => [
-			'title' => '住宿日期',
-			'sortable' => false,
-		],
-
-		'hotel_phone' => [
+		'phone' => [
 			'title' => '联系电话',
+			'sortable' => false,
+		],
+
+		'duty' => [
+			'title' => '职责',
 			'sortable' => false,
 		],
 
@@ -72,20 +65,16 @@ return [
 			'options_sort_field' => 'id',
 		],
 
-		'hotel_name' => [
-			'title' => '酒店名称',
+		'leader' => [
+			'title' => '领队',
 		],
 
-		'hotel_address' => [
-			'title' => '酒店地址',
-		],
-
-		'hotel_date' => [
-			'title' => '住宿日期',
-		],
-
-		'hotel_phone' => [
+		'phone' => [
 			'title' => '联系电话',
+		],
+
+		'duty' => [
+			'title' => '职责',
 		],
 	],
 
@@ -105,38 +94,14 @@ return [
 
 	'rules' => [
 		'travel_id' => 'required',
-		'hotel_name' => 'required',
-		'hotel_date' => 'required',
-		'hotel_phone' => 'required',
-		'hotel_address' => 'required',
+		'leader' => 'required',
+		'phone' => 'required',
+		'duty' => 'required',
 	],
 
 	'messages' => [
         'travel_id.required' => '请选择旅游项目',
     ],
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ];

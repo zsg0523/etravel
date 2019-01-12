@@ -68,7 +68,10 @@ return array(
             'travels',
             '重要信息' => [
                 'flights',
+                'hotels',
+                'assemblies'
             ],
+            'telephones',
         ],
     ],
 

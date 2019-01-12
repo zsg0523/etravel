@@ -4,14 +4,14 @@
  * @Author: Eden
  * @Date:   2019-01-10 10:11:36
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-10 12:45:19
+ * @Last Modified time: 2019-01-12 16:17:24
  */
 use App\Models\Travel;
 
 return [
 
-	'title' => '旅游',
-	'single' => '旅游',
+	'title' => '基本资料',
+	'single' => '旅游项目',
 	'model' => Travel::class,
 
 	'columns' => [
@@ -47,6 +47,10 @@ return [
 		],
 		'dissolution_at' => [
 			'title' => '解散时间',
+			'sortable' => false,
+		],
+		'urgency' => [
+			'title' => '恶劣天气安排',
 			'sortable' => false,
 		],
 		'operation' => [
