@@ -18,13 +18,13 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/register', function () {
-    return view('register/Regiser');
-});
+// Route::get('/register', function () {
+//     return view('register/Regiser');
+// });
 
-Route::get('/login', function () {
-    return view('login/Login');
-});
+// Route::get('/login', function () {
+//     return view('login/Login');
+// });
 Route::get('/projectDetail', function () {
     return view('pages/projectDetail');
 });
@@ -82,6 +82,6 @@ Route::get('/password', function () {
     return view('personalCenter/personalCenter_password');
 });
 
-// Auth::routes();
+Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
