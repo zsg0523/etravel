@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-09 12:52:11
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-12 15:49:20
+ * @Last Modified time: 2019-01-14 10:56:46
  */
 use App\Models\User;
 
@@ -48,6 +48,31 @@ return [
 		'email' => [
 			'title' => '邮箱',
 		],
+		'roles' => [
+			'title' => '角色',
+			'output' => function ($value, $model) {
+				$model->load('roles');
+				$result = [];
+				foreach ($model->roles as $role) {
+					$result[] = $role->name; 
+				}
+			return empty($result) ? 'N/A' : $result;
+			},
+			'sortable' => false,
+		],
+		'travels' => [
+			'title' => '旅游项目',
+			'output' => function ($value, $model) {
+				$model->load('travels');
+				$result = [];
+				foreach ($model->travels as $travel) {
+					$result[] = $travel->travel_name;
+				}
+				return empty($result) ? 'N/A' : implode($result, ' | ');
+			},
+			'sortable' => false,
+		],
+
 		'operation' => [
 			'title' => '管理',
 			'sortable' => false,
@@ -77,6 +102,11 @@ return [
 			'type' => 'relationship',
 			// 关联模型的字段，用来做关联显示
 			'name_field' => 'name',
+		],
+		'travels' => [
+			'title' => '旅游项目',
+			'type' => 'relationship',
+			'name_field' => 'travel_name',
 		],
 	],
 
