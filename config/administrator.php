@@ -72,6 +72,9 @@ return array(
                 'assemblies'
             ],
             'telephones',
+            '学生守则' => [
+                'Categories',
+            ],
         ],
         
     ],
