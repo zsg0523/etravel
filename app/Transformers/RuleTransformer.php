@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-12 12:19:46
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-04 15:57:33
+ * @Last Modified time: 2019-01-16 12:22:38
  */
 namespace App\Transformers;
 
@@ -27,7 +27,7 @@ class RuleTransformer extends TransformerAbstract
 		if ($examine = $rule->examines()->where('user_id', $this->user_id)->first()) {
 			return [
 				'id' => $rule->id,
-				'rule_category_id' => $rule->rule_category_id,
+				'rule_category_travel_id' => $rule->rule_category_travel_id,
 				'rule' => $rule->rule,
 				'is_created' => 1,
 				'examines' => $rule->examines()->where('user_id', $this->user_id)->first(),
@@ -35,7 +35,7 @@ class RuleTransformer extends TransformerAbstract
 		} else {
 			return [
 				'id' => $rule->id,
-				'rule_category_id' => $rule->rule_category_id,
+				'rule_category_travel_id' => $rule->rule_category_travel_id,
 				'rule' => $rule->rule,
 				'is_created' => 0,
 				'examines' => [

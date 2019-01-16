@@ -4,16 +4,17 @@
  * @Author: Eden
  * @Date:   2018-12-12 12:26:10
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-03 17:33:29
+ * @Last Modified time: 2019-01-16 15:54:00
  */
 namespace App\Transformers;
 
 use App\Models\RuleCategory;
+use App\Models\RuleCategoryTravel;
 use League\Fractal\TransformerAbstract;
 
 class RuleCategoryTransformer extends TransformerAbstract
 {
-	protected $availableIncludes = ['rule'];
+	protected $availableIncludes = ['rules'];
 
 	protected $user_id;
 
@@ -25,15 +26,14 @@ class RuleCategoryTransformer extends TransformerAbstract
 	{
 		return [
 			'id' => $rulecategory->id,
-			'travel_id' => $rulecategory->travel_id,
 			'type' => $rulecategory->type,
 			'rule_category_name' => $rulecategory->rule_category_name,
 		];
 	}
 
-	public function includeRule(RuleCategory $rulecategory)
+	public function includeRules(RuleCategory $RuleCategory)
 	{
-		return $this->collection($rulecategory->rule, new RuleTransformer($this->user_id));
+		return $this->collection($RuleCategory->rules, new RuleTransformer($this->user_id));
 	}
 
 }

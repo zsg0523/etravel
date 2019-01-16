@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rule extends Model
 {
-    protected $fillable = ['rule_category_id','rule'];
+    protected $fillable = ['rule_category_travel_id','rule'];
 
-    public function ruleCategory()
+    public function ruleCategoryTravel()
     {
-    	return $this->belongsTo(RuleCategory::class);
+    	return $this->belongsTo(RuleCategoryTravel::class);
     }
 
     public function examines()

@@ -126,17 +126,19 @@ $api->version('v1', [
 
 
 			// 分类列表
-			$api->get('categories','RuleCategoriesController@index')->name('api.categories.index');
+			$api->get('categories', 'RuleCategoriesController@index')->name('api.categories.index');
 			// 某个类型分类
-			$api->get('type/categories','RuleCategoriesController@typeIndex')->name('api.type.categories.index');
-			// 创建分类
-			$api->post('travels/{travel}/categories','RuleCategoriesController@store')->name('api.categories.store');
+			$api->get('type/categories', 'RuleCategoriesController@typeIndex')->name('api.type.categories.index');
+			// 旅游团下守则分类
+			$api->get('travels/{travel}/categories', 'RuleCategoriesController@travelIndex')->name('api.travels.categories.index');
 			// 分类详情
-			$api->get('travels/{travel}/categories/{category}','RuleCategoriesController@show')->name('api.categories.show');
+			$api->get('categories/{category}', 'RuleCategoriesController@show')->name('api.categories.show');
+			// 创建分类
+			$api->post('categories', 'RuleCategoriesController@store')->name('api.categories.store');
 			// 更新分类
-			$api->patch('travels/{travel}/categories/{category}','RuleCategoriesController@update')->name('api.categories.update');
+			$api->patch('categories/{category}', 'RuleCategoriesController@update')->name('api.categories.update');
 			// 删除分类
-			$api->delete('travels/{travel}/categories/{category}','RuleCategoriesController@destroy')->name('api.categories.destroy');
+			$api->delete('categories/{category}', 'RuleCategoriesController@destroy')->name('api.categories.destroy');
 
 
 			// 守则列表

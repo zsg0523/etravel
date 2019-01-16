@@ -8,15 +8,14 @@ class RuleCategory extends Model
 {
 	protected $fillable = ['travel_id', 'rule_category_name', 'type'];
 	
-    public function rule()
+    public function travels()
     {
-    	return $this->hasMany(Rule::class);
+    	return $this->belongsToMany(Travel::class);
     }
 
-    public function travel()
+    public function rules()
     {
-    	return $this->belongsTo(Travel::class);
+    	return $this->hasManyThrough(Rule::class, RuleCategoryTravel::class);
     }
-
     
 }

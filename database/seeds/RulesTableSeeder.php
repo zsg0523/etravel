@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Rule;
-use App\Models\RuleCategory;
+use App\Models\RuleCategoryTravel;
 
 class RulesTableSeeder extends Seeder
 {
@@ -14,18 +14,18 @@ class RulesTableSeeder extends Seeder
     public function run()
     {
         // 获取所有分类 ID 数组
-        $category_ids = RuleCategory::all()->pluck('id')->toArray();
+        $category_ids = RuleCategoryTravel::all()->pluck('id')->toArray();
         // 获取Faker实例
         $faker = app(Faker\Generator::class);
 
         $rules = factory(Rule::class)
-        			->times(30)
+        			->times(100)
         			->make()
         			->each(function ($rule,$index) 
         				use ($category_ids,$faker)
         			{
         				// 从分类的 ID 数组中随机取出一个数
-        				$rule->rule_category_id = $faker->randomElement($category_ids);
+        				$rule->rule_category_travel_id = $faker->randomElement($category_ids);
         			});
         // 将数据集合转换为数组，并写入数据库
         Rule::insert($rules->toArray());

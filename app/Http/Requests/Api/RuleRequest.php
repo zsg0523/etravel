@@ -14,14 +14,14 @@ class RuleRequest extends FormRequest
         switch ($this->method()) {
             case 'POST':
                 return [
-                    'rule_category_id' => 'required|integer',
+                    'rule_category_travel_id' => 'required|integer',
                     'rule' => 'required|string'
                 ];
                 break;
             
             case 'PATCH':
                 return [
-                    'rule_category_id' => 'integer',
+                    'rule_category_travel_id' => 'integer',
                     'rule' => 'string'
                 ];
                 break;

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Api\RuleRequest;
 use App\Transformers\RuleTransformer;
 use App\Transformers\RuleCategoryTransformer;
+use App\Transformers\RuleCategoryTravelTransformer;
 use App\Transformers\ExamineTransformer;
 
 class RulesController extends Controller
@@ -17,7 +18,7 @@ class RulesController extends Controller
 	/** [index 所有团队守则分类] */
     public function index()
     {
-    	return $this->response->collection(RuleCategory::where('type', 10)->get(), new RuleCategoryTransformer(null));
+    	return $this->response->collection(Rule::all(), new RuleTransformer(null));
     }
 
     /** [travelIndex 旅游团下所有分类] */
@@ -29,18 +30,22 @@ class RulesController extends Controller
     /** [index 我的承诺] */
     public function promise(Travel $travel)
     {
-        $promise = $travel->rule_categories()->where('type', 20)->get();
+        $category_ids = RuleCategory::where('type', 20)->pluck('id')->toArray();
 
-        return $this->response->collection($promise, new RuleCategoryTransformer(null));
+        $promise = $travel->rule_category_travels()->whereIn('rule_category_id', $category_ids)->get();
+
+        return $this->response->collection($promise, new RuleCategoryTravelTransformer(null));
     }
 
     /** [packages 行李清单] */
     public function packages(Travel $travel)
     {
 
-        $packages = $travel->rule_categories()->where('type', 30)->get();
+        $category_ids = RuleCategory::where('type', 30)->pluck('id')->toArray();
 
-        return $this->response->collection($packages, new RuleCategoryTransformer($this->user()->id));
+        $packages = $travel->rule_category_travels()->whereIn('rule_category_id', $category_ids)->get();
+
+        return $this->response->collection($packages, new RuleCategoryTravelTransformer($this->user()->id));
     }
 
     /** [show 守则详情] */

@@ -38,11 +38,25 @@ class Travel extends Model
     {
         return $this->hasMany(Group::class);
     }
-
+    
+    /** [rule_categories 多对多关联] */
     public function rule_categories()
     {
-        return $this->hasMany(RuleCategory::class);
+        return $this->belongsToMany(RuleCategory::class);
     }
+
+    /** [rule_category_travels 一对多] */
+    public function rule_category_travels()
+    {
+        return $this->hasMany(RuleCategoryTravel::class);
+    }
+
+    /** [rules 远程一对多] */
+    public function rules()
+    {
+        return $this->hasManyThrough(Rule::class, RuleCategoryTravel::class);
+    }
+
 
     public function routes()
     {
