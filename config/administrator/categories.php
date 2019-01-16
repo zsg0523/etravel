@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-15 16:44:54
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-15 18:29:25
+ * @Last Modified time: 2019-01-15 18:35:44
  */
 use App\Models\RuleCategory;
 
@@ -58,7 +58,7 @@ return [
 		'travel' => [
 			'title'        => '旅游',
 			'type'         => 'relationship',
-			'name_field'   => 'travel_name',
+			'name_field'   => 'travel_name', 
 			// 自动补全
 			'autocomplete' => true,
 			// 自动补全搜索字段
