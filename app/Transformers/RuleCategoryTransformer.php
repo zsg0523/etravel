@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-12 12:26:10
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-03 17:33:29
+ * @Last Modified time: 2019-01-17 11:51:47
  */
 namespace App\Transformers;
 
@@ -13,7 +13,7 @@ use League\Fractal\TransformerAbstract;
 
 class RuleCategoryTransformer extends TransformerAbstract
 {
-	protected $availableIncludes = ['rule'];
+	protected $availableIncludes = ['rules'];
 
 	protected $user_id;
 
@@ -31,9 +31,9 @@ class RuleCategoryTransformer extends TransformerAbstract
 		];
 	}
 
-	public function includeRule(RuleCategory $rulecategory)
+	public function includeRules(RuleCategory $rulecategory)
 	{
-		return $this->collection($rulecategory->rule, new RuleTransformer($this->user_id));
+		return $this->collection($rulecategory->rules, new RuleTransformer($this->user_id));
 	}
 
 }

@@ -8,7 +8,7 @@ class RuleCategory extends Model
 {
 	protected $fillable = ['travel_id', 'rule_category_name', 'type'];
 	
-    public function rule()
+    public function rules()
     {
     	return $this->hasMany(Rule::class);
     }
@@ -16,6 +16,12 @@ class RuleCategory extends Model
     public function travel()
     {
     	return $this->belongsTo(Travel::class);
+    }
+
+    /** [getTagAttribute 访问器 标签] */
+    public function getTagAttribute($value)
+    {
+        return $tag = $this->travel->travel_name . ' | ' . $this->attributes['rule_category_name'];
     }
 
     

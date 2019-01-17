@@ -19,7 +19,7 @@ class RulesTableSeeder extends Seeder
         $faker = app(Faker\Generator::class);
 
         $rules = factory(Rule::class)
-        			->times(30)
+        			->times(300)
         			->make()
         			->each(function ($rule,$index) 
         				use ($category_ids,$faker)
