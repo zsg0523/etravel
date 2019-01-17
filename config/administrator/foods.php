@@ -2,38 +2,38 @@
 
 /**
  * @Author: Eden
- * @Date:   2019-01-17 16:50:16
+ * @Date:   2019-01-17 17:16:59
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-17 17:33:05
+ * @Last Modified time: 2019-01-17 17:32:46
  */
-use App\Models\Route;
+use App\Models\Food;
 
 return [
 
-	'title' => '基本信息',
+	'title' => '膳食安排',
 
-	'single' => '旅游行程',
+	'single' => '膳食资料',
 
-	'model' => Route::class,
+	'model' => Food::class,
 
 	'columns' => [
 		'id' => [
 			'title' => 'ID',
 		],
-		'travel' => [
-			'title' => '旅游',
+		'route' => [
+			'title' => '旅游日程',
 			'sortable' => false,
 			'output' => function ($value, $model) {
-				return $model->travel->travel_name;
+				return $model->route->tag;
 			},
 		],
-		'day' => [
-			'title' => '编号',
-			'sortable' => true,
+		'title' => [
+			'title' => '标示',
+			'sortable' => false,
 		],
-		'date' => [
-			'title' => '日期',
-			'sortable' => true,
+		'content' => [
+			'title' => '地点',
+			'sortable' => false,
 		],
 		'description' => [
 			'title' => '简介',
@@ -46,23 +46,22 @@ return [
 	],
 
 	'edit_fields' => [
-		'travel' => [
-			'title'        => '旅游',
+		'route' => [
+			'title'        => '旅游日程',
 			'type'         => 'relationship',
-			'name_field'   => 'travel_name',
+			'name_field'   => 'tag',
 			// 自动补全
 			'autocomplete' => true,
 			// 自动补全搜索字段
-			'search_fields' => ["CONCAT(id,'', travel_name)"],
+			'search_fields' => ["CONCAT(id,'', day)"],
 			// 自动补全排序
 			'options_sort_field' => 'id',
 		],
-		'day' => [
-			'title' => '编号'
+		'title' => [
+			'title' => '标示'
 		],
-		'date' => [
-			'title' => '日期',
-			'type' => 'date'
+		'content' => [
+			'title' => '地点',
 		],
 		'description' => [
 			'title' => '描述',
@@ -74,25 +73,25 @@ return [
 		'id' => [
 			'title' => 'ID'
 		],
-		'travel' => [
-			'title' => '旅游',
+		'route' => [
+			'title' => '旅游日程',
 			'type' => 'relationship',
-			'name_field' => 'travel_name',
+			'name_field' => 'tag',
 			'autocomplete' => true,
-			'search_fields' => ["CONCAT(id,'', travel_name)"],
+			'search_fields' => ["CONCAT(id,'', day)"],
 			'options_sort_field' => 'id'
 		],
 	],
 
 	'rules' => [
-		'travel_id' => 'required',
-		'date' => 'required',
-		'day' => 'required',
+		'route_id' => 'required',
+		'title' => 'required',
+		'content' => 'required',
 		'description' => 'required',
 	],
 
 	'messages' => [
-        'travel_id.required' => '请选择旅游项目',
+        'route_id.required' => '请选择旅游日程',
     ],
 
 

@@ -78,7 +78,9 @@ return array(
             'rules'
         ],
         '行程安排' => [
-            'routes'
+            'routes',
+            'foods',
+            'sceneries'
         ],
     ],
 

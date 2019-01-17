@@ -27,4 +27,10 @@ class Route extends Model
     {
         return $this->hasMany(Study::class);
     }
+
+    /** [getTagAttribute 设置tag访问器] */
+    public function getTagAttribute($value)
+    {
+        return $this->travel->travel_name . ' | ' .$this->attributes['day'];
+    }
 }
