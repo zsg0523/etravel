@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Examine;
-use App\Models\RuleCategory;
 use App\Models\User;
 use App\Models\Rule;
 
@@ -18,11 +17,8 @@ class ExaminesTableSeeder extends Seeder
         // 获取 user_ids
         $user_ids = User::all()->pluck('id')->toArray();
 
-        // 获取行李清单分类
-        $category_ids = RuleCategory::where('type', 30)->pluck('id')->toArray();
-
-        // 获取 travel_ids
-        $rule_ids = Rule::whereIn('rule_category_id', $category_ids)->pluck('id')->toArray();
+        // 获取 rule_ids
+        $rule_ids = Rule::all()->pluck('id')->toArray();
 
         
         foreach ($user_ids as $user_id) {
