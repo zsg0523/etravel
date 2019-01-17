@@ -31,10 +31,10 @@ class WritesController extends Controller
     {
     	return $this->response->collection($travel->summaries, new WriteTransformer());
     }
-
+    /** [show 用户单篇感想] */
     public function show(User $user, Travel $travel, Write $title)
     {
-        return $this->response->item($user->summaries()->where('travel_id', $travel->id)->where('write_title_id', $title->id)->get(), new WriteTransformer());
+        return $this->response->item($user->summaries()->where('travel_id', $travel->id)->where('write_title_id', $title->id)->first(), new WriteTransformer());
     }
 
     /** [store 增加感想] */

@@ -77,6 +77,9 @@ return array(
             'categories',
             'rules'
         ],
+        '行程安排' => [
+            'routes'
+        ],
     ],
 
     /*
