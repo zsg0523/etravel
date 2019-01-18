@@ -28,5 +28,10 @@ class Study extends Model
 
         $this->attributes['image'] = $path;
     }
+
+    public function getTagAttribute($value)
+    {
+        return $this->route->travel->travel_name. ' | ' . $this->attributes['title'];
+    }
     
 }

@@ -4,13 +4,13 @@
  * @Author: Eden
  * @Date:   2019-01-18 10:08:02
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-18 11:20:56
+ * @Last Modified time: 2019-01-18 12:03:06
  */
 use App\Models\Study;
 
 return [
 
-	'title' => '学习纸',
+	'title' => '基本信息',
 
 	'single' => '学习纸',
 

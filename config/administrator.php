@@ -84,6 +84,8 @@ return array(
         ],
         '学习纸' => [
             'studies',
+            'questions',
+            'answers'
         ],
     ],
 
