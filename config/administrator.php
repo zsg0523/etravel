@@ -82,6 +82,9 @@ return array(
             'foods',
             'sceneries'
         ],
+        '学习纸' => [
+            'studies',
+        ],
     ],
 
     /*

@@ -39,13 +39,12 @@ class WritesController extends Controller
 
     /** [store 增加感想] */
     public function store(WriteRequest $request, Travel $travel, WriteTitle $title, Write $write)
-    {
-    	$write->fill($request->all());
-    	$write->write_title_id = $title->id;
-    	$write->user_id = $this->user()->id;
-    	$write->travel_id = $this->user()->id;
-    	$write->save();
-
+    {   
+        // 更新现有模型，如果不存在则创建
+        $write = $write->updateOrCreate(
+            ['user_id' => $this->user()->id, 'travel_id' => $travel->id, 'write_title_id'=>$title->id],
+            ['content' => $request->content]
+        );
     	return $this->response->item($write, new WriteTransformer())->setStatusCode(201);
     }
 

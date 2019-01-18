@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Write extends Model
 {
-    protected $fillable = ['image', 'content'];
+    protected $fillable = ['image', 'content', 'user_id', 'travel_id', 'write_title_id'];
 
     public function user()
     {
