@@ -34,7 +34,7 @@ class WritesController extends Controller
     /** [show 用户单篇感想] */
     public function show(User $user, Travel $travel, Write $title)
     {
-        return $this->response->item($user->summaries()->where('travel_id', $travel->id)->where('write_title_id', $title->id)->first(), new WriteTransformer());
+        return $this->response->item($user->summaries()->where('travel_id', $travel->id)->where('write_title_id', $title->id)->firstOrFail(), new WriteTransformer());
     }
 
     /** [store 增加感想] */
