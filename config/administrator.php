@@ -87,6 +87,7 @@ return array(
             'questions',
             'answers'
         ],
+        'news',
     ],
 
     /*
