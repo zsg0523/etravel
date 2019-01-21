@@ -56,6 +56,8 @@ $api->version('v1', [
 			$api->post('images','ImagesController@store')->name('api.images.store');
 			// 编辑用户资料
 			$api->patch('user','UsersController@update')->name('api.user.update');
+			// 用户通知列表
+			$api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');
 			
 			// 创建新闻
 			$api->post('new','NewsController@store')->name('api.news.store');
