@@ -94,4 +94,5 @@ php artisan etravel:generate-token
 - 计划任务 如 用户最后的登录时间，每天凌晨同步 redis 的数据至数据库
 - 多角色权限管理 允许管理员权限存在
 - 后台管理 后台数据模型管理
+- 线上部署注意队列任务，supervisor进程管理工具管理horizon
 
