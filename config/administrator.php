@@ -88,6 +88,10 @@ return array(
             'answers'
         ],
         'news',
+        '感想' => [
+            'write_titles',
+            'writes'
+        ],
     ],
 
     /*
