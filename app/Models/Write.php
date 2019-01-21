@@ -13,10 +13,14 @@ class Write extends Model
     	return $this->belongsTo(User::class);
     }
 
-
     public function travel()
     {
     	return $this->belongsTo(Travel::class);
+    }
+    
+    public function write_title()
+    {
+    	return $this->belongsTo(WriteTitle::class);
     }
 
 

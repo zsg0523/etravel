@@ -11,9 +11,16 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use Notifiable;
     use HasRoles;
     use Traits\LastActivedAtHelper;
+    use Notifiable {
+        notify as protected laravelNotify;
+    }
+    public function notify($instance)
+    {
+        $this->increment('notification_count');
+        $this->laravelNotify($instance);
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -32,6 +39,14 @@ class User extends Authenticatable implements JWTSubject
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /** [markAsRead 将所有通知设定为已读，并清空未读消息数] */
+    public function markAsRead()
+    {
+        $this->notification_count = 0;
+        $this->save();
+        $this->unreadNotifications->markAsRead();
+    }
 
     /** [isAuthorOf 判断身份] */
     public function isAuthorOf($model)
