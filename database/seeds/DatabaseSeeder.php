@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
         $this->call(QuestionsTableSeeder::class);
         $this->call(ExaminesTableSeeder::class);
         $this->call(LocalsTableSeeder::class);
+        $this->call(EvaCategoriesTableSeeder::class);
+        $this->call(EvaluationsTableSeeder::class);
     }
 
 }

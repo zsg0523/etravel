@@ -66,4 +66,9 @@ class Travel extends Model
     {
         return $this->hasMany(Local::class);
     }
+
+    public function evaluation_categories()
+    {
+        return $this->hasMany(EvaluationCategory::class);
+    }
 }
