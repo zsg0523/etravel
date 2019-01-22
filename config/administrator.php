@@ -68,6 +68,8 @@ return array(
             'travels',
             'telephones',
         ],
+        'news',
+        'locals',
         '重要信息' => [
             'flights',
             'hotels',
@@ -87,7 +89,6 @@ return array(
             'questions',
             'answers'
         ],
-        'news',
         '感想' => [
             'write_titles',
             'writes'

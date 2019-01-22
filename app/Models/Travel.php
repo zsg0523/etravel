@@ -61,4 +61,9 @@ class Travel extends Model
     {
         return $this->hasMany(Write::class);
     }
+
+    public function locals()
+    {
+        return $this->hasMany(Local::class);
+    }
 }

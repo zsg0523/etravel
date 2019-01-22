@@ -304,8 +304,18 @@ $api->version('v1', [
 			// 高德地图获取经纬度
 			$api->post('geode','GeodesController@store')->name('api.geode.store');
 
-
-
+			// 当地文化列表
+			$api->get('locals', 'LocalsController@index')->name('api.locals.index');
+			// 旅游下当地文化
+			$api->get('travels/{travel}/locals', 'LocalsController@travelIndex')->name('api.travels.locals.index');
+			// 当地文化详情
+			$api->get('locals/{local}', 'LocalsController@show')->name('api.locals.show');
+			// 创建当地文化
+			$api->post('travels/{travel}/locals', 'LocalsController@store')->name('api.travels.locals.store');
+			// 更新当地文化
+			$api->patch('travels/{travel}/locals/{local}', 'LocalsController@update')->name('api.travels.lcoals.update');
+			// 删除当地文化
+			$api->delete('travels/{travel}/locals/{local}', 'LocalsController@destroy')->name('api.travels.locals.destroy');
 
 		});
 
