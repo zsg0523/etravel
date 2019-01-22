@@ -1,0 +1,85 @@
+<style>
+	.commonHead{width: 100%;height: 116px;background-color: #ffde01;color: 000;}     
+    .left{width: 160px;height: 116px;align-items: center;justify-content: center;float:left;}
+    .left:hover{cursor: pointer;}
+    .right{width: 360px;height: 116px;float: right;align-items: center;justify-content:center;}
+    .right>div{height: 116px;}
+    .letter{width: 60px;align-items: center;justify-content: center;}
+    .letter>img{width: 40px;height: 40px;}
+    .person_icon{width: 100px;align-items: center;justify-content: center;}
+    .person_icon>img{width: 70px;height: 70px;border-radius: 50%;}
+    .info{width: 80px;align-items: center;justify-content: center;flex-direction: column;}
+    .info>div{width: 100%;height: 30px;line-height: 30px;text-align:center;overflow: hidden;}
+    .exit{width: 60px;align-items: center;justify-content: center;}
+    .exit>img{width: 50px;}
+</style>
+
+<template>
+	<div class="commonHead">
+	    <div class="left disflex" @click="$router.push('/home')">
+	        <img src="../../images/logo.png">
+	    </div>
+	    <div class="right disflex">
+	        <div class="letter disflex"><img src="../../images/letter.png"></div>
+
+	        <div class="person_icon disflex" v-if="userInfo.avatar">
+	        	<img :src="userInfo.avatar">
+	        </div>
+	        <div class="person_icon disflex" v-else>
+				<img src="../../images/photo.png">
+	        </div>
+	        	
+	        <div class="info disflex">
+	            <div>{{userInfo.name}}</div>
+	            <div>积分：0</div>
+	        </div>
+	        <div class="exit disflex" @click="logout();">
+	            <img src="../../images/Vector-icon.png">
+	        </div>
+	    </div>
+	</div>
+</template>
+
+<script>
+	import { mapGetters } from 'vuex';
+	import { mapActions } from 'vuex'
+ 	
+ 	export default {
+ 		data() {
+	    	return {
+	    	}
+	  	},
+	  	mounted:function(){
+	  		this.getUserInfo();
+	  	},
+		methods:{
+	 		...mapActions(['setUserInfo']),
+	 		...mapActions(['setTravels']),
+	  		...mapActions(['setToken']),
+	  		getUserInfo(){
+	  			// 获取用户基本信息
+            	this.$get('/api/user?include=student.school',
+            	{
+	      			headers: {
+			        	"Authorization": 'Bearer '+sessionStorage.token,
+			    	}
+			    }).then(res => {
+		        	// console.log(res.data);
+		        	this.setUserInfo(res.data);
+		        }).catch(err => {
+		          	console.log(err)
+		        });
+	  		},
+			logout(){
+				sessionStorage.clear();
+				this.setUserInfo('');
+				this.setTravels('');
+				this.setToken('');
+				this.$router.push("/");
+			},
+	  	},
+	  	computed: {
+	    	...mapGetters(['userInfo'])
+	  	},
+  	}
+</script>

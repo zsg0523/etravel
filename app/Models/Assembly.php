@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Assembly extends Model
 {
+	protected $fillable = ['travel_id', 'phone', 'leader', 'duty'];
+	
     public function travel()
     {
-    	$this->belongsTo(Travel::class);
+    	return $this->belongsTo(Travel::class);
     }
 }

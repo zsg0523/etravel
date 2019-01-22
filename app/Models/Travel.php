@@ -6,11 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Travel extends Model
 {
-    protected $fillable = ['travel_name','travel_at','travel_introduction'];
+    protected $fillable = ['travel_name', 'travel_at', 'travel_introduction', 'urgency'];
 
-    public function assembly()
+    public function users()
     {
-    	return $this->hasOne(Assembly::class);
+        return $this->belongsToMany(User::class, 'groups');
+    }
+
+    public function telephones()
+    {
+        return $this->hasMany(Telephone::class);
+    }
+
+    public function assemblies()
+    {
+    	return $this->hasMany(Assembly::class);
     }
 
     public function flight()
@@ -29,8 +39,18 @@ class Travel extends Model
         return $this->hasMany(Group::class);
     }
 
+    public function rule_categories()
+    {
+        return $this->hasMany(RuleCategory::class);
+    }
+
     public function routes()
     {
         return $this->hasMany(Route::class);
+    }
+
+    public function summaries()
+    {
+        return $this->hasMany(Write::class);
     }
 }

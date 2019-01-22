@@ -1,5 +1,7 @@
 import router from './routes.js';
 import Vue from 'vue';
+import store from './store';
+import ajax from './http'
 import {
   Popup,
   Toast,
@@ -11,20 +13,14 @@ Vue
 	.use(Toast)
 	.use(Dialog);
 
-window.axios = require('axios');
-
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-let token = document.head.querySelector('meta[name="csrf-token"]');
-
-if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
-
 require('./bootstrap');
 
+Vue.prototype.sessionStorage = sessionStorage;
+Vue.prototype.localStorage = localStorage; 
+Vue.prototype.$ajax = ajax;
+Vue.prototype.$get = ajax.get;
+Vue.prototype.$post = ajax.post;
 new Vue({
-	router
+	router,
+	store,
 }).$mount('#app');

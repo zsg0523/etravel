@@ -13,19 +13,23 @@ class AssembliesTableSeeder extends Seeder
      */
     public function run()
     {
+        // 获取数组
         $travel_ids = Travel::all()->pluck('id')->toArray();
 
-        foreach ($travel_ids as $key => $value) {
-        	$data = array(
-        		'travel_id' => $value,
-        		'leader' => 'Eden',
-        		'duty' => '领队老师',
-        		'assembly_station' => 'HK',
-        		'assembly_at' => date('Y-m-d H:i:s',time()),
-        		'dissolution_at' => date('Y-m-d H:i:s',time()),
-        	);
+        $faker = app(Faker\Generator::class);
 
-        	Assembly::insert($data);
-        }
+        $assemblies = factory(Assembly::class)
+                      ->times(100)
+                      ->make()
+                      ->each(function ($assembly, $index) 
+                        use ($faker, $travel_ids) 
+                        {
+                            $assembly->travel_id = $faker->randomElement($travel_ids);
+                        });
+                      
+        Assembly::truncate();
+
+        Assembly::insert($assemblies->toArray());
+        
     }
 }

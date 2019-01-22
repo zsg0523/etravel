@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-04 17:22:30
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-04 18:21:39
+ * @Last Modified time: 2018-12-27 15:40:22
  */
 namespace App\Transformers;
 
@@ -17,6 +17,7 @@ class TelephoneTransformer extends TransformerAbstract
 	{
 		return [
 			'id' => $telephone->id,
+			'travel_id' => $telephone->travel_id,
 			'name' => $telephone->name,
 			'phone' => $telephone->phone,
 			'area_code' => $telephone->area_code,

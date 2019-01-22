@@ -22,4 +22,9 @@ class Route extends Model
     {
     	return $this->hasMany(Food::class);
     }
+
+    public function studies()
+    {
+        return $this->hasMany(Study::class);
+    }
 }

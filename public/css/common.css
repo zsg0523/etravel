@@ -62,3 +62,4 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     left: 22px;
     transition: all 0.2s linear;
 }
+.van-dialog{width:50%;}

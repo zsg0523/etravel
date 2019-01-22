@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('breadlink')
-    <a href="/">项目</a><<a href="/projectDetail">项目详情</a><<a href="/dataBank">资料库</a><<a class="onlink" href="">重要资料</a>
+    <a href="/">项目</a><<a href="/projectDetail">项目详情</a><<a href="/dataBank">个人中心</a><<a class="onlink" href="">个人资料</a>
 @endsection
 @section('content')
 <!DOCTYPE html>

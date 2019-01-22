@@ -55,7 +55,6 @@
         .dataBankComfirm{width:100%;height: 50px;font-size: 16px;align-items: center;justify-content: center;}
         .btnItem{width:160px;height: 50px;}
         .btnItem>button{width:80%;height: 40px;line-height: 40px;border-radius: 8px;}
-        .act{background-color: #ffde01;}
         .cancel{background-color: #fff;border:1px solid #ffde01;}
         .ensure{background-color: #ffde01;}
     </style>

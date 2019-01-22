@@ -56,3 +56,42 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## method
+
+<!-- 创建项目 -->
+git clone https://github.com/zsg0523/etravel.git
+
+<!-- 修改配置文件,production,数据库信息 -->
+cp .env.example  .env
+
+<!-- 生成密钥 -->
+php artisan key:generate
+
+<!-- 运行数据库迁移并填充（特殊字段报错，请修改 database.php 里的字符集为utf-8） -->
+php artisan migrate --seed 
+
+<!-- JWT 的 secret，这个 secret 很重要，用于最后的签名 -->
+php artisan jwt:secret
+
+<!-- 为用户 ID 为1的生成一个永久有效的测试token -->
+php artisan etravel:generate-token
+
+
+
+
+
+
+
+
+- 用户认证 注册，登录，退出
+- 用户授权 只有用户本人才可编辑自己的信息
+- 表单验证 过滤用户输入，防止sql注入
+- xss 安全防御
+- 使用 第三方API ：高德地图
+- 使用Redis缓存，缓解服务器读写压力
+- 队列任务 如 请求第三方API,发送邮件 等等,以提高应用的响应速度
+- 计划任务 如 用户最后的登录时间，每天凌晨同步 redis 的数据至数据库
+- 多角色权限管理 允许管理员权限存在
+- 后台管理 后台数据模型管理
+

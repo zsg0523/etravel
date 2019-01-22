@@ -5,7 +5,7 @@
     .fl{float: left;}
     .fr{float: right;}
     a:hover{text-decoration: none;}
-    .content{width: 900px;height:570px;border-radius:10px;box-shadow: 0 0 10px #ccc;background-color: #ffde01;}
+    .contentReg{width: 900px;height:570px;border-radius:10px;box-shadow: 0 0 10px #ccc;background-color: #ffde01;}
     .icon{width: 50%;height:570px;border-right: 1px solid #fff;align-items: center;justify-content: center;}
     .icon>img{width: 300px;}
     .login{width: 50%;height:570px;flex-flow:column nowrap;align-items: center;justify-content: center;}
@@ -19,7 +19,7 @@
 
 <template>
 	<div class="disflex main">
-        <div class="disflex content">
+        <div class="disflex contentReg">
             <div class="disflex icon">
                 <img src="../../images/logo_big.png">
             </div>
@@ -54,9 +54,9 @@
 	  	},
 	  	methods: {
 		    register() {
-		      	if (this.password && this.loginName && this.repassword && this.code) {
+		      	if (this.password && this.username && this.repassword && this.smscode) {
 		      		if(this.password == this.repassword){
-		      			axios.post('/api/users', {
+		      			this.$post('/api/users', {
 				          	name: this.username,
 				          	password: this.password,
 				          	verification_code: this.smscode,
@@ -67,7 +67,7 @@
 				          	if (res.data.meta.access_token) {
 				            	// this.setUserInfo(res)
 				            	this.$toast('注册成功');
-				            	this.$router.push('/home');
+				            	this.$router.push('/');
 				          	} else {
 				              	this.$toast(res.data.message);
 				          	}
@@ -91,9 +91,9 @@
 			          	if (res.data.key) {
 			            	// this.setUserInfo(res)
 			            	this.key=res.data.key;
-			            	this.$toast('成功获取');
+			            	this.$toast('验证码已成功发送，请注意查收。');
 			          	} else {
-			              	this.$toast('手机号码格式错误');
+			              	this.$toast(res.data.message);
 			          	}
 			        }).catch(err => {
 			          	console.log(err)

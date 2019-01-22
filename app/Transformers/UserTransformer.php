@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-03 18:57:23
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-13 18:09:12
+ * @Last Modified time: 2019-01-14 15:27:16
  */
 namespace App\Transformers;
 
@@ -21,19 +21,24 @@ class UserTransformer extends TransformerAbstract
 		return [
 			'id' => $user->id,
 			'name' => $user->name,
+			'phone' => $user->phone,
 			'email' => $user->email,
+			'phone' => $user->phone,
 			'avatar' => $user->avatar,
 			'introduction' => $user->introduction,
 			'created_at' => $user->created_at->toDateTimeString(),
 			'updated_at' => $user->updated_at->toDateTimeString(),
-			'last_actived_at' => $user->last_actived_at,
+			'last_actived_at' => $user->last_actived_at->diffForHumans(),
 		];
 	}
 
 	/** [includeStudent 获取学生信息] */
 	public function includeStudent(User $user)
 	{
-		return $this->item($user->student, new StudentTransformer());
+		if ($user->student) {
+			return $this->item($user->student, new StudentTransformer());
+		}
 	}
+
 	
 }
