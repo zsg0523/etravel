@@ -25,7 +25,6 @@ class FlightsController extends Controller
     /** [store 创建航班] */
     public function store(FlightRequest $request, Flight $flight)
     {
-    	// dd($request);
     	$flight->fill($request->all());
     	$flight->save();
     	return $this->response->item($flight, new FlightTransformer())->setStatusCode(201);

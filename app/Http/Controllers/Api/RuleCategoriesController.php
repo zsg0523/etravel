@@ -21,6 +21,12 @@ class RuleCategoriesController extends Controller
     	return $this->response->collection(RuleCategory::where('type',$request->type)->get(), new RuleCategoryTransformer(null));
     }
 
+    /** [travelIndex 旅游团下的分类] */
+    public function travelIndex(Travel $travel)
+    {   
+        return $this->response->collection($travel->rule_categories, new RuleCategoryTransformer(null));
+    }
+
 
     /** [store 创建分类] */
     public function store(CategoryRequest $request,Travel $travel, RuleCategory $category)
@@ -36,18 +42,12 @@ class RuleCategoriesController extends Controller
     /** [show 分类详情] */
     public function show(Travel $travel, RuleCategory $category)
     {
-        if ($category->travel_id != $travel->id) {
-            return $this->response->errorBadRequest();
-        }
     	return $this->response->item($category, new RuleCategoryTransformer(null));
     }
 
     /** [update 更新分类信息] */
-    public function update(CategoryRequest $request, Travel $travel, RuleCategory $category)
+    public function update(CategoryRequest $request,Travel $travel, RuleCategory $category)
     {
-        if ($category->travel_id != $travel->id) {
-            return $this->response->errorBadRequest();
-        }
 
     	$category->fill($request->all());
     	$category->update();
@@ -59,9 +59,6 @@ class RuleCategoriesController extends Controller
     /** [delete 删除分类] */
     public function destroy(Travel $travel, RuleCategory $category)
     {
-        if ($category->travel_id != $travel->id) {
-            return $this->response->errorBadRequest();
-        }
 
     	$category->delete();
 

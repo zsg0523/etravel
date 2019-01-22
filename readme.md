@@ -95,3 +95,7 @@ php artisan etravel:generate-token
 - 多角色权限管理 允许管理员权限存在
 - 后台管理 后台数据模型管理
 
+特别注意：
+- 线上部署注意队列任务，supervisor进程管理工具管理horizon
+- 每一次部署代码时，需 artisan horizon:terminate 然后再 artisan horizon 重新加载代码
+

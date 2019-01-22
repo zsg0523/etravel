@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-15 18:37:05
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-15 18:46:25
+ * @Last Modified time: 2019-01-17 11:42:06
  */
 use App\Models\Rule;
 
@@ -21,10 +21,10 @@ return [
 			'title' => 'ID',
 		],
 		'ruleCategory' => [
-			'title' => '分类',
+			'title' => '标示',
 			'sortable' => false,
 			'output' => function ($value, $model) {
-				return $model->ruleCategory->rule_category_name;
+				return $model->ruleCategory->tag;
 			},
 		],
 		'rule' => [
@@ -41,13 +41,13 @@ return [
 		'ruleCategory' => [
 			'title'        => '分类',
 			'type'         => 'relationship',
-			'name_field'   => 'rule_category_name',
+			'name_field'   => 'tag',
 			// 自动补全
 			// 'autocomplete' => true,
 			// 自动补全搜索字段
 			// 'search_fields' => ["CONCAT(id,'', rule_category_name)"],
 			// 自动补全排序
-			// 'options_sort_field' => 'id',
+			// 'options_sort_field' => "CONCAT(travel_id, ' ' , rule_category_name)",
 		],
 		'rule' => [
 			'title' => '内容',

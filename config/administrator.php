@@ -66,18 +66,33 @@ return array(
         ],
         '旅游项目' => [
             'travels',
-            '重要信息' => [
-                'flights',
-                'hotels',
-                'assemblies'
-            ],
             'telephones',
-            '学生守则' => [
-                'categories',
-                'rules'
-            ],
         ],
-        
+        'news',
+        'locals',
+        '重要信息' => [
+            'flights',
+            'hotels',
+            'assemblies'
+        ],
+        '团员守则' => [
+            'categories',
+            'rules'
+        ],
+        '行程安排' => [
+            'routes',
+            'foods',
+            'sceneries'
+        ],
+        '学习纸' => [
+            'studies',
+            'questions',
+            'answers'
+        ],
+        '感想' => [
+            'write_titles',
+            'writes'
+        ],
     ],
 
     /*

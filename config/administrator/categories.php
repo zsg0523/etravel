@@ -4,13 +4,13 @@
  * @Author: Eden
  * @Date:   2019-01-15 16:44:54
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-15 18:35:44
+ * @Last Modified time: 2019-01-17 11:17:10
  */
 use App\Models\RuleCategory;
 
 return [
 
-	'title' => '分类信息',
+	'title' => '守则分类',
 
 	'single' => '守则分类',
 
