@@ -344,6 +344,40 @@ $api->version('v1', [
 			$api->patch('evaluationCategories/{category}/evaluations/{evaluation}', 'EvaluationsController@update')->name('api.evaluations.update');
 			// 删除评估选项
 			$api->delete('evaluationCategories/{category}/evaluations/{evaluation}', 'EvaluationsController@destroy')->name('api.evaluations.destroy');
+
+			// 所有评估结果
+			$api->get('evaluatedes', 'EvaluatesController@index')->name('api.evaluatedes.index');
+			// 创建评估结果
+			$api->post('evaluations/{evaluation}/evaluatedes', 'EvaluatesController@store')->name('api.evaluatedes.store');
+			// 删除评估结果
+			$api->delete('evaluations/{evaluation}/evaluatedes/{evaluate_user}', 'EvaluatesController@destroy')->name('api.evaluatedes.destroy');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		});
 
 

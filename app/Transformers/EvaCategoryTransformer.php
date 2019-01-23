@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-22 17:10:31
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-23 12:50:58
+ * @Last Modified time: 2019-01-23 18:21:57
  */
 namespace App\Transformers;
 
@@ -14,6 +14,13 @@ use League\Fractal\TransformerAbstract;
 class EvaCategoryTransformer extends TransformerAbstract
 {
 	protected $availableIncludes = ['evaluations'];
+
+	protected $user_id;
+
+	public function __construct($user_id)
+	{
+		$this->user_id = $user_id;
+	}
 
 	public function transform(EvaluationCategory $evaluation_category)
 	{
@@ -27,7 +34,7 @@ class EvaCategoryTransformer extends TransformerAbstract
 	public function includeEvaluations(EvaluationCategory $evaluation_category)
 	{
 		if ($evaluation_category->evaluations) {
-			return $this->collection($evaluation_category->evaluations, new EvaluationTransformer());
+			return $this->collection($evaluation_category->evaluations, new EvaluationTransformer($this->user_id));
 		}
 	}
 
