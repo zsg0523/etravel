@@ -185,11 +185,11 @@ $api->version('v1', [
 			// 单个分组安排详情
 			$api->get('travels/{travel}/groups/{group}','GroupsController@show')->name('api.travels.groups.show');
 			// 增加分组安排
-			$api->post('travels/{travel}/groups','GroupsController@store')->name('api.group.store');
+			$api->post('users/{user}/travels/{travel}/groups','GroupsController@store')->name('api.group.store');
 			// 更新分组安排
-			$api->patch('travels/{travel}/groups/{group}','GroupsController@update')->name('api.group.update');
+			$api->patch('users/{user}/travels/{travel}/groups/{group}','GroupsController@update')->name('api.group.update');
 			// 删除分组安排
-			$api->delete('travels/{travel}/groups/{group}','GroupsController@destroy')->name('api.group.destroy');
+			$api->delete('users/{user}/travels/{travel}/groups/{group}','GroupsController@destroy')->name('api.group.destroy');
 
 
 			// 所有行程安排

@@ -15,7 +15,7 @@ class EvaluationCategory extends Model
 
     public function evaluations()
     {
-    	return $this->hasMany(Evalution::class);
+    	return $this->hasMany(Evaluation::class);
     }
 
 
