@@ -35,7 +35,8 @@
     .addNewTravel{width: 400px;min-height:260px;background-color: #fff;border-radius: 15px;box-shadow: 0 0 10px #ccc;flex-direction: column;justify-content: center;align-items: center;}
     .addNewTravel>input{width:300px;height:50px;margin-top:20px;border-radius: 8px;}
     .addNewTravel>button{width:60%;height:50px;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;margin-top: 20px;margin-bottom: 20px;}
-    </style>
+    .van-dialog{width:50%;}
+</style>
 
 <template>
 	<div class="main1 disflex" v-if="travels">
@@ -86,9 +87,9 @@
     		</div>
     		
     	</div>
-    	<div class="btn_publish disflex">
+    	<!-- <div class="btn_publish disflex">
     		<button type="button">发布</button>
-    	</div>
+    	</div> -->
         <van-popup v-model="isPopupShow" :overlay="true" style="border-radius: 15px;">
             <div class="addNewTravel disflex" >
                 <input type="text" name="" v-model="newTravel.travel_name" placeholder="项目名称">
@@ -140,14 +141,14 @@
         methods:{
             ...mapActions(['setTravels']),
             getUserTravels(){
-                // 获取用户的旅游项目
-                this.$get('/api/users/'+sessionStorage.userId+'/travels',
+                // 获取旅游项目
+                this.$get('/api/travels',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
-                    console.log(res.data.data);
+                    // console.log(res.data.data);
                     this.setTravels(res.data.data);
                     this.travels=res.data.data;
                     // console.log(this.travels);
@@ -159,13 +160,15 @@
                 });
             },
             popupShow(){
+                // 显示新增弹窗
                 this.isPopupShow=true;
             },
             popupHiden(){
+                // 隐藏新增弹窗
                 this.isPopupShow=false;
             },
             addNewTravel(){
-                // console.log(this.newTravel.travel_name+this.newTravel.travel_at+this.newTravel.travel_introduction);
+                // 新增旅游
                 this.$post('/api/travels',{
                     travel_name:this.newTravel.travel_name,
                     travel_at:this.newTravel.travel_at,
@@ -189,6 +192,7 @@
                 });
             },
             delTravel(projectId,index){
+                // 删除旅游
                 this.$dialog.confirm({
                     title: '删除项目',
                     message: '是否删除该旅游'
@@ -200,7 +204,7 @@
                         },
                         url: '/api/travels/'+projectId,
                     }).then(res => {
-                        console.log(res);
+                        // console.log(res);
                         if(res.status==204){
                             this.getUserTravels();
                             this.$toast('删除成功');
@@ -216,18 +220,21 @@
                 });
             },
             editPopupShow(projectId,index){
+                // 显示修改弹窗
                 this.edTravelId=projectId;
                 this.edTravelIndex=index;
                 this.edTravel.travel_name=this.travels[index].travel_name;
                 this.edTravel.travel_at=this.travels[index].travel_at;
-                this.edTravel.travel_introduction=this.travels[index].travel_introduction;
+                this.edTravel.travel_introduction=this.travels[index].introduction;
                 this.edTravel.urgency=this.travels[index].urgency;
                 this.isEditPopupShow=true;
             },
             editPopupHiden(){
+                // 隐藏修改弹窗
                 this.isEditPopupShow=false;
             },
             editTravel(){
+                // 修改旅游基本信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -241,11 +248,11 @@
                     },
                     url: '/api/travels/'+this.edTravelId,
                 }).then(res => {
-                    console.log(res);
+                    // console.log(res);
                     if(res.status==200){
                         this.travels[this.edTravelIndex].travel_name=this.edTravel.travel_name;
                         this.travels[this.edTravelIndex].travel_at=this.edTravel.travel_at;
-                        this.travels[this.edTravelIndex].travel_introduction=this.edTravel.travel_introduction;
+                        this.travels[this.edTravelIndex].introduction=this.edTravel.travel_introduction;
                         this.travels[this.edTravelIndex].urgency=this.edTravel.urgency;
                         // this.getUserTravels();
                         this.$toast('修改成功');

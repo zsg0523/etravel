@@ -89,11 +89,6 @@ const router = new VueRouter({
                     component: Vue.component( 'dataBankMealsInfo', require( './databank/DataBankMealsInfo.vue' ) ),
                 },
                 {
-                    path: '/dataBankMealsInfo',
-                    name: 'dataBankMealsInfo',
-                    component: Vue.component( 'dataBankMealsInfo', require( './databank/DataBankMealsInfo.vue' ) ),
-                },
-                {
                     path: '/dataBankPhone',
                     name: 'dataBankPhone',
                     component: Vue.component( 'dataBankPhone', require( './databank/DataBankPhone.vue' ) ),
