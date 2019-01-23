@@ -336,8 +336,14 @@ $api->version('v1', [
 
 			// 所有评估选项列表
 			$api->get('evaluations', 'EvaluationsController@index')->name('api.evaluations.index');
-			// 选项详情
+			// 评估选项详情
 			$api->get('evaluations/{evaluation}', 'EvaluationsController@show')->name('api.evaluations.show');
+			// 创建评估选项
+			$api->post('evaluationCategories/{category}/evaluations', 'EvaluationsController@store')->name('api.evaluations.store');
+			// 编辑评估选项
+			$api->patch('evaluationCategories/{category}/evaluations/{evaluation}', 'EvaluationsController@update')->name('api.evaluations.update');
+			// 删除评估选项
+			$api->delete('evaluationCategories/{category}/evaluations/{evaluation}', 'EvaluationsController@destroy')->name('api.evaluations.destroy');
 		});
 
 

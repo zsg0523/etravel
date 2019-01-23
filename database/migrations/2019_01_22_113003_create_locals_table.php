@@ -17,7 +17,7 @@ class CreateLocalsTable extends Migration
             $table->increments('id');
             $table->integer('travel_id')->index();
             $table->string('title')->index()->comment('标题');
-            $table->string('content')->comment('当地文化内容');
+            $table->text('content')->comment('当地文化内容');
             $table->timestamps();
         });
     }
