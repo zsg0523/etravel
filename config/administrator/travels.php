@@ -4,15 +4,15 @@
  * @Author: Eden
  * @Date:   2019-01-10 10:11:36
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-21 17:24:36
+ * @Last Modified time: 2019-01-23 10:45:04
  */
-use App\Models\News;
+use App\Models\Travel;
 
 return [
 
-	'title' => '新闻资料',
-	'single' => '新闻',
-	'model' => News::class,
+	'title' => '基本资料',
+	'single' => '旅游',
+	'model' => Travel::class,
 
 	'columns' => [
 		'id' => [

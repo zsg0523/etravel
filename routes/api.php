@@ -96,6 +96,8 @@ $api->version('v1', [
 
 			// 航班信息列表
 			$api->get('flights','FlightsController@index')->name('api.flights.index');
+			// 旅游下所有航班
+			$api->get('travels/{travel}/flights', 'FlightsController@travelIndex')->name('api.travels.flights.index');
 			// 航班详情
 			$api->get('flights/{flight}','FlightsController@show')->name('api.flights.show');
 			// 新增航班
@@ -108,6 +110,8 @@ $api->version('v1', [
 
 			// 酒店信息
 			$api->get('hotels','HotelsController@index')->name('api.hotels.index');
+			// 旅游下酒店信息
+			$api->get('travels/{travel}/hotels', 'HotelsController@travelIndex')->name('api.travels.hotels.index');
 			// 酒店详情
 			$api->get('hotels/{hotel}','HotelsController@show')->name('api.hotels.show');
 			// 新增酒店
@@ -329,6 +333,11 @@ $api->version('v1', [
 			$api->patch('travels/{travel}/evaluationCategories/{category}', 'EvaCategoriesController@update')->name('api.travels.evaluationCategories.update');
 			// 删除评估分类
 			$api->delete('travels/{travel}/evaluationCategories/{category}', 'EvaCategoriesController@destroy')->name('api.travels.evaluationCategories.destroy');
+
+			// 所有评估选项列表
+			$api->get('evaluations', 'EvaluationsController@index')->name('api.evaluations.index');
+			// 选项详情
+			$api->get('evaluations/{evaluation}', 'EvaluationsController@show')->name('api.evaluations.show');
 		});
 
 
