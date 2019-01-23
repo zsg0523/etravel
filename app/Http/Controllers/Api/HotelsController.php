@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Hotel;
+use App\Models\Travel;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\HotelRequest;
 use App\Transformers\HotelTransformer;
@@ -13,6 +14,11 @@ class HotelsController extends Controller
     public function index()
     {
     	return $this->response->collection(Hotel::all(), new HotelTransformer());
+    }
+
+    public function travelIndex(Travel $travel)
+    {
+        return $this->response->collection($travel->hotel, new HotelTransformer());
     }
 
     /** [show 酒店详情] */

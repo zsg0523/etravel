@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Flight;
+use App\Models\Travel;
 use Illuminate\Http\Request;
 use App\Transformers\FlightTransformer;
 use App\Http\Requests\Api\FlightRequest;
@@ -13,6 +14,11 @@ class FlightsController extends Controller
     public function index()
     {
     	return $this->response->collection(Flight::all(), new FlightTransformer());
+    }
+
+    public function travelIndex(Travel $travel)
+    {
+        return $this->response->collection($travel->flight, new FlightTransformer());
     }
 
 

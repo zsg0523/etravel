@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-22 15:22:52
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-22 15:25:22
+ * @Last Modified time: 2019-01-23 10:47:29
  */
 use App\Models\Local;
 
@@ -31,12 +31,10 @@ return [
 				return $model->travel->travel_name;
 			}
 		],
-
 		'title' => [
 			'title' => '标题',
 			'sortable' => false,
 		],
-
 		'content' => [
 			'title' => '简介',
 			'sortable' => false,
