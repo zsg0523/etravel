@@ -19,6 +19,9 @@
     .dataBankAddBtn:hover{cursor:pointer;}
     .dataBankAddBtn>img{width:50px;height: 50px;}
 
+    .editBox{width: 500px;min-height:300px;background-color: #fff;border-radius: 15px;box-shadow: 0 0 10px #ccc;flex-direction: column;justify-content: center;align-items: center;}s
+    .editBox>button{width:60%;height:50px;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;margin-top: 20px;margin-bottom: 20px;}
+
 </style>
 
 <template>
@@ -40,26 +43,14 @@
                                 <div class="gather_info_title"><span>集合</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
-                                <!-- <div class="form_item">
-                                    <div class="item_title">第几天</div>
-                                    <div><input class="item_input" placeholder="第几天" type="text" name=""></div>
-                                </div> -->
                                 <div class="form_item">
                                     <div class="item_title">日期</div>
-                                    <div><input class="item_input" placeholder="日期" type="text" v-model="assemblePlaces.assembly_at"></div>
-                                </div>
-                                <!-- <div class="form_item">
-                                    <div class="item_title">时间点</div>
-                                    <div>
-                                        <input type="text" class="input2 fl" name="">
-                                        <div class="fl" style="width:20%;text-align:center;">至</div>
-                                        <input type="text" class="input2 fl" name="">
-                                    </div>
-                                </div> -->
+                                    <div><input class="item_input" placeholder="日期" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
+                                 </div>
                                 <div class="form_item" style="width:100%;height:120px;">
                                     <div class="item_title">详细地址</div>
                                     <div>
-                                        <textarea class="item_area" placeholder="详细地址" v-model="assemblePlaces.assembly_station"></textarea>
+                                        <textarea class="item_area" placeholder="详细地址" disabled="disabled" v-model="assemblePlaces.assembly_station"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -69,31 +60,21 @@
                                 <div class="gather_info_title"><span>解散</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
-                                <!-- <div class="form_item">
-                                    <div class="item_title">第几天</div>
-                                    <div><input class="item_input"  placeholder="第几天" type="text" name=""></div>
-                                </div> -->
                                 <div class="form_item">
                                     <div class="item_title">日期</div>
-                                    <div><input class="item_input"  placeholder="日期" type="text" v-model="assemblePlaces.dissolution_at"></div>
+                                    <div><input class="item_input"  placeholder="日期" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
                                 </div>
-                                <!-- <div class="form_item">
-                                    <div class="item_title">时间点</div>
-                                    <div>
-                                        <input type="text" class="input2 fl" name="">
-                                        <div class="fl" style="width:20%;text-align:center;">至</div>
-                                        <input type="text" class="input2 fl" name="">
-                                    </div>
-                                </div> -->
                                 <div class="form_item" style="width:100%;height:120px;">
                                     <div class="item_title">地址</div>
                                     <div>
-                                        <textarea class="item_area" placeholder="详细地址" v-model="assemblePlaces.dissolution_station"></textarea>
+                                        <textarea class="item_area" placeholder="详细地址" disabled="disabled" v-model="assemblePlaces.dissolution_station"></textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                        <div class="dataBankAddBtn" @click="isAssemblePlacePopupShow();">
+                            <img src="../../images/edit-all.png">
+                        </div>
                     </div>
 
                     <!-- 航班往返 -->
@@ -297,6 +278,34 @@
             </div>             
             
         </div>
+        <van-popup v-model="isAssemblePlacePopupShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox disflex" >
+                <div class="gather_info">
+                    <div class="gather_info_title"><span>集合</span><hr></div>
+                </div>   
+                <div class="form_item">
+                    <div class="item_title">日期</div>
+                    <div><input class="item_input" placeholder="日期" type="text" v-model="edAssemblePlaces.assembly_at"></div>
+                </div>
+                <div class="form_item">
+                    <div class="item_title">地址</div>
+                    <div><input class="item_input" placeholder="地址" type="text" v-model="edAssemblePlaces.assembly_station"></div>
+                </div>
+                <div class="gather_info">
+                    <div class="gather_info_title"><span>解散</span><hr></div>
+                </div>   
+                <div class="form_item">
+                    <div class="item_title">日期</div>
+                    <div><input class="item_input" placeholder="日期" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
+                </div>
+                <div class="form_item">
+                    <div class="item_title">地址</div>
+                    <div><input class="item_input" placeholder="地址" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
+                </div>
+                <button @click="editAssemblePlace()">确定</button>
+            </div>
+
+        </van-popup>
     </div>
 	
     
@@ -306,10 +315,17 @@
         data() {
             return {
                 assemblePlaces:[],
+                edAssemblePlaces:{
+                    assembly_at:"",
+                    assembly_station:"",
+                    dissolution_at:"",
+                    dissolution_station:"",
+                },
                 flights:[],
                 hotels:[],
                 leadTeachers:[],
-                badWeathers:[]
+                badWeathers:[],
+                isAssemblePlacePopupShow:false,
             }
         },
         mounted:function(){
@@ -330,21 +346,49 @@
                 }).then(res => {
                     console.log(res.data);
                     this.assemblePlaces=res.data;
-                    
+                    this.edAssemblePlaces.assembly_at=this.assemblePlaces.assembly_at;
+                    this.edAssemblePlaces.assembly_station=this.assemblePlaces.assembly_station;
+                    this.edAssemblePlaces.dissolution_at=this.assemblePlaces.dissolution_at;
+                    this.edAssemblePlaces.dissolution_station=this.assemblePlaces.dissolution_station;
 
                 }).catch(err => {
                     this.$toast('获取失败');
                     console.log(err);
                 });
             },
-            addNewAssemblePlace(){
-
+            assemblePlacePopupShow(){
+                tihs.isAssemblePlacePopupShow=true;
             },
             editAssemblePlace(){
-
-            },
-            delAssemblePlace(){
-
+                // 修改集合基本信息
+                this.$ajax({
+                    method: 'PATCH',
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    },
+                    data:{
+                        assembly_at:this.edAssemblePlaces.assembly_at,
+                        assembly_station:this.edAssemblePlaces.assembly_station,
+                        dissolution_at:this.edAssemblePlaces.dissolution_at,
+                        dissolution_station:this.edAssemblePlaces.dissolution_station,
+                    },
+                    url: '/api/travels/'+sessionStorage.edTravelId,
+                }).then(res => {
+                    // console.log(res);
+                    if(res.status==200){
+                        this.$toast('修改成功');
+                        this.assemblePlaces.assembly_at=this.edAssemblePlaces.assembly_at;
+                        this.assemblePlaces.assembly_station=this.edAssemblePlaces.assembly_station;
+                        this.assemblePlaces.dissolution_at=this.edAssemblePlaces.dissolution_at;
+                        this.assemblePlaces.dissolution_station=this.edAssemblePlaces.dissolution_station;
+                        this.isAssemblePlacePopupShow=false;
+                    }else{
+                        this.$toast('修改失败');
+                    }
+                }).catch(err => {
+                    this.$toast('修改失败');
+                    console.log(err)
+                });
             },
             getFlights(){
                 // 获取旅游的航班信息

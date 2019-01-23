@@ -106,7 +106,6 @@
                 <input type="text" name="" v-model="edTravel.travel_introduction" placeholder="项目简介">
                 <button @click="editTravel()">确定</button>
             </div>
-
         </van-popup>
     </div>
 </template>
@@ -129,7 +128,6 @@
                     travel_name:'',
                     travel_at:'',
                     travel_introduction:'',
-                    urgency:'',
                 },
                 edTravelId:'',
                 edTravelIndex:'',
@@ -226,7 +224,6 @@
                 this.edTravel.travel_name=this.travels[index].travel_name;
                 this.edTravel.travel_at=this.travels[index].travel_at;
                 this.edTravel.travel_introduction=this.travels[index].introduction;
-                this.edTravel.urgency=this.travels[index].urgency;
                 this.isEditPopupShow=true;
             },
             editPopupHiden(){
@@ -244,7 +241,6 @@
                         travel_name:this.edTravel.travel_name,
                         travel_at:this.edTravel.travel_at,
                         travel_introduction:this.edTravel.travel_introduction,
-                        urgency:this.edTravel.urgency,
                     },
                     url: '/api/travels/'+this.edTravelId,
                 }).then(res => {
@@ -253,7 +249,6 @@
                         this.travels[this.edTravelIndex].travel_name=this.edTravel.travel_name;
                         this.travels[this.edTravelIndex].travel_at=this.edTravel.travel_at;
                         this.travels[this.edTravelIndex].introduction=this.edTravel.travel_introduction;
-                        this.travels[this.edTravelIndex].urgency=this.edTravel.urgency;
                         // this.getUserTravels();
                         this.$toast('修改成功');
                     }else{

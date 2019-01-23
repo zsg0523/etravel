@@ -67,7 +67,8 @@
 		        	// console.log(res.data);
 		        	this.setUserInfo(res.data);
 		        }).catch(err => {
-		          	console.log(err)
+		          	console.log(err);
+		          	this.logout();
 		        });
 	  		},
 			logout(){
