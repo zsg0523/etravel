@@ -325,35 +325,35 @@
                 <div class="editBoxContent disflex">
                     <div class="form_item">
                         <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
-                        <div><input class="item_input" type="text" disabled="disabled" v-model="editFlight.flight"></div>
+                        <div><input class="item_input" type="text" v-model="edFlight.flight"></div>
                     </div> 
                     <div class="form_item">
                         <div class="item_title">日期</div>
-                        <div><input class="item_input" type="text" disabled="disabled" v-model="editFlight.date"></div>
+                        <div><input class="item_input" type="text" v-model="edFlight.date"></div>
                     </div>
                     <div class="form_item">
                         <div class="item_title">出发时间</div>
-                        <div><input class="item_input" type="text" v-model="editFlight.takeoff_time"></div>
+                        <div><input class="item_input" type="text" v-model="edFlight.takeoff_time"></div>
                     </div>
                     <div class="form_item">
                         <div class="item_title">到达时间</div>
-                        <div><input class="item_input" type="text" v-model="editFlight.arrival_time"></div>
+                        <div><input class="item_input" type="text" v-model="edFlight.arrival_time"></div>
                     </div>
                     <div class="form_item">
                         <div class="item_title">出发站点</div>
                         <div>
-                            <div><input class="item_input" type="text" v-model="editFlight.from"></div>
+                            <div><input class="item_input" type="text" v-model="edFlight.from"></div>
                         </div>
                     </div>
                     <div class="form_item">
                         <div class="item_title">达到站点</div>
                         <div>
-                            <div><input class="item_input" type="text" v-model="editFlight.to"></div>
+                            <div><input class="item_input" type="text" v-model="edFlight.to"></div>
                         </div>
                     </div>
                     <div style="width:100%;height:50px;">
-                        出发<input type="radio" value="0" v-model="editFlight.is_return">
-                        返回<input type="radio" value="1" v-model="editFlight.is_return">
+                        出发<input type="radio" value="0" v-model="edFlight.is_return">
+                        返回<input type="radio" value="1" v-model="edFlight.is_return">
                     </div>
                     <div class="issure">
                         <button @click="editFlight()">修改</button>
@@ -566,15 +566,15 @@
                 });
             },
             editFlightShow(index){
-                this.editFlight.id=this.flights[index].id;
-                this.editFlight.flight=this.flights[index].flight;
-                this.editFlight.date=this.flights[index].date;
-                this.editFlight.takeoff_time=this.flights[index].takeoff_time;
-                this.editFlight.arrival_time=this.flights[index].arrival_time;
-                this.editFlight.from=this.flights[index].from;
-                this.editFlight.to=this.flights[index].to;
-                this.editFlight.is_return=this.flights[index].is_return;
-                this.editFlight.index=index;
+                this.edFlight.id=this.flights[index].id;
+                this.edFlight.flight=this.flights[index].flight;
+                this.edFlight.date=this.flights[index].date;
+                this.edFlight.takeoff_time=this.flights[index].takeoff_time;
+                this.edFlight.arrival_time=this.flights[index].arrival_time;
+                this.edFlight.from=this.flights[index].from;
+                this.edFlight.to=this.flights[index].to;
+                this.edFlight.is_return=this.flights[index].is_return;
+                this.edFlight.index=index;
 
                 this.isEditFlightShow=true;
             },
@@ -586,20 +586,24 @@
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
                     data:{
-                        takeoff_time:this.editFlight.takeoff_time,
-                        arrival_time:this.editFlight.arrival_time,
-                        from:this.editFlight.from,
-                        to:this.editFlight.to,
-                        is_return:this.editFlight.is_return,
+                        flight:this.edFlight.flight,
+                        date:this.edFlight.date,
+                        takeoff_time:this.edFlight.takeoff_time,
+                        arrival_time:this.edFlight.arrival_time,
+                        from:this.edFlight.from,
+                        to:this.edFlight.to,
+                        is_return:this.edFlight.is_return,
                     },
-                    url: '/api/flights/'+this.editFlight.id,
+                    url: '/api/flights/'+this.edFlight.id,
                 }).then(res => {
                     if(res.status==200){
-                        this.flights[this.editFlight.index].takeoff_time=this.editFlight.takeoff_time;
-                        this.flights[this.editFlight.index].arrival_time=this.editFlight.arrival_time;
-                        this.flights[this.editFlight.index].from=this.editFlight.from;
-                        this.flights[this.editFlight.index].to=this.editFlight.to;
-                        this.flights[this.editFlight.index].is_return=this.editFlight.is_return;
+                        this.flights[this.edFlight.index].flight=this.edFlight.flight;
+                        this.flights[this.edFlight.index].date=this.edFlight.date;
+                        this.flights[this.edFlight.index].takeoff_time=this.edFlight.takeoff_time;
+                        this.flights[this.edFlight.index].arrival_time=this.edFlight.arrival_time;
+                        this.flights[this.edFlight.index].from=this.edFlight.from;
+                        this.flights[this.edFlight.index].to=this.edFlight.to;
+                        this.flights[this.edFlight.index].is_return=this.edFlight.is_return;
                         this.$toast('修改成功');
                         this.isEditFlightShow=false;    
                     }else{
