@@ -13,7 +13,7 @@
     .form_item>div{width: 96%;height: 45px;line-height: 45px;}
     .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
     .input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;}
-    .item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;}
+    .item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;}
     .active{font-size: 18px;}        
 
     .dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
@@ -25,8 +25,10 @@
     .issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
     .issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;}
 
-    .editBtnGroup{width:100%;height:50px;line-height: 50px;}
+    .editBtnGroup{width:90%;height:50px;line-height: 50px;}
     .editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;}
+
+    .van-dialog{width:50%;}
 
 </style>
 
@@ -105,11 +107,6 @@
                                 <div class="form_item">
                                     <div class="item_title">到达时间</div>
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.arrival_time"></div>
-                                    <!-- <div>
-                                        <input type="text" class="input2 fl" disabled="disabled" >
-                                        <div class="fl" style="width:20%;text-align:center;">区域</div>
-                                        <input type="text" class="input2 fl" disabled="disabled" >
-                                    </div> -->
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">出发站点</div>
@@ -125,8 +122,8 @@
                                 </div>
                             </div>
                             <div class="editBtnGroup">
-                                <img @click="delFlight();" src="../../images/rush-icon.png">
-                                <img @click="editFlight();" src="../../images/edit-all.png">
+                                <img @click="delFlight(flight.id);" src="../../images/rush-icon.png">
+                                <img @click="editFlightShow(index);" src="../../images/edit-all.png">
                             </div>
                         </div>
                         <div class="dataBankAddBtn" @click="newFlightShow();">
@@ -137,33 +134,41 @@
 
                     <!-- 住宿资料 -->
                     <div role="tabpanel" class="tab-pane" id="accommodationInfo">
-                        <div class="pane_content">    
+                        <div class="pane_content" v-for="(hotel,index) in hotels">    
                             <div class="form_content disflex">
                                 <div class="form_item" style="width:100%;">
                                     <div class="item_title">酒店名称</div>
-                                    <div><input class="item_input" style="width:97%;" type="text" ></div>
+                                    <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="hotel.hotel_name" ></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">入住时间</div>
-                                    <div><input class="item_input" type="text" ></div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_date" ></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">离开时间</div>
-                                    <div><input class="item_input" type="text" ></div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_date" ></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">几晚</div>
-                                    <div><input class="item_input" type="text" ></div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_date" ></div>
+                                </div>
+                                <div class="form_item">
+                                    <div class="item_title">联系电话</div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_phone" ></div>
                                 </div>
                                 <div class="form_item" style="width:100%;height:120px;">
                                     <div class="item_title">酒店地址</div>
                                     <div>
-                                        <textarea class="item_area" placeholder="酒店地址"></textarea>
+                                        <textarea class="item_area" placeholder="酒店地址" disabled="disabled" :value="hotel.hotel_address"></textarea>
                                     </div>
+                                </div>
+                                <div class="editBtnGroup">
+                                    <img @click="delHotel(hotel.id);" src="../../images/rush-icon.png">
+                                    <img @click="editHotelShow(index);" src="../../images/edit-all.png">
                                 </div>
                             </div>
                         </div>
-                        <div class="dataBankAddBtn">
+                        <div class="dataBankAddBtn" @click="addNewHotelShow();">
                             <img src="../../images/add_y.png">
                         </div>
 
@@ -309,7 +314,85 @@
                         返回<input type="radio" value="1" v-model="newFlight.is_return">
                     </div>
                     <div class="issure">
-                        <button @click="editAssemblePlace()">确定</button>
+                        <button @click="addNewFlight()">添加</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </van-popup>
+        <van-popup v-model="isEditFlightShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item">
+                        <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
+                        <div><input class="item_input" type="text" disabled="disabled" v-model="editFlight.flight"></div>
+                    </div> 
+                    <div class="form_item">
+                        <div class="item_title">日期</div>
+                        <div><input class="item_input" type="text" disabled="disabled" v-model="editFlight.date"></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">出发时间</div>
+                        <div><input class="item_input" type="text" v-model="editFlight.takeoff_time"></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">到达时间</div>
+                        <div><input class="item_input" type="text" v-model="editFlight.arrival_time"></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">出发站点</div>
+                        <div>
+                            <div><input class="item_input" type="text" v-model="editFlight.from"></div>
+                        </div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">达到站点</div>
+                        <div>
+                            <div><input class="item_input" type="text" v-model="editFlight.to"></div>
+                        </div>
+                    </div>
+                    <div style="width:100%;height:50px;">
+                        出发<input type="radio" value="0" v-model="editFlight.is_return">
+                        返回<input type="radio" value="1" v-model="editFlight.is_return">
+                    </div>
+                    <div class="issure">
+                        <button @click="editFlight()">修改</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </van-popup>
+        <van-popup v-model="isNewHotelShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item" style="width:100%;">
+                        <div class="item_title">酒店名称</div>
+                        <div><input class="item_input" style="width:97%;" type="text" v-model="newHotel.hotel_name" ></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">入住时间</div>
+                        <div><input class="item_input" type="text" v-model="newHotel.hotel_date" ></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">离开时间</div>
+                        <div><input class="item_input" type="text" v-model="newHotel.hotel_date" ></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">几晚</div>
+                        <div><input class="item_input" type="text" v-model="newHotel.hotel_date" ></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">联系电话</div>
+                        <div><input class="item_input" type="text" v-model="newHotel.hotel_phone" ></div>
+                    </div>
+                    <div class="form_item" style="width:100%;height:120px;">
+                        <div class="item_title">酒店地址</div>
+                        <div>
+                            <textarea class="item_area" placeholder="酒店地址" v-model="newHotel.hotel_address"></textarea>
+                        </div>
+                    </div>
+                    <div class="issure">
+                        <button @click="addNewHotel()">添加</button>
                     </div>
                     
                 </div>
@@ -331,17 +414,8 @@
                     dissolution_station:"",
                 },
                 flights:[],
-                edFlight:{
-                    flightId:'',
-                    is_return:'',
-                    date:'',
-                    takeoff_time:'',
-                    arrival_time:'',
-                    from:'',
-                    to:'',
-                },
                 newFlight:{
-                    travel_id:'',
+                    travel_id:sessionStorage.actTravelId,
                     is_return:'',
                     flight:'',
                     date:'',
@@ -350,17 +424,45 @@
                     from:'',
                     to:'',
                 },
+                edFlight:{
+                    id:'',
+                    is_return:'',
+                    flight:'',
+                    date:'',
+                    takeoff_time:'',
+                    arrival_time:'',
+                    from:'',
+                    to:'',
+                    index:'',
+                },
                 hotels:[],
+                newHotel:{
+                    hotel_name:'',
+                    hotel_address:'',
+                    hotel_date:'',
+                    hotel_phone:'',
+                    travel_id:sessionStorage.actTravelId,
+                },
+                edHotel:{
+                    id:'',
+                    hotel_name:'',
+                    hotel_address:'',
+                    hotel_date:'',
+                    hotel_phone:'',
+                },
                 leadTeachers:[],
                 badWeathers:[],
                 isAssemblePlacePopupShow:false,
                 isNewFlightShow:false,
+                isEditFlightShow:false,
+                isNewHotelShow:false,
+                isEditHotelShow:false,
             }
         },
         mounted:function(){
             this.getAssemblePlaces();
             this.getFlights();
-            // this.getHotels();
+            this.getHotels();
             // this.getLeadTeachers();
             // this.getBadWeathers();
         },
@@ -373,7 +475,7 @@
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     this.assemblePlaces=res.data;
                     this.edAssemblePlaces.assembly_at=this.assemblePlaces.assembly_at;
                     this.edAssemblePlaces.assembly_station=this.assemblePlaces.assembly_station;
@@ -406,11 +508,10 @@
                     // console.log(res);
                     if(res.status==200){
                         this.$toast('修改成功');
-                        // this.assemblePlaces.assembly_at=this.edAssemblePlaces.assembly_at;
-                        // this.assemblePlaces.assembly_station=this.edAssemblePlaces.assembly_station;
-                        // this.assemblePlaces.dissolution_at=this.edAssemblePlaces.dissolution_at;
-                        // this.assemblePlaces.dissolution_station=this.edAssemblePlaces.dissolution_station;
-                        this.getAssemblePlaces();
+                        this.assemblePlaces.assembly_at=this.edAssemblePlaces.assembly_at;
+                        this.assemblePlaces.assembly_station=this.edAssemblePlaces.assembly_station;
+                        this.assemblePlaces.dissolution_at=this.edAssemblePlaces.dissolution_at;
+                        this.assemblePlaces.dissolution_station=this.edAssemblePlaces.dissolution_station;
                         this.isAssemblePlacePopupShow=false;
                     }else{
                         this.$toast('修改失败');
@@ -428,7 +529,7 @@
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     this.flights=res.data.data;
                     
                 }).catch(err => {
@@ -442,33 +543,100 @@
             },
             addNewFlight(){
                 // 新增航班
-                this.$post('/api/travels',{
-                    travel_name:this.newTravel.travel_name,
-                    travel_at:this.newTravel.travel_at,
-                    travel_introduction:this.newTravel.travel_introduction, 
-                },
+                this.$post('/api/flights',this.newFlight,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
-                    console.log(res.data);
-                    this.getUserTravels();
-                    this.popupHiden();
+                    // console.log(res.data);
                     this.$toast('添加成功');
-                    this.newTravel.travel_name='';
-                    this.newTravel.travel_at='';
-                    this.newTravel.travel_introduction='';
+                    this.getFlights();
+                    this.isNewFlightShow=false;
+                    this.newFlight.is_return='';
+                    this.newFlight.flight='';
+                    this.newFlight.date='';
+                    this.newFlight.takeoff_time='';
+                    this.newFlight.arrival_time='';
+                    this.newFlight.from='';
+                    this.newFlight.to='';
                 }).catch(err => {
                     this.$toast('添加失败');
                     console.log(err)
                 });
             },
-            editFlight(){
+            editFlightShow(index){
+                this.editFlight.id=this.flights[index].id;
+                this.editFlight.flight=this.flights[index].flight;
+                this.editFlight.date=this.flights[index].date;
+                this.editFlight.takeoff_time=this.flights[index].takeoff_time;
+                this.editFlight.arrival_time=this.flights[index].arrival_time;
+                this.editFlight.from=this.flights[index].from;
+                this.editFlight.to=this.flights[index].to;
+                this.editFlight.is_return=this.flights[index].is_return;
+                this.editFlight.index=index;
 
+                this.isEditFlightShow=true;
             },
-            delFlight(){
+            editFlight(){
+                // 修改航班信息
+                this.$ajax({
+                    method: 'PATCH',
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    },
+                    data:{
+                        takeoff_time:this.editFlight.takeoff_time,
+                        arrival_time:this.editFlight.arrival_time,
+                        from:this.editFlight.from,
+                        to:this.editFlight.to,
+                        is_return:this.editFlight.is_return,
+                    },
+                    url: '/api/flights/'+this.editFlight.id,
+                }).then(res => {
+                    if(res.status==200){
+                        this.flights[this.editFlight.index].takeoff_time=this.editFlight.takeoff_time;
+                        this.flights[this.editFlight.index].arrival_time=this.editFlight.arrival_time;
+                        this.flights[this.editFlight.index].from=this.editFlight.from;
+                        this.flights[this.editFlight.index].to=this.editFlight.to;
+                        this.flights[this.editFlight.index].is_return=this.editFlight.is_return;
+                        this.$toast('修改成功');
+                        this.isEditFlightShow=false;    
+                    }else{
+                        this.$toast('修改失败');
+                    }
+                }).catch(err => {
+                    this.$toast('修改失败');
+                    console.log(err)
+                });
+            },
+            delFlight(flightId){
+                // 删除航班
+                this.$dialog.confirm({
+                    title: '删除航班',
+                    message: '是否删除该航班'
+                }).then(() => {
+                    this.$ajax({
+                        method: 'DELETE',
+                        headers: {
+                            "Authorization": 'Bearer '+sessionStorage.token,
+                        },
+                        url: '/api/flights/'+flightId,
+                    }).then(res => {
+                        // console.log(res);
+                        if(res.status==204){
+                            this.getFlights();
+                            this.$toast('删除成功');
+                        }else{
+                            this.$toast('删除失败');
+                        }
+                    }).catch(err => {
+                        this.$toast('删除失败');
+                        console.log(err)
+                    });
+                }).catch(err => {
 
+                });
             },
             getHotels(){
                 // 获取旅游的住宿酒店
@@ -481,15 +649,35 @@
                     console.log(res.data);
                     this.hotels=res.data.data;
                     
-                   
                 }).catch(err => {
                     this.$toast('获取失败');
                     console.log(err);
                 });
 
             },
+            addNewHotelShow(){
+                this.isNewHotelShow=true;
+            },
             addNewHotel(){
-
+                // 新增酒店
+                this.$post('/api/hotels',this.newHotel,
+                {
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    }
+                }).then(res => {
+                    // console.log(res.data);
+                    this.$toast('添加成功');
+                    this.getHotels();
+                    this.isNewHotelShow=false;
+                    this.newHotel.hotel_name="";
+                    this.newHotel.hotel_address="";
+                    this.newHotel.hotel_date="";
+                    this.newHotel.hotel_phone="";
+                }).catch(err => {
+                    this.$toast('添加失败');
+                    console.log(err)
+                });
             },
             editHotel(){
 
