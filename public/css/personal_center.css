@@ -1,0 +1,160 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+ font-family: arial,"Lantinghei SC","Microsoft Yahei";	
+}
+ul,li,ol{ list-style:none;}
+dl,dd{ margin:auto;}
+
+html{width:100%;
+	 height:100%;
+	-ms-text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-o-text-size-adjust:none;
+}
+/*text-size-adjust不管屏幕怎么变文字大小不变*/
+
+body{margin:0;
+	 padding:0;
+	 width:100%;
+	 font-size:14px;
+	 font-family: arial,"Lantinghei SC","Microsoft Yahei";	
+	 background: #d6d6d6  none repeat scroll 0% 0%;
+}
+
+a:link,a:visited,a:hover{text-decoration:none; outline:none;}
+/*所有超链接不要下划线*/
+	
+*, *:after, *:before{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box; }
+/*任何标签、包括它前面、后面生成的内容都不要影响盒子的边框*/
+
+.clear{ clear:both} 
+
+ input {
+    vertical-align: middle;}
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.personal_center{	width: 100%;	justify-content: space-between;	height: 500px;}
+.personal_center .personal_left{	width: 15%;	height: 100%;	float: left;	background: #fff;}
+/*消息列表*/
+ul.title li{	display: block;	padding: 15px;font-size: 18px;}
+ul.title li.active{ background: #ffde01;}
+
+ul.information_center{	width: 70%;margin: 10px auto;}
+li.message{display: block;border-bottom: 1px solid #E3E3E3;width: 100%;padding: 18px 0;}
+.information_text{overflow: hidden;width: 100%;/*height: 50px;*/}
+li.message .information_text img{width: 60px;height: 40px;float: left;display: inline-block;}
+li.message .information_text .sysmessage{margin-left: 75px;overflow: hidden;}
+li.message .information_text .sysmessage h2{font-size: 18px;font-weight: 500;margin-bottom: 8px;}
+li.message .information_text .sysmessage h2 i.icon_Drop-down{width: 25px;height: 25px;background: url(../images/down.png) no-repeat;display: inline-block;background-size: 100% 100%;float: right;}
+li.message .information_text .sysmessage .information{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;width: 90%;}
+.personal_center .personal_right{width: 70%;margin-left: 16%;/*height: 100%;*/ background: #fff;}
+.information1{ display: none; width: 100%;border: 1px solid #ffde01;padding: 10px 5px;line-height: 25px;}
+
+
+/*修改密码*/
+.personal_right .main-wrap{	width:100%;}
+.password_title{font-size: 18px;font-weight: 510;text-align: center;padding: 15px;border-bottom: 1px solid #cdcdcd;}
+.password_form{margin-top: 0px;}
+.am-form-group{	width: 450px;margin: 0 auto;}
+.am-form-group .am-form-content{	width: 100%;}
+.am-form-group label{font-size: 16px;font-weight: 400;color: #bdbdbd;margin: 15px 0;display: block;}
+.am-form-group input{	width: 60%;	height: 45px;	padding-left: 15px;	border: 1px solid #cdcdcd;	border-radius: 8px;}
+.am-form-group .am-form-content span{color: red;}
+/*底部按钮*/
+.info-btn{margin: 0 auto;margin-top: 60px;width:100%;padding-top: 20px;border-top: 1px solid #cdcdcd;padding-left: 40%;}
+.info-btn .btn_cancel , .info-btn .btn_save{width: 120px;padding: 10px;	font-size: 16px;text-align: center;	border: 1px solid #ffde01;	border-radius: 8px;display: inline-block;cursor: pointer;}
+.info-btn .btn_save{background: #ffde01;}
+
+/*金币管理*/
+.personal_right .coins_center{	width:100%;text-align: center;display: inline-block;margin-top: 80px;}
+.coins_center .coins_img{width: 346px;height: 180px;background: url(../images/Gold-BJ.png) no-repeat;display: inline-block;background-size: 100% 100%;}
+.coins_center .coins_info{width: 100%;margin-top: 30px;font-size: 18px;}
+.coins_info p.fonts{display: inline-block;height: 80px;line-height: 80px;}
+.coins_info span.num{font-size: 45px;color: #ffde01;margin: 0px 30px;display: inline-block;}
+.coins_info a{display: inline-block;}
+.coins_info a .pay{height: 50px;line-height: 50px;padding: 0px 55px;background: #E3E3E3;color: #666666;border-radius: 8px;}
+
+/*个人资料*/
+#edit{display: none;}
+.info_view{height: 40px;line-height: 40px;margin: 10px 0; width: 60%;color: #666666;	padding-left: 15px;	border: 1px solid #cdcdcd;	border-radius: 8px;}
+.personal_right .personal_info{	width:100%;}
+.personal_info .personal_info_edit{width: 80%;margin: 0 auto;padding: 0 20px;}
+.info_phone,.info_profession{padding: 0 20px;}
+.head_edit, .information_edit{position: relative;}
+.head_edit .info_title,.information_edit .info_title1{	height: 50px;line-height: 50px;font-size: 0;}
+.head_edit .info_title span,.information_edit .info_title1 span{font-size: 16px; width: 10%; text-align: center; display: inline-block;}
+ .info_title hr, .info_title1 hr{   margin: 5px 0px;  display: inline-block; padding: 0;border: 0; height: 0; border-top: 1px solid #ffde01; box-sizing: content-box; width: 85%;}
+
+.head_edit .info_photo,.head_edit .info_name{width: 50%;display: inline-block;padding: 0 20px;}
+.head_edit .info_name, .information_edit .info_name{position: absolute;}
+.head_edit .info_photo img{width: 150px;width: 150px;}
+.head_edit .info_name input[type="text"]{height: 40px;margin: 10px 0; width: 60%;	padding-left: 15px;	border: 1px solid #cdcdcd;	border-radius: 8px;}
+.head_edit .info_name .sex{margin: 10px 0;color: #666666;}
+.head_edit .info_name input[type="button"]{width: 30px;height: 30px;border: none;background: #CDCDCD;border-radius: 8px;}
+
+.information_edit .info_phone input[type="text"]{height: 40px;margin: 10px 0; width: 35%;	padding-left: 15px;	border: 1px solid #cdcdcd;	border-radius: 8px;min-width: 350px;}
+.information_edit .info_phone input[type="button"]{width: 60px;height: 40px;border: 1px solid #FFDE01;background:#fff ;border-radius: 8px;color: #666666;cursor: pointer;}
+
+/*右顶部按钮*/
+.personal_info{position: relative;}
+.personal_info .personal_info_btn .info_btn1{width: 62px;height: 62px;background: url(../images/edit-all.png) no-repeat;background-size: 100% 100%;position: absolute;top: 20px;right: 20px;cursor: pointer;}
+.personal_info .personal_info_btn .info_btn2{width: 50px;height: 50px;line-height: 50px;border-radius: 50px;background: #ffde01;position: absolute;top: 90px;right: 26px;text-align: center;cursor: pointer;}
+.info-btn{display: none;}
+/*单选框*/
+.sex input[checked="checked"]{background: #FFDE01 !important;}
+
+select{width: 300px;height: 40px;width: 35%;margin: 10px 0; border-radius: 8px;border: 1px solid #cdcdcd;min-width: 350px;color: #666;padding: 10px;}
+select{outline: none; appearance: none;   -webkit-appearance: none; -moz-appearance: none;}
+a.btn-select{position: relative;}
+a.btn-select:after{ content: ""; width: 20px; height: 20px; background: url(../images/down.png) no-repeat center; pointer-events: none; position: absolute;right: 15px;top: -2.5px;}
+option:hover{background: #FFDE01 !important;}
+
+.nav {	width: 300px;height: 40px;width: 35%;margin: 10px 0; border-radius: 8px;border: 1px solid #cdcdcd;min-width: 350px;color: #666;padding: 10px;}
+.nav p{margin-bottom: 12px;}
+.set {	background:url(../images/down.png) 300px no-repeat;}
+.select {	background:url(../images/close-pic.png) 300px no-repeat;}
+.new {	width:330px;position:absolute;	border:1px solid #CCC;display:none;background: #fff;}
+.nav ul li {line-height:30px;padding-left:10px;	}
+.nav ul li:hover {background:#FFDE01;}
+.nav:hover{border: 1px solid #FFDE01;}
+
+/*弹窗*/
+#bg {display:none;position:absolute;top:0%;	left:0%;width:100%;height:100%;	background-color:black;	z-index:1001;	-moz-opacity:0.7;	opacity:.70;filter:alpha(opacity=70);}
+#show ,#show1{	display:none;position:absolute;	top:25%;left:22%;width:50%;	height:45%;	padding:8px;background-color:white;	z-index:1002;overflow:auto;}
+#show form,#show1 form{	margin: 0 auto;	margin-top: 8%;text-align: center;}
+.close{	position: absolute;	top: 5%;right: 2%;height: 30px;	width: 30px;background: url(../images/close-pic.png) 100% 100%; no-repeat;cursor: pointer;border-radius: 50%;border: 1px solid aliceblue;}
+#show .borderbot{position: relative;}
+#show .borderbot input[type="text"]{height: 40px;margin: 10px 0; width: 35%;	padding-left: 15px;	border: 1px solid #cdcdcd;	border-radius: 8px;min-width: 300px;}
+#show form #Verify{	position: absolute;	top: 0;	padding: 10px;	background-color: #ffde01;	cursor: pointer; width: 10%;text-align: center;border: none;border-radius: 8px;margin: 10px;}
+.spacing{text-align: center;}
+#Modify{background-color: #ffde01;border: none;width: 15%;padding: 10px;border-radius: 8px;cursor: pointer;}
+.borderbot{	margin-bottom: 15px;}

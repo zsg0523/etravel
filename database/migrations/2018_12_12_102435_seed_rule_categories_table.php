@@ -133,7 +133,7 @@ class SeedRuleCategoriesTable extends Migration
                 'travel_id' => 2,
                 'rule_category_name'        => '其他物品',
                 'type' => 30
-            ],
+            ]
         ];
 
         DB::table('rule_categories')->insert($categories);

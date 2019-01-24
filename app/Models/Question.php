@@ -25,4 +25,17 @@ class Question extends Model
     {
     	return $this->hasMany(Answer::class);
     }
+
+    /** [getTravelAttribute 获取旅游名称] */
+    public function getTravelAttribute($value)
+    {
+        return $this->study->route->travel->travel_name;
+    }
+
+    /** [getDayAttribute 获取行程编号] */
+    public function getDayAttribute($value)
+    {
+        return $this->study->route->day;
+    }
+
 }

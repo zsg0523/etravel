@@ -62,7 +62,40 @@ return array(
         '用户与权限' => [
             'users',
             'roles',
-            'permissions'
+            'permissions',
+        ],
+        '旅游项目' => [
+            'travels',
+            'telephones',
+        ],
+        'news',
+        'locals',
+        '重要信息' => [
+            'flights',
+            'hotels',
+            'assemblies'
+        ],
+        '团员守则' => [
+            'categories',
+            'rules'
+        ],
+        '行程安排' => [
+            'routes',
+            'foods',
+            'sceneries'
+        ],
+        '学习纸' => [
+            'studies',
+            'questions',
+            'answers'
+        ],
+        '感想' => [
+            'write_titles',
+            'writes'
+        ],
+        '自我评估' => [
+            'evaluateCategories',
+            'evaluations'
         ],
     ],
 

@@ -15,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         \App\Models\Rule::observe(\App\Observers\RuleObserver::class);
-
+        \App\Models\User::observe(\App\Observers\UserObserver::class);
+        \App\Models\Write::observe(\App\Observers\WriteObserver::class);
+        \App\Models\Hotel::observe(\App\Observers\HotelObserver::class);
         // Carbon 中文化配置
         Carbon::setlocale('zh');
     }

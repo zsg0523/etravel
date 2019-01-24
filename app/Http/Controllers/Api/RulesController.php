@@ -17,18 +17,19 @@ class RulesController extends Controller
 	/** [index 所有团队守则分类] */
     public function index()
     {
-    	return $this->response->collection(RuleCategory::where('type', 10)->get(), new RuleCategoryTransformer(null));
+    	return $this->response->collection(Rule::all(), new RuleTransformer(null));
     }
 
-    /** [travelIndex 旅游团下所有分类] */
+    /** [travelIndex 旅游团下所有守则清单] */
     public function travelIndex(Travel $travel)
     {
-        return $this->response->collection($travel->rule_categories, new RuleCategoryTransformer(null));
+        return $this->response->collection($travel->rules()->orderBy('rule_category_id', 'asc')->get(), new RuleTransformer(null));
     }
 
     /** [index 我的承诺] */
     public function promise(Travel $travel)
     {
+
         $promise = $travel->rule_categories()->where('type', 20)->get();
 
         return $this->response->collection($promise, new RuleCategoryTransformer(null));

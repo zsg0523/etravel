@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Flight;
+use App\Models\Travel;
 use Illuminate\Http\Request;
 use App\Transformers\FlightTransformer;
 use App\Http\Requests\Api\FlightRequest;
@@ -15,6 +16,11 @@ class FlightsController extends Controller
     	return $this->response->collection(Flight::all(), new FlightTransformer());
     }
 
+    public function travelIndex(Travel $travel)
+    {
+        return $this->response->collection($travel->flight, new FlightTransformer());
+    }
+
 
     /** [show 航班信息] */
     public function show(Flight $flight)
@@ -25,7 +31,6 @@ class FlightsController extends Controller
     /** [store 创建航班] */
     public function store(FlightRequest $request, Flight $flight)
     {
-    	// dd($request);
     	$flight->fill($request->all());
     	$flight->save();
     	return $this->response->item($flight, new FlightTransformer())->setStatusCode(201);

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Travel;
 
 class Rule extends Model
 {
@@ -23,4 +24,7 @@ class Rule extends Model
     	return $this->belongsToMany(User::class, 'examines')->withPivot('before', 'after');
     }
 
+
 }
+
+

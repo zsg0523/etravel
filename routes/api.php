@@ -56,6 +56,12 @@ $api->version('v1', [
 			$api->post('images','ImagesController@store')->name('api.images.store');
 			// 编辑用户资料
 			$api->patch('user','UsersController@update')->name('api.user.update');
+			// 用户通知列表
+			$api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');
+			// 通知统计
+			$api->get('user/notifications/stats', 'NotificationsController@stats')->name('api.user.notifications.stats');
+
+
 			
 			// 创建新闻
 			$api->post('new','NewsController@store')->name('api.news.store');
@@ -90,26 +96,30 @@ $api->version('v1', [
 
 			// 航班信息列表
 			$api->get('flights','FlightsController@index')->name('api.flights.index');
+			// 旅游下所有航班
+			$api->get('travels/{travel}/flights', 'FlightsController@travelIndex')->name('api.travels.flights.index');
 			// 航班详情
-			$api->get('flight/{flight}','FlightsController@show')->name('api.flights.show');
+			$api->get('flights/{flight}','FlightsController@show')->name('api.flights.show');
 			// 新增航班
-			$api->post('flight','FlightsController@store')->name('api.flights.store');	
+			$api->post('flights','FlightsController@store')->name('api.flights.store');	
 			// 更新航班信息
-			$api->patch('flight/{flight}','FlightsController@update')->name('api.flights.update');
+			$api->patch('flights/{flight}','FlightsController@update')->name('api.flights.update');
 			// 删除航班
-			$api->delete('flight/{flight}','FlightsController@destroy')->name('api.flights.destroy');
+			$api->delete('flights/{flight}','FlightsController@destroy')->name('api.flights.destroy');
 
 
 			// 酒店信息
 			$api->get('hotels','HotelsController@index')->name('api.hotels.index');
+			// 旅游下酒店信息
+			$api->get('travels/{travel}/hotels', 'HotelsController@travelIndex')->name('api.travels.hotels.index');
 			// 酒店详情
-			$api->get('hotel/{hotel}','HotelsController@show')->name('api.hotels.show');
+			$api->get('hotels/{hotel}','HotelsController@show')->name('api.hotels.show');
 			// 新增酒店
-			$api->post('hotel','HotelsController@store')->name('api.hotels.store');
+			$api->post('hotels','HotelsController@store')->name('api.hotels.store');
 			// 更新酒店信息
-			$api->patch('hotel/{hotel}','HotelsController@update')->name('api.hotels.update');
+			$api->patch('hotels/{hotel}','HotelsController@update')->name('api.hotels.update');
 			// 删除酒店
-			$api->delete('hotel/{hotel}','HotelsController@destroy')->name('api.hotels.destroy');
+			$api->delete('hotels/{hotel}','HotelsController@destroy')->name('api.hotels.destroy');
 
 			// 领队老师
 			$api->get('leaders', 'LeadersController@index')->name('api.leaders.index');
@@ -126,21 +136,25 @@ $api->version('v1', [
 
 
 			// 分类列表
-			$api->get('categories','RuleCategoriesController@index')->name('api.categories.index');
+			$api->get('categories', 'RuleCategoriesController@index')->name('api.categories.index');
 			// 某个类型分类
-			$api->get('type/categories','RuleCategoriesController@typeIndex')->name('api.type.categories.index');
-			// 创建分类
-			$api->post('travels/{travel}/categories','RuleCategoriesController@store')->name('api.categories.store');
+			$api->get('type/categories', 'RuleCategoriesController@typeIndex')->name('api.type.categories.index');
+			// 旅游团下守则分类
+			$api->get('travels/{travel}/categories', 'RuleCategoriesController@travelIndex')->name('api.travels.categories.index');
 			// 分类详情
-			$api->get('travels/{travel}/categories/{category}','RuleCategoriesController@show')->name('api.categories.show');
+			$api->get('categories/{category}', 'RuleCategoriesController@show')->name('api.categories.show');
+			// 创建分类
+			$api->post('travels/{travel}/categories', 'RuleCategoriesController@store')->name('api.categories.store');
 			// 更新分类
-			$api->patch('travels/{travel}/categories/{category}','RuleCategoriesController@update')->name('api.categories.update');
+			$api->patch('travels/{travel}/categories/{category}', 'RuleCategoriesController@update')->name('api.categories.update');
 			// 删除分类
-			$api->delete('travels/{travel}/categories/{category}','RuleCategoriesController@destroy')->name('api.categories.destroy');
+			$api->delete('travels/{travel}/categories/{category}', 'RuleCategoriesController@destroy')->name('api.categories.destroy');
 
 
-			// 守则列表
+			// 所有守则清单列表
 			$api->get('rules', 'RulesController@index')->name('api.rules.index');
+			// 旅游下清单
+			$api->get('travels/{travel}/rules', 'RulesController@travelIndex')->name('api.travels.rules.index');
 			// 我的承诺
 			$api->get('travels/{travel}/promises', 'RulesController@promise')->name('api.travels.promises.index');
 			// 守则详情
@@ -171,11 +185,11 @@ $api->version('v1', [
 			// 单个分组安排详情
 			$api->get('travels/{travel}/groups/{group}','GroupsController@show')->name('api.travels.groups.show');
 			// 增加分组安排
-			$api->post('travels/{travel}/groups','GroupsController@store')->name('api.group.store');
+			$api->post('users/{user}/travels/{travel}/groups','GroupsController@store')->name('api.group.store');
 			// 更新分组安排
-			$api->patch('travels/{travel}/groups/{group}','GroupsController@update')->name('api.group.update');
+			$api->patch('users/{user}/travels/{travel}/groups/{group}','GroupsController@update')->name('api.group.update');
 			// 删除分组安排
-			$api->delete('travels/{travel}/groups/{group}','GroupsController@destroy')->name('api.group.destroy');
+			$api->delete('users/{user}/travels/{travel}/groups/{group}','GroupsController@destroy')->name('api.group.destroy');
 
 
 			// 所有行程安排
@@ -290,6 +304,73 @@ $api->version('v1', [
 			$api->patch('travels/{travel}/writetitles/{title}/summaries/{write}','WritesController@update')->name('api.travels.summaries.update');
 			// 删除感想
 			$api->delete('travels/{travel}/writetitles/{title}/summaries/{write}','WritesController@destroy')->name('api.travels.summaries.destroy');
+
+			// 高德地图获取经纬度
+			$api->post('geode','GeodesController@store')->name('api.geode.store');
+
+			// 当地文化列表
+			$api->get('locals', 'LocalsController@index')->name('api.locals.index');
+			// 旅游下当地文化
+			$api->get('travels/{travel}/locals', 'LocalsController@travelIndex')->name('api.travels.locals.index');
+			// 当地文化详情
+			$api->get('locals/{local}', 'LocalsController@show')->name('api.locals.show');
+			// 创建当地文化
+			$api->post('travels/{travel}/locals', 'LocalsController@store')->name('api.travels.locals.store');
+			// 更新当地文化
+			$api->patch('travels/{travel}/locals/{local}', 'LocalsController@update')->name('api.travels.lcoals.update');
+			// 删除当地文化
+			$api->delete('travels/{travel}/locals/{local}', 'LocalsController@destroy')->name('api.travels.locals.destroy');
+
+			// 自我评估分类列表
+			$api->get('evaluationCategories', 'EvaCategoriesController@index')->name('api.evaluationCategories.index');
+			// 旅游下评估分类
+			$api->get('travels/{travel}/evaluationCategories', 'EvaCategoriesController@travelIndex')->name('api.travels.evaluationCategories.index');
+			// 评估分类详情
+			$api->get('evaluationCategories/{category}', 'EvaCategoriesController@show')->name('api.evaluationCategories.show');
+			// 创建评估分类
+			$api->post('travels/{travel}/evaluationCategories', 'EvaCategoriesController@store')->name('api.travels.evaluationCategories.store');
+			// 更新评估分类
+			$api->patch('travels/{travel}/evaluationCategories/{category}', 'EvaCategoriesController@update')->name('api.travels.evaluationCategories.update');
+			// 删除评估分类
+			$api->delete('travels/{travel}/evaluationCategories/{category}', 'EvaCategoriesController@destroy')->name('api.travels.evaluationCategories.destroy');
+
+			// 所有评估选项列表
+			$api->get('evaluations', 'EvaluationsController@index')->name('api.evaluations.index');
+			// 评估选项详情
+			$api->get('evaluations/{evaluation}', 'EvaluationsController@show')->name('api.evaluations.show');
+			// 创建评估选项
+			$api->post('evaluationCategories/{category}/evaluations', 'EvaluationsController@store')->name('api.evaluations.store');
+			// 编辑评估选项
+			$api->patch('evaluationCategories/{category}/evaluations/{evaluation}', 'EvaluationsController@update')->name('api.evaluations.update');
+			// 删除评估选项
+			$api->delete('evaluationCategories/{category}/evaluations/{evaluation}', 'EvaluationsController@destroy')->name('api.evaluations.destroy');
+
+			// 所有评估结果
+			$api->get('evaluatedes', 'EvaluatesController@index')->name('api.evaluatedes.index');
+			// 创建评估结果
+			$api->post('evaluations/{evaluation}/evaluatedes', 'EvaluatesController@store')->name('api.evaluatedes.store');
+			// 删除评估结果
+			$api->delete('evaluations/{evaluation}/evaluatedes/{evaluate_user}', 'EvaluatesController@destroy')->name('api.evaluatedes.destroy');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
