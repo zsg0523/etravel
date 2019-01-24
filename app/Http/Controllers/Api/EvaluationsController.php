@@ -14,13 +14,13 @@ class EvaluationsController extends Controller
 	/** [index 所有评估选项列表] */
    	public function index()
    	{
-   		return $this->response->collection(Evaluation::all(), new EvaluationTransformer());
+   		return $this->response->collection(Evaluation::all(), new EvaluationTransformer(null));
    	}
 
    	/** [show 详情] */
    	public function show(Evaluation $evaluation)
    	{
-   		return $this->response->item($evaluation, new EvaluationTransformer());
+   		return $this->response->item($evaluation, new EvaluationTransformer(null));
    	}
 
       /** [store 创建评估选项] */
@@ -30,7 +30,7 @@ class EvaluationsController extends Controller
          $evaluation->evaluation_category_id = $category->id;
          $evaluation->save();
 
-         return $this->response->item($evaluation, new EvaluationTransformer())->setStatusCode(201);
+         return $this->response->item($evaluation, new EvaluationTransformer(null))->setStatusCode(201);
       }
 
       /** [update 更新评估选项] */
@@ -43,7 +43,7 @@ class EvaluationsController extends Controller
          $evaluation->fill($request->all());
          $evaluation->update();
 
-         return $this->response->item($evaluation, new EvaluationTransformer());
+         return $this->response->item($evaluation, new EvaluationTransformer(null));
       }
 
 
@@ -58,6 +58,7 @@ class EvaluationsController extends Controller
 
          return $this->response->noContent();
       }
+
 
 
 

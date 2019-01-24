@@ -13,19 +13,19 @@ class EvaCategoriesController extends Controller
     /** [index 所有旅游评估分类列表] */
     public function index()
     {
-    	return $this->response->collection(EvaluationCategory::all(), new EvaCategoryTransformer());
+    	return $this->response->collection(EvaluationCategory::all(), new EvaCategoryTransformer(null));
     }
 
     /** [travelIndex 旅游下分类列表] */
     public function travelIndex(Travel $travel)
     {
-    	return $this->response->collection($travel->evaluation_categories, new EvaCategoryTransformer());
+    	return $this->response->collection($travel->evaluation_categories, new EvaCategoryTransformer($this->user()->id));
     }
 
     /** [show 旅游下评估详情] */
     public function show(EvaluationCategory $category)
     {
-    	return $this->response->item($category, new EvaCategoryTransformer());
+    	return $this->response->item($category, new EvaCategoryTransformer($this->user()->id));
     }
 
     /** [store 创建评估分类] */
@@ -35,7 +35,7 @@ class EvaCategoriesController extends Controller
     	$category->travel_id = $travel->id;
     	$category->save();
 
-    	return $this->response->item($category, new EvaCategoryTransformer())->setStatusCode(201);
+    	return $this->response->item($category, new EvaCategoryTransformer(null))->setStatusCode(201);
     }
 
     /** [update 更新评估分类] */
@@ -48,7 +48,7 @@ class EvaCategoriesController extends Controller
     	$category->fill($request->all());
     	$category->update();
 
-    	return $this->response->item($category, new EvaCategoryTransformer());
+    	return $this->response->item($category, new EvaCategoryTransformer(null));
     }
 
     /** [destroy 删除评估分类] */

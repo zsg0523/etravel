@@ -13,6 +13,14 @@ class Evaluation extends Model
     	return $this->belongsTo(EvaluationCategory::class);
     }
 
-
+    public function users()
+    {
+    	return $this->belongsToMany(User::class);
+    }
     
+    public function evaluate_users()
+    {
+    	return $this->hasMany(EvaluateUser::class);
+    }
+
 }

@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-12 12:26:10
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-17 12:35:50
+ * @Last Modified time: 2019-01-23 17:56:34
  */
 namespace App\Transformers;
 
@@ -17,7 +17,8 @@ class RuleCategoryTransformer extends TransformerAbstract
 
 	protected $user_id;
 
-	public function __construct($user_id) {
+	public function __construct($user_id)
+	{
 		$this->user_id = $user_id;
 	}
 

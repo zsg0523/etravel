@@ -126,14 +126,50 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Write::class);
     }
 
+    /** [examines 用户检查行李清单] */
     public function examines()
     {
         return $this->hasMany(Examine::class);
     }
 
+    /** [rules 用户清单和守则] */
     public function rules()
     {
         return $this->belongsToMany(Rule::class, 'examines')->withPivot('before', 'after');
+    }
+
+    /** [evaluations 用户自我评估] */
+    public function evaluations()
+    {
+        return $this->belongsToMany(Evaluation::class);
+    }
+
+    /** [evaluatedes 用户自我评估] */
+    public function evaluatedes()
+    {
+        return $this->hasMany(EvaluateUser::class);
+    }
+
+    /** [evaluate 自我评估] */
+    public function evaluate($evaluation_ids)
+    {
+        // 判断是否为数组
+        if (!is_array($evaluation_ids)) {
+            $evaluation_ids = compact($evaluation_ids);
+        }
+
+        $this->evaluations()->sync($evaluation_ids);
+    }
+
+    /** [unevaluate 取消自我评估] */
+    public function unevaluate($evaluation_ids)
+    {
+        // 判断是否为数组
+        if (!is_array($evaluation_ids)) {
+            $evaluation_ids = compact($evaluation_ids);
+        }
+
+        $this->evaluations()->detach($evaluation_ids);
     }
 
 
