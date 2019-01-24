@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-11 18:22:05
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-11 18:25:36
+ * @Last Modified time: 2019-01-24 16:21:39
  */
 namespace App\Transformers;
 
@@ -19,7 +19,10 @@ class HotelTransformer extends TransformerAbstract
 			'id' => $hotel->id,
 			'hotel_name' => $hotel->hotel_name,
 			'hotel_address' => $hotel->hotel_address,
-			'hotel_date' => $hotel->hotel_date,
+			'check_at' => $hotel->check_at,
+			'leave_at' => $hotel->leave_at,
+			'times' => $hotel->times,
+			'image' => $hotel->image,
 			'hotel_phone' => $hotel->hotel_phone,
 			'created_at' => $hotel->created_at->toDateTimeString(),
 			'updated_at' => $hotel->updated_at->toDateTimeString(),

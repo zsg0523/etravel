@@ -22,6 +22,7 @@ class HotelsTableSeeder extends Seeder
 
             // 从旅游项目的 ID 数组中随机取出一个数
             $hotel['travel_id'] = $travel_id;
+            $hotel['image'] = 'https://iocaffcdn.phphub.org/uploads/images/201710/30/1/TrJS40Ey5k.png';
 
             Hotel::insert($hotel);
         }

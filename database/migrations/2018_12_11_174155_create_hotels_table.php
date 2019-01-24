@@ -17,8 +17,11 @@ class CreateHotelsTable extends Migration
             $table->increments('id');
             $table->integer('travel_id')->index();
             $table->string('hotel_name')->index();
-            $table->string('hotel_address');
-            $table->string('hotel_date');
+            $table->string('check_at')->nullable()->comment('入住日期');
+            $table->string('leave_at')->nullable()->comment('离开日期');
+            $table->string('times')->nullable()->comment('共几晚');
+            $table->string('image')->nullable()->comment('酒店图片');
+            $table->string('hotel_address')->comment('详细地址');
             $table->string('hotel_phone')->index();
             $table->timestamps();
         });
