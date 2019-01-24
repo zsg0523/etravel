@@ -15,12 +15,18 @@
     .input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;}
     .item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;}
     .active{font-size: 18px;}        
-    .dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 50px;top: 50px;}
+
+    .dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
     .dataBankAddBtn:hover{cursor:pointer;}
     .dataBankAddBtn>img{width:50px;height: 50px;}
 
-    .editBox{width: 500px;min-height:300px;background-color: #fff;border-radius: 15px;box-shadow: 0 0 10px #ccc;flex-direction: column;justify-content: center;align-items: center;}s
-    .editBox>button{width:60%;height:50px;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;margin-top: 20px;margin-bottom: 20px;}
+    .editBox{width: 600px;min-height:300px;background-color: #fff;border-radius: 15px;box-shadow: 0 0 10px #ccc;}
+    .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
+    .issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
+    .issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;}
+
+    .editBtnGroup{width:100%;height:50px;line-height: 50px;}
+    .editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;}
 
 </style>
 
@@ -72,100 +78,58 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dataBankAddBtn" @click="isAssemblePlacePopupShow();">
+                        <div class="dataBankAddBtn" @click="assemblePlacePopupShow();">
                             <img src="../../images/edit-all.png">
                         </div>
                     </div>
 
                     <!-- 航班往返 -->
                     <div role="tabpanel" class="tab-pane" id="flight">
-                        <div class="pane_content">
+                        <div class="pane_content" v-for="(flight,index) in flights">
                             <div class="gather_info">
-                                <div class="gather_info_title"><span>出发</span><hr></div>
+                                <div class="gather_info_title"><span v-if="flight.is_return">返回</span><span v-else>出发</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
                                 <div class="form_item">
                                     <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
-                                    <div><input class="item_input" type="text" name=""></div>
+                                    <div><input class="item_input" type="text" disabled="disabled"  :value="flight.flight"></div>
                                 </div> 
                                 <div class="form_item">
                                     <div class="item_title">日期</div>
-                                    <div><input class="item_input" type="text" name=""></div>
+                                    <div><input class="item_input" type="text" disabled="disabled"  :value="flight.date"></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">出发时间</div>
-                                    <div>
-                                        <input type="text" class="input2 fl" name="">
-                                        <div class="fl" style="width:20%;text-align:center;">区域</div>
-                                        <input type="text" class="input2 fl" name="">
-                                    </div>
+                                    <div><input class="item_input" type="text" disabled="disabled"  :value="flight.takeoff_time"></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">到达时间</div>
-                                    <div>
-                                        <input type="text" class="input2 fl" name="">
+                                    <div><input class="item_input" type="text" disabled="disabled"  :value="flight.arrival_time"></div>
+                                    <!-- <div>
+                                        <input type="text" class="input2 fl" disabled="disabled" >
                                         <div class="fl" style="width:20%;text-align:center;">区域</div>
-                                        <input type="text" class="input2 fl" name="">
-                                    </div>
+                                        <input type="text" class="input2 fl" disabled="disabled" >
+                                    </div> -->
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">出发站点</div>
                                     <div>
-                                        <div><input class="item_input" type="text" name=""></div>
+                                        <div><input class="item_input" type="text" disabled="disabled"  :value="flight.from"></div>
                                     </div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">达到站点</div>
                                     <div>
-                                        <div><input class="item_input" type="text" name=""></div>
+                                        <div><input class="item_input" type="text" disabled="disabled"  :value="flight.to"></div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="pane_content">
-                            <div class="gather_info">
-                                <div class="gather_info_title"><span>返回</span><hr></div>
-                            </div>    
-                            <div class="form_content disflex">
-                                <div class="form_item">
-                                    <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
-                                    <div><input class="item_input" type="text" name=""></div>
-                                </div>
-                                <div class="form_item">
-                                    <div class="item_title">日期</div>
-                                    <div><input class="item_input" type="text" name=""></div>
-                                </div>
-                                <div class="form_item">
-                                    <div class="item_title">出发时间</div>
-                                    <div>
-                                        <input type="text" class="input2 fl" name="">
-                                        <div class="fl" style="width:20%;text-align:center;">区域</div>
-                                        <input type="text" class="input2 fl" name="">
-                                    </div>
-                                </div>
-                                <div class="form_item">
-                                    <div class="item_title">到达时间</div>
-                                    <div>
-                                        <input type="text" class="input2 fl" name="">
-                                        <div class="fl" style="width:20%;text-align:center;">区域</div>
-                                        <input type="text" class="input2 fl" name="">
-                                    </div>
-                                </div>
-                                <div class="form_item">
-                                    <div class="item_title">出发站点</div>
-                                    <div>
-                                        <div><input class="item_input" type="text" name=""></div>
-                                    </div>
-                                </div>
-                                <div class="form_item">
-                                    <div class="item_title">达到站点</div>
-                                    <div>
-                                        <div><input class="item_input" type="text" name=""></div>
-                                    </div>
-                                </div>
+                            <div class="editBtnGroup">
+                                <img @click="delFlight();" src="../../images/rush-icon.png">
+                                <img @click="editFlight();" src="../../images/edit-all.png">
                             </div>
                         </div>
-                        <div class="dataBankAddBtn">
+                        <div class="dataBankAddBtn" @click="newFlightShow();">
                             <img src="../../images/add_y.png">
                         </div>
 
@@ -177,19 +141,19 @@
                             <div class="form_content disflex">
                                 <div class="form_item" style="width:100%;">
                                     <div class="item_title">酒店名称</div>
-                                    <div><input class="item_input" style="width:97%;" type="text" name=""></div>
+                                    <div><input class="item_input" style="width:97%;" type="text" ></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">入住时间</div>
-                                    <div><input class="item_input" type="text" name=""></div>
+                                    <div><input class="item_input" type="text" ></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">离开时间</div>
-                                    <div><input class="item_input" type="text" name=""></div>
+                                    <div><input class="item_input" type="text" ></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">几晚</div>
-                                    <div><input class="item_input" type="text" name=""></div>
+                                    <div><input class="item_input" type="text" ></div>
                                 </div>
                                 <div class="form_item" style="width:100%;height:120px;">
                                     <div class="item_title">酒店地址</div>
@@ -213,21 +177,21 @@
 
                                 <div class="form_item">
                                     <div class="item_title">老师姓名</div>
-                                    <div><input class="item_input" type="text" name=""></div>
+                                    <div><input class="item_input" type="text" ></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">老师电话</div>
-                                    <div><input class="item_input" type="text" name=""></div>
+                                    <div><input class="item_input" type="text" ></div>
                                 </div>
                             </div>
                             <div class="form_content disflex">
                                 <div class="form_item">
                                     <div class="item_title">老师姓名</div>
-                                    <div><input class="item_input" type="text" name=""></div>
+                                    <div><input class="item_input" type="text" ></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">老师电话</div>
-                                    <div><input class="item_input" type="text" name=""></div>
+                                    <div><input class="item_input" type="text" ></div>
                                 </div>
                                
                             </div>
@@ -245,7 +209,7 @@
                             <div class="form_content disflex">
                                 <div class="form_item" style="width:100%;">
                                     <div class="item_title">标题</div>
-                                    <div><input class="item_input" style="width:97%;" type="text" name=""></div>
+                                    <div><input class="item_input" style="width:97%;" type="text" ></div>
                                 </div>
                                 <div class="form_item" style="width:100%;height:120px;">
                                     <div class="item_title">安排</div>
@@ -257,7 +221,7 @@
                             <div class="form_content disflex">
                                 <div class="form_item" style="width:100%;">
                                     <div class="item_title">标题</div>
-                                    <div><input class="item_input" style="width:97%;" type="text" name=""></div>
+                                    <div><input class="item_input" style="width:97%;" type="text" ></div>
                                 </div>
                                 <div class="form_item" style="width:100%;height:120px;">
                                     <div class="item_title">安排</div>
@@ -279,32 +243,77 @@
             
         </div>
         <van-popup v-model="isAssemblePlacePopupShow" :overlay="true" style="border-radius: 15px;">
-            <div class="editBox disflex" >
-                <div class="gather_info">
-                    <div class="gather_info_title"><span>集合</span><hr></div>
-                </div>   
-                <div class="form_item">
-                    <div class="item_title">日期</div>
-                    <div><input class="item_input" placeholder="日期" type="text" v-model="edAssemblePlaces.assembly_at"></div>
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="gather_info">
+                        <div class="gather_info_title"><span>集合</span><hr></div>
+                    </div>   
+                    <div class="form_item" style="width:100%;">
+                        <div class="item_title">日期</div>
+                        <div><input class="item_input" placeholder="日期" type="text" v-model="edAssemblePlaces.assembly_at"></div>
+                    </div>
+                    <div class="form_item" style="width:100%;">
+                        <div class="item_title">地址</div>
+                        <div><input class="item_input" placeholder="地址" type="text" v-model="edAssemblePlaces.assembly_station"></div>
+                    </div>
+                    <div class="gather_info">
+                        <div class="gather_info_title"><span>解散</span><hr></div>
+                    </div>   
+                    <div class="form_item" style="width:100%;">
+                        <div class="item_title">日期</div>
+                        <div><input class="item_input" placeholder="日期" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
+                    </div>
+                    <div class="form_item" style="width:100%;">
+                        <div class="item_title">地址</div>
+                        <div><input class="item_input" placeholder="地址" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
+                    </div>
+                    <div class="issure">
+                        <button @click="editAssemblePlace()">确定</button>
+                    </div>
                 </div>
-                <div class="form_item">
-                    <div class="item_title">地址</div>
-                    <div><input class="item_input" placeholder="地址" type="text" v-model="edAssemblePlaces.assembly_station"></div>
-                </div>
-                <div class="gather_info">
-                    <div class="gather_info_title"><span>解散</span><hr></div>
-                </div>   
-                <div class="form_item">
-                    <div class="item_title">日期</div>
-                    <div><input class="item_input" placeholder="日期" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
-                </div>
-                <div class="form_item">
-                    <div class="item_title">地址</div>
-                    <div><input class="item_input" placeholder="地址" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
-                </div>
-                <button @click="editAssemblePlace()">确定</button>
             </div>
-
+        </van-popup>
+        <van-popup v-model="isNewFlightShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item">
+                        <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
+                        <div><input class="item_input" type="text" v-model="newFlight.flight"></div>
+                    </div> 
+                    <div class="form_item">
+                        <div class="item_title">日期</div>
+                        <div><input class="item_input" type="text" v-model="newFlight.date"></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">出发时间</div>
+                        <div><input class="item_input" type="text" v-model="newFlight.takeoff_time"></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">到达时间</div>
+                        <div><input class="item_input" type="text" v-model="newFlight.arrival_time"></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">出发站点</div>
+                        <div>
+                            <div><input class="item_input" type="text" v-model="newFlight.from"></div>
+                        </div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">达到站点</div>
+                        <div>
+                            <div><input class="item_input" type="text" v-model="newFlight.to"></div>
+                        </div>
+                    </div>
+                    <div style="width:100%;height:50px;">
+                        出发<input type="radio" value="0" v-model="newFlight.is_return">
+                        返回<input type="radio" value="1" v-model="newFlight.is_return">
+                    </div>
+                    <div class="issure">
+                        <button @click="editAssemblePlace()">确定</button>
+                    </div>
+                    
+                </div>
+            </div>
         </van-popup>
     </div>
 	
@@ -322,15 +331,35 @@
                     dissolution_station:"",
                 },
                 flights:[],
+                edFlight:{
+                    flightId:'',
+                    is_return:'',
+                    date:'',
+                    takeoff_time:'',
+                    arrival_time:'',
+                    from:'',
+                    to:'',
+                },
+                newFlight:{
+                    travel_id:'',
+                    is_return:'',
+                    flight:'',
+                    date:'',
+                    takeoff_time:'',
+                    arrival_time:'',
+                    from:'',
+                    to:'',
+                },
                 hotels:[],
                 leadTeachers:[],
                 badWeathers:[],
                 isAssemblePlacePopupShow:false,
+                isNewFlightShow:false,
             }
         },
         mounted:function(){
             this.getAssemblePlaces();
-            // this.getFlights();
+            this.getFlights();
             // this.getHotels();
             // this.getLeadTeachers();
             // this.getBadWeathers();
@@ -357,7 +386,7 @@
                 });
             },
             assemblePlacePopupShow(){
-                tihs.isAssemblePlacePopupShow=true;
+                this.isAssemblePlacePopupShow=true;
             },
             editAssemblePlace(){
                 // 修改集合基本信息
@@ -372,15 +401,16 @@
                         dissolution_at:this.edAssemblePlaces.dissolution_at,
                         dissolution_station:this.edAssemblePlaces.dissolution_station,
                     },
-                    url: '/api/travels/'+sessionStorage.edTravelId,
+                    url: '/api/travels/'+sessionStorage.actTravelId,
                 }).then(res => {
                     // console.log(res);
                     if(res.status==200){
                         this.$toast('修改成功');
-                        this.assemblePlaces.assembly_at=this.edAssemblePlaces.assembly_at;
-                        this.assemblePlaces.assembly_station=this.edAssemblePlaces.assembly_station;
-                        this.assemblePlaces.dissolution_at=this.edAssemblePlaces.dissolution_at;
-                        this.assemblePlaces.dissolution_station=this.edAssemblePlaces.dissolution_station;
+                        // this.assemblePlaces.assembly_at=this.edAssemblePlaces.assembly_at;
+                        // this.assemblePlaces.assembly_station=this.edAssemblePlaces.assembly_station;
+                        // this.assemblePlaces.dissolution_at=this.edAssemblePlaces.dissolution_at;
+                        // this.assemblePlaces.dissolution_station=this.edAssemblePlaces.dissolution_station;
+                        this.getAssemblePlaces();
                         this.isAssemblePlacePopupShow=false;
                     }else{
                         this.$toast('修改失败');
@@ -399,7 +429,7 @@
                     }
                 }).then(res => {
                     console.log(res.data);
-                    this.flights=res.data;
+                    this.flights=res.data.data;
                     
                 }).catch(err => {
                     this.$toast('获取失败');
@@ -407,8 +437,32 @@
                 });
 
             },
+            newFlightShow(){
+                this.isNewFlightShow=true;
+            },
             addNewFlight(){
-
+                // 新增航班
+                this.$post('/api/travels',{
+                    travel_name:this.newTravel.travel_name,
+                    travel_at:this.newTravel.travel_at,
+                    travel_introduction:this.newTravel.travel_introduction, 
+                },
+                {
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    }
+                }).then(res => {
+                    console.log(res.data);
+                    this.getUserTravels();
+                    this.popupHiden();
+                    this.$toast('添加成功');
+                    this.newTravel.travel_name='';
+                    this.newTravel.travel_at='';
+                    this.newTravel.travel_introduction='';
+                }).catch(err => {
+                    this.$toast('添加失败');
+                    console.log(err)
+                });
             },
             editFlight(){
 
@@ -425,7 +479,7 @@
                     }
                 }).then(res => {
                     console.log(res.data);
-                    this.hotels=res.data;
+                    this.hotels=res.data.data;
                     
                    
                 }).catch(err => {
