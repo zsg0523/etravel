@@ -93,6 +93,10 @@ return array(
             'write_titles',
             'writes'
         ],
+        '自我评估' => [
+            'evaluateCategories',
+            'evaluations'
+        ],
     ],
 
     /*
