@@ -18,6 +18,9 @@ class EvaluationCategory extends Model
     	return $this->hasMany(Evaluation::class);
     }
 
-
+    public function getTagAttribute($value)
+    {
+    	return $this->travel->travel_name . ' | ' . $this->attributes['title'];
+    }
     
 }
