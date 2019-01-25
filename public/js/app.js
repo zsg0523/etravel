@@ -25110,17 +25110,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
             hotels: [],
             newHotel: {
+                check_at: '',
+                leave_at: '',
+                times: '',
                 hotel_name: '',
                 hotel_address: '',
-                hotel_date: '',
                 hotel_phone: '',
                 travel_id: sessionStorage.actTravelId
             },
             edHotel: {
                 id: '',
+                check_at: '',
+                leave_at: '',
+                times: '',
                 hotel_name: '',
                 hotel_address: '',
-                hotel_date: '',
                 hotel_phone: ''
             },
             leadTeachers: [],
@@ -25352,10 +25356,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this8.$toast('添加成功');
                 _this8.getHotels();
                 _this8.isNewHotelShow = false;
-                _this8.newHotel.hotel_name = "";
-                _this8.newHotel.hotel_address = "";
-                _this8.newHotel.hotel_date = "";
-                _this8.newHotel.hotel_phone = "";
+                _this8.newHotel.check_at = '';
+                _this8.newHotel.leave_at = '';
+                _this8.newHotel.times = '';
+                _this8.newHotel.hotel_name = '';
+                _this8.newHotel.hotel_address = '';
+                _this8.newHotel.hotel_phone = '';
             }).catch(function (err) {
                 _this8.$toast('添加失败');
                 console.log(err);
@@ -25821,7 +25827,7 @@ var render = function() {
                           _c("input", {
                             staticClass: "item_input",
                             attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: hotel.hotel_date }
+                            domProps: { value: hotel.check_at }
                           })
                         ])
                       ]),
@@ -25835,7 +25841,7 @@ var render = function() {
                           _c("input", {
                             staticClass: "item_input",
                             attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: hotel.hotel_date }
+                            domProps: { value: hotel.leave_at }
                           })
                         ])
                       ]),
@@ -25849,7 +25855,7 @@ var render = function() {
                           _c("input", {
                             staticClass: "item_input",
                             attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: hotel.hotel_date }
+                            domProps: { value: hotel.times }
                           })
                         ])
                       ]),
@@ -26712,23 +26718,19 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.newHotel.hotel_date,
-                        expression: "newHotel.hotel_date"
+                        value: _vm.newHotel.check_at,
+                        expression: "newHotel.check_at"
                       }
                     ],
                     staticClass: "item_input",
                     attrs: { type: "text" },
-                    domProps: { value: _vm.newHotel.hotel_date },
+                    domProps: { value: _vm.newHotel.check_at },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(
-                          _vm.newHotel,
-                          "hotel_date",
-                          $event.target.value
-                        )
+                        _vm.$set(_vm.newHotel, "check_at", $event.target.value)
                       }
                     }
                   })
@@ -26744,23 +26746,19 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.newHotel.hotel_date,
-                        expression: "newHotel.hotel_date"
+                        value: _vm.newHotel.leave_at,
+                        expression: "newHotel.leave_at"
                       }
                     ],
                     staticClass: "item_input",
                     attrs: { type: "text" },
-                    domProps: { value: _vm.newHotel.hotel_date },
+                    domProps: { value: _vm.newHotel.leave_at },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(
-                          _vm.newHotel,
-                          "hotel_date",
-                          $event.target.value
-                        )
+                        _vm.$set(_vm.newHotel, "leave_at", $event.target.value)
                       }
                     }
                   })
@@ -26776,23 +26774,19 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.newHotel.hotel_date,
-                        expression: "newHotel.hotel_date"
+                        value: _vm.newHotel.times,
+                        expression: "newHotel.times"
                       }
                     ],
                     staticClass: "item_input",
                     attrs: { type: "text" },
-                    domProps: { value: _vm.newHotel.hotel_date },
+                    domProps: { value: _vm.newHotel.times },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(
-                          _vm.newHotel,
-                          "hotel_date",
-                          $event.target.value
-                        )
+                        _vm.$set(_vm.newHotel, "times", $event.target.value)
                       }
                     }
                   })
