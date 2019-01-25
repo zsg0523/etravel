@@ -398,6 +398,42 @@
                 </div>
             </div>
         </van-popup>
+        <van-popup v-model="isEditHotelShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item" style="width:100%;">
+                        <div class="item_title">酒店名称</div>
+                        <div><input class="item_input" style="width:97%;" type="text" v-model="edHotel.hotel_name" ></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">入住时间</div>
+                        <div><input class="item_input" type="text" v-model="edHotel.check_at" ></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">离开时间</div>
+                        <div><input class="item_input" type="text" v-model="edHotel.leave_at" ></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">几晚</div>
+                        <div><input class="item_input" type="text" v-model="edHotel.times" ></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">联系电话</div>
+                        <div><input class="item_input" type="text" v-model="edHotel.hotel_phone" ></div>
+                    </div>
+                    <div class="form_item" style="width:100%;height:120px;">
+                        <div class="item_title">酒店地址</div>
+                        <div>
+                            <textarea class="item_area" placeholder="酒店地址" v-model="edHotel.hotel_address"></textarea>
+                        </div>
+                    </div>
+                    <div class="issure">
+                        <button @click="editHotel()">修改</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </van-popup>
     </div>
 	
     
@@ -453,6 +489,7 @@
                     hotel_name:'',
                     hotel_address:'',
                     hotel_phone:'',
+                    index:'',
                 },
                 leadTeachers:[],
                 badWeathers:[],
@@ -689,11 +726,80 @@
                     console.log(err)
                 });
             },
-            editHotel(){
+            editHotelShow(index){
+                this.edHotel.id=this.hotels[index].id ;
+                this.edHotel.check_at=this.hotels[index].check_at;
+                this.edHotel.leave_at=this.hotels[index].leave_at;
+                this.edHotel.times=this.hotels[index].times;
+                this.edHotel.hotel_name=this.hotels[index].hotel_name;
+                this.edHotel.hotel_address=this.hotels[index].hotel_address;
+                this.edHotel.hotel_phone=this.hotels[index].hotel_phone;
+                this.edHotel.index=index;
 
+                this.isEditHotelShow=true;
             },
-            delHotel(){
+            editHotel(){
+                // 修改航班信息
+                this.$ajax({
+                    method: 'PATCH',
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    },
+                    data:{
+                        check_at:this.edHotel.check_at,
+                        leave_at:this.edHotel.leave_at,
+                        times:this.edHotel.times,
+                        hotel_name:this.edHotel.hotel_name,
+                        hotel_address:this.edHotel.hotel_address,
+                        hotel_phone:this.edHotel.hotel_phone,
+                    },
+                    url: '/api/hotels/'+this.edHotel.id,
+                }).then(res => {
+                    if(res.status==200){
+                        this.flights[this.edHotel.index].flight=this.edHotel.flight;
+                        this.flights[this.edHotel.index].date=this.edHotel.date;
+                        this.flights[this.edHotel.index].takeoff_time=this.edHotel.takeoff_time;
+                        this.flights[this.edHotel.index].arrival_time=this.edHotel.arrival_time;
+                        this.flights[this.edHotel.index].from=this.edHotel.from;
+                        this.flights[this.edHotel.index].to=this.edHotel.to;
+                        this.flights[this.edHotel.index].is_return=this.edHotel.is_return;
+                        this.$toast('修改成功');
+                        this.isEditHotelShow=false;    
+                    }else{
+                        this.$toast('修改失败');
+                    }
+                }).catch(err => {
+                    this.$toast('修改失败');
+                    console.log(err)
+                });
+            },
+            delHotel(hotelId){
+                // 删除酒店
+                this.$dialog.confirm({
+                    title: '删除酒店',
+                    message: '是否删除该酒店'
+                }).then(() => {
+                    this.$ajax({
+                        method: 'DELETE',
+                        headers: {
+                            "Authorization": 'Bearer '+sessionStorage.token,
+                        },
+                        url: '/api/hotels/'+hotelId,
+                    }).then(res => {
+                        // console.log(res);
+                        if(res.status==204){
+                            this.getFlights();
+                            this.$toast('删除成功');
+                        }else{
+                            this.$toast('删除失败');
+                        }
+                    }).catch(err => {
+                        this.$toast('删除失败');
+                        console.log(err)
+                    });
+                }).catch(err => {
 
+                });
             },
             getLeadTeachers(){
                 // 获取领队老师信息

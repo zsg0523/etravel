@@ -25075,6 +25075,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -25125,7 +25161,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 times: '',
                 hotel_name: '',
                 hotel_address: '',
-                hotel_phone: ''
+                hotel_phone: '',
+                index: ''
             },
             leadTeachers: [],
             badWeathers: [],
@@ -25367,10 +25404,85 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 console.log(err);
             });
         },
-        editHotel: function editHotel() {},
-        delHotel: function delHotel() {},
-        getLeadTeachers: function getLeadTeachers() {
+        editHotelShow: function editHotelShow(index) {
+            this.edHotel.id = this.hotels[index].id;
+            this.edHotel.check_at = this.hotels[index].check_at;
+            this.edHotel.leave_at = this.hotels[index].leave_at;
+            this.edHotel.times = this.hotels[index].times;
+            this.edHotel.hotel_name = this.hotels[index].hotel_name;
+            this.edHotel.hotel_address = this.hotels[index].hotel_address;
+            this.edHotel.hotel_phone = this.hotels[index].hotel_phone;
+            this.edHotel.index = index;
+
+            this.isEditHotelShow = true;
+        },
+        editHotel: function editHotel() {
             var _this9 = this;
+
+            // 修改航班信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    check_at: this.edHotel.check_at,
+                    leave_at: this.edHotel.leave_at,
+                    times: this.edHotel.times,
+                    hotel_name: this.edHotel.hotel_name,
+                    hotel_address: this.edHotel.hotel_address,
+                    hotel_phone: this.edHotel.hotel_phone
+                },
+                url: '/api/hotels/' + this.edHotel.id
+            }).then(function (res) {
+                if (res.status == 200) {
+                    _this9.flights[_this9.edHotel.index].flight = _this9.edHotel.flight;
+                    _this9.flights[_this9.edHotel.index].date = _this9.edHotel.date;
+                    _this9.flights[_this9.edHotel.index].takeoff_time = _this9.edHotel.takeoff_time;
+                    _this9.flights[_this9.edHotel.index].arrival_time = _this9.edHotel.arrival_time;
+                    _this9.flights[_this9.edHotel.index].from = _this9.edHotel.from;
+                    _this9.flights[_this9.edHotel.index].to = _this9.edHotel.to;
+                    _this9.flights[_this9.edHotel.index].is_return = _this9.edHotel.is_return;
+                    _this9.$toast('修改成功');
+                    _this9.isEditHotelShow = false;
+                } else {
+                    _this9.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this9.$toast('修改失败');
+                console.log(err);
+            });
+        },
+        delHotel: function delHotel(hotelId) {
+            var _this10 = this;
+
+            // 删除酒店
+            this.$dialog.confirm({
+                title: '删除酒店',
+                message: '是否删除该酒店'
+            }).then(function () {
+                _this10.$ajax({
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: '/api/hotels/' + hotelId
+                }).then(function (res) {
+                    // console.log(res);
+                    if (res.status == 204) {
+                        _this10.getFlights();
+                        _this10.$toast('删除成功');
+                    } else {
+                        _this10.$toast('删除失败');
+                    }
+                }).catch(function (err) {
+                    _this10.$toast('删除失败');
+                    console.log(err);
+                });
+            }).catch(function (err) {});
+        },
+        getLeadTeachers: function getLeadTeachers() {
+            var _this11 = this;
 
             // 获取领队老师信息
             // this.$get('/api/travels/'+sessionStorage.actTravelId+'/travels',
@@ -25380,9 +25492,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }).then(function (res) {
                 console.log(res.data);
-                _this9.leadTeachers = res.data;
+                _this11.leadTeachers = res.data;
             }).catch(function (err) {
-                _this9.$toast('获取失败');
+                _this11.$toast('获取失败');
                 console.log(err);
             });
         },
@@ -25390,7 +25502,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         editLeadTeacher: function editLeadTeacher() {},
         delLeadTeacher: function delLeadTeacher() {},
         getBadWeathers: function getBadWeathers() {
-            var _this10 = this;
+            var _this12 = this;
 
             // 获取恶劣天气安排
             this.$get('/api/travels/' + sessionStorage.actTravelId + '/travels', {
@@ -25399,9 +25511,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }).then(function (res) {
                 console.log(res.data);
-                _this10.badWeathers = res.data;
+                _this12.badWeathers = res.data;
             }).catch(function (err) {
-                _this10.$toast('获取失败');
+                _this12.$toast('获取失败');
                 console.log(err);
             });
         },
@@ -26877,6 +26989,236 @@ var render = function() {
                     }
                   },
                   [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditHotelShow,
+            callback: function($$v) {
+              _vm.isEditHotelShow = $$v
+            },
+            expression: "isEditHotelShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c(
+                "div",
+                { staticClass: "form_item", staticStyle: { width: "100%" } },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("酒店名称")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edHotel.hotel_name,
+                          expression: "edHotel.hotel_name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.edHotel.hotel_name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edHotel,
+                            "hotel_name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("入住时间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.check_at,
+                        expression: "edHotel.check_at"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.edHotel.check_at },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHotel, "check_at", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("离开时间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.leave_at,
+                        expression: "edHotel.leave_at"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.edHotel.leave_at },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHotel, "leave_at", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("几晚")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.times,
+                        expression: "edHotel.times"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.edHotel.times },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHotel, "times", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("联系电话")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.hotel_phone,
+                        expression: "edHotel.hotel_phone"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.edHotel.hotel_phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHotel,
+                          "hotel_phone",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item",
+                  staticStyle: { width: "100%", height: "120px" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("酒店地址")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edHotel.hotel_address,
+                          expression: "edHotel.hotel_address"
+                        }
+                      ],
+                      staticClass: "item_area",
+                      attrs: { placeholder: "酒店地址" },
+                      domProps: { value: _vm.edHotel.hotel_address },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edHotel,
+                            "hotel_address",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.editHotel()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
                 )
               ])
             ])
