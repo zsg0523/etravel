@@ -121,8 +121,11 @@ $api->version('v1', [
 			// 删除酒店
 			$api->delete('hotels/{hotel}','HotelsController@destroy')->name('api.hotels.destroy');
 
+
 			// 领队老师
 			$api->get('leaders', 'LeadersController@index')->name('api.leaders.index');
+			// 旅游下领队老师
+			$api->get('travels/{travel}/leaders', 'LeadersController@travelIndex')->name('api.travels.leaders.index');;
 			// 领队老师详情
 			$api->get('travels/{travel}/leaders/{assembly}', 'LeadersController@show')->name('api.leaders.show');
 			// 添加领队老师

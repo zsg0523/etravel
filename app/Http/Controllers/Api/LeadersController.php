@@ -16,6 +16,12 @@ class LeadersController extends Controller
     	return $this->response->collection(Assembly::all(), new AssemblyTransformer());
     }
 
+
+    public function travelIndex(Travel $travel)
+    {
+        return $this->response->collection($travel->assemblies, new AssemblyTransformer());
+    }
+
     /** [show 领队详情] */
     public function show(Travel $travel, Assembly $assembly)
     {
