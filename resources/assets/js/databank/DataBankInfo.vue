@@ -756,13 +756,12 @@
                     url: '/api/hotels/'+this.edHotel.id,
                 }).then(res => {
                     if(res.status==200){
-                        this.flights[this.edHotel.index].flight=this.edHotel.flight;
-                        this.flights[this.edHotel.index].date=this.edHotel.date;
-                        this.flights[this.edHotel.index].takeoff_time=this.edHotel.takeoff_time;
-                        this.flights[this.edHotel.index].arrival_time=this.edHotel.arrival_time;
-                        this.flights[this.edHotel.index].from=this.edHotel.from;
-                        this.flights[this.edHotel.index].to=this.edHotel.to;
-                        this.flights[this.edHotel.index].is_return=this.edHotel.is_return;
+                        this.flights[this.edHotel.index].check_at=this.edHotel.check_at;
+                        this.flights[this.edHotel.index].leave_at=this.edHotel.leave_at;
+                        this.flights[this.edHotel.index].times=this.edHotel.times;
+                        this.flights[this.edHotel.index].hotel_name=this.edHotel.hotel_name;
+                        this.flights[this.edHotel.index].hotel_address=this.edHotel.hotel_address;
+                        this.flights[this.edHotel.index].hotel_phone=this.edHotel.hotel_phone;
                         this.$toast('修改成功');
                         this.isEditHotelShow=false;    
                     }else{
@@ -788,7 +787,7 @@
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
-                            this.getFlights();
+                            this.getHotels();
                             this.$toast('删除成功');
                         }else{
                             this.$toast('删除失败');
@@ -821,7 +820,7 @@
 
             },
             addNewLeadTeacher(){
-
+                
             },
             editLeadTeacher(){
 

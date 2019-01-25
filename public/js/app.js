@@ -21902,6 +21902,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -21978,7 +21979,15 @@ var render = function() {
       _c("div", { staticClass: "info disflex" }, [
         _c("div", [_vm._v(_vm._s(_vm.userInfo.name))]),
         _vm._v(" "),
-        _c("div", [_vm._v("积分：0")])
+        _c("div", [_vm._v("积分：0")]),
+        _vm._v(" "),
+        _vm.userInfo.manage_contents
+          ? _c(
+              "div",
+              { attrs: { onclick: "window.location.assign('/admin')" } },
+              [_vm._v("管理系统")]
+            )
+          : _vm._e()
       ]),
       _vm._v(" "),
       _c(
@@ -25436,13 +25445,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 url: '/api/hotels/' + this.edHotel.id
             }).then(function (res) {
                 if (res.status == 200) {
-                    _this9.flights[_this9.edHotel.index].flight = _this9.edHotel.flight;
-                    _this9.flights[_this9.edHotel.index].date = _this9.edHotel.date;
-                    _this9.flights[_this9.edHotel.index].takeoff_time = _this9.edHotel.takeoff_time;
-                    _this9.flights[_this9.edHotel.index].arrival_time = _this9.edHotel.arrival_time;
-                    _this9.flights[_this9.edHotel.index].from = _this9.edHotel.from;
-                    _this9.flights[_this9.edHotel.index].to = _this9.edHotel.to;
-                    _this9.flights[_this9.edHotel.index].is_return = _this9.edHotel.is_return;
+                    _this9.flights[_this9.edHotel.index].check_at = _this9.edHotel.check_at;
+                    _this9.flights[_this9.edHotel.index].leave_at = _this9.edHotel.leave_at;
+                    _this9.flights[_this9.edHotel.index].times = _this9.edHotel.times;
+                    _this9.flights[_this9.edHotel.index].hotel_name = _this9.edHotel.hotel_name;
+                    _this9.flights[_this9.edHotel.index].hotel_address = _this9.edHotel.hotel_address;
+                    _this9.flights[_this9.edHotel.index].hotel_phone = _this9.edHotel.hotel_phone;
                     _this9.$toast('修改成功');
                     _this9.isEditHotelShow = false;
                 } else {
@@ -25470,7 +25478,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
-                        _this10.getFlights();
+                        _this10.getHotels();
                         _this10.$toast('删除成功');
                     } else {
                         _this10.$toast('删除失败');
