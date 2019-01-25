@@ -20,12 +20,12 @@
     .dataBankAddBtn:hover{cursor:pointer;}
     .dataBankAddBtn>img{width:50px;height: 50px;}
 
-    .editBox{width: 600px;min-height:300px;background-color: #fff;border-radius: 15px;box-shadow: 0 0 10px #ccc;}
+    .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;box-shadow: 0 0 10px #ccc;}
     .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
     .issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
     .issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;}
 
-    .editBtnGroup{width:90%;height:50px;line-height: 50px;}
+    .editBtnGroup{width:97%;height:50px;line-height: 50px;}
     .editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;}
 
     .van-dialog{width:50%;}
@@ -176,33 +176,28 @@
 
                     <!-- 领队老师 -->
                     <div role="tabpanel" class="tab-pane" id="leaderTeacher">
-                        <div class="pane_content">
-                            
-                            <div class="form_content disflex">
-
-                                <div class="form_item">
-                                    <div class="item_title">老师姓名</div>
-                                    <div><input class="item_input" type="text" ></div>
-                                </div>
-                                <div class="form_item">
-                                    <div class="item_title">老师电话</div>
-                                    <div><input class="item_input" type="text" ></div>
-                                </div>
-                            </div>
+                        <div class="pane_content" v-for="(leadTeacher,index) in leadTeachers">
                             <div class="form_content disflex">
                                 <div class="form_item">
                                     <div class="item_title">老师姓名</div>
-                                    <div><input class="item_input" type="text" ></div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="leadTeacher.leader" ></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">老师电话</div>
-                                    <div><input class="item_input" type="text" ></div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="leadTeacher.phone" ></div>
                                 </div>
-                               
+                                <div class="form_item" style="width:100%;">
+                                    <div class="item_title">职责</div>
+                                    <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="leadTeacher.duty"></div>
+                                </div>
+                                <div class="editBtnGroup">
+                                    <img @click="delLeadTeacher(leadTeacher.id);" src="../../images/rush-icon.png">
+                                    <img @click="editLeadTeacherShow(index);" src="../../images/edit-all.png">
+                                </div>
                             </div>
-                            <div class="dataBankAddBtn">
-                                <img src="../../images/add_y.png">
-                            </div>
+                        </div>
+                        <div class="dataBankAddBtn" @click="addNewLeadTeacherShow()">
+                            <img src="../../images/add_y.png">
                         </div>
                         
                     </div>
@@ -210,36 +205,17 @@
                     <!-- 恶劣天气安排 -->
                     <div role="tabpanel" class="tab-pane" id="heavyWeather">
                         <div class="pane_content">
-                            
                             <div class="form_content disflex">
-                                <div class="form_item" style="width:100%;">
-                                    <div class="item_title">标题</div>
-                                    <div><input class="item_input" style="width:97%;" type="text" ></div>
-                                </div>
                                 <div class="form_item" style="width:100%;height:120px;">
                                     <div class="item_title">安排</div>
                                     <div>
-                                        <textarea class="item_area" placeholder="安排"></textarea>
+                                        <textarea class="item_area" placeholder="安排" disabled="disabled" :value="badWeathers.urgency"></textarea>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form_content disflex">
-                                <div class="form_item" style="width:100%;">
-                                    <div class="item_title">标题</div>
-                                    <div><input class="item_input" style="width:97%;" type="text" ></div>
-                                </div>
-                                <div class="form_item" style="width:100%;height:120px;">
-                                    <div class="item_title">安排</div>
-                                    <div>
-                                        <textarea class="item_area" placeholder="安排"></textarea>
-                                    </div>
-                                </div>
-
-                            </div>
-
                         </div>
-                        <div class="dataBankAddBtn">
-                            <img src="../../images/add_y.png">
+                        <div class="dataBankAddBtn" @click="editBadWeatherShow()">
+                            <img src="../../images/edit-all.png">
                         </div>
                     </div>
 
@@ -434,6 +410,63 @@
                 </div>
             </div>
         </van-popup>
+        <van-popup v-model="isNewLeadTeacherShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item">
+                        <div class="item_title">老师姓名</div>
+                        <div><input class="item_input" type="text" v-model="newLeadTeacher.leader" ></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">老师电话</div>
+                        <div><input class="item_input" type="text" v-model="newLeadTeacher.phone" ></div>
+                    </div>
+                    <div class="form_item" style="width:100%;">
+                        <div class="item_title">职责</div>
+                        <div><input class="item_input" style="width:97%;" type="text" v-model="newLeadTeacher.duty"></div>
+                    </div>
+                    <div class="issure">
+                        <button @click="addNewLeadTeacher()">添加</button>
+                    </div>
+                </div>
+            </div>
+        </van-popup>
+        <van-popup v-model="isEditLeadTeacherShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item">
+                        <div class="item_title">老师姓名</div>
+                        <div><input class="item_input" type="text" v-model="edLeadTeacher.leader" ></div>
+                    </div>
+                    <div class="form_item">
+                        <div class="item_title">老师电话</div>
+                        <div><input class="item_input" type="text" v-model="edLeadTeacher.phone" ></div>
+                    </div>
+                    <div class="form_item" style="width:100%;">
+                        <div class="item_title">职责</div>
+                        <div><input class="item_input" style="width:97%;" type="text" v-model="edLeadTeacher.duty"></div>
+                    </div>
+                    <div class="issure">
+                        <button @click="editLeadTeacher()">修改</button>
+                    </div>
+                </div>
+            </div>
+        </van-popup>
+        <van-popup v-model="isEditBadWeatherShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item" style="width:100%;height:120px;">
+                        <div class="item_title">安排</div>
+                        <div>
+                            <textarea class="item_area" placeholder="安排" v-model="edBadWeather.urgency"></textarea>
+                        </div>
+                    </div>
+                    <div class="issure">
+                        <button @click="editBadWeather()">修改</button>
+                    </div>
+                </div>
+            </div>
+        </van-popup>
     </div>
 	
     
@@ -492,20 +525,38 @@
                     index:'',
                 },
                 leadTeachers:[],
+                newLeadTeacher:{
+                    leader:'',
+                    phone:'',
+                    duty:'',
+                },
+                edLeadTeacher:{
+                    id:'',
+                    leader:'',
+                    phone:'',
+                    duty:'',
+                    index:'',
+                },
                 badWeathers:[],
+                edBadWeather:{
+                    urgency:'',
+                },
                 isAssemblePlacePopupShow:false,
                 isNewFlightShow:false,
                 isEditFlightShow:false,
                 isNewHotelShow:false,
                 isEditHotelShow:false,
+                isNewLeadTeacherShow:false,
+                isEditLeadTeacherShow:false,
+                isEditBadWeatherShow:false,
             }
         },
         mounted:function(){
             this.getAssemblePlaces();
             this.getFlights();
             this.getHotels();
-            // this.getLeadTeachers();
-            // this.getBadWeathers();
+            this.getLeadTeachers();
+            this.getBadWeathers();
         },
         methods:{
             getAssemblePlaces(){
@@ -735,7 +786,6 @@
                 this.edHotel.hotel_address=this.hotels[index].hotel_address;
                 this.edHotel.hotel_phone=this.hotels[index].hotel_phone;
                 this.edHotel.index=index;
-
                 this.isEditHotelShow=true;
             },
             editHotel(){
@@ -803,34 +853,110 @@
             getLeadTeachers(){
                 // 获取领队老师信息
                 // this.$get('/api/travels/'+sessionStorage.actTravelId+'/travels',
-                this.$get('/api/leaders',
+                this.$get('/api/travels/'+sessionStorage.actTravelId+'/leaders',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
                     console.log(res.data);
-                    this.leadTeachers=res.data;
-                    
-                   
+                    this.leadTeachers=res.data.data;
                 }).catch(err => {
                     this.$toast('获取失败');
                     console.log(err);
                 });
 
             },
+            addNewLeadTeacherShow(){
+                this.isNewLeadTeacherShow=true;
+            },
             addNewLeadTeacher(){
-                
+                // 新增领队
+                this.$post('/api/travels/'+sessionStorage.actTravelId+'/leaders',this.newLeadTeacher,
+                {
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    }
+                }).then(res => {
+                    // console.log(res.data);
+                    this.$toast('添加成功');
+                    this.getLeadTeachers();
+                    this.isNewLeadTeacherShow=false;
+                    this.newLeadTeacher.leader='';
+                    this.newLeadTeacher.duty='';
+                    this.newLeadTeacher.phone='';
+                }).catch(err => {
+                    this.$toast('添加失败');
+                    console.log(err)
+                });
+            },
+            editLeadTeacherShow(index){
+                this.edLeadTeacher.id=this.leadTeachers[index].id;
+                this.edLeadTeacher.leader=this.leadTeachers[index].leader;
+                this.edLeadTeacher.duty=this.leadTeachers[index].duty;
+                this.edLeadTeacher.phone=this.leadTeachers[index].phone;
+                this.edLeadTeacher.index=index;
+                this.isEditLeadTeacherShow=true;
             },
             editLeadTeacher(){
-
+                // 修改领队信息
+                this.$ajax({
+                    method: 'PATCH',
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    },
+                    data:{
+                        leader:this.edLeadTeacher.leader,
+                        duty:this.edLeadTeacher.duty,
+                        phone:this.edLeadTeacher.phone,
+                    },
+                    url: '/api/travels/'+sessionStorage.actTravelId+'/leaders/'+this.edLeadTeacher.id,
+                }).then(res => {
+                    if(res.status==200){
+                        this.leadTeachers[this.edLeadTeacher.index].leader=this.edLeadTeacher.leader;
+                        this.leadTeachers[this.edLeadTeacher.index].duty=this.edLeadTeacher.duty;
+                        this.leadTeachers[this.edLeadTeacher.index].phone=this.edLeadTeacher.phone;
+                        this.$toast('修改成功');
+                        this.isEditLeadTeacherShow=false;    
+                    }else{
+                        this.$toast('修改失败');
+                    }
+                }).catch(err => {
+                    this.$toast('修改失败');
+                    console.log(err)
+                });
             },
-            delLeadTeacher(){
+            delLeadTeacher(leadTeacherId){
+                // 删除领队
+                this.$dialog.confirm({
+                    title: '删除领队',
+                    message: '是否删除该领队'
+                }).then(() => {
+                    this.$ajax({
+                        method: 'DELETE',
+                        headers: {
+                            "Authorization": 'Bearer '+sessionStorage.token,
+                        },
+                        url: '/api/travels/'+sessionStorage.actTravelId+'/leaders/'+leadTeacherId,
+                    }).then(res => {
+                        // console.log(res);
+                        if(res.status==204){
+                            this.getLeadTeachers();
+                            this.$toast('删除成功');
+                        }else{
+                            this.$toast('删除失败');
+                        }
+                    }).catch(err => {
+                        this.$toast('删除失败');
+                        console.log(err)
+                    });
+                }).catch(err => {
 
+                });
             },
             getBadWeathers(){
                 // 获取恶劣天气安排
-                this.$get('/api/travels/'+sessionStorage.actTravelId+'/travels',
+                this.$get('/api/travels/'+sessionStorage.actTravelId,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -838,22 +964,40 @@
                 }).then(res => {
                     console.log(res.data);
                     this.badWeathers=res.data;
-                    
-                   
+                    this.edBadWeather.urgency=res.data.urgency;
                 }).catch(err => {
                     this.$toast('获取失败');
                     console.log(err);
                 });
 
             },
-            addNewBadWeather(){
-
+            editBadWeatherShow(){
+                this.isEditBadWeatherShow=true;
             },
             editBadWeather(){
-
-            },
-            delBadWeather(){
-
+                // 修改集合基本信息
+                this.$ajax({
+                    method: 'PATCH',
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    },
+                    data:{
+                        urgency:this.edBadWeather.urgency,
+                    },
+                    url: '/api/travels/'+sessionStorage.actTravelId,
+                }).then(res => {
+                    // console.log(res);
+                    if(res.status==200){
+                        this.$toast('修改成功');
+                        this.badWeathers.urgency=this.edBadWeather.urgency;
+                        this.isEditBadWeatherShow=false;
+                    }else{
+                        this.$toast('修改失败');
+                    }
+                }).catch(err => {
+                    this.$toast('修改失败');
+                    console.log(err)
+                });
             },
         },
     }
