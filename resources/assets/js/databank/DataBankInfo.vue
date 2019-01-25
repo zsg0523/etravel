@@ -142,15 +142,15 @@
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">入住时间</div>
-                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_date" ></div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.check_at" ></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">离开时间</div>
-                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_date" ></div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.leave_at" ></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">几晚</div>
-                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_date" ></div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.times" ></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">联系电话</div>
@@ -371,15 +371,15 @@
                     </div>
                     <div class="form_item">
                         <div class="item_title">入住时间</div>
-                        <div><input class="item_input" type="text" v-model="newHotel.hotel_date" ></div>
+                        <div><input class="item_input" type="text" v-model="newHotel.check_at" ></div>
                     </div>
                     <div class="form_item">
                         <div class="item_title">离开时间</div>
-                        <div><input class="item_input" type="text" v-model="newHotel.hotel_date" ></div>
+                        <div><input class="item_input" type="text" v-model="newHotel.leave_at" ></div>
                     </div>
                     <div class="form_item">
                         <div class="item_title">几晚</div>
-                        <div><input class="item_input" type="text" v-model="newHotel.hotel_date" ></div>
+                        <div><input class="item_input" type="text" v-model="newHotel.times" ></div>
                     </div>
                     <div class="form_item">
                         <div class="item_title">联系电话</div>
@@ -437,17 +437,21 @@
                 },
                 hotels:[],
                 newHotel:{
+                    check_at:'',
+                    leave_at:'',
+                    times:'',
                     hotel_name:'',
                     hotel_address:'',
-                    hotel_date:'',
                     hotel_phone:'',
                     travel_id:sessionStorage.actTravelId,
                 },
                 edHotel:{
                     id:'',
+                    check_at:'',
+                    leave_at:'',
+                    times:'',
                     hotel_name:'',
                     hotel_address:'',
-                    hotel_date:'',
                     hotel_phone:'',
                 },
                 leadTeachers:[],
@@ -674,10 +678,12 @@
                     this.$toast('添加成功');
                     this.getHotels();
                     this.isNewHotelShow=false;
-                    this.newHotel.hotel_name="";
-                    this.newHotel.hotel_address="";
-                    this.newHotel.hotel_date="";
-                    this.newHotel.hotel_phone="";
+                    this.newHotel.check_at='';
+                    this.newHotel.leave_at='';
+                    this.newHotel.times='';
+                    this.newHotel.hotel_name='';
+                    this.newHotel.hotel_address='';
+                    this.newHotel.hotel_phone='';
                 }).catch(err => {
                     this.$toast('添加失败');
                     console.log(err)
