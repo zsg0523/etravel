@@ -742,7 +742,7 @@
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     this.hotels=res.data.data;
                     
                 }).catch(err => {
@@ -859,7 +859,7 @@
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     this.leadTeachers=res.data.data;
                 }).catch(err => {
                     this.$toast('获取失败');
@@ -962,7 +962,7 @@
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     this.badWeathers=res.data;
                     this.edBadWeather.urgency=res.data.urgency;
                 }).catch(err => {

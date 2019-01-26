@@ -54,6 +54,21 @@ const router = new VueRouter({
                     component: Vue.component( 'dataBankInfo', require( './databank/DataBankInfo.vue' ) ),
                 },
                 {
+                    path: '/dataBankPhone',
+                    name: 'dataBankPhone',
+                    component: Vue.component( 'dataBankPhone', require( './databank/DataBankPhone.vue' ) ),
+                },
+                {
+                    path: '/dataBankRules',
+                    name: 'dataBankRules',
+                    component: Vue.component( 'dataBankRules', require( './databank/DataBankRules.vue' ) ),
+                },
+                {
+                    path: '/dataBankRulesInfo',
+                    name: 'dataBankRulesInfo',
+                    component: Vue.component( 'dataBankRulesInfo', require( './databank/DataBankRulesInfo.vue' ) ),
+                },
+                {
                     path: '/dataBankGroup',
                     name: 'dataBankGroup',
                     component: Vue.component( 'dataBankGroup', require( './databank/DataBankGroup.vue' ) ),
@@ -89,24 +104,9 @@ const router = new VueRouter({
                     component: Vue.component( 'dataBankMealsInfo', require( './databank/DataBankMealsInfo.vue' ) ),
                 },
                 {
-                    path: '/dataBankPhone',
-                    name: 'dataBankPhone',
-                    component: Vue.component( 'dataBankPhone', require( './databank/DataBankPhone.vue' ) ),
-                },
-                {
                     path: '/dataBankPromise',
                     name: 'dataBankPromise',
                     component: Vue.component( 'dataBankPromise', require( './databank/DataBankPromise.vue' ) ),
-                },
-                {
-                    path: '/dataBankRules',
-                    name: 'dataBankRules',
-                    component: Vue.component( 'dataBankRules', require( './databank/DataBankRules.vue' ) ),
-                },
-                {
-                    path: '/dataBankRulesInfo',
-                    name: 'dataBankRulesInfo',
-                    component: Vue.component( 'dataBankRulesInfo', require( './databank/DataBankRulesInfo.vue' ) ),
                 },
             ],
         },
