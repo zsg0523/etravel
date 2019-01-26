@@ -21800,6 +21800,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -22124,7 +22126,7 @@ var render = function() {
       attrs: { id: "app-home" }
     },
     [
-      _c("CommonHead"),
+      _c("keep-alive", [_c("CommonHead")], 1),
       _vm._v(" "),
       _c("HistoryLink"),
       _vm._v(" "),
@@ -24669,7 +24671,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.tab-pane{position: relative;\n}\n.pane_content{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info{width:100%;height: auto;\n}\n.gather_info_title{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item{width: 50%;height:100px;\n}\n.form_item>div{width: 96%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:300px;background-color: #fff;border-radius: 15px;-webkit-box-shadow: 0 0 10px #ccc;box-shadow: 0 0 10px #ccc;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:90%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.tab-pane{position: relative;\n}\n.pane_content{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info{width:100%;height: auto;\n}\n.gather_info_title{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item{width: 50%;height:100px;\n}\n.form_item>div{width: 96%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;-webkit-box-shadow: 0 0 10px #ccc;box-shadow: 0 0 10px #ccc;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
 
 // exports
 
@@ -24680,6 +24682,39 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -25174,12 +25209,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 index: ''
             },
             leadTeachers: [],
+            newLeadTeacher: {
+                leader: '',
+                phone: '',
+                duty: ''
+            },
+            edLeadTeacher: {
+                id: '',
+                leader: '',
+                phone: '',
+                duty: '',
+                index: ''
+            },
             badWeathers: [],
+            edBadWeather: {
+                urgency: ''
+            },
             isAssemblePlacePopupShow: false,
             isNewFlightShow: false,
             isEditFlightShow: false,
             isNewHotelShow: false,
-            isEditHotelShow: false
+            isEditHotelShow: false,
+            isNewLeadTeacherShow: false,
+            isEditLeadTeacherShow: false,
+            isEditBadWeatherShow: false
         };
     },
 
@@ -25187,8 +25240,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.getAssemblePlaces();
         this.getFlights();
         this.getHotels();
-        // this.getLeadTeachers();
-        // this.getBadWeathers();
+        this.getLeadTeachers();
+        this.getBadWeathers();
     },
     methods: {
         getAssemblePlaces: function getAssemblePlaces() {
@@ -25422,7 +25475,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edHotel.hotel_address = this.hotels[index].hotel_address;
             this.edHotel.hotel_phone = this.hotels[index].hotel_phone;
             this.edHotel.index = index;
-
             this.isEditHotelShow = true;
         },
         editHotel: function editHotel() {
@@ -25494,40 +25546,155 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             // 获取领队老师信息
             // this.$get('/api/travels/'+sessionStorage.actTravelId+'/travels',
-            this.$get('/api/leaders', {
+            this.$get('/api/travels/' + sessionStorage.actTravelId + '/leaders', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
             }).then(function (res) {
                 console.log(res.data);
-                _this11.leadTeachers = res.data;
+                _this11.leadTeachers = res.data.data;
             }).catch(function (err) {
                 _this11.$toast('获取失败');
                 console.log(err);
             });
         },
-        addNewLeadTeacher: function addNewLeadTeacher() {},
-        editLeadTeacher: function editLeadTeacher() {},
-        delLeadTeacher: function delLeadTeacher() {},
-        getBadWeathers: function getBadWeathers() {
+        addNewLeadTeacherShow: function addNewLeadTeacherShow() {
+            this.isNewLeadTeacherShow = true;
+        },
+        addNewLeadTeacher: function addNewLeadTeacher() {
             var _this12 = this;
 
+            // 新增领队
+            this.$post('/api/travels/' + sessionStorage.actTravelId + '/leaders', this.newLeadTeacher, {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this12.$toast('添加成功');
+                _this12.getLeadTeachers();
+                _this12.isNewLeadTeacherShow = false;
+                _this12.newLeadTeacher.leader = '';
+                _this12.newLeadTeacher.duty = '';
+                _this12.newLeadTeacher.phone = '';
+            }).catch(function (err) {
+                _this12.$toast('添加失败');
+                console.log(err);
+            });
+        },
+        editLeadTeacherShow: function editLeadTeacherShow(index) {
+            this.edLeadTeacher.id = this.leadTeachers[index].id;
+            this.edLeadTeacher.leader = this.leadTeachers[index].leader;
+            this.edLeadTeacher.duty = this.leadTeachers[index].duty;
+            this.edLeadTeacher.phone = this.leadTeachers[index].phone;
+            this.edLeadTeacher.index = index;
+            this.isEditLeadTeacherShow = true;
+        },
+        editLeadTeacher: function editLeadTeacher() {
+            var _this13 = this;
+
+            // 修改领队信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    leader: this.edLeadTeacher.leader,
+                    duty: this.edLeadTeacher.duty,
+                    phone: this.edLeadTeacher.phone
+                },
+                url: '/api/travels/' + sessionStorage.actTravelId + '/leaders/' + this.edLeadTeacher.id
+            }).then(function (res) {
+                if (res.status == 200) {
+                    _this13.leadTeachers[_this13.edLeadTeacher.index].leader = _this13.edLeadTeacher.leader;
+                    _this13.leadTeachers[_this13.edLeadTeacher.index].duty = _this13.edLeadTeacher.duty;
+                    _this13.leadTeachers[_this13.edLeadTeacher.index].phone = _this13.edLeadTeacher.phone;
+                    _this13.$toast('修改成功');
+                    _this13.isEditLeadTeacherShow = false;
+                } else {
+                    _this13.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this13.$toast('修改失败');
+                console.log(err);
+            });
+        },
+        delLeadTeacher: function delLeadTeacher(leadTeacherId) {
+            var _this14 = this;
+
+            // 删除领队
+            this.$dialog.confirm({
+                title: '删除领队',
+                message: '是否删除该领队'
+            }).then(function () {
+                _this14.$ajax({
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: '/api/travels/' + sessionStorage.actTravelId + '/leaders/' + leadTeacherId
+                }).then(function (res) {
+                    // console.log(res);
+                    if (res.status == 204) {
+                        _this14.getLeadTeachers();
+                        _this14.$toast('删除成功');
+                    } else {
+                        _this14.$toast('删除失败');
+                    }
+                }).catch(function (err) {
+                    _this14.$toast('删除失败');
+                    console.log(err);
+                });
+            }).catch(function (err) {});
+        },
+        getBadWeathers: function getBadWeathers() {
+            var _this15 = this;
+
             // 获取恶劣天气安排
-            this.$get('/api/travels/' + sessionStorage.actTravelId + '/travels', {
+            this.$get('/api/travels/' + sessionStorage.actTravelId, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
             }).then(function (res) {
                 console.log(res.data);
-                _this12.badWeathers = res.data;
+                _this15.badWeathers = res.data;
+                _this15.edBadWeather.urgency = res.data.urgency;
             }).catch(function (err) {
-                _this12.$toast('获取失败');
+                _this15.$toast('获取失败');
                 console.log(err);
             });
         },
-        addNewBadWeather: function addNewBadWeather() {},
-        editBadWeather: function editBadWeather() {},
-        delBadWeather: function delBadWeather() {}
+        editBadWeatherShow: function editBadWeatherShow() {
+            this.isEditBadWeatherShow = true;
+        },
+        editBadWeather: function editBadWeather() {
+            var _this16 = this;
+
+            // 修改集合基本信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    urgency: this.edBadWeather.urgency
+                },
+                url: '/api/travels/' + sessionStorage.actTravelId
+            }).then(function (res) {
+                // console.log(res);
+                if (res.status == 200) {
+                    _this16.$toast('修改成功');
+                    _this16.badWeathers.urgency = _this16.edBadWeather.urgency;
+                    _this16.isEditBadWeatherShow = false;
+                } else {
+                    _this16.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this16.$toast('修改失败');
+                console.log(err);
+            });
+        }
     }
 });
 
@@ -26061,9 +26228,162 @@ var render = function() {
               2
             ),
             _vm._v(" "),
-            _vm._m(3),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "leaderTeacher" }
+              },
+              [
+                _vm._l(_vm.leadTeachers, function(leadTeacher, index) {
+                  return _c("div", { staticClass: "pane_content" }, [
+                    _c("div", { staticClass: "form_content disflex" }, [
+                      _c("div", { staticClass: "form_item" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("老师姓名")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: leadTeacher.leader }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("老师电话")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: leadTeacher.phone }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("职责")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              staticStyle: { width: "97%" },
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: leadTeacher.duty }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "editBtnGroup" }, [
+                        _c("img", {
+                          attrs: { src: __webpack_require__(22) },
+                          on: {
+                            click: function($event) {
+                              _vm.delLeadTeacher(leadTeacher.id)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          attrs: { src: __webpack_require__(31) },
+                          on: {
+                            click: function($event) {
+                              _vm.editLeadTeacherShow(index)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn",
+                    on: {
+                      click: function($event) {
+                        _vm.addNewLeadTeacherShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: __webpack_require__(20) }
+                    })
+                  ]
+                )
+              ],
+              2
+            ),
             _vm._v(" "),
-            _vm._m(4)
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "heavyWeather" }
+              },
+              [
+                _c("div", { staticClass: "pane_content" }, [
+                  _c("div", { staticClass: "form_content disflex" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form_item",
+                        staticStyle: { width: "100%", height: "120px" }
+                      },
+                      [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("安排")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("textarea", {
+                            staticClass: "item_area",
+                            attrs: {
+                              placeholder: "安排",
+                              disabled: "disabled"
+                            },
+                            domProps: { value: _vm.badWeathers.urgency }
+                          })
+                        ])
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn",
+                    on: {
+                      click: function($event) {
+                        _vm.editBadWeatherShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: __webpack_require__(31) }
+                    })
+                  ]
+                )
+              ]
+            )
           ])
         ])
       ]),
@@ -27232,6 +27552,349 @@ var render = function() {
             ])
           ])
         ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewLeadTeacherShow,
+            callback: function($$v) {
+              _vm.isNewLeadTeacherShow = $$v
+            },
+            expression: "isNewLeadTeacherShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("老师姓名")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newLeadTeacher.leader,
+                        expression: "newLeadTeacher.leader"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.newLeadTeacher.leader },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newLeadTeacher,
+                          "leader",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("老师电话")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newLeadTeacher.phone,
+                        expression: "newLeadTeacher.phone"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.newLeadTeacher.phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newLeadTeacher,
+                          "phone",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "form_item", staticStyle: { width: "100%" } },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("职责")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newLeadTeacher.duty,
+                          expression: "newLeadTeacher.duty"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.newLeadTeacher.duty },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newLeadTeacher,
+                            "duty",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.addNewLeadTeacher()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditLeadTeacherShow,
+            callback: function($$v) {
+              _vm.isEditLeadTeacherShow = $$v
+            },
+            expression: "isEditLeadTeacherShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("老师姓名")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edLeadTeacher.leader,
+                        expression: "edLeadTeacher.leader"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.edLeadTeacher.leader },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edLeadTeacher,
+                          "leader",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("老师电话")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edLeadTeacher.phone,
+                        expression: "edLeadTeacher.phone"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.edLeadTeacher.phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edLeadTeacher,
+                          "phone",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "form_item", staticStyle: { width: "100%" } },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("职责")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edLeadTeacher.duty,
+                          expression: "edLeadTeacher.duty"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.edLeadTeacher.duty },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edLeadTeacher,
+                            "duty",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.editLeadTeacher()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditBadWeatherShow,
+            callback: function($$v) {
+              _vm.isEditBadWeatherShow = $$v
+            },
+            expression: "isEditBadWeatherShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "form_item",
+                  staticStyle: { width: "100%", height: "120px" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("安排")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edBadWeather.urgency,
+                          expression: "edBadWeather.urgency"
+                        }
+                      ],
+                      staticClass: "item_area",
+                      attrs: { placeholder: "安排" },
+                      domProps: { value: _vm.edBadWeather.urgency },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edBadWeather,
+                            "urgency",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.editBadWeather()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
       )
     ],
     1
@@ -27344,164 +28007,6 @@ var staticRenderFns = [
         _c("hr")
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "tab-pane",
-        attrs: { role: "tabpanel", id: "leaderTeacher" }
-      },
-      [
-        _c("div", { staticClass: "pane_content" }, [
-          _c("div", { staticClass: "form_content disflex" }, [
-            _c("div", { staticClass: "form_item" }, [
-              _c("div", { staticClass: "item_title" }, [_vm._v("老师姓名")]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  staticClass: "item_input",
-                  attrs: { type: "text" }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form_item" }, [
-              _c("div", { staticClass: "item_title" }, [_vm._v("老师电话")]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  staticClass: "item_input",
-                  attrs: { type: "text" }
-                })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form_content disflex" }, [
-            _c("div", { staticClass: "form_item" }, [
-              _c("div", { staticClass: "item_title" }, [_vm._v("老师姓名")]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  staticClass: "item_input",
-                  attrs: { type: "text" }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form_item" }, [
-              _c("div", { staticClass: "item_title" }, [_vm._v("老师电话")]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  staticClass: "item_input",
-                  attrs: { type: "text" }
-                })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "dataBankAddBtn" }, [
-            _c("img", { attrs: { src: __webpack_require__(20) } })
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "tab-pane",
-        attrs: { role: "tabpanel", id: "heavyWeather" }
-      },
-      [
-        _c("div", { staticClass: "pane_content" }, [
-          _c("div", { staticClass: "form_content disflex" }, [
-            _c(
-              "div",
-              { staticClass: "form_item", staticStyle: { width: "100%" } },
-              [
-                _c("div", { staticClass: "item_title" }, [_vm._v("标题")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    staticClass: "item_input",
-                    staticStyle: { width: "97%" },
-                    attrs: { type: "text" }
-                  })
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "form_item",
-                staticStyle: { width: "100%", height: "120px" }
-              },
-              [
-                _c("div", { staticClass: "item_title" }, [_vm._v("安排")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    staticClass: "item_area",
-                    attrs: { placeholder: "安排" }
-                  })
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form_content disflex" }, [
-            _c(
-              "div",
-              { staticClass: "form_item", staticStyle: { width: "100%" } },
-              [
-                _c("div", { staticClass: "item_title" }, [_vm._v("标题")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    staticClass: "item_input",
-                    staticStyle: { width: "97%" },
-                    attrs: { type: "text" }
-                  })
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "form_item",
-                staticStyle: { width: "100%", height: "120px" }
-              },
-              [
-                _c("div", { staticClass: "item_title" }, [_vm._v("安排")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    staticClass: "item_area",
-                    attrs: { placeholder: "安排" }
-                  })
-                ])
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "dataBankAddBtn" }, [
-          _c("img", { attrs: { src: __webpack_require__(20) } })
-        ])
-      ]
-    )
   }
 ]
 render._withStripped = true
