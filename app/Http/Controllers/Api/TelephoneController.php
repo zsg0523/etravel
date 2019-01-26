@@ -41,7 +41,7 @@ class TelephoneController extends Controller
     /** [destroy 删除联系人电话] */
     public function destroy(Telephone $telphone)
     {
-    	$telphone->delete();
+    	$telephone->delete();
     	return $this->response->noContent();
     }
 }
