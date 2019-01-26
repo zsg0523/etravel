@@ -30195,26 +30195,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            categories: [],
-            newCategorie: {
+            rules: [],
+            newRule: {
 
                 travel_id: sessionStorage.actTravelId
             },
-            edCategorie: {
+            edRule: {
 
                 id: '',
                 index: ''
             },
-            isNewPhoneShow: false,
-            isEditPhoneShow: false
+            isNewRuleShow: false,
+            isEditRuleShow: false
         };
     },
 
     mounted: function mounted() {
-        this.getPhones();
+        this.getRules();
     },
     methods: {
-        getPhones: function getPhones() {
+        getRules: function getRules() {
             var _this = this;
 
             // 获取守则分类
@@ -30224,42 +30224,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }).then(function (res) {
                 // console.log(res.data);
-                _this.categories = res.data.data;
+                _this.rules = res.data.data;
             }).catch(function (err) {
                 _this.$toast('获取失败');
                 console.log(err);
             });
         },
-        addNewPhoneShow: function addNewPhoneShow() {
-            this.isNewPhoneShow = true;
+        addNewRuleShow: function addNewRuleShow() {
+            this.isNewRuleShow = true;
         },
-        addNewPhone: function addNewPhone() {
+        addNewRule: function addNewRule() {
             var _this2 = this;
 
             // 新增联系人
-            this.$post('/api/telephones', this.newPhone, {
+            this.$post('/api/telephones', this.newRule, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
             }).then(function (res) {
                 // console.log(res.data);
                 _this2.$toast('添加成功');
-                _this2.getPhones();
-                _this2.isNewPhoneShow = false;
-                _this2.newPhone.name = '';
-                _this2.newPhone.area_code = '';
-                _this2.newPhone.phone = '';
+                _this2.getRules();
+                _this2.isNewRuleShow = false;
+                _this2.newRule.name = '';
+                _this2.newRule.area_code = '';
+                _this2.newRule.phone = '';
             }).catch(function (err) {
                 _this2.$toast('添加失败');
                 console.log(err);
             });
         },
-        editPhoneShow: function editPhoneShow(index) {
-            this.edPhone.id = this.phones[index].id;
-            this.edPhone.name = this.phones[index].name;
-            this.edPhone.area_code = this.phones[index].area_code;
-            this.edPhone.phone = this.phones[index].phone;
-            this.edPhone.index = index;
+        editRuleShow: function editRuleShow(index) {
+            this.edRule.id = this.phones[index].id;
+            this.edRule.name = this.phones[index].name;
+            this.edRule.area_code = this.phones[index].area_code;
+            this.edRule.phone = this.phones[index].phone;
+            this.edRule.index = index;
             this.isEditPhoneShow = true;
         },
         editPhone: function editPhone() {

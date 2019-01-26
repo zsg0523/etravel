@@ -45,25 +45,25 @@
   	export default {
   		data() {
             return {
-	        	categories:[],
-	        	newCategorie:{
+	        	rules:[],
+	        	newRule:{
 
 	        		travel_id:sessionStorage.actTravelId,
 	        	},
-	        	edCategorie:{
+	        	edRule:{
 
 	        		id:'',
 	        		index:'',
 	        	},
-	        	isNewPhoneShow:false,
-	        	isEditPhoneShow:false,
+	        	isNewRuleShow:false,
+	        	isEditRuleShow:false,
             }
         },
         mounted:function(){
-        	this.getPhones();
+        	this.getRules();
         },
         methods:{
-            getPhones(){
+            getRules(){
                 // 获取守则分类
                 this.$get('/api/travels/'+sessionStorage.actTravelId+'/categories',
                 {
@@ -72,19 +72,19 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.categories=res.data.data;
+                    this.rules=res.data.data;
                 }).catch(err => {
                     this.$toast('获取失败');
                     console.log(err);
                 });
 
             },
-            addNewPhoneShow(){
-                this.isNewPhoneShow=true;
+            addNewRuleShow(){
+                this.isNewRuleShow=true;
             },
-            addNewPhone(){
+            addNewRule(){
                 // 新增联系人
-                this.$post('/api/telephones',this.newPhone,
+                this.$post('/api/telephones',this.newRule,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -92,23 +92,23 @@
                 }).then(res => {
                     // console.log(res.data);
                     this.$toast('添加成功');
-                    this.getPhones();
-                    this.isNewPhoneShow=false;
-                    this.newPhone.name='';
-                    this.newPhone.area_code='';
-                    this.newPhone.phone='';
+                    this.getRules();
+                    this.isNewRuleShow=false;
+                    this.newRule.name='';
+                    this.newRule.area_code='';
+                    this.newRule.phone='';
                 }).catch(err => {
                     this.$toast('添加失败');
                     console.log(err)
                 });
             },
-            editPhoneShow(index){
-                this.edPhone.id=this.phones[index].id;
-                this.edPhone.name=this.phones[index].name;
-                this.edPhone.area_code=this.phones[index].area_code;
-                this.edPhone.phone=this.phones[index].phone;
-                this.edPhone.index=index;
-                this.isEditPhoneShow=true;
+            editRuleShow(index){
+                this.edRule.id=this.rules[index].id;
+                this.edRule.name=this.rules[index].name;
+                this.edRule.area_code=this.rules[index].area_code;
+                this.edRule.phone=this.rules[index].phone;
+                this.edRule.index=index;
+                this.isEditRuleShow=true;
             },
             editPhone(){
                 // 修改联系人信息
