@@ -24547,7 +24547,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.tab-pane{position: relative;\n}\n.pane_content{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info{width:100%;height: auto;\n}\n.gather_info_title{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item{width: 50%;height:100px;\n}\n.form_item>div{width: 96%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;-webkit-box-shadow: 0 0 10px #ccc;box-shadow: 0 0 10px #ccc;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.tab-pane{position: relative;\n}\n.pane_content{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info{width:100%;height: auto;\n}\n.gather_info_title{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item{width: 50%;height:100px;\n}\n.form_item>div{width: 96%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
 
 // exports
 
@@ -29275,7 +29275,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.pane_content_phone{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;border:1px solid #ccc;border-radius: 15px;margin-top:20px;\n}\n.form_content_phone{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_phone{width: 100%;min-height:100px;\n}\n.form_item_phone>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_phone{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;-webkit-box-shadow: 0 0 10px #ccc;box-shadow: 0 0 10px #ccc;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.pane_content_phone{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;border:1px solid #ccc;border-radius: 15px;margin-top:20px;\n}\n.form_content_phone{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_phone{width: 100%;min-height:100px;\n}\n.form_item_phone>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_phone{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
 
 // exports
 
@@ -30137,7 +30137,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item{width: 100%;height:100px;\n}\n.form_item>div{width: 96%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input_icon{width: 100%;height: 50px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.input_icon>input{width: 80%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.input_icon>div{width: 80px;height: 45px;\n}\n.input_icon>div>img{width:40px;height: 40px;float: right;\n}\n.input_icon>div>img:hover{cursor: pointer;\n}\n.active{font-size: 18px;\n}   \n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_rules{width: 94%;min-height: 110px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_rules{width: 100%;min-height:100px;\n}\n.form_item_rules>div{height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input_icon{width: 100%;height: 50px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.input_icon>input{width: 80%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.input_icon>div{width: 80px;height: 45px;\n}\n.input_icon>div>img{width:40px;height: 40px;float: right;\n}\n.input_icon>div>img:hover{cursor: pointer;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
 
 // exports
 
@@ -30191,17 +30191,57 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            rules: [],
+            ruless: [],
             newRule: {
-
-                travel_id: sessionStorage.actTravelId
+                rule_category_name: '',
+                type: 10
             },
             edRule: {
-
+                rule_category_name: '',
                 id: '',
                 index: ''
             },
@@ -30218,13 +30258,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             // 获取守则分类
-            this.$get('/api/travels/' + sessionStorage.actTravelId + '/categories', {
+            this.$ajax({
+                method: 'GET',
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
-                }
+                },
+                params: {
+                    type: 10
+                },
+                url: '/api/travels/' + sessionStorage.actTravelId + '/categories'
             }).then(function (res) {
                 // console.log(res.data);
-                _this.rules = res.data.data;
+                _this.ruless = res.data.data;
             }).catch(function (err) {
                 _this.$toast('获取失败');
                 console.log(err);
@@ -30236,8 +30281,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         addNewRule: function addNewRule() {
             var _this2 = this;
 
-            // 新增联系人
-            this.$post('/api/telephones', this.newRule, {
+            // 新增守则
+            this.$post('/api/travels/' + sessionStorage.actTravelId + '/categories', this.newRule, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -30246,44 +30291,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.$toast('添加成功');
                 _this2.getRules();
                 _this2.isNewRuleShow = false;
-                _this2.newRule.name = '';
-                _this2.newRule.area_code = '';
-                _this2.newRule.phone = '';
+                _this2.newRule.rule_category_name = '';
             }).catch(function (err) {
                 _this2.$toast('添加失败');
                 console.log(err);
             });
         },
         editRuleShow: function editRuleShow(index) {
-            this.edRule.id = this.phones[index].id;
-            this.edRule.name = this.phones[index].name;
-            this.edRule.area_code = this.phones[index].area_code;
-            this.edRule.phone = this.phones[index].phone;
+            this.edRule.id = this.ruless[index].id;
+            this.edRule.rule_category_name = this.ruless[index].rule_category_name;
             this.edRule.index = index;
-            this.isEditPhoneShow = true;
+            this.isEditRuleShow = true;
         },
-        editPhone: function editPhone() {
+        editRule: function editRule() {
             var _this3 = this;
 
-            // 修改联系人信息
+            // 修改守则信息
             this.$ajax({
                 method: 'PATCH',
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 },
                 data: {
-                    name: this.edPhone.name,
-                    area_code: this.edPhone.area_code,
-                    phone: this.edPhone.phone
+                    rule_category_name: this.edRule.rule_category_name
                 },
-                url: '/api/telephones/' + this.edPhone.id
+                url: '/api/travels/' + sessionStorage.actTravelId + '/categories/' + this.edRule.id
             }).then(function (res) {
                 if (res.status == 200) {
-                    _this3.phones[_this3.edPhone.index].name = _this3.edPhone.name;
-                    _this3.phones[_this3.edPhone.index].area_code = _this3.edPhone.area_code;
-                    _this3.phones[_this3.edPhone.index].phone = _this3.edPhone.phone;
+                    _this3.ruless[_this3.edRule.index].rule_category_name = _this3.edRule.rule_category_name;
                     _this3.$toast('修改成功');
-                    _this3.isEditPhoneShow = false;
+                    _this3.isEditRuleShow = false;
                 } else {
                     _this3.$toast('修改失败');
                 }
@@ -30292,24 +30329,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 console.log(err);
             });
         },
-        delPhone: function delPhone(phoneId) {
+        delRule: function delRule(ruleId) {
             var _this4 = this;
 
             // 删除领队
             this.$dialog.confirm({
-                title: '删除联系人',
-                message: '是否删除该联系人'
+                title: '删除守则',
+                message: '是否删除该守则'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/telephones/' + phoneId
+                    url: '/api/travels/' + sessionStorage.actTravelId + '/categories/' + ruleId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
-                        _this4.getPhones();
+                        _this4.getRules();
                         _this4.$toast('删除成功');
                     } else {
                         _this4.$toast('删除失败');
@@ -30333,17 +30370,29 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "dataBank_input_form disflex" },
+    {
+      staticClass: "dataBank_input_form disflex",
+      staticStyle: { position: "relative" }
+    },
     [
-      _vm._l(_vm.rules, function(rule, index) {
-        return _c("div", { staticClass: "pane_content" }, [
-          _c("div", { staticClass: "form_content disflex" }, [
-            _c("div", { staticClass: "form_item" }, [
-              _c("div", { staticClass: "item_title" }, [_vm._v("准则01")]),
+      _c("div", { staticClass: "pane_content" }, [
+        _c(
+          "div",
+          { staticClass: "form_content_rules disflex" },
+          _vm._l(_vm.ruless, function(rule, index) {
+            return _c("div", { staticClass: "form_item_rules" }, [
+              _c("div", { staticClass: "item_title" }, [
+                _vm._v("准则" + _vm._s(index + 1))
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "input_icon disflex" }, [
                 _c("input", {
-                  attrs: { placeholder: "准则", type: "text", name: "" }
+                  attrs: {
+                    placeholder: "准则",
+                    type: "text",
+                    disabled: "disabled"
+                  },
+                  domProps: { value: rule.rule_category_name }
                 }),
                 _vm._v(" "),
                 _c(
@@ -30351,7 +30400,7 @@ var render = function() {
                   {
                     on: {
                       click: function($event) {
-                        _vm.$router.push("/dataBankRulesInfo")
+                        _vm.$router.push("/dataBankRulesInfo" + rule.id)
                       }
                     }
                   },
@@ -30366,12 +30415,12 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "editBtnGroup" }, [
+              _c("div", { staticClass: "editBtnGroup_rules" }, [
                 _c("img", {
                   attrs: { src: __webpack_require__(15) },
                   on: {
                     click: function($event) {
-                      _vm.delPhone(rule.id)
+                      _vm.delRule(rule.id)
                     }
                   }
                 }),
@@ -30380,15 +30429,16 @@ var render = function() {
                   attrs: { src: __webpack_require__(16) },
                   on: {
                     click: function($event) {
-                      _vm.editPhoneShow(index)
+                      _vm.editRuleShow(index)
                     }
                   }
                 })
               ])
             ])
-          ])
-        ])
-      }),
+          }),
+          0
+        )
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -30396,14 +30446,146 @@ var render = function() {
           staticClass: "dataBankAddBtn",
           on: {
             click: function($event) {
-              _vm.addNewPhoneShow()
+              _vm.addNewRuleShow()
             }
           }
         },
         [_c("img", { attrs: { src: __webpack_require__(22) } })]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewRuleShow,
+            callback: function($$v) {
+              _vm.isNewRuleShow = $$v
+            },
+            expression: "isNewRuleShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_rules" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("准则")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newRule.rule_category_name,
+                        expression: "newRule.rule_category_name"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "准则", type: "text" },
+                    domProps: { value: _vm.newRule.rule_category_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newRule,
+                          "rule_category_name",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.addNewRule()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditRuleShow,
+            callback: function($$v) {
+              _vm.isEditRuleShow = $$v
+            },
+            expression: "isEditRuleShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_rules" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("准则")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edRule.rule_category_name,
+                        expression: "edRule.rule_category_name"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "准则", type: "text" },
+                    domProps: { value: _vm.edRule.rule_category_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edRule,
+                          "rule_category_name",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.editRule()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
       )
     ],
-    2
+    1
   )
 }
 var staticRenderFns = []
@@ -30502,7 +30684,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.commonHead{width: 100%;height: 116px;background-color: #ffde01;color: 000;\n}\n.left{width: 160px;height: 116px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;float:left;\n}\n.right{width: 360px;height: 116px;float: right;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;\n}\n.right>div{height: 116px;\n}\n.letter{width: 60px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.letter>img{width: 40px;height: 40px;\n}\n.person_icon{width: 100px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.person_icon>img{width: 70px;height: 70px;border-radius: 50%;\n}\n.info{width: 80px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.info>div{width: 100%;height: 30px;line-height: 30px;text-align:center;overflow: hidden;\n}\n.exit{width: 60px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.exit>img{width: 50px;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item{width: 100%;min-height:100px;\n}\n.form_item>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
 
 // exports
 
@@ -30547,8 +30729,191 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            phones: [],
+            newPhone: {
+                name: '',
+                phone: '',
+                area_code: '',
+                travel_id: sessionStorage.actTravelId
+            },
+            edPhone: {
+                name: '',
+                phone: '',
+                area_code: '',
+                id: '',
+                index: ''
+            },
+            isNewRuleInfoShow: false,
+            isEditRuleInfoShow: false
+        };
+    },
+
+    mounted: function mounted() {
+        this.getPhones();
+    },
+    methods: {
+        getPhones: function getPhones() {
+            var _this = this;
+
+            // 获取常用联系人
+            this.$get('/api/travels/' + sessionStorage.actTravelId + '/telephones', {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this.phones = res.data.data;
+            }).catch(function (err) {
+                _this.$toast('获取失败');
+                console.log(err);
+            });
+        },
+        addNewPhoneShow: function addNewPhoneShow() {
+            this.isNewRuleInfoShow = true;
+        },
+        addNewPhone: function addNewPhone() {
+            var _this2 = this;
+
+            // 新增联系人
+            this.$post('/api/telephones', this.newPhone, {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this2.$toast('添加成功');
+                _this2.getPhones();
+                _this2.isNewPhoneShow = false;
+                _this2.newPhone.name = '';
+                _this2.newPhone.area_code = '';
+                _this2.newPhone.phone = '';
+            }).catch(function (err) {
+                _this2.$toast('添加失败');
+                console.log(err);
+            });
+        },
+        editPhoneShow: function editPhoneShow(index) {
+            this.edPhone.id = this.phones[index].id;
+            this.edPhone.name = this.phones[index].name;
+            this.edPhone.area_code = this.phones[index].area_code;
+            this.edPhone.phone = this.phones[index].phone;
+            this.edPhone.index = index;
+            this.isEditRuleInfoShow = true;
+        },
+        editPhone: function editPhone() {
+            var _this3 = this;
+
+            // 修改联系人信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    name: this.edPhone.name,
+                    area_code: this.edPhone.area_code,
+                    phone: this.edPhone.phone
+                },
+                url: '/api/telephones/' + this.edPhone.id
+            }).then(function (res) {
+                if (res.status == 200) {
+                    _this3.phones[_this3.edPhone.index].name = _this3.edPhone.name;
+                    _this3.phones[_this3.edPhone.index].area_code = _this3.edPhone.area_code;
+                    _this3.phones[_this3.edPhone.index].phone = _this3.edPhone.phone;
+                    _this3.$toast('修改成功');
+                    _this3.isEditRuleInfoShow = false;
+                } else {
+                    _this3.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this3.$toast('修改失败');
+                console.log(err);
+            });
+        },
+        delPhone: function delPhone(phoneId) {
+            var _this4 = this;
+
+            // 删除领队
+            this.$dialog.confirm({
+                title: '删除联系人',
+                message: '是否删除该联系人'
+            }).then(function () {
+                _this4.$ajax({
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: '/api/telephones/' + phoneId
+                }).then(function (res) {
+                    // console.log(res);
+                    if (res.status == 204) {
+                        _this4.getPhones();
+                        _this4.$toast('删除成功');
+                    } else {
+                        _this4.$toast('删除失败');
+                    }
+                }).catch(function (err) {
+                    _this4.$toast('删除失败');
+                    console.log(err);
+                });
+            }).catch(function (err) {});
+        }
+    }
+});
 
 /***/ }),
 /* 214 */
@@ -30558,36 +30923,95 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticStyle: { width: "100%" } }, [
+    _c("div", { staticClass: "right_title" }, [
+      _c(
+        "div",
+        {
+          staticClass: "title_icon",
+          on: {
+            click: function($event) {
+              _vm.$router.push("/dataBankRules")
+            }
+          }
+        },
+        [_c("img", { attrs: { src: __webpack_require__(321) } })]
+      ),
+      _vm._v("\n        在飞机上\n    ")
+    ]),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "commonHead" }, [
-      _c("div", { staticClass: "left disflex" }, [
-        _c("img", { attrs: { src: __webpack_require__(9) } })
+    return _c("div", { staticClass: "dataBank_input_form disflex" }, [
+      _c("div", { staticClass: "pane_content" }, [
+        _c("div", { staticClass: "form_content disflex" }, [
+          _c("div", { staticClass: "form_item" }, [
+            _c("div", { staticClass: "item_title" }, [_vm._v("要求01")]),
+            _vm._v(" "),
+            _c("div", [
+              _c("textarea", {
+                staticClass: "item_area",
+                attrs: { placeholder: "要求01" }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form_item" }, [
+            _c("div", { staticClass: "item_title" }, [_vm._v("要求01")]),
+            _vm._v(" "),
+            _c("div", [
+              _c("textarea", {
+                staticClass: "item_area",
+                attrs: { placeholder: "要求01" }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form_item" }, [
+            _c("div", { staticClass: "item_title" }, [_vm._v("要求01")]),
+            _vm._v(" "),
+            _c("div", [
+              _c("textarea", {
+                staticClass: "item_area",
+                attrs: { placeholder: "要求01" }
+              })
+            ])
+          ])
+        ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "right disflex" }, [
-        _c("div", { staticClass: "letter disflex" }, [
-          _c("img", { attrs: { src: __webpack_require__(11) } })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "person_icon disflex" }, [
-          _c("img", { attrs: { src: __webpack_require__(5) } })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "info disflex" }, [
-          _c("div", [_vm._v("qully")]),
-          _vm._v(" "),
-          _c("div", [_vm._v("积分：0")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "exit disflex" }, [
-          _c("img", { attrs: { src: __webpack_require__(10) } })
-        ])
+      _c("div", { staticClass: "dataBankEditBtn" }, [
+        _c("img", { attrs: { src: __webpack_require__(139) } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBankAddBtn" }, [
+        _c("img", { attrs: { src: __webpack_require__(22) } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBankDelBtn" }, [
+        _c("img", { attrs: { src: __webpack_require__(15) } })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "dataBankComfirm disflex" }, [
+      _c("div", { staticClass: "btnItem" }, [
+        _c("button", { staticClass: "cancel" }, [_vm._v("取消")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "btnItem" }, [
+        _c("button", { staticClass: "ensure" }, [_vm._v("确定")])
       ])
     ])
   }
@@ -68942,6 +69366,12 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports) {
 
 module.exports = "/images/See-next.png?c045f8250522f2b8889d15613b3a6756";
+
+/***/ }),
+/* 321 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/back.png?5367c4f8f76e39bcdb5654a60849c751";
 
 /***/ })
 /******/ ]);

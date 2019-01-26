@@ -2,10 +2,10 @@
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
     .pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
 
-    .form_content{width: 94%;min-height: 210px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
+    .form_content_rules{width: 94%;min-height: 110px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
 
-    .form_item{width: 100%;height:100px;}
-    .form_item>div{width: 96%;height: 45px;line-height: 45px;}
+    .form_item_rules{width: 100%;min-height:100px;}
+    .form_item_rules>div{height: 45px;line-height: 45px;}
     .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
 
     .input_icon{width: 100%;height: 50px;justify-content: flex-start;align-items:center;font-size: 18px;}
@@ -14,30 +14,70 @@
     .input_icon>div>img{width:40px;height: 40px;float: right;}
     .input_icon>div>img:hover{cursor: pointer;}
     .active{font-size: 18px;}   
+
+    .dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
+    .dataBankAddBtn:hover{cursor:pointer;}
+    .dataBankAddBtn>img{width:50px;height: 50px;}
+	
+    .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;}
+    .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
+    .issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
+    .issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;}
+
+    .editBtnGroup_rules{width:80%;height:50px;line-height: 50px;}
+    .editBtnGroup_rules>img{width:40px;height: 40px;margin-left: 25px;float: right;}
+
+    .van-dialog{width:50%;}
 </style>
 
 <template>
-    <div class="dataBank_input_form disflex">
-        <div class="pane_content" v-for="(rule,index) in rules">
-            <div class="form_content disflex">
-                <div class="form_item">
-                    <div class="item_title">准则01</div>
+    <div class="dataBank_input_form disflex" style="position:relative;">
+        <div class="pane_content" >
+            <div class="form_content_rules disflex">
+                <div class="form_item_rules"  v-for="(rule,index) in ruless">
+                    <div class="item_title">准则{{index+1}}</div>
                     <div class="input_icon disflex">
-                        <input placeholder="准则" type="text" name="">
-                        <div @click="$router.push('/dataBankRulesInfo')">
+                        <input placeholder="准则" type="text" disabled="disabled" :value="rule.rule_category_name">
+                        <div @click="$router.push('/dataBankRulesInfo'+rule.id)">
                             <img src="../../images/See-next.png" alt="">
                         </div>
                     </div>
-                    <div class="editBtnGroup">
-		                <img @click="delPhone(rule.id);" src="../../images/rush-icon.png">
-		                <img @click="editPhoneShow(index);" src="../../images/edit-all.png">
+                    <div class="editBtnGroup_rules">
+		                <img @click="delRule(rule.id);" src="../../images/rush-icon.png">
+		                <img @click="editRuleShow(index);" src="../../images/edit-all.png">
 		            </div>
                 </div>
             </div>
         </div>    
-        <div class="dataBankAddBtn" @click="addNewPhoneShow();">
+        <div class="dataBankAddBtn" @click="addNewRuleShow();">
             <img src="../../images/add_y.png">
-        </div> 
+        </div>
+  		<van-popup v-model="isNewRuleShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item_rules">
+		                <div class="item_title">准则</div>
+		                <div><input class="item_input" placeholder="准则" type="text"  v-model="newRule.rule_category_name"></div>
+		            </div>
+                    <div class="issure">
+                        <button @click="addNewRule()">添加</button>
+                    </div>
+                </div>
+            </div>
+        </van-popup>
+        <van-popup v-model="isEditRuleShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item_rules">
+		                <div class="item_title">准则</div>
+		                <div><input class="item_input" placeholder="准则" type="text"  v-model="edRule.rule_category_name"></div>
+		            </div>
+                    <div class="issure">
+                        <button @click="editRule()">修改</button>
+                    </div>
+                </div>
+            </div>
+        </van-popup> 
     </div>
 </template>
 
@@ -45,13 +85,13 @@
   	export default {
   		data() {
             return {
-	        	rules:[],
+	        	ruless:[],
 	        	newRule:{
-
-	        		travel_id:sessionStorage.actTravelId,
+	        		rule_category_name:'',
+	        		type:10,
 	        	},
 	        	edRule:{
-
+	        		rule_category_name:'',
 	        		id:'',
 	        		index:'',
 	        	},
@@ -65,14 +105,18 @@
         methods:{
             getRules(){
                 // 获取守则分类
-                this.$get('/api/travels/'+sessionStorage.actTravelId+'/categories',
-                {
+                this.$ajax({
+                    method: 'GET',
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
-                    }
+                    },
+                    params:{
+                        type:10,
+                    },
+                    url: '/api/travels/'+sessionStorage.actTravelId+'/categories',
                 }).then(res => {
                     // console.log(res.data);
-                    this.rules=res.data.data;
+                    this.ruless=res.data.data;
                 }).catch(err => {
                     this.$toast('获取失败');
                     console.log(err);
@@ -83,8 +127,8 @@
                 this.isNewRuleShow=true;
             },
             addNewRule(){
-                // 新增联系人
-                this.$post('/api/telephones',this.newRule,
+                // 新增守则
+                this.$post('/api/travels/'+sessionStorage.actTravelId+'/categories',this.newRule,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -94,42 +138,34 @@
                     this.$toast('添加成功');
                     this.getRules();
                     this.isNewRuleShow=false;
-                    this.newRule.name='';
-                    this.newRule.area_code='';
-                    this.newRule.phone='';
+                    this.newRule.rule_category_name='';
                 }).catch(err => {
                     this.$toast('添加失败');
                     console.log(err)
                 });
             },
             editRuleShow(index){
-                this.edRule.id=this.rules[index].id;
-                this.edRule.name=this.rules[index].name;
-                this.edRule.area_code=this.rules[index].area_code;
-                this.edRule.phone=this.rules[index].phone;
+                this.edRule.id=this.ruless[index].id;
+                this.edRule.rule_category_name=this.ruless[index].rule_category_name;
                 this.edRule.index=index;
                 this.isEditRuleShow=true;
             },
-            editPhone(){
-                // 修改联系人信息
+            editRule(){
+                // 修改守则信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
                     data:{
-                        name:this.edPhone.name,
-                        area_code:this.edPhone.area_code,
-                        phone:this.edPhone.phone,
+                        rule_category_name:this.edRule.rule_category_name,
                     },
-                    url: '/api/telephones/'+this.edPhone.id,
+                    url: '/api/travels/'+sessionStorage.actTravelId+'/categories/'+this.edRule.id,
                 }).then(res => {
                     if(res.status==200){
-                        this.phones[this.edPhone.index].name=this.edPhone.name;
-                        this.phones[this.edPhone.index].area_code=this.edPhone.area_code;
-                        this.phones[this.edPhone.index].phone=this.edPhone.phone;
+                        this.ruless[this.edRule.index].rule_category_name=this.edRule.rule_category_name;
                         this.$toast('修改成功');
-                        this.isEditPhoneShow=false;    
+                        this.isEditRuleShow=false;    
                     }else{
                         this.$toast('修改失败');
                     }
@@ -138,22 +174,22 @@
                     console.log(err)
                 });
             },
-            delPhone(phoneId){
+            delRule(ruleId){
                 // 删除领队
                 this.$dialog.confirm({
-                    title: '删除联系人',
-                    message: '是否删除该联系人'
+                    title: '删除守则',
+                    message: '是否删除该守则'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/telephones/'+phoneId,
+                        url: '/api/travels/'+sessionStorage.actTravelId+'/categories/'+ruleId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
-                            this.getPhones();
+                            this.getRules();
                             this.$toast('删除成功');
                         }else{
                             this.$toast('删除失败');
