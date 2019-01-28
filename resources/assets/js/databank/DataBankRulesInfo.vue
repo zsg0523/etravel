@@ -1,19 +1,19 @@
 <style>
-		.dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
-        .pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
-        
-        .right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;}
-        .title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;}
-        .title_icon>img{width:28px;height: 28px;}
+	.dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
+    .pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
+    
+    .right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;}
+    .title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;}
+    .title_icon>img{width:28px;height: 28px;}
 
-        .form_content{width: 94%;min-height: 210px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
+    .form_content{width: 94%;min-height: 150px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
 
-        .form_item{width: 100%;min-height:100px;}
-        .form_item>div{width: 96%;min-height: 45px;line-height: 45px;}
+    .form_item_ruleInfo{width: 100%;min-height:100px;}
+    .form_item_ruleInfo>div{width: 96%;min-height: 45px;}
 
-        .item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;}
+    .item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;}
 
-        .active{font-size: 18px;}
+    .active{font-size: 18px;}
 
 	.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
     .dataBankAddBtn:hover{cursor:pointer;}
@@ -34,51 +34,60 @@
 <template>
     <div style="width:100%;">
         <div class="right_title">
-            <div class="title_icon" @click="$router.push('/dataBankRules')">
+            <div class="title_icon" @click="$router.push('/rule/dataBankRules')">
                 <img src="../../images/back.png">
             </div>
             在飞机上
         </div>
         <div class="dataBank_input_form disflex">
-            
             <div class="pane_content">
-                <div class="form_content disflex">
-                    <div class="form_item">
-                        <div class="item_title">要求01</div>
+                <div class="form_content disflex" v-for="(ruleInfo,index) in ruleInfos">
+                    <div class="form_item_ruleInfo">
+                        <div class="item_title">守则详情{{index+1}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="要求01" ></textarea>
+                            <textarea class="item_area" placeholder="守则详情" disabled="disabled" :value="ruleInfo.rule"></textarea>
                         </div>
                     </div>
-                    <div class="form_item">
-                        <div class="item_title">要求01</div>
-                        <div>
-                            <textarea class="item_area" placeholder="要求01" ></textarea>
-                        </div>
-                    </div>
-                    <div class="form_item">
-                        <div class="item_title">要求01</div>
-                        <div>
-                            <textarea class="item_area" placeholder="要求01" ></textarea>
-                        </div>
-                    </div>
+                    <div class="editBtnGroup">
+		                <img @click="delRuleInfo(ruleInfo.id);" src="../../images/rush-icon.png">
+		                <img @click="editRuleInfoShow(index);" src="../../images/edit-all.png">
+		            </div>
                 </div>
             </div>    
-                       
-            <div class="dataBankEditBtn">
-                <img src="../../images/editAll.png">
-            </div>
-            <div class="dataBankAddBtn">
-                <img src="../../images/add_y.png">
-            </div>
-            <div class="dataBankDelBtn">
-                <img src="../../images/rush-icon.png">
-            </div>
+			<div class="dataBankAddBtn" @click="addNewRuleInfoShow();">
+	            <img src="../../images/add_y.png">
+	        </div>
         </div>
-        <div class="dataBankComfirm disflex">
-            <div class="btnItem"><button class="cancel">取消</button></div>
-            <div class="btnItem"><button class="ensure">确定</button></div>
-        </div>
-        
+        <van-popup v-model="isNewRuleInfoShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item_ruleInfo">
+                        <div class="item_title">守则详情</div>
+                        <div>
+                            <textarea class="item_area" placeholder="守则详情" v-model="newRuleInfo.rule"></textarea>
+                        </div>
+                    </div>
+                    <div class="issure">
+                        <button @click="addNewRuleInfo()">添加</button>
+                    </div>
+                </div>
+            </div>
+        </van-popup>
+        <van-popup v-model="isEditRuleInfoShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item_ruleInfo">
+                        <div class="item_title">守则详情</div>
+                        <div>
+                            <textarea class="item_area" placeholder="守则详情" v-model="edRuleInfo.rule"></textarea>
+                        </div>
+                    </div>
+                    <div class="issure">
+                        <button @click="editRuleInfo()">修改</button>
+                    </div>
+                </div>
+            </div>
+        </van-popup> 
     </div>
 </template>
 
@@ -86,18 +95,15 @@
   	export default {
   		data() {
             return {
-	        	phones:[],
-	        	newPhone:{
-	        		name:'',
-	        		phone:'',
-	        		area_code:'',
-	        		travel_id:sessionStorage.actTravelId,
+	        	ruleInfos:[],
+	        	newRuleInfo:{
+	        		rule:'',
+	        		rule_category_id:this.$route.params.id,
 	        	},
-	        	edPhone:{
-	        		name:'',
-	        		phone:'',
-	        		area_code:'',
+	        	edRuleInfo:{
 	        		id:'',
+	        		rule:'',
+	        		rule_category_id:'',
 	        		index:'',
 	        	},
 	        	isNewRuleInfoShow:false,
@@ -105,31 +111,31 @@
             }
         },
         mounted:function(){
-        	this.getPhones();
+        	this.getRuleInfos();
         },
         methods:{
-            getPhones(){
-                // 获取常用联系人
-                this.$get('/api/travels/'+sessionStorage.actTravelId+'/telephones',
+            getRuleInfos(){
+                // 获取守则详情
+                this.$get('/api/travels/'+sessionStorage.actTravelId+'/rules',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.phones=res.data.data;
+                    this.ruleInfos=res.data.data;
                 }).catch(err => {
                     this.$toast('获取失败');
                     console.log(err);
                 });
 
             },
-            addNewPhoneShow(){
+            addNewRuleInfoShow(){
                 this.isNewRuleInfoShow=true;
             },
-            addNewPhone(){
-                // 新增联系人
-                this.$post('/api/telephones',this.newPhone,
+            addNewRuleInfo(){
+                // 新增守则详情
+                this.$post('/api/rules',this.newRuleInfo,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -137,42 +143,37 @@
                 }).then(res => {
                     // console.log(res.data);
                     this.$toast('添加成功');
-                    this.getPhones();
-                    this.isNewPhoneShow=false;
-                    this.newPhone.name='';
-                    this.newPhone.area_code='';
-                    this.newPhone.phone='';
+                    this.getRuleInfos();
+                    this.isNewRuleInfoShow=false;
+                    this.newRuleInfo.rule='';
                 }).catch(err => {
                     this.$toast('添加失败');
                     console.log(err)
                 });
             },
-            editPhoneShow(index){
-                this.edPhone.id=this.phones[index].id;
-                this.edPhone.name=this.phones[index].name;
-                this.edPhone.area_code=this.phones[index].area_code;
-                this.edPhone.phone=this.phones[index].phone;
-                this.edPhone.index=index;
+            editRuleInfoShow(index){
+                this.edRuleInfo.id=this.ruleInfos[index].id;
+               	this.edRuleInfo.rule=this.ruleInfos[index].rule;
+               	this.edRuleInfo.rule_category_id=this.ruleInfos[index].rule_category_id;
+                this.edRuleInfo.index=index;
                 this.isEditRuleInfoShow=true;
             },
-            editPhone(){
-                // 修改联系人信息
+            editRuleInfo(){
+                // 修改守则详情信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
                     data:{
-                        name:this.edPhone.name,
-                        area_code:this.edPhone.area_code,
-                        phone:this.edPhone.phone,
+                        rule:this.edRuleInfo.rule,
+                        rule_category_id:this.edRuleInfo.rule_category_id,
                     },
-                    url: '/api/telephones/'+this.edPhone.id,
+                    url: '/api/rules/'+this.edRuleInfo.id,
                 }).then(res => {
+                	// console.log(res);
                     if(res.status==200){
-                        this.phones[this.edPhone.index].name=this.edPhone.name;
-                        this.phones[this.edPhone.index].area_code=this.edPhone.area_code;
-                        this.phones[this.edPhone.index].phone=this.edPhone.phone;
+                        this.RuleInfos[this.edRuleInfo.index].rule=this.edRuleInfo.rule;
                         this.$toast('修改成功');
                         this.isEditRuleInfoShow=false;    
                     }else{
@@ -183,22 +184,22 @@
                     console.log(err)
                 });
             },
-            delPhone(phoneId){
-                // 删除领队
+            delRuleInfo(RuleInfoId){
+                // 删除守则详情
                 this.$dialog.confirm({
-                    title: '删除联系人',
-                    message: '是否删除该联系人'
+                    title: '删除守则详情',
+                    message: '是否删除该守则详情'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/telephones/'+phoneId,
+                        url: '/api/rules/'+RuleInfoId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
-                            this.getPhones();
+                            this.getRuleInfos();
                             this.$toast('删除成功');
                         }else{
                             this.$toast('删除失败');

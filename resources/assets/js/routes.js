@@ -59,15 +59,24 @@ const router = new VueRouter({
                     component: Vue.component( 'dataBankPhone', require( './databank/DataBankPhone.vue' ) ),
                 },
                 {
-                    path: '/dataBankRules',
-                    name: 'dataBankRules',
-                    component: Vue.component( 'dataBankRules', require( './databank/DataBankRules.vue' ) ),
+                    path: '/rule',
+                    name: 'rule',
+                    component: Vue.component( 'rule', require( './components/Rule.vue' ) ),
+                    redirect: '/rule/dataBankRules',
+                    children:[
+                        {
+                            path: '/rule/dataBankRules',
+                            name: 'dataBankRules',
+                            component: Vue.component( 'dataBankRules', require( './databank/DataBankRules.vue' ) ),
+                        },
+                        {
+                            path: '/rule/dataBankRulesInfo/:id',
+                            name: 'dataBankRulesInfo',
+                            component: Vue.component( 'dataBankRulesInfo', require( './databank/DataBankRulesInfo.vue' ) ),
+                        },
+                    ],
                 },
-                {
-                    path: '/dataBankRulesInfo',
-                    name: 'dataBankRulesInfo',
-                    component: Vue.component( 'dataBankRulesInfo', require( './databank/DataBankRulesInfo.vue' ) ),
-                },
+                
                 {
                     path: '/dataBankGroup',
                     name: 'dataBankGroup',

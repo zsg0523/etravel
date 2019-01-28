@@ -1,39 +1,212 @@
 <style>
-	.commonHead{width: 100%;height: 116px;background-color: #ffde01;color: 000;}     
-    .left{width: 160px;height: 116px;align-items: center;justify-content: center;float:left;}
-    .right{width: 360px;height: 116px;float: right;align-items: center;justify-content:center;}
-    .right>div{height: 116px;}
-    .letter{width: 60px;align-items: center;justify-content: center;}
-    .letter>img{width: 40px;height: 40px;}
-    .person_icon{width: 100px;align-items: center;justify-content: center;}
-    .person_icon>img{width: 70px;height: 70px;border-radius: 50%;}
-    .info{width: 80px;align-items: center;justify-content: center;flex-direction: column;}
-    .info>div{width: 100%;height: 30px;line-height: 30px;text-align:center;overflow: hidden;}
-    .exit{width: 60px;align-items: center;justify-content: center;}
-    .exit>img{width: 50px;}
+    .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
+    .pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
+    
+    .right_title{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;}
+    .form_content{width: 94%;min-height: 150px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
+
+    .form_item_promise{width: 100%;min-height:100px;}
+    .form_item_promise>div{width: 96%;min-height: 45px;}
+
+    .item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;}
+
+    .active{font-size: 18px;}        
+
+	.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
+    .dataBankAddBtn:hover{cursor:pointer;}
+    .dataBankAddBtn>img{width:50px;height: 50px;}
+	
+    .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;}
+    .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
+    .issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
+    .issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;}
+
+    .editBtnGroup{width:97%;height:50px;line-height: 50px;}
+    .editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;}
+
+    .van-dialog{width:50%;}
+
 </style>
 
 <template>
-	<div class="commonHead">
-	    <div class="left disflex">
-	        <img src="../../images/logo.png">
-	    </div>
-	    <div class="right disflex">
-	        <div class="letter disflex"><img src="../../images/letter.png"></div>
-	        <div class="person_icon disflex"><img src="../../images/photo.png"></div>
-	        <div class="info disflex">
-	            <div>qully</div>
-	            <div>积分：0</div>
-	        </div>
-	        <div class="exit disflex">
-	            <img src="../../images/Vector-icon.png">
-	        </div>
-	    </div>
-	</div>
+    <div style="width:100%;">
+        <div class="right_title">
+            承诺书
+        </div>
+        <div class="dataBank_input_form disflex">
+            <div class="pane_content">
+                <div class="form_content disflex" v-for="(promise,index) in promises">
+                    <div class="form_item_promise">
+                        <div class="item_title">承诺{{index+1}}</div>
+                        <div>
+                            <textarea class="item_area" placeholder="承诺" disabled="disabled" :value="promise.rule_category_name" ></textarea>
+                        </div>
+                    </div>
+                    <div class="editBtnGroup">
+		                <img @click="delPromise(promise.id);" src="../../images/rush-icon.png">
+		                <img @click="editPromiseShow(index);" src="../../images/edit-all.png">
+		            </div>
+                </div>
+                <div class="dataBankAddBtn" @click="addNewPromiseShow();">
+		            <img src="../../images/add_y.png">
+		        </div>
+            </div>       
+        </div>
+		<van-popup v-model="isNewPromiseShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item_promise">
+                        <div class="item_title">承诺</div>
+                        <div>
+                            <textarea class="item_area" placeholder="承诺" v-model="newPromise.rule_category_name"></textarea>
+                        </div>
+                    </div>
+                    <div class="issure">
+                        <button @click="addNewPromise()">添加</button>
+                    </div>
+                </div>
+            </div>
+        </van-popup>
+        <van-popup v-model="isEditPromiseShow" :overlay="true" style="border-radius: 15px;">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item_promise">
+                        <div class="item_title">承诺</div>
+                        <div>
+                            <textarea class="item_area" placeholder="承诺" v-model="edPromise.rule_category_name"></textarea>
+                        </div>
+                    </div>
+                    <div class="issure">
+                        <button @click="editPromise()">修改</button>
+                    </div>
+                </div>
+            </div>
+        </van-popup>
+
+    </div>
 </template>
 
 <script>
-  export default {
+  	export default {
+  		data() {
+            return {
+	        	promises:[],
+	        	newPromise:{
+	        		rule_category_name:'',
+	        		type:20,
+	        	},
+	        	edPromise:{
+	        		id:'',
+	        		rule_category_name:'',
+	        		index:'',
+	        	},
+	        	isNewPromiseShow:false,
+	        	isEditPromiseShow:false,
+            }
+        },
+        mounted:function(){
+        	this.getPromises();
+        },
+        methods:{
+            getPromises(){
+                // 获取承诺
+                this.$ajax({
+                    method: 'GET',
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    },
+                    params:{
+                        type:20,
+                    },
+                    url: '/api/travels/'+sessionStorage.actTravelId+'/categories',
+                }).then(res => {
+                    // console.log(res.data);
+                    this.promises=res.data.data;
+                }).catch(err => {
+                    this.$toast('获取失败');
+                    console.log(err);
+                });
+            },
+            addNewPromiseShow(){
+                this.isNewPromiseShow=true;
+            },
+            addNewPromise(){
+                // 新增承诺
+                this.$post('/api/travels/'+sessionStorage.actTravelId+'/categories',this.newPromise,
+                {
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    }
+                }).then(res => {
+                    // console.log(res.data);
+                    this.$toast('添加成功');
+                    this.getPromises();
+                    this.isNewPromiseShow=false;
+                    this.newPromise.rule_category_name='';
+                }).catch(err => {
+                    this.$toast('添加失败');
+                    console.log(err)
+                });
+            },
+            editPromiseShow(index){
+                this.edPromise.id=this.promises[index].id;
+               	this.edPromise.rule_category_name=this.promises[index].rule_category_name;
+                this.edPromise.index=index;
+                this.isEditPromiseShow=true;
+            },
+            editPromise(){
+                // 修改承诺信息
+                this.$ajax({
+                    method: 'PATCH',
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    },
+                    data:{
+                        rule_category_name:this.edPromise.rule_category_name,
+                    },
+                    url: '/api/travels/'+sessionStorage.actTravelId+'/categories/'+this.edPromise.id,
+                }).then(res => {
+                    if(res.status==200){
+                        this.promises[this.edPromise.index].rule_category_name=this.edPromise.rule_category_name;
+                        this.$toast('修改成功');
+                        this.isEditPromiseShow=false;    
+                    }else{
+                        this.$toast('修改失败');
+                    }
+                }).catch(err => {
+                    this.$toast('修改失败');
+                    console.log(err)
+                });
+            },
+            delPromise(promiseId){
+                // 删除承诺
+                this.$dialog.confirm({
+                    title: '删除承诺',
+                    message: '是否删除该承诺'
+                }).then(() => {
+                    this.$ajax({
+                        method: 'DELETE',
+                        headers: {
+                            "Authorization": 'Bearer '+sessionStorage.token,
+                        },
+                        url: '/api/travels/'+sessionStorage.actTravelId+'/categories/'+promiseId,
+                    }).then(res => {
+                        // console.log(res);
+                        if(res.status==204){
+                            this.getPromises();
+                            this.$toast('删除成功');
+                        }else{
+                            this.$toast('删除失败');
+                        }
+                    }).catch(err => {
+                        this.$toast('删除失败');
+                        console.log(err)
+                    });
+                }).catch(err => {
 
-  }
+                });
+            },
+
+        },
+  	}
 </script>

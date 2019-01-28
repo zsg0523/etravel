@@ -38,7 +38,7 @@
                     <div class="item_title">准则{{index+1}}</div>
                     <div class="input_icon disflex">
                         <input placeholder="准则" type="text" disabled="disabled" :value="rule.rule_category_name">
-                        <div @click="$router.push('/dataBankRulesInfo'+rule.id)">
+                        <div @click="$router.push('/rule/dataBankRulesInfo/'+rule.id)">
                             <img src="../../images/See-next.png" alt="">
                         </div>
                     </div>
@@ -175,7 +175,7 @@
                 });
             },
             delRule(ruleId){
-                // 删除领队
+                // 删除守则
                 this.$dialog.confirm({
                     title: '删除守则',
                     message: '是否删除该守则'
