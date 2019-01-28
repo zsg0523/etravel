@@ -789,7 +789,7 @@
                 this.isEditHotelShow=true;
             },
             editHotel(){
-                // 修改航班信息
+                // 修改酒店信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -806,12 +806,12 @@
                     url: '/api/hotels/'+this.edHotel.id,
                 }).then(res => {
                     if(res.status==200){
-                        this.flights[this.edHotel.index].check_at=this.edHotel.check_at;
-                        this.flights[this.edHotel.index].leave_at=this.edHotel.leave_at;
-                        this.flights[this.edHotel.index].times=this.edHotel.times;
-                        this.flights[this.edHotel.index].hotel_name=this.edHotel.hotel_name;
-                        this.flights[this.edHotel.index].hotel_address=this.edHotel.hotel_address;
-                        this.flights[this.edHotel.index].hotel_phone=this.edHotel.hotel_phone;
+                        this.hotels[this.edHotel.index].check_at=this.edHotel.check_at;
+                        this.hotels[this.edHotel.index].leave_at=this.edHotel.leave_at;
+                        this.hotels[this.edHotel.index].times=this.edHotel.times;
+                        this.hotels[this.edHotel.index].hotel_name=this.edHotel.hotel_name;
+                        this.hotels[this.edHotel.index].hotel_address=this.edHotel.hotel_address;
+                        this.hotels[this.edHotel.index].hotel_phone=this.edHotel.hotel_phone;
                         this.$toast('修改成功');
                         this.isEditHotelShow=false;    
                     }else{

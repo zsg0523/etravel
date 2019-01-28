@@ -25349,7 +25349,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         editHotel: function editHotel() {
             var _this9 = this;
 
-            // 修改航班信息
+            // 修改酒店信息
             this.$ajax({
                 method: 'PATCH',
                 headers: {
@@ -25366,12 +25366,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 url: '/api/hotels/' + this.edHotel.id
             }).then(function (res) {
                 if (res.status == 200) {
-                    _this9.flights[_this9.edHotel.index].check_at = _this9.edHotel.check_at;
-                    _this9.flights[_this9.edHotel.index].leave_at = _this9.edHotel.leave_at;
-                    _this9.flights[_this9.edHotel.index].times = _this9.edHotel.times;
-                    _this9.flights[_this9.edHotel.index].hotel_name = _this9.edHotel.hotel_name;
-                    _this9.flights[_this9.edHotel.index].hotel_address = _this9.edHotel.hotel_address;
-                    _this9.flights[_this9.edHotel.index].hotel_phone = _this9.edHotel.hotel_phone;
+                    _this9.hotels[_this9.edHotel.index].check_at = _this9.edHotel.check_at;
+                    _this9.hotels[_this9.edHotel.index].leave_at = _this9.edHotel.leave_at;
+                    _this9.hotels[_this9.edHotel.index].times = _this9.edHotel.times;
+                    _this9.hotels[_this9.edHotel.index].hotel_name = _this9.edHotel.hotel_name;
+                    _this9.hotels[_this9.edHotel.index].hotel_address = _this9.edHotel.hotel_address;
+                    _this9.hotels[_this9.edHotel.index].hotel_phone = _this9.edHotel.hotel_phone;
                     _this9.$toast('修改成功');
                     _this9.isEditHotelShow = false;
                 } else {
