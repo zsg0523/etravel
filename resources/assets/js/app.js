@@ -5,13 +5,15 @@ import ajax from './http'
 import {
   Popup,
   Toast,
-  Dialog
+  Dialog,
+  Uploader,
 } from 'vant';
 
 Vue
 	.use(Popup)
 	.use(Toast)
-	.use(Dialog);
+	.use(Dialog)
+	.use(Uploader);
 
 require('./bootstrap');
 
