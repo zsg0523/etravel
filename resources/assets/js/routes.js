@@ -76,7 +76,11 @@ const router = new VueRouter({
                         },
                     ],
                 },
-                
+                {
+                    path: '/dataBankPromise',
+                    name: 'dataBankPromise',
+                    component: Vue.component( 'dataBankPromise', require( './databank/DataBankPromise.vue' ) ),
+                },
                 {
                     path: '/dataBankGroup',
                     name: 'dataBankGroup',
@@ -111,11 +115,6 @@ const router = new VueRouter({
                     path: '/dataBankMealsInfo',
                     name: 'dataBankMealsInfo',
                     component: Vue.component( 'dataBankMealsInfo', require( './databank/DataBankMealsInfo.vue' ) ),
-                },
-                {
-                    path: '/dataBankPromise',
-                    name: 'dataBankPromise',
-                    component: Vue.component( 'dataBankPromise', require( './databank/DataBankPromise.vue' ) ),
                 },
             ],
         },
