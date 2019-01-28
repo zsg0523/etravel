@@ -31237,7 +31237,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.pane_content_culture{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;\n}\n.form_content_culture{width: 100%;min-height: 300px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_culture{width:100%;height:100px;\n}\n.form_item_culture>div{width: 100%;height: 45px;line-height: 45px;word-break: break-all;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}     \n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.pane_content_culture{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;\n}\n.form_content_culture{width: 100%;min-height: 300px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_culture{width:100%;height:100px;\n}\n.form_item_culture>div{width: 100%;height: 45px;line-height: 45px;word-break: break-all;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_culture{width:50px;height: 50px;position: absolute;right: 5px;top: 50px;\n}\n.dataBankAddBtn_culture:hover{cursor:pointer;\n}\n.dataBankAddBtn_culture>img{width:50px;height: 50px;\n}\n.dataBankEditBtn_culture{width:50px;height: 50px;position: absolute;right: 5px;top: 130px;\n}\n.dataBankEditBtn_culture:hover{cursor:pointer;\n}\n.dataBankEditBtn_culture>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}     \n", ""]);
 
 // exports
 
@@ -31248,6 +31248,12 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -31538,43 +31544,12 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "pane_content_culture" }, [
-              _c("div", { staticClass: "form_content_culture disflex" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item_culture" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("图片")]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    [
-                      _c(
-                        "van-uploader",
-                        {
-                          attrs: {
-                            "after-read": _vm.onRead,
-                            accept: "image/*",
-                            multiple: ""
-                          }
-                        },
-                        [
-                          _c("img", {
-                            ref: "goodsImg",
-                            attrs: { src: __webpack_require__(15) }
-                          })
-                        ]
-                      )
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _vm._m(2)
-              ]),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "div",
                 {
-                  staticClass: "dataBankAddBtn",
+                  staticClass: "dataBankAddBtn_culture",
                   on: {
                     click: function($event) {
                       _vm.addNewRuleInfoShow()
@@ -31584,6 +31559,23 @@ var render = function() {
                 [
                   _c("img", {
                     attrs: { src: __webpack_require__(12) }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "dataBankEditBtn_culture",
+                  on: {
+                    click: function($event) {
+                      _vm.addNewRuleInfoShow()
+                    }
+                  }
+                },
+                [
+                  _c("img", {
+                    attrs: { src: __webpack_require__(11) }
                   })
                 ]
               )
@@ -31599,12 +31591,12 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "pane_content_culture" }, [
-              _vm._m(3),
+              _vm._m(2),
               _vm._v(" "),
               _c(
                 "div",
                 {
-                  staticClass: "dataBankAddBtn",
+                  staticClass: "dataBankAddBtn_culture",
                   on: {
                     click: function($event) {
                       _vm.addNewRuleInfoShow()
@@ -31614,6 +31606,23 @@ var render = function() {
                 [
                   _c("img", {
                     attrs: { src: __webpack_require__(12) }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "dataBankEditBtn_culture",
+                  on: {
+                    click: function($event) {
+                      _vm.addNewRuleInfoShow()
+                    }
+                  }
+                },
+                [
+                  _c("img", {
+                    attrs: { src: __webpack_require__(11) }
                   })
                 ]
               )
@@ -31669,40 +31678,51 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form_item_culture" }, [
-      _c("div", { staticClass: "item_title" }, [
-        _vm._v("小标题(多少字符以内)")
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _c("input", {
-          staticClass: "item_input",
-          attrs: { placeholder: "小标题", type: "text", name: "" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "form_item_culture",
-        staticStyle: { width: "100%", height: "120px" }
-      },
-      [
-        _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+    return _c("div", { staticClass: "form_content_culture disflex" }, [
+      _c("div", { staticClass: "form_item_culture" }, [
+        _c("div", { staticClass: "item_title" }, [
+          _vm._v("小标题(多少字符以内)")
+        ]),
         _vm._v(" "),
         _c("div", [
-          _c("textarea", {
-            staticClass: "item_area",
-            attrs: { placeholder: "内容" }
+          _c("input", {
+            staticClass: "item_input",
+            attrs: { placeholder: "小标题", type: "text", name: "" }
           })
         ])
-      ]
-    )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form_item_culture" }, [
+        _c("div", { staticClass: "item_title" }, [_vm._v("图片")]),
+        _vm._v(" "),
+        _c("div", [
+          _c("div", [
+            _c("input", {
+              staticClass: "item_input",
+              attrs: { type: "text", name: "" }
+            })
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "form_item_culture",
+          staticStyle: { width: "100%", height: "120px" }
+        },
+        [
+          _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+          _vm._v(" "),
+          _c("div", [
+            _c("textarea", {
+              staticClass: "item_area",
+              attrs: { placeholder: "内容" }
+            })
+          ])
+        ]
+      )
+    ])
   },
   function() {
     var _vm = this
