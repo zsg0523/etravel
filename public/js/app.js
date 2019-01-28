@@ -18413,13 +18413,37 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
             name: 'dataBankHouseTable',
             component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dataBankHouseTable', __webpack_require__(195))
         }, {
-            path: '/dataBankJourney',
-            name: 'dataBankJourney',
-            component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dataBankJourney', __webpack_require__(200))
+            path: '/journey',
+            name: 'journey',
+            component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('journey', __webpack_require__(330)),
+            redirect: '/journey/dataBankJourney',
+            children: [{
+                path: '/journey/dataBankJourney',
+                name: 'dataBankJourney',
+                component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dataBankJourney', __webpack_require__(200))
+            }, {
+                path: '/journey/dataBankJourneyInfo/:id',
+                name: 'dataBankJourneyInfo',
+                component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dataBankJourneyInfo', __webpack_require__(205))
+            }, {
+                path: '/journey/dataBankMealsInfo/:id',
+                name: 'dataBankMealsInfo',
+                component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dataBankMealsInfo', __webpack_require__(220))
+            }]
         }, {
-            path: '/dataBankJourneyInfo',
-            name: 'dataBankJourneyInfo',
-            component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dataBankJourneyInfo', __webpack_require__(205))
+            path: 'study',
+            name: 'study',
+            component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('study', __webpack_require__(340)),
+            redirect: '/study/dataBankStudySheet',
+            children: [{
+                path: '/study/dataBankStudySheet',
+                name: 'dataBankStudySheet',
+                component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dataBankStudySheet', __webpack_require__(345))
+            }, {
+                path: '/study/dataBankStudySheetInfo/:id',
+                name: 'dataBankStudySheetInfo',
+                component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dataBankStudySheetInfo', __webpack_require__(350))
+            }]
         }, {
             path: '/dataBankLocalCulture',
             name: 'dataBankLocalCulture',
@@ -18428,10 +18452,6 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
             path: '/dataBankLuggageList',
             name: 'dataBankLuggageList',
             component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dataBankLuggageList', __webpack_require__(215))
-        }, {
-            path: '/dataBankMealsInfo',
-            name: 'dataBankMealsInfo',
-            component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dataBankMealsInfo', __webpack_require__(220))
         }]
     }, {
         path: '/register',
@@ -24243,7 +24263,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank{width: 100%;min-height: 700px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;background-color: #fff;\n}\n.dataBankList{width: 100%;height: 100%;-ms-flex-line-pack: start;align-content: flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;\n}\n.dataBank_left{width: 18%;min-height:100%;border-right: 3px solid #d6d6d6;\n}\n.dataBank_left>ul{width: 100%;height: auto;\n}\n.dataBank_left>ul>li{width: 100%;height:50px;line-height: 50px;font-size: 16px;\n}\n.dataBank_left>ul>li:hover{cursor:pointer;\n}\n.dataBank_left>ul>li>div{width: 90%;height:50px;line-height: 50px;margin-left: 5%;\n}\n.dataBank_right{width: 82%;min-height:100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.act{background-color: #ffde01\n}\n.router-link-exact-active{background-color: #ffde01;\n}\n.router-link-active{background-color: #ffde01;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank{width: 100%;min-height: 700px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;background-color: #fff;\n}\n.dataBankList{width: 100%;height: 100%;-ms-flex-line-pack: start;align-content: flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;\n}\n.dataBank_left{width: 18%;min-height:100%;border-right: 3px solid #d6d6d6;\n}\n.dataBank_left>ul{width: 100%;height: auto;\n}\n.dataBank_left>ul>li{width: 100%;height:50px;line-height: 50px;font-size: 16px;position: relative;z-index: 1;\n}\n.dataBank_left>ul>li:hover{cursor:pointer;\n}\n.dataBank_left>ul>li>div{width: 90%;height:50px;line-height: 50px;position: absolute;top:0;left: 5%;z-index: 2;\n}\n.dataBank_right{width: 82%;min-height:100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.act{background-color: #ffde01\n}\n.router-link-exact-active{background-color: #ffde01;\n}\n.router-link-active{background-color: #ffde01;\n}\n", ""]);
 
 // exports
 
@@ -24376,9 +24396,16 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _c("router-link", { attrs: { tag: "li", to: "/dataBankJourney" } }, [
+        _c("router-link", { attrs: { tag: "li", to: "/journey" } }, [
           _c("div", [
             _vm._v("行程"),
+            _c("input", { staticClass: "checke", attrs: { type: "checkbox" } })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("router-link", { attrs: { tag: "li", to: "/study" } }, [
+          _c("div", [
+            _vm._v("学习工作纸"),
             _c("input", { staticClass: "checke", attrs: { type: "checkbox" } })
           ])
         ])
@@ -30867,7 +30894,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.commonHead{width: 100%;height: 116px;background-color: #ffde01;color: 000;\n}\n.left{width: 160px;height: 116px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;float:left;\n}\n.right{width: 360px;height: 116px;float: right;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;\n}\n.right>div{height: 116px;\n}\n.letter{width: 60px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.letter>img{width: 40px;height: 40px;\n}\n.person_icon{width: 100px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.person_icon>img{width: 70px;height: 70px;border-radius: 50%;\n}\n.info{width: 80px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.info>div{width: 100%;height: 30px;line-height: 30px;text-align:center;overflow: hidden;\n}\n.exit{width: 60px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.exit>img{width: 50px;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.pane_content{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content{width: 94%;min-height: 120px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journey{width: 100%;min-height:50px;\n}\n.form_item_journey>div{min-height: 50px;line-height: 50px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.item_left{width:85%;border-radius: 8px;background-color: #d6d6d6;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_left>input{height:40px;border-radius: 6px;\n}\n.item_right{min-width:10%;line-height: 50px;text-align: center;\n}\n.item_right>img{width:30px;height:30px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journey{width:50px;height: 50px;position: absolute;right: 5px;top: 50px;\n}\n.dataBankAddBtn_journey:hover{cursor:pointer;\n}\n.dataBankAddBtn_journey>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journey{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journey>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
 
 // exports
 
@@ -30912,8 +30939,233 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            journeys: [],
+            newJourney: {
+                day: '',
+                date: '',
+                description: '描述'
+            },
+            edJourney: {
+                id: '',
+                day: '',
+                date: '',
+                index: ''
+            },
+            isNewJourneyShow: false,
+            isEditJourneyShow: false
+        };
+    },
+
+    mounted: function mounted() {
+        this.getJourneys();
+    },
+    methods: {
+        getJourneys: function getJourneys() {
+            var _this = this;
+
+            // 获取行程
+            this.$ajax({
+                method: 'GET',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                url: '/api/travel/' + sessionStorage.actTravelId + '/routes'
+            }).then(function (res) {
+                // console.log(res.data);
+                _this.journeys = res.data.data;
+            }).catch(function (err) {
+                _this.$toast('获取失败');
+                console.log(err);
+            });
+        },
+        addNewJourneyShow: function addNewJourneyShow() {
+            this.isNewJourneyShow = true;
+        },
+        addNewJourney: function addNewJourney() {
+            var _this2 = this;
+
+            // 新增行程
+            this.$post('/api/travel/' + sessionStorage.actTravelId + '/route', this.newJourney, {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this2.$toast('添加成功');
+                _this2.getJourneys();
+                _this2.isNewJourneyShow = false;
+                _this2.newJourney.day = '';
+                _this2.newJourney.date = '';
+            }).catch(function (err) {
+                _this2.$toast('添加失败');
+                console.log(err);
+            });
+        },
+        editJourneyShow: function editJourneyShow(index) {
+            this.edJourney.id = this.journeys[index].id;
+            this.edJourney.day = this.journeys[index].day;
+            this.edJourney.date = this.journeys[index].date;
+            this.edJourney.index = index;
+            this.isEditJourneyShow = true;
+        },
+        editJourney: function editJourney() {
+            var _this3 = this;
+
+            // 修改行程信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    day: this.edJourney.day,
+                    date: this.edJourney.date
+                },
+                url: '/api/travel/' + sessionStorage.actTravelId + '/route/' + this.edJourney.id
+            }).then(function (res) {
+                if (res.status == 200) {
+                    _this3.journeys[_this3.edJourney.index].day = _this3.edJourney.day;
+                    _this3.journeys[_this3.edJourney.index].date = _this3.edJourney.date;
+                    _this3.$toast('修改成功');
+                    _this3.isEditJourneyShow = false;
+                } else {
+                    _this3.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this3.$toast('修改失败');
+                console.log(err);
+            });
+        },
+        delJourney: function delJourney(journeyId) {
+            var _this4 = this;
+
+            // 删除行程
+            this.$dialog.confirm({
+                title: '删除行程',
+                message: '是否删除该行程'
+            }).then(function () {
+                _this4.$ajax({
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: '/api/travel/' + sessionStorage.actTravelId + '/route/' + journeyId
+                }).then(function (res) {
+                    // console.log(res);
+                    if (res.status == 204) {
+                        _this4.getJourneys();
+                        _this4.$toast('删除成功');
+                    } else {
+                        _this4.$toast('删除失败');
+                    }
+                }).catch(function (err) {
+                    _this4.$toast('删除失败');
+                    console.log(err);
+                });
+            }).catch(function (err) {});
+        }
+    }
+});
 
 /***/ }),
 /* 204 */
@@ -30923,38 +31175,441 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "dataBank_input_form disflex" },
+    [
+      _c("div", { staticClass: "tablist" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "tab-content" }, [
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane active",
+              attrs: { role: "tabpanel", id: "journey" }
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "pane_content" },
+                [
+                  _vm._l(_vm.journeys, function(journey, index) {
+                    return _c("div", { staticClass: "form_content disflex" }, [
+                      _c("div", { staticClass: "form_item_journey disflex" }, [
+                        _c("div", { staticClass: "item_left disflex" }, [
+                          _c(
+                            "div",
+                            {
+                              staticStyle: { width: "40%", "margin-left": "5%" }
+                            },
+                            [_vm._v(_vm._s(journey.day))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticStyle: {
+                                width: "20%",
+                                "text-align": "center"
+                              }
+                            },
+                            [_vm._v("日期")]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticStyle: { width: "30%" },
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: journey.date }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "item_right" }, [
+                          _c("img", {
+                            attrs: {
+                              src: __webpack_require__(175)
+                            },
+                            on: {
+                              click: function($event) {
+                                _vm.$router.push(
+                                  "/journey/dataBankJourneyInfo/" + journey.id
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "editBtnGroup_journey" }, [
+                        _c("img", {
+                          attrs: { src: __webpack_require__(10) },
+                          on: {
+                            click: function($event) {
+                              _vm.delJourney(journey.id)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          attrs: { src: __webpack_require__(11) },
+                          on: {
+                            click: function($event) {
+                              _vm.editJourneyShow(index)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "dataBankAddBtn_journey",
+                      on: {
+                        click: function($event) {
+                          _vm.addNewJourneyShow()
+                        }
+                      }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { src: __webpack_require__(12) }
+                      })
+                    ]
+                  )
+                ],
+                2
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane",
+              attrs: { role: "tabpanel", id: "flight" }
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "pane_content" },
+                [
+                  _vm._l(_vm.journeys, function(journey, index) {
+                    return _c("div", { staticClass: "form_content disflex" }, [
+                      _c("div", { staticClass: "form_item_journey disflex" }, [
+                        _c("div", { staticClass: "item_left disflex" }, [
+                          _c(
+                            "div",
+                            {
+                              staticStyle: { width: "40%", "margin-left": "5%" }
+                            },
+                            [_vm._v(_vm._s(journey.day))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticStyle: {
+                                width: "20%",
+                                "text-align": "center"
+                              }
+                            },
+                            [_vm._v("日期")]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticStyle: { width: "30%" },
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: journey.date }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "item_right" }, [
+                          _c("img", {
+                            attrs: {
+                              src: __webpack_require__(175)
+                            },
+                            on: {
+                              click: function($event) {
+                                _vm.$router.push(
+                                  "/journey/dataBankMealsInfo/" + journey.id
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "editBtnGroup_journey" }, [
+                        _c("img", {
+                          attrs: { src: __webpack_require__(10) },
+                          on: {
+                            click: function($event) {
+                              _vm.delJourney(journey.id)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          attrs: { src: __webpack_require__(11) },
+                          on: {
+                            click: function($event) {
+                              _vm.editJourneyShow(index)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "dataBankAddBtn_journey",
+                      on: {
+                        click: function($event) {
+                          _vm.addNewJourneyShow()
+                        }
+                      }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { src: __webpack_require__(12) }
+                      })
+                    ]
+                  )
+                ],
+                2
+              )
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewJourneyShow,
+            callback: function($$v) {
+              _vm.isNewJourneyShow = $$v
+            },
+            expression: "isNewJourneyShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journey" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("第几天")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newJourney.day,
+                        expression: "newJourney.day"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "第几天", type: "text" },
+                    domProps: { value: _vm.newJourney.day },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newJourney, "day", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journey" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("时间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newJourney.date,
+                        expression: "newJourney.date"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "时间", type: "text" },
+                    domProps: { value: _vm.newJourney.date },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newJourney, "date", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.addNewJourney()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditJourneyShow,
+            callback: function($$v) {
+              _vm.isEditJourneyShow = $$v
+            },
+            expression: "isEditJourneyShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journey" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("第几天")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edJourney.day,
+                        expression: "edJourney.day"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "第几天", type: "text" },
+                    domProps: { value: _vm.edJourney.day },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edJourney, "day", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journey" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("时间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edJourney.date,
+                        expression: "edJourney.date"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "时间", type: "text" },
+                    domProps: { value: _vm.edJourney.date },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edJourney, "date", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.editJourney()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "commonHead" }, [
-      _c("div", { staticClass: "left disflex" }, [
-        _c("img", { attrs: { src: __webpack_require__(15) } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "right disflex" }, [
-        _c("div", { staticClass: "letter disflex" }, [
-          _c("img", { attrs: { src: __webpack_require__(17) } })
+    return _c(
+      "ul",
+      { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
+      [
+        _c("li", { staticClass: "active", attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#journey",
+                "aria-controls": "journey",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("行程安排")]
+          )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "person_icon disflex" }, [
-          _c("img", { attrs: { src: __webpack_require__(6) } })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "info disflex" }, [
-          _c("div", [_vm._v("qully")]),
-          _vm._v(" "),
-          _c("div", [_vm._v("积分：0")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "exit disflex" }, [
-          _c("img", { attrs: { src: __webpack_require__(16) } })
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#flight",
+                "aria-controls": "flight",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("膳食安排")]
+          )
         ])
-      ])
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -31052,7 +31707,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.commonHead{width: 100%;height: 116px;background-color: #ffde01;color: 000;\n}\n.left{width: 160px;height: 116px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;float:left;\n}\n.right{width: 360px;height: 116px;float: right;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;\n}\n.right>div{height: 116px;\n}\n.letter{width: 60px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.letter>img{width: 40px;height: 40px;\n}\n.person_icon{width: 100px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.person_icon>img{width: 70px;height: 70px;border-radius: 50%;\n}\n.info{width: 80px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.info>div{width: 100%;height: 30px;line-height: 30px;text-align:center;overflow: hidden;\n}\n.exit{width: 60px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.exit>img{width: 50px;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_journeyInfo{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journeyInfo{width:94%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journeyInfo>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
 
 // exports
 
@@ -31097,8 +31752,223 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            journey: '',
+            journeyInfos: [],
+            newJourneyInfo: {
+                time: '',
+                content: '',
+                description: ''
+            },
+            edJourneyInfo: {
+                id: '',
+                time: '',
+                content: '',
+                description: '',
+                index: ''
+            },
+            isNewJourneyInfoShow: false,
+            isEditJourneyInfoShow: false
+        };
+    },
+
+    mounted: function mounted() {
+        this.getJourneyInfos();
+    },
+    methods: {
+        getJourneyInfos: function getJourneyInfos() {
+            var _this = this;
+
+            // 获取行程
+            this.$ajax({
+                method: 'GET',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                url: '/api/travel/' + sessionStorage.actTravelId + '/route/' + this.$route.params.id + '?include=sceneries'
+            }).then(function (res) {
+                // console.log(res.data.sceneries.data);
+                _this.journey = res.data;
+                _this.journeyInfos = res.data.sceneries.data;
+            }).catch(function (err) {
+                _this.$toast('获取失败');
+                console.log(err);
+            });
+        },
+        addNewJourneyInfoShow: function addNewJourneyInfoShow() {
+            this.isNewJourneyInfoShow = true;
+        },
+        addNewJourneyInfo: function addNewJourneyInfo() {
+            var _this2 = this;
+
+            // 新增行程
+            this.$post('/api/travel/' + sessionStorage.actTravelId + '/route', this.newJourneyInfo, {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this2.$toast('添加成功');
+                _this2.getJourneyInfos();
+                _this2.isNewJourneyInfoShow = false;
+                _this2.newJourneyInfo.time = '';
+                _this2.newJourneyInfo.content = '';
+                _this2.newJourneyInfo.description = '';
+            }).catch(function (err) {
+                _this2.$toast('添加失败');
+                console.log(err);
+            });
+        },
+        editJourneyInfoShow: function editJourneyInfoShow(index) {
+            this.edJourneyInfo.id = this.journeyInfos[index].id;
+            this.edJourneyInfo.day = this.journeyInfos[index].day;
+            this.edJourneyInfo.date = this.journeyInfos[index].date;
+            this.edJourneyInfo.index = index;
+            this.isEditJourneyInfoShow = true;
+        },
+        editJourneyInfo: function editJourneyInfo() {
+            var _this3 = this;
+
+            // 修改行程信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    day: this.edJourneyInfo.day,
+                    date: this.edJourneyInfo.date
+                },
+                url: '/api/travel/' + sessionStorage.actTravelId + '/route/' + this.edJourneyInfo.id
+            }).then(function (res) {
+                if (res.status == 200) {
+                    _this3.journeyInfos[_this3.edJourneyInfo.index].day = _this3.edJourneyInfo.day;
+                    _this3.journeyInfos[_this3.edJourneyInfo.index].date = _this3.edJourneyInfo.date;
+                    _this3.$toast('修改成功');
+                    _this3.isEditJourneyInfoShow = false;
+                } else {
+                    _this3.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this3.$toast('修改失败');
+                console.log(err);
+            });
+        },
+        delJourneyInfo: function delJourneyInfo(journeyInfoId) {
+            var _this4 = this;
+
+            // 删除行程
+            this.$dialog.confirm({
+                title: '删除行程',
+                message: '是否删除该行程'
+            }).then(function () {
+                _this4.$ajax({
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: '/api/travel/' + sessionStorage.actTravelId + '/route/' + journeyInfoId
+                }).then(function (res) {
+                    // console.log(res);
+                    if (res.status == 204) {
+                        _this4.getJourneyInfos();
+                        _this4.$toast('删除成功');
+                    } else {
+                        _this4.$toast('删除失败');
+                    }
+                }).catch(function (err) {
+                    _this4.$toast('删除失败');
+                    console.log(err);
+                });
+            }).catch(function (err) {});
+        }
+    }
+});
 
 /***/ }),
 /* 209 */
@@ -31108,40 +31978,374 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "commonHead" }, [
-      _c("div", { staticClass: "left disflex" }, [
-        _c("img", { attrs: { src: __webpack_require__(15) } })
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "right_title" }, [
+        _c(
+          "div",
+          {
+            staticClass: "title_icon",
+            on: {
+              click: function($event) {
+                _vm.$router.push("/journey/dataBankJourney")
+              }
+            }
+          },
+          [_c("img", { attrs: { src: __webpack_require__(181) } })]
+        ),
+        _vm._v("\n            " + _vm._s(_vm.journey.day) + "\n        ")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "right disflex" }, [
-        _c("div", { staticClass: "letter disflex" }, [
-          _c("img", { attrs: { src: __webpack_require__(17) } })
-        ]),
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c(
+          "div",
+          { staticClass: "pane_content" },
+          _vm._l(_vm.journeyInfos, function(journeyInfo, index) {
+            return _c("div", { staticClass: "form_content disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("时间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    staticClass: "item_input_journeyInfo",
+                    attrs: {
+                      placeholder: "时间",
+                      type: "text",
+                      disabled: "disabled"
+                    },
+                    domProps: { value: journeyInfo.time }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    staticClass: "item_input_journeyInfo",
+                    attrs: {
+                      placeholder: "内容",
+                      type: "text",
+                      disabled: "disabled"
+                    },
+                    domProps: { value: journeyInfo.content }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("介绍")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    staticClass: "item_area",
+                    attrs: { disabled: "disabled", placeholder: "介绍" },
+                    domProps: { value: journeyInfo.description }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "editBtnGroup_journeyInfo" }, [
+                _c("img", {
+                  attrs: { src: __webpack_require__(10) },
+                  on: {
+                    click: function($event) {
+                      _vm.delJourneyInfo(journeyInfo.id)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: { src: __webpack_require__(11) },
+                  on: {
+                    click: function($event) {
+                      _vm.editJourneyInfoShow(index)
+                    }
+                  }
+                })
+              ])
+            ])
+          }),
+          0
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "person_icon disflex" }, [
-          _c("img", { attrs: { src: __webpack_require__(6) } })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "info disflex" }, [
-          _c("div", [_vm._v("qully")]),
-          _vm._v(" "),
-          _c("div", [_vm._v("积分：0")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "exit disflex" }, [
-          _c("img", { attrs: { src: __webpack_require__(16) } })
-        ])
-      ])
-    ])
-  }
-]
+        _c(
+          "div",
+          {
+            staticClass: "dataBankAddBtn_journeyInfo",
+            on: {
+              click: function($event) {
+                _vm.addNewJourneyInfoShow()
+              }
+            }
+          },
+          [_c("img", { attrs: { src: __webpack_require__(12) } })]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewJourneyInfoShow,
+            callback: function($$v) {
+              _vm.isNewJourneyInfoShow = $$v
+            },
+            expression: "isNewJourneyInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("时间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newJourneyInfo.time,
+                        expression: "newJourneyInfo.time"
+                      }
+                    ],
+                    staticClass: "item_input_journeyInfo",
+                    attrs: { placeholder: "时间", type: "text" },
+                    domProps: { value: _vm.newJourneyInfo.time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newJourneyInfo,
+                          "time",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newJourneyInfo.content,
+                        expression: "newJourneyInfo.content"
+                      }
+                    ],
+                    staticClass: "item_input_journeyInfo",
+                    attrs: { placeholder: "内容", type: "text" },
+                    domProps: { value: _vm.newJourneyInfo.content },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newJourneyInfo,
+                          "content",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("介绍")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newJourneyInfo.description,
+                        expression: "newJourneyInfo.description"
+                      }
+                    ],
+                    staticClass: "item_area",
+                    attrs: { placeholder: "介绍" },
+                    domProps: { value: _vm.newJourneyInfo.description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newJourneyInfo,
+                          "description",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.addNewJourneyInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditJourneyInfoShow,
+            callback: function($$v) {
+              _vm.isEditJourneyInfoShow = $$v
+            },
+            expression: "isEditJourneyInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("时间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edJourneyInfo.time,
+                        expression: "edJourneyInfo.time"
+                      }
+                    ],
+                    staticClass: "item_input_journeyInfo",
+                    attrs: { placeholder: "时间", type: "text" },
+                    domProps: { value: _vm.edJourneyInfo.time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edJourneyInfo, "time", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edJourneyInfo.content,
+                        expression: "edJourneyInfo.content"
+                      }
+                    ],
+                    staticClass: "item_input_journeyInfo",
+                    attrs: { placeholder: "内容", type: "text" },
+                    domProps: { value: _vm.edJourneyInfo.content },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edJourneyInfo,
+                          "content",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("介绍")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edJourneyInfo.description,
+                        expression: "edJourneyInfo.description"
+                      }
+                    ],
+                    staticClass: "item_area",
+                    attrs: { placeholder: "介绍" },
+                    domProps: { value: _vm.edJourneyInfo.description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edJourneyInfo,
+                          "description",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.editJourneyInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -70473,6 +71677,903 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(331)
+}
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(333)
+/* template */
+var __vue_template__ = __webpack_require__(334)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Journey.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4774ebd9", Component.options)
+  } else {
+    hotAPI.reload("data-v-4774ebd9", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 331 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(332);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("aed38f62", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4774ebd9\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./Journey.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4774ebd9\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./Journey.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 332 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 333 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 334 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("router-view")
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-4774ebd9", module.exports)
+  }
+}
+
+/***/ }),
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(341)
+}
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(343)
+/* template */
+var __vue_template__ = __webpack_require__(344)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Study.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5a4cecbc", Component.options)
+  } else {
+    hotAPI.reload("data-v-5a4cecbc", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 341 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(342);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("4cfa5667", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5a4cecbc\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./Study.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5a4cecbc\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./Study.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 342 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 343 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 344 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("router-view")
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-5a4cecbc", module.exports)
+  }
+}
+
+/***/ }),
+/* 345 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(346)
+}
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(348)
+/* template */
+var __vue_template__ = __webpack_require__(349)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/databank/dataBankStudySheet.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-8e47567a", Component.options)
+  } else {
+    hotAPI.reload("data-v-8e47567a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 346 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(347);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("58b524f8", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-8e47567a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankStudySheet.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-8e47567a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankStudySheet.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 347 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.form_content{width: 70%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-top:20px;\n}\n.form_item{width: 100%;min-height:50px;margin:10px 0;\n}\n.form_item>div{min-height: 50px;line-height: 50px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_left{width:85%;border-radius: 8px;background-color: #d6d6d6;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_left>input{height:40px;border-radius: 6px;\n}\n.item_right{min-width:10%;line-height: 50px;text-align: center;\n}\n.item_right>img{width:30px;height:30px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 50px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 348 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 349 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "dataBank_input_form disflex" }, [
+      _c("div", { staticClass: "form_content disflex" }, [
+        _c("div", { staticClass: "form_item disflex" }, [
+          _c("div", { staticClass: "item_left disflex" }, [
+            _c("div", { staticStyle: { width: "40%", "margin-left": "5%" } }, [
+              _vm._v("Day.01")
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticStyle: { width: "20%", "text-align": "center" } },
+              [_vm._v("日期")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              staticStyle: { width: "30%" },
+              attrs: { type: "text", name: "" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item_right" }, [
+            _c("img", {
+              attrs: {
+                onclick: "window.location.assign('/studySheetInfo')",
+                src: __webpack_require__(175)
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form_item disflex" }, [
+          _c("div", { staticClass: "item_left disflex" }, [
+            _c("div", { staticStyle: { width: "40%", "margin-left": "5%" } }, [
+              _vm._v("Day.02")
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticStyle: { width: "20%", "text-align": "center" } },
+              [_vm._v("日期")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              staticStyle: { width: "30%" },
+              attrs: { type: "text", name: "" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item_right" }, [
+            _c("img", {
+              attrs: {
+                onclick: "window.location.assign('/studySheetInfo')",
+                src: __webpack_require__(175)
+              }
+            })
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBankEditBtn" }, [
+        _c("img", { attrs: { src: __webpack_require__(139) } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBankAddBtn" }, [
+        _c("img", { attrs: { src: __webpack_require__(12) } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBankDelBtn" }, [
+        _c("img", { attrs: { src: __webpack_require__(10) } })
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-8e47567a", module.exports)
+  }
+}
+
+/***/ }),
+/* 350 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(351)
+}
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(353)
+/* template */
+var __vue_template__ = __webpack_require__(354)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/databank/DataBankStudySheetInfo.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e286b59e", Component.options)
+  } else {
+    hotAPI.reload("data-v-e286b59e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 351 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(352);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("66ac2c91", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e286b59e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankStudySheetInfo.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e286b59e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankStudySheetInfo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 352 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item{width: 100%;min-height:100px;\n}\n.form_item>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_title_icon{margin-right: 3%;\n}\n.item_title_icon>img{height:25px;\n}\n.item_title_icon>img:hover{cursor: pointer;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;height:95px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.item_add{width:100%;height:80px;\n}\n.item_add>img{width:80px;height: 80px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 50px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 353 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 354 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticStyle: { width: "100%" } }, [
+      _c("div", { staticClass: "right_title" }, [
+        _c(
+          "div",
+          {
+            staticClass: "title_icon",
+            attrs: { onclick: "window.location.assign('/studySheet')" }
+          },
+          [_c("img", { attrs: { src: __webpack_require__(181) } })]
+        ),
+        _vm._v("\n\t    Day.01\n\t")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c("div", { staticClass: "pane_content" }, [
+          _c("div", { staticClass: "form_content disflex" }, [
+            _c("div", { staticClass: "form_item" }, [
+              _c("div", { staticClass: "item_title" }, [_vm._v("首图")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "item_add" }, [
+                _c("img", {
+                  attrs: { src: __webpack_require__(355) }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form_item" }, [
+              _c("div", { staticClass: "item_title" }, [
+                _vm._v("题目背景文化介绍标题(16个字符以内)")
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  staticClass: "item_input",
+                  attrs: { type: "text", name: "" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "form_item",
+                staticStyle: { width: "100%", height: "140px" }
+              },
+              [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("内容\n\t                    "),
+                  _c("div", { staticClass: "fr item_title_icon" }, [
+                    _c("img", {
+                      staticStyle: {
+                        height: "35px",
+                        border: "1px solid #666",
+                        "border-radius": "5px"
+                      },
+                      attrs: {
+                        src: __webpack_require__(356),
+                        alt: ""
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    staticClass: "item_area",
+                    attrs: { placeholder: "内容" }
+                  })
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "form_item" }, [
+              _c("div", { staticClass: "item_title" }, [
+                _vm._v(
+                  "\n\t                    设置问题1\n\t                    "
+                ),
+                _c("div", { staticClass: "fr item_title_icon" }, [
+                  _c("img", {
+                    attrs: {
+                      src: __webpack_require__(193),
+                      alt: ""
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    attrs: { src: __webpack_require__(194) }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  staticClass: "item_input",
+                  attrs: { type: "text", name: "" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form_item" }, [
+              _c("div", { staticClass: "item_title" }, [
+                _vm._v(
+                  "\n\t                    设置问题2\n\t                    "
+                ),
+                _c("div", { staticClass: "fr item_title_icon" }, [
+                  _c("img", {
+                    attrs: {
+                      src: __webpack_require__(193),
+                      alt: ""
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    attrs: { src: __webpack_require__(194) }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  staticClass: "item_input",
+                  attrs: { type: "text", name: "" }
+                })
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "dataBankEditBtn" }, [
+          _c("img", { attrs: { src: __webpack_require__(139) } })
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-e286b59e", module.exports)
+  }
+}
+
+/***/ }),
+/* 355 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/add-pic.png?5378b96416e23f3d9cb1a8ffdbc4e349";
+
+/***/ }),
+/* 356 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/insert-pic.png?66347f5f3352af774135e4dbbbb957af";
 
 /***/ })
 /******/ ]);

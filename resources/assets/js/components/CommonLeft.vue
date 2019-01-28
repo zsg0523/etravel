@@ -4,9 +4,9 @@
     .dataBankList{width: 100%;height: 100%;align-content: flex-start;flex-direction: row;}
     .dataBank_left{width: 18%;min-height:100%;border-right: 3px solid #d6d6d6;}
     .dataBank_left>ul{width: 100%;height: auto;}
-    .dataBank_left>ul>li{width: 100%;height:50px;line-height: 50px;font-size: 16px;}
+    .dataBank_left>ul>li{width: 100%;height:50px;line-height: 50px;font-size: 16px;position: relative;z-index: 1;}
     .dataBank_left>ul>li:hover{cursor:pointer;}
-    .dataBank_left>ul>li>div{width: 90%;height:50px;line-height: 50px;margin-left: 5%;}
+    .dataBank_left>ul>li>div{width: 90%;height:50px;line-height: 50px;position: absolute;top:0;left: 5%;z-index: 2;}
     .dataBank_right{width: 82%;min-height:100%;justify-content: flex-start;align-items:center;flex-direction: column;}
     .act{background-color: #ffde01}
     .router-link-exact-active{background-color: #ffde01;}
@@ -24,11 +24,11 @@
             <router-link tag='li' to='/dataBankLocalCulture'><div >当地文化<input type="checkbox" class="checke"></div></router-link>
             <router-link tag='li' to='/dataBankHouseTable'><div >分房表<input type="checkbox" class="checke"></div></router-link>
             <router-link tag='li' to='/dataBankLuggageList'><div >行李清单<input type="checkbox" class="checke"></div></router-link>
-            <router-link tag='li' to='/dataBankJourney'><div >行程<input type="checkbox" class="checke"></div></router-link>
-   <!--          <router-link tag='li' to='/'><div >学习工作纸<input type="checkbox" class="checke"></div></router-link>
-            <router-link tag='li' to='/'><div >每日记事<input type="checkbox" class="checke"></div></router-link>
-            <router-link tag='li' to='/'><div >自我评估<input type="checkbox" class="checke"></div></router-link>
-            <router-link tag='li' to='/'><div >自我感想<input type="checkbox" class="checke"></div></router-link> -->
+            <router-link tag='li' to='/journey'><div >行程<input type="checkbox" class="checke"></div></router-link>
+            <router-link tag='li' to='/study'><div >学习工作纸<input type="checkbox" class="checke"></div></router-link>
+            <!-- <router-link tag='li' to='/'><div >每日记事<input type="checkbox" class="checke"></div></router-link> -->
+            <!-- <router-link tag='li' to='/'><div >自我评估<input type="checkbox" class="checke"></div></router-link> -->
+            <!-- <router-link tag='li' to='/'><div >自我感想<input type="checkbox" class="checke"></div></router-link> -->
         </ul>
     </div>
 </template>

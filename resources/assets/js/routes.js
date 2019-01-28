@@ -92,14 +92,45 @@ const router = new VueRouter({
                     component: Vue.component( 'dataBankHouseTable', require( './databank/DataBankHouseTable.vue' ) ),
                 },
                 {
-                    path: '/dataBankJourney',
-                    name: 'dataBankJourney',
-                    component: Vue.component( 'dataBankJourney', require( './databank/DataBankJourney.vue' ) ),
+                    path: '/journey',
+                    name: 'journey',
+                    component: Vue.component( 'journey', require( './components/Journey.vue' ) ),
+                    redirect: '/journey/dataBankJourney',
+                    children:[
+                        {
+                            path: '/journey/dataBankJourney',
+                            name: 'dataBankJourney',
+                            component: Vue.component( 'dataBankJourney', require( './databank/DataBankJourney.vue' ) ),
+                        },
+                        {
+                            path: '/journey/dataBankJourneyInfo/:id',
+                            name: 'dataBankJourneyInfo',
+                            component: Vue.component( 'dataBankJourneyInfo', require( './databank/DataBankJourneyInfo.vue' ) ),
+                        },
+                        {
+                            path: '/journey/dataBankMealsInfo/:id',
+                            name: 'dataBankMealsInfo',
+                            component: Vue.component( 'dataBankMealsInfo', require( './databank/DataBankMealsInfo.vue' ) ),
+                        },
+                    ],
                 },
                 {
-                    path: '/dataBankJourneyInfo',
-                    name: 'dataBankJourneyInfo',
-                    component: Vue.component( 'dataBankJourneyInfo', require( './databank/DataBankJourneyInfo.vue' ) ),
+                    path: 'study',
+                    name: 'study',
+                    component: Vue.component( 'study', require( './components/Study.vue' ) ),
+                    redirect: '/study/dataBankStudySheet',
+                    children:[
+                        {
+                            path: '/study/dataBankStudySheet',
+                            name: 'dataBankStudySheet',
+                            component: Vue.component( 'dataBankStudySheet', require( './databank/dataBankStudySheet.vue' ) ),
+                        },
+                        {
+                            path: '/study/dataBankStudySheetInfo/:id',
+                            name: 'dataBankStudySheetInfo',
+                            component: Vue.component( 'dataBankStudySheetInfo', require( './databank/DataBankStudySheetInfo.vue' ) ),
+                        },
+                    ],
                 },
                 {
                     path: '/dataBankLocalCulture',
@@ -110,11 +141,6 @@ const router = new VueRouter({
                     path: '/dataBankLuggageList',
                     name: 'dataBankLuggageList',
                     component: Vue.component( 'dataBankLuggageList', require( './databank/DataBankLuggageList.vue' ) ),
-                },
-                {
-                    path: '/dataBankMealsInfo',
-                    name: 'dataBankMealsInfo',
-                    component: Vue.component( 'dataBankMealsInfo', require( './databank/DataBankMealsInfo.vue' ) ),
                 },
             ],
         },
