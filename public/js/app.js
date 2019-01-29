@@ -30721,7 +30721,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.dataBank_input_form>table{margin-top: 20px;width: 90%;\n}\n.dataBank_input_form table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form thead{background-color: #ffde01;\n}\n.dataBank_input_form td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.editIcon{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon:hover{cursor: pointer;\n}\n.editIcon>img{width:25px;height:25px;\n}\n.active{font-size: 18px;\n}        \n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.dataBank_input_form>table{margin-top: 20px;width: 90%;\n}\n.dataBank_input_form table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form thead{background-color: #ffde01;\n}\n.dataBank_input_form td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item{width: 100%;min-height:100px;\n}\n.form_item>div{height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon:hover{cursor: pointer;\n}\n.editIcon>img{width:25px;height:25px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}    \n", ""]);
 
 // exports
 
@@ -30777,8 +30777,214 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            houses: [],
+            newHouse: {
+                house_number: '',
+                house_class: '',
+                house_name: ''
+            },
+            edHouse: {
+                edHouse_number: '',
+                edHouse_class: '',
+                edHouse_name: '',
+                id: '',
+                user_id: '',
+                index: ''
+            },
+            isNewHouseShow: false,
+            isEditHouseShow: false
+        };
+    },
+
+    mounted: function mounted() {
+        this.getHouses();
+    },
+    methods: {
+        getHouses: function getHouses() {
+            var _this = this;
+
+            // 获取分房表信息
+            this.$ajax({
+                method: 'GET',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                url: '/api/travels/' + sessionStorage.actTravelId + '/groups?include=user.student'
+            }).then(function (res) {
+                // console.log(res.data);
+                _this.houses = res.data.data;
+            }).catch(function (err) {
+                _this.$toast('获取失败');
+                console.log(err);
+            });
+        },
+        addNewHouseShow: function addNewHouseShow() {
+            this.isNewHouseShow = true;
+        },
+        addNewHouse: function addNewHouse() {
+            var _this2 = this;
+
+            //新增房间
+            this.$post('/api/travels/' + sessionStorage.actTravelId + '/categories', this.newHouse, {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this2.$toast('添加成功');
+                _this2.getPromises();
+                _this2.isNewHouseShow = false;
+                _this2.newHouse.house_number = '';
+            }).catch(function (err) {
+                _this2.$toast('添加失败');
+                console.log(err);
+            });
+        },
+        editHouseShow: function editHouseShow(index) {
+            this.edHouse.id = this.houses[index].id;
+            this.edHouse.user_id = this.houses[index].user_id;
+            this.edHouse.house_room = this.houses[index].room;
+            this.edHouse.house_class = this.houses[index].user.student.class;
+            this.edHouse.house_name = this.houses[index].user.name;
+            this.edHouse.index = index;
+            this.isEditHouseShow = true;
+        },
+        editHouse: function editHouse() {
+            var _this3 = this;
+
+            // 修改房间表信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    room: this.edHouse.house_room,
+                    class: this.edHouse.house_class,
+                    name: this.edHouse.house_name
+                },
+                // /api/users/:user/travels/:travel/groups/:group
+                url: '/api/users/' + this.edHouse.user_id + '/travels/' + sessionStorage.actTravelId + '/groups/' + this.edHouse.id
+            }).then(function (res) {
+                if (res.status == 200) {
+                    _this3.houses[_this3.edHouse.index].room = _this3.edHouse.house_room;
+                    _this3.houses[_this3.edHouse.index].user.student.class = _this3.edHouse.house_class;
+                    _this3.houses[_this3.edHouse.index].user.name = _this3.edHouse.house_name;
+                    _this3.$toast('修改成功');
+                    _this3.isEditRuleShow = false;
+                } else {
+                    _this3.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this3.$toast('修改失败');
+                console.log(err);
+            });
+        },
+        delHouse: function delHouse(houseId) {
+            var _this4 = this;
+
+            // 删除分房信息
+            this.$dialog.confirm({
+                title: '删除分房表信息',
+                message: '是否删除该分房'
+            }).then(function () {
+                _this4.$ajax({
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: '/api/users/' + _this4.edHouse.user_id + '/travels/' + sessionStorage.actTravelId + '/groups/' + _this4.edHouse.id
+                }).then(function (res) {
+                    // console.log(res);
+                    if (res.status == 204) {
+                        _this4.getHouses();
+                        _this4.$toast('删除成功');
+                    } else {
+                        _this4.$toast('删除失败');
+                    }
+                }).catch(function (err) {
+                    _this4.$toast('删除失败');
+                    console.log(err);
+                });
+            }).catch(function (err) {});
+        }
+    }
+});
 
 /***/ }),
 /* 199 */
@@ -30788,56 +30994,338 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c("table", [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.houses, function(house, index) {
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(house.room))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(house.user.student.class))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(house.user.name))]),
+                _vm._v(" "),
+                _c("td", [
+                  _c("div", { staticClass: "editIcon" }, [
+                    _c("img", {
+                      attrs: { src: __webpack_require__(51) },
+                      on: {
+                        click: function($event) {
+                          _vm.editHouseShow(index)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "editIcon" }, [
+                    _c("img", {
+                      attrs: { src: __webpack_require__(52) },
+                      on: {
+                        click: function($event) {
+                          _vm.addNewHouseShow()
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "editIcon" }, [
+                    _c("img", {
+                      attrs: { src: __webpack_require__(53) },
+                      on: {
+                        click: function($event) {
+                          _vm.delHouse(house.id)
+                        }
+                      }
+                    })
+                  ])
+                ])
+              ])
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewHouseShow,
+            callback: function($$v) {
+              _vm.isNewHouseShow = $$v
+            },
+            expression: "isNewHouseShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("房间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHouse.house_number,
+                        expression: "newHouse.house_number"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "房间编号", type: "text" },
+                    domProps: { value: _vm.newHouse.house_number },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newHouse,
+                          "house_number",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("班级")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHouse.house_class,
+                        expression: "newHouse.house_class"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "班级", type: "text" },
+                    domProps: { value: _vm.newHouse.house_class },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newHouse,
+                          "house_class",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("学生姓名")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHouse.house_name,
+                        expression: "newHouse.house_name"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "学生姓名", type: "text" },
+                    domProps: { value: _vm.newHouse.house_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newHouse,
+                          "house_name",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.addNewHouse()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditHouseShow,
+            callback: function($$v) {
+              _vm.isEditHouseShow = $$v
+            },
+            expression: "isEditHouseShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("房间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHouse.house_number,
+                        expression: "edHouse.house_number"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "房间编号", type: "text" },
+                    domProps: { value: _vm.edHouse.house_number },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHouse,
+                          "house_number",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("班级")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHouse.house_class,
+                        expression: "edHouse.house_class"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "班级", type: "text" },
+                    domProps: { value: _vm.edHouse.house_class },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHouse,
+                          "house_class",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("学生姓名")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHouse.house_name,
+                        expression: "edHouse.house_name"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "学生姓名", type: "text" },
+                    domProps: { value: _vm.edHouse.house_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHouse, "house_name", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.editHouse()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dataBank_input_form disflex" }, [
-      _c("table", [
-        _c("thead", [
-          _c("tr", [
-            _c("th", [_vm._v("房间编号")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("班级")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("学生姓名")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("英文姓名")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("编辑")])
-          ])
-        ]),
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("房间编号")]),
         _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v("房间编号")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("班级")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("学生姓名")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("英文姓名")]),
-            _vm._v(" "),
-            _c("td", [
-              _c("div", { staticClass: "editIcon" }, [
-                _c("img", { attrs: { src: __webpack_require__(51) } })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editIcon" }, [
-                _c("img", {
-                  attrs: { src: __webpack_require__(52) }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editIcon" }, [
-                _c("img", { attrs: { src: __webpack_require__(53) } })
-              ])
-            ])
-          ])
-        ])
+        _c("th", [_vm._v("班级")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("学生姓名")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("编辑")])
       ])
     ])
   }
