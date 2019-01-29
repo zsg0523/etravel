@@ -14,7 +14,7 @@ if (token) {
 }
 let instance = axios.create({
   	responseType: 'json',
-  	timeout: 30000,
+  	timeout: 100000,
   	headers: {
     	Accept: 'application/json'
   	},

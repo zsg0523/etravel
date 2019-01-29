@@ -20,7 +20,7 @@
     .dataBankAddBtn:hover{cursor:pointer;}
     .dataBankAddBtn>img{width:50px;height: 50px;}
 
-    .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;box-shadow: 0 0 10px #ccc;}
+    .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;}
     .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
     .issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
     .issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;}
@@ -742,7 +742,7 @@
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     this.hotels=res.data.data;
                     
                 }).catch(err => {
@@ -789,7 +789,7 @@
                 this.isEditHotelShow=true;
             },
             editHotel(){
-                // 修改航班信息
+                // 修改酒店信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -806,12 +806,12 @@
                     url: '/api/hotels/'+this.edHotel.id,
                 }).then(res => {
                     if(res.status==200){
-                        this.flights[this.edHotel.index].check_at=this.edHotel.check_at;
-                        this.flights[this.edHotel.index].leave_at=this.edHotel.leave_at;
-                        this.flights[this.edHotel.index].times=this.edHotel.times;
-                        this.flights[this.edHotel.index].hotel_name=this.edHotel.hotel_name;
-                        this.flights[this.edHotel.index].hotel_address=this.edHotel.hotel_address;
-                        this.flights[this.edHotel.index].hotel_phone=this.edHotel.hotel_phone;
+                        this.hotels[this.edHotel.index].check_at=this.edHotel.check_at;
+                        this.hotels[this.edHotel.index].leave_at=this.edHotel.leave_at;
+                        this.hotels[this.edHotel.index].times=this.edHotel.times;
+                        this.hotels[this.edHotel.index].hotel_name=this.edHotel.hotel_name;
+                        this.hotels[this.edHotel.index].hotel_address=this.edHotel.hotel_address;
+                        this.hotels[this.edHotel.index].hotel_phone=this.edHotel.hotel_phone;
                         this.$toast('修改成功');
                         this.isEditHotelShow=false;    
                     }else{
@@ -859,7 +859,7 @@
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     this.leadTeachers=res.data.data;
                 }).catch(err => {
                     this.$toast('获取失败');
@@ -962,7 +962,7 @@
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     this.badWeathers=res.data;
                     this.edBadWeather.urgency=res.data.urgency;
                 }).catch(err => {

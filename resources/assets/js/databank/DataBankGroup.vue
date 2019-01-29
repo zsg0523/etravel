@@ -1,35 +1,48 @@
 <style>
-	.commonHead{width: 100%;height: 116px;background-color: #ffde01;color: 000;}     
-    .left{width: 160px;height: 116px;align-items: center;justify-content: center;float:left;}
-    .right{width: 360px;height: 116px;float: right;align-items: center;justify-content:center;}
-    .right>div{height: 116px;}
-    .letter{width: 60px;align-items: center;justify-content: center;}
-    .letter>img{width: 40px;height: 40px;}
-    .person_icon{width: 100px;align-items: center;justify-content: center;}
-    .person_icon>img{width: 70px;height: 70px;border-radius: 50%;}
-    .info{width: 80px;align-items: center;justify-content: center;flex-direction: column;}
-    .info>div{width: 100%;height: 30px;line-height: 30px;text-align:center;overflow: hidden;}
-    .exit{width: 60px;align-items: center;justify-content: center;}
-    .exit>img{width: 50px;}
+    .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;}
+    .dataBank_input_form>table{margin-top: 20px;width: 96%;}
+
+    .dataBank_input_form table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;}
+    .dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;}
+    .dataBank_input_form thead{background-color: #ffde01;}
+    .dataBank_input_form thead th{text-align: center;}
+    .dataBank_input_form td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;}
+    .editIcon{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;}
+    .editIcon:hover{cursor: pointer;}
+    .editIcon>img{width:25px;height:25px;}
+
+    .active{font-size: 18px;}  
 </style>
 
 <template>
-	<div class="commonHead">
-	    <div class="left disflex">
-	        <img src="../../images/logo.png">
-	    </div>
-	    <div class="right disflex">
-	        <div class="letter disflex"><img src="../../images/letter.png"></div>
-	        <div class="person_icon disflex"><img src="../../images/photo.png"></div>
-	        <div class="info disflex">
-	            <div>qully</div>
-	            <div>积分：0</div>
-	        </div>
-	        <div class="exit disflex">
-	            <img src="../../images/Vector-icon.png">
-	        </div>
-	    </div>
-	</div>
+	<div class="dataBank_input_form disflex"> 
+        <table>
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>班级</th>
+                    <th>学生姓名</th>
+                    <th>房号</th>
+                    <th>职责</th>
+                    <th>编辑</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>
+                        <div class="editIcon"><img src="../../images/edit.png"></div>
+                        <div class="editIcon"><img src="../../images/appointAdd.png"></div>
+                        <div class="editIcon"><img src="../../images/dele.png"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>   
+    </div>
 </template>
 
 <script>
