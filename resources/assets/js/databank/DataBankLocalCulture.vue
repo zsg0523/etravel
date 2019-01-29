@@ -10,9 +10,13 @@
     .item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;}
     .active{font-size: 18px;}  
 
-	.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
-    .dataBankAddBtn:hover{cursor:pointer;}
-    .dataBankAddBtn>img{width:50px;height: 50px;}
+	.dataBankAddBtn_culture{width:50px;height: 50px;position: absolute;right: 5px;top: 50px;}
+    .dataBankAddBtn_culture:hover{cursor:pointer;}
+    .dataBankAddBtn_culture>img{width:50px;height: 50px;}
+
+    .dataBankEditBtn_culture{width:50px;height: 50px;position: absolute;right: 5px;top: 130px;}
+    .dataBankEditBtn_culture:hover{cursor:pointer;}
+    .dataBankEditBtn_culture>img{width:50px;height: 50px;}
 	
     .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;}
     .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
@@ -43,13 +47,9 @@
                             </div>
                             <div class="form_item_culture">
                                 <div class="item_title">图片</div>
-                                <div>
-                                	<!-- 图片上传 -->
-
-							        <van-uploader :after-read="onRead" accept="image/*" multiple>
-								      	<img class="" src="../../images/logo.png" ref="goodsImg"/>
-								  	</van-uploader>
-							  	</div>
+                                <div> 
+                                    <div><input class="item_input" type="text" name=""></div>
+                                </div>
                             </div>
                             <div class="form_item_culture" style="width:100%;height:120px;">
                                 <div class="item_title">内容</div>
@@ -58,8 +58,11 @@
                                 </div>
                             </div>
                         </div>
-						<div class="dataBankAddBtn" @click="addNewRuleInfoShow();">
+						<div class="dataBankAddBtn_culture" @click="addNewRuleInfoShow();">
 				            <img src="../../images/add_y.png">
+				        </div>
+				        <div class="dataBankEditBtn_culture" @click="addNewRuleInfoShow();">
+				            <img src="../../images/edit-all.png">
 				        </div>
                     </div>
 
@@ -86,9 +89,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dataBankAddBtn" @click="addNewRuleInfoShow();">
-					        <img src="../../images/add_y.png">
-					    </div>
+                        <div class="dataBankAddBtn_culture" @click="addNewRuleInfoShow();">
+				            <img src="../../images/add_y.png">
+				        </div>
+				        <div class="dataBankEditBtn_culture" @click="addNewRuleInfoShow();">
+				            <img src="../../images/edit-all.png">
+				        </div>
                     </div>
                 </div>
 
