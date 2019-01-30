@@ -63,7 +63,7 @@
                     <div class="form_item">
                         <div class="item_title">房间</div>
                         <div>
-                            <input class="item_input" placeholder="房间编号" type="text"  v-model="newHouse.house_number">
+                            <input class="item_input" placeholder="房间编号" type="text"  v-model="newHouse.house_room">
                         </div>
                     </div>
                     <div class="form_item">
@@ -90,7 +90,7 @@
                     <div class="form_item">
                         <div class="item_title">房间</div>
                         <div>
-                            <input class="item_input" placeholder="房间编号" type="text"  v-model="edHouse.house_number">
+                            <input class="item_input" placeholder="房间编号" type="text"  v-model="edHouse.house_room">
                         </div>
                     </div>
                     <div class="form_item">
@@ -125,7 +125,7 @@
                     house_name:'',
                 },
                 edHouse:{
-                    edHouse_number:'',
+                    edHouse_room:'',
                     edHouse_class:'',
                     edHouse_name:'',
                     id:'',

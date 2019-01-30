@@ -142,6 +142,31 @@ const router = new VueRouter({
                     name: 'dataBankLuggageList',
                     component: Vue.component( 'dataBankLuggageList', require( './databank/DataBankLuggageList.vue' ) ),
                 },
+
+
+                {
+                    path: '/topic',
+                    name: 'topic',
+                    component: Vue.component( 'topic', require( './components/Topic.vue' ) ),
+                    redirect: '/topic/dataBankEvaluation',
+                    children:[
+                        {
+                            path: '/topic/dataBankEvaluation',
+                            name: 'dataBankEvaluation',
+                            component: Vue.component( 'dataBankEvaluation', require( './databank/dataBankEvaluation.vue' ) ),
+                        },
+                        {
+                            path: '/topic/dataBankEvaluationInfo/:id',
+                            name: 'dataBankEvaluationInfo',
+                            component: Vue.component( 'dataBankEvaluationInfo', require( './databank/DataBankEvaluationInfo.vue' ) ),
+                        },
+                    ],
+                },
+                {
+                    path: '/dataBankSelfPerception',
+                    name: 'dataBankSelfPerception',
+                    component: Vue.component( 'dataBankSelfPerception', require( './databank/DataBankSelfPerception.vue' ) ),
+                },
             ],
         },
         {
