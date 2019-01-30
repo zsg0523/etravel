@@ -115,15 +115,20 @@ const router = new VueRouter({
                     ],
                 },
                 {
-                    path: 'study',
+                    path: '/study',
                     name: 'study',
                     component: Vue.component( 'study', require( './components/Study.vue' ) ),
-                    redirect: '/study/dataBankStudySheet',
+                    redirect: '/study/dataBankStudy',
                     children:[
                         {
-                            path: '/study/dataBankStudySheet',
+                            path: '/study/dataBankStudy',
+                            name: 'dataBankStudy',
+                            component: Vue.component( 'dataBankStudy', require( './databank/dataBankStudy.vue' ) ),
+                        },
+                        {
+                            path: '/study/dataBankStudySheet/:id',
                             name: 'dataBankStudySheet',
-                            component: Vue.component( 'dataBankStudySheet', require( './databank/dataBankStudySheet.vue' ) ),
+                            component: Vue.component( 'dataBankStudySheet', require( './databank/DataBankStudySheet.vue' ) ),
                         },
                         {
                             path: '/study/dataBankStudySheetInfo/:id',

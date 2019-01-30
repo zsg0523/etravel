@@ -2,7 +2,7 @@
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
     .tablist{width:100%;}
     .nav-tabs>li>a{color: #000;}
-    .pane_content{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
+    .pane_content_study{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
 
     .form_content_journey{width: 94%;min-height: 120px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
 
@@ -33,64 +33,29 @@
 
 <template>
 	<div class="dataBank_input_form disflex">
-        <div class="tablist">
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#journey" aria-controls="journey" role="tab" data-toggle="tab">行程安排</a></li>
-                <li role="presentation"><a href="#flight" aria-controls="flight" role="tab" data-toggle="tab">膳食安排</a></li>
-            </ul>
-            <div class="tab-content">
-                <!-- 行程安排 -->
-                <div role="tabpanel" class="tab-pane active" id="journey">
-                    <div class="pane_content">
-                        <div class="form_content_journey disflex" v-for="(journey,index) in journeys">
-                            <div class="form_item_journey disflex">
-                                <div class="item_left disflex">
-                                    <div style="width:40%;margin-left: 5%;">{{journey.day}}</div>
-                                    <div style="width:20%;text-align: center;">日期</div>
-                                    <input type="text" style="width:30%;" disabled="disabled" :value="journey.date">
-                                </div>
-                                <div class="item_right">
-                                    <img @click="$router.push('/journey/dataBankJourneyInfo/'+journey.id)" src="../../images/See-next.png">
-                                </div>
-                            </div>
-                            <div class="editBtnGroup_journey">
-				                <img @click="delJourney(journey.id);" src="../../images/rush-icon.png">
-				                <img @click="editJourneyShow(index);" src="../../images/edit-all.png">
-				            </div>
-                        </div>
-                        <div class="dataBankAddBtn_journey" @click="addNewJourneyShow();">
-				            <img src="../../images/add_y.png">
-				        </div>
-                    </div>   
-                </div>
+        <!-- 行程安排 -->
 
-                <!-- 膳食安排 -->
-                <div role="tabpanel" class="tab-pane" id="flight">
-                    <div class="pane_content">
-                        <div class="form_content_journey disflex" v-for="(journey,index) in journeys">
-                            <div class="form_item_journey disflex">
-                                <div class="item_left disflex">
-                                    <div style="width:40%;margin-left: 5%;">{{journey.day}}</div>
-                                    <div style="width:20%;text-align: center;">日期</div>
-                                    <input type="text" style="width:30%;" disabled="disabled" :value="journey.date">
-                                </div>
-                                <div class="item_right">
-                                    <img @click="$router.push('/journey/dataBankMealsInfo/'+journey.id)" src="../../images/See-next.png">
-                                </div>
-                            </div>
-                            <div class="editBtnGroup_journey">
-				                <img @click="delJourney(journey.id);" src="../../images/rush-icon.png">
-				                <img @click="editJourneyShow(index);" src="../../images/edit-all.png">
-				            </div>
-                        </div>
-                        <div class="dataBankAddBtn_journey" @click="addNewJourneyShow();">
-				            <img src="../../images/add_y.png">
-				        </div>
-                    </div>    
+        <div class="pane_content_study">
+            <div class="form_content_journey disflex" v-for="(journey,index) in journeys">
+                <div class="form_item_journey disflex">
+                    <div class="item_left disflex">
+                        <div style="width:40%;margin-left: 5%;">{{journey.day}}</div>
+                        <div style="width:20%;text-align: center;">日期</div>
+                        <input type="text" style="width:30%;" disabled="disabled" :value="journey.date">
+                    </div>
+                    <div class="item_right">
+                        <img @click="$router.push('/study/dataBankStudySheet/'+journey.id)" src="../../images/See-next.png">
+                    </div>
                 </div>
-
+                <div class="editBtnGroup_journey">
+	                <img @click="delJourney(journey.id);" src="../../images/rush-icon.png">
+	                <img @click="editJourneyShow(index);" src="../../images/edit-all.png">
+	            </div>
             </div>
-        </div>
+            <div class="dataBankAddBtn_journey" @click="addNewJourneyShow();">
+	            <img src="../../images/add_y.png">
+	        </div>
+        </div>   
         <van-popup v-model="isNewJourneyShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
