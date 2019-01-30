@@ -22008,15 +22008,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				_this.setUserInfo(res.data);
 			}).catch(function (err) {
 				console.log(err);
-				_this.logout();
+				sessionStorage.clear();
+				_this.setUserInfo('');
+				_this.setTravels('');
+				_this.setToken('');
+				_this.$router.push("/");
 			});
 		},
 		logout: function logout() {
-			sessionStorage.clear();
-			this.setUserInfo('');
-			this.setTravels('');
-			this.setToken('');
-			this.$router.push("/");
+			var _this2 = this;
+
+			this.$dialog.confirm({
+				title: '退出登录',
+				message: '是否退出登录'
+			}).then(function () {
+				sessionStorage.clear();
+				_this2.setUserInfo('');
+				_this2.setTravels('');
+				_this2.setToken('');
+				_this2.$router.push("/");
+			}).catch(function (err) {});
 		}
 	}),
 	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['userInfo']))
@@ -22058,15 +22069,7 @@ var render = function() {
       _c("div", { staticClass: "info disflex" }, [
         _c("div", [_vm._v(_vm._s(_vm.userInfo.name))]),
         _vm._v(" "),
-        _c("div", [_vm._v("积分：0")]),
-        _vm._v(" "),
-        _vm.userInfo.manage_contents
-          ? _c(
-              "div",
-              { attrs: { onclick: "window.location.assign('/admin')" } },
-              [_vm._v("管理系统")]
-            )
-          : _vm._e()
+        _c("div", [_vm._v("积分：0")])
       ]),
       _vm._v(" "),
       _c(
@@ -22308,7 +22311,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.main1{width: 100%;height: auto;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;position: relative;\n}\n.project_list{width: 94%;min-height:550px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap; -ms-flex-line-pack:start; align-content:flex-start;margin-top: 50px;\n}\n.project{margin: 10px;min-width:380px;height: 140px;border: none;font-size: 18px;border-radius: 15px;\n}\n.project_left{width: 110px;height: 100%;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;border-bottom-left-radius: 15px;border-top-left-radius: 15px;\n}\n.project_left>img{width: 80px;height: 100px;\n}\n.project_right{width: 240px;height: 100%;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start;background-color: #ebebeb;\n}\n.project_right>div{width: 90%;\n}\n.project_icon{width:30px;height:100%;background-color: #ebebeb;border-bottom-right-radius: 15px;border-top-right-radius: 15px;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-ms-flex-pack: distribute;justify-content: space-around;\n}\n.project_icon>div{width:30px;height:30px;margin-top: 4px;\n}\n.project_icon>div>img{width:30px;height:30px;\n}\n.edit_name{width:100%; height: 40px;margin-top: 10px;\n}\n.edit_icon{width: auto;height: 40px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.edit_icon>span{font-size: 14px;color:#c1c1c1;\n}\n.edit_icon>img{width: 30px;height:30px;\n}\n.project_type{width: auto;height: 40px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.project_type>img{width: 20px;height:20px;\n}\n.project_type>span{font-size: 14px;color:#c1c1c1;\n}\n.project_name{height: 80px;overflow: hidden;\n}\n.project_name>p{line-height: 40px;width: 100%;font-size: 24px;word-break: break-all;overflow: hidden;\n}\n.addnew{font-size: 30px;color: #c1c1c1;height: 100%;line-height: 140px;display: block;\n}\n.btn_publish{width: 100%;height: 60px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;margin-top:20px;\n}\n.btn_publish>button{width: 350px;height: 50px;border-radius: 8px;background-color: #ffde01;border: none;font-size: 18px;\n}\n.del_icon{width: 60px;height: 60px;position: absolute;right: 50px;top:50px;z-index: 5;\n}\n.del_icon>img{width: 60px;height: 60px;\n}\n.addNewTravel{width: 400px;min-height:260px;background-color: #fff;border-radius: 15px;-webkit-box-shadow: 0 0 10px #ccc;box-shadow: 0 0 10px #ccc;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.addNewTravel>input{width:300px;height:50px;margin-top:20px;border-radius: 8px;\n}\n.addNewTravel>button{width:60%;height:50px;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;margin-top: 20px;margin-bottom: 20px;\n}\n.van-dialog{width:50%;\n}\n", ""]);
+exports.push([module.i, "\n.main1{width: 100%;height: auto;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;position: relative;\n}\n.project_list{width: 94%;min-height:550px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap; -ms-flex-line-pack:start; align-content:flex-start;margin-top: 50px;\n}\n.project{margin: 10px;min-width:380px;height: 140px;border: none;font-size: 18px;border-radius: 15px;\n}\n.project_left{width: 110px;height: 100%;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;border-bottom-left-radius: 15px;border-top-left-radius: 15px;\n}\n.project_left>img{width: 80px;height: 100px;\n}\n.project_right{width: 240px;height: 100%;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start;background-color: #ebebeb;\n}\n.project_right>div{width: 90%;\n}\n.project_icon{width:30px;height:100%;background-color: #ebebeb;border-bottom-right-radius: 15px;border-top-right-radius: 15px;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.project_icon>div{width:30px;height:30px;margin-top: 4px;\n}\n.project_icon>div>img{width:30px;height:30px;\n}\n.edit_name{width:100%; height: 40px;margin-top: 10px;\n}\n.edit_icon{width: auto;height: 40px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.edit_icon>span{font-size: 14px;color:#c1c1c1;\n}\n.edit_icon>img{width: 30px;height:30px;\n}\n.project_type{width: auto;height: 40px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.project_type>img{width: 20px;height:20px;\n}\n.project_type>span{font-size: 14px;color:#c1c1c1;\n}\n.project_name{height: 80px;overflow: hidden;\n}\n.project_name>p{line-height: 40px;width: 100%;font-size: 24px;word-break: break-all;overflow: hidden;\n}\n.addnew{font-size: 30px;color: #c1c1c1;height: 100%;line-height: 140px;display: block;\n}\n.btn_publish{width: 100%;height: 60px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;margin-top:20px;\n}\n.btn_publish>button{width: 350px;height: 50px;border-radius: 8px;background-color: #ffde01;border: none;font-size: 18px;\n}\n.del_icon{width: 60px;height: 60px;position: absolute;right: 50px;top:50px;z-index: 5;\n}\n.del_icon>img{width: 60px;height: 60px;\n}\n.addNewTravel{width: 400px;min-height:260px;background-color: #fff;border-radius: 15px;-webkit-box-shadow: 0 0 10px #ccc;box-shadow: 0 0 10px #ccc;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.addNewTravel>input{width:300px;height:50px;margin-top:20px;border-radius: 8px;\n}\n.addNewTravel>button{width:60%;height:50px;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;margin-top: 20px;margin-bottom: 20px;\n}\n.van-dialog{width:50%;\n}\n", ""]);
 
 // exports
 
@@ -22717,9 +22720,7 @@ var render = function() {
                           attrs: { src: __webpack_require__(7) }
                         })
                       ]
-                    ),
-                    _vm._v(" "),
-                    _vm._m(2, true)
+                    )
                   ])
                 ])
               })
@@ -22945,14 +22946,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "project_right disflex" }, [
       _c("span", { staticClass: "addnew" }, [_vm._v("新建项目")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("img", { attrs: { src: __webpack_require__(122) } })
-    ])
   }
 ]
 render._withStripped = true
@@ -22989,12 +22982,7 @@ module.exports = "/images/unsent.png?7b0a00ebf8e8cecc94dd437b06208c6e";
 module.exports = "/images/add1.png?222bc4be7dc89f180c61522d12e4e26a";
 
 /***/ }),
-/* 122 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/Released.png?46dabf23c1e5d03b6abe3943edbaadbe";
-
-/***/ }),
+/* 122 */,
 /* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29530,6 +29518,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
+            rule: '',
             ruleInfos: [],
             newRuleInfo: {
                 rule: '',
@@ -29553,14 +29542,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getRuleInfos: function getRuleInfos() {
             var _this = this;
 
-            // 获取守则详情
-            this.$get('/api/travels/' + sessionStorage.actTravelId + '/rules', {
+            // 获取守则详情/api/categories/3?include=rules
+            this.$get('/api/categories/' + this.$route.params.id + '?include=rules', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
             }).then(function (res) {
                 // console.log(res.data);
-                _this.ruleInfos = res.data.data;
+                _this.rule = res.data;
+                _this.ruleInfos = res.data.rules.data;
             }).catch(function (err) {
                 _this.$toast('获取失败');
                 console.log(err);
@@ -29679,7 +29669,9 @@ var render = function() {
           },
           [_c("img", { attrs: { src: __webpack_require__(16) } })]
         ),
-        _vm._v("\n            在飞机上\n        ")
+        _vm._v(
+          "\n            " + _vm._s(_vm.rule.rule_category_name) + "\n        "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "dataBank_input_form disflex" }, [
@@ -35422,7 +35414,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     content: this.edSheetInfo.content
                 },
-                url: '/api/studies/' + this.$route.params.id + '/questions/' + this.edSheetInfo.id
+                url: '/api/studies  /' + this.$route.params.id + '/questions/' + this.edSheetInfo.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.sheetInfos[_this3.edSheetInfo.index].content = _this3.edSheetInfo.content;
@@ -35449,7 +35441,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/studies/' + _this4.$route.params.id + '/questions/' + sheetInfoId
+                    url: '/api/studies  /' + _this4.$route.params.id + '/questions/' + sheetInfoId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {

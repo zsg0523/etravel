@@ -9,7 +9,7 @@
 
 	.project_right{width: 240px;height: 100%;align-items: center;flex-direction: column; justify-content: flex-start;background-color: #ebebeb;}
 	.project_right>div{width: 90%;}
-    .project_icon{width:30px;height:100%;background-color: #ebebeb;border-bottom-right-radius: 15px;border-top-right-radius: 15px;flex-direction: column;justify-content: space-around;}
+    .project_icon{width:30px;height:100%;background-color: #ebebeb;border-bottom-right-radius: 15px;border-top-right-radius: 15px;flex-direction: column;justify-content: flex-start;}
     .project_icon>div{width:30px;height:30px;margin-top: 4px;}
     .project_icon>div>img{width:30px;height:30px;}
 
@@ -81,7 +81,7 @@
     			</div>
                 <div class="project_icon disflex">
                     <div @click="delTravel(travel.id,index)"><img src="../../images/rush-icon.png"></div>
-                    <div><img src="../../images/Released.png"></div>       
+                    <!-- <div><img src="../../images/Released.png"></div>        -->
 
                 </div>
     		</div>

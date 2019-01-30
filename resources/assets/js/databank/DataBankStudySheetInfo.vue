@@ -172,7 +172,7 @@
                     data:{
                         content:this.edSheetInfo.content,
                     },
-                    url: '/api/studies/'+this.$route.params.id+'/questions/'+this.edSheetInfo.id,
+                    url: '/api/studies  /'+this.$route.params.id+'/questions/'+this.edSheetInfo.id,
                 }).then(res => {
                     if(res.status==200){
                         this.sheetInfos[this.edSheetInfo.index].content=this.edSheetInfo.content;
@@ -197,7 +197,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/studies/'+this.$route.params.id+'/questions/'+sheetInfoId,
+                        url: '/api/studies  /'+this.$route.params.id+'/questions/'+sheetInfoId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){

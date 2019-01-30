@@ -32,7 +32,7 @@
 	        <div class="info disflex">
 	            <div>{{userInfo.name}}</div>
 	            <div>积分：0</div>
-	            <div v-if="userInfo.manage_contents" onclick="window.location.assign('/admin')">管理系统</div>
+	            <!-- <div v-if="userInfo.manage_contents" onclick="window.location.assign('/admin')">管理系统</div> -->
 	        </div>
 	        <div class="exit disflex" @click="logout();">
 	            <img src="../../images/Vector-icon.png">
@@ -69,15 +69,26 @@
 		        	this.setUserInfo(res.data);
 		        }).catch(err => {
 		          	console.log(err);
-		          	this.logout();
+		          	sessionStorage.clear();
+					this.setUserInfo('');
+					this.setTravels('');
+					this.setToken('');
+					this.$router.push("/");
 		        });
 	  		},
 			logout(){
-				sessionStorage.clear();
-				this.setUserInfo('');
-				this.setTravels('');
-				this.setToken('');
-				this.$router.push("/");
+				this.$dialog.confirm({
+                    title: '退出登录',
+                    message: '是否退出登录'
+                }).then(() => {
+					sessionStorage.clear();
+					this.setUserInfo('');
+					this.setTravels('');
+					this.setToken('');
+					this.$router.push("/");
+                }).catch(err => {
+
+                });
 			},
 	  	},
 	  	computed: {

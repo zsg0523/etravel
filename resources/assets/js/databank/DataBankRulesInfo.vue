@@ -37,7 +37,7 @@
             <div class="title_icon" @click="$router.push('/rule/dataBankRules')">
                 <img src="../../images/back.png">
             </div>
-            在飞机上
+            {{rule.rule_category_name}}
         </div>
         <div class="dataBank_input_form disflex">
             <div class="pane_content">
@@ -95,6 +95,7 @@
   	export default {
   		data() {
             return {
+                rule:'',
 	        	ruleInfos:[],
 	        	newRuleInfo:{
 	        		rule:'',
@@ -115,15 +116,16 @@
         },
         methods:{
             getRuleInfos(){
-                // 获取守则详情
-                this.$get('/api/travels/'+sessionStorage.actTravelId+'/rules',
+                // 获取守则详情/api/categories/3?include=rules
+                this.$get('/api/categories/'+this.$route.params.id+'?include=rules',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.ruleInfos=res.data.data;
+                    this.rule=res.data;
+                    this.ruleInfos=res.data.rules.data;
                 }).catch(err => {
                     this.$toast('获取失败');
                     console.log(err);
