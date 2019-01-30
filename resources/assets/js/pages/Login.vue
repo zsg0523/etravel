@@ -18,7 +18,7 @@
                 <img src="../../images/logo_big.png">
             </div>
             <div class="disflex login">
-                <div class="title tc">后台系统</div>
+                <div class="title tc">E-Travel平台</div>
                 <div><input type="text" v-model="loginName" placeholder="用户名或手机号" ></div>
                 <div><input type="password" v-model="password" placeholder="密码" ></div>
                 <div style="height: 40px;">
@@ -71,7 +71,7 @@
 			            		
 					        }).catch(err => {
 					        	this.$toast('账号或密码错误')
-					          	console.log(err)
+					          	console.log(err);
 					        });
 			            	
 			          	} else {
@@ -79,6 +79,7 @@
 			              	this.password = ''
 			          	}
 			        }).catch(err => {
+			        	this.$toast('账号或密码错误');
 			          	console.log(err)
 			        });
 		      	} else {

@@ -6,7 +6,7 @@
     .title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;}
     .title_icon>img{width:28px;height: 28px;}
 
-    .form_content{width: 94%;min-height: 210px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;}
+    .form_content_journeyInfo{width: 94%;min-height: 210px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;}
 
     .form_item_journeyInfo{width: 100%;min-height:80px;}
     .form_item_journeyInfo>div{width: 96%;min-height: 45px;line-height: 45px;}
@@ -40,7 +40,7 @@
         </div>
         <div class="dataBank_input_form disflex">
             <div class="pane_content">
-                <div class="form_content disflex" v-for="(journeyInfo,index) in journeyInfos">
+                <div class="form_content_journeyInfo disflex" v-for="(journeyInfo,index) in journeyInfos">
                     <div class="form_item_journeyInfo">
 		                <div class="item_title">时间</div>
 		                <div><input class="item_input_journeyInfo" placeholder="时间" type="text" disabled="disabled"  :value="journeyInfo.time"></div>
@@ -161,8 +161,8 @@
                 this.isNewJourneyInfoShow=true;
             },
             addNewJourneyInfo(){
-                // 新增行程
-                this.$post('/api/travel/'+sessionStorage.actTravelId+'/route',this.newJourneyInfo,
+                // 新增行程/api/route/21/scenery
+                this.$post('/api/route/'+this.$route.params.id+'/scenery',this.newJourneyInfo,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -182,27 +182,30 @@
             },
             editJourneyInfoShow(index){
                 this.edJourneyInfo.id=this.journeyInfos[index].id;
-                this.edJourneyInfo.day=this.journeyInfos[index].day;
-                this.edJourneyInfo.date=this.journeyInfos[index].date;
+                this.edJourneyInfo.time=this.journeyInfos[index].time;
+                this.edJourneyInfo.content=this.journeyInfos[index].content;
+                this.edJourneyInfo.description=this.journeyInfos[index].description;
                 this.edJourneyInfo.index=index;
                 this.isEditJourneyInfoShow=true;
             },
             editJourneyInfo(){
-                // 修改行程信息
+                // 修改行程信息/api/route/2/scenery/101
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
                     data:{
-                        day:this.edJourneyInfo.day,
-                        date:this.edJourneyInfo.date,
+                        time:this.edJourneyInfo.time,
+                        content:this.edJourneyInfo.content,
+                        description:this.edJourneyInfo.description,    
                     },
-                    url: '/api/travel/'+sessionStorage.actTravelId+'/route/'+this.edJourneyInfo.id,
+                    url: '/api/route/'+this.$route.params.id+'/scenery/'+this.edJourneyInfo.id,
                 }).then(res => {
                     if(res.status==200){
-                        this.journeyInfos[this.edJourneyInfo.index].day=this.edJourneyInfo.day;
-                        this.journeyInfos[this.edJourneyInfo.index].date=this.edJourneyInfo.date;
+                        this.journeyInfos[this.edJourneyInfo.index].time=this.edJourneyInfo.time;
+                        this.journeyInfos[this.edJourneyInfo.index].content=this.edJourneyInfo.content;
+                        this.journeyInfos[this.edJourneyInfo.index].description=this.edJourneyInfo.description;
                         this.$toast('修改成功');
                         this.isEditJourneyInfoShow=false;    
                     }else{
@@ -224,7 +227,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/travel/'+sessionStorage.actTravelId+'/route/'+journeyInfoId,
+                        url: '/api/route/'+this.$route.params.id+'/scenery/'+journeyInfoId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){

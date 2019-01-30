@@ -5,9 +5,7 @@
 
 <template>
   	<div class="main disflex" style="background-color: #e7e7e7;min-height: 100vh;color: #000;"id="app-home">
-        <keep-alive>
-          <CommonHead></CommonHead>
-        </keep-alive>
+        <CommonHead></CommonHead>
         <HistoryLink></HistoryLink>
         <div class="content">
         	<router-view></router-view> 
