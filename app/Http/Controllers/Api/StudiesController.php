@@ -12,7 +12,7 @@ class StudiesController extends Controller
 {
     public function index()
     {
-    	return $this->response->collection(Study::all(), new StudyTransformer());
+    	return $this->response->collection(Study::all(), new StudyTransformer(null));
     }
 
     /** [routeIndex 行程下所有学习工作纸] */
