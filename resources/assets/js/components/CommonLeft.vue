@@ -27,8 +27,8 @@
             <router-link tag='li' to='/journey'><div >行程<input type="checkbox" class="checke"></div></router-link>
             <router-link tag='li' to='/study'><div >学习工作纸<input type="checkbox" class="checke"></div></router-link>
             <!-- <router-link tag='li' to='/'><div >每日记事<input type="checkbox" class="checke"></div></router-link> -->
-            <!-- <router-link tag='li' to='/'><div >自我评估<input type="checkbox" class="checke"></div></router-link> -->
-            <!-- <router-link tag='li' to='/'><div >自我感想<input type="checkbox" class="checke"></div></router-link> -->
+            <router-link tag='li' to='/topic'><div >自我评估<input type="checkbox" class="checke"></div></router-link>
+            <router-link tag='li' to='/dataBankSelfPerception'><div >自我感想<input type="checkbox" class="checke"></div></router-link>
         </ul>
     </div>
 </template>
