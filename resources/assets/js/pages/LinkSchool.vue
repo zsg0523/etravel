@@ -14,7 +14,7 @@
 	<div class="linkSchool disflex">
         <div class="schoolInput">
             <div class="link_input_icon disflex">
-                <img src="./../../images/write-icon.png">
+                <img src="/etravel/public/images/write-icon.png">
                 <span>(请填写学校)</span>
             </div>
             <div class="linkDetail_info">

@@ -32,8 +32,8 @@
         </ul>
     </div>
 </template>
-<script type="text/javascript" src="./../../bootstrap/js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="./../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/etravel/public/bootstrap/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/etravel/public/bootstrap/js/bootstrap.min.js"></script>
 <script>
 	export default{
         

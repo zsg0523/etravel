@@ -39,19 +39,19 @@
                     <div class="input_icon disflex">
                         <input placeholder="请填写题目类型和规则" type="text" disabled="disabled"  :value="evaluation.title">
                         <div @click="$router.push('/topic/dataBankEvaluationInfo/'+evaluation.id)">
-                            <img src="./../../images/See-next.png" alt="">
+                            <img src="/etravel/public/images/See-next.png" alt="">
                         </div>
                     </div>
                     <div class="editBtnGroup_evaluations">
-                        <img @click="delEvaluation(evaluation.id);" src="./../../images/rush-icon.png">
-                        <img @click="editEvaluationShow(index);" src="./../../images/edit-all.png">
+                        <img @click="delEvaluation(evaluation.id);" src="/etravel/public/images/rush-icon.png">
+                        <img @click="editEvaluationShow(index);" src="/etravel/public/images/edit-all.png">
                     </div>
                 </div>
 
             </div>
         </div>    
         <div class="dataBankAddBtn" @click="addNewEvaluationShow();">
-            <img src="./../../images/add_y.png">
+            <img src="/etravel/public/images/add_y.png">
         </div>
         <van-popup v-model="isNewEvaluationShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
