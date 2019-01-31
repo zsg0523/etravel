@@ -48,9 +48,9 @@
                         <td>{{house.user.student.class}}</td>
                         <td>{{house.user.name}}</td>
                         <td>
-                            <div class="editIcon"><img src="../../images/edit.png" @click="editHouseShow(index);"></div>
-                            <div class="editIcon"><img src="../../images/appointAdd.png" @click="addNewHouseShow();"></div>
-                            <div class="editIcon"><img src="../../images/dele.png" @click="delHouse(house.id);"></div>
+                            <div class="editIcon"><img src="./../../images/edit.png" @click="editHouseShow(index);"></div>
+                            <div class="editIcon"><img src="./../../images/appointAdd.png" @click="addNewHouseShow();"></div>
+                            <div class="editIcon"><img src="./../../images/dele.png" @click="delHouse(house.id);"></div>
                         </td>
                     </tr>
                    

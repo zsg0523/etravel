@@ -39,18 +39,18 @@
                     <div class="input_icon disflex">
                         <input placeholder="准则" type="text" disabled="disabled" :value="rule.rule_category_name">
                         <div @click="$router.push('/rule/dataBankRulesInfo/'+rule.id)">
-                            <img src="../../images/See-next.png" alt="">
+                            <img src="./../../images/See-next.png" alt="">
                         </div>
                     </div>
                     <div class="editBtnGroup_rules">
-		                <img @click="delRule(rule.id);" src="../../images/rush-icon.png">
-		                <img @click="editRuleShow(index);" src="../../images/edit-all.png">
+		                <img @click="delRule(rule.id);" src="./../../images/rush-icon.png">
+		                <img @click="editRuleShow(index);" src="./../../images/edit-all.png">
 		            </div>
                 </div>
             </div>
         </div>    
         <div class="dataBankAddBtn" @click="addNewRuleShow();">
-            <img src="../../images/add_y.png">
+            <img src="./../../images/add_y.png">
         </div>
   		<van-popup v-model="isNewRuleShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >

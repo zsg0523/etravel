@@ -44,16 +44,16 @@
                         <input type="text" style="width:30%;" disabled="disabled" :value="journey.date">
                     </div>
                     <div class="item_right">
-                        <img @click="$router.push('/study/dataBankStudySheet/'+journey.id)" src="../../images/See-next.png">
+                        <img @click="$router.push('/study/dataBankStudySheet/'+journey.id)" src="./../../images/See-next.png">
                     </div>
                 </div>
                 <div class="editBtnGroup_journey">
-	                <img @click="delJourney(journey.id);" src="../../images/rush-icon.png">
-	                <img @click="editJourneyShow(index);" src="../../images/edit-all.png">
+	                <img @click="delJourney(journey.id);" src="./../../images/rush-icon.png">
+	                <img @click="editJourneyShow(index);" src="./../../images/edit-all.png">
 	            </div>
             </div>
             <div class="dataBankAddBtn_journey" @click="addNewJourneyShow();">
-	            <img src="../../images/add_y.png">
+	            <img src="./../../images/add_y.png">
 	        </div>
         </div>   
         <van-popup v-model="isNewJourneyShow" :overlay="true" style="border-radius: 15px;">

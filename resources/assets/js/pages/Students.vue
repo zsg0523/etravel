@@ -46,10 +46,10 @@
                             <span>填写信息</span>
                             <div class="left_title_icon">
                                 <div>
-                                    <img src="../../images/del_y.png" alt="">
+                                    <img src="./../../images/del_y.png" alt="">
                                 </div>
                                 <div>
-                                    <img src="../../images/add_y.png" alt="">
+                                    <img src="./../../images/add_y.png" alt="">
                                 </div>
                             </div>
                         </div> 
@@ -68,7 +68,7 @@
                     <div class="search_input disflex">
                         <input type="text" name="studentSearch">
                         <div class="search_icon">
-                            <img src="../../images/search.png">
+                            <img src="./../../images/search.png">
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <div class="studentEditBtn">
-                        <img src="../../images/editAll.png">
+                        <img src="./../../images/editAll.png">
                     </div>
                 </div>
                 <div class="studentComfirm disflex">

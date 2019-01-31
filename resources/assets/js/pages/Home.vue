@@ -41,12 +41,12 @@
 <template>
 	<div class="main1 disflex" v-if="travels">
     	<!-- <div class="del_icon">
-    		<img src="../../images/rush-icon.png">
+    		<img src="./../../images/rush-icon.png">
     	</div> -->
     	<div class="project_list disflex" >
     		<div class="project disflex" @click="popupShow();">
     			<div class="project_left disflex huise">
-    				<img src="../../images/add1.png">
+    				<img src="./../../images/add1.png">
     			</div>
     			<div class="project_right disflex">
     				<span class="addnew" >新建项目</span>
@@ -58,20 +58,20 @@
     		
     		<div class="project disflex" v-for="(travel,index) in travels">
     			<div class="project_left disflex yellowbg"  @click="$router.push('/projectDetail/'+travel.id)">
-    				<img src="../../images/plane-icon.png">
+    				<img src="./../../images/plane-icon.png">
     			</div>
     			<div class="project_right disflex">
     				<div class="edit_name">
     					<div class="edit_icon disflex fl" @click="editPopupShow(travel.id,index)">
-    						<img src="../../images/write-icon.png">
+    						<img src="./../../images/write-icon.png">
     						<span>（4-X个字符内）</span>
     					</div>
     					<div class="project_type disflex fr" v-if="travel.pivot['is_promise'] == 1">
-    						<img src="../../images/sent.png">
+    						<img src="./../../images/sent.png">
     						<span>已发布！</span>
     					</div>
                         <div class="project_type disflex fr" v-else>
-                            <img src="../../images/unsent.png">
+                            <img src="./../../images/unsent.png">
                             <span>未发布！</span>
                         </div>
     				</div>
@@ -80,8 +80,8 @@
     				</div>
     			</div>
                 <div class="project_icon disflex">
-                    <div @click="delTravel(travel.id,index)"><img src="../../images/rush-icon.png"></div>
-                    <!-- <div><img src="../../images/Released.png"></div>        -->
+                    <div @click="delTravel(travel.id,index)"><img src="./../../images/rush-icon.png"></div>
+                    <!-- <div><img src="./../../images/Released.png"></div>        -->
 
                 </div>
     		</div>

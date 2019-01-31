@@ -35,7 +35,7 @@
     <div style="width:100%;">
         <div class="right_title">
             <div class="title_icon" @click="$router.push('/topic/dataBankEvaluation')">
-                <img src="../../images/back.png">
+                <img src="./../../images/back.png">
             </div>
             在飞机上
         </div>
@@ -50,13 +50,13 @@
                         </div>
                     </div>
                     <div class="editBtnGroup">
-		                <img @click="delEvaluationInfo(evaluationInfo.id);" src="../../images/rush-icon.png">
-		                <img @click="editEvaluationInfoShow(index);" src="../../images/edit-all.png">
+		                <img @click="delEvaluationInfo(evaluationInfo.id);" src="./../../images/rush-icon.png">
+		                <img @click="editEvaluationInfoShow(index);" src="./../../images/edit-all.png">
 		            </div>
                 </div>
             </div>    
 			<div class="dataBankAddBtn" @click="addNewEvaluationInfoShow();">
-	            <img src="../../images/add_y.png">
+	            <img src="./../../images/add_y.png">
 	        </div>
         </div>
         <van-popup v-model="isNewEvaluationInfoShow" :overlay="true" style="border-radius: 15px;">

@@ -59,10 +59,10 @@
                             </div>
                         </div>
 						<div class="dataBankAddBtn_culture" @click="addNewRuleInfoShow();">
-				            <img src="../../images/add_y.png">
+				            <img src="./../../images/add_y.png">
 				        </div>
 				        <div class="dataBankEditBtn_culture" @click="addNewRuleInfoShow();">
-				            <img src="../../images/edit-all.png">
+				            <img src="./../../images/edit-all.png">
 				        </div>
                     </div>
 
@@ -90,10 +90,10 @@
                             </div>
                         </div>
                         <div class="dataBankAddBtn_culture" @click="addNewRuleInfoShow();">
-				            <img src="../../images/add_y.png">
+				            <img src="./../../images/add_y.png">
 				        </div>
 				        <div class="dataBankEditBtn_culture" @click="addNewRuleInfoShow();">
-				            <img src="../../images/edit-all.png">
+				            <img src="./../../images/edit-all.png">
 				        </div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
         </div>
         <!-- 图片上传 -->
         <!-- <van-uploader :after-read="onRead" accept="image/*" multiple>
-	      	<img class="" src="../../images/logo.png" ref="goodsImg"/>
+	      	<img class="" src="./../../images/logo.png" ref="goodsImg"/>
 	  	</van-uploader> -->
        <!--  <van-popup v-model="isNewLocalCultureShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >

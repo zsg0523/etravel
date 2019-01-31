@@ -43,12 +43,12 @@
                         </div>
                     </div>
                     <div class="editBtnGroup">
-		                <img @click="delPromise(promise.id);" src="../../images/rush-icon.png">
-		                <img @click="editPromiseShow(index);" src="../../images/edit-all.png">
+		                <img @click="delPromise(promise.id);" src="./../../images/rush-icon.png">
+		                <img @click="editPromiseShow(index);" src="./../../images/edit-all.png">
 		            </div>
                 </div>
                 <div class="dataBankAddBtn" @click="addNewPromiseShow();">
-		            <img src="../../images/add_y.png">
+		            <img src="./../../images/add_y.png">
 		        </div>
             </div>       
         </div>

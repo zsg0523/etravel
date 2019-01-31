@@ -35,7 +35,7 @@
     <div style="width:100%;">
         <div class="right_title">
             <div class="title_icon" @click="$router.push('/rule/dataBankRules')">
-                <img src="../../images/back.png">
+                <img src="./../../images/back.png">
             </div>
             {{rule.rule_category_name}}
         </div>
@@ -49,13 +49,13 @@
                         </div>
                     </div>
                     <div class="editBtnGroup">
-		                <img @click="delRuleInfo(ruleInfo.id);" src="../../images/rush-icon.png">
-		                <img @click="editRuleInfoShow(index);" src="../../images/edit-all.png">
+		                <img @click="delRuleInfo(ruleInfo.id);" src="./../../images/rush-icon.png">
+		                <img @click="editRuleInfoShow(index);" src="./../../images/edit-all.png">
 		            </div>
                 </div>
             </div>    
 			<div class="dataBankAddBtn" @click="addNewRuleInfoShow();">
-	            <img src="../../images/add_y.png">
+	            <img src="./../../images/add_y.png">
 	        </div>
         </div>
         <van-popup v-model="isNewRuleInfoShow" :overlay="true" style="border-radius: 15px;">

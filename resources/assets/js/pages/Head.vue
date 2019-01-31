@@ -16,17 +16,17 @@
 <template>
 	<div class="commonHead">
 	    <div class="left disflex">
-	        <img src="../../images/logo.png">
+	        <img src="./../../images/logo.png">
 	    </div>
 	    <div class="right disflex">
-	        <div class="letter disflex"><img src="../../images/letter.png"></div>
-	        <div class="person_icon disflex"><img src="../../images/photo.png"></div>
+	        <div class="letter disflex"><img src="./../../images/letter.png"></div>
+	        <div class="person_icon disflex"><img src="./../../images/photo.png"></div>
 	        <div class="info disflex">
 	            <div>qully</div>
 	            <div>积分：0</div>
 	        </div>
 	        <div class="exit disflex">
-	            <img src="../../images/Vector-icon.png">
+	            <img src="./../../images/Vector-icon.png">
 	        </div>
 	    </div>
 	</div>
