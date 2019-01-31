@@ -35,7 +35,7 @@
 	<div style="width:100%;">
 		<div class="right_title">
             <div class="title_icon" @click="$router.push('/study/dataBankStudy')">
-                <img src="../../images/back.png">
+                <img src="./../../images/back.png">
             </div>
 			学习工作纸
         </div>
@@ -43,7 +43,7 @@
             <div class="pane_content">
                 <div class="form_content_sheet disflex" v-for="(sheet,index) in sheets">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">标题 <img class="toNext" @click="$router.push('/study/dataBankStudySheetInfo/'+sheet.id)" src="../../images/See-next.png"></div>
+		                <div class="item_title">标题 <img class="toNext" @click="$router.push('/study/dataBankStudySheetInfo/'+sheet.id)" src="./../../images/See-next.png"></div>
 		                <div><input class="item_input_journeyInfo" placeholder="标题" type="text" disabled="disabled"  :value="sheet.title"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
@@ -53,13 +53,13 @@
                         </div>
                     </div>
                     <div class="editBtnGroup_journeyInfo">
-		                <img @click="delSheet(sheet.id)" src="../../images/rush-icon.png">
-		                <img @click="editSheetShow(index)" src="../../images/edit-all.png">
+		                <img @click="delSheet(sheet.id)" src="./../../images/rush-icon.png">
+		                <img @click="editSheetShow(index)" src="./../../images/edit-all.png">
 		            </div>
                 </div>
             </div> 
             <div class="dataBankAddBtn_journeyInfo" @click="addNewSheetShow()">
-	            <img src="../../images/add_y.png">
+	            <img src="./../../images/add_y.png">
 	        </div>   
         </div>
         <van-popup v-model="isNewSheetShow" :overlay="true" style="border-radius: 15px;">

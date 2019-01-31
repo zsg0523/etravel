@@ -10,25 +10,25 @@
 	<div class="prodectDetail disflex">
     	<div class="detail_btn" @click="$router.push('/linkSchool')">
             <div class="detail_icon disflex">
-                <img src="../../images/school.png">
+                <img src="./../../images/school.png">
             </div>
             <div class="detail_info">链接学校</div>
         </div>
         <div class="detail_btn" @click="$router.push('/dataBankInfo')">
             <div class="detail_icon disflex">
-                <img src="../../images/base-icon.png">
+                <img src="./../../images/base-icon.png">
             </div>
             <div class="detail_info">资料库</div>
         </div>
         <div class="detail_btn" @click="$router.push('/students')">
             <div class="detail_icon disflex">
-                <img src="../../images/IDmage-icon.png">
+                <img src="./../../images/IDmage-icon.png">
             </div>
             <div class="detail_info">学员信息</div>
         </div>
         <div class="detail_btn" @click="$router.push('/photo')">
             <div class="detail_icon disflex">
-                <img src="../../images/poto-icon.png">
+                <img src="./../../images/poto-icon.png">
             </div>
             <div class="detail_info">图库</div>
         </div>
