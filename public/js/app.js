@@ -21660,7 +21660,7 @@ var render = function() {
                 expression: "loginName"
               }
             ],
-            attrs: { type: "text", placeholder: "用户名或手机号" },
+            attrs: { type: "text", placeholder: "邮箱或手机号" },
             domProps: { value: _vm.loginName },
             on: {
               input: function($event) {
@@ -21709,20 +21709,6 @@ var render = function() {
               }
             },
             [_vm._v("立即注册")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "fr",
-              attrs: { href: "javascript:void(0);" },
-              on: {
-                click: function($event) {
-                  _vm.$router.push("/forgotPsd")
-                }
-              }
-            },
-            [_vm._v("忘记密码")]
           )
         ]),
         _vm._v(" "),
