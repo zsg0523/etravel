@@ -14,7 +14,8 @@
     .login>div input{width: 100%;height:50px;border:none;outline: none;background: #fff;border-radius: 8px;padding-left: 8px;font-size: 16px;}
     .login>div a{color: #000;font-size: 14px;}
     .login>div button{width: 100%;height: 50px;border: none;outline: none;background-color: #fff;border-radius: 8px;font-weight: bold;font-size: 16px;}
-    #sendCode{width:40%;height: 50px;line-height: 50px;font-size: 16px;background-color: #fff;border-radius: 8px;}
+    #sendCode{width:40%;height: 50px;line-height: 50px;font-size: 16px;background-color: #fff;border-radius: 8px;outline: none;border: none;}
+    #sendCode:hover{cursor: pointer;}
 </style>
 
 <template>
@@ -29,7 +30,7 @@
                 <div><input type="text" placeholder="手机号" v-model="phoneNumber"></div>
                 <div class="disflex" style="justify-content: space-between;">
                     <input type="text" placeholder="验证码" v-model="smscode" style="width: 56%;">
-                    <div class="tc" id="sendCode" @click='getCode()'>获取验证码</div>
+                    <button class="tc" id="sendCode" @click='getCode()' :disabled="disabled || time > 0">{{text}}</button>
                 </div>
                 <div><input type="password" placeholder="密码" v-model="password"></div>
                 <div><input type="password" placeholder="确认密码" v-model="repassword"></div>  
@@ -50,6 +51,8 @@
 		      	password: '',
 		      	repassword:'',
 		      	key:'',
+		      	time: 0,
+       		 	disabled:false,
 	    	}
 	  	},
 	  	methods: {
@@ -84,6 +87,7 @@
 		    },
 		    getCode() {
 		    	if (this.phoneNumber) {
+		    		this.run();
 		        	axios.post('/api/verificationCodes', {
 			          	phone: this.phoneNumber
 			        }).then(res => {
@@ -101,7 +105,29 @@
 		      	} else {
 		        	this.$toast('请填写手机号码');
 		      	}
-		    }
-	  	}
+		    },
+		    run() {
+		    	this.time=60;
+		    	this.timer();
+        	},
+        	setDisabled: function(val){
+         		this.disabled = val;
+        	},
+        	timer() {
+            	if (this.time > 0) {
+                	this.time--;
+					this.disabled = true;
+                	setTimeout(this.timer, 1000);
+            	}else{
+             		this.disabled = false;
+					this.time=0;
+            	}
+        	},
+	  	},
+	  	computed: {
+	        text() {
+	            return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
+	        }
+	    }
 	}
 </script>
