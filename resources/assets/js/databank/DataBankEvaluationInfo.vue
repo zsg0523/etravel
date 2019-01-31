@@ -140,7 +140,7 @@
         methods:{
             getEvaluationInfos(){
                 // 获取选项详情
-                this.$get('/api/evaluationCategories/'+this.$route.params.id+'?include=evaluations',
+                this.$get(this.$config+'/api/evaluationCategories/'+this.$route.params.id+'?include=evaluations',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,

@@ -110,8 +110,8 @@
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
-                    // url: '/api/travels/'+sessionStorage.actTravelId+'/evaluations',api/travels/1/evaluationCategories?include=evaluations
-                    url: '/api/travels/'+sessionStorage.actTravelId+'/evaluationCategories?include=evaluations',
+                    // url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/evaluations',api/travels/1/evaluationCategories?include=evaluations
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/evaluationCategories?include=evaluations',
                 }).then(res => {
                     // console.log(res.data);
                     this.evaluations=res.data.data;
@@ -125,7 +125,7 @@
             },
             addNewEvaluation(){
                 // 新增题目类型
-                this.$post('/api/travels/'+sessionStorage.actTravelId+'/evaluationCategories',
+                this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/evaluationCategories',
                 this.newEvaluation,
                 {
                     headers: {
@@ -158,7 +158,7 @@
                     data:{
                         title:this.edEvaluation.title,
                     },
-                    url: '/api/travels/'+sessionStorage.actTravelId+'/evaluationCategories/'+this.edEvaluation.id,
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/evaluationCategories/'+this.edEvaluation.id,
                 }).then(res => {
                     if(res.status==200){
                         this.evaluations[this.edEvaluation.index].title=this.edEvaluation.title;
@@ -183,7 +183,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/travels/'+sessionStorage.actTravelId+'/evaluationCategories/'+evaluationId,
+                        url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/evaluationCategories/'+evaluationId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){

@@ -115,7 +115,7 @@
                 params:{
                     type:20,
                 },
-                url: '/api/titles/',
+                url: this.$config+'/api/titles/',
             }).then(res => {
                 // console.log(res.data);
                 this.feels=res.data.data;
@@ -129,7 +129,7 @@
         },
         addFeel(){
             // 新增感想
-            this.$post('/api/titles/',this.newFeel,
+            this.$post(this.$config+'/api/titles/',this.newFeel,
             {
                 headers: {
                     "Authorization": 'Bearer '+sessionStorage.token,
@@ -161,7 +161,7 @@
                 data:{
                     title:this.edFeel.title,
                 },
-                url: '/api/titles/'+this.edFeel.id,
+                url: this.$config+'/api/titles/'+this.edFeel.id,
             }).then(res => {
                 if(res.status==200){
                     this.feels[this.edFeel.index].title=this.edFeel.title;
@@ -186,7 +186,7 @@
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
-                    url: '/api/titles/'+feelId,
+                    url: this.$config+'/api/titles/'+feelId,
                 }).then(res => {
                     // console.log(res);
                     if(res.status==204){

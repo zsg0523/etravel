@@ -147,7 +147,7 @@
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
-                    url: '/api/travel/'+sessionStorage.actTravelId+'/route/'+this.$route.params.id+'?include=sceneries',
+                    url: this.$config+'/api/travel/'+sessionStorage.actTravelId+'/route/'+this.$route.params.id+'?include=sceneries',
                 }).then(res => {
                     // console.log(res.data.sceneries.data);
                     this.journey=res.data;
@@ -162,7 +162,7 @@
             },
             addNewJourneyInfo(){
                 // 新增行程/api/route/21/scenery
-                this.$post('/api/route/'+this.$route.params.id+'/scenery',this.newJourneyInfo,
+                this.$post(this.$config+'/api/route/'+this.$route.params.id+'/scenery',this.newJourneyInfo,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -200,7 +200,7 @@
                         content:this.edJourneyInfo.content,
                         description:this.edJourneyInfo.description,    
                     },
-                    url: '/api/route/'+this.$route.params.id+'/scenery/'+this.edJourneyInfo.id,
+                    url: this.$config+'/api/route/'+this.$route.params.id+'/scenery/'+this.edJourneyInfo.id,
                 }).then(res => {
                     if(res.status==200){
                         this.journeyInfos[this.edJourneyInfo.index].time=this.edJourneyInfo.time;
@@ -227,7 +227,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/route/'+this.$route.params.id+'/scenery/'+journeyInfoId,
+                        url: this.$config+'/api/route/'+this.$route.params.id+'/scenery/'+journeyInfoId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){

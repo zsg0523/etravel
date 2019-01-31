@@ -19,11 +19,11 @@
             </div>
             <div class="disflex login">
                 <div class="title tc">E-Travel平台</div>
-                <div><input type="text" v-model="loginName" placeholder="用户名或手机号" ></div>
+                <div><input type="text" v-model="loginName" placeholder="邮箱或手机号" ></div>
                 <div><input type="password" v-model="password" placeholder="密码" ></div>
                 <div style="height: 40px;">
                 	<a href="javascript:void(0);" @click="$router.push('/register')" class="fl">立即注册</a>
-                	<a href="javascript:void(0);" @click="$router.push('/forgotPsd')" class="fr">忘记密码</a>
+                	<!-- <a href="javascript:void(0);" @click="$router.push('/forgotPsd')" class="fr">忘记密码</a> -->
                 </div>
                 <div><button type="button" @click="login();">登录</button></div>
             </div>
@@ -46,7 +46,7 @@
 	  		...mapActions(['setToken']),
 		    login() {
 		      	if (this.password && this.loginName) {
-		        	this.$post('/api/authorizations', {
+		        	this.$post(this.$config+'/api/authorizations', {
 			          	username: this.loginName,
 			          	password: this.password
 			        }).then(res => {
@@ -55,7 +55,7 @@
 			          		this.setToken(res.data.access_token);
 			          		// console.log(res.data.access_token);
 			          		// 获取用户基本信息
-			            	this.$get('/api/user?include=student.school',
+			            	this.$get(this.$config+'/api/user?include=student.school',
 			            	{
 				      			headers: {
 						        	"Authorization": 'Bearer '+sessionStorage.token,

@@ -561,7 +561,7 @@
         methods:{
             getAssemblePlaces(){
                 // 获取旅游的集合信息
-                this.$get('/api/travels/'+sessionStorage.actTravelId,
+                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -595,7 +595,7 @@
                         dissolution_at:this.edAssemblePlaces.dissolution_at,
                         dissolution_station:this.edAssemblePlaces.dissolution_station,
                     },
-                    url: '/api/travels/'+sessionStorage.actTravelId,
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId,
                 }).then(res => {
                     // console.log(res);
                     if(res.status==200){
@@ -615,7 +615,7 @@
             },
             getFlights(){
                 // 获取旅游的航班信息
-                this.$get('/api/travels/'+sessionStorage.actTravelId+'/flights',
+                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/flights',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -635,7 +635,7 @@
             },
             addNewFlight(){
                 // 新增航班
-                this.$post('/api/flights',this.newFlight,
+                this.$post(this.$config+'/api/flights',this.newFlight,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -686,7 +686,7 @@
                         to:this.edFlight.to,
                         is_return:this.edFlight.is_return,
                     },
-                    url: '/api/flights/'+this.edFlight.id,
+                    url: this.$config+'/api/flights/'+this.edFlight.id,
                 }).then(res => {
                     if(res.status==200){
                         this.flights[this.edFlight.index].flight=this.edFlight.flight;
@@ -717,7 +717,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/flights/'+flightId,
+                        url: this.$config+'/api/flights/'+flightId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
@@ -736,7 +736,7 @@
             },
             getHotels(){
                 // 获取旅游的住宿酒店
-                this.$get('/api/travels/'+sessionStorage.actTravelId+'/hotels',
+                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/hotels',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -756,7 +756,7 @@
             },
             addNewHotel(){
                 // 新增酒店
-                this.$post('/api/hotels',this.newHotel,
+                this.$post(this.$config+'/api/hotels',this.newHotel,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -803,7 +803,7 @@
                         hotel_address:this.edHotel.hotel_address,
                         hotel_phone:this.edHotel.hotel_phone,
                     },
-                    url: '/api/hotels/'+this.edHotel.id,
+                    url: this.$config+'/api/hotels/'+this.edHotel.id,
                 }).then(res => {
                     if(res.status==200){
                         this.hotels[this.edHotel.index].check_at=this.edHotel.check_at;
@@ -833,7 +833,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/hotels/'+hotelId,
+                        url: this.$config+'/api/hotels/'+hotelId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
@@ -852,8 +852,8 @@
             },
             getLeadTeachers(){
                 // 获取领队老师信息
-                // this.$get('/api/travels/'+sessionStorage.actTravelId+'/travels',
-                this.$get('/api/travels/'+sessionStorage.actTravelId+'/leaders',
+                // this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/travels',
+                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/leaders',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -872,7 +872,7 @@
             },
             addNewLeadTeacher(){
                 // 新增领队
-                this.$post('/api/travels/'+sessionStorage.actTravelId+'/leaders',this.newLeadTeacher,
+                this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/leaders',this.newLeadTeacher,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -910,7 +910,7 @@
                         duty:this.edLeadTeacher.duty,
                         phone:this.edLeadTeacher.phone,
                     },
-                    url: '/api/travels/'+sessionStorage.actTravelId+'/leaders/'+this.edLeadTeacher.id,
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/leaders/'+this.edLeadTeacher.id,
                 }).then(res => {
                     if(res.status==200){
                         this.leadTeachers[this.edLeadTeacher.index].leader=this.edLeadTeacher.leader;
@@ -937,7 +937,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/travels/'+sessionStorage.actTravelId+'/leaders/'+leadTeacherId,
+                        url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/leaders/'+leadTeacherId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
@@ -956,7 +956,7 @@
             },
             getBadWeathers(){
                 // 获取恶劣天气安排
-                this.$get('/api/travels/'+sessionStorage.actTravelId,
+                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -984,7 +984,7 @@
                     data:{
                         urgency:this.edBadWeather.urgency,
                     },
-                    url: '/api/travels/'+sessionStorage.actTravelId,
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId,
                 }).then(res => {
                     // console.log(res);
                     if(res.status==200){

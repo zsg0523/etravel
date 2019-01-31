@@ -9,7 +9,7 @@
 
 	.project_right{width: 240px;height: 100%;align-items: center;flex-direction: column; justify-content: flex-start;background-color: #ebebeb;}
 	.project_right>div{width: 90%;}
-    .project_icon{width:30px;height:100%;background-color: #ebebeb;border-bottom-right-radius: 15px;border-top-right-radius: 15px;flex-direction: column;justify-content: space-around;}
+    .project_icon{width:30px;height:100%;background-color: #ebebeb;border-bottom-right-radius: 15px;border-top-right-radius: 15px;flex-direction: column;justify-content: flex-start;}
     .project_icon>div{width:30px;height:30px;margin-top: 4px;}
     .project_icon>div>img{width:30px;height:30px;}
 
@@ -81,7 +81,7 @@
     			</div>
                 <div class="project_icon disflex">
                     <div @click="delTravel(travel.id,index)"><img src="../../images/rush-icon.png"></div>
-                    <div><img src="../../images/Released.png"></div>       
+                    <!-- <div><img src="../../images/Released.png"></div>        -->
 
                 </div>
     		</div>
@@ -140,7 +140,7 @@
             ...mapActions(['setTravels']),
             getUserTravels(){
                 // 获取旅游项目
-                this.$get('/api/travels',
+                this.$get(this.$config+'/api/travels',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -167,7 +167,7 @@
             },
             addNewTravel(){
                 // 新增旅游
-                this.$post('/api/travels',{
+                this.$post(this.$config+'/api/travels',{
                     travel_name:this.newTravel.travel_name,
                     travel_at:this.newTravel.travel_at,
                     travel_introduction:this.newTravel.travel_introduction, 
@@ -200,7 +200,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/travels/'+projectId,
+                        url: this.$config+'/api/travels/'+projectId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
@@ -242,7 +242,7 @@
                         travel_at:this.edTravel.travel_at,
                         travel_introduction:this.edTravel.travel_introduction,
                     },
-                    url: '/api/travels/'+this.edTravelId,
+                    url: this.$config+'/api/travels/'+this.edTravelId,
                 }).then(res => {
                     // console.log(res);
                     if(res.status==200){

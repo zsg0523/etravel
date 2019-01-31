@@ -147,7 +147,7 @@
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
-                    url: '/api/travel/'+sessionStorage.actTravelId+'/route/'+this.$route.params.id+'?include=foods',
+                    url: this.$config+'/api/travel/'+sessionStorage.actTravelId+'/route/'+this.$route.params.id+'?include=foods',
                 }).then(res => {
                     // console.log(res.data.sceneries.data);
                     this.journey=res.data;
@@ -162,7 +162,7 @@
             },
             addNewMeal(){
                 // 新增膳食/api/route/21/food
-                this.$post('/api/route/'+this.$route.params.id+'/food',this.newMeal,
+                this.$post(this.$config+'/api/route/'+this.$route.params.id+'/food',this.newMeal,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -200,7 +200,7 @@
                         content:this.edMeal.content,
                         description:this.edMeal.description,
                     },
-                    url: '/api/route/'+this.$route.params.id+'/food/'+this.edMeal.id,
+                    url: this.$config+'/api/route/'+this.$route.params.id+'/food/'+this.edMeal.id,
                 }).then(res => {
                     if(res.status==200){
                         this.meals[this.edMeal.index].title=this.edMeal.title;
@@ -227,7 +227,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/route/'+this.$route.params.id+'/food/'+mealId,
+                        url: this.$config+'/api/route/'+this.$route.params.id+'/food/'+mealId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){

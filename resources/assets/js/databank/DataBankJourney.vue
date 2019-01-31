@@ -159,7 +159,7 @@
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
-                    url: '/api/travel/'+sessionStorage.actTravelId+'/routes',
+                    url: this.$config+'/api/travel/'+sessionStorage.actTravelId+'/routes',
                 }).then(res => {
                     // console.log(res.data);
                     this.journeys=res.data.data;
@@ -173,7 +173,7 @@
             },
             addNewJourney(){
                 // 新增行程
-                this.$post('/api/travel/'+sessionStorage.actTravelId+'/route',this.newJourney,
+                this.$post(this.$config+'/api/travel/'+sessionStorage.actTravelId+'/route',this.newJourney,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -208,7 +208,7 @@
                         day:this.edJourney.day,
                         date:this.edJourney.date,
                     },
-                    url: '/api/travel/'+sessionStorage.actTravelId+'/route/'+this.edJourney.id,
+                    url: this.$config+'/api/travel/'+sessionStorage.actTravelId+'/route/'+this.edJourney.id,
                 }).then(res => {
                     if(res.status==200){
                         this.journeys[this.edJourney.index].day=this.edJourney.day;
@@ -234,7 +234,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/travel/'+sessionStorage.actTravelId+'/route/'+journeyId,
+                        url: this.$config+'/api/travel/'+sessionStorage.actTravelId+'/route/'+journeyId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
