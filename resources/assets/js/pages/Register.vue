@@ -59,7 +59,7 @@
 		    register() {
 		      	if (this.password && this.username && this.repassword && this.smscode) {
 		      		if(this.password == this.repassword){
-		      			this.$post('/api/users', {
+		      			this.$post(this.$config+'/api/users', {
 				          	name: this.username,
 				          	password: this.password,
 				          	verification_code: this.smscode,
@@ -88,7 +88,7 @@
 		    getCode() {
 		    	if (this.phoneNumber) {
 		    		this.run();
-		        	axios.post('/api/verificationCodes', {
+		        	axios.post(this.$config+'/api/verificationCodes', {
 			          	phone: this.phoneNumber
 			        }).then(res => {
 			        	console.log(res.data);

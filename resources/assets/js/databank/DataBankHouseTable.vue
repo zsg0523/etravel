@@ -147,7 +147,7 @@
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
-                    url: '/api/travels/'+sessionStorage.actTravelId+'/groups?include=user.student',
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/groups?include=user.student',
                 }).then(res => {
                     // console.log(res.data);
                     this.houses=res.data.data;
@@ -161,7 +161,7 @@
             },
             addNewHouse(){
                 //新增房间
-                 this.$post('/api/travels/'+sessionStorage.actTravelId+'/categories',this.newHouse,
+                 this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',this.newHouse,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -199,7 +199,7 @@
                         name:this.edHouse.house_name,
                     },
                     // /api/users/:user/travels/:travel/groups/:group
-                    url: '/api/users/'+this.edHouse.user_id+'/travels/'+sessionStorage.actTravelId+'/groups/'+this.edHouse.id,
+                    url: this.$config+'/api/users/'+this.edHouse.user_id+'/travels/'+sessionStorage.actTravelId+'/groups/'+this.edHouse.id,
                 }).then(res => {
                     if(res.status==200){
                         this.houses[this.edHouse.index].room=this.edHouse.house_room;
@@ -226,7 +226,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/users/'+this.edHouse.user_id+'/travels/'+sessionStorage.actTravelId+'/groups/'+this.edHouse.id,
+                        url: this.$config+'/api/users/'+this.edHouse.user_id+'/travels/'+sessionStorage.actTravelId+'/groups/'+this.edHouse.id,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){

@@ -59,7 +59,7 @@
 	  		...mapActions(['setToken']),
 	  		getUserInfo(){
 	  			// 获取用户基本信息
-            	this.$get('/api/user?include=student.school',
+            	this.$get(this.$config+'/api/user?include=student.school',
             	{
 	      			headers: {
 			        	"Authorization": 'Bearer '+sessionStorage.token,

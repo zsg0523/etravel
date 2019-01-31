@@ -18339,17 +18339,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__http__ = __webpack_require__(274);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vant__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__config__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vant__ = __webpack_require__(293);
 
 
 
 
 
 
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_vant__["b" /* Popup */]).use(__WEBPACK_IMPORTED_MODULE_4_vant__["c" /* Toast */]).use(__WEBPACK_IMPORTED_MODULE_4_vant__["a" /* Dialog */]).use(__WEBPACK_IMPORTED_MODULE_4_vant__["d" /* Uploader */]);
+
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vant__["b" /* Popup */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["c" /* Toast */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["a" /* Dialog */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["d" /* Uploader */]);
 
 __webpack_require__(359);
 
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.$config = __WEBPACK_IMPORTED_MODULE_4__config__["a" /* default */];
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.sessionStorage = sessionStorage;
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.localStorage = localStorage;
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.$ajax = __WEBPACK_IMPORTED_MODULE_3__http__["a" /* default */];
@@ -21595,7 +21598,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			var _this = this;
 
 			if (this.password && this.loginName) {
-				this.$post('/api/authorizations', {
+				this.$post(this.$config + '/api/authorizations', {
 					username: this.loginName,
 					password: this.password
 				}).then(function (res) {
@@ -21604,7 +21607,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						_this.setToken(res.data.access_token);
 						// console.log(res.data.access_token);
 						// 获取用户基本信息
-						_this.$get('/api/user?include=student.school', {
+						_this.$get(_this.$config + '/api/user?include=student.school', {
 							headers: {
 								"Authorization": 'Bearer ' + sessionStorage.token
 							}
@@ -21985,7 +21988,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			var _this = this;
 
 			// 获取用户基本信息
-			this.$get('/api/user?include=student.school', {
+			this.$get(this.$config + '/api/user?include=student.school', {
 				headers: {
 					"Authorization": 'Bearer ' + sessionStorage.token
 				}
@@ -22455,7 +22458,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             var _this = this;
 
             // 获取旅游项目
-            this.$get('/api/travels', {
+            this.$get(this.$config + '/api/travels', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -22482,7 +22485,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             var _this2 = this;
 
             // 新增旅游
-            this.$post('/api/travels', {
+            this.$post(this.$config + '/api/travels', {
                 travel_name: this.newTravel.travel_name,
                 travel_at: this.newTravel.travel_at,
                 travel_introduction: this.newTravel.travel_introduction
@@ -22516,7 +22519,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/travels/' + projectId
+                    url: _this3.$config + '/api/travels/' + projectId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -22558,7 +22561,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     travel_at: this.edTravel.travel_at,
                     travel_introduction: this.edTravel.travel_introduction
                 },
-                url: '/api/travels/' + this.edTravelId
+                url: this.$config + '/api/travels/' + this.edTravelId
             }).then(function (res) {
                 // console.log(res);
                 if (res.status == 200) {
@@ -25154,7 +25157,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             // 获取旅游的集合信息
-            this.$get('/api/travels/' + sessionStorage.actTravelId, {
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -25188,7 +25191,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     dissolution_at: this.edAssemblePlaces.dissolution_at,
                     dissolution_station: this.edAssemblePlaces.dissolution_station
                 },
-                url: '/api/travels/' + sessionStorage.actTravelId
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId
             }).then(function (res) {
                 // console.log(res);
                 if (res.status == 200) {
@@ -25210,7 +25213,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this3 = this;
 
             // 获取旅游的航班信息
-            this.$get('/api/travels/' + sessionStorage.actTravelId + '/flights', {
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/flights', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -25229,7 +25232,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this4 = this;
 
             // 新增航班
-            this.$post('/api/flights', this.newFlight, {
+            this.$post(this.$config + '/api/flights', this.newFlight, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -25281,7 +25284,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     to: this.edFlight.to,
                     is_return: this.edFlight.is_return
                 },
-                url: '/api/flights/' + this.edFlight.id
+                url: this.$config + '/api/flights/' + this.edFlight.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this5.flights[_this5.edFlight.index].flight = _this5.edFlight.flight;
@@ -25314,7 +25317,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/flights/' + flightId
+                    url: _this6.$config + '/api/flights/' + flightId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -25333,7 +25336,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this7 = this;
 
             // 获取旅游的住宿酒店
-            this.$get('/api/travels/' + sessionStorage.actTravelId + '/hotels', {
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/hotels', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -25352,7 +25355,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this8 = this;
 
             // 新增酒店
-            this.$post('/api/hotels', this.newHotel, {
+            this.$post(this.$config + '/api/hotels', this.newHotel, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -25400,7 +25403,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     hotel_address: this.edHotel.hotel_address,
                     hotel_phone: this.edHotel.hotel_phone
                 },
-                url: '/api/hotels/' + this.edHotel.id
+                url: this.$config + '/api/hotels/' + this.edHotel.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this9.hotels[_this9.edHotel.index].check_at = _this9.edHotel.check_at;
@@ -25432,7 +25435,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/hotels/' + hotelId
+                    url: _this10.$config + '/api/hotels/' + hotelId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -25451,8 +25454,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this11 = this;
 
             // 获取领队老师信息
-            // this.$get('/api/travels/'+sessionStorage.actTravelId+'/travels',
-            this.$get('/api/travels/' + sessionStorage.actTravelId + '/leaders', {
+            // this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/travels',
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/leaders', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -25471,7 +25474,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this12 = this;
 
             // 新增领队
-            this.$post('/api/travels/' + sessionStorage.actTravelId + '/leaders', this.newLeadTeacher, {
+            this.$post(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/leaders', this.newLeadTeacher, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -25510,7 +25513,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     duty: this.edLeadTeacher.duty,
                     phone: this.edLeadTeacher.phone
                 },
-                url: '/api/travels/' + sessionStorage.actTravelId + '/leaders/' + this.edLeadTeacher.id
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/leaders/' + this.edLeadTeacher.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this13.leadTeachers[_this13.edLeadTeacher.index].leader = _this13.edLeadTeacher.leader;
@@ -25539,7 +25542,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/travels/' + sessionStorage.actTravelId + '/leaders/' + leadTeacherId
+                    url: _this14.$config + '/api/travels/' + sessionStorage.actTravelId + '/leaders/' + leadTeacherId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -25558,7 +25561,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this15 = this;
 
             // 获取恶劣天气安排
-            this.$get('/api/travels/' + sessionStorage.actTravelId, {
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -25586,7 +25589,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     urgency: this.edBadWeather.urgency
                 },
-                url: '/api/travels/' + sessionStorage.actTravelId
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId
             }).then(function (res) {
                 // console.log(res);
                 if (res.status == 200) {
@@ -28152,7 +28155,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             // 获取常用联系人
-            this.$get('/api/travels/' + sessionStorage.actTravelId + '/telephones', {
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/telephones', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -28171,7 +28174,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增联系人
-            this.$post('/api/telephones', this.newPhone, {
+            this.$post(this.$config + '/api/telephones', this.newPhone, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -28210,7 +28213,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     area_code: this.edPhone.area_code,
                     phone: this.edPhone.phone
                 },
-                url: '/api/telephones/' + this.edPhone.id
+                url: this.$config + '/api/telephones/' + this.edPhone.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.phones[_this3.edPhone.index].name = _this3.edPhone.name;
@@ -28239,7 +28242,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/telephones/' + phoneId
+                    url: _this4.$config + '/api/telephones/' + phoneId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -28942,7 +28945,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 params: {
                     type: 10
                 },
-                url: '/api/travels/' + sessionStorage.actTravelId + '/categories'
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories'
             }).then(function (res) {
                 // console.log(res.data);
                 _this.ruless = res.data.data;
@@ -28958,7 +28961,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增守则
-            this.$post('/api/travels/' + sessionStorage.actTravelId + '/categories', this.newRule, {
+            this.$post(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories', this.newRule, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -28991,7 +28994,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     rule_category_name: this.edRule.rule_category_name
                 },
-                url: '/api/travels/' + sessionStorage.actTravelId + '/categories/' + this.edRule.id
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories/' + this.edRule.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.ruless[_this3.edRule.index].rule_category_name = _this3.edRule.rule_category_name;
@@ -29018,7 +29021,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/travels/' + sessionStorage.actTravelId + '/categories/' + ruleId
+                    url: _this4.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories/' + ruleId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -29493,7 +29496,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             // 获取守则详情/api/categories/3?include=rules
-            this.$get('/api/categories/' + this.$route.params.id + '?include=rules', {
+            this.$get(this.$config + '/api/categories/' + this.$route.params.id + '?include=rules', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -29513,7 +29516,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增守则详情
-            this.$post('/api/rules', this.newRuleInfo, {
+            this.$post(this.$config + '/api/rules', this.newRuleInfo, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -29548,7 +29551,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     rule: this.edRuleInfo.rule,
                     rule_category_id: this.edRuleInfo.rule_category_id
                 },
-                url: '/api/rules/' + this.edRuleInfo.id
+                url: this.$config + '/api/rules/' + this.edRuleInfo.id
             }).then(function (res) {
                 // console.log(res);
                 if (res.status == 200) {
@@ -29576,7 +29579,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/rules/' + RuleInfoId
+                    url: _this4.$config + '/api/rules/' + RuleInfoId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -30039,7 +30042,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 params: {
                     type: 20
                 },
-                url: '/api/travels/' + sessionStorage.actTravelId + '/categories'
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories'
             }).then(function (res) {
                 // console.log(res.data);
                 _this.promises = res.data.data;
@@ -30055,7 +30058,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增承诺
-            this.$post('/api/travels/' + sessionStorage.actTravelId + '/categories', this.newPromise, {
+            this.$post(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories', this.newPromise, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -30088,7 +30091,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     rule_category_name: this.edPromise.rule_category_name
                 },
-                url: '/api/travels/' + sessionStorage.actTravelId + '/categories/' + this.edPromise.id
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories/' + this.edPromise.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.promises[_this3.edPromise.index].rule_category_name = _this3.edPromise.rule_category_name;
@@ -30115,7 +30118,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/travels/' + sessionStorage.actTravelId + '/categories/' + promiseId
+                    url: _this4.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories/' + promiseId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -30825,7 +30828,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 },
-                url: '/api/travels/' + sessionStorage.actTravelId + '/groups?include=user.student'
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/groups?include=user.student'
             }).then(function (res) {
                 // console.log(res.data);
                 _this.houses = res.data.data;
@@ -30841,7 +30844,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             //新增房间
-            this.$post('/api/travels/' + sessionStorage.actTravelId + '/categories', this.newHouse, {
+            this.$post(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories', this.newHouse, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -30880,7 +30883,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     name: this.edHouse.house_name
                 },
                 // /api/users/:user/travels/:travel/groups/:group
-                url: '/api/users/' + this.edHouse.user_id + '/travels/' + sessionStorage.actTravelId + '/groups/' + this.edHouse.id
+                url: this.$config + '/api/users/' + this.edHouse.user_id + '/travels/' + sessionStorage.actTravelId + '/groups/' + this.edHouse.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.houses[_this3.edHouse.index].room = _this3.edHouse.house_room;
@@ -30909,7 +30912,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/users/' + _this4.edHouse.user_id + '/travels/' + sessionStorage.actTravelId + '/groups/' + _this4.edHouse.id
+                    url: _this4.$config + '/api/users/' + _this4.edHouse.user_id + '/travels/' + sessionStorage.actTravelId + '/groups/' + _this4.edHouse.id
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -31663,7 +31666,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 },
-                url: '/api/travel/' + sessionStorage.actTravelId + '/routes'
+                url: this.$config + '/api/travel/' + sessionStorage.actTravelId + '/routes'
             }).then(function (res) {
                 // console.log(res.data);
                 _this.journeys = res.data.data;
@@ -31679,7 +31682,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增行程
-            this.$post('/api/travel/' + sessionStorage.actTravelId + '/route', this.newJourney, {
+            this.$post(this.$config + '/api/travel/' + sessionStorage.actTravelId + '/route', this.newJourney, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -31715,7 +31718,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     day: this.edJourney.day,
                     date: this.edJourney.date
                 },
-                url: '/api/travel/' + sessionStorage.actTravelId + '/route/' + this.edJourney.id
+                url: this.$config + '/api/travel/' + sessionStorage.actTravelId + '/route/' + this.edJourney.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.journeys[_this3.edJourney.index].day = _this3.edJourney.day;
@@ -31743,7 +31746,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/travel/' + sessionStorage.actTravelId + '/route/' + journeyId
+                    url: _this4.$config + '/api/travel/' + sessionStorage.actTravelId + '/route/' + journeyId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -32495,7 +32498,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 },
-                url: '/api/travel/' + sessionStorage.actTravelId + '/route/' + this.$route.params.id + '?include=sceneries'
+                url: this.$config + '/api/travel/' + sessionStorage.actTravelId + '/route/' + this.$route.params.id + '?include=sceneries'
             }).then(function (res) {
                 // console.log(res.data.sceneries.data);
                 _this.journey = res.data;
@@ -32512,7 +32515,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增行程/api/route/21/scenery
-            this.$post('/api/route/' + this.$route.params.id + '/scenery', this.newJourneyInfo, {
+            this.$post(this.$config + '/api/route/' + this.$route.params.id + '/scenery', this.newJourneyInfo, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -32551,7 +32554,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     content: this.edJourneyInfo.content,
                     description: this.edJourneyInfo.description
                 },
-                url: '/api/route/' + this.$route.params.id + '/scenery/' + this.edJourneyInfo.id
+                url: this.$config + '/api/route/' + this.$route.params.id + '/scenery/' + this.edJourneyInfo.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.journeyInfos[_this3.edJourneyInfo.index].time = _this3.edJourneyInfo.time;
@@ -32580,7 +32583,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/route/' + _this4.$route.params.id + '/scenery/' + journeyInfoId
+                    url: _this4.$config + '/api/route/' + _this4.$route.params.id + '/scenery/' + journeyInfoId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -33236,7 +33239,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 },
-                url: '/api/travel/' + sessionStorage.actTravelId + '/route/' + this.$route.params.id + '?include=foods'
+                url: this.$config + '/api/travel/' + sessionStorage.actTravelId + '/route/' + this.$route.params.id + '?include=foods'
             }).then(function (res) {
                 // console.log(res.data.sceneries.data);
                 _this.journey = res.data;
@@ -33253,7 +33256,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增膳食/api/route/21/food
-            this.$post('/api/route/' + this.$route.params.id + '/food', this.newMeal, {
+            this.$post(this.$config + '/api/route/' + this.$route.params.id + '/food', this.newMeal, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -33292,7 +33295,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     content: this.edMeal.content,
                     description: this.edMeal.description
                 },
-                url: '/api/route/' + this.$route.params.id + '/food/' + this.edMeal.id
+                url: this.$config + '/api/route/' + this.$route.params.id + '/food/' + this.edMeal.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.meals[_this3.edMeal.index].title = _this3.edMeal.title;
@@ -33321,7 +33324,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/route/' + _this4.$route.params.id + '/food/' + mealId
+                    url: _this4.$config + '/api/route/' + _this4.$route.params.id + '/food/' + mealId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -34066,7 +34069,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 },
-                url: '/api/travel/' + sessionStorage.actTravelId + '/routes'
+                url: this.$config + '/api/travel/' + sessionStorage.actTravelId + '/routes'
             }).then(function (res) {
                 // console.log(res.data);
                 _this.journeys = res.data.data;
@@ -34082,7 +34085,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增行程
-            this.$post('/api/travel/' + sessionStorage.actTravelId + '/route', this.newJourney, {
+            this.$post(this.$config + '/api/travel/' + sessionStorage.actTravelId + '/route', this.newJourney, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -34118,7 +34121,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     day: this.edJourney.day,
                     date: this.edJourney.date
                 },
-                url: '/api/travel/' + sessionStorage.actTravelId + '/route/' + this.edJourney.id
+                url: this.$config + '/api/travel/' + sessionStorage.actTravelId + '/route/' + this.edJourney.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.journeys[_this3.edJourney.index].day = _this3.edJourney.day;
@@ -34146,7 +34149,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/travel/' + sessionStorage.actTravelId + '/route/' + journeyId
+                    url: _this4.$config + '/api/travel/' + sessionStorage.actTravelId + '/route/' + journeyId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -34684,7 +34687,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 },
-                url: '/api/routes/' + this.$route.params.id + '/studies'
+                url: this.$config + '/api/routes/' + this.$route.params.id + '/studies'
             }).then(function (res) {
                 _this.sheets = res.data.data;
             }).catch(function (err) {
@@ -34699,7 +34702,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增学习工作纸
-            this.$post('/api/routes/' + this.$route.params.id + '/studies', this.newSheet, {
+            this.$post(this.$config + '/api/routes/' + this.$route.params.id + '/studies', this.newSheet, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -34735,7 +34738,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     title: this.edSheet.title,
                     body: this.edSheet.body
                 },
-                url: '/api/routes/' + this.$route.params.id + '/studies/' + this.edSheet.id
+                url: this.$config + '/api/routes/' + this.$route.params.id + '/studies/' + this.edSheet.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.sheets[_this3.edSheet.index].title = _this3.edSheet.title;
@@ -34763,7 +34766,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/routes/' + _this4.$route.params.id + '/studies/' + sheetId
+                    url: _this4.$config + '/api/routes/' + _this4.$route.params.id + '/studies/' + sheetId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -35314,7 +35317,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 },
-                url: '/api/routes/' + sessionStorage.routeId + '/studies/' + this.$route.params.id + '?include=questions'
+                url: this.$config + '/api/routes/' + sessionStorage.routeId + '/studies/' + this.$route.params.id + '?include=questions'
             }).then(function (res) {
                 // console.log(res.data.questions.data);
                 _this.sheet = res.data;
@@ -35331,7 +35334,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增问题
-            this.$post('/api/studies/' + this.$route.params.id + '/questions', this.newSheetInfo, {
+            this.$post(this.$config + '/api/studies/' + this.$route.params.id + '/questions', this.newSheetInfo, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -35364,7 +35367,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     content: this.edSheetInfo.content
                 },
-                url: '/api/studies  /' + this.$route.params.id + '/questions/' + this.edSheetInfo.id
+                url: this.$config + '/api/studies  /' + this.$route.params.id + '/questions/' + this.edSheetInfo.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.sheetInfos[_this3.edSheetInfo.index].content = _this3.edSheetInfo.content;
@@ -35391,7 +35394,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/studies  /' + _this4.$route.params.id + '/questions/' + sheetInfoId
+                    url: _this4.$config + '/api/studies  /' + _this4.$route.params.id + '/questions/' + sheetInfoId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -35942,7 +35945,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 params: {
                     type: 20
                 },
-                url: '/api/travels/' + sessionStorage.actTravelId + '/categories'
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories'
             }).then(function (res) {
                 // console.log(res.data);
                 _this.promises = res.data.data;
@@ -35958,7 +35961,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增承诺
-            this.$post('/api/travels/' + sessionStorage.actTravelId + '/categories', this.newPromise, {
+            this.$post(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories', this.newPromise, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -35991,7 +35994,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     rule_category_name: this.edPromise.rule_category_name
                 },
-                url: '/api/travels/' + sessionStorage.actTravelId + '/categories/' + this.edPromise.id
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories/' + this.edPromise.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.promises[_this3.edPromise.index].rule_category_name = _this3.edPromise.rule_category_name;
@@ -36018,7 +36021,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/travels/' + sessionStorage.actTravelId + '/categories/' + promiseId
+                    url: _this4.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories/' + promiseId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -36820,8 +36823,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 },
-                // url: '/api/travels/'+sessionStorage.actTravelId+'/evaluations',api/travels/1/evaluationCategories?include=evaluations
-                url: '/api/travels/' + sessionStorage.actTravelId + '/evaluationCategories?include=evaluations'
+                // url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/evaluations',api/travels/1/evaluationCategories?include=evaluations
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/evaluationCategories?include=evaluations'
             }).then(function (res) {
                 // console.log(res.data);
                 _this.evaluations = res.data.data;
@@ -36837,7 +36840,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增题目类型
-            this.$post('/api/travels/' + sessionStorage.actTravelId + '/evaluationCategories', this.newEvaluation, {
+            this.$post(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/evaluationCategories', this.newEvaluation, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -36870,7 +36873,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     title: this.edEvaluation.title
                 },
-                url: '/api/travels/' + sessionStorage.actTravelId + '/evaluationCategories/' + this.edEvaluation.id
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/evaluationCategories/' + this.edEvaluation.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.evaluations[_this3.edEvaluation.index].title = _this3.edEvaluation.title;
@@ -36897,7 +36900,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/travels/' + sessionStorage.actTravelId + '/evaluationCategories/' + evaluationId
+                    url: _this4.$config + '/api/travels/' + sessionStorage.actTravelId + '/evaluationCategories/' + evaluationId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -37366,7 +37369,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             // 获取题目详情
-            this.$get('/api/evaluations/' + sessionStorage.actTravelId, {
+            this.$get(this.$config + '/api/evaluations/' + sessionStorage.actTravelId, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -37796,7 +37799,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 params: {
                     type: 20
                 },
-                url: '/api/titles/'
+                url: this.$config + '/api/titles/'
             }).then(function (res) {
                 // console.log(res.data);
                 _this.feels = res.data.data;
@@ -37812,7 +37815,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增感想
-            this.$post('/api/titles/', this.newFeel, {
+            this.$post(this.$config + '/api/titles/', this.newFeel, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -37845,7 +37848,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     title: this.edFeel.title
                 },
-                url: '/api/titles/' + this.edFeel.id
+                url: this.$config + '/api/titles/' + this.edFeel.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.feels[_this3.edFeel.index].title = _this3.edFeel.title;
@@ -37872,7 +37875,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: '/api/titles/' + feelId
+                    url: _this4.$config + '/api/titles/' + feelId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -38264,7 +38267,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			if (this.password && this.username && this.repassword && this.smscode) {
 				if (this.password == this.repassword) {
-					this.$post('/api/users', {
+					this.$post(this.$config + '/api/users', {
 						name: this.username,
 						password: this.password,
 						verification_code: this.smscode,
@@ -38295,7 +38298,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			if (this.phoneNumber) {
 				this.run();
-				axios.post('/api/verificationCodes', {
+				axios.post(this.$config + '/api/verificationCodes', {
 					phone: this.phoneNumber
 				}).then(function (res) {
 					console.log(res.data);
@@ -76459,6 +76462,27 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+
+var baseUrl = 'http://www.bunchparty.com/etravel/public'; //线上地址
+// const baseUrl='';//本地地址
+
+/* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ })
 /******/ ]);

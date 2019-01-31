@@ -134,7 +134,7 @@
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
-                    url: '/api/routes/'+this.$route.params.id+'/studies',
+                    url: this.$config+'/api/routes/'+this.$route.params.id+'/studies',
                 }).then(res => {
                     this.sheets=res.data.data;
                 }).catch(err => {
@@ -147,7 +147,7 @@
             },
             addNewSheet(){
                 // 新增学习工作纸
-                this.$post('/api/routes/'+this.$route.params.id+'/studies',this.newSheet,
+                this.$post(this.$config+'/api/routes/'+this.$route.params.id+'/studies',this.newSheet,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -182,7 +182,7 @@
                         title:this.edSheet.title,
                         body:this.edSheet.body,
                     },
-                    url: '/api/routes/'+this.$route.params.id+'/studies/'+this.edSheet.id,
+                    url: this.$config+'/api/routes/'+this.$route.params.id+'/studies/'+this.edSheet.id,
                 }).then(res => {
                     if(res.status==200){
                         this.sheets[this.edSheet.index].title=this.edSheet.title;
@@ -208,7 +208,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/routes/'+this.$route.params.id+'/studies/'+sheetId,
+                        url: this.$config+'/api/routes/'+this.$route.params.id+'/studies/'+sheetId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){

@@ -113,7 +113,7 @@
                     params:{
                         type:10,
                     },
-                    url: '/api/travels/'+sessionStorage.actTravelId+'/categories',
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',
                 }).then(res => {
                     // console.log(res.data);
                     this.ruless=res.data.data;
@@ -128,7 +128,7 @@
             },
             addNewRule(){
                 // 新增守则
-                this.$post('/api/travels/'+sessionStorage.actTravelId+'/categories',this.newRule,
+                this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',this.newRule,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -160,7 +160,7 @@
                     data:{
                         rule_category_name:this.edRule.rule_category_name,
                     },
-                    url: '/api/travels/'+sessionStorage.actTravelId+'/categories/'+this.edRule.id,
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories/'+this.edRule.id,
                 }).then(res => {
                     if(res.status==200){
                         this.ruless[this.edRule.index].rule_category_name=this.edRule.rule_category_name;
@@ -185,7 +185,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/travels/'+sessionStorage.actTravelId+'/categories/'+ruleId,
+                        url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories/'+ruleId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){

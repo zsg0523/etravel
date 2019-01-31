@@ -1,7 +1,8 @@
 import router from './routes.js';
 import Vue from 'vue';
 import store from './store';
-import ajax from './http'
+import ajax from './http';
+import config from './config'
 import {
   Popup,
   Toast,
@@ -17,6 +18,7 @@ Vue
 
 require('./bootstrap');
 
+Vue.prototype.$config = config;
 Vue.prototype.sessionStorage = sessionStorage;
 Vue.prototype.localStorage = localStorage; 
 Vue.prototype.$ajax = ajax;

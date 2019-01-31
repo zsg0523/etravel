@@ -126,7 +126,7 @@
         methods:{
             getPhones(){
                 // 获取常用联系人
-                this.$get('/api/travels/'+sessionStorage.actTravelId+'/telephones',
+                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/telephones',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -145,7 +145,7 @@
             },
             addNewPhone(){
                 // 新增联系人
-                this.$post('/api/telephones',this.newPhone,
+                this.$post(this.$config+'/api/telephones',this.newPhone,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -183,7 +183,7 @@
                         area_code:this.edPhone.area_code,
                         phone:this.edPhone.phone,
                     },
-                    url: '/api/telephones/'+this.edPhone.id,
+                    url: this.$config+'/api/telephones/'+this.edPhone.id,
                 }).then(res => {
                     if(res.status==200){
                         this.phones[this.edPhone.index].name=this.edPhone.name;
@@ -210,7 +210,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/telephones/'+phoneId,
+                        url: this.$config+'/api/telephones/'+phoneId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){

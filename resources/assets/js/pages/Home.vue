@@ -140,7 +140,7 @@
             ...mapActions(['setTravels']),
             getUserTravels(){
                 // 获取旅游项目
-                this.$get('/api/travels',
+                this.$get(this.$config+'/api/travels',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -167,7 +167,7 @@
             },
             addNewTravel(){
                 // 新增旅游
-                this.$post('/api/travels',{
+                this.$post(this.$config+'/api/travels',{
                     travel_name:this.newTravel.travel_name,
                     travel_at:this.newTravel.travel_at,
                     travel_introduction:this.newTravel.travel_introduction, 
@@ -200,7 +200,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/travels/'+projectId,
+                        url: this.$config+'/api/travels/'+projectId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
@@ -242,7 +242,7 @@
                         travel_at:this.edTravel.travel_at,
                         travel_introduction:this.edTravel.travel_introduction,
                     },
-                    url: '/api/travels/'+this.edTravelId,
+                    url: this.$config+'/api/travels/'+this.edTravelId,
                 }).then(res => {
                     // console.log(res);
                     if(res.status==200){

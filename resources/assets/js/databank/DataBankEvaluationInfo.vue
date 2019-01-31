@@ -107,7 +107,7 @@
         methods:{
             getEvaluationInfos(){
                 // 获取题目详情
-                this.$get('/api/evaluations/'+sessionStorage.actTravelId,
+                this.$get(this.$config+'/api/evaluations/'+sessionStorage.actTravelId,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,

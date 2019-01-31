@@ -117,7 +117,7 @@
         methods:{
             getRuleInfos(){
                 // 获取守则详情/api/categories/3?include=rules
-                this.$get('/api/categories/'+this.$route.params.id+'?include=rules',
+                this.$get(this.$config+'/api/categories/'+this.$route.params.id+'?include=rules',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -137,7 +137,7 @@
             },
             addNewRuleInfo(){
                 // 新增守则详情
-                this.$post('/api/rules',this.newRuleInfo,
+                this.$post(this.$config+'/api/rules',this.newRuleInfo,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -171,7 +171,7 @@
                         rule:this.edRuleInfo.rule,
                         rule_category_id:this.edRuleInfo.rule_category_id,
                     },
-                    url: '/api/rules/'+this.edRuleInfo.id,
+                    url: this.$config+'/api/rules/'+this.edRuleInfo.id,
                 }).then(res => {
                 	// console.log(res);
                     if(res.status==200){
@@ -197,7 +197,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/rules/'+RuleInfoId,
+                        url: this.$config+'/api/rules/'+RuleInfoId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){

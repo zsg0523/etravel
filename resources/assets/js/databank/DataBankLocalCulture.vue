@@ -169,7 +169,7 @@
                     params:{
                         type:20,
                     },
-                    url: '/api/travels/'+sessionStorage.actTravelId+'/categories',
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',
                 }).then(res => {
                     // console.log(res.data);
                     this.promises=res.data.data;
@@ -183,7 +183,7 @@
             },
             addNewPromise(){
                 // 新增承诺
-                this.$post('/api/travels/'+sessionStorage.actTravelId+'/categories',this.newPromise,
+                this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',this.newPromise,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -215,7 +215,7 @@
                     data:{
                         rule_category_name:this.edPromise.rule_category_name,
                     },
-                    url: '/api/travels/'+sessionStorage.actTravelId+'/categories/'+this.edPromise.id,
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories/'+this.edPromise.id,
                 }).then(res => {
                     if(res.status==200){
                         this.promises[this.edPromise.index].rule_category_name=this.edPromise.rule_category_name;
@@ -240,7 +240,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/travels/'+sessionStorage.actTravelId+'/categories/'+promiseId,
+                        url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories/'+promiseId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
