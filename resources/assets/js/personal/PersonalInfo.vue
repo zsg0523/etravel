@@ -66,7 +66,7 @@
                                 <img class="photo-circle" :src="personalInfos.avatar" />                                                            
                             </div>
                             <div class="photo"  v-else>
-                                <img class="photo-circle" src="../../images/poto-icon.png" />                                                                               
+                                <img class="photo-circle" src="./../../images/poto-icon.png" />                                                                               
                             </div>
                             
                         </div>
@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <div class="personalEditBtn" @click="edInformationInfoShow()">
-		            <img src="../../images/edit-all.png">
+		            <img src="./../../images/edit-all.png">
 		        </div>
             </div>       
         </div>
