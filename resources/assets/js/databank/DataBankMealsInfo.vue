@@ -34,7 +34,7 @@
 	<div style="width:100%;">
 		<div class="right_title">
             <div class="title_icon" @click="$router.push('/journey/dataBankJourney')">
-                <img src="./../../images/back.png">
+                <img src="/etravel/public/images/back.png">
             </div>
             {{journey.day}}
         </div>
@@ -56,13 +56,13 @@
                         </div>
                     </div>
                     <div class="editBtnGroup_journeyInfo">
-		                <img @click="delMeal(meal.id)" src="./../../images/rush-icon.png">
-		                <img @click="editMealShow(index)" src="./../../images/edit-all.png">
+		                <img @click="delMeal(meal.id)" src="/etravel/public/images/rush-icon.png">
+		                <img @click="editMealShow(index)" src="/etravel/public/images/edit-all.png">
 		            </div>
                 </div>
             </div> 
             <div class="dataBankAddBtn_journeyInfo" @click="addNewMealShow()">
-	            <img src="./../../images/add_y.png">
+	            <img src="/etravel/public/images/add_y.png">
 	        </div>   
         </div>
         <van-popup v-model="isNewMealShow" :overlay="true" style="border-radius: 15px;">

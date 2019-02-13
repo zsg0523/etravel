@@ -10,26 +10,26 @@
 <template>
     <div class="photos disflex">
         <div class="del_icon">
-            <img src="./../../images/rush-icon.png">
+            <img src="/etravel/public/images/rush-icon.png">
         </div>
         <div class="photo_list disflex">
             <div class="photo_img">
-                <img src="./../../images/photo.png" alt="">
+                <img src="/etravel/public/images/photo.png" alt="">
             </div>
             <div class="photo_img">
-                <img src="./../../images/photo.png" alt="">
+                <img src="/etravel/public/images/photo.png" alt="">
             </div>
             <div class="photo_img">
-                <img src="./../../images/photo.png" alt="">
+                <img src="/etravel/public/images/photo.png" alt="">
             </div>
             <div class="photo_img">
-                <img src="./../../images/photo.png" alt="">
+                <img src="/etravel/public/images/photo.png" alt="">
             </div>
             <div class="photo_img">
-                <img src="./../../images/photo.png" alt="">
+                <img src="/etravel/public/images/photo.png" alt="">
             </div>
             <div class="photo_img">
-                <img src="./../../images/photo.png" alt="">
+                <img src="/etravel/public/images/photo.png" alt="">
             </div>
         </div>
     </div>

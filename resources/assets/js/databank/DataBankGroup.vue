@@ -35,9 +35,9 @@
                     <td><input type="text"></td>
                     <td><input type="text"></td>
                     <td>
-                        <div class="editIcon"><img src="./../../images/edit.png"></div>
-                        <div class="editIcon"><img src="./../../images/appointAdd.png"></div>
-                        <div class="editIcon"><img src="./../../images/dele.png"></div>
+                        <div class="editIcon"><img src="/etravel/public/images/edit.png"></div>
+                        <div class="editIcon"><img src="/etravel/public/images/appointAdd.png"></div>
+                        <div class="editIcon"><img src="/etravel/public/images/dele.png"></div>
                     </td>
                 </tr>
             </tbody>

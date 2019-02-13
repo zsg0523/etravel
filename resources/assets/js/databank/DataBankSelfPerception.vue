@@ -42,12 +42,12 @@
                         </div>
                     </div>
                     <div class="editBtnGroup">
-                        <img @click="delFeel(feel.id);" src="./../../images/rush-icon.png">
-                        <img @click="editFeelShow(index);" src="./../../images/edit-all.png">
+                        <img @click="delFeel(feel.id);" src="/etravel/public/images/rush-icon.png">
+                        <img @click="editFeelShow(index);" src="/etravel/public/images/edit-all.png">
                     </div>
                 </div>
                 <div class="dataBankAddBtn" @click="addFeelShow();">
-                    <img src="./../../images/add_y.png">
+                    <img src="/etravel/public/images/add_y.png">
                 </div>
             </div>       
         </div>
