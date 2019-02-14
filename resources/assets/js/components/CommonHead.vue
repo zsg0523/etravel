@@ -17,16 +17,16 @@
 <template>
 	<div class="commonHead">
 	    <div class="left disflex" @click="$router.push('/home')">
-	        <img src="./../../images/logo.png">
+	        <img src="/etravel/public/images/logo.png">
 	    </div>
 	    <div class="right disflex">
-	        <div class="letter disflex"><img src="./../../images/letter.png"></div>
+	        <div class="letter disflex"><img src="/etravel/public/images/letter.png"></div>
 
 	        <div class="person_icon disflex" v-if="userInfo.avatar">
 	        	<img :src="userInfo.avatar" @click="$router.push('/personalInfo')">
 	        </div>
 	        <div class="person_icon disflex" v-else>
-				<img src="./../../images/photo.png" @click="$router.push('/personalInfo')">
+				<img src="/etravel/public/images/photo.png" @click="$router.push('/personalInfo')">
 	        </div>
 	        	
 	        <div class="info disflex">
@@ -35,7 +35,7 @@
 	            <!-- <div v-if="userInfo.manage_contents" onclick="window.location.assign('/admin')">管理系统</div> -->
 	        </div>
 	        <div class="exit disflex" @click="logout();">
-	            <img src="./../../images/Vector-icon.png">
+	            <img src="/etravel/public/images/Vector-icon.png">
 	        </div>
 	    </div>
 	</div>

@@ -22,7 +22,7 @@
 	<div class="disflex main">
         <div class="disflex contentReg">
             <div class="disflex icon">
-                <img src="./../../images/logo_big.png">
+                <img src="/etravel/public/images/logo_big.png">
             </div>
             <div class="disflex login">
                 <div class="title tc">E-Travel平台</div>

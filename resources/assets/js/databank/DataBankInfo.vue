@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <div class="dataBankAddBtn" @click="assemblePlacePopupShow();">
-                            <img src="./../../images/edit-all.png">
+                            <img src="/etravel/public/images/edit-all.png">
                         </div>
                     </div>
 
@@ -122,12 +122,12 @@
                                 </div>
                             </div>
                             <div class="editBtnGroup">
-                                <img @click="delFlight(flight.id);" src="./../../images/rush-icon.png">
-                                <img @click="editFlightShow(index);" src="./../../images/edit-all.png">
+                                <img @click="delFlight(flight.id);" src="/etravel/public/images/rush-icon.png">
+                                <img @click="editFlightShow(index);" src="/etravel/public/images/edit-all.png">
                             </div>
                         </div>
                         <div class="dataBankAddBtn" @click="newFlightShow();">
-                            <img src="./../../images/add_y.png">
+                            <img src="/etravel/public/images/add_y.png">
                         </div>
 
                     </div>
@@ -163,13 +163,13 @@
                                     </div>
                                 </div>
                                 <div class="editBtnGroup">
-                                    <img @click="delHotel(hotel.id);" src="./../../images/rush-icon.png">
-                                    <img @click="editHotelShow(index);" src="./../../images/edit-all.png">
+                                    <img @click="delHotel(hotel.id);" src="/etravel/public/images/rush-icon.png">
+                                    <img @click="editHotelShow(index);" src="/etravel/public/images/edit-all.png">
                                 </div>
                             </div>
                         </div>
                         <div class="dataBankAddBtn" @click="addNewHotelShow();">
-                            <img src="./../../images/add_y.png">
+                            <img src="/etravel/public/images/add_y.png">
                         </div>
 
                     </div>
@@ -191,13 +191,13 @@
                                     <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="leadTeacher.duty"></div>
                                 </div>
                                 <div class="editBtnGroup">
-                                    <img @click="delLeadTeacher(leadTeacher.id);" src="./../../images/rush-icon.png">
-                                    <img @click="editLeadTeacherShow(index);" src="./../../images/edit-all.png">
+                                    <img @click="delLeadTeacher(leadTeacher.id);" src="/etravel/public/images/rush-icon.png">
+                                    <img @click="editLeadTeacherShow(index);" src="/etravel/public/images/edit-all.png">
                                 </div>
                             </div>
                         </div>
                         <div class="dataBankAddBtn" @click="addNewLeadTeacherShow()">
-                            <img src="./../../images/add_y.png">
+                            <img src="/etravel/public/images/add_y.png">
                         </div>
                         
                     </div>
@@ -215,7 +215,7 @@
                             </div>
                         </div>
                         <div class="dataBankAddBtn" @click="editBadWeatherShow()">
-                            <img src="./../../images/edit-all.png">
+                            <img src="/etravel/public/images/edit-all.png">
                         </div>
                     </div>
 

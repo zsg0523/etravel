@@ -36,7 +36,7 @@
 	<div style="width:100%">
 	    <div class="right_title">
 		    <div class="title_icon" @click="$router.push('/study/dataBankStudySheet/'+sessionStorage.routeId)">
-		        <img src="./../../images/back.png">
+		        <img src="/etravel/public/images/back.png">
 		    </div>
 		    工作纸
 		</div>
@@ -57,9 +57,9 @@
 		                <div class="item_title">
 		                    设置问题{{index+1}}
 		                    <div class="fr item_title_icon">
-		                    	<img @click="addNewSheetInfoShow()" src="./../../images/appointAdd.png">
-		                        <img @click="editSheetInfoShow(index)" src="./../../images/edit.png">
-		                        <img @click="delSheetInfo(sheetInfo.id)" src="./../../images/dele.png">
+		                    	<img @click="addNewSheetInfoShow()" src="/etravel/public/images/appointAdd.png">
+		                        <img @click="editSheetInfoShow(index)" src="/etravel/public/images/edit.png">
+		                        <img @click="delSheetInfo(sheetInfo.id)" src="/etravel/public/images/dele.png">
 		                    </div>
 		                </div>
 		                <div><input class="item_input_sheetInfo" type="text" disabled="disabled" :value="sheetInfo.content"></div>

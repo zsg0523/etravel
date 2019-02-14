@@ -46,12 +46,12 @@
                 </div>
             </div>
             <div class="editBtnGroup">
-                <img @click="delPhone(phone.id);" src="./../../images/rush-icon.png">
-                <img @click="editPhoneShow(index);" src="./../../images/edit-all.png">
+                <img @click="delPhone(phone.id);" src="/etravel/public/images/rush-icon.png">
+                <img @click="editPhoneShow(index);" src="/etravel/public/images/edit-all.png">
             </div>
         </div>
         <div class="dataBankAddBtn" @click="addNewPhoneShow();">
-            <img src="./../../images/add_y.png">
+            <img src="/etravel/public/images/add_y.png">
         </div> 
   		<van-popup v-model="isNewPhoneShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
