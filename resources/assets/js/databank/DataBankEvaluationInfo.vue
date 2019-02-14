@@ -1,6 +1,6 @@
 <style>
 	.dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
-    .pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
+    .pane_content_eval{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
     
     .right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;}
     .title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;}
@@ -8,10 +8,13 @@
 
     .form_content{width: 94%;min-height: 150px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
 
-    .form_item_evaluationInfo{width: 100%;min-height:100px;}
-    .form_item_evaluationInfo>div{width: 96%;min-height: 45px;}
+    .form_item_evaluationInfo{width: 100%;min-height:50px;}
+    .form_item_evaluationInfo>div{width: 96%;min-height: 35px;}
 
-    .item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;}
+    .item_area_eval{width:100%;min-height:40px;border-radius: 8px;resize:none;line-height:38px;font-size: 14px;outline: none;overflow: hidden;padding: 0 10px;}
+    select{width:100%;min-height:40px;border-radius: 8px;line-height:38px;font-size: 14px;outline: none;overflow: hidden;padding: 0 10px;}
+    option{ border:1px solid #CCC;border-radius: 8px;background: #fff;}
+    option:hover{background-color: #ffde01;  }
 
     .active{font-size: 18px;}
 
@@ -37,16 +40,16 @@
             <div class="title_icon" @click="$router.push('/topic/dataBankEvaluation')">
                 <img src="/etravel/public/images/back.png">
             </div>
-            在飞机上
+            {{eval.title}}
         </div>
 
         <div class="dataBank_input_form disflex">
-            <div class="pane_content">
+            <div class="pane_content_eval">
                 <div class="form_content disflex"  v-for="(evaluationInfo,index) in evaluationInfos">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">题目{{index+1}}</div>
+                        <div class="item_title">选项{{index+1}}<span class="fr">类型:{{evaluationInfo.type}}</span></div>
                         <div>
-                            <textarea class="item_area" placeholder="守则详情" disabled="disabled"  :value="evaluationInfo.content"></textarea>
+                            <textarea class="item_area_eval" placeholder="选项详情" disabled="disabled"  :value="evaluationInfo.content"></textarea>
                         </div>
                     </div>
                     <div class="editBtnGroup">
@@ -65,7 +68,16 @@
                     <div class="form_item_evaluationInfo">
                         <div class="item_title">详情</div>
                         <div>
-                            <textarea class="item_area" placeholder="守则详情"></textarea>
+                            <textarea class="item_area_eval" placeholder="选项详情" v-model="newEvaluationInfo.content"></textarea>
+                        </div>
+                    </div>
+                    <div class="form_item_evaluationInfo">
+                        <div class="item_title">选项类型</div>
+                        <div>
+                            <select id="edTypeId" v-model="newEvaluationInfo.type">
+                                <option value="">--请选择--</option>
+                                <option v-for="item in optList">{{ item }}</option>
+                            </select>
                         </div>
                     </div>
                     <div class="issure">
@@ -78,9 +90,18 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">守则详情</div>
+                        <div class="item_title">选项详情</div>
                         <div>
-                            <textarea class="item_area" placeholder="守则详情"></textarea>
+                            <textarea class="item_area_eval" placeholder="选项详情" v-model="edEvaluationInfo.content"></textarea>
+                        </div>
+                    </div>
+                    <div class="form_item_evaluationInfo">
+                        <div class="item_title">选项类型</div>
+                        <div>
+                            <select id="edTypeId" v-model="edEvaluationInfo.type">
+                                <option value="">--请选择--</option>
+                                <option v-for="item in optList">{{ item }}</option>
+                            </select>
                         </div>
                     </div>
                     <div class="issure">
@@ -97,6 +118,18 @@
   		data() {
             return {
                 evaluationInfos:[],
+                eval:'',
+                optList: ['1', '2', '3','4','5'],
+                newEvaluationInfo:{
+                    content:'',
+                    type:'',
+                },
+                edEvaluationInfo:{
+                    id:'',
+                    type:'',
+                    content:'',
+                    index:'',
+                },
 	        	isNewEvaluationInfoShow:false,
 	        	isEditEvaluationInfoShow:false,
             }
@@ -106,15 +139,16 @@
         },
         methods:{
             getEvaluationInfos(){
-                // 获取题目详情
-                this.$get(this.$config+'/api/evaluations/'+sessionStorage.actTravelId,
+                // 获取选项详情
+                this.$get(this.$config+'/api/evaluationCategories/'+this.$route.params.id+'?include=evaluations',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.evaluationInfos=res.data.data;
+                    this.eval=res.data;
+                    this.evaluationInfos=res.data.evaluations.data;
                 }).catch(err => {
                     this.$toast('获取失败');
                     console.log(err);
@@ -124,13 +158,84 @@
                 this.isNewEvaluationInfoShow=true;
             },
             addNewEvaluationInfo(){
+                // 新增选项
+                this.$post('/api/evaluationCategories/'+this.$route.params.id+'/evaluations',this.newEvaluationInfo,
+                {
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    }
+                }).then(res => {
+                    // console.log(res.data);
+                    this.$toast('添加成功');
+                    this.getEvaluationInfos();
+                    this.isNewEvaluationInfoShow=false;
+                    this.newEvaluationInfo.content='';
+                    this.newEvaluationInfo.type='';
+                }).catch(err => {
+                    this.$toast('添加失败');
+                    console.log(err)
+                });
             },
             editEvaluationInfoShow(index){
+                this.edEvaluationInfo.id=this.evaluationInfos[index].id;
+                this.edEvaluationInfo.type=this.evaluationInfos[index].type;
+                this.edEvaluationInfo.content=this.evaluationInfos[index].content;
+                this.edEvaluationInfo.index=index;
                 this.isEditEvaluationInfoShow=true;
             },
             editEvaluationInfo(){
+                // 修改选项信息/api/evaluationCategories/1/evaluations/51
+                this.$ajax({
+                    method: 'PATCH',
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    },
+                    data:{
+                        type:this.edEvaluationInfo.type,
+                        content:this.edEvaluationInfo.content,    
+                    },
+                    url: '/api/evaluationCategories/'+this.$route.params.id+'/evaluations/'+this.edEvaluationInfo.id,
+                }).then(res => {
+                    if(res.status==200){
+                        this.evaluationInfos[this.edEvaluationInfo.index].type=this.edEvaluationInfo.type;
+                        this.evaluationInfos[this.edEvaluationInfo.index].content=this.edEvaluationInfo.content;
+                        this.$toast('修改成功');
+                        this.isEditEvaluationInfoShow=false;    
+                    }else{
+                        this.$toast('修改失败');
+                    }
+                }).catch(err => {
+                    this.$toast('修改失败');
+                    console.log(err)
+                });
             },
             delEvaluationInfo(evaluationInfoId){
+                // 删除行程
+                this.$dialog.confirm({
+                    title: '删除选项',
+                    message: '是否删除该选项'
+                }).then(() => {
+                    this.$ajax({
+                        method: 'DELETE',
+                        headers: {
+                            "Authorization": 'Bearer '+sessionStorage.token,
+                        },
+                        url: '/api/evaluationCategories/'+this.$route.params.id+'/evaluations/'+evaluationInfoId,
+                    }).then(res => {
+                        // console.log(res);
+                        if(res.status==204){
+                            this.getEvaluationInfos();
+                            this.$toast('删除成功');
+                        }else{
+                            this.$toast('删除失败');
+                        }
+                    }).catch(err => {
+                        this.$toast('删除失败');
+                        console.log(err)
+                    });
+                }).catch(err => {
+
+                });
             },
 
         },

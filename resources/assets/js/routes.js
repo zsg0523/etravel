@@ -44,6 +44,33 @@ const router = new VueRouter({
             ],
         },
         {
+            path: '/personal',
+            name: 'personal',
+            component: Vue.component( 'personal', require( './personal/Personal.vue' ) ),
+            children:[
+                {
+                    path: '/personalInfo',
+                    name: 'personalInfo',
+                    component: Vue.component( 'personalInfo', require( './personal/PersonalInfo.vue' ) ),
+                },
+                {
+                    path: '/personalSetting',
+                    name: 'personalSetting',
+                    component: Vue.component( 'personalSetting', require( './personal/PersonalSetting.vue' ) ),
+                },
+                {
+                    path: '/personalCoin',
+                    name: 'personalCoin',
+                    component: Vue.component( 'personalCoin', require( './personal/PersonalCoin.vue' ) ),
+                },
+                {
+                    path: '/personalInformation',
+                    name: 'personalInformation',
+                    component: Vue.component( 'personalInformation', require( './personal/PersonalInformation.vue' ) ),
+                },
+            ],
+        },
+        {
             path: '/dataBank',
             name: 'dataBank',
             component: Vue.component( 'dataBank', require( './databank/DataBank.vue' ) ),

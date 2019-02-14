@@ -23,10 +23,10 @@
 	        <div class="letter disflex"><img src="/etravel/public/images/letter.png"></div>
 
 	        <div class="person_icon disflex" v-if="userInfo.avatar">
-	        	<img :src="userInfo.avatar">
+	        	<img :src="userInfo.avatar" @click="$router.push('/personalInfo')">
 	        </div>
 	        <div class="person_icon disflex" v-else>
-				<img src="/etravel/public/images/photo.png">
+				<img src="/etravel/public/images/photo.png" @click="$router.push('/personalInfo')">
 	        </div>
 	        	
 	        <div class="info disflex">
