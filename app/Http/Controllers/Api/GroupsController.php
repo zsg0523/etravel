@@ -8,6 +8,7 @@ use App\Models\Group;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\GroupRequest;
 use App\Transformers\GroupTransformer;
+use App\Transformers\UserTransformer;
 
 class GroupsController extends Controller
 {
@@ -40,6 +41,32 @@ class GroupsController extends Controller
         }
         
     	return $this->response->item($group, new GroupTransformer());
+    }
+
+    /** [userGroup 添加用户并分组] */
+    public function userGroup(Request $request,User $user, Group $group)
+    {
+        // 验证用户数据
+        $validateData = $request->validate([
+            'name' => 'required|between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name',
+            'email' => 'email|unique:users,email',
+            'phone' => 'required|unique:users,phone',
+            'add_by' => 'required'
+        ]);
+        // 添加用户
+        $user->fill($request->all());
+        $user->save();
+        
+        // 添加用户与旅游团关联关系
+        $group->fill([
+            'user_id' => $user->id,
+            'travel_id' => $request->travel_id,
+            'student_number' => $request->student_number,
+            'class' => $request->class,
+        ]);
+        $group->save();
+
+        return $this->response->item($group, new GroupTransformer())->setStatusCode(201);
     }
 
     /** [store 新建分组] */

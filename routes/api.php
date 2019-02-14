@@ -50,6 +50,12 @@ $api->version('v1', [
 		$api->group(['middleware' => 'api.auth'], function($api) {
 			// 用户列表
 			$api->get('userlist','UsersController@index')->name('api.user.index');
+			// 管理员添加用户列表
+			$api->get('users/{user}/userList', 'UsersController@userList')->name('api.user.userList');
+			// 用户 ID 查询列表
+			$api->get('users/{user}/userInfo', 'UsersController@userInfo')->name('api.user.userInfo');
+			// 当前管理员所属学校用户列表
+			$api->get('users/{user}/schoolUser', 'UsersController@schoolUser')->name('api.user.schoolUser');
 			// 当前登录用户信息
 			$api->get('user','UsersController@me')->name('api.user.show');
 			// 访问图片资源
@@ -193,6 +199,8 @@ $api->version('v1', [
 			$api->patch('users/{user}/travels/{travel}/groups/{group}','GroupsController@update')->name('api.group.update');
 			// 删除分组安排
 			$api->delete('users/{user}/travels/{travel}/groups/{group}','GroupsController@destroy')->name('api.group.destroy');
+			// 添加用户并且分组
+			$api->post('userGroup', 'GroupsController@userGroup');
 
 
 			// 所有行程安排

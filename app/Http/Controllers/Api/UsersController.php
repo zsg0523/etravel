@@ -81,6 +81,25 @@ class UsersController extends Controller
     }
 
 
+    /** [userList 管理员平台添加用户列表] */
+    public function userList(User $user)
+    {
+        return $this->response->collection($user->where('add_by', $user->id)->get(), new UserTransformer());
+    }
+
+    /** [userInfo 查询某 ID 用户信息] */
+    public function userInfo(User $user)
+    {
+        return $this->response->item($user, new UserTransformer());
+    }
+
+    /** [schoolUser 查询 用户 所有学校的学生] */
+    public function schoolUser(User $user)
+    {
+        // return $this->response->collection();
+    }
+
+
 
 
 

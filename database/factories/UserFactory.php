@@ -26,5 +26,6 @@ $factory->define(App\Models\User::class, function (Faker $faker) {
         'created_at' => $now,
         'updated_at' => $now,
         'last_actived_at' => $now,
+        'add_by' => 1,
     ];
 });
