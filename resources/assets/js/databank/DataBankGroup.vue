@@ -146,7 +146,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
   export default {
         data() {
             return {
@@ -284,9 +283,4 @@
             }
         }
   }
-=======
-    export default {
-
-    }
->>>>>>> 989ac8774cb9944081eba99f0300dcaf0bafe766
 </script>

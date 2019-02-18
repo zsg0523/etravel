@@ -32660,9 +32660,300 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 /***/ }),
 /* 197 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unexpected token (149:0)\n\n\u001b[0m \u001b[90m 147 | \u001b[39m\u001b[90m//\u001b[39m\n \u001b[90m 148 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 149 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m     | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 150 | \u001b[39m  \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m {\n \u001b[90m 151 | \u001b[39m        data() {\n \u001b[90m 152 | \u001b[39m            \u001b[36mreturn\u001b[39m {\u001b[0m\n");
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            groups: '',
+            // newGroup:{
+            //     group_room:'',
+            //     group_class:'',
+            //     group_name:'',
+            //     group_duty:'',
+            // },
+            edGroup: {
+                group_room: '',
+                group_class: '',
+                group_name: '',
+                group_duty: '',
+                id: '',
+                user_id: '',
+                index: ''
+            },
+            isNewGroupShow: false,
+            isEditGroupShow: false
+        };
+    },
+
+    mounted: function mounted() {
+        this.getGroups();
+    },
+    methods: {
+        getGroups: function getGroups() {
+            var _this = this;
+
+            // 获取分组详情
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/groups?include=user.student', {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this.groups = res.data.data;
+            }).catch(function (err) {
+                _this.$toast('获取失败');
+                console.log(err);
+            });
+        },
+
+        // addGroupShow(){
+        //     this.isNewGroupShow=true;
+        // },
+        // addGroup(){
+        //     //新增房间api/users/:user/travels/:travel/groups
+        //      this.$post(this.$config+'/ap/users'+sessionStorage.user_id+'/travels/'+sessionStorage.actTravelId+'/groups',this.newGroup,
+        //     {
+        //         headers: {
+        //             "Authorization": 'Bearer '+sessionStorage.token,
+        //         }
+        //     }).then(res => {
+        //         // console.log(res.data);
+        //         this.$toast('添加成功');
+        //         this.getGroups();
+        //         this.isNewGroupShow=false;
+        //         this.newGroup.group_room='';
+        //         this.newGroup.group_class='';
+        //         this.newGroup.group_name='';
+        //         this.newGroup.group_duty='';
+        //     }).catch(err => {
+        //         this.$toast('添加失败');
+        //         console.log(err)
+        //     });
+        // },
+        editGroupShow: function editGroupShow(index) {
+            this.edGroup.id = this.groups[index].id;
+            this.edGroup.group_name = this.groups[index].user.name;
+            this.edGroup.group_class = this.groups[index].user.student.class;
+            this.edGroup.group_room = this.groups[index].room;
+            this.edGroup.group_duty = this.groups[index].duty;
+            this.edGroup.user_id = this.groups[index].user_id;
+            this.edGroup.index = index;
+            this.isEditGroupShow = true;
+        },
+        editGroup: function editGroup() {
+            var _this2 = this;
+
+            // 修改信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    room: this.edGroup.group_room,
+                    // class:this.edGroup.group_class,
+                    // name:this.edGroup.group_name,
+                    duty: this.edGroup.group_duty
+                },
+                // /api/users/:user/travels/:travel/groups/:group
+                url: this.$config + '/api/users/' + this.edGroup.user_id + '/travels/' + sessionStorage.actTravelId + '/groups/' + this.edGroup.id
+            }).then(function (res) {
+                if (res.status == 200) {
+                    _this2.groups[_this2.edGroup.index].user.name = _this2.edGroup.group_name;
+                    _this2.groups[_this2.edGroup.index].user.student.class = _this2.edGroup.group_class;
+                    _this2.groups[_this2.edGroup.index].room = _this2.edGroup.group_room;
+                    _this2.groups[_this2.edGroup.index].duty = _this2.edGroup.group_duty;
+                    _this2.$toast('修改成功');
+                    _this2.isEditGroupShow = false;
+                } else {
+                    _this2.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this2.$toast('修改失败');
+                console.log(err);
+            });
+        },
+        delGroup: function delGroup(userId, groupId) {
+            var _this3 = this;
+
+            // 删除分房信息
+            this.$dialog.confirm({
+                title: '删除分组信息',
+                message: '是否删除该分组'
+            }).then(function () {
+                _this3.$ajax({
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: _this3.$config + '/api/users/' + userId + '/travels/' + sessionStorage.actTravelId + '/groups/' + groupId
+                }).then(function (res) {
+                    // console.log(res);
+                    if (res.status == 204) {
+                        _this3.getGroups();
+                        _this3.$toast('删除成功');
+                    } else {
+                        _this3.$toast('删除失败');
+                    }
+                }).catch(function (err) {
+                    _this3.$toast('删除失败');
+                    console.log(err);
+                });
+            }).catch(function (err) {});
+        }
+    }
+});
 
 /***/ }),
 /* 198 */
