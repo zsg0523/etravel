@@ -2,15 +2,15 @@
     .personal_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
     .pane_content_information{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
     
-    .form_content{width: 94%;min-height: 100px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
+    .form_content_infomation{width: 94%;min-height: 80px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
 
-    .form_item_information{width: 100%;height:auto;padding: 10px 0; border-bottom: 1px solid #e3e3e3;     align-content: flex-start;
+    .form_item_informations{width: 100%;height:auto;padding: 10px 0; border-bottom: 1px solid #e3e3e3;     align-content: flex-start;
         -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row;}
 
-    .form_item_information>div{width: 96%;}
-    .form_item_information>.informationl{width: 10%;display: inline-block;margin-right: 10px;}
+    .form_item_informations>div{width: 96%;}
+    .form_item_informations>.informationl{width: 10%;display: inline-block;margin-right: 10px;}
     .informationl>img{width: 100%;}
-    .form_item_information>.informationr{width: 90%;overflow: hidden;}
+    .form_item_informations>.informationr{width: 90%;overflow: hidden;}
 
     .item_title_information{font-size: 18px;}
     .item_title_information>span{float: right;width: 30px;}
@@ -21,6 +21,12 @@
 
     .active{font-size: 18px;}        
 
+    .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;}
+    .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
+
+    .editBoxContent .form_item_info{width: 100%;text-align: center;padding: 10px 0; border-bottom: 1px solid #e3e3e3; }
+    .editBoxContent .form_item_contact{width: 100%;text-align: left;padding: 10px 0; }
+
     .van-dialog{width:50%;}
 
 </style>
@@ -29,11 +35,11 @@
     <div style="width:100%;">
         <div class="personal_input_form disflex">
             <div class="pane_content_information">
-                <div class="form_content disflex">
-                    <div class="form_item_information disflex" v-for="(information,index) in informations">
-                        <div class="informationl"><img src="./../../images/information.png" /></div>
+                <div class="form_content_infomation disflex">
+                    <div class="form_item_informations disflex" v-for="(information,index) in informations">
+                        <div class="informationl"><img src="/etravel/public/images/information.png" /></div>
                         <div class="informationr">
-                            <div class="item_title_information">系统消息<span  @click="changeShow(index)"><img src="./../../images/down.png"></span></div>
+                            <div class="item_title_information">系统消息<span  @click="changeShow(index)"><img src="/etravel/public/images/down.png"></span></div>
                             <div class="item_content_information">{{information.data.travel_name}}</div>
                         </div>
                     </div>
@@ -43,9 +49,11 @@
         <van-popup v-model="isInformationShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item_information">
+                    <div class="form_item_info">
                         <div class="item_title">消息详情</div>
-                        <div>{{showInformation.travel_name}}</div>
+                    </div>
+                    <div class="form_item_contact">
+                        <div style="text-indent: 2em;">{{showInformation.travel_name}}</div>
                     </div>
                 </div>
             </div>
@@ -60,6 +68,7 @@
                 informations:[],
                 showInformation:{
                     travel_name:'',
+                    index:'',
                 },
                 isInformationShow:false,
              }
@@ -85,7 +94,8 @@
                 });
             },
             changeShow(index){
-                this.showInformation.travel_name=this.informations[index].travel_name;
+                this.showInformation.travel_name=this.informations[index].data.travel_name;
+                this.showInformation.index=index;
                 this.isInformationShow=true;
             },
         }
