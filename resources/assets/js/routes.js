@@ -174,8 +174,6 @@ const router = new VueRouter({
                     name: 'dataBankLuggageList',
                     component: Vue.component( 'dataBankLuggageList', require( './databank/DataBankLuggageList.vue' ) ),
                 },
-
-
                 {
                     path: '/topic',
                     name: 'topic',

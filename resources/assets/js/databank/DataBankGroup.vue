@@ -3,7 +3,7 @@
     .dataBank_input_form>table{margin-top: 20px;width: 96%;}
 
     .dataBank_input_form table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;}
-    .dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;}
+    .dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;width: 120px;}
     .dataBank_input_form thead{background-color: #ffde01;}
     .dataBank_input_form thead th{text-align: center;}
     .dataBank_input_form td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;}
@@ -29,11 +29,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
+                    <td>编号</td>
+                    <td>班级</td>
+                    <td>学生姓名</td>
+                    <td>房号</td>
+                    <td>职责</td>
                     <td>
                         <div class="editIcon"><img src="/etravel/public/images/edit.png"></div>
                         <div class="editIcon"><img src="/etravel/public/images/appointAdd.png"></div>
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-  export default {
+    export default {
 
-  }
+    }
 </script>
