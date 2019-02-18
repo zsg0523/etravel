@@ -1,6 +1,6 @@
 <style>
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
-    .pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
+    .pane_content_rule{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
 
     .form_content_rules{width: 94%;min-height: 110px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
 
@@ -32,7 +32,7 @@
 
 <template>
     <div class="dataBank_input_form disflex" style="position:relative;">
-        <div class="pane_content" >
+        <div class="pane_content_rule" >
             <div class="form_content_rules disflex">
                 <div class="form_item_rules"  v-for="(rule,index) in ruless">
                     <div class="item_title">准则{{index+1}}</div>
