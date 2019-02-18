@@ -51,10 +51,13 @@ class GroupsController extends Controller
             'name' => 'required|between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name',
             'email' => 'email|unique:users,email',
             'phone' => 'required|unique:users,phone',
+            'original_password' => 'required',
             'add_by' => 'required'
         ]);
+        // 加密明文密码
+        $validateData['password'] = bcrypt((string)$request->original_password);
         // 添加用户
-        $user->fill($request->all());
+        $user->fill($validateData);
         $user->save();
         
         // 添加用户与旅游团关联关系
