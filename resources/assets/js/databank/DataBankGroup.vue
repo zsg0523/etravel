@@ -4,6 +4,7 @@
 
     .dataBank_input_form table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;}
     .dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;}
+
     .dataBank_input_form thead{background-color: #ffde01;}
     .dataBank_input_form thead th{text-align: center;}
     .dataBank_input_form td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;}
@@ -145,6 +146,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
   export default {
         data() {
             return {
@@ -282,4 +284,9 @@
             }
         }
   }
+=======
+    export default {
+
+    }
+>>>>>>> 989ac8774cb9944081eba99f0300dcaf0bafe766
 </script>

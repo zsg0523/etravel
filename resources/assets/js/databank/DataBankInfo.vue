@@ -51,9 +51,9 @@
                                 <div class="gather_info_title"><span>集合</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
-                                <div class="form_item">
+                                <div class="form_item" style="width:100%;">
                                     <div class="item_title">日期</div>
-                                    <div><input class="item_input" placeholder="日期" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
+                                    <div><input class="item_input" placeholder="日期" style="width:97%;" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
                                  </div>
                                 <div class="form_item" style="width:100%;height:120px;">
                                     <div class="item_title">详细地址</div>
@@ -68,9 +68,9 @@
                                 <div class="gather_info_title"><span>解散</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
-                                <div class="form_item">
+                                <div class="form_item" style="width:100%;">
                                     <div class="item_title">日期</div>
-                                    <div><input class="item_input"  placeholder="日期" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
+                                    <div><input class="item_input"  placeholder="日期" style="width:97%;" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
                                 </div>
                                 <div class="form_item" style="width:100%;height:120px;">
                                     <div class="item_title">地址</div>
@@ -178,13 +178,13 @@
                     <div role="tabpanel" class="tab-pane" id="leaderTeacher">
                         <div class="pane_content" v-for="(leadTeacher,index) in leadTeachers">
                             <div class="form_content disflex">
-                                <div class="form_item">
+                                <div class="form_item" style="width:100%;">
                                     <div class="item_title">老师姓名</div>
-                                    <div><input class="item_input" type="text" disabled="disabled" :value="leadTeacher.leader" ></div>
+                                    <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.leader" ></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item" style="width:100%;">
                                     <div class="item_title">老师电话</div>
-                                    <div><input class="item_input" type="text" disabled="disabled" :value="leadTeacher.phone" ></div>
+                                    <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.phone" ></div>
                                 </div>
                                 <div class="form_item" style="width:100%;">
                                     <div class="item_title">职责</div>
