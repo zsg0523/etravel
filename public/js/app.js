@@ -18256,6 +18256,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__http__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__config__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__config___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__config__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vant__ = __webpack_require__(301);
 
 
@@ -18268,7 +18269,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vant
 
 __webpack_require__(367);
 
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.$config = __WEBPACK_IMPORTED_MODULE_4__config__["a" /* default */];
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.$config = __WEBPACK_IMPORTED_MODULE_4__config__["default"];
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.sessionStorage = sessionStorage;
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.localStorage = localStorage;
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.$ajax = __WEBPACK_IMPORTED_MODULE_3__http__["a" /* default */];
@@ -41923,15 +41924,10 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 300 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, __webpack_exports__) {
 
 "use strict";
-
-
-// const baseUrl='http://www.bunchparty.com/etravel/public';//线上地址
-var baseUrl = 'http://etravel.test';
-// const baseUrl='';
-/* harmony default export */ __webpack_exports__["a"] = (baseUrl);
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/home/vagrant/code/etravel/resources/assets/js/config.js'");
 
 /***/ }),
 /* 301 */
