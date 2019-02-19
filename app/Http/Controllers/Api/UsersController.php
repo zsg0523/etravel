@@ -100,6 +100,29 @@ class UsersController extends Controller
     }
 
 
+    /** [information 管理员编辑所有用户信息] */
+    public function information(UserRequest $request, User $user)
+    {   
+        $manager = $this->user();
+
+        if ( ! $manager->can('manage_contents') ) {
+            return $this->response->errorBadRequest();
+        }
+
+        $attributes = $request->only(['name','email','introduction']);
+
+        if($request->avatar_image_id) {
+            $image = Image::find($request->avatar_image_id);
+
+            $attributes['avatar'] = $image->path;
+        }
+
+        $user->update($attributes);
+
+        return $this->response->item($user, new UserTransformer());
+    }
+
+
 
 
 

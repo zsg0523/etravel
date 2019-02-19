@@ -62,6 +62,8 @@ $api->version('v1', [
 			$api->post('images','ImagesController@store')->name('api.images.store');
 			// 编辑用户资料
 			$api->patch('user','UsersController@update')->name('api.user.update');
+			// 管理员编辑用户资料
+			$api->patch('users/{user}/information', 'UsersController@information')->name('api.users.information');
 			// 用户通知列表
 			$api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');
 			// 通知统计

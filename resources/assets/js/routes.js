@@ -170,9 +170,22 @@ const router = new VueRouter({
                     component: Vue.component( 'dataBankLocalCulture', require( './databank/DataBankLocalCulture.vue' ) ),
                 },
                 {
-                    path: '/dataBankLuggageList',
-                    name: 'dataBankLuggageList',
-                    component: Vue.component( 'dataBankLuggageList', require( './databank/DataBankLuggageList.vue' ) ),
+                    path: '/luggage',
+                    name: 'luggage',
+                    component: Vue.component( 'luggage', require( './components/Luggage.vue' ) ),
+                    redirect: '/luggage/dataBankLuggageList',
+                    children:[
+                        {
+                            path: '/luggage/dataBankLuggageList',
+                            name: 'dataBankLuggageList',
+                            component: Vue.component( 'dataBankLuggageList', require( './databank/dataBankLuggageList.vue' ) ),
+                        },
+                        {
+                            path: '/luggage/dataBankLuggageListInfo/:id',
+                            name: 'dataBankLuggageListInfo',
+                            component: Vue.component( 'dataBankLuggageListInfo', require( './databank/dataBankLuggageListInfo.vue' ) ),
+                        },
+                    ],
                 },
                 {
                     path: '/topic',
