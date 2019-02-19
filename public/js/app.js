@@ -26743,7 +26743,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.tab-pane{position: relative;\n}\n.pane_content{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info{width:100%;height: auto;\n}\n.gather_info_title{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item{width: 50%;height:100px;\n}\n.form_item>div{width: 96%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.tab-pane{position: relative;\n}\n.pane_content_info{width:70%;margin-left: 15%;height:auto;margin: 0 auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info{width:100%;height: auto;\n}\n.gather_info_title{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item{width: 50%;height:100px;\n}\n.form_item>div{width: 96%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
 
 // exports
 
@@ -27794,7 +27794,7 @@ var render = function() {
                 attrs: { role: "tabpanel", id: "gather" }
               },
               [
-                _c("div", { staticClass: "pane_content" }, [
+                _c("div", { staticClass: "pane_content_info" }, [
                   _vm._m(1),
                   _vm._v(" "),
                   _c("div", { staticClass: "form_content disflex" }, [
@@ -27892,7 +27892,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "pane_content" }, [
+                _c("div", { staticClass: "pane_content_info" }, [
                   _vm._m(2),
                   _vm._v(" "),
                   _c("div", { staticClass: "form_content disflex" }, [
@@ -28019,7 +28019,7 @@ var render = function() {
               },
               [
                 _vm._l(_vm.flights, function(flight, index) {
-                  return _c("div", { staticClass: "pane_content" }, [
+                  return _c("div", { staticClass: "pane_content_info" }, [
                     _c("div", { staticClass: "gather_info" }, [
                       _c("div", { staticClass: "gather_info_title" }, [
                         flight.is_return
@@ -28169,7 +28169,7 @@ var render = function() {
               },
               [
                 _vm._l(_vm.hotels, function(hotel, index) {
-                  return _c("div", { staticClass: "pane_content" }, [
+                  return _c("div", { staticClass: "pane_content_info" }, [
                     _c("div", { staticClass: "form_content disflex" }, [
                       _c(
                         "div",
@@ -28326,7 +28326,7 @@ var render = function() {
               },
               [
                 _vm._l(_vm.leadTeachers, function(leadTeacher, index) {
-                  return _c("div", { staticClass: "pane_content" }, [
+                  return _c("div", { staticClass: "pane_content_info" }, [
                     _c("div", { staticClass: "form_content disflex" }, [
                       _c(
                         "div",
@@ -28446,7 +28446,7 @@ var render = function() {
                 attrs: { role: "tabpanel", id: "heavyWeather" }
               },
               [
-                _c("div", { staticClass: "pane_content" }, [
+                _c("div", { staticClass: "pane_content_info" }, [
                   _c("div", { staticClass: "form_content disflex" }, [
                     _c(
                       "div",
@@ -38280,7 +38280,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_journeyInfo{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journeyInfo{width:94%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journeyInfo>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_localculture{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_journeyInfo{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journeyInfo{width:94%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journeyInfo>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
 
 // exports
 
@@ -38552,7 +38552,7 @@ var render = function() {
       _c("div", { staticClass: "dataBank_input_form disflex" }, [
         _c(
           "div",
-          { staticClass: "pane_content" },
+          { staticClass: "pane_content_localculture" },
           _vm._l(_vm.locals, function(local, index) {
             return _c("div", { staticClass: "form_content disflex" }, [
               _c("div", { staticClass: "form_item_journeyInfo" }, [

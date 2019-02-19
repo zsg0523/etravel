@@ -1,6 +1,6 @@
 <style>
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
-    .pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
+    .pane_content_localculture{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
     
     .right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;}
     .title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;}
@@ -33,7 +33,7 @@
 <template>
     <div style="width:100%;">
         <div class="dataBank_input_form disflex">
-            <div class="pane_content">
+            <div class="pane_content_localculture">
                 <div class="form_content disflex" v-for="(local,index) in locals">
                     <div class="form_item_journeyInfo">
                         <div class="item_title">标题</div>
