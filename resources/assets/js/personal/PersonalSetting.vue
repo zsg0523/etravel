@@ -13,8 +13,9 @@
 
     .active{font-size: 18px;}   
     .van-dialog{width:50%;}
-    
-
+    .password_btn{width: 100%;margin-left: 20%;}
+    .cancel,.edit{height:50px;display: inline;}
+    .cancel>button,.edit>button{width:15%;height:50px;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;}
 </style>
 
 <template>
@@ -39,6 +40,14 @@
                         <div>
                             <input type="password" placeholder="请输入确认密码" disabled="disabled"/>
                         </div>
+                    </div>
+                </div>
+                <div class="password_btn">
+                    <div class="cancel">
+                        <button>取消</button>
+                    </div>
+                    <div class="edit">
+                        <button>保存</button>
                     </div>
                 </div>
             </div>       

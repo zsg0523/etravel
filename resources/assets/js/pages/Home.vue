@@ -32,9 +32,12 @@
 	.del_icon{width: 60px;height: 60px;position: absolute;right: 50px;top:50px;z-index: 5;}
 	.del_icon>img{width: 60px;height: 60px;}
     
-    .addNewTravel{width: 400px;min-height:260px;background-color: #fff;border-radius: 15px;box-shadow: 0 0 10px #ccc;flex-direction: column;justify-content: center;align-items: center;}
-    .addNewTravel>input{width:300px;height:50px;margin-top:20px;border-radius: 8px;}
+    .addNewTravel{width: 600px;min-height:260px;background-color: #fff;border-radius: 15px;box-shadow: 0 0 10px #ccc;flex-direction: column;justify-content: center;align-items: center;}
     .addNewTravel>button{width:60%;height:50px;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;margin-top: 20px;margin-bottom: 20px;}
+    .form_item{width: 90%;min-height:100px;}
+    .form_item>div{height: 45px;line-height: 45px;}
+    .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
+
     .van-dialog{width:50%;}
 </style>
 
@@ -70,7 +73,7 @@
     						<img src="/etravel/public/images/sent.png">
     						<span>已发布！</span>
     					</div>
-                        <div class="project_type disflex fr" v-else>
+                        <div class="project_type disflex fr" v-else> 
                             <img src="/etravel/public/images/unsent.png">
                             <span>未发布！</span>
                         </div>
@@ -92,18 +95,48 @@
     	</div> -->
         <van-popup v-model="isPopupShow" :overlay="true" style="border-radius: 15px;">
             <div class="addNewTravel disflex" >
-                <input type="text" name="" v-model="newTravel.travel_name" placeholder="项目名称">
-                <input type="text" name="" v-model="newTravel.travel_at" placeholder="出行时间">
-                <input type="text" name="" v-model="newTravel.travel_introduction" placeholder="项目简介">
+                <div class="form_item">
+                    <div class="item_title">项目名称</div>
+                    <div>
+                        <input class="item_input" placeholder="项目名称" type="text"  v-model="newTravel.travel_name">
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="item_title">出行时间</div>
+                    <div>
+                        <input class="item_input" placeholder="出行时间" type="text"  v-model="newTravel.travel_at">
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="item_title">项目简介</div>
+                    <div>
+                        <input class="item_input" placeholder="项目简介" type="text"  v-model="newTravel.travel_introduction">
+                    </div>
+                </div>
                 <button @click="addNewTravel()">确定</button>
             </div>
 
         </van-popup>
         <van-popup v-model="isEditPopupShow" :overlay="true" style="border-radius: 15px;">
             <div class="addNewTravel disflex" >
-                <input type="text" name="" v-model="edTravel.travel_name" placeholder="项目名称">
-                <input type="text" name="" v-model="edTravel.travel_at" placeholder="出行时间">
-                <input type="text" name="" v-model="edTravel.travel_introduction" placeholder="项目简介">
+                <div class="form_item">
+                    <div class="item_title">项目名称</div>
+                    <div>
+                        <input class="item_input" placeholder="项目名称" type="text"  v-model="edTravel.travel_name">
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="item_title">出行时间</div>
+                    <div>
+                        <input class="item_input" placeholder="出行时间" type="text"  v-model="edTravel.travel_at">
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="item_title">项目简介</div>
+                    <div>
+                        <input class="item_input" placeholder="项目简介" type="text"  v-model="edTravel.travel_introduction">
+                    </div>
+                </div>
                 <button @click="editTravel()">确定</button>
             </div>
         </van-popup>
@@ -152,8 +185,8 @@
                     // console.log(this.travels);
                    
                 }).catch(err => {
-                    this.$toast('获取失败');
-                    this.$router.push('/');
+                    // this.$toast('获取失败');
+                    // this.$router.push('/');
                     console.log(err);
                 });
             },

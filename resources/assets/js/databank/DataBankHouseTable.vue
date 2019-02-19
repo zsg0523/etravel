@@ -6,8 +6,8 @@
     .dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;}
     .dataBank_input_form thead{background-color: #ffde01;}
     .dataBank_input_form td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;}
-    .form_item{width: 100%;min-height:100px;}
-    .form_item>div{height: 45px;line-height: 45px;}
+    .form_item_house{width: 100%;min-height:100px;}
+    .form_item_house>div{height: 45px;line-height: 45px;}
     .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
     .editIcon{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;}
     .editIcon:hover{cursor: pointer;}
@@ -47,32 +47,32 @@
                         <td>{{house.room}}</td>
                         <td>{{house.user.student.class}}</td>
                         <td>{{house.user.name}}</td>
-                        <td>
+                        <td width="100px">
                             <div class="editIcon"><img src="/etravel/public/images/edit.png" @click="editHouseShow(index);"></div>
-                            <div class="editIcon"><img src="/etravel/public/images/appointAdd.png" @click="addNewHouseShow();"></div>
-                            <div class="editIcon"><img src="/etravel/public/images/dele.png" @click="delHouse(house.id);"></div>
+                            <!-- <div class="editIcon"><img src="/etravel/public/images/appointAdd.png" @click="addNewHouseShow();"></div> -->
+                            <div class="editIcon"><img src="/etravel/public/images/dele.png" @click="delHouse(house.user_id,house.id);"></div>
                         </td>
                     </tr>
                    
                 </tbody>
             </table>   
         </div>
-        <van-popup v-model="isNewHouseShow" :overlay="true" style="border-radius: 15px;">
+       <!--  <van-popup v-model="isNewHouseShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item">
+                    <div class="form_item_house">
                         <div class="item_title">房间</div>
                         <div>
                             <input class="item_input" placeholder="房间编号" type="text"  v-model="newHouse.house_room">
                         </div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_house">
                         <div class="item_title">班级</div>
                         <div>
                             <input class="item_input" placeholder="班级" type="text"  v-model="newHouse.house_class">
                         </div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_house">
                         <div class="item_title">学生姓名</div>
                         <div>
                             <input class="item_input" placeholder="学生姓名" type="text"  v-model="newHouse.house_name">
@@ -83,23 +83,23 @@
                     </div>
                 </div>
             </div>
-        </van-popup>
+        </van-popup> -->
         <van-popup v-model="isEditHouseShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item">
+                    <div class="form_item_house">
                         <div class="item_title">房间</div>
                         <div>
                             <input class="item_input" placeholder="房间编号" type="text"  v-model="edHouse.house_room">
                         </div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_house">
                         <div class="item_title">班级</div>
                         <div>
                             <input class="item_input" placeholder="班级" type="text"  v-model="edHouse.house_class">
                         </div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_house">
                         <div class="item_title">学生姓名</div>
                         <div>
                             <input class="item_input" placeholder="学生姓名" type="text"  v-model="edHouse.house_name">
@@ -115,24 +115,24 @@
 </template>
 
 <script>
-  export default {
+    export default {
         data() {
             return {
                 houses:[],
-                newHouse:{
-                    house_number:'',
+                // newHouse:{
+                //     house_number:'',
+                //     house_class:'',
+                //     house_name:'',
+                // },
+                edHouse:{
+                    house_room:'',
                     house_class:'',
                     house_name:'',
-                },
-                edHouse:{
-                    edHouse_room:'',
-                    edHouse_class:'',
-                    edHouse_name:'',
                     id:'',
                     user_id:'',
                     index:'',
                 },
-                isNewHouseShow:false,
+                // isNewHouseShow:false,
                 isEditHouseShow:false,
             }
         },
@@ -156,27 +156,29 @@
                     console.log(err);
                 });
             },
-            addNewHouseShow(){
-                 this.isNewHouseShow=true;
-            },
-            addNewHouse(){
-                //新增房间
-                 this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',this.newHouse,
-                {
-                    headers: {
-                        "Authorization": 'Bearer '+sessionStorage.token,
-                    }
-                }).then(res => {
-                    // console.log(res.data);
-                    this.$toast('添加成功');
-                    this.getPromises();
-                    this.isNewHouseShow=false;
-                    this.newHouse.house_number='';
-                }).catch(err => {
-                    this.$toast('添加失败');
-                    console.log(err)
-                });
-            },
+            // addNewHouseShow(){
+            //      this.isNewHouseShow=true;
+            // },
+            // addNewHouse(){
+            //     //新增房间
+            //      this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',this.newHouse,
+            //     {
+            //         headers: {
+            //             "Authorization": 'Bearer '+sessionStorage.token,
+            //         }
+            //     }).then(res => {
+            //         // console.log(res.data);
+            //         this.$toast('添加成功');
+            //         this.getHouses();
+            //         this.isNewHouseShow=false;
+            //         this.newHouse.house_number='';
+            //         this.newHouse.house_class='';
+            //         this.newHouse.house_name='';
+            //     }).catch(err => {
+            //         this.$toast('添加失败');
+            //         console.log(err)
+            //     });
+            // },
             editHouseShow(index){
                 this.edHouse.id=this.houses[index].id;
                 this.edHouse.user_id=this.houses[index].user_id;
@@ -215,7 +217,7 @@
                     console.log(err)
                 });
             },
-            delHouse(houseId){
+            delHouse(userId,houseId){
                 // 删除分房信息
                 this.$dialog.confirm({
                     title: '删除分房表信息',
@@ -226,7 +228,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: this.$config+'/api/users/'+this.edHouse.user_id+'/travels/'+sessionStorage.actTravelId+'/groups/'+this.edHouse.id,
+                        url: this.$config+'/api/users/'+userId+'/travels/'+sessionStorage.actTravelId+'/groups/'+houseId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){

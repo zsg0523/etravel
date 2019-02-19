@@ -21,7 +21,7 @@
             </div>
             <div class="disflex login">
                 <div class="title tc">E-Travel平台</div>
-                <div><input type="text" v-model="loginName" placeholder="邮箱或手机号" ></div>
+                <div><input type="text" v-model="loginName" placeholder="手机号" ></div>
                 <div><input type="password" v-model="password" placeholder="密码" ></div>
                 <div style="height: 40px;">
                 	<a href="javascript:void(0);" @click="$router.push('/register')" class="fl">立即注册</a>
@@ -66,7 +66,7 @@
 					        	// console.log(res.data);
 					        	this.setUserInfo(res.data);
 					        	sessionStorage.setItem('userId', res.data.id);
-				            	this.$toast('密码正确');
+				            	// this.$toast('密码正确');
 				            	setTimeout(() => {
 					                this.$router.push("/home");      
 					            },1000);

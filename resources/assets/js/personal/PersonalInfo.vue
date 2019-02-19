@@ -3,7 +3,7 @@
     .pane_content_promise{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
     
     .right_title{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;}
-    .form_content{width: 94%;min-height: 150px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
+    .form_content_pe{width: 94%;min-height: 150px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
 
     .form_item_information{width: 100%;min-height:100px;}
     .form_item_information>div{width: 96%;min-height: 40px;}
@@ -54,7 +54,7 @@
         <div class="personal_input_form disflex">
             <div class="pane_content_promise">
 
-                <div class="form_content" id="view">
+                <div class="form_content_pe" id="view">
                     <div class="head_edit">
                         <div class="info_title">
                             <span>基本资料</span><hr />
@@ -66,7 +66,7 @@
                                 <img class="photo-circle" :src="personalInfos.avatar" />                                                            
                             </div>
                             <div class="photo"  v-else>
-                                <img class="photo-circle" src="./../../images/poto-icon.png" />                                                                               
+                                <img class="photo-circle" src="/etravel/public/images/poto-icon.png" />                                                                               
                             </div>
                             
                         </div>
@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <div class="personalEditBtn" @click="edInformationInfoShow()">
-		            <img src="./../../images/edit-all.png">
+		            <img src="/etravel/public/images/edit-all.png">
 		        </div>
             </div>       
         </div>

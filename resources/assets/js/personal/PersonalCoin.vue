@@ -15,7 +15,7 @@
     .van-dialog{width:50%;}
     /*金币管理*/
     .personal_right .coins_center{  width:100%;text-align: center;display: inline-block;margin-top: 80px;}
-    .coins_center .coins_img{width: 346px;height: 180px;background: url(./../../images/Gold-BJ.png) no-repeat;display: inline-block;background-size: 100% 100%;}
+    .coins_center .coins_img{width: 346px;height: 180px;background: url(/etravel/public/images/Gold-BJ.png) no-repeat;display: inline-block;background-size: 100% 100%;}
     .coins_center .coins_info{width: 100%;margin-top: 30px;font-size: 18px;}
     .coins_info p.fonts{display: inline-block;height: 80px;line-height: 80px;}
     .coins_info span.num{font-size: 45px;color: #ffde01;margin: 0px 30px;display: inline-block;}

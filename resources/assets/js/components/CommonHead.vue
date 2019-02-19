@@ -35,7 +35,7 @@
 	            <!-- <div v-if="userInfo.manage_contents" onclick="window.location.assign('/admin')">管理系统</div> -->
 	        </div>
 	        <div class="exit disflex" @click="logout();">
-	            <img src="/etravel/public/images/Vector-icon.png">
+	            <img src="/etravel/public/images/logout.png">
 	        </div>
 	    </div>
 	</div>
@@ -69,6 +69,7 @@
 		        	this.setUserInfo(res.data);
 		        }).catch(err => {
 		          	console.log(err);
+		          	this.$toast('登录失效');
 		          	sessionStorage.clear();
 					this.setUserInfo('');
 					this.setTravels('');

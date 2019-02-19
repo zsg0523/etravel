@@ -3,7 +3,7 @@
     .tablist{width:100%;}
     .nav-tabs>li>a{color: #000;}
     .tab-pane{position: relative;}
-    .pane_content{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;}
+    .pane_content_info{width:70%;margin-left: 15%;height:auto;margin: 0 auto;margin-bottom: 30px;font-size: 16px;}
     .gather_info{width:100%;height: auto;}
     .gather_info_title{width:100%;height:50px;position: relative;}
     .gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2}
@@ -46,14 +46,14 @@
                 <div class="tab-content">
                     <!-- 集合解散 -->
                     <div role="tabpanel" class="tab-pane active" id="gather">
-                        <div class="pane_content">
+                        <div class="pane_content_info">
                             <div class="gather_info">
                                 <div class="gather_info_title"><span>集合</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
-                                <div class="form_item">
+                                <div class="form_item" style="width:100%;">
                                     <div class="item_title">日期</div>
-                                    <div><input class="item_input" placeholder="日期" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
+                                    <div><input class="item_input" placeholder="日期" style="width:97%;" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
                                  </div>
                                 <div class="form_item" style="width:100%;height:120px;">
                                     <div class="item_title">详细地址</div>
@@ -63,14 +63,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="pane_content">
+                        <div class="pane_content_info">
                             <div class="gather_info">
                                 <div class="gather_info_title"><span>解散</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
-                                <div class="form_item">
+                                <div class="form_item" style="width:100%;">
                                     <div class="item_title">日期</div>
-                                    <div><input class="item_input"  placeholder="日期" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
+                                    <div><input class="item_input"  placeholder="日期" style="width:97%;" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
                                 </div>
                                 <div class="form_item" style="width:100%;height:120px;">
                                     <div class="item_title">地址</div>
@@ -87,7 +87,7 @@
 
                     <!-- 航班往返 -->
                     <div role="tabpanel" class="tab-pane" id="flight">
-                        <div class="pane_content" v-for="(flight,index) in flights">
+                        <div class="pane_content_info" v-for="(flight,index) in flights">
                             <div class="gather_info">
                                 <div class="gather_info_title"><span v-if="flight.is_return">返回</span><span v-else>出发</span><hr></div>
                             </div>    
@@ -134,7 +134,7 @@
 
                     <!-- 住宿资料 -->
                     <div role="tabpanel" class="tab-pane" id="accommodationInfo">
-                        <div class="pane_content" v-for="(hotel,index) in hotels">    
+                        <div class="pane_content_info" v-for="(hotel,index) in hotels">    
                             <div class="form_content disflex">
                                 <div class="form_item" style="width:100%;">
                                     <div class="item_title">酒店名称</div>
@@ -176,15 +176,15 @@
 
                     <!-- 领队老师 -->
                     <div role="tabpanel" class="tab-pane" id="leaderTeacher">
-                        <div class="pane_content" v-for="(leadTeacher,index) in leadTeachers">
+                        <div class="pane_content_info" v-for="(leadTeacher,index) in leadTeachers">
                             <div class="form_content disflex">
-                                <div class="form_item">
+                                <div class="form_item" style="width:100%;">
                                     <div class="item_title">老师姓名</div>
-                                    <div><input class="item_input" type="text" disabled="disabled" :value="leadTeacher.leader" ></div>
+                                    <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.leader" ></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item" style="width:100%;">
                                     <div class="item_title">老师电话</div>
-                                    <div><input class="item_input" type="text" disabled="disabled" :value="leadTeacher.phone" ></div>
+                                    <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.phone" ></div>
                                 </div>
                                 <div class="form_item" style="width:100%;">
                                     <div class="item_title">职责</div>
@@ -204,7 +204,7 @@
 
                     <!-- 恶劣天气安排 -->
                     <div role="tabpanel" class="tab-pane" id="heavyWeather">
-                        <div class="pane_content">
+                        <div class="pane_content_info">
                             <div class="form_content disflex">
                                 <div class="form_item" style="width:100%;height:120px;">
                                     <div class="item_title">安排</div>
