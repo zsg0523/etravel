@@ -15290,6 +15290,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
   mutations: {
     userInfo: function userInfo(state, theme) {
       state.userInfo = theme;
+      sessionStorage.setItem('userId', theme.id);
     },
     travels: function travels(state, theme) {
       state.travels = theme;
@@ -18256,7 +18257,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__http__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__config__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__config___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__config__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vant__ = __webpack_require__(301);
 
 
@@ -18269,7 +18269,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vant
 
 __webpack_require__(367);
 
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.$config = __WEBPACK_IMPORTED_MODULE_4__config__["default"];
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.$config = __WEBPACK_IMPORTED_MODULE_4__config__["a" /* default */];
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.sessionStorage = sessionStorage;
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.localStorage = localStorage;
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.$ajax = __WEBPACK_IMPORTED_MODULE_3__http__["a" /* default */];
@@ -22118,7 +22118,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "breadlink" })
+  return _c("div", { staticClass: "breadlink" }, [
+    _c(
+      "a",
+      {
+        attrs: { href: "javascript:void(0);" },
+        on: {
+          click: function($event) {
+            _vm.$router.push("/Home")
+          }
+        }
+      },
+      [_vm._v("项目")]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -23559,7 +23572,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.students{width: 100%;min-height: 700px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.studentsList{width: 100%;height: auto;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;\n}\n.students_left{width: 18%;min-height:100%;border-right: 3px solid #d6d6d6;\n}\n.students_left>ul{width: 100%;height: auto;\n}\n.students_left>ul>li{width: 100%;height:50px;line-height: 50px;font-size: 18px;\n}\n.students_left>ul>li>div{width: 90%;height:50px;line-height: 50px;margin-left: 5%;overflow: hidden;\n}\n.left_title{-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;\n}\n.left_title img{width: 40px;height: 40px;\n}\n.left_title img:hover{cursor: pointer;\n}\n.left_title_icon{width: auto;height: auto;\n}\n.left_title_icon>div{width: 40px;height: 40px;line-height: 40px;float: left;text-align: center;\n}\n.students_right{width: 82%;min-height:100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.students_right_title{width: 100%;height: 50px;line-height: 50px;border-bottom: 1px solid #ccc;\n}\n.search_input{width: 100%;height: 50px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.search_input>input{width: 30%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.search_icon{width: 50px;height: 50px;\n}\n.search_icon>img{width:40px;height: 40px\n}\n.search_icon>img:hover{cursor: pointer;\n}\n.students_input_form{width: 100%;min-height:600px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 18px;position: relative;\n}\n.form_content_student{width: 70%;min-height: 600px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_student{width: 50%;height:100px;\n}\n.form_item_student>div{width: 94%;margin-left: 3%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.item_checkbox>div{width:30%;height:40px;line-height: 40px;float: left;\n}\n.item_checkbox>div>input{width:35px;height: 35px;border-radius: 5px;background-color: #ccc;\n}\n.studentEditBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.studentEditBtn:hover{cursor:pointer;\n}\n.studentEditBtn>img{width:50px;height: 50px;\n}\n.studentComfirm{width:100%;height: 50px;font-size: 16px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.btnItem{width:160px;height: 50px;\n}\n.btnItem>button{width:80%;height: 40px;line-height: 40px;border-radius: 8px;\n}\n.act{background-color: #ffde01;\n}\n.cancel{background-color: #fff;border:1px solid #ffde01;\n}\n.ensure{background-color: #ffde01;\n}\n", ""]);
+exports.push([module.i, "\n.students{width: 100%;min-height: 700px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.studentsList{width: 100%;height: 100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;\n}\n.students_left{width: 18%;min-height:100%;border-right: 3px solid #d6d6d6;\n}\n.students_left>ul{width: 100%;height: auto;\n}\n.students_left>ul>li{width: 100%;height:50px;line-height: 50px;font-size: 18px;\n}\n.students_left>ul>li>div{width: 90%;height:50px;line-height: 50px;margin-left: 5%;overflow: hidden;\n}\n.left_title{-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;\n}\n.left_title_icon{width: auto;height: auto;\n}\n.left_title_icon>div{width: 40px;height: 40px;line-height: 40px;float: left;text-align: center;margin-right: 5px;\n}\n.left_title_icon>div:hover{cursor: pointer;\n}\n.left_title_icon>div>img{width:30px;height:30px;\n}\n.students_right{width: 82%;min-height:100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.students_right_title{width: 100%;height: 50px;line-height: 50px;border-bottom: 1px solid #ccc;\n}\n.search_input{width: 100%;height: 50px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.search_input>input{width: 30%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.search_icon{width: 50px;height: 50px;\n}\n.search_icon>img{width:40px;height: 40px\n}\n.search_icon>img:hover{cursor: pointer;\n}\n.students_input_form{width: 100%;min-height:600px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 18px;position: relative;\n}\n.form_content_student{width: 70%;min-height: 600px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_student{width: 50%;height:100px;\n}\n.form_item{width: 100%;height:100px;\n}\n.form_item_student>div{width: 94%;margin-left: 3%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.studentEditBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.studentEditBtn:hover{cursor:pointer;\n}\n.studentEditBtn>img{width:50px;height: 50px;\n}\n.act{background-color: #ffde01;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.editBoxTitle{width:100%;height:50px;text-align: center;line-height: 50px;font-size: 18px;\n}\n.issureStu{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issureBtn{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.twoBtn{width:40%;margin-left:5%;margin-right:5%;float:left;height:50px;font-size: 16px;border-radius: 8px;outline: none;\n}\n.cancel{background-color:#fff;border:1px solid #ccc;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
 
 // exports
 
@@ -23682,26 +23695,133 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             students: [],
             newStudent: {
-                title: '',
-                content: '',
-                sites: ''
+                name: '',
+                phone: '',
+                original_password: '',
+                add_by: sessionStorage.userId,
+                travel_id: sessionStorage.actTravelId,
+                student_number: '',
+                class: ''
             },
             edStudent: {
                 id: '',
-                title: '',
-                content: '',
-                sites: '',
-                index: ''
+                name: '',
+                phone: '',
+                original_password: '',
+                add_by: sessionStorage.userId,
+                travel_id: sessionStorage.actTravelId,
+                student_number: '',
+                class: ''
             },
-            actIndex: 0,
+            searchStudent: {},
             isNewStudentShow: false,
-            isEditStudentShow: false
+            isEditStudentShow: false,
+            isSearchStudentShow: false,
+            actIndex: 0,
+            searchId: ''
         };
     },
 
@@ -23727,38 +23847,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 console.log(err);
             });
         },
+        addNewStudentShow: function addNewStudentShow() {
+            this.isNewStudentShow = true;
+        },
+        addNewStudent: function addNewStudent() {
+            var _this2 = this;
 
-        // addNewStudentShow(){
-        //     this.isNewStudentShow=true;
-        // },
-        // addNewStudent(){
-        //     // 新增学员信息/api/route/21/food
-        //     this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/Students',this.newStudent,
-        //     {
-        //         headers: {
-        //             "Authorization": 'Bearer '+sessionStorage.token,
-        //         }
-        //     }).then(res => {
-        //         // console.log(res.data);
-        //         this.$toast('添加成功');
-        //         this.getStudents();
-        //         this.isNewStudentShow=false;
-        //         this.newStudent.title='';
-        //         this.newStudent.content='';
-        //         this.newStudent.sites='';
-        //     }).catch(err => {
-        //         this.$toast('添加失败');
-        //         console.log(err)
-        //     });
-        // },
-        // editStudentShow(index){
-        //     this.edStudent.id=this.Students[index].id;
-        //     this.edStudent.title=this.Students[index].title;
-        //     this.edStudent.content=this.Students[index].content;
-        //     this.edStudent.sites=this.Students[index].sites;
-        //     this.edStudent.index=index;
-        //     this.isEditStudentShow=true;
-        // },
+            // 新增学员信息/api/userGroup
+            this.$post(this.$config + '/api/userGroup', this.newStudent, {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this2.$toast('添加成功');
+                _this2.getStudents();
+                _this2.isNewStudentShow = false;
+                _this2.newStudent.name = '';
+                _this2.newStudent.phone = '';
+                _this2.newStudent.original_password = '';
+                _this2.newStudent.student_number = '';
+                _this2.newStudent.class = '';
+            }).catch(function (err) {
+                _this2.$toast('添加失败');
+                console.log(err);
+            });
+        },
+        editStudentShow: function editStudentShow() {
+            this.edStudent.id = this.students[this.actIndex].user.id;
+            this.edStudent.original_password = this.students[this.actIndex].user.original_password;
+            this.edStudent.name = this.students[this.actIndex].user.name;
+            this.edStudent.class = this.students[this.actIndex].class;
+            this.edStudent.student_number = this.students[this.actIndex].student_number;
+            this.edStudent.phone = this.students[this.actIndex].user.phone;
+            this.isEditStudentShow = true;
+        },
+
         // editStudent(){
         //     // 修改学员信息信息/api/travels/1/Students/22
         //     this.$ajax({
@@ -23787,34 +23911,86 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         //         console.log(err)
         //     });
         // },
-        // delStudent(StudentId){
-        //     // 删除学员信息
-        //     this.$dialog.confirm({
-        //         title: '删除学员信息',
-        //         message: '是否删除该学员信息'
-        //     }).then(() => {
-        //         this.$ajax({
-        //             method: 'DELETE',
-        //             headers: {
-        //                 "Authorization": 'Bearer '+sessionStorage.token,
-        //             },
-        //             url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/Students/'+StudentId,
-        //         }).then(res => {
-        //             // console.log(res);
-        //             if(res.status==204){
-        //                 this.getStudents();
-        //                 this.$toast('删除成功');
-        //             }else{
-        //                 this.$toast('删除失败');
-        //             }
-        //         }).catch(err => {
-        //             this.$toast('删除失败');
-        //             console.log(err)
-        //         });
-        //     }).catch(err => {
+        delStudent: function delStudent() {
+            var _this3 = this;
 
-        //     });
-        // },
+            // 删除学员信息/api/users/:user/travels/:travel/groups/:group
+            this.$dialog.confirm({
+                title: '删除学员信息',
+                message: '是否删除该学员信息'
+            }).then(function () {
+                _this3.$ajax({
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: _this3.$config + '/api/users/' + _this3.students[_this3.actIndex].user_id + '/travels/' + sessionStorage.actTravelId + '/groups/' + _this3.students[_this3.actIndex].id
+                }).then(function (res) {
+                    // console.log(res);
+                    if (res.status == 204) {
+                        _this3.actIndex = 0;
+                        _this3.getStudents();
+                        _this3.$toast('删除成功');
+                    } else {
+                        _this3.$toast('删除失败');
+                    }
+                }).catch(function (err) {
+                    _this3.$toast('删除失败');
+                    console.log(err);
+                });
+            }).catch(function (err) {});
+        },
+        searchStudentShow: function searchStudentShow() {
+            this.isSearchStudentShow = true;
+        },
+        toSearchStudent: function toSearchStudent() {
+            var _this4 = this;
+
+            // 搜索学员
+            if (this.searchId != '') {
+                this.$ajax({
+                    method: 'GET',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: this.$config + '/api/users/' + this.searchId + '/userInfo'
+                }).then(function (res) {
+                    // console.log(res.data);
+                    _this4.searchStudent = res.data;
+                    _this4.searchStudentShow();
+                }).catch(function (err) {
+                    _this4.$toast('请输入正确的用户ID');
+                    // console.log(err);
+                });
+            } else {
+                this.$toast('请输入用户ID');
+            }
+        },
+        cancelAdd: function cancelAdd() {
+            this.searchId = '';
+            this.searchStudent = {};
+            this.isSearchStudentShow = false;
+        },
+        addOldStudent: function addOldStudent() {
+            var _this5 = this;
+
+            // 添加已有用户到旅游/api/users/:user/travels/:travel/groups
+            this.$post(this.$config + '/api/users/' + this.searchStudent.id + '/travels/' + sessionStorage / actTravelId + '/groups', {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this5.$toast('添加成功');
+                _this5.getStudents();
+                _this5.searchId = '';
+                _this5.searchStudent = {};
+                _this5.isSearchStudentShow = false;
+            }).catch(function (err) {
+                _this5.$toast('添加失败');
+                console.log(err);
+            });
+        },
         changeActIndex: function changeActIndex(index) {
             this.actIndex = index;
         },
@@ -23835,52 +24011,783 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "students disflex" }, [
-    _c("div", { staticClass: "studentsList disflex" }, [
-      _c("div", { staticClass: "students_left" }, [
-        _c(
-          "ul",
-          { staticStyle: { padding: "0", margin: "0" } },
-          [
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._l(_vm.students, function(student, index) {
-              return _c(
-                "li",
+    _c(
+      "div",
+      { staticClass: "studentsList disflex" },
+      [
+        _c("div", { staticClass: "students_left" }, [
+          _c(
+            "ul",
+            { staticStyle: { padding: "0", margin: "0" } },
+            [
+              _c("li", [
+                _c("div", { staticClass: "left_title disflex" }, [
+                  _c("span", [_vm._v("学员信息")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "left_title_icon" }, [
+                    _c(
+                      "div",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.delStudent()
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src: "/etravel/public/images/dele-inf.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.addNewStudentShow()
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src: "/etravel/public/images/add-inf.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.students, function(student, index) {
+                return _c(
+                  "li",
+                  {
+                    class: _vm.leftTabAct(index),
+                    on: {
+                      click: function($event) {
+                        _vm.changeActIndex(index)
+                      }
+                    }
+                  },
+                  [_c("div", [_vm._v(_vm._s(student.user.name))])]
+                )
+              })
+            ],
+            2
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "students_right disflex" }, [
+          _c("div", { staticClass: "students_right_title" }, [
+            _c("div", { staticClass: "search_input disflex" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.searchId,
+                    expression: "searchId"
+                  }
+                ],
+                attrs: { type: "text", placeholder: "请输入想查找的ID" },
+                domProps: { value: _vm.searchId },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.searchId = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
                 {
-                  class: _vm.leftTabAct(index),
+                  staticClass: "search_icon",
                   on: {
                     click: function($event) {
-                      _vm.changeActIndex(index)
+                      _vm.toSearchStudent()
                     }
                   }
                 },
-                [_c("div", [_vm._v(_vm._s(student.user.name))])]
+                [
+                  _c("img", {
+                    attrs: { src: "/etravel/public/images/search.png" }
+                  })
+                ]
               )
-            })
-          ],
-          2
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "students_right disflex" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c("div", { staticClass: "students_input_form disflex" }, [
+            ])
+          ]),
+          _vm._v(" "),
           _vm.students != ""
-            ? _c("div", { staticClass: "form_content_student disflex" }, [
-                _c("div", { staticClass: "form_item_student" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("学生ID")]),
+            ? _c(
+                "div",
+                { staticClass: "students_input_form disflex" },
+                [
+                  _c("div", { staticClass: "form_content_student disflex" }, [
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("用户ID")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填写用户ID",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value: _vm.students[_vm.actIndex].user.id
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("学生密码")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填写学生密码",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value:
+                              _vm.students[_vm.actIndex].user.original_password
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("学生中文名")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填写学生中文名",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value: _vm.students[_vm.actIndex].user.name
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("学生英文名")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填写学生英文名",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value: _vm.students[_vm.actIndex].user.name
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("学生班级")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填写学生班级",
+                            disabled: "disabled"
+                          },
+                          domProps: { value: _vm.students[_vm.actIndex].class }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("学生学号")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填写学生学号",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value: _vm.students[_vm.actIndex].student_number
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("联系电话")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填写联系电话",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value: _vm.students[_vm.actIndex].user.phone
+                          }
+                        })
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "studentEditBtn",
+                      on: {
+                        click: function($event) {
+                          _vm.editStudentShow()
+                        }
+                      }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { src: "/etravel/public/images/editAll.png" }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "van-popup",
+                    {
+                      staticStyle: { "border-radius": "15px" },
+                      attrs: { overlay: true },
+                      model: {
+                        value: _vm.isEditStudentShow,
+                        callback: function($$v) {
+                          _vm.isEditStudentShow = $$v
+                        },
+                        expression: "isEditStudentShow"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "editBox" }, [
+                        _c("div", { staticClass: "editBoxContent disflex" }, [
+                          _c("div", { staticClass: "form_item" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("用户ID")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.edStudent.id,
+                                    expression: "edStudent.id"
+                                  }
+                                ],
+                                staticClass: "item_input",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "填写用户ID",
+                                  disabled: "disabled"
+                                },
+                                domProps: { value: _vm.edStudent.id },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.edStudent,
+                                      "id",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form_item" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("学生密码")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.edStudent.original_password,
+                                    expression: "edStudent.original_password"
+                                  }
+                                ],
+                                staticClass: "item_input",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "填写学生密码"
+                                },
+                                domProps: {
+                                  value: _vm.edStudent.original_password
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.edStudent,
+                                      "original_password",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form_item" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("学生中文名")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.edStudent.name,
+                                    expression: "edStudent.name"
+                                  }
+                                ],
+                                staticClass: "item_input",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "填写学生中文名"
+                                },
+                                domProps: { value: _vm.edStudent.name },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.edStudent,
+                                      "name",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form_item" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("学生班级")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.edStudent.class,
+                                    expression: "edStudent.class"
+                                  }
+                                ],
+                                staticClass: "item_input",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "填写学生班级"
+                                },
+                                domProps: { value: _vm.edStudent.class },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.edStudent,
+                                      "class",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form_item" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("学生学号")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.edStudent.student_number,
+                                    expression: "edStudent.student_number"
+                                  }
+                                ],
+                                staticClass: "item_input",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "填写学生学号"
+                                },
+                                domProps: {
+                                  value: _vm.edStudent.student_number
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.edStudent,
+                                      "student_number",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form_item" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("联系电话")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.edStudent.phone,
+                                    expression: "edStudent.phone"
+                                  }
+                                ],
+                                staticClass: "item_input",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "填写联系电话"
+                                },
+                                domProps: { value: _vm.edStudent.phone },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.edStudent,
+                                      "phone",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "issureStu" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "issureBtn",
+                                on: {
+                                  click: function($event) {
+                                    _vm.editStudent()
+                                  }
+                                }
+                              },
+                              [_vm._v("修改")]
+                            )
+                          ])
+                        ])
+                      ])
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c(
+          "van-popup",
+          {
+            staticStyle: { "border-radius": "15px" },
+            attrs: { overlay: true },
+            model: {
+              value: _vm.isNewStudentShow,
+              callback: function($$v) {
+                _vm.isNewStudentShow = $$v
+              },
+              expression: "isNewStudentShow"
+            }
+          },
+          [
+            _c("div", { staticClass: "editBox" }, [
+              _c("div", { staticClass: "editBoxContent disflex" }, [
+                _c("div", { staticClass: "form_item" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("学生密码")
+                  ]),
                   _vm._v(" "),
                   _c("div", [
                     _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.original_password,
+                          expression: "newStudent.original_password"
+                        }
+                      ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生ID" },
-                      domProps: { value: _vm.students[_vm.actIndex].user.id }
+                      attrs: { type: "text", placeholder: "填写学生密码" },
+                      domProps: { value: _vm.newStudent.original_password },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newStudent,
+                            "original_password",
+                            $event.target.value
+                          )
+                        }
+                      }
                     })
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item_student" }, [
+                _c("div", { staticClass: "form_item" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("学生中文名")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.name,
+                          expression: "newStudent.name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填写学生中文名" },
+                      domProps: { value: _vm.newStudent.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.newStudent, "name", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("学生班级")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.class,
+                          expression: "newStudent.class"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填写学生班级" },
+                      domProps: { value: _vm.newStudent.class },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.newStudent, "class", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("学生学号")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.student_number,
+                          expression: "newStudent.student_number"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填写学生学号" },
+                      domProps: { value: _vm.newStudent.student_number },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newStudent,
+                            "student_number",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("联系电话")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.phone,
+                          expression: "newStudent.phone"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填写联系电话" },
+                      domProps: { value: _vm.newStudent.phone },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.newStudent, "phone", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "issureStu" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "issureBtn",
+                      on: {
+                        click: function($event) {
+                          _vm.addNewStudent()
+                        }
+                      }
+                    },
+                    [_vm._v("添加")]
+                  )
+                ])
+              ])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "van-popup",
+          {
+            staticStyle: { "border-radius": "15px" },
+            attrs: { overlay: true },
+            model: {
+              value: _vm.isSearchStudentShow,
+              callback: function($$v) {
+                _vm.isSearchStudentShow = $$v
+              },
+              expression: "isSearchStudentShow"
+            }
+          },
+          [
+            _c("div", { staticClass: "editBox" }, [
+              _c("div", { staticClass: "editBoxContent disflex" }, [
+                _c("div", { staticClass: "editBoxTitle" }, [
+                  _vm._v("搜索结果")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item" }, [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("用户ID")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      staticClass: "item_input",
+                      attrs: {
+                        type: "text",
+                        placeholder: "填写用户ID",
+                        disabled: "disabled"
+                      },
+                      domProps: { value: _vm.searchStudent.id }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
                     _vm._v("学生密码")
                   ]),
@@ -23888,45 +24795,35 @@ var render = function() {
                   _c("div", [
                     _c("input", {
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生密码" },
-                      domProps: {
-                        value: _vm.students[_vm.actIndex].user.original_password
-                      }
+                      attrs: {
+                        type: "text",
+                        placeholder: "填写学生密码",
+                        disabled: "disabled"
+                      },
+                      domProps: { value: _vm.searchStudent.original_password }
                     })
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item_student" }, [
+                _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生姓名")
+                    _vm._v("学生中文名")
                   ]),
                   _vm._v(" "),
                   _c("div", [
                     _c("input", {
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生姓名" },
-                      domProps: { value: _vm.students[_vm.actIndex].user.name }
+                      attrs: {
+                        type: "text",
+                        placeholder: "填写学生中文名",
+                        disabled: "disabled"
+                      },
+                      domProps: { value: _vm.searchStudent.name }
                     })
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item_student" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生年级")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生年级" },
-                      domProps: {
-                        value: _vm.students[_vm.actIndex].user.student.grade
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item_student" }, [
+                _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
                     _vm._v("学生班级")
                   ]),
@@ -23934,15 +24831,17 @@ var render = function() {
                   _c("div", [
                     _c("input", {
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生班级" },
-                      domProps: {
-                        value: _vm.students[_vm.actIndex].user.student.class
-                      }
+                      attrs: {
+                        type: "text",
+                        placeholder: "填写学生班级",
+                        disabled: "disabled"
+                      },
+                      domProps: { value: _vm.searchStudent.class }
                     })
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item_student" }, [
+                _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
                     _vm._v("学生学号")
                   ]),
@@ -23950,83 +24849,75 @@ var render = function() {
                   _c("div", [
                     _c("input", {
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生学号" },
-                      domProps: {
-                        value:
-                          _vm.students[_vm.actIndex].user.student.student_number
-                      }
+                      attrs: {
+                        type: "text",
+                        placeholder: "填写学生学号",
+                        disabled: "disabled"
+                      },
+                      domProps: { value: _vm.searchStudent.student_number }
                     })
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item_student" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("电话")]),
+                _c("div", { staticClass: "form_item" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("联系电话")
+                  ]),
                   _vm._v(" "),
                   _c("div", [
                     _c("input", {
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写电话" },
-                      domProps: { value: _vm.students[_vm.actIndex].user.phone }
+                      attrs: {
+                        type: "text",
+                        placeholder: "填写联系电话",
+                        disabled: "disabled"
+                      },
+                      domProps: { value: _vm.searchStudent.phone }
                     })
                   ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "issureStu" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "twoBtn cancel",
+                      on: {
+                        click: function($event) {
+                          _vm.cancelAdd()
+                        }
+                      }
+                    },
+                    [_vm._v("取消")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "twoBtn",
+                      staticStyle: {
+                        "background-color": "#ffde01",
+                        border: "none"
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.addOldStudent()
+                        }
+                      }
+                    },
+                    [_vm._v("添加学员")]
+                  )
                 ])
               ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm._m(2)
-        ])
-      ])
-    ])
+            ])
+          ]
+        )
+      ],
+      1
+    )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("div", { staticClass: "left_title disflex" }, [
-        _c("span", [_vm._v("填写信息")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "left_title_icon" }, [
-          _c("div", [
-            _c("img", {
-              attrs: { src: "/etravel/public/images/del_y.png", alt: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c("img", {
-              attrs: { src: "/etravel/public/images/add_y.png", alt: "" }
-            })
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "students_right_title" }, [
-      _c("div", { staticClass: "search_input disflex" }, [
-        _c("input", { attrs: { type: "text", name: "studentSearch" } }),
-        _vm._v(" "),
-        _c("div", { staticClass: "search_icon" }, [
-          _c("img", { attrs: { src: "/etravel/public/images/search.png" } })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "studentEditBtn" }, [
-      _c("img", { attrs: { src: "/etravel/public/images/editAll.png" } })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -41924,10 +42815,14 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 300 */
-/***/ (function(module, __webpack_exports__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/home/vagrant/code/etravel/resources/assets/js/config.js'");
+
+
+// const baseUrl='http://www.bunchparty.com/etravel/public';//线上地址
+var baseUrl = 'http://etravel.test'; //本地地址
+/* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),
 /* 301 */

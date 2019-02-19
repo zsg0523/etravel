@@ -5,7 +5,7 @@
 
 <template>
 	<div class="breadlink">
-    	<!-- <a href="javascript:void(0);" @click="$router.push('/Home')">项目</a> -->
+    	<a href="javascript:void(0);" @click="$router.push('/Home')">项目</a>
     </div>
 </template>
 
