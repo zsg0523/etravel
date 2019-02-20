@@ -21,9 +21,10 @@
     .students_input_form{width: 100%;min-height:600px;justify-content: center;align-items:flex-start;font-size: 18px;position: relative;}
     .form_content_student{width: 70%;min-height: 600px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;}
     .form_item_student{width: 50%;height:100px;}
-    .form_item{width: 100%;height:100px;}
     .form_item_student>div{width: 94%;margin-left: 3%;height: 45px;line-height: 45px;}
-    .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
+    .form_item{width: 100%;height:100px;}
+    .form_item>div{width: 97%;margin-left: 1.5%;height: 45px;line-height: 45px;}
+    .item_input{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;}
     .studentEditBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
     .studentEditBtn:hover{cursor:pointer;}
     .studentEditBtn>img{width:50px;height: 50px;}
@@ -87,19 +88,27 @@
                         </div>
                         <div class="form_item_student">
                             <div class="item_title">学生英文名</div>
-                            <div><input class="item_input" type="text" placeholder="填写学生英文名" disabled="disabled" :value="students[actIndex].user.name"></div>
+                            <div><input class="item_input" type="text" placeholder="填写学生英文名" disabled="disabled" :value="students[actIndex].user.en_name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">学生班级</div>
-                            <div><input class="item_input" type="text"  placeholder="填写学生班级" disabled="disabled" :value="students[actIndex].class"></div>
+                            <div class="item_title">联系电话</div>
+                            <div><input class="item_input" type="text" placeholder="填写联系电话" disabled="disabled" :value="students[actIndex].user.phone"></div>
                         </div>
                         <div class="form_item_student">
                             <div class="item_title">学生学号</div>
                             <div><input class="item_input" type="text" placeholder="填写学生学号" disabled="disabled" :value="students[actIndex].student_number"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">联系电话</div>
-                            <div><input class="item_input" type="text" placeholder="填写联系电话" disabled="disabled" :value="students[actIndex].user.phone"></div>
+                            <div class="item_title">学生班级</div>
+                            <div><input class="item_input" type="text"  placeholder="填写学生班级" disabled="disabled" :value="students[actIndex].class"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">学生房间号</div>
+                            <div><input class="item_input" type="text"  placeholder="填写学生房间号" disabled="disabled" :value="students[actIndex].room"></div>
+                        </div>
+                        <div class="form_item">
+                            <div class="item_title">学生职责</div>
+                            <div><input class="item_input" type="text"  placeholder="填写学生职责" disabled="disabled" :value="students[actIndex].duty"></div>
                         </div>
                     </div>
                     <div class="studentEditBtn" @click="editStudentShow()">
@@ -121,16 +130,28 @@
                                     <div><input class="item_input" type="text" placeholder="填写学生中文名" v-model="edStudent.name"></div>
                                 </div>
                                 <div class="form_item">
-                                    <div class="item_title">学生班级</div>
-                                    <div><input class="item_input" type="text"  placeholder="填写学生班级"v-model="edStudent.class"></div>
+                                    <div class="item_title">学生英文名</div>
+                                    <div><input class="item_input" type="text" placeholder="填写学生英文名" v-model="edStudent.en_name"></div>
+                                </div>
+                                <div class="form_item">
+                                    <div class="item_title">联系电话</div>
+                                    <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="edStudent.phone"></div>
                                 </div>
                                 <div class="form_item">
                                     <div class="item_title">学生学号</div>
                                     <div><input class="item_input" type="text" placeholder="填写学生学号" v-model="edStudent.student_number"></div>
                                 </div>
                                 <div class="form_item">
-                                    <div class="item_title">联系电话</div>
-                                    <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="edStudent.phone"></div>
+                                    <div class="item_title">学生班级</div>
+                                    <div><input class="item_input" type="text"  placeholder="填写学生班级" v-model="edStudent.class"></div>
+                                </div>
+                                <div class="form_item">
+                                    <div class="item_title">学生房间号</div>
+                                    <div><input class="item_input" type="text"  placeholder="填写学生房间号" v-model="edStudent.room"></div>
+                                </div>
+                                <div class="form_item">
+                                    <div class="item_title">学生职责</div>
+                                    <div><input class="item_input" type="text"  placeholder="填写学生职责" v-model="edStudent.duty"></div>
                                 </div>
                                 <div class="issureStu">
                                     <button class="issureBtn" @click="editStudent()">修改</button>
@@ -152,16 +173,28 @@
                             <div><input class="item_input" type="text" placeholder="填写学生中文名" v-model="newStudent.name"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生班级</div>
-                            <div><input class="item_input" type="text"  placeholder="填写学生班级"v-model="newStudent.class"></div>
+                            <div class="item_title">学生英文名</div>
+                            <div><input class="item_input" type="text" placeholder="填写学生英文名" v-model="newStudent.en_name"></div>
+                        </div>
+                        <div class="form_item">
+                            <div class="item_title">联系电话</div>
+                            <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="newStudent.phone"></div>
                         </div>
                         <div class="form_item">
                             <div class="item_title">学生学号</div>
                             <div><input class="item_input" type="text" placeholder="填写学生学号" v-model="newStudent.student_number"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">联系电话</div>
-                            <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="newStudent.phone"></div>
+                            <div class="item_title">学生班级</div>
+                            <div><input class="item_input" type="text"  placeholder="填写学生班级" v-model="newStudent.class"></div>
+                        </div>
+                        <div class="form_item">
+                            <div class="item_title">学生房间号</div>
+                            <div><input class="item_input" type="text"  placeholder="填写学生房间号" v-model="newStudent.room"></div>
+                        </div>
+                        <div class="form_item">
+                            <div class="item_title">学生职责</div>
+                            <div><input class="item_input" type="text"  placeholder="填写学生职责" v-model="newStudent.duty"></div>
                         </div>
                         <div class="issureStu">
                             <button class="issureBtn" @click="addNewStudent()">添加</button>
@@ -186,16 +219,28 @@
                             <div><input class="item_input" type="text" placeholder="填写学生中文名" disabled="disabled" :value="searchStudent.name"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生班级</div>
-                            <div><input class="item_input" type="text"  placeholder="填写学生班级" disabled="disabled" :value="searchStudent.class"></div>
-                        </div>
-                        <div class="form_item">
-                            <div class="item_title">学生学号</div>
-                            <div><input class="item_input" type="text" placeholder="填写学生学号" disabled="disabled" :value="searchStudent.student_number"></div>
+                            <div class="item_title">学生英文名</div>
+                            <div><input class="item_input" type="text" placeholder="填写学生英文名" disabled="disabled" :value="searchStudent.en_name"></div>
                         </div>
                         <div class="form_item">
                             <div class="item_title">联系电话</div>
-                            <div><input class="item_input" type="text" placeholder="填写联系电话" disabled="disabled" :value="searchStudent.phone"></div>
+                            <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="searchStudent.phone"></div>
+                        </div>
+                        <div class="form_item">
+                            <div class="item_title">学生学号</div>
+                            <div><input class="item_input" type="text" placeholder="填写学生学号" v-model="searchStudent.student_number"></div>
+                        </div>
+                        <div class="form_item">
+                            <div class="item_title">学生班级</div>
+                            <div><input class="item_input" type="text"  placeholder="填写学生班级" v-model="searchStudent.class"></div>
+                        </div>
+                        <div class="form_item">
+                            <div class="item_title">学生房间号</div>
+                            <div><input class="item_input" type="text"  placeholder="填写学生房间号" v-model="searchStudent.room"></div>
+                        </div>
+                        <div class="form_item">
+                            <div class="item_title">学生职责</div>
+                            <div><input class="item_input" type="text"  placeholder="填写学生职责" v-model="searchStudent.duty"></div>
                         </div>
                         <div class="issureStu">
                             <button class="twoBtn cancel" @click="cancelAdd()">取消</button>
@@ -214,25 +259,39 @@
                 students:[],
                 newStudent:{
                     name:'',
+                    en_name:'',
                     phone:'',
                     original_password:'',
                     add_by:sessionStorage.userId,
                     travel_id:sessionStorage.actTravelId,
                     student_number:'',
                     class:'',
+                    duty:'',
+                    room:'',
                 },
                 edStudent:{
                     id:'',
                     name:'',
+                    en_name:'',
                     phone:'',
                     original_password:'',
                     add_by:sessionStorage.userId,
                     travel_id:sessionStorage.actTravelId,
                     student_number:'',
                     class:'',
+                    duty:'',
+                    room:'',
                 },
                 searchStudent:{
-
+                    id:'',
+                    name:'',
+                    en_name:'',
+                    phone:'',
+                    original_password:'',
+                    student_number:'',
+                    class:'',
+                    duty:'',
+                    room:'', 
                 },
                 isNewStudentShow:false,
                 isEditStudentShow:false,
@@ -277,9 +336,12 @@
                     this.getStudents();
                     this.isNewStudentShow=false;
                     this.newStudent.name='';
+                    this.newStudent.en_name='';
                     this.newStudent.phone='';
                     this.newStudent.original_password='';
                     this.newStudent.student_number='';
+                    this.newStudent.duty='';
+                    this.newStudent.room='';
                     this.newStudent.class='';
 
                 }).catch(err => {
@@ -291,9 +353,12 @@
                 this.edStudent.id=this.students[this.actIndex].user.id;
                 this.edStudent.original_password=this.students[this.actIndex].user.original_password;
                 this.edStudent.name=this.students[this.actIndex].user.name;
-                this.edStudent.class=this.students[this.actIndex].class;
-                this.edStudent.student_number=this.students[this.actIndex].student_number;
+                this.edStudent.en_name=this.students[this.actIndex].user.en_name;
                 this.edStudent.phone=this.students[this.actIndex].user.phone;
+                this.edStudent.student_number=this.students[this.actIndex].student_number;
+                this.edStudent.class=this.students[this.actIndex].class;
+                this.edStudent.duty=this.students[this.actIndex].duty;
+                this.edStudent.room=this.students[this.actIndex].room;
                 this.isEditStudentShow=true;
             },
             // editStudent(){
@@ -384,13 +449,14 @@
             },
             addOldStudent(){
                 // 添加已有用户到旅游/api/users/:user/travels/:travel/groups
-                this.$post(this.$config+'/api/users/'+this.searchStudent.id+'/travels/'+sessionStorage/actTravelId+'/groups',
-                {
+                this.$ajax({
+                    method: 'post',
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
-                    }
+                    },
+                    url:this.$config+'/api/users/'+this.searchStudent.id+'/travels/'+sessionStorage.actTravelId+'/groups',
                 }).then(res => {
-                    // console.log(res.data);
+                    // console.log(res);
                     this.$toast('添加成功');
                     this.getStudents();
                     this.searchId='';
@@ -400,6 +466,22 @@
                     this.$toast('添加失败');
                     console.log(err)
                 });
+                // this.$post(this.$config+'/api/users/'+this.searchStudent.id+'/travels/'+sessionStorage.actTravelId+'/groups',
+                // {
+                //     headers: {
+                //         "Authorization": 'Bearer '+sessionStorage.token,
+                //     }
+                // }).then(res => {
+                //     // console.log(res.data);
+                //     this.$toast('添加成功');
+                //     this.getStudents();
+                //     this.searchId='';
+                //     this.searchStudent={}; 
+                //     this.isSearchStudentShow=false;
+                // }).catch(err => {
+                //     this.$toast('添加失败');
+                //     console.log(err)
+                // });
             },
             changeActIndex(index){
                 this.actIndex=index;
