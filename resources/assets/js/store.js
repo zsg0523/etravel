@@ -16,7 +16,8 @@ export default new Vuex.Store({
   },
   mutations: {
     userInfo(state, theme) {
-      state.userInfo = theme
+      state.userInfo = theme;
+      sessionStorage.setItem('userId', theme.id)
     },
     travels(state, theme) {
       state.travels = theme
