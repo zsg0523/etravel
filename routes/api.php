@@ -63,7 +63,7 @@ $api->version('v1', [
 			// 编辑用户资料
 			$api->patch('user','UsersController@update')->name('api.user.update');
 			// 管理员编辑用户资料
-			$api->patch('users/{user}/information', 'UsersController@information')->name('api.users.information');
+			$api->patch('users/{user}/groups/{group}/information', 'UsersController@information')->name('api.users.information');
 			// 用户通知列表
 			$api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');
 			// 通知统计
@@ -174,7 +174,7 @@ $api->version('v1', [
 			$api->post('rules', 'RulesController@store')->name('api.rules.store');
 			// 更新守则
 			$api->patch('rules/{rule}', 'RulesController@update')->name('api.rules.update');
-			// 删除守则
+			// 删除守则 
 			$api->delete('rules/{rule}', 'RulesController@destroy')->name('api.rules.destroy');
 			// 行李清单列表
 			$api->get('travels/{travel}/packages', 'RulesController@packages')->name('api.travels.packages.index');

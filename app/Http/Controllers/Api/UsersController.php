@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Image;
 use App\Models\User;
 use App\Models\Student;
+use App\Models\Group;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\UserRequest;
 use App\Transformers\UserTransformer;
@@ -68,7 +69,7 @@ class UsersController extends Controller
     {
         $user = $this->user();
 
-        $attributes = $request->only(['name','email','introduction']);
+        $attributes = $request->only(['name', 'en_name', 'email', 'introduction']);
 
         if($request->avatar_image_id) {
             $image = Image::find($request->avatar_image_id);
@@ -101,7 +102,7 @@ class UsersController extends Controller
 
 
     /** [information 管理员编辑所有用户信息] */
-    public function information(UserRequest $request, User $user)
+    public function information(UserRequest $request, User $user, Group $group)
     {   
         $manager = $this->user();
 
@@ -109,15 +110,11 @@ class UsersController extends Controller
             return $this->response->errorBadRequest();
         }
 
-        $attributes = $request->only(['name','email','introduction']);
+        // 更新学生基本信息
+        $user->update($request->all());
 
-        if($request->avatar_image_id) {
-            $image = Image::find($request->avatar_image_id);
-
-            $attributes['avatar'] = $image->path;
-        }
-
-        $user->update($attributes);
+        // 更新分组学生信息
+        $group->update($request->all());
 
         return $this->response->item($user, new UserTransformer());
     }
