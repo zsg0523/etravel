@@ -52,6 +52,8 @@ class GroupsController extends Controller
             'email' => 'email|unique:users,email',
             'phone' => 'required|unique:users,phone',
             'original_password' => 'required',
+            'room' => 'required',
+            'duty' => 'required',
             'add_by' => 'required'
         ]);
         // 加密明文密码
@@ -65,6 +67,8 @@ class GroupsController extends Controller
             'user_id' => $user->id,
             'travel_id' => $request->travel_id,
             'student_number' => $request->student_number,
+            'room' => $request->room,
+            'duty' => $request->duty,
             'class' => $request->class,
         ]);
         $group->save();
