@@ -173,7 +173,7 @@
             ...mapActions(['setTravels']),
             getUserTravels(){
                 // 获取旅游项目
-                this.$get(this.$config+'/api/travels',
+                this.$get(this.$config+'/api/creater/travels',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
