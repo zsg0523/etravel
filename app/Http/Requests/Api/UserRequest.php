@@ -13,11 +13,6 @@ class UserRequest extends FormRequest
     {
         switch ($this->method()) {
             case 'POST':
-                // return [
-                //     'name' => 'required|between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name',
-                //     'email' => 'required|email',
-                //     'password' => 'required|string|min:6',
-                // ];
                 return [
                     'name' => 'required|between:2,25|unique:users,name',
                     'password' => 'required|string|min:6',
@@ -26,7 +21,8 @@ class UserRequest extends FormRequest
                 ];
                 break;
             case 'PATCH':
-                $userId = \Auth::guard('api')->id();
+                $userId = isset($this->user_id) ? $this->user_id :  \Auth::guard('api')->id();
+
                 return [
                     'name' => 'between:2,25|unique:users,name,' . $userId,
                     'email' => 'email',
