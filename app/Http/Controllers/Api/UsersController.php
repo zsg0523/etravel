@@ -113,6 +113,7 @@ class UsersController extends Controller
         
         // 添加用户与旅游团关联关系
         $group->fill($data);
+        $group->user_id = $user->id;
         $group->save();
 
         return $this->response->item($user, new UserTransformer())->setStatusCode(201);
