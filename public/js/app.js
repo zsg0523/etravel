@@ -23876,7 +23876,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 student_number: '',
                 class: '',
                 duty: '',
-                room: ''
+                room: '',
+                user_id: ''
             },
             searchStudent: {
                 id: '',
@@ -23961,6 +23962,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edStudent.class = this.students[this.actIndex].class;
             this.edStudent.duty = this.students[this.actIndex].duty;
             this.edStudent.room = this.students[this.actIndex].room;
+            this.edStudent.user_id = this.students[this.actIndex].user_id;
             this.errors = {};
             this.isEditStudentShow = true;
         },
@@ -23981,9 +23983,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     student_number: this.edStudent.student_number,
                     class: this.edStudent.class,
                     duty: this.edStudent.duty,
-                    room: this.edStudent.room
+                    room: this.edStudent.room,
+                    user_id: this.edStudent.user_id
                 },
-                url: this.$config + '/api/users/' + sessionStorage.userId + '/groups/' + this.edStudent.id + '/information'
+                url: this.$config + '/api/users/' + this.edStudent.user_id + '/groups/' + this.edStudent.id + '/information'
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.students[_this3.actIndex].user.original_password = _this3.edStudent.original_password;
@@ -24497,7 +24500,17 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生密码")
+                              _vm._v("学生密码"),
+                              _vm.errors.original_password
+                                ? _c("span", {
+                                    staticClass: "err",
+                                    domProps: {
+                                      textContent: _vm._s(
+                                        _vm.errors.original_password[0]
+                                      )
+                                    }
+                                  })
+                                : _vm._e()
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -24536,7 +24549,15 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生中文名")
+                              _vm._v("学生中文名"),
+                              _vm.errors.name
+                                ? _c("span", {
+                                    staticClass: "err",
+                                    domProps: {
+                                      textContent: _vm._s(_vm.errors.name[0])
+                                    }
+                                  })
+                                : _vm._e()
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -24573,7 +24594,15 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生英文名")
+                              _vm._v("学生英文名"),
+                              _vm.errors.en_name
+                                ? _c("span", {
+                                    staticClass: "err",
+                                    domProps: {
+                                      textContent: _vm._s(_vm.errors.en_name[0])
+                                    }
+                                  })
+                                : _vm._e()
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -24610,7 +24639,15 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("联系电话")
+                              _vm._v("联系电话"),
+                              _vm.errors.phone
+                                ? _c("span", {
+                                    staticClass: "err",
+                                    domProps: {
+                                      textContent: _vm._s(_vm.errors.phone[0])
+                                    }
+                                  })
+                                : _vm._e()
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -24647,7 +24684,17 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生学号")
+                              _vm._v("学生学号"),
+                              _vm.errors.student_number
+                                ? _c("span", {
+                                    staticClass: "err",
+                                    domProps: {
+                                      textContent: _vm._s(
+                                        _vm.errors.student_number[0]
+                                      )
+                                    }
+                                  })
+                                : _vm._e()
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -24686,7 +24733,15 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生班级")
+                              _vm._v("学生班级"),
+                              _vm.errors.class
+                                ? _c("span", {
+                                    staticClass: "err",
+                                    domProps: {
+                                      textContent: _vm._s(_vm.errors.class[0])
+                                    }
+                                  })
+                                : _vm._e()
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -24723,7 +24778,15 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生房间号")
+                              _vm._v("学生房间号"),
+                              _vm.errors.room
+                                ? _c("span", {
+                                    staticClass: "err",
+                                    domProps: {
+                                      textContent: _vm._s(_vm.errors.room[0])
+                                    }
+                                  })
+                                : _vm._e()
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -24760,7 +24823,15 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生职责")
+                              _vm._v("学生职责"),
+                              _vm.errors.duty
+                                ? _c("span", {
+                                    staticClass: "err",
+                                    domProps: {
+                                      textContent: _vm._s(_vm.errors.duty[0])
+                                    }
+                                  })
+                                : _vm._e()
                             ]),
                             _vm._v(" "),
                             _c("div", [

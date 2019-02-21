@@ -124,35 +124,35 @@
                                     <div><input class="item_input" type="text" placeholder="填写用户ID" disabled="disabled" v-model="edStudent.id"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生密码</div>
+                                    <div class="item_title">学生密码<span class="err" v-if="errors.original_password" v-text="errors.original_password[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填写学生密码" v-model="edStudent.original_password"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生中文名</div>
+                                    <div class="item_title">学生中文名<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填写学生中文名" v-model="edStudent.name"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生英文名</div>
+                                    <div class="item_title">学生英文名<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填写学生英文名" v-model="edStudent.en_name"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">联系电话</div>
+                                    <div class="item_title">联系电话<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="edStudent.phone"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生学号</div>
+                                    <div class="item_title">学生学号<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填写学生学号" v-model="edStudent.student_number"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生班级</div>
+                                    <div class="item_title">学生班级<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
                                     <div><input class="item_input" type="text"  placeholder="填写学生班级" v-model="edStudent.class"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生房间号</div>
+                                    <div class="item_title">学生房间号<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
                                     <div><input class="item_input" type="text"  placeholder="填写学生房间号" v-model="edStudent.room"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生职责</div>
+                                    <div class="item_title">学生职责<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
                                     <div><input class="item_input" type="text"  placeholder="填写学生职责" v-model="edStudent.duty"></div>
                                 </div>
                                 <div class="issureStu">
@@ -282,6 +282,7 @@
                     class:'',
                     duty:'',
                     room:'',
+                    user_id:'',
                 },
                 searchStudent:{
                     id:'',
@@ -363,6 +364,7 @@
                 this.edStudent.class=this.students[this.actIndex].class;
                 this.edStudent.duty=this.students[this.actIndex].duty;
                 this.edStudent.room=this.students[this.actIndex].room;
+                this.edStudent.user_id=this.students[this.actIndex].user_id;
                 this.errors={};
                 this.isEditStudentShow=true;
 
@@ -382,9 +384,10 @@
                         student_number:this.edStudent.student_number, 
                         class:this.edStudent.class, 
                         duty:this.edStudent.duty, 
-                        room:this.edStudent.room, 
+                        room:this.edStudent.room,
+                        user_id:this.edStudent.user_id,  
                     },
-                    url: this.$config+'/api/users/'+sessionStorage.userId+'/groups/'+this.edStudent.id+'/information',
+                    url: this.$config+'/api/users/'+this.edStudent.user_id+'/groups/'+this.edStudent.id+'/information',
                 }).then(res => {
                     if(res.status==200){
                         this.students[this.actIndex].user.original_password=this.edStudent.original_password;
