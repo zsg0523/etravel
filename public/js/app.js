@@ -22505,7 +22505,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
             }).then(function (res) {
-                console.log(res.data);
+                // console.log(res.data);
                 _this2.getUserTravels();
                 _this2.popupHiden();
                 _this2.$toast('添加成功');

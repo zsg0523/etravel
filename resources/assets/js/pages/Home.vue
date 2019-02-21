@@ -210,7 +210,7 @@
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     this.getUserTravels();
                     this.popupHiden();
                     this.$toast('添加成功');
