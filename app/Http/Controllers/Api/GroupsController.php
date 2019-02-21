@@ -48,7 +48,8 @@ class GroupsController extends Controller
     {
         // 验证用户数据
         $validateData = $request->validate([
-            'name' => 'required|between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name',
+            'name' => 'required|between:2,25|unique:users,name',
+            'en_name' => 'between:2,25|unique:users.name',
             'email' => 'email|unique:users,email',
             'phone' => 'required|unique:users,phone',
             'original_password' => 'required',

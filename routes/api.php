@@ -60,8 +60,10 @@ $api->version('v1', [
 			$api->get('user','UsersController@me')->name('api.user.show');
 			// 访问图片资源
 			$api->post('images','ImagesController@store')->name('api.images.store');
-			// 编辑用户资料
+			// 个人编辑用户资料
 			$api->patch('user','UsersController@update')->name('api.user.update');
+			// 管理员添加用户并且分组
+			$api->post('userGroup', 'GroupsController@userGroup')->name('api.userGroup');
 			// 管理员编辑用户资料
 			$api->patch('users/{user}/groups/{group}/information', 'UsersController@information')->name('api.users.information');
 			// 用户通知列表
@@ -215,8 +217,7 @@ $api->version('v1', [
 			$api->patch('users/{user}/travels/{travel}/groups/{group}','GroupsController@update')->name('api.group.update');
 			// 删除分组安排
 			$api->delete('users/{user}/travels/{travel}/groups/{group}','GroupsController@destroy')->name('api.group.destroy');
-			// 添加用户并且分组
-			$api->post('userGroup', 'GroupsController@userGroup');
+			
 
 
 			// 所有行程安排

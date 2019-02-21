@@ -46,7 +46,12 @@ class UserRequest extends FormRequest
         ];
     }
 
-
+    public function messages()
+    {
+        return [
+            'name.required' => '名称不能为空！',
+        ];
+    }
 
 
 

@@ -26,4 +26,11 @@ class AnswerRequest extends FormRequest
                 break;
         }
     }
+
+    public function messages()
+    {
+        return [
+            'content.required' => "内容不能为空！"
+        ];
+    }
 }
