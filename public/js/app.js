@@ -23914,8 +23914,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 },
                 url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/groups?include=user.student.school'
             }).then(function (res) {
-                // console.log(res.data);
                 _this.students = res.data.data;
+                console.log(_this.students);
             }).catch(function (err) {
                 _this.$toast('获取失败');
                 console.log(err);
@@ -24133,73 +24133,53 @@ var render = function() {
       { staticClass: "studentsList disflex" },
       [
         _c("div", { staticClass: "students_left" }, [
-          _c(
-            "ul",
-            { staticStyle: { padding: "0", margin: "0" } },
-            [
-              _c("li", [
-                _c("div", { staticClass: "left_title disflex" }, [
-                  _c("span", [_vm._v("学员信息")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "left_title_icon" }, [
-                    _c(
-                      "div",
-                      {
-                        on: {
-                          click: function($event) {
-                            _vm.delStudent()
-                          }
+          _c("ul", { staticStyle: { padding: "0", margin: "0" } }, [
+            _c("li", [
+              _c("div", { staticClass: "left_title disflex" }, [
+                _c("span", [_vm._v("学员信息")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "left_title_icon" }, [
+                  _c(
+                    "div",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.delStudent()
                         }
-                      },
-                      [
-                        _c("img", {
-                          attrs: {
-                            src: "/etravel/public/images/dele-inf.png",
-                            alt: ""
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        on: {
-                          click: function($event) {
-                            _vm.addNewStudentShow()
-                          }
-                        }
-                      },
-                      [
-                        _c("img", {
-                          attrs: {
-                            src: "/etravel/public/images/add-inf.png",
-                            alt: ""
-                          }
-                        })
-                      ]
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.students, function(student, index) {
-                return _c(
-                  "li",
-                  {
-                    class: _vm.leftTabAct(index),
-                    on: {
-                      click: function($event) {
-                        _vm.changeActIndex(index)
                       }
-                    }
-                  },
-                  [_c("div", [_vm._v(_vm._s(student.user.name))])]
-                )
-              })
-            ],
-            2
-          )
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "/etravel/public/images/dele-inf.png",
+                          alt: ""
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.addNewStudentShow()
+                        }
+                      }
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "/etravel/public/images/add-inf.png",
+                          alt: ""
+                        }
+                      })
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "students_right disflex" }, [
