@@ -41,6 +41,8 @@ class TravelsController extends Controller
     public function store(TravelRequest $request, Travel $travel)
     {
         $travel->fill($request->all());
+        // 新增项目责任人
+        $travel->add_by = $this->user()->id;
         $travel->save();
         return $this->response->item($travel, new TravelTransformer())->setStatusCode(201);
     }
