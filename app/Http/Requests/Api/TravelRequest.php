@@ -30,4 +30,13 @@ class TravelRequest extends FormRequest
                 break;
         }
     }
+
+    public function messages()
+    {
+        return [
+            'travel_name.required' => "项目名称不能为空！",
+            'travel_introduction.required' => "项目介绍不能为空！",
+            'travel_at' => "时间不能空！"
+        ];
+    }
 }

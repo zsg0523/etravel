@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Travel extends Model
 {
-    protected $fillable = ['travel_name', 'travel_at', 'travel_introduction', 'urgency', 'assembly_station', 'assembly_at', 'dissolution_station', 'dissolution_at'];
+    protected $fillable = ['travel_name', 'travel_at', 'travel_introduction', 'urgency', 'assembly_station', 'assembly_at', 'dissolution_station', 'dissolution_at', 'add_by'];
 
     public function users()
     {

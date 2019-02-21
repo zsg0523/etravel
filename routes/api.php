@@ -90,8 +90,10 @@ $api->version('v1', [
 			// 删除新闻	
 			$api->delete('new/{new}','NewsController@destroy')->name('api.news.destroy');
 
-			// 旅游团基本信息
+			// 所有旅游项目列表
 			$api->get('travels','TravelsController@index')->name('api.travel.index');
+			// 创建人旅游项目列表
+			$api->get('creater/travels', 'TravelsController@createrIndex')->name('api.travel.creater');
 			// 用户的旅游团
 			$api->get('users/{user}/travels', 'TravelsController@userIndex')->name('api.users.travels.index');
 			// 旅游团详情
