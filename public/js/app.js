@@ -24500,17 +24500,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生密码"),
-                              _vm.errors.original_password
-                                ? _c("span", {
-                                    staticClass: "err",
-                                    domProps: {
-                                      textContent: _vm._s(
-                                        _vm.errors.original_password[0]
-                                      )
-                                    }
-                                  })
-                                : _vm._e()
+                              _vm._v("学生密码")
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -24908,15 +24898,7 @@ var render = function() {
               _c("div", { staticClass: "editBoxContent disflex" }, [
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生密码"),
-                    _vm.errors.original_password
-                      ? _c("span", {
-                          staticClass: "err",
-                          domProps: {
-                            textContent: _vm._s(_vm.errors.original_password[0])
-                          }
-                        })
-                      : _vm._e()
+                    _vm._v("学生密码")
                   ]),
                   _vm._v(" "),
                   _c("div", [

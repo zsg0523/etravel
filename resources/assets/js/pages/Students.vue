@@ -124,7 +124,7 @@
                                     <div><input class="item_input" type="text" placeholder="填写用户ID" disabled="disabled" v-model="edStudent.id"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生密码<span class="err" v-if="errors.original_password" v-text="errors.original_password[0]"></span></div>
+                                    <div class="item_title">学生密码</div>
                                     <div><input class="item_input" type="text" placeholder="填写学生密码" v-model="edStudent.original_password"></div>
                                 </div>
                                 <div class="form_item_small">
@@ -167,7 +167,7 @@
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
                         <div class="form_item">
-                            <div class="item_title">学生密码<span class="err" v-if="errors.original_password" v-text="errors.original_password[0]"></span></div>
+                            <div class="item_title">学生密码</div>
                             <div><input class="item_input" type="text" placeholder="填写学生密码" v-model="newStudent.original_password"></div>
                         </div>
                         <div class="form_item">
