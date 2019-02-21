@@ -88,20 +88,38 @@ class UsersController extends Controller
         return $this->response->collection($user->where('add_by', $user->id)->get(), new UserTransformer());
     }
 
-    /** [userInfo 查询某 ID 用户信息] */
+    /** [userInfo 查询某ID用户信息] */
     public function userInfo(User $user)
     {
         return $this->response->item($user, new UserTransformer());
     }
 
-    /** [schoolUser 查询 用户 所有学校的学生] */
+    /** [schoolUser 查询管理员所有学校的学生] */
     public function schoolUser(User $user)
     {
         // return $this->response->collection();
     }
 
 
-    /** [information 管理员编辑所有用户信息] */
+    /** [userGroup 管理员创建学生并分组] */
+    public function userGroup(UserRequest $request,User $user, Group $group)
+    {
+        $data = $request->all();
+        // 加密明文密码
+        $data['password'] = bcrypt((string)$request->original_password);
+        // 添加用户
+        $user->fill($data);
+        $user->save();
+        
+        // 添加用户与旅游团关联关系
+        $group->fill($data);
+        $group->save();
+
+        return $this->response->item($user, new UserTransformer())->setStatusCode(201);
+    }
+
+
+    /** [information 管理员编辑用户信息] */
     public function information(UserRequest $request, User $user, Group $group)
     {   
         $manager = $this->user();

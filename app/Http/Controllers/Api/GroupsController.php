@@ -43,40 +43,6 @@ class GroupsController extends Controller
     	return $this->response->item($group, new GroupTransformer());
     }
 
-    /** [userGroup 添加用户并分组] */
-    public function userGroup(Request $request,User $user, Group $group)
-    {
-        // 验证用户数据
-        $validateData = $request->validate([
-            'name' => 'required|between:2,25|unique:users,name',
-            'en_name' => 'between:2,25|unique:users.name',
-            'email' => 'email|unique:users,email',
-            'phone' => 'required|unique:users,phone',
-            'original_password' => 'required',
-            'room' => 'required',
-            'duty' => 'required',
-            'add_by' => 'required'
-        ]);
-        // 加密明文密码
-        $validateData['password'] = bcrypt((string)$request->original_password);
-        // 添加用户
-        $user->fill($validateData);
-        $user->save();
-        
-        // 添加用户与旅游团关联关系
-        $group->fill([
-            'user_id' => $user->id,
-            'travel_id' => $request->travel_id,
-            'student_number' => $request->student_number,
-            'room' => $request->room,
-            'duty' => $request->duty,
-            'class' => $request->class,
-        ]);
-        $group->save();
-
-        return $this->response->item($group, new GroupTransformer())->setStatusCode(201);
-    }
-
     /** [store 新建分组] */
     public function store(GroupRequest $request,User $user, Travel $travel, Group $group)
     {
