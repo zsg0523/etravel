@@ -19,6 +19,12 @@ class TravelsController extends Controller
     	return $this->response->collection(Travel::all(), new TravelTransformer());
     }
 
+    /** [createrIndex 创建人项目列表] */
+    public function createrIndex()
+    {
+        return $this->response->collection(Travel::where('add_by', $this->user()->id)->get(), new TravelTransformer());
+    }
+
     /** [userIndex 用户的旅游团] */
     public function userIndex(User $user)
     {

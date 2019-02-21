@@ -70,6 +70,18 @@ $api->version('v1', [
 			$api->get('user/notifications/stats', 'NotificationsController@stats')->name('api.user.notifications.stats');
 
 
+			// 所有学校列表
+			$api->get('schools', 'SchoolsController@index')->name('api.school.index');
+			// 显示学校信息
+			$api->get('schools/{school}', 'SchoolsController@show')->name('api.school.show');
+			// 创建学校信息
+			$api->post('schools', 'SchoolsController@store')->name('api.school.store');
+			// 编辑学校信息
+			$api->patch('schools/{school}', 'SchoolsController@update')->name('api.school.update');
+			// 删除学校信息
+			$api->delete('schools/{school}', 'SchoolsController@destroy')->name('api.school.destroy');
+			
+
 			
 			// 创建新闻
 			$api->post('new','NewsController@store')->name('api.news.store');
@@ -78,8 +90,10 @@ $api->version('v1', [
 			// 删除新闻	
 			$api->delete('new/{new}','NewsController@destroy')->name('api.news.destroy');
 
-			// 旅游团基本信息
+			// 所有旅游项目列表
 			$api->get('travels','TravelsController@index')->name('api.travel.index');
+			// 创建人旅游项目列表
+			$api->get('creater/travels', 'TravelsController@createrIndex')->name('api.travel.creater');
 			// 用户的旅游团
 			$api->get('users/{user}/travels', 'TravelsController@userIndex')->name('api.users.travels.index');
 			// 旅游团详情

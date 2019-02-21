@@ -95,6 +95,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasOne(Student::class);
     }
 
+    public function teacher()
+    {
+        return $this->hasOne(Teacher::class);
+    }
+
     /** [groups 用户的分组信息] */
     public function groups()
     {
