@@ -37,7 +37,6 @@ $api->version('v1', [
 		$api->put('authorizations/current','AuthorizationsController@update')->name('api.authorizations.update');
 		// 删除token	
 		$api->delete('authorizations/current','AuthorizationsController@destroy')->name('api.authorizations.destroy');
-		
 		// 新闻列表
 		$api->get('news','NewsController@index')->name('api.news.index');
 		// 新闻详情
@@ -54,7 +53,7 @@ $api->version('v1', [
 			$api->get('users/{user}/userList', 'UsersController@userList')->name('api.user.userList');
 			// 用户 ID 查询列表
 			$api->get('users/{user}/userInfo', 'UsersController@userInfo')->name('api.user.userInfo');
-			// 当前管理员所属学校用户列表
+			// 管理员所属学校用户列表
 			$api->get('users/{user}/schoolUser', 'UsersController@schoolUser')->name('api.user.schoolUser');
 			// 当前登录用户信息
 			$api->get('user','UsersController@me')->name('api.user.show');
@@ -63,7 +62,7 @@ $api->version('v1', [
 			// 个人编辑用户资料
 			$api->patch('user','UsersController@update')->name('api.user.update');
 			// 管理员添加用户并且分组
-			$api->post('userGroup', 'GroupsController@userGroup')->name('api.userGroup');
+			$api->post('userGroup', 'UsersController@userGroup')->name('api.userGroup');
 			// 管理员编辑用户资料
 			$api->patch('users/{user}/groups/{group}/information', 'UsersController@information')->name('api.users.information');
 			// 用户通知列表

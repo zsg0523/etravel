@@ -13,12 +13,22 @@ class UserRequest extends FormRequest
     {
         switch ($this->method()) {
             case 'POST':
-                return [
-                    'name' => 'required|between:2,25|unique:users,name',
-                    'password' => 'required|string|min:6',
-                    'verification_key' => 'required|string',
-                    'verification_code' => 'required|string',
-                ];
+                if(isset($this->verification_key) && $this->verification_code)
+                {
+                    return [
+                        'name' => 'required|between:2,25|unique:users,name',
+                        'password' => 'required|string|min:6',
+                        'verification_key' => 'required|string',
+                        'verification_code' => 'required|string',
+                    ]; 
+                } else {
+                    return [
+                        'name' => 'required|between:2,25|unique:users,name',
+                        'original_password' => 'required|string|min:6',
+                        'email' => 'unique:users,email',
+                        'phone' => 'unique:users,phone',
+                    ];
+                }
                 break;
             case 'PATCH':
                 $userId = isset($this->user_id) ? $this->user_id :  \Auth::guard('api')->id();

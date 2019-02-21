@@ -2488,16 +2488,16 @@
         },
         {
             "name": "overtrue/laravel-lang",
-            "version": "3.0.13",
+            "version": "3.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/laravel-lang.git",
-                "reference": "11d8386a5dee3cfedf4ee7e2da6af0d3b3fe268a"
+                "reference": "555007487344fca450342b0dd19a6ae3bac237e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/overtrue/laravel-lang/zipball/11d8386a5dee3cfedf4ee7e2da6af0d3b3fe268a",
-                "reference": "11d8386a5dee3cfedf4ee7e2da6af0d3b3fe268a",
+                "url": "https://api.github.com/repos/overtrue/laravel-lang/zipball/555007487344fca450342b0dd19a6ae3bac237e2",
+                "reference": "555007487344fca450342b0dd19a6ae3bac237e2",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2507,7 +2507,8 @@
                 ]
             },
             "require": {
-                "caouecs/laravel-lang": "~3.0"
+                "caouecs/laravel-lang": "~3.0",
+                "symfony/process": "^3.0|^4.0"
             },
             "type": "library",
             "extra": {
@@ -2541,7 +2542,7 @@
                 "laravel",
                 "overtrue"
             ],
-            "time": "2018-09-03T09:31:08+00:00"
+            "time": "2019-01-22T07:10:12+00:00"
         },
         {
             "name": "paragonie/random_compat",
