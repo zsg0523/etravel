@@ -79,7 +79,7 @@
         methods:{
             getInformations(){
                 // 获取消息详情
-                this.$get('/api/user/notifications',
+                this.$get(this.$config+'/api/user/notifications',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,

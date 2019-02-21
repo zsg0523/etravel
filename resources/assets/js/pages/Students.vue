@@ -24,21 +24,23 @@
     .form_item_student>div{width: 94%;margin-left: 3%;height: 45px;line-height: 45px;}
     .form_item{width: 100%;height:100px;}
     .form_item>div{width: 97%;margin-left: 1.5%;height: 45px;line-height: 45px;}
+    .form_item_small{width: 100%;height:80px;}
+    .form_item_small>div{width: 97%;margin-left: 1.5%;height: 40px;line-height: 40px;}
     .item_input{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;}
     .studentEditBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
     .studentEditBtn:hover{cursor:pointer;}
     .studentEditBtn>img{width:50px;height: 50px;}
     .act{background-color: #ffde01;}
 
-    .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;}
+    .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;font-size: 16px;}
     .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
     .editBoxTitle{width:100%;height:50px;text-align: center;line-height: 50px;font-size: 18px;}
     .issureStu{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
     .issureBtn{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;}
     .twoBtn{width:40%;margin-left:5%;margin-right:5%;float:left;height:50px;font-size: 16px;border-radius: 8px;outline: none;}
     .cancel{background-color:#fff;border:1px solid #ccc;}
-
     .van-dialog{width:50%;}
+    .err{color:red;float: right;font-size: 14px;}
 
 </style>
 
@@ -117,39 +119,39 @@
                     <van-popup v-model="isEditStudentShow" :overlay="true" style="border-radius: 15px;">
                         <div class="editBox" >
                             <div class="editBoxContent disflex">
-                                <div class="form_item">
+                                <div class="form_item_small">
                                     <div class="item_title">用户ID</div>
                                     <div><input class="item_input" type="text" placeholder="填写用户ID" disabled="disabled" v-model="edStudent.id"></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_small">
                                     <div class="item_title">学生密码</div>
                                     <div><input class="item_input" type="text" placeholder="填写学生密码" v-model="edStudent.original_password"></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_small">
                                     <div class="item_title">学生中文名</div>
                                     <div><input class="item_input" type="text" placeholder="填写学生中文名" v-model="edStudent.name"></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_small">
                                     <div class="item_title">学生英文名</div>
                                     <div><input class="item_input" type="text" placeholder="填写学生英文名" v-model="edStudent.en_name"></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_small">
                                     <div class="item_title">联系电话</div>
                                     <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="edStudent.phone"></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_small">
                                     <div class="item_title">学生学号</div>
                                     <div><input class="item_input" type="text" placeholder="填写学生学号" v-model="edStudent.student_number"></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_small">
                                     <div class="item_title">学生班级</div>
                                     <div><input class="item_input" type="text"  placeholder="填写学生班级" v-model="edStudent.class"></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_small">
                                     <div class="item_title">学生房间号</div>
                                     <div><input class="item_input" type="text"  placeholder="填写学生房间号" v-model="edStudent.room"></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_small">
                                     <div class="item_title">学生职责</div>
                                     <div><input class="item_input" type="text"  placeholder="填写学生职责" v-model="edStudent.duty"></div>
                                 </div>
@@ -165,35 +167,35 @@
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
                         <div class="form_item">
-                            <div class="item_title">学生密码</div>
+                            <div class="item_title">学生密码<span class="err" v-if="errors.original_password" v-text="errors.original_password[0]"></span></div>
                             <div><input class="item_input" type="text" placeholder="填写学生密码" v-model="newStudent.original_password"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生中文名</div>
+                            <div class="item_title">学生中文名<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
                             <div><input class="item_input" type="text" placeholder="填写学生中文名" v-model="newStudent.name"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生英文名</div>
+                            <div class="item_title">学生英文名<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
                             <div><input class="item_input" type="text" placeholder="填写学生英文名" v-model="newStudent.en_name"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">联系电话</div>
+                            <div class="item_title">联系电话<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
                             <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="newStudent.phone"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生学号</div>
+                            <div class="item_title">学生学号<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
                             <div><input class="item_input" type="text" placeholder="填写学生学号" v-model="newStudent.student_number"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生班级</div>
+                            <div class="item_title">学生班级<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
                             <div><input class="item_input" type="text"  placeholder="填写学生班级" v-model="newStudent.class"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生房间号</div>
+                            <div class="item_title">学生房间号<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
                             <div><input class="item_input" type="text"  placeholder="填写学生房间号" v-model="newStudent.room"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生职责</div>
+                            <div class="item_title">学生职责<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
                             <div><input class="item_input" type="text"  placeholder="填写学生职责" v-model="newStudent.duty"></div>
                         </div>
                         <div class="issureStu">
@@ -205,41 +207,40 @@
             <van-popup v-model="isSearchStudentShow" :overlay="true" style="border-radius: 15px;">
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
-                        <div class="editBoxTitle">搜索结果</div>
-                        <div class="form_item">
+                        <div class="form_item_small">
                             <div class="item_title">用户ID</div>
                             <div><input class="item_input" type="text" placeholder="填写用户ID" disabled="disabled" :value="searchStudent.id"></div>
                         </div>
-                        <div class="form_item">
+                        <div class="form_item_small">
                             <div class="item_title">学生密码</div>
                             <div><input class="item_input" type="text" placeholder="填写学生密码" disabled="disabled" :value="searchStudent.original_password"></div>
                         </div>
-                        <div class="form_item">
+                        <div class="form_item_small">
                             <div class="item_title">学生中文名</div>
                             <div><input class="item_input" type="text" placeholder="填写学生中文名" disabled="disabled" :value="searchStudent.name"></div>
                         </div>
-                        <div class="form_item">
+                        <div class="form_item_small">
                             <div class="item_title">学生英文名</div>
                             <div><input class="item_input" type="text" placeholder="填写学生英文名" disabled="disabled" :value="searchStudent.en_name"></div>
                         </div>
-                        <div class="form_item">
+                        <div class="form_item_small">
                             <div class="item_title">联系电话</div>
                             <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="searchStudent.phone"></div>
                         </div>
-                        <div class="form_item">
-                            <div class="item_title">学生学号</div>
+                        <div class="form_item_small">
+                            <div class="item_title">学生学号<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
                             <div><input class="item_input" type="text" placeholder="填写学生学号" v-model="searchStudent.student_number"></div>
                         </div>
-                        <div class="form_item">
-                            <div class="item_title">学生班级</div>
+                        <div class="form_item_small">
+                            <div class="item_title">学生班级<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
                             <div><input class="item_input" type="text"  placeholder="填写学生班级" v-model="searchStudent.class"></div>
                         </div>
-                        <div class="form_item">
-                            <div class="item_title">学生房间号</div>
+                        <div class="form_item_small">
+                            <div class="item_title">学生房间号<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
                             <div><input class="item_input" type="text"  placeholder="填写学生房间号" v-model="searchStudent.room"></div>
                         </div>
-                        <div class="form_item">
-                            <div class="item_title">学生职责</div>
+                        <div class="form_item_small">
+                            <div class="item_title">学生职责<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
                             <div><input class="item_input" type="text"  placeholder="填写学生职责" v-model="searchStudent.duty"></div>
                         </div>
                         <div class="issureStu">
@@ -298,6 +299,7 @@
                 isSearchStudentShow:false,
                 actIndex:0,
                 searchId:'',
+                errors:{},
             }
         },
         mounted:function(){
@@ -321,6 +323,7 @@
                 });
             },
             addNewStudentShow(){
+                this.errors={};
                 this.isNewStudentShow=true;
             },
             addNewStudent(){
@@ -346,7 +349,8 @@
 
                 }).catch(err => {
                     this.$toast('添加失败');
-                    console.log(err)
+                    this.errors=err.response.data.errors;
+                    console.log(err.response.data);
                 });
             },
             editStudentShow(){
@@ -359,36 +363,52 @@
                 this.edStudent.class=this.students[this.actIndex].class;
                 this.edStudent.duty=this.students[this.actIndex].duty;
                 this.edStudent.room=this.students[this.actIndex].room;
+                this.errors={};
                 this.isEditStudentShow=true;
+
             },
-            // editStudent(){
-            //     // 修改学员信息信息/api/travels/1/Students/22
-            //     this.$ajax({
-            //         method: 'PATCH',
-            //         headers: {
-            //             "Authorization": 'Bearer '+sessionStorage.token,
-            //         },
-            //         data:{
-            //             title:this.edStudent.title,
-            //             content:this.edStudent.content,
-            //             sites:this.edStudent.sites,
-            //         },
-            //         url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/Students/'+this.edStudent.id,
-            //     }).then(res => {
-            //         if(res.status==200){
-            //             this.students[this.edStudent.index].title=this.edStudent.title;
-            //             this.students[this.edStudent.index].content=this.edStudent.content;
-            //             this.students[this.edStudent.index].sites=this.edStudent.sites;
-            //             this.$toast('修改成功');
-            //             this.isEditStudentShow=false;    
-            //         }else{
-            //             this.$toast('修改失败');
-            //         }
-            //     }).catch(err => {
-            //         this.$toast('修改失败');
-            //         console.log(err)
-            //     });
-            // },
+            editStudent(){
+                // 修改学员信息信息/api/users/:user/groups/:group/information
+                this.$ajax({
+                    method: 'PATCH',
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    },
+                    data:{
+                        original_password:this.edStudent.original_password, 
+                        name:this.edStudent.name, 
+                        en_name:this.edStudent.en_name, 
+                        phone:this.edStudent.phone, 
+                        student_number:this.edStudent.student_number, 
+                        class:this.edStudent.class, 
+                        duty:this.edStudent.duty, 
+                        room:this.edStudent.room, 
+                    },
+                    url: this.$config+'/api/users/'+sessionStorage.userId+'/groups/'+this.edStudent.id+'/information',
+                }).then(res => {
+                    if(res.status==200){
+                        this.students[this.actIndex].user.original_password=this.edStudent.original_password;
+                        this.students[this.actIndex].user.name=this.edStudent.name;
+                        this.students[this.actIndex].user.en_name=this.edStudent.en_name;
+                        this.students[this.actIndex].user.phone=this.edStudent.phone;
+                        this.students[this.actIndex].student_number=this.edStudent.student_number;
+                        this.students[this.actIndex].class=this.edStudent.class;
+                        this.students[this.actIndex].duty=this.edStudent.duty;
+                        this.students[this.actIndex].room=this.edStudent.room;
+                        this.$toast('修改成功');
+                        this.isEditStudentShow=false;    
+                    }else{
+                        this.$toast('修改失败');
+                        this.errors=err.response.data.errors;
+                    }
+                }).catch(error => {
+                    this.$toast('修改失败');
+                    if(error.response.data.errors){
+                        this.$toast(error.response.data.errors.name[0]);
+                    }
+
+                });
+            },
             delStudent(){
                 // 删除学员信息/api/users/:user/travels/:travel/groups/:group
                 this.$dialog.confirm({
@@ -419,6 +439,7 @@
                 });
             },
             searchStudentShow(){
+                this.errors={};
                 this.isSearchStudentShow=true;
             },
             toSearchStudent(){
@@ -432,7 +453,11 @@
                         url: this.$config+'/api/users/'+this.searchId+'/userInfo',
                     }).then(res => {
                         // console.log(res.data);
-                        this.searchStudent=res.data;
+                        this.searchStudent.id=res.data.id;
+                        this.searchStudent.name=res.data.name;
+                        this.searchStudent.en_name=res.data.en_name;
+                        this.searchStudent.phone=res.data.phone;
+                        this.searchStudent.original_password=res.data.original_password;
                         this.searchStudentShow();
                     }).catch(err => {
                         this.$toast('请输入正确的用户ID');
@@ -449,12 +474,18 @@
             },
             addOldStudent(){
                 // 添加已有用户到旅游/api/users/:user/travels/:travel/groups
-                this.$ajax({
-                    method: 'post',
+                this.$post(this.$config+'/api/users/'+this.searchStudent.id+'/travels/'+sessionStorage.actTravelId+'/groups',
+                {
+                    phone:this.searchStudent.phone,
+                    student_number: this.searchStudent.student_number,
+                    class: this.searchStudent.class,
+                    duty: this.searchStudent.duty,
+                    room: this.searchStudent.room,
+                },
+                {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
-                    },
-                    url:this.$config+'/api/users/'+this.searchStudent.id+'/travels/'+sessionStorage.actTravelId+'/groups',
+                    }
                 }).then(res => {
                     // console.log(res);
                     this.$toast('添加成功');
@@ -462,26 +493,18 @@
                     this.searchId='';
                     this.searchStudent={}; 
                     this.isSearchStudentShow=false;
+
                 }).catch(err => {
+                    console.log(err.response);
                     this.$toast('添加失败');
-                    console.log(err)
+                    this.errors=err.response.data.errors;
+                    // if(err.response.data.errors.duty){
+                    //     this.$toast(err.response.data.errors.duty[0]);
+                    // }
+                    // if(err.response.data.errors.room){
+                    //     this.$toast(err.response.data.errors.room[0]);
+                    // }
                 });
-                // this.$post(this.$config+'/api/users/'+this.searchStudent.id+'/travels/'+sessionStorage.actTravelId+'/groups',
-                // {
-                //     headers: {
-                //         "Authorization": 'Bearer '+sessionStorage.token,
-                //     }
-                // }).then(res => {
-                //     // console.log(res.data);
-                //     this.$toast('添加成功');
-                //     this.getStudents();
-                //     this.searchId='';
-                //     this.searchStudent={}; 
-                //     this.isSearchStudentShow=false;
-                // }).catch(err => {
-                //     this.$toast('添加失败');
-                //     console.log(err)
-                // });
             },
             changeActIndex(index){
                 this.actIndex=index;
@@ -490,7 +513,7 @@
                 return {
                     act: index==this.actIndex? true:false,
                 }
-            }
+            },
         },
     }
 </script>

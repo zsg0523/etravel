@@ -81,8 +81,8 @@
 			              	this.password = ''
 			          	}
 			        }).catch(err => {
-			        	this.$toast('账号或密码错误');
-			          	console.log(err)
+			        	this.$toast(err.response.data.message);
+			          	console.log(err);
 			        });
 		      	} else {
 		        	this.$toast('请填写账号密码');

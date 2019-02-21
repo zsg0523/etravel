@@ -21578,7 +21578,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						_this.password = '';
 					}
 				}).catch(function (err) {
-					_this.$toast('账号或密码错误');
+					_this.$toast(err.response.data.message);
 					console.log(err);
 				});
 			} else {
@@ -23582,7 +23582,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.students{width: 100%;min-height: 700px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.studentsList{width: 100%;height: 100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;\n}\n.students_left{width: 18%;min-height:100%;border-right: 3px solid #d6d6d6;\n}\n.students_left>ul{width: 100%;height: auto;\n}\n.students_left>ul>li{width: 100%;height:50px;line-height: 50px;font-size: 18px;\n}\n.students_left>ul>li>div{width: 90%;height:50px;line-height: 50px;margin-left: 5%;overflow: hidden;\n}\n.left_title{-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;\n}\n.left_title_icon{width: auto;height: auto;\n}\n.left_title_icon>div{width: 40px;height: 40px;line-height: 40px;float: left;text-align: center;margin-right: 5px;\n}\n.left_title_icon>div:hover{cursor: pointer;\n}\n.left_title_icon>div>img{width:30px;height:30px;\n}\n.students_right{width: 82%;min-height:100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.students_right_title{width: 100%;height: 50px;line-height: 50px;border-bottom: 1px solid #ccc;\n}\n.search_input{width: 100%;height: 50px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.search_input>input{width: 30%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.search_icon{width: 50px;height: 50px;\n}\n.search_icon>img{width:40px;height: 40px\n}\n.search_icon>img:hover{cursor: pointer;\n}\n.students_input_form{width: 100%;min-height:600px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 18px;position: relative;\n}\n.form_content_student{width: 70%;min-height: 600px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_student{width: 50%;height:100px;\n}\n.form_item_student>div{width: 94%;margin-left: 3%;height: 45px;line-height: 45px;\n}\n.form_item{width: 100%;height:100px;\n}\n.form_item>div{width: 97%;margin-left: 1.5%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.studentEditBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.studentEditBtn:hover{cursor:pointer;\n}\n.studentEditBtn>img{width:50px;height: 50px;\n}\n.act{background-color: #ffde01;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.editBoxTitle{width:100%;height:50px;text-align: center;line-height: 50px;font-size: 18px;\n}\n.issureStu{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issureBtn{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.twoBtn{width:40%;margin-left:5%;margin-right:5%;float:left;height:50px;font-size: 16px;border-radius: 8px;outline: none;\n}\n.cancel{background-color:#fff;border:1px solid #ccc;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.students{width: 100%;min-height: 700px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.studentsList{width: 100%;height: 100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;\n}\n.students_left{width: 18%;min-height:100%;border-right: 3px solid #d6d6d6;\n}\n.students_left>ul{width: 100%;height: auto;\n}\n.students_left>ul>li{width: 100%;height:50px;line-height: 50px;font-size: 18px;\n}\n.students_left>ul>li>div{width: 90%;height:50px;line-height: 50px;margin-left: 5%;overflow: hidden;\n}\n.left_title{-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;\n}\n.left_title_icon{width: auto;height: auto;\n}\n.left_title_icon>div{width: 40px;height: 40px;line-height: 40px;float: left;text-align: center;margin-right: 5px;\n}\n.left_title_icon>div:hover{cursor: pointer;\n}\n.left_title_icon>div>img{width:30px;height:30px;\n}\n.students_right{width: 82%;min-height:100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.students_right_title{width: 100%;height: 50px;line-height: 50px;border-bottom: 1px solid #ccc;\n}\n.search_input{width: 100%;height: 50px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.search_input>input{width: 30%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.search_icon{width: 50px;height: 50px;\n}\n.search_icon>img{width:40px;height: 40px\n}\n.search_icon>img:hover{cursor: pointer;\n}\n.students_input_form{width: 100%;min-height:600px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 18px;position: relative;\n}\n.form_content_student{width: 70%;min-height: 600px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_student{width: 50%;height:100px;\n}\n.form_item_student>div{width: 94%;margin-left: 3%;height: 45px;line-height: 45px;\n}\n.form_item{width: 100%;height:100px;\n}\n.form_item>div{width: 97%;margin-left: 1.5%;height: 45px;line-height: 45px;\n}\n.form_item_small{width: 100%;height:80px;\n}\n.form_item_small>div{width: 97%;margin-left: 1.5%;height: 40px;line-height: 40px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.studentEditBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.studentEditBtn:hover{cursor:pointer;\n}\n.studentEditBtn>img{width:50px;height: 50px;\n}\n.act{background-color: #ffde01;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;font-size: 16px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.editBoxTitle{width:100%;height:50px;text-align: center;line-height: 50px;font-size: 18px;\n}\n.issureStu{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issureBtn{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.twoBtn{width:40%;margin-left:5%;margin-right:5%;float:left;height:50px;font-size: 16px;border-radius: 8px;outline: none;\n}\n.cancel{background-color:#fff;border:1px solid #ccc;\n}\n.van-dialog{width:50%;\n}\n.err{color:red;float: right;font-size: 14px;\n}\n\n", ""]);
 
 // exports
 
@@ -23593,6 +23593,7 @@ exports.push([module.i, "\n.students{width: 100%;min-height: 700px;-webkit-box-p
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -23892,7 +23893,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             isEditStudentShow: false,
             isSearchStudentShow: false,
             actIndex: 0,
-            searchId: ''
+            searchId: '',
+            errors: {}
         };
     },
 
@@ -23919,6 +23921,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         addNewStudentShow: function addNewStudentShow() {
+            this.errors = {};
             this.isNewStudentShow = true;
         },
         addNewStudent: function addNewStudent() {
@@ -23944,7 +23947,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.newStudent.class = '';
             }).catch(function (err) {
                 _this2.$toast('添加失败');
-                console.log(err);
+                _this2.errors = err.response.data.errors;
+                console.log(err.response.data);
             });
         },
         editStudentShow: function editStudentShow() {
@@ -23957,71 +23961,87 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edStudent.class = this.students[this.actIndex].class;
             this.edStudent.duty = this.students[this.actIndex].duty;
             this.edStudent.room = this.students[this.actIndex].room;
+            this.errors = {};
             this.isEditStudentShow = true;
         },
-
-        // editStudent(){
-        //     // 修改学员信息信息/api/travels/1/Students/22
-        //     this.$ajax({
-        //         method: 'PATCH',
-        //         headers: {
-        //             "Authorization": 'Bearer '+sessionStorage.token,
-        //         },
-        //         data:{
-        //             title:this.edStudent.title,
-        //             content:this.edStudent.content,
-        //             sites:this.edStudent.sites,
-        //         },
-        //         url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/Students/'+this.edStudent.id,
-        //     }).then(res => {
-        //         if(res.status==200){
-        //             this.students[this.edStudent.index].title=this.edStudent.title;
-        //             this.students[this.edStudent.index].content=this.edStudent.content;
-        //             this.students[this.edStudent.index].sites=this.edStudent.sites;
-        //             this.$toast('修改成功');
-        //             this.isEditStudentShow=false;    
-        //         }else{
-        //             this.$toast('修改失败');
-        //         }
-        //     }).catch(err => {
-        //         this.$toast('修改失败');
-        //         console.log(err)
-        //     });
-        // },
-        delStudent: function delStudent() {
+        editStudent: function editStudent() {
             var _this3 = this;
+
+            // 修改学员信息信息/api/users/:user/groups/:group/information
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    original_password: this.edStudent.original_password,
+                    name: this.edStudent.name,
+                    en_name: this.edStudent.en_name,
+                    phone: this.edStudent.phone,
+                    student_number: this.edStudent.student_number,
+                    class: this.edStudent.class,
+                    duty: this.edStudent.duty,
+                    room: this.edStudent.room
+                },
+                url: this.$config + '/api/users/' + sessionStorage.userId + '/groups/' + this.edStudent.id + '/information'
+            }).then(function (res) {
+                if (res.status == 200) {
+                    _this3.students[_this3.actIndex].user.original_password = _this3.edStudent.original_password;
+                    _this3.students[_this3.actIndex].user.name = _this3.edStudent.name;
+                    _this3.students[_this3.actIndex].user.en_name = _this3.edStudent.en_name;
+                    _this3.students[_this3.actIndex].user.phone = _this3.edStudent.phone;
+                    _this3.students[_this3.actIndex].student_number = _this3.edStudent.student_number;
+                    _this3.students[_this3.actIndex].class = _this3.edStudent.class;
+                    _this3.students[_this3.actIndex].duty = _this3.edStudent.duty;
+                    _this3.students[_this3.actIndex].room = _this3.edStudent.room;
+                    _this3.$toast('修改成功');
+                    _this3.isEditStudentShow = false;
+                } else {
+                    _this3.$toast('修改失败');
+                    _this3.errors = err.response.data.errors;
+                }
+            }).catch(function (error) {
+                _this3.$toast('修改失败');
+                if (error.response.data.errors) {
+                    _this3.$toast(error.response.data.errors.name[0]);
+                }
+            });
+        },
+        delStudent: function delStudent() {
+            var _this4 = this;
 
             // 删除学员信息/api/users/:user/travels/:travel/groups/:group
             this.$dialog.confirm({
                 title: '删除学员信息',
                 message: '是否删除该学员信息'
             }).then(function () {
-                _this3.$ajax({
+                _this4.$ajax({
                     method: 'DELETE',
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: _this3.$config + '/api/users/' + _this3.students[_this3.actIndex].user_id + '/travels/' + sessionStorage.actTravelId + '/groups/' + _this3.students[_this3.actIndex].id
+                    url: _this4.$config + '/api/users/' + _this4.students[_this4.actIndex].user_id + '/travels/' + sessionStorage.actTravelId + '/groups/' + _this4.students[_this4.actIndex].id
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
-                        _this3.actIndex = 0;
-                        _this3.getStudents();
-                        _this3.$toast('删除成功');
+                        _this4.actIndex = 0;
+                        _this4.getStudents();
+                        _this4.$toast('删除成功');
                     } else {
-                        _this3.$toast('删除失败');
+                        _this4.$toast('删除失败');
                     }
                 }).catch(function (err) {
-                    _this3.$toast('删除失败');
+                    _this4.$toast('删除失败');
                     console.log(err);
                 });
             }).catch(function (err) {});
         },
         searchStudentShow: function searchStudentShow() {
+            this.errors = {};
             this.isSearchStudentShow = true;
         },
         toSearchStudent: function toSearchStudent() {
-            var _this4 = this;
+            var _this5 = this;
 
             // 搜索学员
             if (this.searchId != '') {
@@ -24033,10 +24053,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     url: this.$config + '/api/users/' + this.searchId + '/userInfo'
                 }).then(function (res) {
                     // console.log(res.data);
-                    _this4.searchStudent = res.data;
-                    _this4.searchStudentShow();
+                    _this5.searchStudent.id = res.data.id;
+                    _this5.searchStudent.name = res.data.name;
+                    _this5.searchStudent.en_name = res.data.en_name;
+                    _this5.searchStudent.phone = res.data.phone;
+                    _this5.searchStudent.original_password = res.data.original_password;
+                    _this5.searchStudentShow();
                 }).catch(function (err) {
-                    _this4.$toast('请输入正确的用户ID');
+                    _this5.$toast('请输入正确的用户ID');
                     // console.log(err);
                 });
             } else {
@@ -24049,42 +24073,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.isSearchStudentShow = false;
         },
         addOldStudent: function addOldStudent() {
-            var _this5 = this;
+            var _this6 = this;
 
             // 添加已有用户到旅游/api/users/:user/travels/:travel/groups
-            this.$ajax({
-                method: 'post',
+            this.$post(this.$config + '/api/users/' + this.searchStudent.id + '/travels/' + sessionStorage.actTravelId + '/groups', {
+                phone: this.searchStudent.phone,
+                student_number: this.searchStudent.student_number,
+                class: this.searchStudent.class,
+                duty: this.searchStudent.duty,
+                room: this.searchStudent.room
+            }, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
-                },
-                url: this.$config + '/api/users/' + this.searchStudent.id + '/travels/' + sessionStorage.actTravelId + '/groups'
+                }
             }).then(function (res) {
                 // console.log(res);
-                _this5.$toast('添加成功');
-                _this5.getStudents();
-                _this5.searchId = '';
-                _this5.searchStudent = {};
-                _this5.isSearchStudentShow = false;
+                _this6.$toast('添加成功');
+                _this6.getStudents();
+                _this6.searchId = '';
+                _this6.searchStudent = {};
+                _this6.isSearchStudentShow = false;
             }).catch(function (err) {
-                _this5.$toast('添加失败');
-                console.log(err);
+                console.log(err.response);
+                _this6.$toast('添加失败');
+                _this6.errors = err.response.data.errors;
+                // if(err.response.data.errors.duty){
+                //     this.$toast(err.response.data.errors.duty[0]);
+                // }
+                // if(err.response.data.errors.room){
+                //     this.$toast(err.response.data.errors.room[0]);
+                // }
             });
-            // this.$post(this.$config+'/api/users/'+this.searchStudent.id+'/travels/'+sessionStorage.actTravelId+'/groups',
-            // {
-            //     headers: {
-            //         "Authorization": 'Bearer '+sessionStorage.token,
-            //     }
-            // }).then(res => {
-            //     // console.log(res.data);
-            //     this.$toast('添加成功');
-            //     this.getStudents();
-            //     this.searchId='';
-            //     this.searchStudent={}; 
-            //     this.isSearchStudentShow=false;
-            // }).catch(err => {
-            //     this.$toast('添加失败');
-            //     console.log(err)
-            // });
         },
         changeActIndex: function changeActIndex(index) {
             this.actIndex = index;
@@ -24438,7 +24457,7 @@ var render = function() {
                     [
                       _c("div", { staticClass: "editBox" }, [
                         _c("div", { staticClass: "editBoxContent disflex" }, [
-                          _c("div", { staticClass: "form_item" }, [
+                          _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
                               _vm._v("用户ID")
                             ]),
@@ -24476,7 +24495,7 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form_item" }, [
+                          _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
                               _vm._v("学生密码")
                             ]),
@@ -24515,7 +24534,7 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form_item" }, [
+                          _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
                               _vm._v("学生中文名")
                             ]),
@@ -24552,7 +24571,7 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form_item" }, [
+                          _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
                               _vm._v("学生英文名")
                             ]),
@@ -24589,7 +24608,7 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form_item" }, [
+                          _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
                               _vm._v("联系电话")
                             ]),
@@ -24626,7 +24645,7 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form_item" }, [
+                          _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
                               _vm._v("学生学号")
                             ]),
@@ -24665,7 +24684,7 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form_item" }, [
+                          _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
                               _vm._v("学生班级")
                             ]),
@@ -24702,7 +24721,7 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form_item" }, [
+                          _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
                               _vm._v("学生房间号")
                             ]),
@@ -24739,7 +24758,7 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form_item" }, [
+                          _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
                               _vm._v("学生职责")
                             ]),
@@ -24818,7 +24837,15 @@ var render = function() {
               _c("div", { staticClass: "editBoxContent disflex" }, [
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生密码")
+                    _vm._v("学生密码"),
+                    _vm.errors.original_password
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: {
+                            textContent: _vm._s(_vm.errors.original_password[0])
+                          }
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -24852,7 +24879,13 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生中文名")
+                    _vm._v("学生中文名"),
+                    _vm.errors.name
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.name[0]) }
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -24882,7 +24915,15 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生英文名")
+                    _vm._v("学生英文名"),
+                    _vm.errors.en_name
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: {
+                            textContent: _vm._s(_vm.errors.en_name[0])
+                          }
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -24916,7 +24957,13 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("联系电话")
+                    _vm._v("联系电话"),
+                    _vm.errors.phone
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.phone[0]) }
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -24946,7 +24993,15 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生学号")
+                    _vm._v("学生学号"),
+                    _vm.errors.student_number
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: {
+                            textContent: _vm._s(_vm.errors.student_number[0])
+                          }
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -24980,7 +25035,13 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生班级")
+                    _vm._v("学生班级"),
+                    _vm.errors.class
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.class[0]) }
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -25010,7 +25071,13 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生房间号")
+                    _vm._v("学生房间号"),
+                    _vm.errors.room
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.room[0]) }
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -25040,7 +25107,13 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生职责")
+                    _vm._v("学生职责"),
+                    _vm.errors.duty
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.duty[0]) }
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -25103,11 +25176,7 @@ var render = function() {
           [
             _c("div", { staticClass: "editBox" }, [
               _c("div", { staticClass: "editBoxContent disflex" }, [
-                _c("div", { staticClass: "editBoxTitle" }, [
-                  _vm._v("搜索结果")
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [_vm._v("用户ID")]),
                   _vm._v(" "),
                   _c("div", [
@@ -25123,7 +25192,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
                     _vm._v("学生密码")
                   ]),
@@ -25141,7 +25210,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
                     _vm._v("学生中文名")
                   ]),
@@ -25159,7 +25228,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
                     _vm._v("学生英文名")
                   ]),
@@ -25177,7 +25246,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
                     _vm._v("联系电话")
                   ]),
@@ -25211,9 +25280,17 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生学号")
+                    _vm._v("学生学号"),
+                    _vm.errors.student_number
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: {
+                            textContent: _vm._s(_vm.errors.student_number[0])
+                          }
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -25245,9 +25322,15 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生班级")
+                    _vm._v("学生班级"),
+                    _vm.errors.class
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.class[0]) }
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -25279,9 +25362,15 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生房间号")
+                    _vm._v("学生房间号"),
+                    _vm.errors.room
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.room[0]) }
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -25313,9 +25402,15 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生职责")
+                    _vm._v("学生职责"),
+                    _vm.errors.duty
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.duty[0]) }
+                        })
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -26216,7 +26311,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             // 获取个人资料
-            this.$get('/api/user', {
+            this.$get(this.$config + '/api/user', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -26224,7 +26319,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.personalInfos = res.data;
             }).catch(function (err) {
                 _this.$toast('获取失败');
-                _this.$router.push('/');
+                // this.$router.push('/');
                 console.log(err);
             });
         },
@@ -26249,7 +26344,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     phone: this.edInformation.phone,
                     email: this.edInformation.email
                 },
-                url: '/api/user'
+                url: this.$config + '/api/user'
             }).then(function (res) {
                 if (res.status == 200) {
                     _this2.personalInfos.name = _this2.edInformation.name;
@@ -27347,7 +27442,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             // 获取消息详情
-            this.$get('/api/user/notifications', {
+            this.$get(this.$config + '/api/user/notifications', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
