@@ -402,13 +402,10 @@
                         this.isEditStudentShow=false;    
                     }else{
                         this.$toast('修改失败');
-                        this.errors=err.response.data.errors;
                     }
-                }).catch(error => {
+                }).catch(err => {
                     this.$toast('修改失败');
-                    if(error.response.data.errors){
-                        this.$toast(error.response.data.errors.name[0]);
-                    }
+                    this.errors=err.response.data.errors;
 
                 });
             },

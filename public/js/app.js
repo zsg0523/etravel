@@ -23914,8 +23914,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 },
                 url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/groups?include=user.student.school'
             }).then(function (res) {
+                // console.log(res.data);
                 _this.students = res.data.data;
-                console.log(_this.students);
             }).catch(function (err) {
                 _this.$toast('获取失败');
                 console.log(err);
@@ -24001,13 +24001,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.isEditStudentShow = false;
                 } else {
                     _this3.$toast('修改失败');
-                    _this3.errors = err.response.data.errors;
                 }
-            }).catch(function (error) {
+            }).catch(function (err) {
                 _this3.$toast('修改失败');
-                if (error.response.data.errors) {
-                    _this3.$toast(error.response.data.errors.name[0]);
-                }
+                _this3.errors = err.response.data.errors;
             });
         },
         delStudent: function delStudent() {
@@ -24133,53 +24130,73 @@ var render = function() {
       { staticClass: "studentsList disflex" },
       [
         _c("div", { staticClass: "students_left" }, [
-          _c("ul", { staticStyle: { padding: "0", margin: "0" } }, [
-            _c("li", [
-              _c("div", { staticClass: "left_title disflex" }, [
-                _c("span", [_vm._v("学员信息")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "left_title_icon" }, [
-                  _c(
-                    "div",
-                    {
-                      on: {
-                        click: function($event) {
-                          _vm.delStudent()
-                        }
-                      }
-                    },
-                    [
-                      _c("img", {
-                        attrs: {
-                          src: "/etravel/public/images/dele-inf.png",
-                          alt: ""
-                        }
-                      })
-                    ]
-                  ),
+          _c(
+            "ul",
+            { staticStyle: { padding: "0", margin: "0" } },
+            [
+              _c("li", [
+                _c("div", { staticClass: "left_title disflex" }, [
+                  _c("span", [_vm._v("学员信息")]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      on: {
-                        click: function($event) {
-                          _vm.addNewStudentShow()
+                  _c("div", { staticClass: "left_title_icon" }, [
+                    _c(
+                      "div",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.delStudent()
+                          }
                         }
-                      }
-                    },
-                    [
-                      _c("img", {
-                        attrs: {
-                          src: "/etravel/public/images/add-inf.png",
-                          alt: ""
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src: "/etravel/public/images/dele-inf.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.addNewStudentShow()
+                          }
                         }
-                      })
-                    ]
-                  )
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src: "/etravel/public/images/add-inf.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
+                  ])
                 ])
-              ])
-            ])
-          ])
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.students, function(student, index) {
+                return _c(
+                  "li",
+                  {
+                    class: _vm.leftTabAct(index),
+                    on: {
+                      click: function($event) {
+                        _vm.changeActIndex(index)
+                      }
+                    }
+                  },
+                  [_c("div", [_vm._v(_vm._s(student.user.name))])]
+                )
+              })
+            ],
+            2
+          )
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "students_right disflex" }, [
@@ -44838,8 +44855,8 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-// const baseUrl='http://www.bunchparty.com/etravel/public';//线上地址
-var baseUrl = 'http://etravel.test';
+var baseUrl = 'http://www.bunchparty.com/etravel/public'; //线上地址
+// const baseUrl='http://etravel.test';
 // const baseUrl='';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
