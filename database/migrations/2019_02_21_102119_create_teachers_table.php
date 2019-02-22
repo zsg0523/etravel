@@ -15,8 +15,8 @@ class CreateTeachersTable extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->index();
-            $table->integer('school_id')->index();
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('school_id')->unsigned()->index();
             $table->string('number')->nullable()->comment('教师编号');
             $table->string('title')->nullable()->comment('教师职责');
             $table->timestamps();

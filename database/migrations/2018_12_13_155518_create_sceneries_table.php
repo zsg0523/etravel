@@ -15,7 +15,7 @@ class CreateSceneriesTable extends Migration
     {
         Schema::create('sceneries', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('route_id')->index();
+            $table->integer('route_id')->unsigned()->index();
             $table->string('time');
             $table->string('content');
             $table->string('description');
