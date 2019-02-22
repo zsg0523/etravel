@@ -171,7 +171,7 @@
         methods:{
             getPersonalInfos(){
                 // 获取个人资料
-                this.$get('/api/user',
+                this.$get(this.$config+'/api/user',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -180,7 +180,7 @@
                     this.personalInfos=res.data;               
                 }).catch(err => {
                     this.$toast('获取失败');
-                    this.$router.push('/');
+                    // this.$router.push('/');
                     console.log(err);
                 });
             },
@@ -203,7 +203,7 @@
                         phone:this.edInformation.phone,  
                         email:this.edInformation.email,  
                     },
-                    url: '/api/user',
+                    url: this.$config+'/api/user',
                 }).then(res => {
                     if(res.status==200){
                         this.personalInfos.name=this.edInformation.name;
