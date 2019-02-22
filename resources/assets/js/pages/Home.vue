@@ -117,8 +117,8 @@
             </div>
 
         </van-popup>
-        <van-popup v-model="isEditPopupShow" :overlay="true" style="border-radius: 15px;">
-            <div class="addNewTravel disflex" >
+        <van-popup v-model="isEditPopupShow" :overlay="true" style="border-radius: 15px;"> 
+            <div class="addNewTravel disflex" style="width:90%;margin-top: 20px;margin-left: 5%;">
                 <div class="form_item">
                     <div class="item_title">项目名称</div>
                     <div>

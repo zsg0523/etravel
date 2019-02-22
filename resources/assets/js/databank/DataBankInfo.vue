@@ -9,8 +9,8 @@
     .gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2}
     .gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;} 
     .form_content{width: 100%;min-height: 100px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;}
-    .form_item{width: 50%;height:100px;}
-    .form_item>div{width: 96%;height: 45px;line-height: 45px;}
+    .form_item_info{width: 50%;height:100px;}
+    .form_item_info>div{width: 96%;height: 45px;line-height: 45px;}
     .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
     .input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;}
     .item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;}
@@ -51,11 +51,11 @@
                                 <div class="gather_info_title"><span>集合</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
-                                <div class="form_item" style="width:100%;">
+                                <div class="form_item_info" style="width:100%;">
                                     <div class="item_title">日期</div>
                                     <div><input class="item_input" placeholder="日期" style="width:97%;" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
                                  </div>
-                                <div class="form_item" style="width:100%;height:120px;">
+                                <div class="form_item_info" style="width:100%;height:120px;">
                                     <div class="item_title">详细地址</div>
                                     <div>
                                         <textarea class="item_area" placeholder="详细地址" disabled="disabled" v-model="assemblePlaces.assembly_station"></textarea>
@@ -68,11 +68,11 @@
                                 <div class="gather_info_title"><span>解散</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
-                                <div class="form_item" style="width:100%;">
+                                <div class="form_item_info" style="width:100%;">
                                     <div class="item_title">日期</div>
                                     <div><input class="item_input"  placeholder="日期" style="width:97%;" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
                                 </div>
-                                <div class="form_item" style="width:100%;height:120px;">
+                                <div class="form_item_info" style="width:100%;height:120px;">
                                     <div class="item_title">地址</div>
                                     <div>
                                         <textarea class="item_area" placeholder="详细地址" disabled="disabled" v-model="assemblePlaces.dissolution_station"></textarea>
@@ -92,29 +92,29 @@
                                 <div class="gather_info_title"><span v-if="flight.is_return">返回</span><span v-else>出发</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
-                                <div class="form_item">
+                                <div class="form_item_info">
                                     <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.flight"></div>
                                 </div> 
-                                <div class="form_item">
+                                <div class="form_item_info">
                                     <div class="item_title">日期</div>
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.date"></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_info">
                                     <div class="item_title">出发时间</div>
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.takeoff_time"></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_info">
                                     <div class="item_title">到达时间</div>
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.arrival_time"></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_info">
                                     <div class="item_title">出发站点</div>
                                     <div>
                                         <div><input class="item_input" type="text" disabled="disabled"  :value="flight.from"></div>
                                     </div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_info">
                                     <div class="item_title">达到站点</div>
                                     <div>
                                         <div><input class="item_input" type="text" disabled="disabled"  :value="flight.to"></div>
@@ -136,27 +136,27 @@
                     <div role="tabpanel" class="tab-pane" id="accommodationInfo">
                         <div class="pane_content_info" v-for="(hotel,index) in hotels">    
                             <div class="form_content disflex">
-                                <div class="form_item" style="width:100%;">
+                                <div class="form_item_info" style="width:100%;">
                                     <div class="item_title">酒店名称</div>
                                     <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="hotel.hotel_name" ></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_info">
                                     <div class="item_title">入住时间</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.check_at" ></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_info">
                                     <div class="item_title">离开时间</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.leave_at" ></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_info">
                                     <div class="item_title">几晚</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.times" ></div>
                                 </div>
-                                <div class="form_item">
+                                <div class="form_item_info">
                                     <div class="item_title">联系电话</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_phone" ></div>
                                 </div>
-                                <div class="form_item" style="width:100%;height:120px;">
+                                <div class="form_item_info" style="width:100%;height:120px;">
                                     <div class="item_title">酒店地址</div>
                                     <div>
                                         <textarea class="item_area" placeholder="酒店地址" disabled="disabled" :value="hotel.hotel_address"></textarea>
@@ -178,15 +178,15 @@
                     <div role="tabpanel" class="tab-pane" id="leaderTeacher">
                         <div class="pane_content_info" v-for="(leadTeacher,index) in leadTeachers">
                             <div class="form_content disflex">
-                                <div class="form_item" style="width:100%;">
+                                <div class="form_item_info" style="width:100%;">
                                     <div class="item_title">老师姓名</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.leader" ></div>
                                 </div>
-                                <div class="form_item" style="width:100%;">
+                                <div class="form_item_info" style="width:100%;">
                                     <div class="item_title">老师电话</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.phone" ></div>
                                 </div>
-                                <div class="form_item" style="width:100%;">
+                                <div class="form_item_info" style="width:100%;">
                                     <div class="item_title">职责</div>
                                     <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="leadTeacher.duty"></div>
                                 </div>
@@ -206,7 +206,7 @@
                     <div role="tabpanel" class="tab-pane" id="heavyWeather">
                         <div class="pane_content_info">
                             <div class="form_content disflex">
-                                <div class="form_item" style="width:100%;height:120px;">
+                                <div class="form_item_info" style="width:100%;height:120px;">
                                     <div class="item_title">安排</div>
                                     <div>
                                         <textarea class="item_area" placeholder="安排" disabled="disabled" :value="badWeathers.urgency"></textarea>
@@ -229,22 +229,22 @@
                     <div class="gather_info">
                         <div class="gather_info_title"><span>集合</span><hr></div>
                     </div>   
-                    <div class="form_item" style="width:100%;">
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">日期</div>
                         <div><input class="item_input" placeholder="日期" type="text" v-model="edAssemblePlaces.assembly_at"></div>
                     </div>
-                    <div class="form_item" style="width:100%;">
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">地址</div>
                         <div><input class="item_input" placeholder="地址" type="text" v-model="edAssemblePlaces.assembly_station"></div>
                     </div>
                     <div class="gather_info">
                         <div class="gather_info_title"><span>解散</span><hr></div>
                     </div>   
-                    <div class="form_item" style="width:100%;">
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">日期</div>
                         <div><input class="item_input" placeholder="日期" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
                     </div>
-                    <div class="form_item" style="width:100%;">
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">地址</div>
                         <div><input class="item_input" placeholder="地址" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
                     </div>
@@ -257,29 +257,29 @@
         <van-popup v-model="isNewFlightShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
                         <div><input class="item_input" type="text" v-model="newFlight.flight"></div>
                     </div> 
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">日期</div>
                         <div><input class="item_input" type="text" v-model="newFlight.date"></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">出发时间</div>
                         <div><input class="item_input" type="text" v-model="newFlight.takeoff_time"></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">到达时间</div>
                         <div><input class="item_input" type="text" v-model="newFlight.arrival_time"></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">出发站点</div>
                         <div>
                             <div><input class="item_input" type="text" v-model="newFlight.from"></div>
                         </div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">达到站点</div>
                         <div>
                             <div><input class="item_input" type="text" v-model="newFlight.to"></div>
@@ -299,29 +299,29 @@
         <van-popup v-model="isEditFlightShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
                         <div><input class="item_input" type="text" v-model="edFlight.flight"></div>
                     </div> 
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">日期</div>
                         <div><input class="item_input" type="text" v-model="edFlight.date"></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">出发时间</div>
                         <div><input class="item_input" type="text" v-model="edFlight.takeoff_time"></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">到达时间</div>
                         <div><input class="item_input" type="text" v-model="edFlight.arrival_time"></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">出发站点</div>
                         <div>
                             <div><input class="item_input" type="text" v-model="edFlight.from"></div>
                         </div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">达到站点</div>
                         <div>
                             <div><input class="item_input" type="text" v-model="edFlight.to"></div>
@@ -341,27 +341,27 @@
         <van-popup v-model="isNewHotelShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item" style="width:100%;">
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">酒店名称</div>
                         <div><input class="item_input" style="width:97%;" type="text" v-model="newHotel.hotel_name" ></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">入住时间</div>
                         <div><input class="item_input" type="text" v-model="newHotel.check_at" ></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">离开时间</div>
                         <div><input class="item_input" type="text" v-model="newHotel.leave_at" ></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">几晚</div>
                         <div><input class="item_input" type="text" v-model="newHotel.times" ></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">联系电话</div>
                         <div><input class="item_input" type="text" v-model="newHotel.hotel_phone" ></div>
                     </div>
-                    <div class="form_item" style="width:100%;height:120px;">
+                    <div class="form_item_info" style="width:100%;height:120px;">
                         <div class="item_title">酒店地址</div>
                         <div>
                             <textarea class="item_area" placeholder="酒店地址" v-model="newHotel.hotel_address"></textarea>
@@ -377,27 +377,27 @@
         <van-popup v-model="isEditHotelShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item" style="width:100%;">
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">酒店名称</div>
                         <div><input class="item_input" style="width:97%;" type="text" v-model="edHotel.hotel_name" ></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">入住时间</div>
                         <div><input class="item_input" type="text" v-model="edHotel.check_at" ></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">离开时间</div>
                         <div><input class="item_input" type="text" v-model="edHotel.leave_at" ></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">几晚</div>
                         <div><input class="item_input" type="text" v-model="edHotel.times" ></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">联系电话</div>
                         <div><input class="item_input" type="text" v-model="edHotel.hotel_phone" ></div>
                     </div>
-                    <div class="form_item" style="width:100%;height:120px;">
+                    <div class="form_item_info" style="width:100%;height:120px;">
                         <div class="item_title">酒店地址</div>
                         <div>
                             <textarea class="item_area" placeholder="酒店地址" v-model="edHotel.hotel_address"></textarea>
@@ -413,15 +413,15 @@
         <van-popup v-model="isNewLeadTeacherShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">老师姓名</div>
                         <div><input class="item_input" type="text" v-model="newLeadTeacher.leader" ></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">老师电话</div>
                         <div><input class="item_input" type="text" v-model="newLeadTeacher.phone" ></div>
                     </div>
-                    <div class="form_item" style="width:100%;">
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">职责</div>
                         <div><input class="item_input" style="width:97%;" type="text" v-model="newLeadTeacher.duty"></div>
                     </div>
@@ -434,15 +434,15 @@
         <van-popup v-model="isEditLeadTeacherShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">老师姓名</div>
                         <div><input class="item_input" type="text" v-model="edLeadTeacher.leader" ></div>
                     </div>
-                    <div class="form_item">
+                    <div class="form_item_info">
                         <div class="item_title">老师电话</div>
                         <div><input class="item_input" type="text" v-model="edLeadTeacher.phone" ></div>
                     </div>
-                    <div class="form_item" style="width:100%;">
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">职责</div>
                         <div><input class="item_input" style="width:97%;" type="text" v-model="edLeadTeacher.duty"></div>
                     </div>
@@ -455,7 +455,7 @@
         <van-popup v-model="isEditBadWeatherShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item" style="width:100%;height:120px;">
+                    <div class="form_item_info" style="width:100%;height:120px;">
                         <div class="item_title">安排</div>
                         <div>
                             <textarea class="item_area" placeholder="安排" v-model="edBadWeather.urgency"></textarea>
