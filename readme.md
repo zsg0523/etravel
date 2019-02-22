@@ -77,11 +77,10 @@ php artisan jwt:secret
 <!-- 为用户 ID 为1的生成一个永久有效的测试token -->
 php artisan etravel:generate-token
 
-
-
-
-
-
+<!-- 本地nginx配置代理 -->
+if (!-e $request_filename){
+    rewrite ^/(.*)$ /etravel/server.php?s=$1 last;
+}
 
 
 - 用户认证 注册，登录，退出
