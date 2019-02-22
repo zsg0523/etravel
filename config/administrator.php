@@ -59,6 +59,7 @@ return array(
      *	)
      */
     'menu' => [
+        '学校' => 'schools',
         '用户与权限' => [
             'users',
             'roles',
