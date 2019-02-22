@@ -15,7 +15,7 @@ class CreateStudiesTable extends Migration
     {
         Schema::create('studies', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('route_id')->index();
+            $table->integer('route_id')->unsigned()->index();
             $table->string('image')->nullable();
             $table->string('title')->index();
             $table->string('body');

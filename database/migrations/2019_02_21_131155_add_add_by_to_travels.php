@@ -26,7 +26,7 @@ class AddAddByToTravels extends Migration
     public function down()
     {
         Schema::table('travels', function (Blueprint $table) {
-            $table->dropColumn();
+            $table->dropColumn('add_by');
         });
     }
 }

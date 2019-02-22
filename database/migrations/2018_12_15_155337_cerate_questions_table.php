@@ -15,7 +15,7 @@ class CerateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('study_id')->index();
+            $table->integer('study_id')->unsigned()->index();
             $table->string('content')->nullable();
             $table->timestamps();
         });

@@ -15,8 +15,8 @@ class CreateEvaluationUserTable extends Migration
     {
         Schema::create('evaluation_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->index();
-            $table->integer('evaluation_id')->index();
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('evaluation_id')->unsigned()->index();
             $table->integer('option')->comment('用户自我评估选项');
             $table->timestamps();
         });

@@ -15,7 +15,7 @@ class CreateAssembliesTable extends Migration
     {
         Schema::create('assemblies', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('travel_id')->index();
+            $table->integer('travel_id')->unsigned()->index();
             $table->string('leader')->index()->comment('领队老师');
             $table->string('duty')->nullable();
             $table->string('assembly_station')->comment('集合地点');

@@ -15,7 +15,7 @@ class CreateRuleCategoriesTable extends Migration
     {
         Schema::create('rule_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('travel_id')->index();
+            $table->integer('travel_id')->unsigned()->index();
             $table->string('rule_category_name')->index();
             $table->string('type')->nullable();
             $table->timestamps();

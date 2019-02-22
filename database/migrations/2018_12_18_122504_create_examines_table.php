@@ -15,8 +15,8 @@ class CreateExaminesTable extends Migration
     {
         Schema::create('examines', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->index();
-            $table->integer('rule_id')->index();
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('rule_id')->unsigned()->index();
             $table->boolean('before')->default(false);
             $table->boolean('after')->default(false);
             $table->timestamps();

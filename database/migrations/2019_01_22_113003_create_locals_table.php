@@ -15,7 +15,7 @@ class CreateLocalsTable extends Migration
     {
         Schema::create('locals', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('travel_id')->index();
+            $table->integer('travel_id')->unsigned()->index();
             $table->string('title')->index()->comment('标题');
             $table->text('content')->comment('当地文化内容');
             $table->timestamps();
