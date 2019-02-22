@@ -100,6 +100,26 @@ class AddReferences extends Migration
             // 移除外键约束
             $table->dropForeign(['travel_id']);
         });
+        Schema::table('rules', function (Blueprint $table) {
+            // 移除外键约束
+            $table->dropForeign(['rule_category_id']);
+        });
+        Schema::table('sceneries', function (Blueprint $table) {
+            // 移除外键约束
+            $table->dropForeign(['route_id']);
+        });
+        Schema::table('foods', function (Blueprint $table) {
+            // 移除外键约束
+            $table->dropForeign(['route_id']);
+        });
+        Schema::table('studies', function (Blueprint $table) {
+            // 移除外键约束
+            $table->dropForeign(['route_id']);
+        });
+        Schema::table('questions', function (Blueprint $table) {
+            // 移除外键约束
+            $table->dropForeign(['study_id']);
+        });
 
     }
 }
