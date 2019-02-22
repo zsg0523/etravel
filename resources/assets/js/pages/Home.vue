@@ -94,7 +94,7 @@
     		<button type="button">发布</button>
     	</div> -->
         <van-popup v-model="isPopupShow" :overlay="true" style="border-radius: 15px;">
-            <div class="addNewTravel disflex" >
+            <div class="addNewTravel disflex" style="width:90%;margin-top: 20px;margin-left: 5%;" >
                 <div class="form_item">
                     <div class="item_title">项目名称</div>
                     <div>

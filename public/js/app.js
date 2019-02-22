@@ -22744,121 +22744,132 @@ var render = function() {
               }
             },
             [
-              _c("div", { staticClass: "addNewTravel disflex" }, [
-                _c("div", { staticClass: "form_item" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("项目名称")
+              _c(
+                "div",
+                {
+                  staticClass: "addNewTravel disflex",
+                  staticStyle: {
+                    width: "90%",
+                    "margin-top": "20px",
+                    "margin-left": "5%"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "form_item" }, [
+                    _c("div", { staticClass: "item_title" }, [
+                      _vm._v("项目名称")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newTravel.travel_name,
+                            expression: "newTravel.travel_name"
+                          }
+                        ],
+                        staticClass: "item_input",
+                        attrs: { placeholder: "项目名称", type: "text" },
+                        domProps: { value: _vm.newTravel.travel_name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.newTravel,
+                              "travel_name",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newTravel.travel_name,
-                          expression: "newTravel.travel_name"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { placeholder: "项目名称", type: "text" },
-                      domProps: { value: _vm.newTravel.travel_name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                  _c("div", { staticClass: "form_item" }, [
+                    _c("div", { staticClass: "item_title" }, [
+                      _vm._v("出行时间")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newTravel.travel_at,
+                            expression: "newTravel.travel_at"
                           }
-                          _vm.$set(
-                            _vm.newTravel,
-                            "travel_name",
-                            $event.target.value
-                          )
+                        ],
+                        staticClass: "item_input",
+                        attrs: { placeholder: "出行时间", type: "text" },
+                        domProps: { value: _vm.newTravel.travel_at },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.newTravel,
+                              "travel_at",
+                              $event.target.value
+                            )
+                          }
                         }
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("出行时间")
+                      })
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newTravel.travel_at,
-                          expression: "newTravel.travel_at"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { placeholder: "出行时间", type: "text" },
-                      domProps: { value: _vm.newTravel.travel_at },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                  _c("div", { staticClass: "form_item" }, [
+                    _c("div", { staticClass: "item_title" }, [
+                      _vm._v("项目简介")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newTravel.travel_introduction,
+                            expression: "newTravel.travel_introduction"
                           }
-                          _vm.$set(
-                            _vm.newTravel,
-                            "travel_at",
-                            $event.target.value
-                          )
+                        ],
+                        staticClass: "item_input",
+                        attrs: { placeholder: "项目简介", type: "text" },
+                        domProps: { value: _vm.newTravel.travel_introduction },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.newTravel,
+                              "travel_introduction",
+                              $event.target.value
+                            )
+                          }
                         }
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("项目简介")
+                      })
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newTravel.travel_introduction,
-                          expression: "newTravel.travel_introduction"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { placeholder: "项目简介", type: "text" },
-                      domProps: { value: _vm.newTravel.travel_introduction },
+                  _c(
+                    "button",
+                    {
                       on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.newTravel,
-                            "travel_introduction",
-                            $event.target.value
-                          )
+                        click: function($event) {
+                          _vm.addNewTravel()
                         }
                       }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        _vm.addNewTravel()
-                      }
-                    }
-                  },
-                  [_vm._v("确定")]
-                )
-              ])
+                    },
+                    [_vm._v("确定")]
+                  )
+                ]
+              )
             ]
           ),
           _vm._v(" "),
@@ -44867,7 +44878,6 @@ module.exports = function spread(callback) {
 
 var baseUrl = 'http://www.bunchparty.com/etravel/public'; //线上地址
 // const baseUrl='http://etravel.test';
-// const baseUrl='';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),
