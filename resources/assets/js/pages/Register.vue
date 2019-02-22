@@ -25,7 +25,7 @@
                 <img src="/etravel/public/images/logo_big.png">
             </div>
             <div class="disflex login">
-                <div class="title tc">E-Travel平台</div>
+                <div class="title tc">A-Team-Travel</div>
                 <div><input type="text" placeholder="用户名" v-model="username"></div>
                 <div><input type="text" placeholder="手机号" v-model="phoneNumber"></div>
                 <div class="disflex" style="justify-content: space-between;">

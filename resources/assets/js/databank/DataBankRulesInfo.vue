@@ -175,7 +175,7 @@
                 }).then(res => {
                 	// console.log(res);
                     if(res.status==200){
-                        this.RuleInfos[this.edRuleInfo.index].rule=this.edRuleInfo.rule;
+                        this.ruleInfos[this.edRuleInfo.index].rule=this.edRuleInfo.rule;
                         this.$toast('修改成功');
                         this.isEditRuleInfoShow=false;    
                     }else{

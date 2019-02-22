@@ -8,12 +8,12 @@
 
 <template>
 	<div class="prodectDetail disflex">
-    	<div class="detail_btn" @click="$router.push('/linkSchool')">
+    	<!-- <div class="detail_btn" @click="$router.push('/linkSchool')">
             <div class="detail_icon disflex">
                 <img src="/etravel/public/images/school.png">
             </div>
             <div class="detail_info">链接学校</div>
-        </div>
+        </div> -->
         <div class="detail_btn" @click="$router.push('/dataBankInfo')">
             <div class="detail_icon disflex">
                 <img src="/etravel/public/images/base-icon.png">
