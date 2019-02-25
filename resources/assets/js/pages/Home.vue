@@ -39,6 +39,7 @@
     .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
 
     .van-dialog{width:50%;}
+    .van-picker{width:80%;}
 </style>
 
 <template>
@@ -67,7 +68,7 @@
     				<div class="edit_name">
     					<div class="edit_icon disflex fl" @click="editPopupShow(travel.id,index)">
     						<img src="/etravel/public/images/write-icon.png">
-    						<span>（4-X个字符内）</span>
+    						<span></span>
     					</div>
     					<div class="project_type disflex fr" v-if="travel.pivot['is_promise'] == 1">
     						<img src="/etravel/public/images/sent.png">
@@ -94,21 +95,21 @@
     		<button type="button">发布</button>
     	</div> -->
         <van-popup v-model="isPopupShow" :overlay="true" style="border-radius: 15px;">
-            <div class="addNewTravel disflex" style="width:90%;margin-top: 20px;margin-left: 5%;" >
+            <div class="addNewTravel disflex">
                 <div class="form_item">
-                    <div class="item_title">项目名称</div>
+                    <div class="item_title">项目名称<span class="err" v-if="errors.travel_name" v-text="errors.travel_name[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="项目名称" type="text"  v-model="newTravel.travel_name">
+                        <input class="item_input" placeholder="项目名称（25个字符内）" type="text"  v-model="newTravel.travel_name">
                     </div>
                 </div>
                 <div class="form_item">
-                    <div class="item_title">出行时间</div>
+                    <div class="item_title">出行时间<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="出行时间" type="text"  v-model="newTravel.travel_at">
+                        <input class="item_input" placeholder="出行时间（例:1979-01-01）" type="text"  v-model="newTravel.travel_at" readonly="readonly" @click="pickTimeShow('newTravel')">
                     </div>
                 </div>
                 <div class="form_item">
-                    <div class="item_title">项目简介</div>
+                    <div class="item_title">项目简介<span class="err" v-if="errors.travel_introduction" v-text="errors.travel_introduction[0]"></span></div>
                     <div>
                         <input class="item_input" placeholder="项目简介" type="text"  v-model="newTravel.travel_introduction">
                     </div>
@@ -118,17 +119,17 @@
 
         </van-popup>
         <van-popup v-model="isEditPopupShow" :overlay="true" style="border-radius: 15px;"> 
-            <div class="addNewTravel disflex" style="width:90%;margin-top: 20px;margin-left: 5%;">
+            <div class="addNewTravel disflex">
                 <div class="form_item">
                     <div class="item_title">项目名称</div>
                     <div>
-                        <input class="item_input" placeholder="项目名称" type="text"  v-model="edTravel.travel_name">
+                        <input class="item_input" placeholder="项目名称项目名称（25个字符内）" type="text"  v-model="edTravel.travel_name">
                     </div>
                 </div>
                 <div class="form_item">
                     <div class="item_title">出行时间</div>
                     <div>
-                        <input class="item_input" placeholder="出行时间" type="text"  v-model="edTravel.travel_at">
+                        <input class="item_input" placeholder="出行时间（例:1979-01-01）" type="text"  v-model="edTravel.travel_at" readonly="readonly" @click="pickTimeShow('edTravel')">
                     </div>
                 </div>
                 <div class="form_item">
@@ -138,6 +139,18 @@
                     </div>
                 </div>
                 <button @click="editTravel()">确定</button>
+            </div>
+        </van-popup>
+        <van-popup v-model="isPickTimeShow" :overlay="true" style="border-radius: 15px;"> 
+            <div class="addNewTravel disflex">
+                <van-datetime-picker
+                    v-model="currentDate"
+                    type="date"
+                    :min-date="minDate"
+                    :max-date="maxDate"
+                    :formatter="formatter"
+                    @cancel="pickTimeCancel()"
+                    @confirm="pickTimeConfirm()"/>
             </div>
         </van-popup>
     </div>
@@ -164,6 +177,12 @@
                 },
                 edTravelId:'',
                 edTravelIndex:'',
+                errors:{},
+                isPickTimeShow:false,
+                currentDate:new Date(),
+                minDate:new Date(1999,1,1),
+                maxDate:new Date(2200,1,1),
+                actDate:'',
             }
         },
         mounted:function(){
@@ -193,6 +212,7 @@
             popupShow(){
                 // 显示新增弹窗
                 this.isPopupShow=true;
+                this.errors={};
             },
             popupHiden(){
                 // 隐藏新增弹窗
@@ -219,6 +239,8 @@
                     this.newTravel.travel_introduction='';
                 }).catch(err => {
                     this.$toast('添加失败');
+                    this.errors=err.response.data.errors;
+
                     console.log(err)
                 });
             },
@@ -290,10 +312,44 @@
                     this.editPopupHiden();
                 }).catch(err => {
                     this.$toast('修改失败');
+                    this.errors=err.response.data.errors;
                     console.log(err)
                 });
 
             },
+            pickTimeShow(str){
+                this.isPickTimeShow=true;
+                this.actDate=str;
+            },
+            pickTimeCancel(){
+                this.isPickTimeShow=false;
+            },
+            pickTimeConfirm(){
+                this.isPickTimeShow=false;
+                if(this.actDate=='newTravel'){
+                    this.newTravel.travel_at=this.formatDate(this.currentDate); 
+                }else if(this.actDate=='edTravel'){
+                    this.edTravel.travel_at=this.formatDate(this.currentDate); 
+                }
+                this.currentDate=new Date();
+            },
+            formatter(type, value) {
+          　　  if (type === 'year') {
+            　　    return value+'年';
+          　　  } else if (type === 'month') {
+          　　      return value+'月'
+          　　  } else if (type === 'day') {
+            　　    return value+'日'
+          　　  } 
+          　　  return value;
+        　　},
+            formatDate(obj){
+                var date =  new Date(obj);
+                var y = 1900+date.getYear();
+                var m = "0"+(date.getMonth()+1);
+                var d = "0"+date.getDate();
+                return y+"-"+m.substring(m.length-2,m.length)+"-"+d.substring(d.length-2,d.length);
+            }
         },
     }
 </script>

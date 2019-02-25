@@ -27,7 +27,8 @@
 
     .editBtnGroup{width:97%;height:50px;line-height: 50px;}
     .editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;}
-
+    
+    .bigRadio{width:20px;height:20px;}
     .van-dialog{width:50%;}
 
 </style>
@@ -286,8 +287,8 @@
                         </div>
                     </div>
                     <div style="width:100%;height:50px;">
-                        出发<input type="radio" value="0" v-model="newFlight.is_return">
-                        返回<input type="radio" value="1" v-model="newFlight.is_return">
+                        <span style="width:70px;text-align: center;display: block;float:left;">出发</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="newFlight.is_return">
+                        <span style="width:70px;text-align: center;display: block;float:left;">返回</span><input style="float:left" type="radio" value="1" class="bigRadio" v-model="newFlight.is_return">
                     </div>
                     <div class="issure">
                         <button @click="addNewFlight()">添加</button>
@@ -328,8 +329,8 @@
                         </div>
                     </div>
                     <div style="width:100%;height:50px;">
-                        出发<input type="radio" value="0" v-model="edFlight.is_return">
-                        返回<input type="radio" value="1" v-model="edFlight.is_return">
+                        <span style="width:70px;text-align: center;display: block;float:left;">出发</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="edFlight.is_return">
+                        <span style="width:70px;text-align: center;display: block;float:left;">返回</span><input style="float:left" type="radio" value="1" class="bigRadio" v-model="edFlight.is_return">
                     </div>
                     <div class="issure">
                         <button @click="editFlight()">修改</button>
