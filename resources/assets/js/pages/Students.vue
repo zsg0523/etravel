@@ -26,7 +26,7 @@
     .form_item>div{width: 97%;margin-left: 1.5%;height: 45px;line-height: 45px;}
     .form_item_small{width: 100%;height:80px;}
     .form_item_small>div{width: 97%;margin-left: 1.5%;height: 40px;line-height: 40px;}
-    .item_input{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;}
+    .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
     .studentEditBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
     .studentEditBtn:hover{cursor:pointer;}
     .studentEditBtn>img{width:50px;height: 50px;}

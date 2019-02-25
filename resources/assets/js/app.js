@@ -8,13 +8,15 @@ import {
   Toast,
   Dialog,
   Uploader,
+  DatetimePicker,
 } from 'vant';
 
 Vue
 	.use(Popup)
 	.use(Toast)
 	.use(Dialog)
-	.use(Uploader);
+	.use(Uploader)
+	.use(DatetimePicker);
 
 require('./bootstrap');
 
