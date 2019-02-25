@@ -27,7 +27,7 @@ $api->version('v1', [
 		'expires' => config('api.rate_limits.sign.expires'),
 	], function($api) {
 		// 游客可访问接口
-		// 短信验证码
+		// 注册获取短信验证码（手机号需唯一）
 		$api->post('verificationCodes', 'VerificationCodesController@store')->name('api.verificationCodes.store'); 
 		// 用户注册
 		$api->post('users','UsersController@store')->name('api.users.store');
@@ -41,6 +41,10 @@ $api->version('v1', [
 		$api->get('news','NewsController@index')->name('api.news.index');
 		// 新闻详情
 		$api->get('new/{new}','NewsController@show')->name('api.news.show');
+		// 重设密码获取短信验证码
+		$api->post('reset/verificationCodes', 'VerificationCodesController@resetByPhone')->name('api.verificationCodes.resetByPhone');
+		// 重设密码
+		$api->post('password/reset', 'ResetPasswordController@reset')->name('password.update');
 
 
 
