@@ -28771,14 +28771,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -30091,7 +30083,10 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { placeholder: "日期", type: "text" },
+                      attrs: {
+                        placeholder: "填写日期(yyyy-mm-dd)",
+                        type: "text"
+                      },
                       domProps: { value: _vm.edAssemblePlaces.assembly_at },
                       on: {
                         input: function($event) {
@@ -30130,7 +30125,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { placeholder: "地址", type: "text" },
+                      attrs: { placeholder: "填写地址", type: "text" },
                       domProps: {
                         value: _vm.edAssemblePlaces.assembly_station
                       },
@@ -30178,7 +30173,10 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { placeholder: "日期", type: "text" },
+                      attrs: {
+                        placeholder: "填写日期(yyyy-mm-dd)",
+                        type: "text"
+                      },
                       domProps: { value: _vm.edAssemblePlaces.dissolution_at },
                       on: {
                         input: function($event) {
@@ -30217,7 +30215,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { placeholder: "地址", type: "text" },
+                      attrs: { placeholder: "填写地址", type: "text" },
                       domProps: {
                         value: _vm.edAssemblePlaces.dissolution_station
                       },
@@ -30288,7 +30286,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "填写工具信息" },
                     domProps: { value: _vm.newFlight.flight },
                     on: {
                       input: function($event) {
@@ -30316,7 +30314,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "填写日期" },
                     domProps: { value: _vm.newFlight.date },
                     on: {
                       input: function($event) {
@@ -30344,7 +30342,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "填写出发时间" },
                     domProps: { value: _vm.newFlight.takeoff_time },
                     on: {
                       input: function($event) {
@@ -30376,7 +30374,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "填写到达时间" },
                     domProps: { value: _vm.newFlight.arrival_time },
                     on: {
                       input: function($event) {
@@ -30398,29 +30396,27 @@ var render = function() {
                 _c("div", { staticClass: "item_title" }, [_vm._v("出发站点")]),
                 _vm._v(" "),
                 _c("div", [
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newFlight.from,
-                          expression: "newFlight.from"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text" },
-                      domProps: { value: _vm.newFlight.from },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.newFlight, "from", $event.target.value)
-                        }
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.from,
+                        expression: "newFlight.from"
                       }
-                    })
-                  ])
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写出发站点" },
+                    domProps: { value: _vm.newFlight.from },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newFlight, "from", $event.target.value)
+                      }
+                    }
+                  })
                 ])
               ]),
               _vm._v(" "),
@@ -30428,29 +30424,27 @@ var render = function() {
                 _c("div", { staticClass: "item_title" }, [_vm._v("达到站点")]),
                 _vm._v(" "),
                 _c("div", [
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newFlight.to,
-                          expression: "newFlight.to"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text" },
-                      domProps: { value: _vm.newFlight.to },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.newFlight, "to", $event.target.value)
-                        }
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.to,
+                        expression: "newFlight.to"
                       }
-                    })
-                  ])
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写达到站点" },
+                    domProps: { value: _vm.newFlight.to },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newFlight, "to", $event.target.value)
+                      }
+                    }
+                  })
                 ])
               ]),
               _vm._v(" "),
@@ -30570,7 +30564,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "填写工具信息" },
                     domProps: { value: _vm.edFlight.flight },
                     on: {
                       input: function($event) {
@@ -30598,7 +30592,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "填写日期" },
                     domProps: { value: _vm.edFlight.date },
                     on: {
                       input: function($event) {
@@ -30626,7 +30620,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "填写出发时间" },
                     domProps: { value: _vm.edFlight.takeoff_time },
                     on: {
                       input: function($event) {
@@ -30658,7 +30652,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "填写到达时间" },
                     domProps: { value: _vm.edFlight.arrival_time },
                     on: {
                       input: function($event) {
@@ -30680,29 +30674,27 @@ var render = function() {
                 _c("div", { staticClass: "item_title" }, [_vm._v("出发站点")]),
                 _vm._v(" "),
                 _c("div", [
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edFlight.from,
-                          expression: "edFlight.from"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text" },
-                      domProps: { value: _vm.edFlight.from },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.edFlight, "from", $event.target.value)
-                        }
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.from,
+                        expression: "edFlight.from"
                       }
-                    })
-                  ])
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写出发站点" },
+                    domProps: { value: _vm.edFlight.from },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFlight, "from", $event.target.value)
+                      }
+                    }
+                  })
                 ])
               ]),
               _vm._v(" "),
@@ -30710,29 +30702,27 @@ var render = function() {
                 _c("div", { staticClass: "item_title" }, [_vm._v("达到站点")]),
                 _vm._v(" "),
                 _c("div", [
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edFlight.to,
-                          expression: "edFlight.to"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text" },
-                      domProps: { value: _vm.edFlight.to },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.edFlight, "to", $event.target.value)
-                        }
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.to,
+                        expression: "edFlight.to"
                       }
-                    })
-                  ])
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写达到站点" },
+                    domProps: { value: _vm.edFlight.to },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFlight, "to", $event.target.value)
+                      }
+                    }
+                  })
                 ])
               ]),
               _vm._v(" "),
@@ -30859,7 +30849,7 @@ var render = function() {
                       ],
                       staticClass: "item_input",
                       staticStyle: { width: "97%" },
-                      attrs: { type: "text" },
+                      attrs: { type: "text", placeholder: "酒店名称" },
                       domProps: { value: _vm.newHotel.hotel_name },
                       on: {
                         input: function($event) {
@@ -30892,7 +30882,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "入住时间" },
                     domProps: { value: _vm.newHotel.check_at },
                     on: {
                       input: function($event) {
@@ -30920,7 +30910,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "离开时间" },
                     domProps: { value: _vm.newHotel.leave_at },
                     on: {
                       input: function($event) {
@@ -30948,7 +30938,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "几晚(1-N)" },
                     domProps: { value: _vm.newHotel.times },
                     on: {
                       input: function($event) {
@@ -30976,7 +30966,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "联系电话" },
                     domProps: { value: _vm.newHotel.hotel_phone },
                     on: {
                       input: function($event) {
@@ -31092,7 +31082,7 @@ var render = function() {
                       ],
                       staticClass: "item_input",
                       staticStyle: { width: "97%" },
-                      attrs: { type: "text" },
+                      attrs: { type: "text", placeholder: "酒店名称" },
                       domProps: { value: _vm.edHotel.hotel_name },
                       on: {
                         input: function($event) {
@@ -31125,7 +31115,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "入住时间" },
                     domProps: { value: _vm.edHotel.check_at },
                     on: {
                       input: function($event) {
@@ -31153,7 +31143,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "离开时间" },
                     domProps: { value: _vm.edHotel.leave_at },
                     on: {
                       input: function($event) {
@@ -31181,7 +31171,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "几晚(1-N)" },
                     domProps: { value: _vm.edHotel.times },
                     on: {
                       input: function($event) {
@@ -31209,7 +31199,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "联系电话" },
                     domProps: { value: _vm.edHotel.hotel_phone },
                     on: {
                       input: function($event) {
@@ -31316,7 +31306,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "老师姓名" },
                     domProps: { value: _vm.newLeadTeacher.leader },
                     on: {
                       input: function($event) {
@@ -31348,7 +31338,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "老师电话" },
                     domProps: { value: _vm.newLeadTeacher.phone },
                     on: {
                       input: function($event) {
@@ -31387,7 +31377,7 @@ var render = function() {
                       ],
                       staticClass: "item_input",
                       staticStyle: { width: "97%" },
-                      attrs: { type: "text" },
+                      attrs: { type: "text", placeholder: "职责" },
                       domProps: { value: _vm.newLeadTeacher.duty },
                       on: {
                         input: function($event) {
@@ -31454,7 +31444,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "老师姓名" },
                     domProps: { value: _vm.edLeadTeacher.leader },
                     on: {
                       input: function($event) {
@@ -31486,7 +31476,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "老师电话" },
                     domProps: { value: _vm.edLeadTeacher.phone },
                     on: {
                       input: function($event) {
@@ -31525,7 +31515,7 @@ var render = function() {
                       ],
                       staticClass: "item_input",
                       staticStyle: { width: "97%" },
-                      attrs: { type: "text" },
+                      attrs: { type: "text", placeholder: "职责" },
                       domProps: { value: _vm.edLeadTeacher.duty },
                       on: {
                         input: function($event) {
@@ -32240,7 +32230,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input_phone",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "电话区号" },
                     domProps: { value: _vm.newPhone.area_code },
                     on: {
                       input: function($event) {
@@ -32268,7 +32258,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input_phone",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "联系电话" },
                     domProps: { value: _vm.newPhone.phone },
                     on: {
                       input: function($event) {
@@ -32360,7 +32350,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input_phone",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "电话区号" },
                     domProps: { value: _vm.edPhone.area_code },
                     on: {
                       input: function($event) {
@@ -32388,7 +32378,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input_phone",
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "联系电话" },
                     domProps: { value: _vm.edPhone.phone },
                     on: {
                       input: function($event) {
@@ -34681,7 +34671,7 @@ var render = function() {
                     ],
                     staticClass: "item_input",
                     attrs: {
-                      placeholder: "班级",
+                      placeholder: "填写班级",
                       type: "text",
                       disabled: "disabled"
                     },
@@ -34717,7 +34707,7 @@ var render = function() {
                     ],
                     staticClass: "item_input",
                     attrs: {
-                      placeholder: "学生姓名",
+                      placeholder: "填写学生姓名",
                       type: "text",
                       disabled: "disabled"
                     },
@@ -34748,7 +34738,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "房号", type: "text" },
+                    attrs: { placeholder: "填写房号", type: "text" },
                     domProps: { value: _vm.edGroup.group_room },
                     on: {
                       input: function($event) {
@@ -34776,7 +34766,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "职责", type: "text" },
+                    attrs: { placeholder: "填写职责", type: "text" },
                     domProps: { value: _vm.edGroup.group_duty },
                     on: {
                       input: function($event) {
@@ -35307,7 +35297,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "房间编号", type: "text" },
+                    attrs: { placeholder: "填写房间编号", type: "text" },
                     domProps: { value: _vm.edHouse.house_room },
                     on: {
                       input: function($event) {
@@ -35335,7 +35325,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "班级", type: "text" },
+                    attrs: { placeholder: "填写班级", type: "text" },
                     domProps: { value: _vm.edHouse.house_class },
                     on: {
                       input: function($event) {
@@ -35367,7 +35357,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "学生姓名", type: "text" },
+                    attrs: { placeholder: "填写学生姓名", type: "text" },
                     domProps: { value: _vm.edHouse.house_name },
                     on: {
                       input: function($event) {
