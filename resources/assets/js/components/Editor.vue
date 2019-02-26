@@ -5,7 +5,7 @@
 <script>
     // Import TinyMCE富文本编辑器
     import tinymce from 'tinymce/tinymce';
-    import 'tinymce/themes/modern/theme';
+    import 'tinymce/themes/mobile/theme';
     import 'tinymce/plugins/paste';
     import 'tinymce/plugins/link';
     const INIT = 0;
@@ -55,7 +55,7 @@
         },
         beforeDestroy: function () {
             tinymce.get(this.id).destroy();
-        }
+        },
         methods: {
             
         },

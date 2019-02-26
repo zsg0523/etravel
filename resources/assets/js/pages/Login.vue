@@ -40,7 +40,7 @@
 	  	data() {
 	    	return {
 	      		loginName: '',
-	      		password: ''
+	      		password: '',
 	    	}
 	  	},
 	  	methods: {

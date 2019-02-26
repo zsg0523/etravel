@@ -34,6 +34,8 @@
     
     .addNewTravel{width: 600px;min-height:260px;background-color: #fff;border-radius: 15px;box-shadow: 0 0 10px #ccc;flex-direction: column;justify-content: center;align-items: center;}
     .addNewTravel>button{width:60%;height:50px;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;margin-top: 20px;margin-bottom: 20px;}
+    .form_item_pro{width: 90%;min-height:100px;margin-left: 5%;}
+    .form_item_pro>div{height: 45px;line-height: 45px;}
     .form_item{width: 90%;min-height:100px;}
     .form_item>div{height: 45px;line-height: 45px;}
     .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
@@ -96,19 +98,19 @@
     	</div> -->
         <van-popup v-model="isPopupShow" :overlay="true" style="border-radius: 15px;">
             <div class="addNewTravel disflex">
-                <div class="form_item">
+                <div class="form_item_pro">
                     <div class="item_title">项目名称<span class="err" v-if="errors.travel_name" v-text="errors.travel_name[0]"></span></div>
                     <div>
                         <input class="item_input" placeholder="项目名称（25个字符内）" type="text"  v-model="newTravel.travel_name">
                     </div>
                 </div>
-                <div class="form_item">
+                <div class="form_item_pro">
                     <div class="item_title">出行时间<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
                     <div>
                         <input class="item_input" placeholder="出行时间（例:1979-01-01）" type="text"  v-model="newTravel.travel_at" readonly="readonly" @click="pickTimeShow('newTravel')">
                     </div>
                 </div>
-                <div class="form_item">
+                <div class="form_item_pro">
                     <div class="item_title">项目简介<span class="err" v-if="errors.travel_introduction" v-text="errors.travel_introduction[0]"></span></div>
                     <div>
                         <input class="item_input" placeholder="项目简介" type="text"  v-model="newTravel.travel_introduction">
@@ -120,19 +122,19 @@
         </van-popup>
         <van-popup v-model="isEditPopupShow" :overlay="true" style="border-radius: 15px;"> 
             <div class="addNewTravel disflex">
-                <div class="form_item">
+                <div class="form_item_pro">
                     <div class="item_title">项目名称</div>
                     <div>
                         <input class="item_input" placeholder="项目名称项目名称（25个字符内）" type="text"  v-model="edTravel.travel_name">
                     </div>
                 </div>
-                <div class="form_item">
+                <div class="form_item_pro">
                     <div class="item_title">出行时间</div>
                     <div>
                         <input class="item_input" placeholder="出行时间（例:1979-01-01）" type="text"  v-model="edTravel.travel_at" readonly="readonly" @click="pickTimeShow('edTravel')">
                     </div>
                 </div>
-                <div class="form_item">
+                <div class="form_item_pro">
                     <div class="item_title">项目简介</div>
                     <div>
                         <input class="item_input" placeholder="项目简介" type="text"  v-model="edTravel.travel_introduction">
