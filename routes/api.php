@@ -41,11 +41,10 @@ $api->version('v1', [
 		$api->get('news','NewsController@index')->name('api.news.index');
 		// 新闻详情
 		$api->get('new/{new}','NewsController@show')->name('api.news.show');
-		// 重设密码获取短信验证码
-		$api->post('reset/verificationCodes', 'VerificationCodesController@resetByPhone')->name('api.verificationCodes.resetByPhone');
 		// 重设密码
 		$api->post('password/reset', 'ResetPasswordController@reset')->name('password.update');
 
+		$api->get('test', 'ResetPasswordController@test');
 
 
 
