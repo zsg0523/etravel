@@ -14,6 +14,12 @@ use Illuminate\Auth\Events\PasswordReset;
 class ResetPasswordController extends Controller
 {
 
+
+    public function test(User $user)
+    {
+        event(new PasswordReset($user));
+    }
+
     /**
      * Reset the given user's password.
      *
@@ -62,9 +68,6 @@ class ResetPasswordController extends Controller
         $user->save();
 
         event(new PasswordReset($user));
-
-        return "修改密码成功！";
-
     }
 
 
