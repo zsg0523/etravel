@@ -62,11 +62,11 @@
 		            </div>
 		            <div class="form_item_phone">
 		                <div class="item_title">电话区号</div>
-		                <div><input class="item_input_phone" type="text"  v-model="newPhone.area_code"></div>
+		                <div><input class="item_input_phone" type="text" placeholder="电话区号"  v-model="newPhone.area_code"></div>
 		            </div>
 		            <div class="form_item_phone">
 		                <div class="item_title">联系电话</div>
-		                <div><input class="item_input_phone" type="text"  v-model="newPhone.phone"></div>
+		                <div><input class="item_input_phone" type="text" placeholder="联系电话"  v-model="newPhone.phone"></div>
 		            </div>
                     <div class="issure">
                         <button @click="addNewPhone()">添加</button>
@@ -83,11 +83,11 @@
 		            </div>
 		            <div class="form_item_phone">
 		                <div class="item_title">电话区号</div>
-		                <div><input class="item_input_phone" type="text"  v-model="edPhone.area_code"></div>
+		                <div><input class="item_input_phone" type="text" placeholder="电话区号"  v-model="edPhone.area_code"></div>
 		            </div>
 		            <div class="form_item_phone">
 		                <div class="item_title">联系电话</div>
-		                <div><input class="item_input_phone" type="text"  v-model="edPhone.phone"></div>
+		                <div><input class="item_input_phone" type="text" placeholder="联系电话"  v-model="edPhone.phone"></div>
 		            </div>
                     <div class="issure">
                         <button @click="editPhone()">修改</button>

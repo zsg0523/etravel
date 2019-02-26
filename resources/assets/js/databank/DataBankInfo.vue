@@ -232,22 +232,22 @@
                     </div>   
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">日期</div>
-                        <div><input class="item_input" placeholder="日期" type="text" v-model="edAssemblePlaces.assembly_at"></div>
+                        <div><input class="item_input" placeholder="填写日期(yyyy-mm-dd)" type="text" v-model="edAssemblePlaces.assembly_at"></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">地址</div>
-                        <div><input class="item_input" placeholder="地址" type="text" v-model="edAssemblePlaces.assembly_station"></div>
+                        <div><input class="item_input" placeholder="填写地址" type="text" v-model="edAssemblePlaces.assembly_station"></div>
                     </div>
                     <div class="gather_info">
                         <div class="gather_info_title"><span>解散</span><hr></div>
                     </div>   
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">日期</div>
-                        <div><input class="item_input" placeholder="日期" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
+                        <div><input class="item_input" placeholder="填写日期(yyyy-mm-dd)" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">地址</div>
-                        <div><input class="item_input" placeholder="地址" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
+                        <div><input class="item_input" placeholder="填写地址" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
                     </div>
                     <div class="issure">
                         <button @click="editAssemblePlace()">确定</button>
@@ -260,31 +260,27 @@
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
                         <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
-                        <div><input class="item_input" type="text" v-model="newFlight.flight"></div>
+                        <div><input class="item_input" type="text" placeholder="填写工具信息" v-model="newFlight.flight"></div>
                     </div> 
                     <div class="form_item_info">
                         <div class="item_title">日期</div>
-                        <div><input class="item_input" type="text" v-model="newFlight.date"></div>
+                        <div><input class="item_input" type="text" placeholder="填写日期" v-model="newFlight.date"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出发时间</div>
-                        <div><input class="item_input" type="text" v-model="newFlight.takeoff_time"></div>
+                        <div><input class="item_input" type="text" placeholder="填写出发时间" v-model="newFlight.takeoff_time"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">到达时间</div>
-                        <div><input class="item_input" type="text" v-model="newFlight.arrival_time"></div>
+                        <div><input class="item_input" type="text" placeholder="填写到达时间" v-model="newFlight.arrival_time"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出发站点</div>
-                        <div>
-                            <div><input class="item_input" type="text" v-model="newFlight.from"></div>
-                        </div>
+                        <div><input class="item_input" type="text" placeholder="填写出发站点" v-model="newFlight.from"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">达到站点</div>
-                        <div>
-                            <div><input class="item_input" type="text" v-model="newFlight.to"></div>
-                        </div>
+                        <div><input class="item_input" type="text" placeholder="填写达到站点" v-model="newFlight.to"></div>
                     </div>
                     <div style="width:100%;height:50px;">
                         <span style="width:70px;text-align: center;display: block;float:left;">出发</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="newFlight.is_return">
@@ -302,31 +298,27 @@
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
                         <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
-                        <div><input class="item_input" type="text" v-model="edFlight.flight"></div>
+                        <div><input class="item_input" type="text" placeholder="填写工具信息" v-model="edFlight.flight"></div>
                     </div> 
                     <div class="form_item_info">
                         <div class="item_title">日期</div>
-                        <div><input class="item_input" type="text" v-model="edFlight.date"></div>
+                        <div><input class="item_input" type="text" placeholder="填写日期" v-model="edFlight.date"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出发时间</div>
-                        <div><input class="item_input" type="text" v-model="edFlight.takeoff_time"></div>
+                        <div><input class="item_input" type="text" placeholder="填写出发时间" v-model="edFlight.takeoff_time"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">到达时间</div>
-                        <div><input class="item_input" type="text" v-model="edFlight.arrival_time"></div>
+                        <div><input class="item_input" type="text" placeholder="填写到达时间" v-model="edFlight.arrival_time"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出发站点</div>
-                        <div>
-                            <div><input class="item_input" type="text" v-model="edFlight.from"></div>
-                        </div>
+                        <div><input class="item_input" type="text" placeholder="填写出发站点" v-model="edFlight.from"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">达到站点</div>
-                        <div>
-                            <div><input class="item_input" type="text" v-model="edFlight.to"></div>
-                        </div>
+                        <div><input class="item_input" type="text" placeholder="填写达到站点" v-model="edFlight.to"></div>
                     </div>
                     <div style="width:100%;height:50px;">
                         <span style="width:70px;text-align: center;display: block;float:left;">出发</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="edFlight.is_return">
@@ -344,23 +336,23 @@
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">酒店名称</div>
-                        <div><input class="item_input" style="width:97%;" type="text" v-model="newHotel.hotel_name" ></div>
+                        <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店名称" v-model="newHotel.hotel_name" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">入住时间</div>
-                        <div><input class="item_input" type="text" v-model="newHotel.check_at" ></div>
+                        <div><input class="item_input" type="text" placeholder="入住时间" v-model="newHotel.check_at" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">离开时间</div>
-                        <div><input class="item_input" type="text" v-model="newHotel.leave_at" ></div>
+                        <div><input class="item_input" type="text" placeholder="离开时间" v-model="newHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">几晚</div>
-                        <div><input class="item_input" type="text" v-model="newHotel.times" ></div>
+                        <div><input class="item_input" type="text" placeholder="几晚(1-N)" v-model="newHotel.times" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">联系电话</div>
-                        <div><input class="item_input" type="text" v-model="newHotel.hotel_phone" ></div>
+                        <div><input class="item_input" type="text" placeholder="联系电话" v-model="newHotel.hotel_phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;height:120px;">
                         <div class="item_title">酒店地址</div>
@@ -380,23 +372,23 @@
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">酒店名称</div>
-                        <div><input class="item_input" style="width:97%;" type="text" v-model="edHotel.hotel_name" ></div>
+                        <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店名称" v-model="edHotel.hotel_name" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">入住时间</div>
-                        <div><input class="item_input" type="text" v-model="edHotel.check_at" ></div>
+                        <div><input class="item_input" type="text" placeholder="入住时间" v-model="edHotel.check_at" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">离开时间</div>
-                        <div><input class="item_input" type="text" v-model="edHotel.leave_at" ></div>
+                        <div><input class="item_input" type="text" placeholder="离开时间" v-model="edHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">几晚</div>
-                        <div><input class="item_input" type="text" v-model="edHotel.times" ></div>
+                        <div><input class="item_input" type="text" placeholder="几晚(1-N)" v-model="edHotel.times" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">联系电话</div>
-                        <div><input class="item_input" type="text" v-model="edHotel.hotel_phone" ></div>
+                        <div><input class="item_input" type="text" placeholder="联系电话" v-model="edHotel.hotel_phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;height:120px;">
                         <div class="item_title">酒店地址</div>
@@ -416,15 +408,15 @@
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
                         <div class="item_title">老师姓名</div>
-                        <div><input class="item_input" type="text" v-model="newLeadTeacher.leader" ></div>
+                        <div><input class="item_input" type="text" placeholder="老师姓名" v-model="newLeadTeacher.leader" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">老师电话</div>
-                        <div><input class="item_input" type="text" v-model="newLeadTeacher.phone" ></div>
+                        <div><input class="item_input" type="text" placeholder="老师电话" v-model="newLeadTeacher.phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">职责</div>
-                        <div><input class="item_input" style="width:97%;" type="text" v-model="newLeadTeacher.duty"></div>
+                        <div><input class="item_input" style="width:97%;" type="text" placeholder="职责" v-model="newLeadTeacher.duty"></div>
                     </div>
                     <div class="issure">
                         <button @click="addNewLeadTeacher()">添加</button>
@@ -437,15 +429,15 @@
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
                         <div class="item_title">老师姓名</div>
-                        <div><input class="item_input" type="text" v-model="edLeadTeacher.leader" ></div>
+                        <div><input class="item_input" type="text" placeholder="老师姓名" v-model="edLeadTeacher.leader" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">老师电话</div>
-                        <div><input class="item_input" type="text" v-model="edLeadTeacher.phone" ></div>
+                        <div><input class="item_input" type="text" placeholder="老师电话" v-model="edLeadTeacher.phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">职责</div>
-                        <div><input class="item_input" style="width:97%;" type="text" v-model="edLeadTeacher.duty"></div>
+                        <div><input class="item_input" style="width:97%;" type="text" placeholder="职责" v-model="edLeadTeacher.duty"></div>
                     </div>
                     <div class="issure">
                         <button @click="editLeadTeacher()">修改</button>

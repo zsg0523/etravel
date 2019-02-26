@@ -90,19 +90,19 @@
                     <div class="form_item_house">
                         <div class="item_title">房间</div>
                         <div>
-                            <input class="item_input" placeholder="房间编号" type="text"  v-model="edHouse.house_room">
+                            <input class="item_input" placeholder="填写房间编号" type="text"  v-model="edHouse.house_room">
                         </div>
                     </div>
                     <div class="form_item_house">
                         <div class="item_title">班级</div>
                         <div>
-                            <input class="item_input" placeholder="班级" type="text"  v-model="edHouse.house_class">
+                            <input class="item_input" placeholder="填写班级" type="text"  v-model="edHouse.house_class">
                         </div>
                     </div>
                     <div class="form_item_house">
                         <div class="item_title">学生姓名</div>
                         <div>
-                            <input class="item_input" placeholder="学生姓名" type="text"  v-model="edHouse.house_name">
+                            <input class="item_input" placeholder="填写学生姓名" type="text"  v-model="edHouse.house_name">
                         </div>
                     </div>
                     <div class="issure">

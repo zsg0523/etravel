@@ -115,25 +115,25 @@
                     <div class="form_item_group">
                         <div class="item_title">班级</div>
                         <div>
-                            <input class="item_input" placeholder="班级" type="text" disabled="disabled"  v-model="edGroup.group_class">
+                            <input class="item_input" placeholder="填写班级" type="text" disabled="disabled"  v-model="edGroup.group_class">
                         </div>
                     </div>
                     <div class="form_item_group">
                         <div class="item_title">学生姓名</div>
                         <div>
-                            <input class="item_input" placeholder="学生姓名" type="text" disabled="disabled"  v-model="edGroup.group_name">
+                            <input class="item_input" placeholder="填写学生姓名" type="text" disabled="disabled"  v-model="edGroup.group_name">
                         </div>
                     </div>
                     <div class="form_item_group">
                         <div class="item_title">房号</div>
                         <div>
-                            <input class="item_input" placeholder="房号" type="text"  v-model="edGroup.group_room">
+                            <input class="item_input" placeholder="填写房号" type="text"  v-model="edGroup.group_room">
                         </div>
                     </div>
                     <div class="form_item_group">
                         <div class="item_title">职责</div>
                         <div>
-                            <input class="item_input" placeholder="职责" type="text"  v-model="edGroup.group_duty">
+                            <input class="item_input" placeholder="填写职责" type="text"  v-model="edGroup.group_duty">
                         </div>
                     </div>
                     <div class="issure">
