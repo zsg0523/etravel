@@ -49,7 +49,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td>编号</td>
                         <td>填写班级</td>
                         <td>填写名字</td>
@@ -57,13 +57,13 @@
                         <td>填写职责</td>
                         <td width="100px">
                             <div class="editIcon"><img src="/etravel/public/images/edit.png"></div>
-                            <!-- <div class="editIcon"><img src="/etravel/public/images/appointAdd.png"></div> -->
+                            <div class="editIcon"><img src="/etravel/public/images/appointAdd.png"></div>
                             <div class="editIcon"><img src="/etravel/public/images/dele.png"></div>
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr v-for="(group,index) in groups">
                         <td>{{index+1}}</td>
-                        <td>{{group.user.student.class}}</td>
+                        <td>{{group.class}}</td>
                         <td>{{group.user.name}}</td>
                         <td>{{group.room}}</td>
                         <td>{{group.duty}}</td>
@@ -215,7 +215,7 @@
             editGroupShow(index){
                 this.edGroup.id=this.groups[index].id;
                 this.edGroup.group_name=this.groups[index].user.name;
-                this.edGroup.group_class=this.groups[index].user.student.class;
+                this.edGroup.group_class=this.groups[index].class;
                 this.edGroup.group_room=this.groups[index].room;
                 this.edGroup.group_duty=this.groups[index].duty;
                  this.edGroup.user_id=this.groups[index].user_id;
@@ -240,7 +240,7 @@
                 }).then(res => {
                     if(res.status==200){
                         this.groups[this.edGroup.index].user.name=this.edGroup.group_name;
-                        this.groups[this.edGroup.index].user.student.class=this.edGroup.group_class;
+                        this.groups[this.edGroup.index].class=this.edGroup.group_class;
                         this.groups[this.edGroup.index].room=this.edGroup.group_room;
                         this.groups[this.edGroup.index].duty=this.edGroup.group_duty;
                         this.$toast('修改成功');

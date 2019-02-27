@@ -45,7 +45,7 @@
                 <tbody>
                     <tr v-for="(house,index) in houses">
                         <td>{{house.room}}</td>
-                        <td>{{house.user.student.class}}</td>
+                        <td>{{house.class}}</td>
                         <td>{{house.user.name}}</td>
                         <td width="100px">
                             <div class="editIcon"><img src="/etravel/public/images/edit.png" @click="editHouseShow(index);"></div>
@@ -183,7 +183,7 @@
                 this.edHouse.id=this.houses[index].id;
                 this.edHouse.user_id=this.houses[index].user_id;
                 this.edHouse.house_room=this.houses[index].room;
-                this.edHouse.house_class=this.houses[index].user.student.class;
+                this.edHouse.house_class=this.houses[index].class;
                 this.edHouse.house_name=this.houses[index].user.name;
                 this.edHouse.index=index;
                 this.isEditHouseShow=true;
@@ -205,7 +205,7 @@
                 }).then(res => {
                     if(res.status==200){
                         this.houses[this.edHouse.index].room=this.edHouse.house_room;
-                        this.houses[this.edHouse.index].user.student.class=this.edHouse.house_class;
+                        this.houses[this.edHouse.index].class=this.edHouse.house_class;
                         this.houses[this.edHouse.index].user.name=this.edHouse.house_name;
                         this.$toast('修改成功');
                         this.isEditHouseShow=false;    

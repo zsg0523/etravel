@@ -264,7 +264,7 @@
                     </div> 
                     <div class="form_item_info">
                         <div class="item_title">日期</div>
-                        <div><input class="item_input" type="text" placeholder="填写日期" v-model="newFlight.date"></div>
+                        <div><input class="item_input" type="text" placeholder="填写日期(yyyy-mm-dd)" v-model="newFlight.date"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出发时间</div>
@@ -302,7 +302,7 @@
                     </div> 
                     <div class="form_item_info">
                         <div class="item_title">日期</div>
-                        <div><input class="item_input" type="text" placeholder="填写日期" v-model="edFlight.date"></div>
+                        <div><input class="item_input" type="text" placeholder="填写日期(yyyy-mm-dd)" v-model="edFlight.date"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出发时间</div>
@@ -339,12 +339,12 @@
                         <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店名称" v-model="newHotel.hotel_name" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">入住时间</div>
-                        <div><input class="item_input" type="text" placeholder="入住时间" v-model="newHotel.check_at" ></div>
+                        <div class="item_title">入住日期</div>
+                        <div><input class="item_input" type="text" placeholder="入住日期(yyyy-mm-dd)" v-model="newHotel.check_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">离开时间</div>
-                        <div><input class="item_input" type="text" placeholder="离开时间" v-model="newHotel.leave_at" ></div>
+                        <div class="item_title">离开日期</div>
+                        <div><input class="item_input" type="text" placeholder="离开日期(yyyy-mm-dd)" v-model="newHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">几晚</div>
@@ -375,12 +375,12 @@
                         <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店名称" v-model="edHotel.hotel_name" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">入住时间</div>
-                        <div><input class="item_input" type="text" placeholder="入住时间" v-model="edHotel.check_at" ></div>
+                        <div class="item_title">入住日期</div>
+                        <div><input class="item_input" type="text" placeholder="入住日期(yyyy-mm-dd)" v-model="edHotel.check_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">离开时间</div>
-                        <div><input class="item_input" type="text" placeholder="离开时间" v-model="edHotel.leave_at" ></div>
+                        <div class="item_title">离开日期</div>
+                        <div><input class="item_input" type="text" placeholder="离开日期(yyyy-mm-dd)" v-model="edHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">几晚</div>

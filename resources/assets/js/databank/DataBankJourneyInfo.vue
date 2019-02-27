@@ -42,8 +42,8 @@
             <div class="pane_content">
                 <div class="form_content_journeyInfo disflex" v-for="(journeyInfo,index) in journeyInfos">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">时间</div>
-		                <div><input class="item_input_journeyInfo" placeholder="时间" type="text" disabled="disabled"  :value="journeyInfo.time"></div>
+		                <div class="item_title">详细时间</div>
+		                <div><input class="item_input_journeyInfo" placeholder="详细时间(yyyy-mm-dd hh:mm)" type="text" disabled="disabled"  :value="journeyInfo.time"></div>
 		            </div>
 		            <div class="form_item_journeyInfo">
 		                <div class="item_title">内容</div>
@@ -69,8 +69,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">时间</div>
-		                <div><input class="item_input_journeyInfo" placeholder="时间" type="text" v-model="newJourneyInfo.time"></div>
+		                <div class="item_title">详细时间</div>
+		                <div><input class="item_input_journeyInfo" placeholder="详细时间(yyyy-mm-dd hh:mm)" type="text" v-model="newJourneyInfo.time"></div>
 		            </div>
 		            <div class="form_item_journeyInfo">
 		                <div class="item_title">内容</div>
