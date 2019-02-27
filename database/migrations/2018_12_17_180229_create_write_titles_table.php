@@ -15,6 +15,8 @@ class CreateWriteTitlesTable extends Migration
     {
         Schema::create('write_titles', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('travel_id')->unsigned()->index();
+            $table->foreign('travel_id')->references('id')->on('travels')->onDelete('cascade');
             $table->string('title')->index();
             $table->timestamps();
         });

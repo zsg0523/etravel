@@ -71,4 +71,9 @@ class Travel extends Model
     {
         return $this->hasMany(EvaluationCategory::class);
     }
+
+    public function write_titles()
+    {
+        return $this->hasMany(WriteTitle::class);
+    }
 }
