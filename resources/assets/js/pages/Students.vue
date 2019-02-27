@@ -225,7 +225,7 @@
                         </div>
                         <div class="form_item_small">
                             <div class="item_title">联系电话</div>
-                            <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="searchStudent.phone"></div>
+                            <div><input class="item_input" type="text" placeholder="填写联系电话" disabled="disabled" v-model="searchStudent.phone"></div>
                         </div>
                         <div class="form_item_small">
                             <div class="item_title">学生学号<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>

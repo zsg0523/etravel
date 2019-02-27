@@ -22771,6 +22771,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: {
     CommonHead: __WEBPACK_IMPORTED_MODULE_0__components_CommonHead_vue___default.a,
     HistoryLink: __WEBPACK_IMPORTED_MODULE_1__components_HistoryLink_vue___default.a
+  },
+  mounted: function mounted() {
+    var obj = [{ link: '/home', linkName: '项目' }];
+    sessionStorage.setItem("links", JSON.stringify(obj));
   }
 });
 
@@ -23063,7 +23067,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			links: []
+		};
+	},
+	mounted: function mounted() {
+		this.links = JSON.parse(sessionStorage.getItem("links"));
+	}
+});
 
 /***/ }),
 /* 98 */
@@ -23073,20 +23086,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "breadlink" }, [
-    _c(
-      "a",
-      {
-        attrs: { href: "javascript:void(0);" },
-        on: {
-          click: function($event) {
-            return _vm.$router.push("/Home")
+  return _c(
+    "div",
+    { staticClass: "breadlink" },
+    _vm._l(_vm.links, function(link, index) {
+      return _c(
+        "a",
+        {
+          attrs: { href: "javascript:void(0);" },
+          on: {
+            click: function($event) {
+              return _vm.$router.push(link.link)
+            }
           }
-        }
-      },
-      [_vm._v("项目")]
-    )
-  ])
+        },
+        [_c("span", [_vm._v("<")]), _vm._v(_vm._s(link.linkName))]
+      )
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -26383,7 +26401,11 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写联系电话" },
+                      attrs: {
+                        type: "text",
+                        placeholder: "填写联系电话",
+                        disabled: "disabled"
+                      },
                       domProps: { value: _vm.searchStudent.phone },
                       on: {
                         input: function($event) {
@@ -29080,6 +29102,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         CommonHead: __WEBPACK_IMPORTED_MODULE_0__components_CommonHead_vue___default.a,
         HistoryLink: __WEBPACK_IMPORTED_MODULE_1__components_HistoryLink_vue___default.a,
         CommonLeft: __WEBPACK_IMPORTED_MODULE_2__components_CommonLeft_vue___default.a
+    },
+    mounted: function mounted() {
+        var obj = [{ link: '/home', linkName: '项目' }, { link: '/projectDetail/' + sessionStorage.actTravelId, linkName: '项目详情' }];
+        sessionStorage.setItem("links", JSON.stringify(obj));
     }
 });
 
@@ -46945,8 +46971,8 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-var baseUrl = 'http://www.bunchparty.com/etravel/public'; //线上地址
-// const baseUrl='http://etravel.test';
+// const baseUrl='http://www.bunchparty.com/etravel/public';//线上地址
+var baseUrl = 'http://etravel.test';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),
