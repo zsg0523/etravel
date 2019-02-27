@@ -310,14 +310,16 @@ $api->version('v1', [
 
 			// 感想标题列表
 			$api->get('titles','WriteTitlesController@index')->name('api.titles.index');
+			// 旅游下所有标题
+			$api->get('travels/{travel}/titles', 'WriteTitlesController@travelIndex')->name('api.travels.titles.index');
 			// 标题详情
-			$api->get('titles/{writetitle}','WriteTitlesController@show')->name('api.titles.show');
+			$api->get('travels/{travel}/titles/{writetitle}','WriteTitlesController@show')->name('api.titles.show');
 			// 增加标题
-			$api->post('titles','WriteTitlesController@store')->name('api.titles.store');
+			$api->post('travels/{travel}/titles','WriteTitlesController@store')->name('api.titles.store');
 			// 更新标题
-			$api->patch('titles/{writetitle}','WriteTitlesController@update')->name('api.titles.update');
+			$api->patch('travels/{travel}/titles/{writetitle}','WriteTitlesController@update')->name('api.titles.update');
 			// 删除标题
-			$api->delete('titles/{writetitle}','WriteTitlesController@destroy')->name('api.titles.destroy');
+			$api->delete('travels/{travel}/titles/{writetitle}','WriteTitlesController@destroy')->name('api.titles.destroy');
 
 
 			// 所有旅游所有感想
