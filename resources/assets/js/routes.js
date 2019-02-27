@@ -104,10 +104,28 @@ const router = new VueRouter({
                     ],
                 },
                 {
-                    path: '/dataBankPromise',
-                    name: 'dataBankPromise',
-                    component: Vue.component( 'dataBankPromise', require( './databank/DataBankPromise.vue' ) ),
+                    path: '/promise',
+                    name: 'promise',
+                    component: Vue.component( 'promise', require( './components/Promise.vue' ) ),
+                    redirect: '/promise/dataBankPromises',
+                    children:[
+                        {
+                            path: '/promise/dataBankPromises',
+                            name: 'dataBankPromises',
+                            component: Vue.component( 'dataBankPromises', require( './databank/DataBankPromises.vue' ) ),
+                        },
+                        {
+                            path: '/promise/dataBankPromisesInfo/:id',
+                            name: 'dataBankPromisesInfo',
+                            component: Vue.component( 'dataBankPromisesInfo', require( './databank/DataBankPromisesInfo.vue' ) ),
+                        },
+                    ],
                 },
+                // {
+                //     path: '/dataBankPromise',
+                //     name: 'dataBankPromise',
+                //     component: Vue.component( 'dataBankPromise', require( './databank/DataBankPromise.vue' ) ),
+                // },
                 {
                     path: '/dataBankGroup',
                     name: 'dataBankGroup',

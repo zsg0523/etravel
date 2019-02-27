@@ -17,9 +17,9 @@
 
     .active{font-size: 18px;}    
 
-	.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 50px;}
-    .dataBankAddBtn:hover{cursor:pointer;}
-    .dataBankAddBtn>img{width:50px;height: 50px;}
+    .dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
+    .dataBankAddBtn_journeyInfo:hover{cursor:pointer;}
+    .dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;}
 	
     .editBox_sheetInfo{width: 600px;min-height:160px;background-color: #fff;border-radius: 15px;}
     .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
@@ -65,7 +65,10 @@
 		                <div><input class="item_input_sheetInfo" type="text" disabled="disabled" :value="sheetInfo.content"></div>
 		            </div>
 		        </div>
-		    </div>      
+		    </div>
+            <div class="dataBankAddBtn_journeyInfo" @click="addNewSheetInfoShow()">
+                <img src="/etravel/public/images/add_y.png">
+            </div>      
 		</div>
 		<van-popup v-model="isNewSheetInfoShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox_sheetInfo" >

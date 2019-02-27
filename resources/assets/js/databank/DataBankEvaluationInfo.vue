@@ -159,7 +159,7 @@
             },
             addNewEvaluationInfo(){
                 // 新增选项
-                this.$post('/api/evaluationCategories/'+this.$route.params.id+'/evaluations',this.newEvaluationInfo,
+                this.$post(this.$config+'/api/evaluationCategories/'+this.$route.params.id+'/evaluations',this.newEvaluationInfo,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -194,7 +194,7 @@
                         type:this.edEvaluationInfo.type,
                         content:this.edEvaluationInfo.content,    
                     },
-                    url: '/api/evaluationCategories/'+this.$route.params.id+'/evaluations/'+this.edEvaluationInfo.id,
+                    url: this.$config+'/api/evaluationCategories/'+this.$route.params.id+'/evaluations/'+this.edEvaluationInfo.id,
                 }).then(res => {
                     if(res.status==200){
                         this.evaluationInfos[this.edEvaluationInfo.index].type=this.edEvaluationInfo.type;
@@ -220,7 +220,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/evaluationCategories/'+this.$route.params.id+'/evaluations/'+evaluationInfoId,
+                        url: this.$config+'/api/evaluationCategories/'+this.$route.params.id+'/evaluations/'+evaluationInfoId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
