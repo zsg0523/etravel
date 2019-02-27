@@ -79,11 +79,14 @@
                                 <input disabled="disabled" type="text" placeholder="未设置" />                                                                               
                             </div>
                             <p class="padding_none">性别</p>
-                            <div class="sex" v-if="personalInfos.sex">
-                                <input disabled="disabled" type="text" v-model="personalInfos.sex"/>                                               
+                            <div class="sex" v-if="personalInfos.sex==0">
+                                <input disabled="disabled" type="text" value="女" />                                               
+                            </div>
+                            <div class="sex" v-else-if="personalInfos.sex==1">
+                                <input disabled="disabled" type="text" value="男" />                                               
                             </div>
                             <div class="sex"  v-else>
-                                <input disabled="disabled" type="text" placeholder="未设置" />                                                                               
+                                <input disabled="disabled" type="text" placeholder="未设置" />                                                                             
                             </div>
                         </div>
                     </div>
@@ -123,18 +126,18 @@
                         <div>
                             <select id="edTypeId" v-model="edInformation.sex">
                                 <option value="">--请选择--</option>
-                                <option v-for="item in optList">{{ item }}</option>
+                                <option v-for="item in optList" value="item.value">{{ item.name }}</option>
                             </select>
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">手机号</div>
+                        <div class="item_title">手机号<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
                         <div>
                             <input class="item_input" placeholder="手机号" type="text" v-model="edInformation.phone">
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">邮箱</div>
+                        <div class="item_title">邮箱<span class="err" v-if="errors.email" v-text="errors.email[0]"></span></div>
                         <div>
                             <input class="item_input" placeholder="邮箱" type="text" v-model="edInformation.email">
                         </div>
@@ -154,7 +157,13 @@
         data(){
             return{
                 personalInfos:[],
-                optList:['Woman','Man'],
+                optList:[{
+                    value:'0',
+                    name:'女'
+                },{
+                    value:'1',
+                    name:'男'
+                }],
                 edInformation:{
                     id:'',
                     name:'',
@@ -163,6 +172,7 @@
                     email:'',
                 },
                 isEditInformationShow:false,
+                errors:{},
             }
         },
         mounted:function(){
@@ -217,6 +227,7 @@
                 }).catch(err => {
                     this.$toast('修改失败');
                     console.log(err)
+                    this.errors=err.response.data.errors;
                 });
             },
         }

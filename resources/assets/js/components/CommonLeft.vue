@@ -19,7 +19,7 @@
             <router-link tag='li' to='/dataBankInfo'><div >重要资料<input type="checkbox" class="checke"></div></router-link>
             <router-link tag='li' to='/dataBankPhone'><div >常用电话<input type="checkbox" class="checke"></div></router-link>
             <router-link tag='li' to='/rule'><div >团队守则<input type="checkbox" class="checke"></div></router-link>
-            <router-link tag='li' to='/dataBankPromise'><div >我的承诺<input type="checkbox" class="checke"></div></router-link>
+            <router-link tag='li' to='/promise'><div >我的承诺<input type="checkbox" class="checke"></div></router-link>
             <router-link tag='li' to='/dataBankGroup'><div >师生名单分组<input type="checkbox" class="checke"></div></router-link>
             <router-link tag='li' to='/dataBankLocalCulture'><div >当地文化<input type="checkbox" class="checke"></div></router-link>
             <router-link tag='li' to='/dataBankHouseTable'><div >分房表<input type="checkbox" class="checke"></div></router-link>
