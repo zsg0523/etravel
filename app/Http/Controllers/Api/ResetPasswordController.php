@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\ResetsPasswords;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
+use App\Models\User;
+use App\Events\test;
 
 class ResetPasswordController extends Controller
 {
@@ -17,7 +18,9 @@ class ResetPasswordController extends Controller
 
     public function test(User $user)
     {
-        event(new PasswordReset($user));
+        $user = User::find(1);
+        // test 事件，触发 发送邮件，发送短信
+        event(new test($user));
     }
 
     /**
