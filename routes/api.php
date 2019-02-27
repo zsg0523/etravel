@@ -55,7 +55,7 @@ $api->version('v1', [
 			// 管理员添加用户列表
 			$api->get('users/{user}/userList', 'UsersController@userList')->name('api.user.userList');
 			// 用户 ID 查询列表
-			$api->get('users/{user}/userInfo', 'UsersController@userInfo')->name('api.user.userInfo');
+			$api->post('users/{user}/userInfo', 'UsersController@userInfo')->name('api.user.userInfo');
 			// 管理员所属学校用户列表
 			$api->get('users/{user}/schoolUser', 'UsersController@schoolUser')->name('api.user.schoolUser');
 			// 当前登录用户信息

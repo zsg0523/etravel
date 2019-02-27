@@ -89,12 +89,19 @@ class UsersController extends Controller
     }
 
     /** [userInfo 查询某ID用户信息] */
-    public function userInfo(User $user)
-    {
+    public function userInfo(Request $request, User $user)
+    {   
+        // 用户已经参加的旅游团 ids
+        $travel_ids = $user->travels->pluck('id')->toArray();
+
+        if(in_array($request->travel_id, $travel_ids)) {
+           return $this->response->array(['message' => '该用户已参加！'])->setStatusCode(202);
+        }
+
         return $this->response->item($user, new UserTransformer());
     }
 
-    /** [schoolUser 查询管理员所有学校的学生] */
+    /** [schoolUser 查询管理员所有学校的学生] *2
     public function schoolUser(User $user)
     {
         // return $this->response->collection();
