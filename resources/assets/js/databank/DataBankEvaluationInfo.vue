@@ -47,9 +47,9 @@
             <div class="pane_content_eval">
                 <div class="form_content disflex"  v-for="(evaluationInfo,index) in evaluationInfos">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">选项{{index+1}}<span class="fr">类型:{{evaluationInfo.type}}</span></div>
+                        <div class="item_title">题目{{index+1}}<span class="fr">类型:{{evaluationInfo.type}}</span></div>
                         <div>
-                            <textarea class="item_area_eval" placeholder="选项详情" disabled="disabled"  :value="evaluationInfo.content"></textarea>
+                            <textarea class="item_area_eval" placeholder="题目详情" disabled="disabled"  :value="evaluationInfo.content"></textarea>
                         </div>
                     </div>
                     <div class="editBtnGroup">
@@ -68,11 +68,11 @@
                     <div class="form_item_evaluationInfo">
                         <div class="item_title">详情</div>
                         <div>
-                            <textarea class="item_area_eval" placeholder="选项详情" v-model="newEvaluationInfo.content"></textarea>
+                            <textarea class="item_area_eval" placeholder="题目详情" v-model="newEvaluationInfo.content"></textarea>
                         </div>
                     </div>
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">选项类型</div>
+                        <div class="item_title">题目类型</div>
                         <div>
                             <select id="edTypeId" v-model="newEvaluationInfo.type">
                                 <option value="">--请选择--</option>
@@ -90,13 +90,13 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">选项详情</div>
+                        <div class="item_title">题目详情</div>
                         <div>
-                            <textarea class="item_area_eval" placeholder="选项详情" v-model="edEvaluationInfo.content"></textarea>
+                            <textarea class="item_area_eval" placeholder="题目详情" v-model="edEvaluationInfo.content"></textarea>
                         </div>
                     </div>
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">选项类型</div>
+                        <div class="item_title">题目类型</div>
                         <div>
                             <select id="edTypeId" v-model="edEvaluationInfo.type">
                                 <option value="">--请选择--</option>
@@ -139,7 +139,7 @@
         },
         methods:{
             getEvaluationInfos(){
-                // 获取选项详情
+                // 获取题目详情
                 this.$get(this.$config+'/api/evaluationCategories/'+this.$route.params.id+'?include=evaluations',
                 {
                     headers: {
@@ -158,7 +158,7 @@
                 this.isNewEvaluationInfoShow=true;
             },
             addNewEvaluationInfo(){
-                // 新增选项
+                // 新增题目
                 this.$post(this.$config+'/api/evaluationCategories/'+this.$route.params.id+'/evaluations',this.newEvaluationInfo,
                 {
                     headers: {
@@ -184,7 +184,7 @@
                 this.isEditEvaluationInfoShow=true;
             },
             editEvaluationInfo(){
-                // 修改选项信息/api/evaluationCategories/1/evaluations/51
+                // 修改题目信息/api/evaluationCategories/1/evaluations/51
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -212,8 +212,8 @@
             delEvaluationInfo(evaluationInfoId){
                 // 删除行程
                 this.$dialog.confirm({
-                    title: '删除选项',
-                    message: '是否删除该选项'
+                    title: '删除题目',
+                    message: '是否删除该题目'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

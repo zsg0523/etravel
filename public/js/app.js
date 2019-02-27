@@ -23795,7 +23795,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_pro" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("出行时间"),
+                    _vm._v("出行日期"),
                     _vm.errors.travel_at
                       ? _c("span", {
                           staticClass: "err",
@@ -23818,7 +23818,7 @@ var render = function() {
                       ],
                       staticClass: "item_input",
                       attrs: {
-                        placeholder: "出行时间（例:1979-01-01）",
+                        placeholder: "出行日期（例:1979-01-01）",
                         type: "text",
                         readonly: "readonly"
                       },
@@ -23955,7 +23955,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_pro" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("出行时间")
+                    _vm._v("出行日期")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -23970,7 +23970,7 @@ var render = function() {
                       ],
                       staticClass: "item_input",
                       attrs: {
-                        placeholder: "出行时间（例:1979-01-01）",
+                        placeholder: "出行日期（例:1979-01-01）",
                         type: "text",
                         readonly: "readonly"
                       },
@@ -31507,7 +31507,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填写日期" },
+                    attrs: {
+                      type: "text",
+                      placeholder: "填写日期(yyyy-mm-dd)"
+                    },
                     domProps: { value: _vm.newFlight.date },
                     on: {
                       input: function($event) {
@@ -31785,7 +31788,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填写日期" },
+                    attrs: {
+                      type: "text",
+                      placeholder: "填写日期(yyyy-mm-dd)"
+                    },
                     domProps: { value: _vm.edFlight.date },
                     on: {
                       input: function($event) {
@@ -32062,7 +32068,7 @@ var render = function() {
               ),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("入住时间")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("入住日期")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -32075,7 +32081,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "入住时间" },
+                    attrs: {
+                      type: "text",
+                      placeholder: "入住日期(yyyy-mm-dd)"
+                    },
                     domProps: { value: _vm.newHotel.check_at },
                     on: {
                       input: function($event) {
@@ -32090,7 +32099,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("离开时间")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("离开日期")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -32103,7 +32112,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "离开时间" },
+                    attrs: {
+                      type: "text",
+                      placeholder: "离开日期(yyyy-mm-dd)"
+                    },
                     domProps: { value: _vm.newHotel.leave_at },
                     on: {
                       input: function($event) {
@@ -32295,7 +32307,7 @@ var render = function() {
               ),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("入住时间")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("入住日期")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -32308,7 +32320,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "入住时间" },
+                    attrs: {
+                      type: "text",
+                      placeholder: "入住日期(yyyy-mm-dd)"
+                    },
                     domProps: { value: _vm.edHotel.check_at },
                     on: {
                       input: function($event) {
@@ -32323,7 +32338,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("离开时间")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("离开日期")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -32336,7 +32351,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "离开时间" },
+                    attrs: {
+                      type: "text",
+                      placeholder: "离开日期(yyyy-mm-dd)"
+                    },
                     domProps: { value: _vm.edHotel.leave_at },
                     on: {
                       input: function($event) {
@@ -36373,7 +36391,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         editGroupShow: function editGroupShow(index) {
             this.edGroup.id = this.groups[index].id;
             this.edGroup.group_name = this.groups[index].user.name;
-            this.edGroup.group_class = this.groups[index].user.student.class;
+            this.edGroup.group_class = this.groups[index].class;
             this.edGroup.group_room = this.groups[index].room;
             this.edGroup.group_duty = this.groups[index].duty;
             this.edGroup.user_id = this.groups[index].user_id;
@@ -36400,7 +36418,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).then(function (res) {
                 if (res.status == 200) {
                     _this2.groups[_this2.edGroup.index].user.name = _this2.edGroup.group_name;
-                    _this2.groups[_this2.edGroup.index].user.student.class = _this2.edGroup.group_class;
+                    _this2.groups[_this2.edGroup.index].class = _this2.edGroup.group_class;
                     _this2.groups[_this2.edGroup.index].room = _this2.edGroup.group_room;
                     _this2.groups[_this2.edGroup.index].duty = _this2.edGroup.group_duty;
                     _this2.$toast('修改成功');
@@ -36462,56 +36480,52 @@ var render = function() {
           _vm._v(" "),
           _c(
             "tbody",
-            [
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._l(_vm.groups, function(group, index) {
-                return _c("tr", [
-                  _c("td", [_vm._v(_vm._s(index + 1))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(group.user.student.class))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(group.user.name))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(group.room))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(group.duty))]),
-                  _vm._v(" "),
-                  _c("td", { attrs: { width: "100px" } }, [
-                    _c(
-                      "div",
-                      { staticClass: "editIcon", attrs: { name: "编辑" } },
-                      [
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/edit.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.editGroupShow(index)
-                            }
+            _vm._l(_vm.groups, function(group, index) {
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(index + 1))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(group.class))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(group.user.name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(group.room))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(group.duty))]),
+                _vm._v(" "),
+                _c("td", { attrs: { width: "100px" } }, [
+                  _c(
+                    "div",
+                    { staticClass: "editIcon", attrs: { name: "编辑" } },
+                    [
+                      _c("img", {
+                        attrs: { src: "/etravel/public/images/edit.png" },
+                        on: {
+                          click: function($event) {
+                            return _vm.editGroupShow(index)
                           }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "editIcon", attrs: { name: "删除" } },
-                      [
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/dele.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.delGroup(group.user_id, group.id)
-                            }
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "editIcon", attrs: { name: "删除" } },
+                    [
+                      _c("img", {
+                        attrs: { src: "/etravel/public/images/dele.png" },
+                        on: {
+                          click: function($event) {
+                            return _vm.delGroup(group.user_id, group.id)
                           }
-                        })
-                      ]
-                    )
-                  ])
+                        }
+                      })
+                    ]
+                  )
                 ])
-              })
-            ],
-            2
+              ])
+            }),
+            0
           )
         ])
       ]),
@@ -36695,32 +36709,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("职责")]),
         _vm._v(" "),
         _c("th", [_vm._v("编辑")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", [_vm._v("编号")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("填写班级")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("填写名字")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("填写房号")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("填写职责")]),
-      _vm._v(" "),
-      _c("td", { attrs: { width: "100px" } }, [
-        _c("div", { staticClass: "editIcon" }, [
-          _c("img", { attrs: { src: "/etravel/public/images/edit.png" } })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "editIcon" }, [
-          _c("img", { attrs: { src: "/etravel/public/images/dele.png" } })
-        ])
       ])
     ])
   }
@@ -37020,7 +37008,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edHouse.id = this.houses[index].id;
             this.edHouse.user_id = this.houses[index].user_id;
             this.edHouse.house_room = this.houses[index].room;
-            this.edHouse.house_class = this.houses[index].user.student.class;
+            this.edHouse.house_class = this.houses[index].class;
             this.edHouse.house_name = this.houses[index].user.name;
             this.edHouse.index = index;
             this.isEditHouseShow = true;
@@ -37044,7 +37032,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).then(function (res) {
                 if (res.status == 200) {
                     _this2.houses[_this2.edHouse.index].room = _this2.edHouse.house_room;
-                    _this2.houses[_this2.edHouse.index].user.student.class = _this2.edHouse.house_class;
+                    _this2.houses[_this2.edHouse.index].class = _this2.edHouse.house_class;
                     _this2.houses[_this2.edHouse.index].user.name = _this2.edHouse.house_name;
                     _this2.$toast('修改成功');
                     _this2.isEditHouseShow = false;
@@ -37109,7 +37097,7 @@ var render = function() {
               return _c("tr", [
                 _c("td", [_vm._v(_vm._s(house.room))]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(house.user.student.class))]),
+                _c("td", [_vm._v(_vm._s(house.class))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(house.user.name))]),
                 _vm._v(" "),
@@ -38076,7 +38064,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journey" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("时间")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("日期")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -38089,7 +38077,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "时间", type: "text" },
+                    attrs: {
+                      placeholder: "填写日期(yyyy-mm-dd)",
+                      type: "text"
+                    },
                     domProps: { value: _vm.newJourney.date },
                     on: {
                       input: function($event) {
@@ -38166,7 +38157,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journey" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("时间")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("日期")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -38179,7 +38170,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "时间", type: "text" },
+                    attrs: {
+                      placeholder: "填写日期(yyyy-mm-dd)",
+                      type: "text"
+                    },
                     domProps: { value: _vm.edJourney.date },
                     on: {
                       input: function($event) {
@@ -38655,13 +38649,15 @@ var render = function() {
               { staticClass: "form_content_journeyInfo disflex" },
               [
                 _c("div", { staticClass: "form_item_journeyInfo" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("时间")]),
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("详细时间")
+                  ]),
                   _vm._v(" "),
                   _c("div", [
                     _c("input", {
                       staticClass: "item_input_journeyInfo",
                       attrs: {
-                        placeholder: "时间",
+                        placeholder: "详细时间(yyyy-mm-dd hh:mm)",
                         type: "text",
                         disabled: "disabled"
                       },
@@ -38754,7 +38750,7 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("时间")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("详细时间")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -38767,7 +38763,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "时间", type: "text" },
+                    attrs: {
+                      placeholder: "详细时间(yyyy-mm-dd hh:mm)",
+                      type: "text"
+                    },
                     domProps: { value: _vm.newJourneyInfo.time },
                     on: {
                       input: function($event) {
@@ -40319,7 +40318,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journey" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("时间")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("日期")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -40332,7 +40331,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "时间", type: "text" },
+                    attrs: {
+                      placeholder: "填写日期(yyyy-mm-dd)",
+                      type: "text"
+                    },
                     domProps: { value: _vm.newJourney.date },
                     on: {
                       input: function($event) {
@@ -40409,7 +40411,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journey" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("时间")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("日期")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -40422,7 +40424,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "时间", type: "text" },
+                    attrs: {
+                      placeholder: "填写日期(yyyy-mm-dd)",
+                      type: "text"
+                    },
                     domProps: { value: _vm.edJourney.date },
                     on: {
                       input: function($event) {
@@ -44148,7 +44153,7 @@ var render = function() {
           _vm._l(_vm.evaluations, function(evaluation, index) {
             return _c("div", { staticClass: "form_item_evaluations" }, [
               _c("div", { staticClass: "item_title" }, [
-                _vm._v("题目" + _vm._s(index + 1))
+                _vm._v("题型" + _vm._s(index + 1))
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "input_icon disflex" }, [
@@ -44238,7 +44243,7 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_evaluations" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("题目")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("题型")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -44307,7 +44312,7 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_evaluations" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("题目")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("题型")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -44609,7 +44614,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getEvaluationInfos: function getEvaluationInfos() {
             var _this = this;
 
-            // 获取选项详情
+            // 获取题目详情
             this.$get(this.$config + '/api/evaluationCategories/' + this.$route.params.id + '?include=evaluations', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
@@ -44629,7 +44634,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         addNewEvaluationInfo: function addNewEvaluationInfo() {
             var _this2 = this;
 
-            // 新增选项
+            // 新增题目
             this.$post(this.$config + '/api/evaluationCategories/' + this.$route.params.id + '/evaluations', this.newEvaluationInfo, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
@@ -44656,7 +44661,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         editEvaluationInfo: function editEvaluationInfo() {
             var _this3 = this;
 
-            // 修改选项信息/api/evaluationCategories/1/evaluations/51
+            // 修改题目信息/api/evaluationCategories/1/evaluations/51
             this.$ajax({
                 method: 'PATCH',
                 headers: {
@@ -44686,8 +44691,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             // 删除行程
             this.$dialog.confirm({
-                title: '删除选项',
-                message: '是否删除该选项'
+                title: '删除题目',
+                message: '是否删除该题目'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -44748,7 +44753,7 @@ var render = function() {
             return _c("div", { staticClass: "form_content disflex" }, [
               _c("div", { staticClass: "form_item_evaluationInfo" }, [
                 _c("div", { staticClass: "item_title" }, [
-                  _vm._v("选项" + _vm._s(index + 1)),
+                  _vm._v("题目" + _vm._s(index + 1)),
                   _c("span", { staticClass: "fr" }, [
                     _vm._v("类型:" + _vm._s(evaluationInfo.type))
                   ])
@@ -44757,7 +44762,7 @@ var render = function() {
                 _c("div", [
                   _c("textarea", {
                     staticClass: "item_area_eval",
-                    attrs: { placeholder: "选项详情", disabled: "disabled" },
+                    attrs: { placeholder: "题目详情", disabled: "disabled" },
                     domProps: { value: evaluationInfo.content }
                   })
                 ])
@@ -44831,7 +44836,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_area_eval",
-                    attrs: { placeholder: "选项详情" },
+                    attrs: { placeholder: "题目详情" },
                     domProps: { value: _vm.newEvaluationInfo.content },
                     on: {
                       input: function($event) {
@@ -44850,7 +44855,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_evaluationInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("选项类型")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("题目类型")]),
                 _vm._v(" "),
                 _c("div", [
                   _c(
@@ -44934,7 +44939,7 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_evaluationInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("选项详情")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("题目详情")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("textarea", {
@@ -44947,7 +44952,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_area_eval",
-                    attrs: { placeholder: "选项详情" },
+                    attrs: { placeholder: "题目详情" },
                     domProps: { value: _vm.edEvaluationInfo.content },
                     on: {
                       input: function($event) {
@@ -44966,7 +44971,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_evaluationInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("选项类型")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("题目类型")]),
                 _vm._v(" "),
                 _c("div", [
                   _c(

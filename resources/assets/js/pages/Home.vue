@@ -105,9 +105,9 @@
                     </div>
                 </div>
                 <div class="form_item_pro">
-                    <div class="item_title">出行时间<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
+                    <div class="item_title">出行日期<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="出行时间（例:1979-01-01）" type="text"  v-model="newTravel.travel_at" readonly="readonly" @click="pickTimeShow('newTravel')">
+                        <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_at" readonly="readonly" @click="pickTimeShow('newTravel')">
                     </div>
                 </div>
                 <div class="form_item_pro">
@@ -129,9 +129,9 @@
                     </div>
                 </div>
                 <div class="form_item_pro">
-                    <div class="item_title">出行时间</div>
+                    <div class="item_title">出行日期</div>
                     <div>
-                        <input class="item_input" placeholder="出行时间（例:1979-01-01）" type="text"  v-model="edTravel.travel_at" readonly="readonly" @click="pickTimeShow('edTravel')">
+                        <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="edTravel.travel_at" readonly="readonly" @click="pickTimeShow('edTravel')">
                     </div>
                 </div>
                 <div class="form_item_pro">
