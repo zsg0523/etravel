@@ -5,7 +5,7 @@
 
 <template>
 	<div class="breadlink">
-    	<a href="javascript:void(0);" v-for="(link,index) in links" @click="$router.push(link.link)"><span><</span>{{link.linkName}}</a>
+    	<a href="javascript:void(0);" v-for="(link,index) in $store.state.links" @click="$router.push(link.link)"><span><</span>{{link.linkName}}</a>
     </div>
 </template>
 
@@ -13,11 +13,14 @@
   	export default {
   		data(){
   			return{
-  				links:[],
+  				// links:'',
   			}
   		},
   		mounted(){
-        	this.links=JSON.parse(sessionStorage.getItem("links"));
+        	// this.links=this.$store.state.links;
+
+        	// this.links=JSON.parse(sessionStorage.getItem("links"));
+        	// console.log(this.links);
       	}
   	}
 </script>

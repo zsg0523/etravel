@@ -4336,7 +4336,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
   state: {
     userInfo: {},
     travels: {},
-    token: ''
+    token: '',
+    links: [{ link: '/home', linkName: '项目' }]
   },
   getters: {
     userInfo: function userInfo(state) {
@@ -22773,8 +22774,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     HistoryLink: __WEBPACK_IMPORTED_MODULE_1__components_HistoryLink_vue___default.a
   },
   mounted: function mounted() {
-    var obj = [{ link: '/home', linkName: '项目' }];
-    sessionStorage.setItem("links", JSON.stringify(obj));
+    this.$store.state.links = [{ link: '/home', linkName: '项目' }];
+    // var obj=[{link:'/home',linkName:'项目'}];
+    // sessionStorage.setItem("links",JSON.stringify(obj));
   }
 });
 
@@ -23070,11 +23072,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
 		return {
-			links: []
+			// links:'',
 		};
 	},
 	mounted: function mounted() {
-		this.links = JSON.parse(sessionStorage.getItem("links"));
+		// this.links=this.$store.state.links;
+
+		// this.links=JSON.parse(sessionStorage.getItem("links"));
+		// console.log(this.links);
 	}
 });
 
@@ -23089,7 +23094,7 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "breadlink" },
-    _vm._l(_vm.links, function(link, index) {
+    _vm._l(_vm.$store.state.links, function(link, index) {
       return _c(
         "a",
         {
@@ -24990,6 +24995,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     mounted: function mounted() {
         this.getStudents();
+        this.$store.state.links = [{ link: '/home', linkName: '项目' }, { link: '/projectDetail/' + sessionStorage.actTravelId, linkName: '项目详情' }];
     },
     methods: {
         getStudents: function getStudents() {
@@ -25139,15 +25145,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
+                    data: {
+                        travel_id: sessionStorage.actTravelId
+                    },
                     url: this.$config + '/api/users/' + this.searchId + '/userInfo'
                 }).then(function (res) {
-                    // console.log(res.data);
-                    _this5.searchStudent.id = res.data.id;
-                    _this5.searchStudent.name = res.data.name;
-                    _this5.searchStudent.en_name = res.data.en_name;
-                    _this5.searchStudent.phone = res.data.phone;
-                    _this5.searchStudent.original_password = res.data.original_password;
-                    _this5.searchStudentShow();
+                    if (res.status == 202) {
+                        _this5.$toast(res.data.message);
+                    } else {
+                        // console.log(res.data);
+                        _this5.searchStudent.id = res.data.id;
+                        _this5.searchStudent.name = res.data.name;
+                        _this5.searchStudent.en_name = res.data.en_name;
+                        _this5.searchStudent.phone = res.data.phone;
+                        _this5.searchStudent.original_password = res.data.original_password;
+                        _this5.searchStudentShow();
+                    }
                 }).catch(function (err) {
                     _this5.$toast('请输入正确的用户ID');
                     // console.log(err);
@@ -29104,8 +29117,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         CommonLeft: __WEBPACK_IMPORTED_MODULE_2__components_CommonLeft_vue___default.a
     },
     mounted: function mounted() {
-        var obj = [{ link: '/home', linkName: '项目' }, { link: '/projectDetail/' + sessionStorage.actTravelId, linkName: '项目详情' }];
-        sessionStorage.setItem("links", JSON.stringify(obj));
+        this.$store.state.links = [{ link: '/home', linkName: '项目' }, { link: '/projectDetail/' + sessionStorage.actTravelId, linkName: '项目详情' }];
+        // var obj=[{link:'/home',linkName:'项目'},{link:'/projectDetail/'+sessionStorage.actTravelId,linkName:'项目详情'}];
+        // sessionStorage.setItem("links",JSON.stringify(obj));
     }
 });
 
