@@ -15,7 +15,7 @@ class TravelRequest extends FormRequest
         switch ($this->method()) {
             case 'POST':
                 return [
-                    'travel_name' => 'required|max:25',
+                    'travel_name' => 'required|max:50',
                     'travel_introduction' => 'required|max:255',
                     'travel_at' => 'required|date'
                 ];
