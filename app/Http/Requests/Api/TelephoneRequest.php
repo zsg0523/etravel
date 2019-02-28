@@ -22,7 +22,7 @@ class TelephoneRequest extends FormRequest
             case 'PATCH':
                 return [
                     'name' => 'string',
-                    'phone' => 'unique:telephones'
+                    'phone' => 'unique:telephones,phone,' . $this->route('telephone')->id,
                 ];
                 break;
         }
