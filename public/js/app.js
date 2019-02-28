@@ -41356,7 +41356,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -41581,14 +41580,6 @@ var render = function() {
                     _c("textarea", {
                       staticClass: "item_area_sheetInfo",
                       attrs: { placeholder: "内容", disabled: "disabled" },
-                      domProps: { value: _vm.sheet.body }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      staticClass: "item_input_sheetInfo",
-                      attrs: { type: "text", disabled: "disabled" },
                       domProps: { value: sheetInfo.content }
                     })
                   ])

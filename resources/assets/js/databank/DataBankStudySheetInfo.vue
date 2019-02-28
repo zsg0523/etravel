@@ -63,9 +63,8 @@
 		                    </div>
 		                </div>
                         <div>
-                            <textarea class="item_area_sheetInfo"  placeholder="内容" disabled="disabled" :value="sheet.body"></textarea>
+                            <textarea class="item_area_sheetInfo"  placeholder="内容" disabled="disabled" :value="sheetInfo.content"></textarea>
                         </div>
-		                <div><input class="item_input_sheetInfo" type="text" disabled="disabled" :value="sheetInfo.content"></div>
 		            </div>
 		        </div>
 		    </div>
