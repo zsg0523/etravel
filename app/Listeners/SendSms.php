@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Events\Test;
+use App\Events\Register;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -21,10 +21,10 @@ class SendSms
     /**
      * Handle the event.
      *
-     * @param  Test  $event
+     * @param  Register  $event
      * @return void
      */
-    public function handle(Test $event)
+    public function handle(Register $event)
     {
         echo "发送" . $event->user->name . " SMS 成功！";
     }

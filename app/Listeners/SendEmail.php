@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Events\Test;
+use App\Events\Register;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Mail\ResetMail;
@@ -24,10 +24,10 @@ class SendEmail implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param  Test  $event
+     * @param  Register  $event
      * @return void
      */
-    public function handle(Test $event)
+    public function handle(Register $event)
     {
         Mail::to($event->user->email)->send(new ResetMail());
 

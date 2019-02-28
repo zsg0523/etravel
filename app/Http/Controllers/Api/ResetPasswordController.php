@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
 use App\Models\User;
-use App\Events\test;
+use App\Events\Register;
 
 class ResetPasswordController extends Controller
 {
@@ -20,7 +20,7 @@ class ResetPasswordController extends Controller
     {
         $user = User::find(1);
         // test 事件，触发 发送邮件，发送短信
-        event(new test($user));
+        event(new Register($user));
     }
 
     /**
