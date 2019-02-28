@@ -41348,6 +41348,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -41543,7 +41550,7 @@ var render = function() {
                 return _c("div", { staticClass: "form_item_sheetInfo" }, [
                   _c("div", { staticClass: "item_title" }, [
                     _vm._v(
-                      "\n\t\t                    设置问题" +
+                      "\n\t\t                    问题" +
                         _vm._s(index + 1) +
                         "\n\t\t                    "
                     ),
@@ -41566,6 +41573,14 @@ var render = function() {
                         }
                       })
                     ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("textarea", {
+                      staticClass: "item_area_sheetInfo",
+                      attrs: { placeholder: "内容", disabled: "disabled" },
+                      domProps: { value: _vm.sheet.body }
+                    })
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -41616,7 +41631,7 @@ var render = function() {
                 _c("div", { staticClass: "item_title" }, [_vm._v("问题")]),
                 _vm._v(" "),
                 _c("div", [
-                  _c("input", {
+                  _c("textarea", {
                     directives: [
                       {
                         name: "model",
@@ -41625,8 +41640,8 @@ var render = function() {
                         expression: "newSheetInfo.content"
                       }
                     ],
-                    staticClass: "item_input_sheetInfo",
-                    attrs: { placeholder: "问题", type: "text" },
+                    staticClass: "item_area_sheetInfo",
+                    attrs: { placeholder: "问题" },
                     domProps: { value: _vm.newSheetInfo.content },
                     on: {
                       input: function($event) {
@@ -41682,7 +41697,7 @@ var render = function() {
                 _c("div", { staticClass: "item_title" }, [_vm._v("问题")]),
                 _vm._v(" "),
                 _c("div", [
-                  _c("input", {
+                  _c("textarea", {
                     directives: [
                       {
                         name: "model",
@@ -41691,8 +41706,8 @@ var render = function() {
                         expression: "edSheetInfo.content"
                       }
                     ],
-                    staticClass: "item_input_sheetInfo",
-                    attrs: { placeholder: "问题", type: "text" },
+                    staticClass: "item_area_sheetInfo",
+                    attrs: { placeholder: "问题" },
                     domProps: { value: _vm.edSheetInfo.content },
                     on: {
                       input: function($event) {
@@ -45211,7 +45226,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增感想
-            this.$post(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles/', this.newFeel, {
+            this.$post(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles', this.newFeel, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -45244,7 +45259,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     title: this.edFeel.title
                 },
-                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles/' + this.edFeel.id
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles' + this.edFeel.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.feels[_this3.edFeel.index].title = _this3.edFeel.title;
@@ -45271,7 +45286,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: _this4.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles/' + feelId
+                    url: _this4.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles' + feelId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {

@@ -129,7 +129,7 @@
         },
         addFeel(){
             // 新增感想
-            this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles/',this.newFeel,
+            this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles',this.newFeel,
             {
                 headers: {
                     "Authorization": 'Bearer '+sessionStorage.token,
@@ -161,7 +161,7 @@
                 data:{
                     title:this.edFeel.title,
                 },
-                url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles/'+this.edFeel.id,
+                url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles'+this.edFeel.id,
             }).then(res => {
                 if(res.status==200){
                     this.feels[this.edFeel.index].title=this.edFeel.title;
@@ -186,7 +186,7 @@
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
-                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles/'+feelId,
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles'+feelId,
                 }).then(res => {
                     // console.log(res);
                     if(res.status==204){
