@@ -385,6 +385,12 @@ $api->version('v1', [
 			$api->delete('evaluations/{evaluation}/evaluatedes/{evaluate_user}', 'EvaluatesController@destroy')->name('api.evaluatedes.destroy');
 
 
+			// 连接学校
+			$api->post('users/{user}/schools/{school}', 'UserSchoolsController@store')->name('api.users.schools.store');
+			// 移除学校
+			$api->delete('users/{user}/schools/{school}', 'UserSchoolsController@destroy')->name('api.users.schools.destroy');
+
+
 
 
 
