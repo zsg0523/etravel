@@ -39,12 +39,12 @@
                         <div class="item_title">标题</div>
                         <div><input class="item_input_journeyInfo" placeholder="标题" type="text" disabled="disabled"  :value="local.title"></div>
                     </div>
-                    <div class="form_item_journeyInfo">
+                    <!-- <div class="form_item_journeyInfo">
                         <div class="item_title">地点</div>
                         <div>
                             <input class="item_input_journeyInfo" placeholder="地点" type="text" disabled="disabled"  :value="local.sites">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
                         <div><textarea class="item_area" disabled="disabled" placeholder="内容" :value="local.content"></textarea></div>
@@ -66,12 +66,12 @@
                         <div class="item_title">标题</div>
                         <div><input class="item_input_journeyInfo" placeholder="标题" type="text" v-model="newLocal.title"></div>
                     </div>
-                    <div class="form_item_journeyInfo">
+                    <!-- <div class="form_item_journeyInfo">
                         <div class="item_title">地点</div>
                         <div>
                             <input class="item_input_journeyInfo" placeholder="地点" type="text" v-model="newLocal.sites">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
                         <div><textarea class="item_area" placeholder="内容" v-model="newLocal.content"></textarea></div>
@@ -89,12 +89,12 @@
                         <div class="item_title">标题</div>
                         <div><input class="item_input_journeyInfo" placeholder="标题" type="text"  v-model="edLocal.title"></div>
                     </div>
-                    <div class="form_item_journeyInfo">
+                    <!-- <div class="form_item_journeyInfo">
                         <div class="item_title">地点</div>
                         <div>
                             <input class="item_input_journeyInfo" placeholder="地点" type="text" v-model="edLocal.sites">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
                         <div><textarea class="item_area" placeholder="内容" v-model="edLocal.content"></textarea></div>
@@ -116,13 +116,13 @@
                 newLocal:{
                     title:'',
                     content:'',
-                    sites:'',
+                    // sites:'',
                 },
                 edLocal:{
                     id:'',
                     title:'',
                     content:'',
-                    sites:'',
+                    // sites:'',
                     index:'',
                 },
                 isNewLocalShow:false,
@@ -165,7 +165,7 @@
                     this.isNewLocalShow=false;
                     this.newLocal.title='';
                     this.newLocal.content='';
-                    this.newLocal.sites='';
+                    // this.newLocal.sites='';
                 }).catch(err => {
                     this.$toast('添加失败');
                     console.log(err)
@@ -175,7 +175,7 @@
                 this.edLocal.id=this.locals[index].id;
                 this.edLocal.title=this.locals[index].title;
                 this.edLocal.content=this.locals[index].content;
-                this.edLocal.sites=this.locals[index].sites;
+                // this.edLocal.sites=this.locals[index].sites;
                 this.edLocal.index=index;
                 this.isEditLocalShow=true;
             },
@@ -189,14 +189,14 @@
                     data:{
                         title:this.edLocal.title,
                         content:this.edLocal.content,
-                        sites:this.edLocal.sites,
+                        // sites:this.edLocal.sites,
                     },
                     url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/locals/'+this.edLocal.id,
                 }).then(res => {
                     if(res.status==200){
                         this.locals[this.edLocal.index].title=this.edLocal.title;
                         this.locals[this.edLocal.index].content=this.edLocal.content;
-                        this.locals[this.edLocal.index].sites=this.edLocal.sites;
+                        // this.locals[this.edLocal.index].sites=this.edLocal.sites;
                         this.$toast('修改成功');
                         this.isEditLocalShow=false;    
                     }else{

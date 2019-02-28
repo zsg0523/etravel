@@ -25141,7 +25141,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 搜索学员
             if (this.searchId != '') {
                 this.$ajax({
-                    method: 'GET',
+                    method: 'post',
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
@@ -38268,7 +38268,7 @@ var staticRenderFns = [
                 "data-toggle": "tab"
               }
             },
-            [_vm._v("行程安排")]
+            [_vm._v("景点安排")]
           )
         ]),
         _vm._v(" "),
@@ -38542,7 +38542,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getJourneyInfos: function getJourneyInfos() {
             var _this = this;
 
-            // 获取行程
+            // 获取景点
             this.$ajax({
                 method: 'GET',
                 headers: {
@@ -38564,7 +38564,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         addNewJourneyInfo: function addNewJourneyInfo() {
             var _this2 = this;
 
-            // 新增行程/api/route/21/scenery
+            // 新增景点/api/route/21/scenery
             this.$post(this.$config + '/api/route/' + this.$route.params.id + '/scenery', this.newJourneyInfo, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
@@ -38593,7 +38593,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         editJourneyInfo: function editJourneyInfo() {
             var _this3 = this;
 
-            // 修改行程信息/api/route/2/scenery/101
+            // 修改景点信息/api/route/2/scenery/101
             this.$ajax({
                 method: 'PATCH',
                 headers: {
@@ -38623,10 +38623,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         delJourneyInfo: function delJourneyInfo(journeyInfoId) {
             var _this4 = this;
 
-            // 删除行程
+            // 删除景点
             this.$dialog.confirm({
-                title: '删除行程',
-                message: '是否删除该行程'
+                title: '删除景点',
+                message: '是否删除该景点'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -38689,15 +38689,13 @@ var render = function() {
               { staticClass: "form_content_journeyInfo disflex" },
               [
                 _c("div", { staticClass: "form_item_journeyInfo" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("详细时间")
-                  ]),
+                  _c("div", { staticClass: "item_title" }, [_vm._v("时间点")]),
                   _vm._v(" "),
                   _c("div", [
                     _c("input", {
                       staticClass: "item_input_journeyInfo",
                       attrs: {
-                        placeholder: "详细时间(yyyy-mm-dd hh:mm)",
+                        placeholder: "时间点(hh:mm)",
                         type: "text",
                         disabled: "disabled"
                       },
@@ -38707,13 +38705,15 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_journeyInfo" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("景点内容")
+                  ]),
                   _vm._v(" "),
                   _c("div", [
                     _c("input", {
                       staticClass: "item_input_journeyInfo",
                       attrs: {
-                        placeholder: "内容",
+                        placeholder: "景点内容",
                         type: "text",
                         disabled: "disabled"
                       },
@@ -38723,12 +38723,14 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_journeyInfo" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("介绍")]),
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("景点介绍")
+                  ]),
                   _vm._v(" "),
                   _c("div", [
                     _c("textarea", {
                       staticClass: "item_area",
-                      attrs: { disabled: "disabled", placeholder: "介绍" },
+                      attrs: { disabled: "disabled", placeholder: "景点介绍" },
                       domProps: { value: journeyInfo.description }
                     })
                   ])
@@ -38790,7 +38792,7 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("详细时间")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("时间点")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -38803,10 +38805,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input_journeyInfo",
-                    attrs: {
-                      placeholder: "详细时间(yyyy-mm-dd hh:mm)",
-                      type: "text"
-                    },
+                    attrs: { placeholder: "时间点(hh:mm)", type: "text" },
                     domProps: { value: _vm.newJourneyInfo.time },
                     on: {
                       input: function($event) {
@@ -38825,7 +38824,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("景点内容")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -38838,7 +38837,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "内容", type: "text" },
+                    attrs: { placeholder: "景点内容", type: "text" },
                     domProps: { value: _vm.newJourneyInfo.content },
                     on: {
                       input: function($event) {
@@ -38857,7 +38856,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("介绍")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("景点介绍")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("textarea", {
@@ -38870,7 +38869,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_area",
-                    attrs: { placeholder: "介绍" },
+                    attrs: { placeholder: "景点介绍" },
                     domProps: { value: _vm.newJourneyInfo.description },
                     on: {
                       input: function($event) {
@@ -39450,13 +39449,13 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("膳食内容")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
                     staticClass: "item_input_journeyInfo",
                     attrs: {
-                      placeholder: "内容",
+                      placeholder: "膳食内容",
                       type: "text",
                       disabled: "disabled"
                     },
@@ -39466,12 +39465,12 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("介绍")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("膳食介绍")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("textarea", {
                     staticClass: "item_area",
-                    attrs: { disabled: "disabled", placeholder: "介绍" },
+                    attrs: { disabled: "disabled", placeholder: "膳食介绍" },
                     domProps: { value: meal.description }
                   })
                 ])
@@ -39562,7 +39561,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("膳食内容")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -39575,7 +39574,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "内容", type: "text" },
+                    attrs: { placeholder: "膳食内容", type: "text" },
                     domProps: { value: _vm.newMeal.content },
                     on: {
                       input: function($event) {
@@ -39590,7 +39589,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("介绍")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("膳食介绍")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("textarea", {
@@ -39603,7 +39602,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_area",
-                    attrs: { placeholder: "介绍" },
+                    attrs: { placeholder: "膳食介绍" },
                     domProps: { value: _vm.newMeal.description },
                     on: {
                       input: function($event) {
@@ -39686,7 +39685,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("膳食内容")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -39699,7 +39698,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "内容", type: "text" },
+                    attrs: { placeholder: "膳食内容", type: "text" },
                     domProps: { value: _vm.edMeal.content },
                     on: {
                       input: function($event) {
@@ -39714,7 +39713,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("介绍")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("膳食介绍")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("textarea", {
@@ -39727,7 +39726,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_area",
-                    attrs: { placeholder: "介绍" },
+                    attrs: { placeholder: "膳食介绍" },
                     domProps: { value: _vm.edMeal.description },
                     on: {
                       input: function($event) {
@@ -41431,7 +41430,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     content: this.edSheetInfo.content
                 },
-                url: this.$config + '/api/studies  /' + this.$route.params.id + '/questions/' + this.edSheetInfo.id
+                url: this.$config + '/api/studies/' + this.$route.params.id + '/questions/' + this.edSheetInfo.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.sheetInfos[_this3.edSheetInfo.index].content = _this3.edSheetInfo.content;
@@ -41458,7 +41457,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: _this4.$config + '/api/studies  /' + _this4.$route.params.id + '/questions/' + sheetInfoId
+                    url: _this4.$config + '/api/studies/' + _this4.$route.params.id + '/questions/' + sheetInfoId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -41549,15 +41548,6 @@ var render = function() {
                         "\n\t\t                    "
                     ),
                     _c("div", { staticClass: "fr item_title_icon" }, [
-                      _c("img", {
-                        attrs: { src: "/etravel/public/images/appointAdd.png" },
-                        on: {
-                          click: function($event) {
-                            return _vm.addNewSheetInfoShow()
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
                       _c("img", {
                         attrs: { src: "/etravel/public/images/edit.png" },
                         on: {
@@ -41965,14 +41955,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             locals: [],
             newLocal: {
                 title: '',
-                content: '',
-                sites: ''
+                content: ''
+                // sites:'',
             },
             edLocal: {
                 id: '',
                 title: '',
                 content: '',
-                sites: '',
+                // sites:'',
                 index: ''
             },
             isNewLocalShow: false,
@@ -42019,7 +42009,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.isNewLocalShow = false;
                 _this2.newLocal.title = '';
                 _this2.newLocal.content = '';
-                _this2.newLocal.sites = '';
+                // this.newLocal.sites='';
             }).catch(function (err) {
                 _this2.$toast('添加失败');
                 console.log(err);
@@ -42029,7 +42019,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edLocal.id = this.locals[index].id;
             this.edLocal.title = this.locals[index].title;
             this.edLocal.content = this.locals[index].content;
-            this.edLocal.sites = this.locals[index].sites;
+            // this.edLocal.sites=this.locals[index].sites;
             this.edLocal.index = index;
             this.isEditLocalShow = true;
         },
@@ -42044,15 +42034,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 },
                 data: {
                     title: this.edLocal.title,
-                    content: this.edLocal.content,
-                    sites: this.edLocal.sites
+                    content: this.edLocal.content
+                    // sites:this.edLocal.sites,
                 },
                 url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/locals/' + this.edLocal.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.locals[_this3.edLocal.index].title = _this3.edLocal.title;
                     _this3.locals[_this3.edLocal.index].content = _this3.edLocal.content;
-                    _this3.locals[_this3.edLocal.index].sites = _this3.edLocal.sites;
+                    // this.locals[this.edLocal.index].sites=this.edLocal.sites;
                     _this3.$toast('修改成功');
                     _this3.isEditLocalShow = false;
                 } else {
@@ -42124,22 +42114,6 @@ var render = function() {
                       disabled: "disabled"
                     },
                     domProps: { value: local.title }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("地点")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    staticClass: "item_input_journeyInfo",
-                    attrs: {
-                      placeholder: "地点",
-                      type: "text",
-                      disabled: "disabled"
-                    },
-                    domProps: { value: local.sites }
                   })
                 ])
               ]),
@@ -42239,34 +42213,6 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("地点")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newLocal.sites,
-                        expression: "newLocal.sites"
-                      }
-                    ],
-                    staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "地点", type: "text" },
-                    domProps: { value: _vm.newLocal.sites },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newLocal, "sites", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
                 _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
                 _vm._v(" "),
                 _c("div", [
@@ -42350,34 +42296,6 @@ var render = function() {
                           return
                         }
                         _vm.$set(_vm.edLocal, "title", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("地点")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edLocal.sites,
-                        expression: "edLocal.sites"
-                      }
-                    ],
-                    staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "地点", type: "text" },
-                    domProps: { value: _vm.edLocal.sites },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edLocal, "sites", $event.target.value)
                       }
                     }
                   })
@@ -42987,7 +42905,7 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_luggageLists" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("清单")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("行李清单")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -43053,7 +42971,7 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_luggageLists" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("清单")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("行李清单")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -43496,9 +43414,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v("填写装备内容")]),
                 _vm._v(" "),
-                _c("td", { attrs: { width: "150px" } }, [
-                  _vm._m(1),
-                  _vm._v(" "),
+                _c("td", { attrs: { width: "100px" } }, [
                   _c("div", { staticClass: "editIcon" }, [
                     _c("img", {
                       attrs: { src: "/etravel/public/images/appointAdd.png" },
@@ -43508,9 +43424,7 @@ var render = function() {
                         }
                       }
                     })
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(2)
+                  ])
                 ])
               ]),
               _vm._v(" "),
@@ -43520,24 +43434,13 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(luggageListInfo.rule))]),
                   _vm._v(" "),
-                  _c("td", { attrs: { width: "150px" } }, [
+                  _c("td", { attrs: { width: "100px" } }, [
                     _c("div", { staticClass: "editIcon" }, [
                       _c("img", {
                         attrs: { src: "/etravel/public/images/edit.png" },
                         on: {
                           click: function($event) {
                             return _vm.editLuggageListInfoShow(index)
-                          }
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "editIcon" }, [
-                      _c("img", {
-                        attrs: { src: "/etravel/public/images/appointAdd.png" },
-                        on: {
-                          click: function($event) {
-                            return _vm.addLuggageListInfoShow()
                           }
                         }
                       })
@@ -43710,22 +43613,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("编辑")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "editIcon" }, [
-      _c("img", { attrs: { src: "/etravel/public/images/edit.png" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "editIcon" }, [
-      _c("img", { attrs: { src: "/etravel/public/images/dele.png" } })
     ])
   }
 ]
@@ -45308,7 +45195,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 params: {
                     type: 20
                 },
-                url: this.$config + '/api/titles/'
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles'
             }).then(function (res) {
                 // console.log(res.data);
                 _this.feels = res.data.data;
@@ -45324,7 +45211,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             // 新增感想
-            this.$post(this.$config + '/api/titles/', this.newFeel, {
+            this.$post(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles/', this.newFeel, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -45357,7 +45244,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     title: this.edFeel.title
                 },
-                url: this.$config + '/api/titles/' + this.edFeel.id
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles/' + this.edFeel.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.feels[_this3.edFeel.index].title = _this3.edFeel.title;
@@ -45384,7 +45271,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: _this4.$config + '/api/titles/' + feelId
+                    url: _this4.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles/' + feelId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
@@ -46985,8 +46872,8 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-// const baseUrl='http://www.bunchparty.com/etravel/public';//线上地址
-var baseUrl = 'http://etravel.test';
+var baseUrl = 'http://www.bunchparty.com/etravel/public'; //线上地址
+// const baseUrl='http://etravel.test';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),

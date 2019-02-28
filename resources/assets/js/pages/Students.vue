@@ -447,7 +447,7 @@
                 // 搜索学员
                 if(this.searchId!=''){
                     this.$ajax({
-                        method: 'GET',
+                        method: 'post',
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },

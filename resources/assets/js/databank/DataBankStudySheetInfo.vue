@@ -57,7 +57,7 @@
 		                <div class="item_title">
 		                    设置问题{{index+1}}
 		                    <div class="fr item_title_icon">
-		                    	<img @click="addNewSheetInfoShow()" src="/etravel/public/images/appointAdd.png">
+		                    	<!-- <img @click="addNewSheetInfoShow()" src="/etravel/public/images/appointAdd.png"> -->
 		                        <img @click="editSheetInfoShow(index)" src="/etravel/public/images/edit.png">
 		                        <img @click="delSheetInfo(sheetInfo.id)" src="/etravel/public/images/dele.png">
 		                    </div>
@@ -175,7 +175,7 @@
                     data:{
                         content:this.edSheetInfo.content,
                     },
-                    url: this.$config+'/api/studies  /'+this.$route.params.id+'/questions/'+this.edSheetInfo.id,
+                    url: this.$config+'/api/studies/'+this.$route.params.id+'/questions/'+this.edSheetInfo.id,
                 }).then(res => {
                     if(res.status==200){
                         this.sheetInfos[this.edSheetInfo.index].content=this.edSheetInfo.content;
@@ -200,7 +200,7 @@
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: this.$config+'/api/studies  /'+this.$route.params.id+'/questions/'+sheetInfoId,
+                        url: this.$config+'/api/studies/'+this.$route.params.id+'/questions/'+sheetInfoId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){

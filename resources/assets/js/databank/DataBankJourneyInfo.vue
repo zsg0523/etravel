@@ -42,17 +42,17 @@
             <div class="pane_content">
                 <div class="form_content_journeyInfo disflex" v-for="(journeyInfo,index) in journeyInfos">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">详细时间</div>
-		                <div><input class="item_input_journeyInfo" placeholder="详细时间(yyyy-mm-dd hh:mm)" type="text" disabled="disabled"  :value="journeyInfo.time"></div>
+		                <div class="item_title">时间点</div>
+		                <div><input class="item_input_journeyInfo" placeholder="时间点(hh:mm)" type="text" disabled="disabled"  :value="journeyInfo.time"></div>
 		            </div>
 		            <div class="form_item_journeyInfo">
-		                <div class="item_title">内容</div>
-		                <div><input class="item_input_journeyInfo" placeholder="内容" type="text" disabled="disabled"  :value="journeyInfo.content"></div>
+		                <div class="item_title">景点内容</div>
+		                <div><input class="item_input_journeyInfo" placeholder="景点内容" type="text" disabled="disabled"  :value="journeyInfo.content"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">介绍</div>
+                        <div class="item_title">景点介绍</div>
                         <div>
-                            <textarea class="item_area" disabled="disabled" placeholder="介绍" :value="journeyInfo.description"></textarea>
+                            <textarea class="item_area" disabled="disabled" placeholder="景点介绍" :value="journeyInfo.description"></textarea>
                         </div>
                     </div>
                     <div class="editBtnGroup_journeyInfo">
@@ -69,17 +69,17 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">详细时间</div>
-		                <div><input class="item_input_journeyInfo" placeholder="详细时间(yyyy-mm-dd hh:mm)" type="text" v-model="newJourneyInfo.time"></div>
+		                <div class="item_title">时间点</div>
+		                <div><input class="item_input_journeyInfo" placeholder="时间点(hh:mm)" type="text" v-model="newJourneyInfo.time"></div>
 		            </div>
 		            <div class="form_item_journeyInfo">
-		                <div class="item_title">内容</div>
-		                <div><input class="item_input_journeyInfo" placeholder="内容" type="text" v-model="newJourneyInfo.content"></div>
+		                <div class="item_title">景点内容</div>
+		                <div><input class="item_input_journeyInfo" placeholder="景点内容" type="text" v-model="newJourneyInfo.content"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">介绍</div>
+                        <div class="item_title">景点介绍</div>
                         <div>
-                            <textarea class="item_area" placeholder="介绍" v-model="newJourneyInfo.description"></textarea>
+                            <textarea class="item_area" placeholder="景点介绍" v-model="newJourneyInfo.description"></textarea>
                         </div>
                     </div>
                     <div class="issure">
@@ -141,7 +141,7 @@
         },
         methods:{
             getJourneyInfos(){
-                // 获取行程
+                // 获取景点
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -161,7 +161,7 @@
                 this.isNewJourneyInfoShow=true;
             },
             addNewJourneyInfo(){
-                // 新增行程/api/route/21/scenery
+                // 新增景点/api/route/21/scenery
                 this.$post(this.$config+'/api/route/'+this.$route.params.id+'/scenery',this.newJourneyInfo,
                 {
                     headers: {
@@ -189,7 +189,7 @@
                 this.isEditJourneyInfoShow=true;
             },
             editJourneyInfo(){
-                // 修改行程信息/api/route/2/scenery/101
+                // 修改景点信息/api/route/2/scenery/101
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -217,10 +217,10 @@
                 });
             },
             delJourneyInfo(journeyInfoId){
-                // 删除行程
+                // 删除景点
                 this.$dialog.confirm({
-                    title: '删除行程',
-                    message: '是否删除该行程'
+                    title: '删除景点',
+                    message: '是否删除该景点'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

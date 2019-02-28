@@ -35,7 +35,7 @@
 	<div class="dataBank_input_form disflex">
         <div class="tablist">
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#journey" aria-controls="journey" role="tab" data-toggle="tab">行程安排</a></li>
+                <li role="presentation" class="active"><a href="#journey" aria-controls="journey" role="tab" data-toggle="tab">景点安排</a></li>
                 <li role="presentation"><a href="#flight" aria-controls="flight" role="tab" data-toggle="tab">膳食安排</a></li>
             </ul>
             <div class="tab-content">
