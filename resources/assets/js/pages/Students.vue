@@ -225,7 +225,7 @@
                         </div>
                         <div class="form_item_small">
                             <div class="item_title">联系电话</div>
-                            <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="searchStudent.phone"></div>
+                            <div><input class="item_input" type="text" placeholder="填写联系电话" disabled="disabled" v-model="searchStudent.phone"></div>
                         </div>
                         <div class="form_item_small">
                             <div class="item_title">学生学号<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
@@ -305,6 +305,7 @@
         },
         mounted:function(){
             this.getStudents();
+            this.$store.state.links=[{link:'/home',linkName:'项目'},{link:'/projectDetail/'+sessionStorage.actTravelId,linkName:'项目详情'}];
         },
         methods:{
             getStudents(){
@@ -446,19 +447,26 @@
                 // 搜索学员
                 if(this.searchId!=''){
                     this.$ajax({
-                        method: 'GET',
+                        method: 'post',
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
+                        data:{
+                            travel_id:sessionStorage.actTravelId,  
+                        },
                         url: this.$config+'/api/users/'+this.searchId+'/userInfo',
                     }).then(res => {
-                        // console.log(res.data);
-                        this.searchStudent.id=res.data.id;
-                        this.searchStudent.name=res.data.name;
-                        this.searchStudent.en_name=res.data.en_name;
-                        this.searchStudent.phone=res.data.phone;
-                        this.searchStudent.original_password=res.data.original_password;
-                        this.searchStudentShow();
+                        if(res.status==202){
+                            this.$toast(res.data.message);
+                        }else{
+                            // console.log(res.data);
+                            this.searchStudent.id=res.data.id;
+                            this.searchStudent.name=res.data.name;
+                            this.searchStudent.en_name=res.data.en_name;
+                            this.searchStudent.phone=res.data.phone;
+                            this.searchStudent.original_password=res.data.original_password;
+                            this.searchStudentShow();
+                        }
                     }).catch(err => {
                         this.$toast('请输入正确的用户ID');
                         // console.log(err);

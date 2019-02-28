@@ -46,13 +46,13 @@
 		                <div><input class="item_input_journeyInfo" placeholder="早/中/晚餐" type="text" disabled="disabled"  :value="meal.title"></div>
 		            </div>
 		            <div class="form_item_journeyInfo">
-		                <div class="item_title">内容</div>
-		                <div><input class="item_input_journeyInfo" placeholder="内容" type="text" disabled="disabled"  :value="meal.content"></div>
+		                <div class="item_title">膳食内容</div>
+		                <div><input class="item_input_journeyInfo" placeholder="膳食内容" type="text" disabled="disabled"  :value="meal.content"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">介绍</div>
+                        <div class="item_title">膳食介绍</div>
                         <div>
-                            <textarea class="item_area" disabled="disabled" placeholder="介绍" :value="meal.description"></textarea>
+                            <textarea class="item_area" disabled="disabled" placeholder="膳食介绍" :value="meal.description"></textarea>
                         </div>
                     </div>
                     <div class="editBtnGroup_journeyInfo">
@@ -73,13 +73,13 @@
 		                <div><input class="item_input_journeyInfo" placeholder="早/中/晚餐" type="text" v-model="newMeal.title"></div>
 		            </div>
 		            <div class="form_item_journeyInfo">
-		                <div class="item_title">内容</div>
-		                <div><input class="item_input_journeyInfo" placeholder="内容" type="text" v-model="newMeal.content"></div>
+		                <div class="item_title">膳食内容</div>
+		                <div><input class="item_input_journeyInfo" placeholder="膳食内容" type="text" v-model="newMeal.content"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">介绍</div>
+                        <div class="item_title">膳食介绍</div>
                         <div>
-                            <textarea class="item_area" placeholder="介绍" v-model="newMeal.description"></textarea>
+                            <textarea class="item_area" placeholder="膳食介绍" v-model="newMeal.description"></textarea>
                         </div>
                     </div>
                     <div class="issure">
@@ -96,13 +96,13 @@
 		                <div><input class="item_input_journeyInfo" placeholder="早/中/晚餐" type="text"  v-model="edMeal.title"></div>
 		            </div>
 		            <div class="form_item_journeyInfo">
-		                <div class="item_title">内容</div>
-		                <div><input class="item_input_journeyInfo" placeholder="内容" type="text" v-model="edMeal.content" ></div>
+		                <div class="item_title">膳食内容</div>
+		                <div><input class="item_input_journeyInfo" placeholder="膳食内容" type="text" v-model="edMeal.content" ></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">介绍</div>
+                        <div class="item_title">膳食介绍</div>
                         <div>
-                            <textarea class="item_area"  placeholder="介绍" v-model="edMeal.description"></textarea>
+                            <textarea class="item_area"  placeholder="膳食介绍" v-model="edMeal.description"></textarea>
                         </div>
                     </div>
                     <div class="issure">

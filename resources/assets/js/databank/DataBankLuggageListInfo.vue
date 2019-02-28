@@ -56,18 +56,18 @@
                     <tr>
                         <td>编号</td>
                         <td>填写装备内容</td>
-                        <td width="150px">
-                            <div class="editIcon"><img src="/etravel/public/images/edit.png"></div>
+                        <td width="100px">
+                            <!-- <div class="editIcon"><img src="/etravel/public/images/edit.png"></div> -->
                             <div class="editIcon"><img src="/etravel/public/images/appointAdd.png" @click="addLuggageListInfoShow();"></div>
-                            <div class="editIcon"><img src="/etravel/public/images/dele.png"></div>
+                            <!-- <div class="editIcon"><img src="/etravel/public/images/dele.png"></div> -->
                         </td>
                     </tr>
                     <tr v-for="(luggageListInfo,index) in luggageListInfos">
                         <td>{{index+1}}</td>
                         <td>{{luggageListInfo.rule}}</td>
-                        <td width="150px">
+                        <td width="100px">
                             <div class="editIcon"><img src="/etravel/public/images/edit.png" @click="editLuggageListInfoShow(index);"></div>
-                            <div class="editIcon"><img src="/etravel/public/images/appointAdd.png" @click="addLuggageListInfoShow();"></div>
+                            <!-- <div class="editIcon"><img src="/etravel/public/images/appointAdd.png" @click="addLuggageListInfoShow();"></div> -->
                             <div class="editIcon"><img src="/etravel/public/images/dele.png" @click="delLuggageListInfo(luggageListInfo.id);"></div>
                         </td>
                     </tr>

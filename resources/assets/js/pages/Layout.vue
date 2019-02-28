@@ -19,8 +19,13 @@
 	
   	export default {
   		components: {
-            CommonHead,
-            HistoryLink,
-        },
+        CommonHead,
+        HistoryLink,
+      },
+      mounted(){
+        this.$store.state.links=[{link:'/home',linkName:'项目'}];
+        // var obj=[{link:'/home',linkName:'项目'}];
+        // sessionStorage.setItem("links",JSON.stringify(obj));
+      }
   	}
 </script>
