@@ -210,7 +210,8 @@
                     },
                     data:{
                         name:this.edInformation.name,
-                        phone:this.edInformation.phone,  
+                        phone:this.edInformation.phone,
+                        sex:this.edInformation.sex,    
                         email:this.edInformation.email,  
                     },
                     url: this.$config+'/api/user',
@@ -218,6 +219,7 @@
                     if(res.status==200){
                         this.personalInfos.name=this.edInformation.name;
                         this.personalInfos.phone=this.edInformation.phone;
+                        this.personalInfos.sex=this.edInformation.sex;
                         this.personalInfos.email=this.edInformation.email;
                         this.$toast('修改成功');
                         this.isEditInformationShow=false;    

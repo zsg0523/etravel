@@ -55,14 +55,16 @@
                     </div>
 		            <div class="form_item_sheetInfo" v-for="(sheetInfo,index) in sheetInfos">
 		                <div class="item_title">
-		                    设置问题{{index+1}}
+		                    问题{{index+1}}
 		                    <div class="fr item_title_icon">
 		                    	<!-- <img @click="addNewSheetInfoShow()" src="/etravel/public/images/appointAdd.png"> -->
 		                        <img @click="editSheetInfoShow(index)" src="/etravel/public/images/edit.png">
 		                        <img @click="delSheetInfo(sheetInfo.id)" src="/etravel/public/images/dele.png">
 		                    </div>
 		                </div>
-		                <div><input class="item_input_sheetInfo" type="text" disabled="disabled" :value="sheetInfo.content"></div>
+                        <div>
+                            <textarea class="item_area_sheetInfo"  placeholder="内容" disabled="disabled" :value="sheetInfo.content"></textarea>
+                        </div>
 		            </div>
 		        </div>
 		    </div>
@@ -75,7 +77,9 @@
                 <div class="editBoxContent disflex">
                     <div class="form_item_sheetInfo">
 		                <div class="item_title">问题</div>
-		                <div><input class="item_input_sheetInfo" placeholder="问题" type="text" v-model="newSheetInfo.content"></div>
+                        <div>
+                            <textarea class="item_area_sheetInfo"  placeholder="问题" v-model="newSheetInfo.content"></textarea>
+                        </div>
 		            </div>
                     <div class="issure">
                         <button @click="addNewSheetInfo()">添加</button>
@@ -88,7 +92,9 @@
                 <div class="editBoxContent disflex">
                     <div class="form_item_sheetInfo">
 		                <div class="item_title">问题</div>
-		                <div><input class="item_input_sheetInfo" placeholder="问题" type="text"  v-model="edSheetInfo.content"></div>
+                        <div>
+                            <textarea class="item_area_sheetInfo"  placeholder="问题" v-model="edSheetInfo.content"></textarea>
+                        </div>
 		            </div>
                     <div class="issure">
                         <button @click="editSheetInfo()">修改</button>
