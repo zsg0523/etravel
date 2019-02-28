@@ -27508,6 +27508,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     name: this.edInformation.name,
                     phone: this.edInformation.phone,
+                    sex: this.edInformation.sex,
                     email: this.edInformation.email
                 },
                 url: this.$config + '/api/user'
@@ -27515,6 +27516,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (res.status == 200) {
                     _this2.personalInfos.name = _this2.edInformation.name;
                     _this2.personalInfos.phone = _this2.edInformation.phone;
+                    _this2.personalInfos.sex = _this2.edInformation.sex;
                     _this2.personalInfos.email = _this2.edInformation.email;
                     _this2.$toast('修改成功');
                     _this2.isEditInformationShow = false;
