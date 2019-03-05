@@ -384,6 +384,13 @@ $api->version('v1', [
 
 
 
+			// 聊天消息,绑定客户端和uid
+			$api->post('bind', 'ChatsController@bind');
+			// 发送消息
+			$api->post('messages', 'ChatsController@messages');
+
+
+
 
 
 
