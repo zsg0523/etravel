@@ -89,6 +89,46 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+    /** [schools 用户和学校] */
+    public function schools()
+    {
+        return $this->belongsToMany(School::class);
+    }
+
+    /**
+     * [addSchool 为用户添加学校]
+     * @param [type] $school_ids [description]
+     */
+    public function addSchool($school_ids)
+    {
+        if ( ! is_array($school_ids)) {
+            $school_ids = compact('school_ids');
+        }
+
+        $this->schools()->sync($school_ids, false);
+    }
+
+    /**
+     * [removeSchool 移除用户数组]
+     * @param  [type] $school_ids [description]
+     * @return [type]             [description]
+     */
+    public function removeSchool($school_ids)
+    {
+        if ( ! is_array($school_ids)) {
+            $school_ids = compact('school_ids');
+        }
+
+        $this->schools()->detach($school_ids);
+    }
+
+
+    /** [hasSchool 是否有该学校] */
+    public function hasSchool($school_id)
+    {
+        return $this->schools->contains($school_id);
+    }
+
     /** [student 学生基本信息] */
     public function student()
     {

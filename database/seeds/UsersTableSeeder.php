@@ -48,6 +48,8 @@ class UsersTableSeeder extends Seeder
         				$user->email = 'shenggen93@163.com';
         				$user->avatar = 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png?imageView2/1/w/200/h/200';
                         $user->add_by = null;
+                        // 设置金币，可创建项目数
+                        $user->tokens = 100;
         				$user->save();
 
                         // 初始化用户角色，将 1 号用户指派为『站长』

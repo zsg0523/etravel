@@ -40,7 +40,9 @@ class GroupsController extends Controller
             return $this->response->errorBadRequest();
         }
         
-    	return $this->response->item($group, new GroupTransformer());
+        $schools = User::find($travel->add_by)->schools;
+
+    	return $this->response->item($group, new GroupTransformer())->setMeta($schools->toArray());
     }
 
     /** [store 新建分组] */
