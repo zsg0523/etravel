@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-03 18:57:23
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-02-28 17:58:46
+ * @Last Modified time: 2019-03-05 12:44:31
  */
 namespace App\Transformers;
 
@@ -27,6 +27,7 @@ class UserTransformer extends TransformerAbstract
 			'email' => $user->email,
 			'phone' => $user->phone,
 			'avatar' => $user->avatar,
+			'tokens' => $user->tokens,
 			'original_password' => $user->original_password,
 			'manage_contents' => $user->can('manage_contents'),
 			'introduction' => $user->introduction,

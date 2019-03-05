@@ -18,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
         \App\Models\User::observe(\App\Observers\UserObserver::class);
         \App\Models\Write::observe(\App\Observers\WriteObserver::class);
         \App\Models\Hotel::observe(\App\Observers\HotelObserver::class);
+        \App\Models\Travel::observe(\App\Observers\TravelObserver::class);
         // Carbon 中文化配置
         Carbon::setlocale('zh');
     }

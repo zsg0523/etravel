@@ -40,6 +40,10 @@ class TravelsController extends Controller
     /** [store 创建旅游信息] */
     public function store(TravelRequest $request, Travel $travel)
     {
+        if ($this->user()->tokens < config('user.tokens')) {
+            return $this->response->error('金币不足，无法创建项目！', 422);
+        }
+
         $travel->fill($request->all());
         // 新增项目责任人
         $travel->add_by = $this->user()->id;
