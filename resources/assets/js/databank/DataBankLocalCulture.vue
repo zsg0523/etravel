@@ -76,6 +76,10 @@
                         <div class="item_title">内容</div>
                         <div><textarea class="item_area" placeholder="内容" v-model="newLocal.content"></textarea></div>
                     </div>
+                    <div class="form_item_journeyInfo">
+                        <div class="item_title">内容</div>
+                        <div><Editor v-model='newLocal.sites'></Editor></div>
+                    </div>
                     <div class="issure">
                         <button @click="addNewLocal()">添加</button>
                     </div>
@@ -109,14 +113,19 @@
 </template>
 
 <script>
+    import Editor from '../components/Editor.vue';
+    
     export default {
+        components: {
+            Editor,
+        },
         data() {
             return {
                 locals:[],
                 newLocal:{
                     title:'',
                     content:'',
-                    // sites:'',
+                    sites:'',
                 },
                 edLocal:{
                     id:'',

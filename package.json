@@ -23,6 +23,6 @@
     "vant": "^1.4.7"
   },
   "dependencies": {
-    "tinymce": "^4.9.3"
+    
   }
 }

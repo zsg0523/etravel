@@ -99,8 +99,8 @@
                         <div class="item_title">题目类型</div>
                         <div>
                             <select id="edTypeId" v-model="edEvaluationInfo.type">
-                                <option value="">--请选择--</option>
-                                <option v-for="item in optList">{{ item }}</option>
+                                <option value="0">--请选择--</option>
+                                <option v-for="item in optList" value="item.value">{{ item.title }}</option>
                             </select>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
             return {
                 evaluationInfos:[],
                 eval:'',
-                optList: ['1', '2', '3','4','5'],
+                optList: [{value:'1',title:'勾选'},{value:'2',title:'判断'},{value:'3',title:'星级'}],
                 newEvaluationInfo:{
                     content:'',
                     type:'',

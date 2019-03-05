@@ -53,8 +53,8 @@
                             </div>    
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">日期</div>
-                                    <div><input class="item_input" placeholder="日期" style="width:97%;" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
+                                    <div class="item_title">日期及时间</div>
+                                    <div><input class="item_input" placeholder="日期及时间" style="width:97%;" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
                                  </div>
                                 <div class="form_item_info" style="width:100%;height:120px;">
                                     <div class="item_title">详细地址</div>
@@ -70,8 +70,8 @@
                             </div>    
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">日期</div>
-                                    <div><input class="item_input"  placeholder="日期" style="width:97%;" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
+                                    <div class="item_title">日期及时间</div>
+                                    <div><input class="item_input"  placeholder="日期及时间" style="width:97%;" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;height:120px;">
                                     <div class="item_title">地址</div>
@@ -94,7 +94,7 @@
                             </div>    
                             <div class="form_content disflex">
                                 <div class="form_item_info">
-                                    <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
+                                    <div class="item_title">航班信息</div>
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.flight"></div>
                                 </div> 
                                 <div class="form_item_info">
@@ -231,8 +231,8 @@
                         <div class="gather_info_title"><span>集合</span><hr></div>
                     </div>   
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">日期</div>
-                        <div><input class="item_input" placeholder="填写日期(yyyy-mm-dd)" type="text" v-model="edAssemblePlaces.assembly_at"></div>
+                        <div class="item_title">日期及时间</div>
+                        <div><input class="item_input" placeholder="填写日期及时间(yyyy-mm-dd hh:mm)" type="text" v-model="edAssemblePlaces.assembly_at"></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">地址</div>
@@ -242,8 +242,8 @@
                         <div class="gather_info_title"><span>解散</span><hr></div>
                     </div>   
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">日期</div>
-                        <div><input class="item_input" placeholder="填写日期(yyyy-mm-dd)" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
+                        <div class="item_title">日期及时间</div>
+                        <div><input class="item_input" placeholder="填写日期及时间(yyyy-mm-dd hh:mm)" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">地址</div>
@@ -259,8 +259,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
-                        <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
-                        <div><input class="item_input" type="text" placeholder="填写工具信息" v-model="newFlight.flight"></div>
+                        <div class="item_title">航班信息</div>
+                        <div><input class="item_input" type="text" placeholder="填写航班信息" v-model="newFlight.flight"></div>
                     </div> 
                     <div class="form_item_info">
                         <div class="item_title">日期</div>
@@ -268,11 +268,11 @@
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出发时间</div>
-                        <div><input class="item_input" type="text" placeholder="填写出发时间" v-model="newFlight.takeoff_time"></div>
+                        <div><input class="item_input" type="text" placeholder="填写出发时间(hh:mm)" v-model="newFlight.takeoff_time"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">到达时间</div>
-                        <div><input class="item_input" type="text" placeholder="填写到达时间" v-model="newFlight.arrival_time"></div>
+                        <div><input class="item_input" type="text" placeholder="填写到达时间(hh:mm)" v-model="newFlight.arrival_time"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出发站点</div>
@@ -297,8 +297,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
-                        <div class="item_title">出行工具信息(飞机/高铁/汽车/轮船)</div>
-                        <div><input class="item_input" type="text" placeholder="填写工具信息" v-model="edFlight.flight"></div>
+                        <div class="item_title">航班信息</div>
+                        <div><input class="item_input" type="text" placeholder="填写航班信息" v-model="edFlight.flight"></div>
                     </div> 
                     <div class="form_item_info">
                         <div class="item_title">日期</div>
@@ -306,11 +306,11 @@
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出发时间</div>
-                        <div><input class="item_input" type="text" placeholder="填写出发时间" v-model="edFlight.takeoff_time"></div>
+                        <div><input class="item_input" type="text" placeholder="填写出发时间(hh:mm)" v-model="edFlight.takeoff_time"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">到达时间</div>
-                        <div><input class="item_input" type="text" placeholder="填写到达时间" v-model="edFlight.arrival_time"></div>
+                        <div><input class="item_input" type="text" placeholder="填写到达时间(hh:mm)" v-model="edFlight.arrival_time"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出发站点</div>
