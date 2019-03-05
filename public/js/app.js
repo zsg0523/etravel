@@ -41936,6 +41936,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -42163,7 +42167,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -42186,30 +42190,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'editor',
-  data: function data() {
-    return {
-      editorContent: ''
-    };
-  },
+    name: 'editor',
+    data: function data() {
+        return {
+            editorContent: ''
+        };
+    },
 
-  methods: {
-    getContent: function getContent() {
-      alert(this.editorContent);
+    methods: {},
+    mounted: function mounted() {
+        var _this = this;
+
+        var editor = new __WEBPACK_IMPORTED_MODULE_0_wangeditor___default.a(this.$refs.editor);
+        editor.customConfig.onchange = function (html) {
+            _this.editorContent = html;
+        };
+        editor.customConfig.menus = ['head', // 标题
+        'bold', // 粗体
+        'fontSize', // 字号
+        'fontName', // 字体
+        'italic', // 斜体
+        'underline', // 下划线
+        'strikeThrough', // 删除线 
+        // 'foreColor',  // 文字颜色
+        'backColor', // 背景颜色
+        // 'link',  // 插入链接
+        'list', // 列表
+        'justify', // 对齐方式
+        // 'quote',  // 引用
+        // 'emoticon',  // 表情
+        'image', // 插入图片
+        'table', // 表格
+        // 'video',  // 插入视频
+        // 'code',  // 插入代码
+        'undo', // 撤销
+        'redo' // 重复
+        ]; //配置菜单
+        editor.customConfig.uploadImgServer = this.$config + '/api/images'; // 上传图片到服务器地址
+        editor.customConfig.uploadFileName = 'image'; //自定义filename
+        editor.customConfig.uploadImgParams = {
+            type: 'travel'
+        }; //上传图片传参
+        editor.customConfig.uploadImgHeaders = {
+            "Authorization": 'Bearer ' + sessionStorage.token
+        }; //自定义header
+        editor.create();
     }
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    var editor = new __WEBPACK_IMPORTED_MODULE_0_wangeditor___default.a(this.$refs.editor);
-    editor.customConfig.onchange = function (html) {
-      _this.editorContent = html;
-    };
-    var url = this.config + '/api/images';
-    console.log(url);
-    editor.customConfig.uploadImgServer = url; // 上传图片到服务器地址
-    editor.create();
-  }
 });
 
 /***/ }),
@@ -47048,44 +47074,16 @@ var render = function() {
               _c("div", { staticClass: "form_item_journeyInfo" }, [
                 _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
                 _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newLocal.content,
-                        expression: "newLocal.content"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "内容" },
-                    domProps: { value: _vm.newLocal.content },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newLocal, "content", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
-                _vm._v(" "),
                 _c(
                   "div",
                   [
                     _c("Editor", {
                       model: {
-                        value: _vm.newLocal.sites,
+                        value: _vm.newLocal.content,
                         callback: function($$v) {
-                          _vm.$set(_vm.newLocal, "sites", $$v)
+                          _vm.$set(_vm.newLocal, "content", $$v)
                         },
-                        expression: "newLocal.sites"
+                        expression: "newLocal.content"
                       }
                     })
                   ],
@@ -47158,29 +47156,21 @@ var render = function() {
               _c("div", { staticClass: "form_item_journeyInfo" }, [
                 _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
                 _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
+                _c(
+                  "div",
+                  [
+                    _c("Editor", {
+                      model: {
                         value: _vm.edLocal.content,
+                        callback: function($$v) {
+                          _vm.$set(_vm.edLocal, "content", $$v)
+                        },
                         expression: "edLocal.content"
                       }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "内容" },
-                    domProps: { value: _vm.edLocal.content },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edLocal, "content", $event.target.value)
-                      }
-                    }
-                  })
-                ])
+                    })
+                  ],
+                  1
+                )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "issure" }, [

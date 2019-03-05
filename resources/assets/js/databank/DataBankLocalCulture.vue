@@ -72,13 +72,13 @@
                             <input class="item_input_journeyInfo" placeholder="地点" type="text" v-model="newLocal.sites">
                         </div>
                     </div> -->
-                    <div class="form_item_journeyInfo">
+                    <!-- <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
                         <div><textarea class="item_area" placeholder="内容" v-model="newLocal.content"></textarea></div>
-                    </div>
+                    </div> -->
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
-                        <div><Editor v-model='newLocal.sites'></Editor></div>
+                        <div><Editor v-model='newLocal.content'></Editor></div>
                     </div>
                     <div class="issure">
                         <button @click="addNewLocal()">添加</button>
@@ -99,9 +99,13 @@
                             <input class="item_input_journeyInfo" placeholder="地点" type="text" v-model="edLocal.sites">
                         </div>
                     </div> -->
-                    <div class="form_item_journeyInfo">
+                    <!-- <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
                         <div><textarea class="item_area" placeholder="内容" v-model="edLocal.content"></textarea></div>
+                    </div> -->
+                    <div class="form_item_journeyInfo">
+                        <div class="item_title">内容</div>
+                        <div><Editor v-model='edLocal.content'></Editor></div>
                     </div>
                     <div class="issure">
                         <button @click="editLocal()">修改</button>
