@@ -17,10 +17,13 @@ class ImagesController extends Controller
    		$result = $uploader->save($request->image, str_plural($request->type), $user->id, $size);
 
    		$image->path = $result['path'];
-        $image->type = $request->type;
-        $image->user_id = $user->id;
-        $image->save();
+         $image->type = $request->type;
+         $image->user_id = $user->id;
+         $image->save();
 
-        return $this->response->item($image, new ImageTransformer())->setStatusCode(201);
+         return $this->response->array([
+            'errno' => 0,
+            'data'=>[$image->path]
+         ])->setStatusCode(201);
    	}
 }

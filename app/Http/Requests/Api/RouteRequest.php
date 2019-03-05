@@ -15,9 +15,9 @@ class RouteRequest extends FormRequest
         switch ($this->method()) {
             case 'POST':
                 return [
-                   'day' => 'required|string',
-                   'date' => 'required|date',
-                   'description' => 'required|string'
+                   'day' => 'string',
+                   'date' => 'date',
+                   'description' => 'string'
                 ];
                 break;
             
