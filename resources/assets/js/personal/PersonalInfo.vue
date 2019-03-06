@@ -66,8 +66,7 @@
                                 <img class="photo-circle" :src="personalInfos.avatar" />                                                            
                             </div>
                             <div class="photo"  v-else>
-                                <img class="photo-circle" src="/etravel/public/images/poto-icon.png" />                                                                               
-                            </div>
+                                <img class="photo-circle" src="/etravel/public/images/poto-icon.png" />                                                                                     </div>
                             
                         </div>
                         <div class="info_name">
@@ -113,7 +112,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="gather_info">
-                        <div class="gather_info_title"><span>编辑个人信息</span><hr></div>
+                        <div class="gather_info_title"><span>编辑信息</span><hr></div>
                     </div>   
                     <div class="form_item_information" style="width:100%;">
                         <div class="item_title">昵称</div>
@@ -130,12 +129,12 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form_item_information" style="width:100%;">
+                    <!-- <div class="form_item_information" style="width:100%;">
                         <div class="item_title">手机号<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
                         <div>
                             <input class="item_input" placeholder="手机号" type="text" v-model="edInformation.phone">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form_item_information" style="width:100%;">
                         <div class="item_title">邮箱<span class="err" v-if="errors.email" v-text="errors.email[0]"></span></div>
                         <div>
@@ -168,7 +167,7 @@
                     id:'',
                     name:'',
                     sex:'',
-                    phome:'',
+                    // phome:'',
                     email:'',
                 },
                 isEditInformationShow:false,
@@ -196,7 +195,7 @@
             },
             edInformationInfoShow(){
                 this.edInformation.name=this.personalInfos.name;
-                this.edInformation.phone=this.personalInfos.phone;
+                // this.edInformation.phone=this.personalInfos.phone;
                 this.edInformation.email=this.personalInfos.email;
                 this.edInformation.sex=this.personalInfos.sex;
                 this.isEditInformationShow=true;
@@ -218,7 +217,7 @@
                 }).then(res => {
                     if(res.status==200){
                         this.personalInfos.name=this.edInformation.name;
-                        this.personalInfos.phone=this.edInformation.phone;
+                        // this.personalInfos.phone=this.edInformation.phone;
                         this.personalInfos.sex=this.edInformation.sex;
                         this.personalInfos.email=this.edInformation.email;
                         this.$toast('修改成功');

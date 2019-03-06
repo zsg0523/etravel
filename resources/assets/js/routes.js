@@ -228,6 +228,24 @@ const router = new VueRouter({
                     name: 'dataBankSelfPerception',
                     component: Vue.component( 'dataBankSelfPerception', require( './databank/DataBankSelfPerception.vue' ) ),
                 },
+                {
+                    path: 'answer',
+                    name: 'answer',
+                    component: Vue.component( 'answer', require( './components/Answer.vue' ) ),
+                    redirect: '/answer/dataBankAnswerList',
+                    children:[
+                        {
+                            path: '/answer/dataBankAnswerList',
+                            name: 'dataBankAnswerList',
+                            component: Vue.component( 'dataBankAnswerList', require( './databank/DataBankAnswerList.vue' ) ),
+                        },
+                        {
+                            path: '/answer/DataBankAnswerInfo/:id',
+                            name: 'DataBankAnswerInfo',
+                            component: Vue.component( 'DataBankAnswerInfo', require( './databank/DataBankAnswerInfo.vue' ) ),
+                        },
+                    ],
+                },
             ],
         },
         {

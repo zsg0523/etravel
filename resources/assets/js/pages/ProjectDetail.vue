@@ -43,6 +43,7 @@
         },
         mounted:function(){
             sessionStorage.setItem('actTravelId', this.$route.params.id);
+            this.$store.state.links=[{link:'/home',linkName:'项目'}];
         },
         methods:{
 

@@ -125,19 +125,19 @@
                                 </div>
                                 <div class="form_item_small">
                                     <div class="item_title">学生密码</div>
-                                    <div><input class="item_input" type="text" placeholder="填写学生密码" v-model="edStudent.original_password"></div>
+                                    <div><input class="item_input" type="text" placeholder="填写学生密码" disabled="disabled" v-model="edStudent.original_password"></div>
                                 </div>
                                 <div class="form_item_small">
                                     <div class="item_title">学生中文名<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填写学生中文名" v-model="edStudent.name"></div>
+                                    <div><input class="item_input" type="text" placeholder="填写学生中文名" disabled="disabled" v-model="edStudent.name"></div>
                                 </div>
                                 <div class="form_item_small">
                                     <div class="item_title">学生英文名<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填写学生英文名" v-model="edStudent.en_name"></div>
+                                    <div><input class="item_input" type="text" placeholder="填写学生英文名" disabled="disabled" v-model="edStudent.en_name"></div>
                                 </div>
                                 <div class="form_item_small">
                                     <div class="item_title">联系电话<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="edStudent.phone"></div>
+                                    <div><input class="item_input" type="text" placeholder="填写联系电话" disabled="disabled" v-model="edStudent.phone"></div>
                                 </div>
                                 <div class="form_item_small">
                                     <div class="item_title">学生学号<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
@@ -356,7 +356,7 @@
                 });
             },
             editStudentShow(){
-                this.edStudent.id=this.students[this.actIndex].user.id;
+                this.edStudent.id=this.students[this.actIndex].id;
                 this.edStudent.original_password=this.students[this.actIndex].user.original_password;
                 this.edStudent.name=this.students[this.actIndex].user.name;
                 this.edStudent.en_name=this.students[this.actIndex].user.en_name;
