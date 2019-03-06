@@ -20,6 +20,7 @@ class TelephoneRequest extends FormRequest
                 break;
             
             case 'PATCH':
+                $id = $this->id;
                 return [
                     'name' => 'string',
                     'phone' => 'unique:telephones,phone,' . $this->route('telephone')->id,

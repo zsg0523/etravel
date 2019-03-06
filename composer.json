@@ -22,7 +22,9 @@
         "socialiteproviders/weixin": "^4.0",
         "spatie/laravel-permission": "~2.29",
         "summerblue/administrator": "~1.1",
-        "tymon/jwt-auth": "1.0.0-rc.2"
+        "tymon/jwt-auth": "1.0.0-rc.2",
+        "workerman/gateway-worker": "^3.0",
+        "workerman/workerman": "^3.5"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
