@@ -266,6 +266,8 @@ $api->version('v1', [
 			$api->get('studies','StudiesController@index')->name('api.studies.index');
 			// 行程下学习工作纸
 			$api->get('routes/{route}/studies','StudiesController@routeIndex')->name('api.routes.studies.index');
+			// 旅游下所有学习工作纸
+			$api->get('travels/{travel}/studies', 'StudiesController@travelIndex')->name('api.travels.studies.index');
 			// 工作纸详情
 			$api->get('routes/{route}/studies/{study}','StudiesController@show')->name('api.routes.studies.show'); 
 			// 创建工作纸
@@ -389,6 +391,15 @@ $api->version('v1', [
 			$api->post('users/{user}/schools/{school}', 'UserSchoolsController@store')->name('api.users.schools.store');
 			// 移除学校
 			$api->delete('users/{user}/schools/{school}', 'UserSchoolsController@destroy')->name('api.users.schools.destroy');
+
+
+
+			// 聊天消息,绑定客户端和uid
+			$api->post('users/{user}/bind', 'ChatsController@bind');
+			// 发送消息
+			$api->post('messages', 'ChatsController@messages');
+			// 获取房间人员列表
+			$api->post('rooms', 'ChatsController@room')->name('api.rooms');
 
 
 

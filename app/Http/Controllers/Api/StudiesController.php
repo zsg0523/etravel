@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Study;
 use App\Models\Route;
+use App\Models\Travel;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\StudyRequest;
 use App\Transformers\StudyTransformer;
@@ -20,6 +21,13 @@ class StudiesController extends Controller
     {
     	return $this->response->collection($route->studies, new StudyTransformer($this->user()->id));
     }
+
+    /** [travelIndex 旅游下所有学习工作纸] */
+    public function travelIndex(Travel $travel)
+    {
+        return $this->response->collection($travel->studies, new StudyTransformer(null));
+    }
+
 
     /** [show 工作纸详情] */
     public function show(Route $route, Study $study)

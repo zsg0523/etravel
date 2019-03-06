@@ -16,6 +16,10 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Event' => [
             'App\Listeners\EventListener',
         ],
+        'App\Events\Register' => [
+            'App\Listeners\SendEmail',
+            'App\Listeners\SendSms'
+        ],
         \SocialiteProviders\Manager\SocialiteWasCalled::class => [
             // add your listeners (aka providers) here
             'SocialiteProviders\Weixin\WeixinExtendSocialite@handle'
