@@ -17,4 +17,23 @@ class Group extends Model
 	{
 		return $this->belongsTo(User::class);
 	}
+
+	/** [scopeRoom 按房间号码大小排序] */
+	public function scopeRoom($query)
+	{
+		return $query->orderBy('room', 'asc');
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

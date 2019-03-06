@@ -15,13 +15,13 @@ class GroupsController extends Controller
 	/** [index 所有分组] */
     public function index()
     {
-    	return $this->response->collection(Group::all(), new GroupTransformer());
+    	return $this->response->collection(Group::room()->get(), new GroupTransformer());
     }
 
     /** [travelIndex 旅行团分组安排] */
     public function travelIndex(Travel $travel)
     {
-    	$groups = $travel->groups;
+    	$groups = $travel->groups()->room()->get();
     	return $this->response->collection($groups, new GroupTransformer());
     }
 
@@ -81,6 +81,14 @@ class GroupsController extends Controller
 
     	return $this->response->noContent();
     }
+
+
+    // private function roomGroupBy($array)
+    // {
+    //     foreach ($array as $value) {
+    //         if ($value->room)
+    //     }
+    // }
 
 
 }
