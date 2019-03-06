@@ -229,7 +229,7 @@ const router = new VueRouter({
                     component: Vue.component( 'dataBankSelfPerception', require( './databank/DataBankSelfPerception.vue' ) ),
                 },
                 {
-                    path: 'answer',
+                    path: '/answer',
                     name: 'answer',
                     component: Vue.component( 'answer', require( './components/Answer.vue' ) ),
                     redirect: '/answer/dataBankAnswerList',
