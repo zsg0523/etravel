@@ -79,10 +79,10 @@ class ChatsController extends Controller
         $sessions = Gateway::getClientSessionsByGroup($request->room_id);
         $users_list = [];
         foreach ($sessions as $client_id => $value) {
-            $user_list[$value['uid']] = $value['username'];
+            $users_list[$value['uid']] = $value['username'];
         }
         $new_message = ['type' => 'flash'];
-        $new_message['user_list'] = $user_list;
+        $new_message['user_list'] = $users_list;
 
         Gateway::sendToGroup($request->room_id, $new_message);
 
