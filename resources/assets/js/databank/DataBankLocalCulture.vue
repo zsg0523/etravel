@@ -9,7 +9,7 @@
     .form_content{width: 94%;min-height: 210px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;}
 
     .form_item_journeyInfo{width: 100%;min-height:80px;}
-    .form_item_journeyInfo>div{width: 96%;min-height: 45px;line-height: 45px;}
+    .form_item_journeyInfo>div{width: 100%;min-height: 45px;line-height: 45px;}
     .item_input_journeyInfo{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;}
     .item_area{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;}
 
@@ -45,9 +45,13 @@
                             <input class="item_input_journeyInfo" placeholder="地点" type="text" disabled="disabled"  :value="local.sites">
                         </div>
                     </div> -->
-                    <div class="form_item_journeyInfo">
+                    <!-- <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
                         <div><textarea class="item_area" disabled="disabled" placeholder="内容" :value="local.content"></textarea></div>
+                    </div> -->
+                    <div class="form_item_journeyInfo">
+                        <div class="item_title">内容</div>
+                        <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee" v-html="local.content"></div>
                     </div>
                     <div class="editBtnGroup_journeyInfo">
                         <img @click="delLocal(local.id)" src="/etravel/public/images/rush-icon.png">
@@ -78,7 +82,7 @@
                     </div> -->
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
-                        <div><Editor v-model='newLocal.content'></Editor></div>
+                        <div><Editor @catchData='catchData' :childData='newLocal.content' v-model='newLocal.content'></Editor></div>
                     </div>
                     <div class="issure">
                         <button @click="addNewLocal()">添加</button>
@@ -105,7 +109,7 @@
                     </div> -->
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
-                        <div><Editor v-model='edLocal.content'></Editor></div>
+                        <div><Editor @catchData='catchData' :childData='edLocal.content'></Editor></div>
                     </div>
                     <div class="issure">
                         <button @click="editLocal()">修改</button>
@@ -129,7 +133,7 @@
                 newLocal:{
                     title:'',
                     content:'',
-                    sites:'',
+                    // sites:'',
                 },
                 edLocal:{
                     id:'',
@@ -140,6 +144,7 @@
                 },
                 isNewLocalShow:false,
                 isEditLocalShow:false,
+                status:'',
             }
         },
         mounted:function(){
@@ -163,6 +168,7 @@
             },
             addNewLocalShow(){
                 this.isNewLocalShow=true;
+                this.status='newLocal';
             },
             addNewLocal(){
                 // 新增当地文化/api/route/21/food
@@ -191,6 +197,7 @@
                 // this.edLocal.sites=this.locals[index].sites;
                 this.edLocal.index=index;
                 this.isEditLocalShow=true;
+                this.status='edLocal';
             },
             editLocal(){
                 // 修改当地文化信息/api/travels/1/locals/22
@@ -248,7 +255,13 @@
 
                 });
             },
-
+            catchData(value){
+                if(this.status=='newLocal'){
+                    this.newLocal.content=value;
+                }else if(this.status=='edLocal'){
+                    this.edLocal.content=value;
+                }
+            },
         },
     }
 </script>

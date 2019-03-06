@@ -7504,6 +7504,20 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
             path: '/dataBankSelfPerception',
             name: 'dataBankSelfPerception',
             component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dataBankSelfPerception', __webpack_require__(296))
+        }, {
+            path: 'answer',
+            name: 'answer',
+            component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('answer', __webpack_require__(425)),
+            redirect: '/answer/dataBankAnswerList',
+            children: [{
+                path: '/answer/dataBankAnswerList',
+                name: 'dataBankAnswerList',
+                component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dataBankAnswerList', __webpack_require__(430))
+            }, {
+                path: '/answer/DataBankAnswerInfo/:id',
+                name: 'DataBankAnswerInfo',
+                component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('DataBankAnswerInfo', __webpack_require__(415))
+            }]
         }]
     }, {
         path: '/register',
@@ -23437,6 +23451,42 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -23449,21 +23499,23 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             newTravel: {
                 travel_name: '',
                 travel_at: '',
+                travel_return: '',
                 travel_introduction: ''
             },
             edTravel: {
                 travel_name: '',
                 travel_at: '',
+                travel_return: '',
                 travel_introduction: ''
             },
             edTravelId: '',
             edTravelIndex: '',
-            errors: {},
-            isPickTimeShow: false,
-            currentDate: new Date(),
-            minDate: new Date(1999, 1, 1),
-            maxDate: new Date(2200, 1, 1),
-            actDate: ''
+            errors: {}
+            // isPickTimeShow:false,
+            // currentDate:new Date(),
+            // minDate:new Date(1999,1,1),
+            // maxDate:new Date(2200,1,1),
+            // actDate:'',
         };
     },
 
@@ -23506,6 +23558,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             this.$post(this.$config + '/api/travels', {
                 travel_name: this.newTravel.travel_name,
                 travel_at: this.newTravel.travel_at,
+                travel_return: this.newTravel.travel_return,
                 travel_introduction: this.newTravel.travel_introduction
             }, {
                 headers: {
@@ -23518,6 +23571,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 _this2.$toast('添加成功');
                 _this2.newTravel.travel_name = '';
                 _this2.newTravel.travel_at = '';
+                _this2.newTravel.travel_return = '';
                 _this2.newTravel.travel_introduction = '';
             }).catch(function (err) {
                 _this2.$toast('添加失败');
@@ -23560,6 +23614,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             this.edTravelIndex = index;
             this.edTravel.travel_name = this.travels[index].travel_name;
             this.edTravel.travel_at = this.travels[index].travel_at;
+            this.edTravel.travel_return = this.travels[index].travel_return;
             this.edTravel.travel_introduction = this.travels[index].introduction;
             this.isEditPopupShow = true;
         },
@@ -23579,6 +23634,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 data: {
                     travel_name: this.edTravel.travel_name,
                     travel_at: this.edTravel.travel_at,
+                    travel_return: this.edTravel.travel_return,
                     travel_introduction: this.edTravel.travel_introduction
                 },
                 url: this.$config + '/api/travels/' + this.edTravelId
@@ -23587,6 +23643,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 if (res.status == 200) {
                     _this4.travels[_this4.edTravelIndex].travel_name = _this4.edTravel.travel_name;
                     _this4.travels[_this4.edTravelIndex].travel_at = _this4.edTravel.travel_at;
+                    _this4.travels[_this4.edTravelIndex].travel_return = _this4.edTravel.travel_return;
                     _this4.travels[_this4.edTravelIndex].introduction = _this4.edTravel.travel_introduction;
                     // this.getUserTravels();
                     _this4.$toast('修改成功');
@@ -23599,39 +23656,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 _this4.errors = err.response.data.errors;
                 console.log(err);
             });
-        },
-        pickTimeShow: function pickTimeShow(str) {
-            this.isPickTimeShow = true;
-            this.actDate = str;
-        },
-        pickTimeCancel: function pickTimeCancel() {
-            this.isPickTimeShow = false;
-        },
-        pickTimeConfirm: function pickTimeConfirm() {
-            this.isPickTimeShow = false;
-            if (this.actDate == 'newTravel') {
-                this.newTravel.travel_at = this.formatDate(this.currentDate);
-            } else if (this.actDate == 'edTravel') {
-                this.edTravel.travel_at = this.formatDate(this.currentDate);
-            }
-            this.currentDate = new Date();
-        },
-        formatter: function formatter(type, value) {
-            if (type === 'year') {
-                return value + '年';
-            } else if (type === 'month') {
-                return value + '月';
-            } else if (type === 'day') {
-                return value + '日';
-            }
-            return value;
-        },
-        formatDate: function formatDate(obj) {
-            var date = new Date(obj);
-            var y = 1900 + date.getYear();
-            var m = "0" + (date.getMonth() + 1);
-            var d = "0" + date.getDate();
-            return y + "-" + m.substring(m.length - 2, m.length) + "-" + d.substring(d.length - 2, d.length);
         }
     })
 });
@@ -23859,14 +23883,10 @@ var render = function() {
                       staticClass: "item_input",
                       attrs: {
                         placeholder: "出行日期（例:1979-01-01）",
-                        type: "text",
-                        readonly: "readonly"
+                        type: "text"
                       },
                       domProps: { value: _vm.newTravel.travel_at },
                       on: {
-                        click: function($event) {
-                          return _vm.pickTimeShow("newTravel")
-                        },
                         input: function($event) {
                           if ($event.target.composing) {
                             return
@@ -23874,6 +23894,51 @@ var render = function() {
                           _vm.$set(
                             _vm.newTravel,
                             "travel_at",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_pro" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("回程日期"),
+                    _vm.errors.travel_return
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: {
+                            textContent: _vm._s(_vm.errors.travel_return[0])
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newTravel.travel_return,
+                          expression: "newTravel.travel_return"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: {
+                        placeholder: "回程日期（例:1979-01-01）",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.newTravel.travel_return },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newTravel,
+                            "travel_return",
                             $event.target.value
                           )
                         }
@@ -24011,14 +24076,10 @@ var render = function() {
                       staticClass: "item_input",
                       attrs: {
                         placeholder: "出行日期（例:1979-01-01）",
-                        type: "text",
-                        readonly: "readonly"
+                        type: "text"
                       },
                       domProps: { value: _vm.edTravel.travel_at },
                       on: {
-                        click: function($event) {
-                          return _vm.pickTimeShow("edTravel")
-                        },
                         input: function($event) {
                           if ($event.target.composing) {
                             return
@@ -24026,6 +24087,51 @@ var render = function() {
                           _vm.$set(
                             _vm.edTravel,
                             "travel_at",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_pro" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("回程日期"),
+                    _vm.errors.travel_return
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: {
+                            textContent: _vm._s(_vm.errors.travel_return[0])
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edTravel.travel_return,
+                          expression: "edTravel.travel_return"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: {
+                        placeholder: "回程日期（例:1979-01-01）",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.edTravel.travel_return },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edTravel,
+                            "travel_return",
                             $event.target.value
                           )
                         }
@@ -24080,53 +24186,6 @@ var render = function() {
                   [_vm._v("确定")]
                 )
               ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "van-popup",
-            {
-              staticStyle: { "border-radius": "15px" },
-              attrs: { overlay: true },
-              model: {
-                value: _vm.isPickTimeShow,
-                callback: function($$v) {
-                  _vm.isPickTimeShow = $$v
-                },
-                expression: "isPickTimeShow"
-              }
-            },
-            [
-              _c(
-                "div",
-                { staticClass: "addNewTravel disflex" },
-                [
-                  _c("van-datetime-picker", {
-                    attrs: {
-                      type: "date",
-                      "min-date": _vm.minDate,
-                      "max-date": _vm.maxDate,
-                      formatter: _vm.formatter
-                    },
-                    on: {
-                      cancel: function($event) {
-                        return _vm.pickTimeCancel()
-                      },
-                      confirm: function($event) {
-                        return _vm.pickTimeConfirm()
-                      }
-                    },
-                    model: {
-                      value: _vm.currentDate,
-                      callback: function($$v) {
-                        _vm.currentDate = $$v
-                      },
-                      expression: "currentDate"
-                    }
-                  })
-                ],
-                1
-              )
             ]
           )
         ],
@@ -29232,6 +29291,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -29249,102 +29310,60 @@ var render = function() {
       { staticStyle: { padding: "0", margin: "0" } },
       [
         _c("router-link", { attrs: { tag: "li", to: "/dataBankInfo" } }, [
-          _c("div", [
-            _vm._v("重要资料"),
-            _c("input", { staticClass: "checke", attrs: { type: "checkbox" } })
-          ])
+          _c("div", [_vm._v("重要资料")])
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/dataBankPhone" } }, [
-          _c("div", [
-            _vm._v("常用电话"),
-            _c("input", { staticClass: "checke", attrs: { type: "checkbox" } })
-          ])
+          _c("div", [_vm._v("常用电话")])
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/rule" } }, [
-          _c("div", [
-            _vm._v("团队守则"),
-            _c("input", { staticClass: "checke", attrs: { type: "checkbox" } })
-          ])
+          _c("div", [_vm._v("团队守则")])
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/promise" } }, [
-          _c("div", [
-            _vm._v("我的承诺"),
-            _c("input", { staticClass: "checke", attrs: { type: "checkbox" } })
-          ])
+          _c("div", [_vm._v("我的承诺")])
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/dataBankGroup" } }, [
-          _c("div", [
-            _vm._v("师生名单分组"),
-            _c("input", { staticClass: "checke", attrs: { type: "checkbox" } })
-          ])
+          _c("div", [_vm._v("师生名单分组")])
         ]),
         _vm._v(" "),
         _c(
           "router-link",
           { attrs: { tag: "li", to: "/dataBankLocalCulture" } },
-          [
-            _c("div", [
-              _vm._v("当地文化"),
-              _c("input", {
-                staticClass: "checke",
-                attrs: { type: "checkbox" }
-              })
-            ])
-          ]
+          [_c("div", [_vm._v("当地文化")])]
         ),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/dataBankHouseTable" } }, [
-          _c("div", [
-            _vm._v("分房表"),
-            _c("input", { staticClass: "checke", attrs: { type: "checkbox" } })
-          ])
+          _c("div", [_vm._v("分房表")])
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/luggage" } }, [
-          _c("div", [
-            _vm._v("行李清单"),
-            _c("input", { staticClass: "checke", attrs: { type: "checkbox" } })
-          ])
+          _c("div", [_vm._v("行李清单")])
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/journey" } }, [
-          _c("div", [
-            _vm._v("行程"),
-            _c("input", { staticClass: "checke", attrs: { type: "checkbox" } })
-          ])
+          _c("div", [_vm._v("行程")])
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/study" } }, [
-          _c("div", [
-            _vm._v("学习工作纸"),
-            _c("input", { staticClass: "checke", attrs: { type: "checkbox" } })
-          ])
+          _c("div", [_vm._v("学习工作纸")])
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/topic" } }, [
-          _c("div", [
-            _vm._v("自我评估"),
-            _c("input", { staticClass: "checke", attrs: { type: "checkbox" } })
-          ])
+          _c("div", [_vm._v("自我评估")])
         ]),
         _vm._v(" "),
         _c(
           "router-link",
           { attrs: { tag: "li", to: "/dataBankSelfPerception" } },
-          [
-            _c("div", [
-              _vm._v("自我感想"),
-              _c("input", {
-                staticClass: "checke",
-                attrs: { type: "checkbox" }
-              })
-            ])
-          ]
-        )
+          [_c("div", [_vm._v("自我感想")])]
+        ),
+        _vm._v(" "),
+        _c("router-link", { attrs: { tag: "li", to: "/answer" } }, [
+          _c("div", [_vm._v("自我感想")])
+        ])
       ],
       1
     )
@@ -41809,7 +41828,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_localculture{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_journeyInfo{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journeyInfo{width:94%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journeyInfo>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_localculture{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_journeyInfo{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div{width: 100%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journeyInfo{width:94%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journeyInfo>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
 
 // exports
 
@@ -41940,6 +41959,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -41952,8 +41975,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             locals: [],
             newLocal: {
                 title: '',
-                content: '',
-                sites: ''
+                content: ''
+                // sites:'',
             },
             edLocal: {
                 id: '',
@@ -41963,7 +41986,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 index: ''
             },
             isNewLocalShow: false,
-            isEditLocalShow: false
+            isEditLocalShow: false,
+            status: ''
         };
     },
 
@@ -41990,6 +42014,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         addNewLocalShow: function addNewLocalShow() {
             this.isNewLocalShow = true;
+            this.status = 'newLocal';
         },
         addNewLocal: function addNewLocal() {
             var _this2 = this;
@@ -42019,6 +42044,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // this.edLocal.sites=this.locals[index].sites;
             this.edLocal.index = index;
             this.isEditLocalShow = true;
+            this.status = 'edLocal';
         },
         editLocal: function editLocal() {
             var _this3 = this;
@@ -42077,6 +42103,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     console.log(err);
                 });
             }).catch(function (err) {});
+        },
+        catchData: function catchData(value) {
+            if (this.status == 'newLocal') {
+                this.newLocal.content = value;
+            } else if (this.status == 'edLocal') {
+                this.edLocal.content = value;
+            }
         }
     }
 });
@@ -42167,7 +42200,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -42193,48 +42226,74 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     name: 'editor',
     data: function data() {
         return {
-            editorContent: ''
+            editorContent: '请编辑内容',
+            editor: ''
         };
     },
 
-    methods: {},
+    props: ['childData'], //接收父组件的方法
     mounted: function mounted() {
-        var _this = this;
+        this.createEditor();
+    },
+    beforeDestroy: function beforeDestroy() {
+        this.destroyEditor();
+    },
 
-        var editor = new __WEBPACK_IMPORTED_MODULE_0_wangeditor___default.a(this.$refs.editor);
-        editor.customConfig.onchange = function (html) {
-            _this.editorContent = html;
-        };
-        editor.customConfig.menus = ['head', // 标题
-        'bold', // 粗体
-        'fontSize', // 字号
-        'fontName', // 字体
-        'italic', // 斜体
-        'underline', // 下划线
-        'strikeThrough', // 删除线 
-        // 'foreColor',  // 文字颜色
-        'backColor', // 背景颜色
-        // 'link',  // 插入链接
-        'list', // 列表
-        'justify', // 对齐方式
-        // 'quote',  // 引用
-        // 'emoticon',  // 表情
-        'image', // 插入图片
-        'table', // 表格
-        // 'video',  // 插入视频
-        // 'code',  // 插入代码
-        'undo', // 撤销
-        'redo' // 重复
-        ]; //配置菜单
-        editor.customConfig.uploadImgServer = this.$config + '/api/images'; // 上传图片到服务器地址
-        editor.customConfig.uploadFileName = 'image'; //自定义filename
-        editor.customConfig.uploadImgParams = {
-            type: 'travel'
-        }; //上传图片传参
-        editor.customConfig.uploadImgHeaders = {
-            "Authorization": 'Bearer ' + sessionStorage.token
-        }; //自定义header
-        editor.create();
+    methods: {
+        createEditor: function createEditor() {
+            var _this = this;
+
+            this.editor = new __WEBPACK_IMPORTED_MODULE_0_wangeditor___default.a(this.$refs.editor);
+            this.editor.customConfig.onchange = function (html) {
+                _this.editorContent = html;
+                _this.$emit('catchData', _this.editorContent);
+            };
+            this.editor.customConfig.menus = ['head', // 标题
+            'bold', // 粗体
+            'fontSize', // 字号
+            'fontName', // 字体
+            'italic', // 斜体
+            'underline', // 下划线
+            'strikeThrough', // 删除线 
+            // 'foreColor',  // 文字颜色
+            'backColor', // 背景颜色
+            // 'link',  // 插入链接
+            'list', // 列表
+            'justify', // 对齐方式
+            // 'quote',  // 引用
+            // 'emoticon',  // 表情
+            'image', // 插入图片
+            'table', // 表格
+            // 'video',  // 插入视频
+            // 'code',  // 插入代码
+            'undo', // 撤销
+            'redo' // 重复
+            ]; //配置菜单
+            this.editor.customConfig.uploadImgServer = this.$config + '/api/images'; // 上传图片到服务器地址
+            this.editor.customConfig.uploadFileName = 'image'; //自定义filename
+            this.editor.customConfig.uploadImgParams = {
+                type: 'travel'
+            }; //上传图片传参
+            this.editor.customConfig.uploadImgHeaders = {
+                "Authorization": 'Bearer ' + sessionStorage.token
+            }; //自定义header
+            this.editor.create();
+            // console.log(this.childData); 
+            this.editor.txt.html(this.childData);
+        },
+        destroyEditor: function destroyEditor() {
+            // 销毁编辑器，
+            // this.editor.destroy();  // 这个没有完全销毁实例，只是作了隐藏
+            // $('#account--editor').remove();  // 不报错的话，这一步可以省略
+            this.editor = null;
+            // WangEditor.numberOfLocation--;  // 手动清除地图的重复引用。否则单页面来回切换时，地图报错重复引用
+        }
+    },
+    watch: {
+        childData: function childData() {
+            // console.log(this.childData);
+            this.editor.txt.html(this.childData);
+        }
     }
 });
 
@@ -46980,13 +47039,15 @@ var render = function() {
               _c("div", { staticClass: "form_item_journeyInfo" }, [
                 _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
                 _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    staticClass: "item_area",
-                    attrs: { disabled: "disabled", placeholder: "内容" },
-                    domProps: { value: local.content }
-                  })
-                ])
+                _c("div", {
+                  staticStyle: {
+                    border: "1px solid #ccc",
+                    "border-radius": "8px",
+                    width: "97%",
+                    "background-color": "#eeeeee"
+                  },
+                  domProps: { innerHTML: _vm._s(local.content) }
+                })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "editBtnGroup_journeyInfo" }, [
@@ -47078,6 +47139,8 @@ var render = function() {
                   "div",
                   [
                     _c("Editor", {
+                      attrs: { childData: _vm.newLocal.content },
+                      on: { catchData: _vm.catchData },
                       model: {
                         value: _vm.newLocal.content,
                         callback: function($$v) {
@@ -47160,13 +47223,8 @@ var render = function() {
                   "div",
                   [
                     _c("Editor", {
-                      model: {
-                        value: _vm.edLocal.content,
-                        callback: function($$v) {
-                          _vm.$set(_vm.edLocal, "content", $$v)
-                        },
-                        expression: "edLocal.content"
-                      }
+                      attrs: { childData: _vm.edLocal.content },
+                      on: { catchData: _vm.catchData }
                     })
                   ],
                   1
@@ -88978,6 +89036,4268 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(416)
+}
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(418)
+/* template */
+var __vue_template__ = __webpack_require__(419)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/databank/DataBankAnswerInfo.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-d6416b4e", Component.options)
+  } else {
+    hotAPI.reload("data-v-d6416b4e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 416 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(417);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("6bef5602", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d6416b4e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankAnswerInfo.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d6416b4e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankAnswerInfo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 417 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.tab-pane{position: relative;\n}\n.pane_content_info{width:70%;margin-left: 15%;height:auto;margin: 0 auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info{width:100%;height: auto;\n}\n.gather_info_title{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_info{width: 50%;height:100px;\n}\n.form_item_info>div{width: 96%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.bigRadio{width:20px;height:20px;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 418 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            assemblePlaces: [],
+            edAssemblePlaces: {
+                assembly_at: "",
+                assembly_station: "",
+                dissolution_at: "",
+                dissolution_station: ""
+            },
+            flights: [],
+            newFlight: {
+                travel_id: sessionStorage.actTravelId,
+                is_return: '',
+                flight: '',
+                date: '',
+                takeoff_time: '',
+                arrival_time: '',
+                from: '',
+                to: ''
+            },
+            edFlight: {
+                id: '',
+                is_return: '',
+                flight: '',
+                date: '',
+                takeoff_time: '',
+                arrival_time: '',
+                from: '',
+                to: '',
+                index: ''
+            },
+            hotels: [],
+            newHotel: {
+                check_at: '',
+                leave_at: '',
+                times: '',
+                hotel_name: '',
+                hotel_address: '',
+                hotel_phone: '',
+                travel_id: sessionStorage.actTravelId
+            },
+            edHotel: {
+                id: '',
+                check_at: '',
+                leave_at: '',
+                times: '',
+                hotel_name: '',
+                hotel_address: '',
+                hotel_phone: '',
+                index: ''
+            },
+            leadTeachers: [],
+            newLeadTeacher: {
+                leader: '',
+                phone: '',
+                duty: ''
+            },
+            edLeadTeacher: {
+                id: '',
+                leader: '',
+                phone: '',
+                duty: '',
+                index: ''
+            },
+            badWeathers: [],
+            edBadWeather: {
+                urgency: ''
+            },
+            isAssemblePlacePopupShow: false,
+            isNewFlightShow: false,
+            isEditFlightShow: false,
+            isNewHotelShow: false,
+            isEditHotelShow: false,
+            isNewLeadTeacherShow: false,
+            isEditLeadTeacherShow: false,
+            isEditBadWeatherShow: false
+        };
+    },
+
+    mounted: function mounted() {
+        this.getAssemblePlaces();
+        this.getFlights();
+        this.getHotels();
+        this.getLeadTeachers();
+        this.getBadWeathers();
+    },
+    methods: {
+        getAssemblePlaces: function getAssemblePlaces() {
+            var _this = this;
+
+            // 获取旅游的集合信息
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId, {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this.assemblePlaces = res.data;
+                _this.edAssemblePlaces.assembly_at = _this.assemblePlaces.assembly_at;
+                _this.edAssemblePlaces.assembly_station = _this.assemblePlaces.assembly_station;
+                _this.edAssemblePlaces.dissolution_at = _this.assemblePlaces.dissolution_at;
+                _this.edAssemblePlaces.dissolution_station = _this.assemblePlaces.dissolution_station;
+            }).catch(function (err) {
+                _this.$toast('获取失败');
+                console.log(err);
+            });
+        },
+        assemblePlacePopupShow: function assemblePlacePopupShow() {
+            this.isAssemblePlacePopupShow = true;
+        },
+        editAssemblePlace: function editAssemblePlace() {
+            var _this2 = this;
+
+            // 修改集合基本信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    assembly_at: this.edAssemblePlaces.assembly_at,
+                    assembly_station: this.edAssemblePlaces.assembly_station,
+                    dissolution_at: this.edAssemblePlaces.dissolution_at,
+                    dissolution_station: this.edAssemblePlaces.dissolution_station
+                },
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId
+            }).then(function (res) {
+                // console.log(res);
+                if (res.status == 200) {
+                    _this2.$toast('修改成功');
+                    _this2.assemblePlaces.assembly_at = _this2.edAssemblePlaces.assembly_at;
+                    _this2.assemblePlaces.assembly_station = _this2.edAssemblePlaces.assembly_station;
+                    _this2.assemblePlaces.dissolution_at = _this2.edAssemblePlaces.dissolution_at;
+                    _this2.assemblePlaces.dissolution_station = _this2.edAssemblePlaces.dissolution_station;
+                    _this2.isAssemblePlacePopupShow = false;
+                } else {
+                    _this2.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this2.$toast('修改失败');
+                console.log(err);
+            });
+        },
+        getFlights: function getFlights() {
+            var _this3 = this;
+
+            // 获取旅游的航班信息
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/flights', {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this3.flights = res.data.data;
+            }).catch(function (err) {
+                _this3.$toast('获取失败');
+                console.log(err);
+            });
+        },
+        newFlightShow: function newFlightShow() {
+            this.isNewFlightShow = true;
+        },
+        addNewFlight: function addNewFlight() {
+            var _this4 = this;
+
+            // 新增航班
+            this.$post(this.$config + '/api/flights', this.newFlight, {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this4.$toast('添加成功');
+                _this4.getFlights();
+                _this4.isNewFlightShow = false;
+                _this4.newFlight.is_return = '';
+                _this4.newFlight.flight = '';
+                _this4.newFlight.date = '';
+                _this4.newFlight.takeoff_time = '';
+                _this4.newFlight.arrival_time = '';
+                _this4.newFlight.from = '';
+                _this4.newFlight.to = '';
+            }).catch(function (err) {
+                _this4.$toast('添加失败');
+                console.log(err);
+            });
+        },
+        editFlightShow: function editFlightShow(index) {
+            this.edFlight.id = this.flights[index].id;
+            this.edFlight.flight = this.flights[index].flight;
+            this.edFlight.date = this.flights[index].date;
+            this.edFlight.takeoff_time = this.flights[index].takeoff_time;
+            this.edFlight.arrival_time = this.flights[index].arrival_time;
+            this.edFlight.from = this.flights[index].from;
+            this.edFlight.to = this.flights[index].to;
+            this.edFlight.is_return = this.flights[index].is_return;
+            this.edFlight.index = index;
+
+            this.isEditFlightShow = true;
+        },
+        editFlight: function editFlight() {
+            var _this5 = this;
+
+            // 修改航班信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    flight: this.edFlight.flight,
+                    date: this.edFlight.date,
+                    takeoff_time: this.edFlight.takeoff_time,
+                    arrival_time: this.edFlight.arrival_time,
+                    from: this.edFlight.from,
+                    to: this.edFlight.to,
+                    is_return: this.edFlight.is_return
+                },
+                url: this.$config + '/api/flights/' + this.edFlight.id
+            }).then(function (res) {
+                if (res.status == 200) {
+                    _this5.flights[_this5.edFlight.index].flight = _this5.edFlight.flight;
+                    _this5.flights[_this5.edFlight.index].date = _this5.edFlight.date;
+                    _this5.flights[_this5.edFlight.index].takeoff_time = _this5.edFlight.takeoff_time;
+                    _this5.flights[_this5.edFlight.index].arrival_time = _this5.edFlight.arrival_time;
+                    _this5.flights[_this5.edFlight.index].from = _this5.edFlight.from;
+                    _this5.flights[_this5.edFlight.index].to = _this5.edFlight.to;
+                    _this5.flights[_this5.edFlight.index].is_return = _this5.edFlight.is_return;
+                    _this5.$toast('修改成功');
+                    _this5.isEditFlightShow = false;
+                } else {
+                    _this5.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this5.$toast('修改失败');
+                console.log(err);
+            });
+        },
+        delFlight: function delFlight(flightId) {
+            var _this6 = this;
+
+            // 删除航班
+            this.$dialog.confirm({
+                title: '删除航班',
+                message: '是否删除该航班'
+            }).then(function () {
+                _this6.$ajax({
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: _this6.$config + '/api/flights/' + flightId
+                }).then(function (res) {
+                    // console.log(res);
+                    if (res.status == 204) {
+                        _this6.getFlights();
+                        _this6.$toast('删除成功');
+                    } else {
+                        _this6.$toast('删除失败');
+                    }
+                }).catch(function (err) {
+                    _this6.$toast('删除失败');
+                    console.log(err);
+                });
+            }).catch(function (err) {});
+        },
+        getHotels: function getHotels() {
+            var _this7 = this;
+
+            // 获取旅游的住宿酒店
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/hotels', {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this7.hotels = res.data.data;
+            }).catch(function (err) {
+                _this7.$toast('获取失败');
+                console.log(err);
+            });
+        },
+        addNewHotelShow: function addNewHotelShow() {
+            this.isNewHotelShow = true;
+        },
+        addNewHotel: function addNewHotel() {
+            var _this8 = this;
+
+            // 新增酒店
+            this.$post(this.$config + '/api/hotels', this.newHotel, {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this8.$toast('添加成功');
+                _this8.getHotels();
+                _this8.isNewHotelShow = false;
+                _this8.newHotel.check_at = '';
+                _this8.newHotel.leave_at = '';
+                _this8.newHotel.times = '';
+                _this8.newHotel.hotel_name = '';
+                _this8.newHotel.hotel_address = '';
+                _this8.newHotel.hotel_phone = '';
+            }).catch(function (err) {
+                _this8.$toast('添加失败');
+                console.log(err);
+            });
+        },
+        editHotelShow: function editHotelShow(index) {
+            this.edHotel.id = this.hotels[index].id;
+            this.edHotel.check_at = this.hotels[index].check_at;
+            this.edHotel.leave_at = this.hotels[index].leave_at;
+            this.edHotel.times = this.hotels[index].times;
+            this.edHotel.hotel_name = this.hotels[index].hotel_name;
+            this.edHotel.hotel_address = this.hotels[index].hotel_address;
+            this.edHotel.hotel_phone = this.hotels[index].hotel_phone;
+            this.edHotel.index = index;
+            this.isEditHotelShow = true;
+        },
+        editHotel: function editHotel() {
+            var _this9 = this;
+
+            // 修改酒店信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    check_at: this.edHotel.check_at,
+                    leave_at: this.edHotel.leave_at,
+                    times: this.edHotel.times,
+                    hotel_name: this.edHotel.hotel_name,
+                    hotel_address: this.edHotel.hotel_address,
+                    hotel_phone: this.edHotel.hotel_phone
+                },
+                url: this.$config + '/api/hotels/' + this.edHotel.id
+            }).then(function (res) {
+                if (res.status == 200) {
+                    _this9.hotels[_this9.edHotel.index].check_at = _this9.edHotel.check_at;
+                    _this9.hotels[_this9.edHotel.index].leave_at = _this9.edHotel.leave_at;
+                    _this9.hotels[_this9.edHotel.index].times = _this9.edHotel.times;
+                    _this9.hotels[_this9.edHotel.index].hotel_name = _this9.edHotel.hotel_name;
+                    _this9.hotels[_this9.edHotel.index].hotel_address = _this9.edHotel.hotel_address;
+                    _this9.hotels[_this9.edHotel.index].hotel_phone = _this9.edHotel.hotel_phone;
+                    _this9.$toast('修改成功');
+                    _this9.isEditHotelShow = false;
+                } else {
+                    _this9.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this9.$toast('修改失败');
+                console.log(err);
+            });
+        },
+        delHotel: function delHotel(hotelId) {
+            var _this10 = this;
+
+            // 删除酒店
+            this.$dialog.confirm({
+                title: '删除酒店',
+                message: '是否删除该酒店'
+            }).then(function () {
+                _this10.$ajax({
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: _this10.$config + '/api/hotels/' + hotelId
+                }).then(function (res) {
+                    // console.log(res);
+                    if (res.status == 204) {
+                        _this10.getHotels();
+                        _this10.$toast('删除成功');
+                    } else {
+                        _this10.$toast('删除失败');
+                    }
+                }).catch(function (err) {
+                    _this10.$toast('删除失败');
+                    console.log(err);
+                });
+            }).catch(function (err) {});
+        },
+        getLeadTeachers: function getLeadTeachers() {
+            var _this11 = this;
+
+            // 获取领队老师信息
+            // this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/travels',
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/leaders', {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this11.leadTeachers = res.data.data;
+            }).catch(function (err) {
+                _this11.$toast('获取失败');
+                console.log(err);
+            });
+        },
+        addNewLeadTeacherShow: function addNewLeadTeacherShow() {
+            this.isNewLeadTeacherShow = true;
+        },
+        addNewLeadTeacher: function addNewLeadTeacher() {
+            var _this12 = this;
+
+            // 新增领队
+            this.$post(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/leaders', this.newLeadTeacher, {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this12.$toast('添加成功');
+                _this12.getLeadTeachers();
+                _this12.isNewLeadTeacherShow = false;
+                _this12.newLeadTeacher.leader = '';
+                _this12.newLeadTeacher.duty = '';
+                _this12.newLeadTeacher.phone = '';
+            }).catch(function (err) {
+                _this12.$toast('添加失败');
+                console.log(err);
+            });
+        },
+        editLeadTeacherShow: function editLeadTeacherShow(index) {
+            this.edLeadTeacher.id = this.leadTeachers[index].id;
+            this.edLeadTeacher.leader = this.leadTeachers[index].leader;
+            this.edLeadTeacher.duty = this.leadTeachers[index].duty;
+            this.edLeadTeacher.phone = this.leadTeachers[index].phone;
+            this.edLeadTeacher.index = index;
+            this.isEditLeadTeacherShow = true;
+        },
+        editLeadTeacher: function editLeadTeacher() {
+            var _this13 = this;
+
+            // 修改领队信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    leader: this.edLeadTeacher.leader,
+                    duty: this.edLeadTeacher.duty,
+                    phone: this.edLeadTeacher.phone
+                },
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/leaders/' + this.edLeadTeacher.id
+            }).then(function (res) {
+                if (res.status == 200) {
+                    _this13.leadTeachers[_this13.edLeadTeacher.index].leader = _this13.edLeadTeacher.leader;
+                    _this13.leadTeachers[_this13.edLeadTeacher.index].duty = _this13.edLeadTeacher.duty;
+                    _this13.leadTeachers[_this13.edLeadTeacher.index].phone = _this13.edLeadTeacher.phone;
+                    _this13.$toast('修改成功');
+                    _this13.isEditLeadTeacherShow = false;
+                } else {
+                    _this13.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this13.$toast('修改失败');
+                console.log(err);
+            });
+        },
+        delLeadTeacher: function delLeadTeacher(leadTeacherId) {
+            var _this14 = this;
+
+            // 删除领队
+            this.$dialog.confirm({
+                title: '删除领队',
+                message: '是否删除该领队'
+            }).then(function () {
+                _this14.$ajax({
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: _this14.$config + '/api/travels/' + sessionStorage.actTravelId + '/leaders/' + leadTeacherId
+                }).then(function (res) {
+                    // console.log(res);
+                    if (res.status == 204) {
+                        _this14.getLeadTeachers();
+                        _this14.$toast('删除成功');
+                    } else {
+                        _this14.$toast('删除失败');
+                    }
+                }).catch(function (err) {
+                    _this14.$toast('删除失败');
+                    console.log(err);
+                });
+            }).catch(function (err) {});
+        },
+        getBadWeathers: function getBadWeathers() {
+            var _this15 = this;
+
+            // 获取恶劣天气安排
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId, {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this15.badWeathers = res.data;
+                _this15.edBadWeather.urgency = res.data.urgency;
+            }).catch(function (err) {
+                _this15.$toast('获取失败');
+                console.log(err);
+            });
+        },
+        editBadWeatherShow: function editBadWeatherShow() {
+            this.isEditBadWeatherShow = true;
+        },
+        editBadWeather: function editBadWeather() {
+            var _this16 = this;
+
+            // 修改集合基本信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    urgency: this.edBadWeather.urgency
+                },
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId
+            }).then(function (res) {
+                // console.log(res);
+                if (res.status == 200) {
+                    _this16.$toast('修改成功');
+                    _this16.badWeathers.urgency = _this16.edBadWeather.urgency;
+                    _this16.isEditBadWeatherShow = false;
+                } else {
+                    _this16.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this16.$toast('修改失败');
+                console.log(err);
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 419 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c("div", { staticClass: "tablist" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "tab-content" }, [
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane active",
+                attrs: { role: "tabpanel", id: "gather" }
+              },
+              [
+                _c("div", { staticClass: "pane_content_info" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form_content disflex" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form_item_info",
+                        staticStyle: { width: "100%" }
+                      },
+                      [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("日期及时间")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.assemblePlaces.assembly_at,
+                                expression: "assemblePlaces.assembly_at"
+                              }
+                            ],
+                            staticClass: "item_input",
+                            staticStyle: { width: "97%" },
+                            attrs: {
+                              placeholder: "日期及时间",
+                              disabled: "disabled",
+                              type: "text"
+                            },
+                            domProps: { value: _vm.assemblePlaces.assembly_at },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.assemblePlaces,
+                                  "assembly_at",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form_item_info",
+                        staticStyle: { width: "100%", height: "120px" }
+                      },
+                      [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("详细地址")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.assemblePlaces.assembly_station,
+                                expression: "assemblePlaces.assembly_station"
+                              }
+                            ],
+                            staticClass: "item_area",
+                            attrs: {
+                              placeholder: "详细地址",
+                              disabled: "disabled"
+                            },
+                            domProps: {
+                              value: _vm.assemblePlaces.assembly_station
+                            },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.assemblePlaces,
+                                  "assembly_station",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "pane_content_info" }, [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form_content disflex" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form_item_info",
+                        staticStyle: { width: "100%" }
+                      },
+                      [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("日期及时间")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.assemblePlaces.dissolution_at,
+                                expression: "assemblePlaces.dissolution_at"
+                              }
+                            ],
+                            staticClass: "item_input",
+                            staticStyle: { width: "97%" },
+                            attrs: {
+                              placeholder: "日期及时间",
+                              type: "text",
+                              disabled: "disabled"
+                            },
+                            domProps: {
+                              value: _vm.assemblePlaces.dissolution_at
+                            },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.assemblePlaces,
+                                  "dissolution_at",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form_item_info",
+                        staticStyle: { width: "100%", height: "120px" }
+                      },
+                      [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("地址")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.assemblePlaces.dissolution_station,
+                                expression: "assemblePlaces.dissolution_station"
+                              }
+                            ],
+                            staticClass: "item_area",
+                            attrs: {
+                              placeholder: "详细地址",
+                              disabled: "disabled"
+                            },
+                            domProps: {
+                              value: _vm.assemblePlaces.dissolution_station
+                            },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.assemblePlaces,
+                                  "dissolution_station",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn",
+                    on: {
+                      click: function($event) {
+                        return _vm.assemblePlacePopupShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/edit-all.png" }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "flight" }
+              },
+              [
+                _vm._l(_vm.flights, function(flight, index) {
+                  return _c("div", { staticClass: "pane_content_info" }, [
+                    _c("div", { staticClass: "gather_info" }, [
+                      _c("div", { staticClass: "gather_info_title" }, [
+                        flight.is_return
+                          ? _c("span", [_vm._v("返回")])
+                          : _c("span", [_vm._v("出发")]),
+                        _c("hr")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_content disflex" }, [
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("航班信息")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: flight.flight }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("日期")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: flight.date }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("出发时间")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: flight.takeoff_time }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("到达时间")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: flight.arrival_time }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("出发站点")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: flight.from }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("达到站点")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: flight.to }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "editBtnGroup" }, [
+                      _c("img", {
+                        attrs: { src: "/etravel/public/images/rush-icon.png" },
+                        on: {
+                          click: function($event) {
+                            return _vm.delFlight(flight.id)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("img", {
+                        attrs: { src: "/etravel/public/images/edit-all.png" },
+                        on: {
+                          click: function($event) {
+                            return _vm.editFlightShow(index)
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn",
+                    on: {
+                      click: function($event) {
+                        return _vm.newFlightShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/add_y.png" }
+                    })
+                  ]
+                )
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "accommodationInfo" }
+              },
+              [
+                _vm._l(_vm.hotels, function(hotel, index) {
+                  return _c("div", { staticClass: "pane_content_info" }, [
+                    _c("div", { staticClass: "form_content disflex" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("酒店名称")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              staticStyle: { width: "97%" },
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: hotel.hotel_name }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("入住时间")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: hotel.check_at }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("离开时间")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: hotel.leave_at }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("几晚")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: hotel.times }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("联系电话")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: hotel.hotel_phone }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%", height: "120px" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("酒店地址")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("textarea", {
+                              staticClass: "item_area",
+                              attrs: {
+                                placeholder: "酒店地址",
+                                disabled: "disabled"
+                              },
+                              domProps: { value: hotel.hotel_address }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "editBtnGroup" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/etravel/public/images/rush-icon.png"
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.delHotel(hotel.id)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          attrs: { src: "/etravel/public/images/edit-all.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.editHotelShow(index)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn",
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewHotelShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/add_y.png" }
+                    })
+                  ]
+                )
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "leaderTeacher" }
+              },
+              [
+                _vm._l(_vm.leadTeachers, function(leadTeacher, index) {
+                  return _c("div", { staticClass: "pane_content_info" }, [
+                    _c("div", { staticClass: "form_content disflex" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("老师姓名")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              staticStyle: { width: "97%" },
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: leadTeacher.leader }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("老师电话")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              staticStyle: { width: "97%" },
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: leadTeacher.phone }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("职责")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              staticStyle: { width: "97%" },
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: leadTeacher.duty }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "editBtnGroup" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/etravel/public/images/rush-icon.png"
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.delLeadTeacher(leadTeacher.id)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          attrs: { src: "/etravel/public/images/edit-all.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.editLeadTeacherShow(index)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn",
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewLeadTeacherShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/add_y.png" }
+                    })
+                  ]
+                )
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "heavyWeather" }
+              },
+              [
+                _c("div", { staticClass: "pane_content_info" }, [
+                  _c("div", { staticClass: "form_content disflex" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form_item_info",
+                        staticStyle: { width: "100%", height: "120px" }
+                      },
+                      [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("安排")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("textarea", {
+                            staticClass: "item_area",
+                            attrs: {
+                              placeholder: "安排",
+                              disabled: "disabled"
+                            },
+                            domProps: { value: _vm.badWeathers.urgency }
+                          })
+                        ])
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn",
+                    on: {
+                      click: function($event) {
+                        return _vm.editBadWeatherShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/edit-all.png" }
+                    })
+                  ]
+                )
+              ]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isAssemblePlacePopupShow,
+            callback: function($$v) {
+              _vm.isAssemblePlacePopupShow = $$v
+            },
+            expression: "isAssemblePlacePopupShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "gather_info" }, [
+                _c("div", { staticClass: "gather_info_title" }, [
+                  _c("span", [_vm._v("集合")]),
+                  _c("hr")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("日期及时间")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edAssemblePlaces.assembly_at,
+                          expression: "edAssemblePlaces.assembly_at"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: {
+                        placeholder: "填写日期及时间(yyyy-mm-dd hh:mm)",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.edAssemblePlaces.assembly_at },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edAssemblePlaces,
+                            "assembly_at",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("地址")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edAssemblePlaces.assembly_station,
+                          expression: "edAssemblePlaces.assembly_station"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { placeholder: "填写地址", type: "text" },
+                      domProps: {
+                        value: _vm.edAssemblePlaces.assembly_station
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edAssemblePlaces,
+                            "assembly_station",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "gather_info" }, [
+                _c("div", { staticClass: "gather_info_title" }, [
+                  _c("span", [_vm._v("解散")]),
+                  _c("hr")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("日期及时间")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edAssemblePlaces.dissolution_at,
+                          expression: "edAssemblePlaces.dissolution_at"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: {
+                        placeholder: "填写日期及时间(yyyy-mm-dd hh:mm)",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.edAssemblePlaces.dissolution_at },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edAssemblePlaces,
+                            "dissolution_at",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("地址")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edAssemblePlaces.dissolution_station,
+                          expression: "edAssemblePlaces.dissolution_station"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { placeholder: "填写地址", type: "text" },
+                      domProps: {
+                        value: _vm.edAssemblePlaces.dissolution_station
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edAssemblePlaces,
+                            "dissolution_station",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editAssemblePlace()
+                      }
+                    }
+                  },
+                  [_vm._v("确定")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewFlightShow,
+            callback: function($$v) {
+              _vm.isNewFlightShow = $$v
+            },
+            expression: "isNewFlightShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("航班信息")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.flight,
+                        expression: "newFlight.flight"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写航班信息" },
+                    domProps: { value: _vm.newFlight.flight },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newFlight, "flight", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("日期")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.date,
+                        expression: "newFlight.date"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "填写日期(yyyy-mm-dd)"
+                    },
+                    domProps: { value: _vm.newFlight.date },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newFlight, "date", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("出发时间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.takeoff_time,
+                        expression: "newFlight.takeoff_time"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写出发时间(hh:mm)" },
+                    domProps: { value: _vm.newFlight.takeoff_time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newFlight,
+                          "takeoff_time",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("到达时间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.arrival_time,
+                        expression: "newFlight.arrival_time"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写到达时间(hh:mm)" },
+                    domProps: { value: _vm.newFlight.arrival_time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newFlight,
+                          "arrival_time",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("出发站点")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.from,
+                        expression: "newFlight.from"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写出发站点" },
+                    domProps: { value: _vm.newFlight.from },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newFlight, "from", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("达到站点")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.to,
+                        expression: "newFlight.to"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写达到站点" },
+                    domProps: { value: _vm.newFlight.to },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newFlight, "to", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticStyle: { width: "100%", height: "50px" } }, [
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      width: "70px",
+                      "text-align": "center",
+                      display: "block",
+                      float: "left"
+                    }
+                  },
+                  [_vm._v("出发")]
+                ),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.newFlight.is_return,
+                      expression: "newFlight.is_return"
+                    }
+                  ],
+                  staticClass: "bigRadio",
+                  staticStyle: { float: "left" },
+                  attrs: { type: "radio", value: "0" },
+                  domProps: { checked: _vm._q(_vm.newFlight.is_return, "0") },
+                  on: {
+                    change: function($event) {
+                      return _vm.$set(_vm.newFlight, "is_return", "0")
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      width: "70px",
+                      "text-align": "center",
+                      display: "block",
+                      float: "left"
+                    }
+                  },
+                  [_vm._v("返回")]
+                ),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.newFlight.is_return,
+                      expression: "newFlight.is_return"
+                    }
+                  ],
+                  staticClass: "bigRadio",
+                  staticStyle: { float: "left" },
+                  attrs: { type: "radio", value: "1" },
+                  domProps: { checked: _vm._q(_vm.newFlight.is_return, "1") },
+                  on: {
+                    change: function($event) {
+                      return _vm.$set(_vm.newFlight, "is_return", "1")
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewFlight()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditFlightShow,
+            callback: function($$v) {
+              _vm.isEditFlightShow = $$v
+            },
+            expression: "isEditFlightShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("航班信息")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.flight,
+                        expression: "edFlight.flight"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写航班信息" },
+                    domProps: { value: _vm.edFlight.flight },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFlight, "flight", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("日期")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.date,
+                        expression: "edFlight.date"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "填写日期(yyyy-mm-dd)"
+                    },
+                    domProps: { value: _vm.edFlight.date },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFlight, "date", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("出发时间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.takeoff_time,
+                        expression: "edFlight.takeoff_time"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写出发时间(hh:mm)" },
+                    domProps: { value: _vm.edFlight.takeoff_time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edFlight,
+                          "takeoff_time",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("到达时间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.arrival_time,
+                        expression: "edFlight.arrival_time"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写到达时间(hh:mm)" },
+                    domProps: { value: _vm.edFlight.arrival_time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edFlight,
+                          "arrival_time",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("出发站点")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.from,
+                        expression: "edFlight.from"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写出发站点" },
+                    domProps: { value: _vm.edFlight.from },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFlight, "from", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("达到站点")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.to,
+                        expression: "edFlight.to"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写达到站点" },
+                    domProps: { value: _vm.edFlight.to },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFlight, "to", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticStyle: { width: "100%", height: "50px" } }, [
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      width: "70px",
+                      "text-align": "center",
+                      display: "block",
+                      float: "left"
+                    }
+                  },
+                  [_vm._v("出发")]
+                ),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.edFlight.is_return,
+                      expression: "edFlight.is_return"
+                    }
+                  ],
+                  staticClass: "bigRadio",
+                  staticStyle: { float: "left" },
+                  attrs: { type: "radio", value: "0" },
+                  domProps: { checked: _vm._q(_vm.edFlight.is_return, "0") },
+                  on: {
+                    change: function($event) {
+                      return _vm.$set(_vm.edFlight, "is_return", "0")
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      width: "70px",
+                      "text-align": "center",
+                      display: "block",
+                      float: "left"
+                    }
+                  },
+                  [_vm._v("返回")]
+                ),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.edFlight.is_return,
+                      expression: "edFlight.is_return"
+                    }
+                  ],
+                  staticClass: "bigRadio",
+                  staticStyle: { float: "left" },
+                  attrs: { type: "radio", value: "1" },
+                  domProps: { checked: _vm._q(_vm.edFlight.is_return, "1") },
+                  on: {
+                    change: function($event) {
+                      return _vm.$set(_vm.edFlight, "is_return", "1")
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editFlight()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewHotelShow,
+            callback: function($$v) {
+              _vm.isNewHotelShow = $$v
+            },
+            expression: "isNewHotelShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("酒店名称")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newHotel.hotel_name,
+                          expression: "newHotel.hotel_name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: { type: "text", placeholder: "酒店名称" },
+                      domProps: { value: _vm.newHotel.hotel_name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newHotel,
+                            "hotel_name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("入住日期")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHotel.check_at,
+                        expression: "newHotel.check_at"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "入住日期(yyyy-mm-dd)"
+                    },
+                    domProps: { value: _vm.newHotel.check_at },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newHotel, "check_at", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("离开日期")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHotel.leave_at,
+                        expression: "newHotel.leave_at"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "离开日期(yyyy-mm-dd)"
+                    },
+                    domProps: { value: _vm.newHotel.leave_at },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newHotel, "leave_at", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("几晚")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHotel.times,
+                        expression: "newHotel.times"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "几晚(1-N)" },
+                    domProps: { value: _vm.newHotel.times },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newHotel, "times", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("联系电话")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHotel.hotel_phone,
+                        expression: "newHotel.hotel_phone"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "联系电话" },
+                    domProps: { value: _vm.newHotel.hotel_phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newHotel,
+                          "hotel_phone",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%", height: "120px" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("酒店地址")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newHotel.hotel_address,
+                          expression: "newHotel.hotel_address"
+                        }
+                      ],
+                      staticClass: "item_area",
+                      attrs: { placeholder: "酒店地址" },
+                      domProps: { value: _vm.newHotel.hotel_address },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newHotel,
+                            "hotel_address",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewHotel()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditHotelShow,
+            callback: function($$v) {
+              _vm.isEditHotelShow = $$v
+            },
+            expression: "isEditHotelShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("酒店名称")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edHotel.hotel_name,
+                          expression: "edHotel.hotel_name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: { type: "text", placeholder: "酒店名称" },
+                      domProps: { value: _vm.edHotel.hotel_name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edHotel,
+                            "hotel_name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("入住日期")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.check_at,
+                        expression: "edHotel.check_at"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "入住日期(yyyy-mm-dd)"
+                    },
+                    domProps: { value: _vm.edHotel.check_at },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHotel, "check_at", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("离开日期")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.leave_at,
+                        expression: "edHotel.leave_at"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "离开日期(yyyy-mm-dd)"
+                    },
+                    domProps: { value: _vm.edHotel.leave_at },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHotel, "leave_at", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("几晚")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.times,
+                        expression: "edHotel.times"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "几晚(1-N)" },
+                    domProps: { value: _vm.edHotel.times },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHotel, "times", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("联系电话")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.hotel_phone,
+                        expression: "edHotel.hotel_phone"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "联系电话" },
+                    domProps: { value: _vm.edHotel.hotel_phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHotel,
+                          "hotel_phone",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%", height: "120px" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("酒店地址")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edHotel.hotel_address,
+                          expression: "edHotel.hotel_address"
+                        }
+                      ],
+                      staticClass: "item_area",
+                      attrs: { placeholder: "酒店地址" },
+                      domProps: { value: _vm.edHotel.hotel_address },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edHotel,
+                            "hotel_address",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editHotel()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewLeadTeacherShow,
+            callback: function($$v) {
+              _vm.isNewLeadTeacherShow = $$v
+            },
+            expression: "isNewLeadTeacherShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("老师姓名")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newLeadTeacher.leader,
+                        expression: "newLeadTeacher.leader"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "老师姓名" },
+                    domProps: { value: _vm.newLeadTeacher.leader },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newLeadTeacher,
+                          "leader",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("老师电话")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newLeadTeacher.phone,
+                        expression: "newLeadTeacher.phone"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "老师电话" },
+                    domProps: { value: _vm.newLeadTeacher.phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newLeadTeacher,
+                          "phone",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("职责")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newLeadTeacher.duty,
+                          expression: "newLeadTeacher.duty"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: { type: "text", placeholder: "职责" },
+                      domProps: { value: _vm.newLeadTeacher.duty },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newLeadTeacher,
+                            "duty",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewLeadTeacher()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditLeadTeacherShow,
+            callback: function($$v) {
+              _vm.isEditLeadTeacherShow = $$v
+            },
+            expression: "isEditLeadTeacherShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("老师姓名")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edLeadTeacher.leader,
+                        expression: "edLeadTeacher.leader"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "老师姓名" },
+                    domProps: { value: _vm.edLeadTeacher.leader },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edLeadTeacher,
+                          "leader",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("老师电话")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edLeadTeacher.phone,
+                        expression: "edLeadTeacher.phone"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "老师电话" },
+                    domProps: { value: _vm.edLeadTeacher.phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edLeadTeacher,
+                          "phone",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("职责")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edLeadTeacher.duty,
+                          expression: "edLeadTeacher.duty"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: { type: "text", placeholder: "职责" },
+                      domProps: { value: _vm.edLeadTeacher.duty },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edLeadTeacher,
+                            "duty",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editLeadTeacher()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditBadWeatherShow,
+            callback: function($$v) {
+              _vm.isEditBadWeatherShow = $$v
+            },
+            expression: "isEditBadWeatherShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%", height: "120px" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("安排")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edBadWeather.urgency,
+                          expression: "edBadWeather.urgency"
+                        }
+                      ],
+                      staticClass: "item_area",
+                      attrs: { placeholder: "安排" },
+                      domProps: { value: _vm.edBadWeather.urgency },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edBadWeather,
+                            "urgency",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editBadWeather()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
+      [
+        _c("li", { staticClass: "active", attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#gather",
+                "aria-controls": "gather",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("集合解散")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#flight",
+                "aria-controls": "flight",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("航班往返")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#accommodationInfo",
+                "aria-controls": "accommodationInfo",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("住宿资料")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#leaderTeacher",
+                "aria-controls": "leaderTeacher",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("领队老师")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#heavyWeather",
+                "aria-controls": "heavyWeather",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("恶劣天气安排")]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "gather_info" }, [
+      _c("div", { staticClass: "gather_info_title" }, [
+        _c("span", [_vm._v("集合")]),
+        _c("hr")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "gather_info" }, [
+      _c("div", { staticClass: "gather_info_title" }, [
+        _c("span", [_vm._v("解散")]),
+        _c("hr")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-d6416b4e", module.exports)
+  }
+}
+
+/***/ }),
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(426)
+}
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(428)
+/* template */
+var __vue_template__ = __webpack_require__(429)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Answer.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3f387496", Component.options)
+  } else {
+    hotAPI.reload("data-v-3f387496", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 426 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(427);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("70ad34a1", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3f387496\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./Answer.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3f387496\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./Answer.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 427 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 428 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 429 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("router-view")
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-3f387496", module.exports)
+  }
+}
+
+/***/ }),
+/* 430 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(431)
+}
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(433)
+/* template */
+var __vue_template__ = __webpack_require__(434)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/databank/DataBankAnswerList.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4b0dc36e", Component.options)
+  } else {
+    hotAPI.reload("data-v-4b0dc36e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 431 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(432);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("411ca4ac", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4b0dc36e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankAnswerList.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4b0dc36e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankAnswerList.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 432 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.dataBank_input_form>table{margin-top: 20px;width: 90%;\n}\n.dataBank_input_form table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form thead{background-color: #ffde01;\n}\n.dataBank_input_form td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item_house{width: 100%;min-height:100px;\n}\n.form_item_house>div{height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon:hover{cursor: pointer;\n}\n.editIcon>img{width:25px;height:25px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}    \n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 433 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            houses: [],
+            // newHouse:{
+            //     house_number:'',
+            //     house_class:'',
+            //     house_name:'',
+            // },
+            edHouse: {
+                house_room: '',
+                house_class: '',
+                house_name: '',
+                id: '',
+                user_id: '',
+                index: ''
+            },
+            // isNewHouseShow:false,
+            isEditHouseShow: false
+        };
+    },
+
+    mounted: function mounted() {
+        this.getHouses();
+    },
+    methods: {
+        getHouses: function getHouses() {
+            var _this = this;
+
+            // 获取分房表信息
+            this.$ajax({
+                method: 'GET',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/groups?include=user.student'
+            }).then(function (res) {
+                // console.log(res.data);
+                _this.houses = res.data.data;
+            }).catch(function (err) {
+                _this.$toast('获取失败');
+                console.log(err);
+            });
+        },
+
+        // addNewHouseShow(){
+        //      this.isNewHouseShow=true;
+        // },
+        // addNewHouse(){
+        //     //新增房间
+        //      this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',this.newHouse,
+        //     {
+        //         headers: {
+        //             "Authorization": 'Bearer '+sessionStorage.token,
+        //         }
+        //     }).then(res => {
+        //         // console.log(res.data);
+        //         this.$toast('添加成功');
+        //         this.getHouses();
+        //         this.isNewHouseShow=false;
+        //         this.newHouse.house_number='';
+        //         this.newHouse.house_class='';
+        //         this.newHouse.house_name='';
+        //     }).catch(err => {
+        //         this.$toast('添加失败');
+        //         console.log(err)
+        //     });
+        // },
+        editHouseShow: function editHouseShow(index) {
+            this.edHouse.id = this.houses[index].id;
+            this.edHouse.user_id = this.houses[index].user_id;
+            this.edHouse.house_room = this.houses[index].room;
+            this.edHouse.house_class = this.houses[index].class;
+            this.edHouse.house_name = this.houses[index].user.name;
+            this.edHouse.index = index;
+            this.isEditHouseShow = true;
+        },
+        editHouse: function editHouse() {
+            var _this2 = this;
+
+            // 修改房间表信息
+            this.$ajax({
+                method: 'PATCH',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    room: this.edHouse.house_room,
+                    class: this.edHouse.house_class,
+                    name: this.edHouse.house_name
+                },
+                // /api/users/:user/travels/:travel/groups/:group
+                url: this.$config + '/api/users/' + this.edHouse.user_id + '/travels/' + sessionStorage.actTravelId + '/groups/' + this.edHouse.id
+            }).then(function (res) {
+                if (res.status == 200) {
+                    _this2.houses[_this2.edHouse.index].room = _this2.edHouse.house_room;
+                    _this2.houses[_this2.edHouse.index].class = _this2.edHouse.house_class;
+                    _this2.houses[_this2.edHouse.index].user.name = _this2.edHouse.house_name;
+                    _this2.$toast('修改成功');
+                    _this2.isEditHouseShow = false;
+                } else {
+                    _this2.$toast('修改失败');
+                }
+            }).catch(function (err) {
+                _this2.$toast('修改失败');
+                console.log(err);
+            });
+        },
+        delHouse: function delHouse(userId, houseId) {
+            var _this3 = this;
+
+            // 删除分房信息
+            this.$dialog.confirm({
+                title: '删除分房表信息',
+                message: '是否删除该分房'
+            }).then(function () {
+                _this3.$ajax({
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": 'Bearer ' + sessionStorage.token
+                    },
+                    url: _this3.$config + '/api/users/' + userId + '/travels/' + sessionStorage.actTravelId + '/groups/' + houseId
+                }).then(function (res) {
+                    // console.log(res);
+                    if (res.status == 204) {
+                        _this3.getHouses();
+                        _this3.$toast('删除成功');
+                    } else {
+                        _this3.$toast('删除失败');
+                    }
+                }).catch(function (err) {
+                    _this3.$toast('删除失败');
+                    console.log(err);
+                });
+            }).catch(function (err) {});
+        }
+    }
+});
+
+/***/ }),
+/* 434 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c("table", [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.houses, function(house, index) {
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(house.room))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(house.class))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(house.user.name))]),
+                _vm._v(" "),
+                _c("td", { attrs: { width: "100px" } }, [
+                  _c("div", { staticClass: "editIcon" }, [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/edit.png" },
+                      on: {
+                        click: function($event) {
+                          return _vm.editHouseShow(index)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "editIcon" }, [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/dele.png" },
+                      on: {
+                        click: function($event) {
+                          return _vm.delHouse(house.user_id, house.id)
+                        }
+                      }
+                    })
+                  ])
+                ])
+              ])
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          staticStyle: { "border-radius": "15px" },
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditHouseShow,
+            callback: function($$v) {
+              _vm.isEditHouseShow = $$v
+            },
+            expression: "isEditHouseShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_house" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("房间")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHouse.house_room,
+                        expression: "edHouse.house_room"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "填写房间编号", type: "text" },
+                    domProps: { value: _vm.edHouse.house_room },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHouse, "house_room", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_house" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("班级")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHouse.house_class,
+                        expression: "edHouse.house_class"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "填写班级", type: "text" },
+                    domProps: { value: _vm.edHouse.house_class },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHouse,
+                          "house_class",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_house" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("学生姓名")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHouse.house_name,
+                        expression: "edHouse.house_name"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "填写学生姓名", type: "text" },
+                    domProps: { value: _vm.edHouse.house_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHouse, "house_name", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editHouse()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("房间编号")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("班级")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("学生姓名")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("编辑")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-4b0dc36e", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

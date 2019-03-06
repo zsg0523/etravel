@@ -107,9 +107,27 @@
                 <div class="form_item_pro">
                     <div class="item_title">出行日期<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
                     <div>
+                        <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_at">
+                    </div>
+                </div>
+                <div class="form_item_pro">
+                    <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
+                    <div>
+                        <input class="item_input" placeholder="回程日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_return">
+                    </div>
+                </div>
+                <!-- <div class="form_item_pro">
+                    <div class="item_title">出行日期<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
+                    <div>
                         <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_at" readonly="readonly" @click="pickTimeShow('newTravel')">
                     </div>
                 </div>
+                <div class="form_item_pro">
+                    <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
+                    <div>
+                        <input class="item_input" placeholder="回程日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
+                    </div>
+                </div> -->
                 <div class="form_item_pro">
                     <div class="item_title">项目简介<span class="err" v-if="errors.travel_introduction" v-text="errors.travel_introduction[0]"></span></div>
                     <div>
@@ -131,9 +149,27 @@
                 <div class="form_item_pro">
                     <div class="item_title">出行日期</div>
                     <div>
+                        <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="edTravel.travel_at">
+                    </div>
+                </div>
+                <div class="form_item_pro">
+                    <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
+                    <div>
+                        <input class="item_input" placeholder="回程日期（例:1979-01-01）" type="text"  v-model="edTravel.travel_return">
+                    </div>
+                </div>
+                <!-- <div class="form_item_pro">
+                    <div class="item_title">出行日期</div>
+                    <div>
                         <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="edTravel.travel_at" readonly="readonly" @click="pickTimeShow('edTravel')">
                     </div>
                 </div>
+                <div class="form_item_pro">
+                    <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
+                    <div>
+                        <input class="item_input" placeholder="回程日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
+                    </div>
+                </div> -->
                 <div class="form_item_pro">
                     <div class="item_title">项目简介</div>
                     <div>
@@ -143,7 +179,7 @@
                 <button @click="editTravel()">确定</button>
             </div>
         </van-popup>
-        <van-popup v-model="isPickTimeShow" :overlay="true" style="border-radius: 15px;"> 
+       <!--  <van-popup v-model="isPickTimeShow" :overlay="true" style="border-radius: 15px;"> 
             <div class="addNewTravel disflex">
                 <van-datetime-picker
                     v-model="currentDate"
@@ -154,7 +190,7 @@
                     @cancel="pickTimeCancel()"
                     @confirm="pickTimeConfirm()"/>
             </div>
-        </van-popup>
+        </van-popup> -->
     </div>
 </template>
 
@@ -170,21 +206,23 @@
                 newTravel:{
                     travel_name:'',
                     travel_at:'',
+                    travel_return:'',
                     travel_introduction:'',
                 },
                 edTravel:{
                     travel_name:'',
                     travel_at:'',
+                    travel_return:'',
                     travel_introduction:'',
                 },
                 edTravelId:'',
                 edTravelIndex:'',
                 errors:{},
-                isPickTimeShow:false,
-                currentDate:new Date(),
-                minDate:new Date(1999,1,1),
-                maxDate:new Date(2200,1,1),
-                actDate:'',
+                // isPickTimeShow:false,
+                // currentDate:new Date(),
+                // minDate:new Date(1999,1,1),
+                // maxDate:new Date(2200,1,1),
+                // actDate:'',
             }
         },
         mounted:function(){
@@ -225,6 +263,7 @@
                 this.$post(this.$config+'/api/travels',{
                     travel_name:this.newTravel.travel_name,
                     travel_at:this.newTravel.travel_at,
+                    travel_return:this.newTravel.travel_return,
                     travel_introduction:this.newTravel.travel_introduction, 
                 },
                 {
@@ -238,6 +277,7 @@
                     this.$toast('添加成功');
                     this.newTravel.travel_name='';
                     this.newTravel.travel_at='';
+                    this.newTravel.travel_return='';
                     this.newTravel.travel_introduction='';
                 }).catch(err => {
                     this.$toast('添加失败');
@@ -280,6 +320,7 @@
                 this.edTravelIndex=index;
                 this.edTravel.travel_name=this.travels[index].travel_name;
                 this.edTravel.travel_at=this.travels[index].travel_at;
+                this.edTravel.travel_return=this.travels[index].travel_return;
                 this.edTravel.travel_introduction=this.travels[index].introduction;
                 this.isEditPopupShow=true;
             },
@@ -297,6 +338,7 @@
                     data:{
                         travel_name:this.edTravel.travel_name,
                         travel_at:this.edTravel.travel_at,
+                        travel_return:this.edTravel.travel_return,
                         travel_introduction:this.edTravel.travel_introduction,
                     },
                     url: this.$config+'/api/travels/'+this.edTravelId,
@@ -305,6 +347,7 @@
                     if(res.status==200){
                         this.travels[this.edTravelIndex].travel_name=this.edTravel.travel_name;
                         this.travels[this.edTravelIndex].travel_at=this.edTravel.travel_at;
+                        this.travels[this.edTravelIndex].travel_return=this.edTravel.travel_return;
                         this.travels[this.edTravelIndex].introduction=this.edTravel.travel_introduction;
                         // this.getUserTravels();
                         this.$toast('修改成功');
@@ -319,39 +362,39 @@
                 });
 
             },
-            pickTimeShow(str){
-                this.isPickTimeShow=true;
-                this.actDate=str;
-            },
-            pickTimeCancel(){
-                this.isPickTimeShow=false;
-            },
-            pickTimeConfirm(){
-                this.isPickTimeShow=false;
-                if(this.actDate=='newTravel'){
-                    this.newTravel.travel_at=this.formatDate(this.currentDate); 
-                }else if(this.actDate=='edTravel'){
-                    this.edTravel.travel_at=this.formatDate(this.currentDate); 
-                }
-                this.currentDate=new Date();
-            },
-            formatter(type, value) {
-          　　  if (type === 'year') {
-            　　    return value+'年';
-          　　  } else if (type === 'month') {
-          　　      return value+'月'
-          　　  } else if (type === 'day') {
-            　　    return value+'日'
-          　　  } 
-          　　  return value;
-        　　},
-            formatDate(obj){
-                var date =  new Date(obj);
-                var y = 1900+date.getYear();
-                var m = "0"+(date.getMonth()+1);
-                var d = "0"+date.getDate();
-                return y+"-"+m.substring(m.length-2,m.length)+"-"+d.substring(d.length-2,d.length);
-            }
+        //     pickTimeShow(str){
+        //         this.isPickTimeShow=true;
+        //         this.actDate=str;
+        //     },
+        //     pickTimeCancel(){
+        //         this.isPickTimeShow=false;
+        //     },
+        //     pickTimeConfirm(){
+        //         this.isPickTimeShow=false;
+        //         if(this.actDate=='newTravel'){
+        //             this.newTravel.travel_at=this.formatDate(this.currentDate); 
+        //         }else if(this.actDate=='edTravel'){
+        //             this.edTravel.travel_at=this.formatDate(this.currentDate); 
+        //         }
+        //         this.currentDate=new Date();
+        //     },
+        //     formatter(type, value) {
+        //   　　  if (type === 'year') {
+        //     　　    return value+'年';
+        //   　　  } else if (type === 'month') {
+        //   　　      return value+'月'
+        //   　　  } else if (type === 'day') {
+        //     　　    return value+'日'
+        //   　　  } 
+        //   　　  return value;
+        // 　　},
+        //     formatDate(obj){
+        //         var date =  new Date(obj);
+        //         var y = 1900+date.getYear();
+        //         var m = "0"+(date.getMonth()+1);
+        //         var d = "0"+date.getDate();
+        //         return y+"-"+m.substring(m.length-2,m.length)+"-"+d.substring(d.length-2,d.length);
+        //     }
         },
     }
 </script>
