@@ -57,6 +57,11 @@ class Travel extends Model
         return $this->hasMany(Route::class);
     }
 
+    public function studies()
+    {
+        return $this->hasManyThrough(Study::class, Route::class);
+    }
+
     public function summaries()
     {
         return $this->hasMany(Write::class);
