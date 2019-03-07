@@ -19,7 +19,7 @@ class CreateWritesTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->integer('travel_id')->unsigned()->index();
             $table->string('image')->nullable();
-            $table->string('content');
+            $table->text('content');
             $table->timestamps();
         });
     }
