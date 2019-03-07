@@ -15,15 +15,14 @@ class SceneryRequest extends FormRequest
             case 'POST':
                 return [
                     'time' => 'required',
-                    'content' => 'required|string',
-                    'description' => 'required|string'
+                    'content' => 'required',
+                    'description' => 'required'
                 ];
                 break;
             
             case 'PATCH':
                 return [
                     'time' => 'string',
-                    'content' => 'string',
                     'description' => 'string'
                 ];
                 break;

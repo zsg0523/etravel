@@ -18,7 +18,7 @@ class CreateStudiesTable extends Migration
             $table->integer('route_id')->unsigned()->index();
             $table->string('image')->nullable();
             $table->string('title')->index();
-            $table->string('body');
+            $table->text('body');
             $table->timestamps();
         });
     }
