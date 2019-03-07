@@ -268,6 +268,8 @@ $api->version('v1', [
 			$api->get('routes/{route}/studies','StudiesController@routeIndex')->name('api.routes.studies.index');
 			// 旅游下所有学习工作纸
 			$api->get('travels/{travel}/studies', 'StudiesController@travelIndex')->name('api.travels.studies.index');
+			// 旅游下某用户学习工作纸
+			$api->get('travels/{travel}/users/{user}/studies', 'StudiesController@travelUserIndex')->name('api.travels.users.studies.index');
 			// 工作纸详情
 			$api->get('routes/{route}/studies/{study}','StudiesController@show')->name('api.routes.studies.show'); 
 			// 创建工作纸
