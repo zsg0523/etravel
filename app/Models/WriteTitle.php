@@ -13,4 +13,9 @@ class WriteTitle extends Model
     {
     	return $this->belongsTo(Travel::class);
     }
+
+    public function writes()
+    {
+    	return $this->hasMany(Write::class);
+    }
 }
