@@ -34,7 +34,7 @@
                             <div class="coins_img"></div>
                             <div class="coins_info">
                                 <p class="fonts">您的剩余金币</p>
-                                <span class="num">5</span>
+                                <span class="num">{{userInfo.tokens}}</span>
                                 <a href=""><div class="pay">充值</div></a>
                             </div>
                         </div>
@@ -47,7 +47,31 @@
 </template>
 
 <script>
-  	export default {
-
-  	}
+    export default {
+        data() {
+            return {
+                userInfo:{},
+            }
+        },
+        mounted:function(){
+            this.getUserInfo();
+        },
+        methods:{
+            getUserInfo(){
+                // 获取用户基本信息
+                this.$get(this.$config+'/api/user?include=student.school',
+                {
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    }
+                }).then(res => {
+                    // console.log(res.data);
+                    this.userInfo=res.data;
+                }).catch(err => {
+                    console.log(err);
+                    this.$toast('获取失败');
+                });
+            },
+        },
+    }
 </script>

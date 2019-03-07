@@ -125,7 +125,7 @@
                         <div>
                             <select id="edTypeId" v-model="edInformation.sex">
                                 <option value="">--请选择--</option>
-                                <option v-for="item in optList" value="item.value">{{ item.name }}</option>
+                                <option v-for="item in optList" :value="item.value">{{ item.name }}</option>
                             </select>
                         </div>
                     </div>

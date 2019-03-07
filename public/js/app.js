@@ -23005,7 +23005,7 @@ var render = function() {
       _c("div", { staticClass: "info disflex" }, [
         _c("div", [_vm._v(_vm._s(_vm.userInfo.name))]),
         _vm._v(" "),
-        _c("div", [_vm._v("积分：0")])
+        _c("div", [_vm._v("金幣：" + _vm._s(_vm.userInfo.tokens))])
       ]),
       _vm._v(" "),
       _c(
@@ -27909,7 +27909,7 @@ var render = function() {
                         _vm._l(_vm.optList, function(item) {
                           return _c(
                             "option",
-                            { attrs: { value: "item.value" } },
+                            { domProps: { value: item.value } },
                             [_vm._v(_vm._s(item.name))]
                           )
                         })
@@ -28618,7 +28618,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            userInfo: {}
+        };
+    },
+
+    mounted: function mounted() {
+        this.getUserInfo();
+    },
+    methods: {
+        getUserInfo: function getUserInfo() {
+            var _this = this;
+
+            // 获取用户基本信息
+            this.$get(this.$config + '/api/user?include=student.school', {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this.userInfo = res.data;
+            }).catch(function (err) {
+                console.log(err);
+                _this.$toast('获取失败');
+            });
+        }
+    }
+});
 
 /***/ }),
 /* 149 */
@@ -28628,35 +28656,37 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticStyle: { width: "100%" } }, [
+    _c("div", { staticClass: "personal_input_form disflex" }, [
+      _c("div", { staticClass: "pane_content_promise" }, [
+        _c("div", { staticClass: "form_content disflex" }, [
+          _c("div", { staticClass: "personal_right" }, [
+            _c("div", { staticClass: "coins_center" }, [
+              _c("div", { staticClass: "coins_img" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "coins_info" }, [
+                _c("p", { staticClass: "fonts" }, [_vm._v("您的剩余金币")]),
+                _vm._v(" "),
+                _c("span", { staticClass: "num" }, [
+                  _vm._v(_vm._s(_vm.userInfo.tokens))
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticStyle: { width: "100%" } }, [
-      _c("div", { staticClass: "personal_input_form disflex" }, [
-        _c("div", { staticClass: "pane_content_promise" }, [
-          _c("div", { staticClass: "form_content disflex" }, [
-            _c("div", { staticClass: "personal_right" }, [
-              _c("div", { staticClass: "coins_center" }, [
-                _c("div", { staticClass: "coins_img" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "coins_info" }, [
-                  _c("p", { staticClass: "fonts" }, [_vm._v("您的剩余金币")]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "num" }, [_vm._v("5")]),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: "" } }, [
-                    _c("div", { staticClass: "pay" }, [_vm._v("充值")])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
+    return _c("a", { attrs: { href: "" } }, [
+      _c("div", { staticClass: "pay" }, [_vm._v("充值")])
     ])
   }
 ]
@@ -40563,7 +40593,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content_sheet{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journeyInfo{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.toNext{width:30px;height: 30px;text-align: center;line-height: 30px;float: right;margin-right: 15px;margin-top: 13px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox{width:600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left:20%;background-color:#ffde01;font-size:16px;border-radius: 8px;border:none;outline:none;\n}\n.editBtnGroup_journeyInfo{width:94%;height:50px;line-height:50px;\n}\n.editBtnGroup_journeyInfo>img{width:40px;height:40px;margin-left:25px;float:right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_sheet{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content_sheet{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journeyInfo{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.toNext{width:30px;height: 30px;text-align: center;line-height: 30px;float: right;margin-right: 15px;margin-top: 13px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox{width:600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left:20%;background-color:#ffde01;font-size:16px;border-radius: 8px;border:none;outline:none;\n}\n.editBtnGroup_journeyInfo{width:94%;height:50px;line-height:50px;\n}\n.editBtnGroup_journeyInfo>img{width:40px;height:40px;margin-left:25px;float:right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
 
 // exports
 
@@ -40574,6 +40604,8 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__);
 //
 //
 //
@@ -40680,7 +40712,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        Editor: __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue___default.a
+    },
     data: function data() {
         return {
             sheets: [],
@@ -40695,7 +40732,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 index: ''
             },
             isNewSheetShow: false,
-            isEditSheetShow: false
+            isEditSheetShow: false,
+            status: ''
         };
     },
 
@@ -40723,6 +40761,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         addNewSheetShow: function addNewSheetShow() {
             this.isNewSheetShow = true;
+            this.status = 'newSheet';
         },
         addNewSheet: function addNewSheet() {
             var _this2 = this;
@@ -40750,6 +40789,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edSheet.body = this.sheets[index].body;
             this.edSheet.index = index;
             this.isEditSheetShow = true;
+            this.status = 'edSheet';
         },
         editSheet: function editSheet() {
             var _this3 = this;
@@ -40806,6 +40846,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     console.log(err);
                 });
             }).catch(function (err) {});
+        },
+        catchData: function catchData(value) {
+            if (this.status == 'newSheet') {
+                this.newSheet.body = value;
+            } else if (this.status == 'edSheet') {
+                this.edSheet.body = value;
+            }
         }
     }
 });
@@ -40841,7 +40888,7 @@ var render = function() {
       _c("div", { staticClass: "dataBank_input_form disflex" }, [
         _c(
           "div",
-          { staticClass: "pane_content" },
+          { staticClass: "pane_content_sheet" },
           _vm._l(_vm.sheets, function(sheet, index) {
             return _c("div", { staticClass: "form_content_sheet disflex" }, [
               _c("div", { staticClass: "form_item_journeyInfo" }, [
@@ -40876,13 +40923,15 @@ var render = function() {
               _c("div", { staticClass: "form_item_journeyInfo" }, [
                 _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
                 _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    staticClass: "item_area",
-                    attrs: { disabled: "disabled", placeholder: "内容" },
-                    domProps: { value: sheet.body }
-                  })
-                ])
+                _c("div", {
+                  staticStyle: {
+                    border: "1px solid #ccc",
+                    "border-radius": "8px",
+                    width: "93%",
+                    "background-color": "#eeeeee"
+                  },
+                  domProps: { innerHTML: _vm._s(sheet.body) }
+                })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "editBtnGroup_journeyInfo" }, [
@@ -40970,29 +41019,16 @@ var render = function() {
               _c("div", { staticClass: "form_item_journeyInfo" }, [
                 _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
                 _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newSheet.body,
-                        expression: "newSheet.body"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "内容" },
-                    domProps: { value: _vm.newSheet.body },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newSheet, "body", $event.target.value)
-                      }
-                    }
-                  })
-                ])
+                _c(
+                  "div",
+                  [
+                    _c("Editor", {
+                      attrs: { childData: _vm.newSheet.body },
+                      on: { catchData: _vm.catchData }
+                    })
+                  ],
+                  1
+                )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "issure" }, [
@@ -41060,29 +41096,16 @@ var render = function() {
               _c("div", { staticClass: "form_item_journeyInfo" }, [
                 _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
                 _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edSheet.body,
-                        expression: "edSheet.body"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "内容" },
-                    domProps: { value: _vm.edSheet.body },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edSheet, "body", $event.target.value)
-                      }
-                    }
-                  })
-                ])
+                _c(
+                  "div",
+                  [
+                    _c("Editor", {
+                      attrs: { childData: _vm.edSheet.body },
+                      on: { catchData: _vm.catchData }
+                    })
+                  ],
+                  1
+                )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "issure" }, [
@@ -41202,7 +41225,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_sheetInfo{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content_sheetInfo{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_sheetInfo{width: 100%;min-height:90px;\n}\n.form_item_sheetInfo>div{min-height:45px;line-height: 45px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_input_sheetInfo{height:45px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.item_area_sheetInfo{width:100%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.item_title_icon>img{height:25px;margin-left:5px;\n}\n.item_title_icon>img:hover{cursor: pointer;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox_sheetInfo{width: 600px;min-height:160px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_sheetInfo{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content_sheetInfo{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_sheetInfo{width: 100%;min-height:90px;\n}\n.form_item_sheetInfo>div{min-height:45px;line-height: 45px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_input_sheetInfo{height:45px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.item_area_sheetInfo{width:100%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.item_title_icon>img{height:25px;margin-left:5px;\n}\n.item_title_icon>img:hover{cursor: pointer;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox_sheetInfo{width: 600px;min-height:160px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
 
 // exports
 
@@ -41213,6 +41236,7 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -41502,13 +41526,14 @@ var render = function() {
               _c("div", { staticClass: "form_item_sheetInfo" }, [
                 _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
                 _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    staticClass: "item_area_sheetInfo",
-                    attrs: { placeholder: "内容", disabled: "disabled" },
-                    domProps: { value: _vm.sheet.body }
-                  })
-                ])
+                _c("div", {
+                  staticStyle: {
+                    border: "1px solid #ccc",
+                    "border-radius": "8px",
+                    "background-color": "#eeeeee"
+                  },
+                  domProps: { innerHTML: _vm._s(_vm.sheet.body) }
+                })
               ]),
               _vm._v(" "),
               _vm._l(_vm.sheetInfos, function(sheetInfo, index) {
@@ -49390,7 +49415,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             evaluationInfos: [],
             eval: '',
-            optList: [{ value: '1', title: '勾选' }, { value: '2', title: '判断' }, { value: '3', title: '星级' }],
+            optList: [{ value: '1', title: '1' }, { value: '2', title: '1' }, { value: '3', title: '1' }],
             newEvaluationInfo: {
                 content: '',
                 type: ''
@@ -49695,7 +49720,11 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _vm._l(_vm.optList, function(item) {
-                        return _c("option", [_vm._v(_vm._s(item))])
+                        return _c(
+                          "option",
+                          { domProps: { value: item.value } },
+                          [_vm._v(_vm._s(item.title))]
+                        )
                       })
                     ],
                     2
@@ -49806,14 +49835,14 @@ var render = function() {
                       }
                     },
                     [
-                      _c("option", { attrs: { value: "0" } }, [
+                      _c("option", { attrs: { value: "" } }, [
                         _vm._v("--请选择--")
                       ]),
                       _vm._v(" "),
                       _vm._l(_vm.optList, function(item) {
                         return _c(
                           "option",
-                          { attrs: { value: "item.value" } },
+                          { domProps: { value: item.value } },
                           [_vm._v(_vm._s(item.title))]
                         )
                       })
@@ -50594,7 +50623,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.dataBank_input_form>table{width: 90%;\n}\n.dataBank_input_form table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form thead{background-color: #ffde01;\n}\n.dataBank_input_form td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item_group{width: 100%;min-height:100px;\n}\n.form_item_group>div{height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon:hover{cursor: pointer;\n}\n.editIcon>img{width:25px;height:25px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}    \n", ""]);
+exports.push([module.i, "\n.dataBank_input_answer{width: 100%;min-height:650px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column; font-size: 16px;\n}\n.dataBank_input_answer>table{width: 90%;\n}\n.dataBank_input_answer table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_answer table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_answer td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item_group{width: 100%;min-height:100px;\n}\n.form_item_group>div{height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon:hover{cursor: pointer;\n}\n.editIcon>img{width:25px;height:25px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.listTitle{width:90%;height:45px;line-height:45px;text-align:center;background-color:#ffde01;font-size:18px;margin-top:20px;border-radius-topleft: 15px;border-radius-topright: 15px;\n}\n.van-dialog{width:50%;\n}    \n", ""]);
 
 // exports
 
@@ -50605,9 +50634,6 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -50713,7 +50739,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticStyle: { width: "100%" } }, [
-    _c("div", { staticClass: "dataBank_input_form disflex" }, [
+    _c("div", { staticClass: "dataBank_input_answer disflex" }, [
+      _c("div", { staticClass: "listTitle" }, [_vm._v("學生名單")]),
+      _vm._v(" "),
       _c("table", [
         _vm._m(0),
         _vm._v(" "),
@@ -50742,7 +50770,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("查看>")]
+                [_vm._v("查看答題紙>")]
               )
             ])
           }),
@@ -50758,8 +50786,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", [
-      _c("tr", [_c("th", [_vm._v("學生名單")])]),
-      _vm._v(" "),
       _c("tr", [
         _c("th", [_vm._v("編號")]),
         _vm._v(" "),
@@ -50771,7 +50797,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("學生職責")]),
         _vm._v(" "),
-        _c("th", [_vm._v("查看")])
+        _c("th", [_vm._v("查看答題紙")])
       ])
     ])
   }
@@ -50871,7 +50897,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.tab-pane{position: relative;\n}\n.pane_content_info{width:70%;margin-left: 15%;height:auto;margin: 0 auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info{width:100%;height: auto;\n}\n.gather_info_title{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_info{width: 50%;height:100px;\n}\n.form_item_info>div{width: 96%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.bigRadio{width:20px;height:20px;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.active{font-size: 18px;\n}\n.tab-pane{width:70%;margin-left: 15%;\n}\n.back_icon{width:45px;height:45px;line-height: 45px;\n}\n.back_icon>img{width:28px;height: 28px;\n}\n.sheetGroup{width:100%;height:auto;\n}\n.sheetTitle{width:100%;height:45px;line-height: 45px;font-size: 16px;font-weight: bold;\n}\n.sheetContent{width:100%;min-height:50px;\n}\n.sheetQuestion{width:100%;height:auto;\n}\n.questTitle{width:100%;height:45px;line-height: 45px;font-size: 16px;\n}\n", ""]);
 
 // exports
 
@@ -50958,111 +50984,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            assemblePlaces: [],
+            sheetInfos: [],
             flights: [],
             hotels: []
         };
     },
 
     mounted: function mounted() {
-        this.getAssemblePlaces();
-        this.getFlights();
-        this.getHotels();
+        // this.getAssemblePlaces();
+        // this.getFlights();
+        // this.getHotels();
+
     },
     methods: {
         getAssemblePlaces: function getAssemblePlaces() {
@@ -51131,215 +51067,42 @@ var render = function() {
   return _c("div", { staticStyle: { width: "100%" } }, [
     _c("div", { staticClass: "dataBank_input_form disflex" }, [
       _c("div", { staticClass: "tablist" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "tab-content" }, [
+        _c("ul", { staticClass: "nav nav-tabs", attrs: { role: "tablist" } }, [
           _c(
-            "div",
+            "li",
             {
-              staticClass: "tab-pane active",
-              attrs: { role: "tabpanel", id: "gather" }
+              staticStyle: { width: "50px", height: "45px" },
+              attrs: { role: "presentation" }
             },
             [
-              _c("div", { staticClass: "pane_content_info" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_content disflex" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "form_item_info",
-                      staticStyle: { width: "100%" }
-                    },
-                    [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("日期及时间")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.assemblePlaces.assembly_at,
-                              expression: "assemblePlaces.assembly_at"
-                            }
-                          ],
-                          staticClass: "item_input",
-                          staticStyle: { width: "97%" },
-                          attrs: {
-                            placeholder: "日期及时间",
-                            disabled: "disabled",
-                            type: "text"
-                          },
-                          domProps: { value: _vm.assemblePlaces.assembly_at },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.assemblePlaces,
-                                "assembly_at",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "form_item_info",
-                      staticStyle: { width: "100%", height: "120px" }
-                    },
-                    [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("详细地址")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("textarea", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.assemblePlaces.assembly_station,
-                              expression: "assemblePlaces.assembly_station"
-                            }
-                          ],
-                          staticClass: "item_area",
-                          attrs: {
-                            placeholder: "详细地址",
-                            disabled: "disabled"
-                          },
-                          domProps: {
-                            value: _vm.assemblePlaces.assembly_station
-                          },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.assemblePlaces,
-                                "assembly_station",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "pane_content_info" }, [
-                _vm._m(2),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_content disflex" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "form_item_info",
-                      staticStyle: { width: "100%" }
-                    },
-                    [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("日期及时间")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.assemblePlaces.dissolution_at,
-                              expression: "assemblePlaces.dissolution_at"
-                            }
-                          ],
-                          staticClass: "item_input",
-                          staticStyle: { width: "97%" },
-                          attrs: {
-                            placeholder: "日期及时间",
-                            type: "text",
-                            disabled: "disabled"
-                          },
-                          domProps: {
-                            value: _vm.assemblePlaces.dissolution_at
-                          },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.assemblePlaces,
-                                "dissolution_at",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "form_item_info",
-                      staticStyle: { width: "100%", height: "120px" }
-                    },
-                    [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("地址")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("textarea", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.assemblePlaces.dissolution_station,
-                              expression: "assemblePlaces.dissolution_station"
-                            }
-                          ],
-                          staticClass: "item_area",
-                          attrs: {
-                            placeholder: "详细地址",
-                            disabled: "disabled"
-                          },
-                          domProps: {
-                            value: _vm.assemblePlaces.dissolution_station
-                          },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.assemblePlaces,
-                                "dissolution_station",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      ])
-                    ]
-                  )
-                ])
-              ])
+              _c(
+                "div",
+                {
+                  staticClass: "back_icon",
+                  on: {
+                    click: function($event) {
+                      return _vm.$router.push("/answer/dataBankAnswerList")
+                    }
+                  }
+                },
+                [
+                  _c("img", {
+                    attrs: { src: "/etravel/public/images/back.png" }
+                  })
+                ]
+              )
             ]
           ),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._m(2)
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "tab-content" }, [
+          _vm._m(3),
           _vm._v(" "),
           _c(
             "div",
@@ -51347,107 +51110,13 @@ var render = function() {
               staticClass: "tab-pane",
               attrs: { role: "tabpanel", id: "flight" }
             },
-            _vm._l(_vm.flights, function(flight, index) {
-              return _c("div", { staticClass: "pane_content_info" }, [
-                _c("div", { staticClass: "gather_info" }, [
-                  _c("div", { staticClass: "gather_info_title" }, [
-                    flight.is_return
-                      ? _c("span", [_vm._v("返回")])
-                      : _c("span", [_vm._v("出发")]),
-                    _c("hr")
-                  ])
-                ]),
+            [
+              _c("div", { staticClass: "sheetGroup" }, [
+                _c("div", { staticClass: "answerTitle" }),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_content disflex" }, [
-                  _c("div", { staticClass: "form_item_info" }, [
-                    _c("div", { staticClass: "item_title" }, [
-                      _vm._v("航班信息")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("input", {
-                        staticClass: "item_input",
-                        attrs: { type: "text", disabled: "disabled" },
-                        domProps: { value: flight.flight }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form_item_info" }, [
-                    _c("div", { staticClass: "item_title" }, [_vm._v("日期")]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("input", {
-                        staticClass: "item_input",
-                        attrs: { type: "text", disabled: "disabled" },
-                        domProps: { value: flight.date }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form_item_info" }, [
-                    _c("div", { staticClass: "item_title" }, [
-                      _vm._v("出发时间")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("input", {
-                        staticClass: "item_input",
-                        attrs: { type: "text", disabled: "disabled" },
-                        domProps: { value: flight.takeoff_time }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form_item_info" }, [
-                    _c("div", { staticClass: "item_title" }, [
-                      _vm._v("到达时间")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("input", {
-                        staticClass: "item_input",
-                        attrs: { type: "text", disabled: "disabled" },
-                        domProps: { value: flight.arrival_time }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form_item_info" }, [
-                    _c("div", { staticClass: "item_title" }, [
-                      _vm._v("出发站点")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("div", [
-                        _c("input", {
-                          staticClass: "item_input",
-                          attrs: { type: "text", disabled: "disabled" },
-                          domProps: { value: flight.from }
-                        })
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form_item_info" }, [
-                    _c("div", { staticClass: "item_title" }, [
-                      _vm._v("达到站点")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("div", [
-                        _c("input", {
-                          staticClass: "item_input",
-                          attrs: { type: "text", disabled: "disabled" },
-                          domProps: { value: flight.to }
-                        })
-                      ])
-                    ])
-                  ])
-                ])
+                _c("div", { staticClass: "answerContent" })
               ])
-            }),
-            0
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -51457,109 +51126,7 @@ var render = function() {
               attrs: { role: "tabpanel", id: "accommodationInfo" }
             },
             _vm._l(_vm.hotels, function(hotel, index) {
-              return _c("div", { staticClass: "pane_content_info" }, [
-                _c("div", { staticClass: "form_content disflex" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "form_item_info",
-                      staticStyle: { width: "100%" }
-                    },
-                    [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("酒店名称")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          staticClass: "item_input",
-                          staticStyle: { width: "97%" },
-                          attrs: { type: "text", disabled: "disabled" },
-                          domProps: { value: hotel.hotel_name }
-                        })
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form_item_info" }, [
-                    _c("div", { staticClass: "item_title" }, [
-                      _vm._v("入住时间")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("input", {
-                        staticClass: "item_input",
-                        attrs: { type: "text", disabled: "disabled" },
-                        domProps: { value: hotel.check_at }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form_item_info" }, [
-                    _c("div", { staticClass: "item_title" }, [
-                      _vm._v("离开时间")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("input", {
-                        staticClass: "item_input",
-                        attrs: { type: "text", disabled: "disabled" },
-                        domProps: { value: hotel.leave_at }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form_item_info" }, [
-                    _c("div", { staticClass: "item_title" }, [_vm._v("几晚")]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("input", {
-                        staticClass: "item_input",
-                        attrs: { type: "text", disabled: "disabled" },
-                        domProps: { value: hotel.times }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form_item_info" }, [
-                    _c("div", { staticClass: "item_title" }, [
-                      _vm._v("联系电话")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("input", {
-                        staticClass: "item_input",
-                        attrs: { type: "text", disabled: "disabled" },
-                        domProps: { value: hotel.hotel_phone }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "form_item_info",
-                      staticStyle: { width: "100%", height: "120px" }
-                    },
-                    [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("酒店地址")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("textarea", {
-                          staticClass: "item_area",
-                          attrs: {
-                            placeholder: "酒店地址",
-                            disabled: "disabled"
-                          },
-                          domProps: { value: hotel.hotel_address }
-                        })
-                      ])
-                    ]
-                  )
-                ])
-              ])
+              return _c("div", { staticClass: "pane_content_info" })
             }),
             0
           )
@@ -51574,53 +51141,21 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "ul",
-      { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
+      "li",
+      { staticClass: "active", attrs: { role: "presentation" } },
       [
-        _c("li", { staticClass: "active", attrs: { role: "presentation" } }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#gather",
-                "aria-controls": "gather",
-                role: "tab",
-                "data-toggle": "tab"
-              }
-            },
-            [_vm._v("集合解散")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { attrs: { role: "presentation" } }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#flight",
-                "aria-controls": "flight",
-                role: "tab",
-                "data-toggle": "tab"
-              }
-            },
-            [_vm._v("航班往返")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { attrs: { role: "presentation" } }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#accommodationInfo",
-                "aria-controls": "accommodationInfo",
-                role: "tab",
-                "data-toggle": "tab"
-              }
-            },
-            [_vm._v("住宿资料")]
-          )
-        ])
+        _c(
+          "a",
+          {
+            attrs: {
+              href: "#gather",
+              "aria-controls": "gather",
+              role: "tab",
+              "data-toggle": "tab"
+            }
+          },
+          [_vm._v("學習工作紙")]
+        )
       ]
     )
   },
@@ -51628,23 +51163,64 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "gather_info" }, [
-      _c("div", { staticClass: "gather_info_title" }, [
-        _c("span", [_vm._v("集合")]),
-        _c("hr")
-      ])
+    return _c("li", { attrs: { role: "presentation" } }, [
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "#flight",
+            "aria-controls": "flight",
+            role: "tab",
+            "data-toggle": "tab"
+          }
+        },
+        [_vm._v("自我評估")]
+      )
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "gather_info" }, [
-      _c("div", { staticClass: "gather_info_title" }, [
-        _c("span", [_vm._v("解散")]),
-        _c("hr")
-      ])
+    return _c("li", { attrs: { role: "presentation" } }, [
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "#accommodationInfo",
+            "aria-controls": "accommodationInfo",
+            role: "tab",
+            "data-toggle": "tab"
+          }
+        },
+        [_vm._v("自我感想")]
+      )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "tab-pane active",
+        attrs: { role: "tabpanel", id: "gather" }
+      },
+      [
+        _c("div", { staticClass: "sheetGroup" }, [
+          _c("div", { staticClass: "sheetTitle" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "sheetContent" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "sheetQuestion" }, [
+            _c("div", { staticClass: "questTitle" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "questContent" })
+          ])
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
