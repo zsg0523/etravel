@@ -73,18 +73,22 @@ class ChatsController extends Controller
     	return $this->response->array(['message' => 'message send success !']);
     }
 
-
+    /**
+     * [room 获取房间信息]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function room(Request $request)
     {
         $sessions = Gateway::getClientSessionsByGroup($request->room_id);
         $users_list = [];
         foreach ($sessions as $client_id => $value) {
-            $user_list[$value['uid']] = $value['username'];
+            $users_list[$value['uid']] = $value['username'];
         }
         $new_message = ['type' => 'flash'];
-        $new_message['user_list'] = $user_list;
+        $new_message['users_list'] = $users_list;
 
-        Gateway::sendToGroup($request->room_id, $new_message);
+        Gateway::sendToGroup($request->room_id, json_encode($new_message));
 
         return $this->response->array($new_message);
     }

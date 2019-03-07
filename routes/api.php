@@ -314,6 +314,8 @@ $api->version('v1', [
 			$api->get('titles','WriteTitlesController@index')->name('api.titles.index');
 			// 旅游下所有标题
 			$api->get('travels/{travel}/titles', 'WriteTitlesController@travelIndex')->name('api.travels.titles.index');
+			// 旅游下某用户所有标题
+			$api->get('travels/{travel}/users/{user}/titles', 'WriteTitlesController@travelUserIndex')->name('api.travels.users.titles.index');
 			// 标题详情
 			$api->get('travels/{travel}/titles/{writetitle}','WriteTitlesController@show')->name('api.titles.show');
 			// 增加标题
@@ -359,6 +361,8 @@ $api->version('v1', [
 			$api->get('evaluationCategories', 'EvaCategoriesController@index')->name('api.evaluationCategories.index');
 			// 旅游下评估分类
 			$api->get('travels/{travel}/evaluationCategories', 'EvaCategoriesController@travelIndex')->name('api.travels.evaluationCategories.index');
+			// 旅游下某用户所有评估分类
+			$api->get('travels/{travel}/users/{user}/evaluationCategories', 'EvaCategoriesController@travelUserIndex')->name('api.travels.users.evaluationCategories.index');
 			// 评估分类详情
 			$api->get('evaluationCategories/{category}', 'EvaCategoriesController@show')->name('api.evaluationCategories.show');
 			// 创建评估分类
