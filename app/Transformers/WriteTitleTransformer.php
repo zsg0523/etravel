@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-17 18:18:12
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-03-07 11:01:58
+ * @Last Modified time: 2019-03-08 15:25:00
  */
 namespace App\Transformers;
 
@@ -40,10 +40,11 @@ class WriteTitleTransformer extends TransformerAbstract
 
 	public function includeWrites(WriteTitle $writetitle)
 	{
-		if (! empty($this->user_id)) {
-			return $this->item($writetitle->writes()->where('user_id', $this->user_id)->first(), new WriteTransformer());
+		$writes = $writetitle->writes()->where('user_id', $this->user_id)->get();
+		if (! empty($this->user_id) ) {
+			return $this->collection($writes, new WriteTransformer());
 		} else {
-			return $this->collection($writetitle->writes, new WriteTransformer($this->user_id));		
+			return $this->collection($writetitle->writes, new WriteTransformer());		
 		}
 	}
 
