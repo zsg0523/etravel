@@ -23573,7 +23573,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     mounted: function mounted() {
         this.getUserTravels();
     },
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setTravels']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['userInfo']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setTravels']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setUserInfo']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['userInfo']), {
         getUserTravels: function getUserTravels() {
             var _this = this;
 

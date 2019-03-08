@@ -230,6 +230,7 @@
         },
         methods:{
             ...mapActions(['setTravels']),
+            ...mapActions(['setUserInfo']),
             ...mapGetters(['userInfo']),
             getUserTravels(){
                 // 获取旅游项目
