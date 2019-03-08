@@ -26,7 +26,7 @@
     .editBtnGroup_rules{width:80%;height:50px;line-height: 50px;}
     .editBtnGroup_rules>img{width:40px;height: 40px;margin-left: 25px;float: right;}
     
-    .listTitle{width:90%;height:45px;line-height:45px;text-align:center;background-color:#ffde01;font-size:18px;margin-top:20px;border-radius-topleft: 15px;border-radius-topright: 15px;}
+    .listTitle{width:90%;height:45px;line-height:45px;text-align:center;background-color:#ffde01;font-size:18px;margin-top:20px;border-radius-top-left: 15px;border-radius-top-right: 15px;}
     .van-dialog{width:50%;}    
 </style>
 

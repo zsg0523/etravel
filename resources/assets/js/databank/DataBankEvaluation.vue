@@ -35,9 +35,9 @@
         <div class="pane_content_evaluation" >
             <div class="form_content_evaluations disflex">
                 <div class="form_item_evaluations" v-for="(evaluation,index) in evaluations">
-                    <div class="item_title">题型{{index+1}}</div>
+                    <div class="item_title">题目标题</div>
                     <div class="input_icon disflex">
-                        <input placeholder="请填写题目类型和规则" type="text" disabled="disabled"  :value="evaluation.title">
+                        <input placeholder="请填写题目标题" type="text" disabled="disabled"  :value="evaluation.title">
                         <div @click="$router.push('/topic/dataBankEvaluationInfo/'+evaluation.id)">
                             <img src="/etravel/public/images/See-next.png" alt="">
                         </div>
@@ -57,8 +57,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluations">
-                        <div class="item_title">题型</div>
-                        <div><input class="item_input" placeholder="请填写题目类型和规则" type="text" v-model="newEvaluation.title"></div>
+                        <div class="item_title">题目标题</div>
+                        <div><input class="item_input" placeholder="请填写题目标题" type="text" v-model="newEvaluation.title"></div>
                     </div>
                     <div class="issure">
                         <button @click="addNewEvaluation()">添加</button>
@@ -70,8 +70,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluations">
-                        <div class="item_title">题型</div>
-                        <div><input class="item_input" placeholder="请填写题目类型和规则" type="text" v-model="edEvaluation.title"></div>
+                        <div class="item_title">题目标题</div>
+                        <div><input class="item_input" placeholder="请填写题目标题" type="text" v-model="edEvaluation.title"></div>
                     </div>
                     <div class="issure">
                         <button @click="editEvaluation()">修改</button>

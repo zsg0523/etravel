@@ -8,19 +8,25 @@
     .back_icon>img{width:28px;height: 28px;}
 
     .sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;}
-    .sheetGroup>div{width:96%;margin-left: 3%;}
-    .sheetTitle{height:45px;line-height: 45px;font-size: 18px;font-weight: bold;text-align: center;}
+    .sheetGroup>div{width:100%;text-indent: 1em;}
+    .sheetTitle{min-height:45px;line-height: 45px;font-size: 18px;font-weight: bold;text-align: center;}
     .sheetContent{min-height:50px;}
     .sheetQuestion{height:auto;}
-    .questTitle{width:100%;height:45px;line-height: 45px;font-size: 16px;font-weight: bold;}
+    .questTitle{width:100%;min-height:45px;line-height: 45px;font-size: 16px;font-weight: bold;}
     .questContent{width:100%;font-size: 14px;min-height:50px;line-height: 25px;word-break: break-all;}
 
-    .sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;}
-    .sheetGroup>div{width:96%;margin-left: 3%;}
-    .feelTitle{font-size: 16px;font-weight: bold;height:45px;line-height: 45px;}
+    .feelTitle{font-size: 16px;font-weight: bold;min-height:45px;line-height: 45px;}
     .feelImg{height:auto;text-align: center;}
     .feelImg>img{width:70%;border:5px solid #fff;}
-    .feelContent{min-height:50px;line-height: 25px;word-break: break-all;}
+    .feelContent{min-height:50px;font-size: 14px;line-height: 25px;word-break: break-all;}
+
+    .evaluationGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;border-radius-top-left:8px;border-top-right-radius: 8px;}
+    .evaluationTitle{width:100%;height:45px;font-size: 18px;line-height: 45px;background-color: #ffde01;font-weight:bold;border-radius-top-left:8px;border-top-right-radius: 8px;}
+    .evaluationQuestions{min-height: 90px;}
+    .evaluationQuestionTitle{width:100%;min-height: 45px;line-height:45px;background-color: #eee;font-size: 16px;}
+    .evaluationQuestionContent{width:100%;height:45px;line-height: 45px;}
+    .menuIcon{width:80px;height:45px;float: left;line-height: 45px;margin-left: 10px;}
+    .menuIcon>img{width:20px;height:20px;}
 </style>
 
 <template>
@@ -72,28 +78,93 @@
 
                     <!-- 自我评估 -->
                     <div role="tabpanel" class="tab-pane" id="flight">
-                        <div class="sheetGroup">
-                            <div class="answerTitle" v-text=''>
-                                
-                            </div> 
-                            <div class="answerContent" v-html=''>
-                                
+                        <div class="sheetGroup" v-for="(evaluation,index) in evaluations">
+                            <div class="evaluationTitle">
+                                {{evaluation.title}}
                             </div>
+                            <template v-if="evaluation.evaluations.data[0]">
+                                <div class="evaluationQuestions" v-for="(question,index) in evaluation.evaluations.data">
+                                    <div class="evaluationQuestionTitle">
+                                        {{index+1}}.{{question.content}}
+                                    </div>
+                                    <div class="evaluationQuestionContent" v-if="question.type==1">
+                                        <div class="menuIcon">
+                                            <template v-if="question.answer.option==1">
+                                                <img src="/etravel/public/images/Options_sele.png">       
+                                            </template>
+                                            <template v-else>
+                                                <img src="/etravel/public/images/Options.png">
+                                            </template>
+                                        </div>
+                                    </div>
+                                    <div class="evaluationQuestionContent" v-else-if="question.type==2">
+                                        <div class="evaluationQuestionContent">
+                                            <div class="menuIcon">
+                                                <template v-if="question.answer.option==1">
+                                                    <img src="/etravel/public/images/Options_sele.png">YES     
+                                                </template>
+                                                <template v-else>
+                                                    <img src="/etravel/public/images/Options.png">YES
+                                                </template>
+                                            </div>
+                                            <div class="menuIcon">
+                                                <template v-if="question.answer.option==2">
+                                                    <img src="/etravel/public/images/Options_sele.png">NO       
+                                                </template>
+                                                <template v-else>
+                                                    <img src="/etravel/public/images/Options.png">NO
+                                                </template>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="evaluationQuestionContent" v-else-if="question.type==3">
+                                        <div class="menuIcon" v-for="(typeLink,index) in type3">
+                                            <template v-if="question.answer.option==(index+1)">
+                                                <img src="/etravel/public/images/Options_sele.png">       
+                                            </template>
+                                            <template v-else>
+                                                <img :src="typeLink">
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                            <template v-else>
+                                <div class="evaluationQuestions">
+                                    <h4>暂无题目</h4>
+                                </div>
+                            </template>
                         </div>
                     </div>
 
                     <!-- 自我感想 -->
                     <div role="tabpanel" class="tab-pane" id="accommodationInfo">
-                        <div class="sheetGroup">
+                        <div class="sheetGroup" v-for="(perception,index) in perceptions">
                             <div class="feelTitle">
-                                
+                                {{index+1}}.{{perception.title}}
                             </div>
-                            <div class="feelImg">
-                                <img src="/etravel/public/images/logo.png">
-                            </div>
-                            <div class="feelContent">
-                                    
-                            </div>    
+                            <template v-if="perception.writes.data[0]">
+                                <div class="feelImg" v-if="perception.writes.data[0].image">
+                                    <img src="/etravel/public/images/logo.png">
+                                </div>
+                                <div class="feelImg" v-else>
+                                    <h4>未上传图片</h4>
+                                </div> 
+                                <div class="feelContent" v-if="perception.writes.data[0].content">
+                                    {{perception.writes.data[0].content}}
+                                </div>
+                                <div class="feelContent" v-else style="color: red;">
+                                    暂无回答
+                                </div>  
+                            </template>
+                            <template v-else>
+                                <div class="feelImg">
+                                    <h4>未上传图片</h4>
+                                </div> 
+                                <div class="feelContent" style="color: red;">
+                                    暂无回答
+                                </div>  
+                            </template>
                         </div>
                     </div>
 
@@ -113,11 +184,17 @@
                 sheetInfos:[],
                 evaluations:[],
                 perceptions:[],
+                type3:[
+                    "/etravel/public/images/1.png",
+                    "/etravel/public/images/2.png",
+                    "/etravel/public/images/3.png",
+                    "/etravel/public/images/4.png",
+                    "/etravel/public/images/5.png"],
             }
         },
         mounted:function(){
             this.getSheetInfos();
-            // this.getEvaluations();
+            this.getEvaluations();
             this.getPerceptions();
         },
         methods:{
@@ -137,8 +214,8 @@
                 });
             },
             getEvaluations(){
-                // 获取旅游下用户的自我评估
-                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/flights',
+                // 获取旅游下用户的自我评估/api/travels/:travels/users/:user/evaluationCategories?include=evaluations
+                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/users/'+this.$route.params.id+'/evaluationCategories?include=evaluations',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,

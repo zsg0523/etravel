@@ -49002,14 +49002,12 @@ var render = function() {
           { staticClass: "form_content_evaluations disflex" },
           _vm._l(_vm.evaluations, function(evaluation, index) {
             return _c("div", { staticClass: "form_item_evaluations" }, [
-              _c("div", { staticClass: "item_title" }, [
-                _vm._v("题型" + _vm._s(index + 1))
-              ]),
+              _c("div", { staticClass: "item_title" }, [_vm._v("题目标题")]),
               _vm._v(" "),
               _c("div", { staticClass: "input_icon disflex" }, [
                 _c("input", {
                   attrs: {
-                    placeholder: "请填写题目类型和规则",
+                    placeholder: "请填写题目标题",
                     type: "text",
                     disabled: "disabled"
                   },
@@ -49093,7 +49091,7 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_evaluations" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("题型")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("题目标题")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -49106,10 +49104,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: {
-                      placeholder: "请填写题目类型和规则",
-                      type: "text"
-                    },
+                    attrs: { placeholder: "请填写题目标题", type: "text" },
                     domProps: { value: _vm.newEvaluation.title },
                     on: {
                       input: function($event) {
@@ -49162,7 +49157,7 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_evaluations" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("题型")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("题目标题")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -49175,10 +49170,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: {
-                      placeholder: "请填写题目类型和规则",
-                      type: "text"
-                    },
+                    attrs: { placeholder: "请填写题目标题", type: "text" },
                     domProps: { value: _vm.edEvaluation.title },
                     on: {
                       input: function($event) {
@@ -49441,7 +49433,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             evaluationInfos: [],
             eval: '',
-            optList: [{ value: '1', title: '1' }, { value: '2', title: '1' }, { value: '3', title: '1' }],
+            optList: [{ value: '1', title: '1' }, { value: '2', title: '2' }, { value: '3', title: '3' }],
             newEvaluationInfo: {
                 content: '',
                 type: ''
@@ -50649,7 +50641,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_answer{width: 100%;min-height:650px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column; font-size: 16px;\n}\n.dataBank_input_answer>table{width: 90%;\n}\n.dataBank_input_answer table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_answer table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_answer td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item_group{width: 100%;min-height:100px;\n}\n.form_item_group>div{height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon:hover{cursor: pointer;\n}\n.editIcon>img{width:25px;height:25px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.listTitle{width:90%;height:45px;line-height:45px;text-align:center;background-color:#ffde01;font-size:18px;margin-top:20px;border-radius-topleft: 15px;border-radius-topright: 15px;\n}\n.van-dialog{width:50%;\n}    \n", ""]);
+exports.push([module.i, "\n.dataBank_input_answer{width: 100%;min-height:650px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column; font-size: 16px;\n}\n.dataBank_input_answer>table{width: 90%;\n}\n.dataBank_input_answer table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_answer table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_answer td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item_group{width: 100%;min-height:100px;\n}\n.form_item_group>div{height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon:hover{cursor: pointer;\n}\n.editIcon>img{width:25px;height:25px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.listTitle{width:90%;height:45px;line-height:45px;text-align:center;background-color:#ffde01;font-size:18px;margin-top:20px;border-radius-top-left: 15px;border-radius-top-right: 15px;\n}\n.van-dialog{width:50%;\n}    \n", ""]);
 
 // exports
 
@@ -50923,7 +50915,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.active{font-size: 18px;\n}\n.tab-pane{width:70%;margin-left: 15%;\n}\n.back_icon{width:45px;height:45px;line-height: 45px;\n}\n.back_icon>img{width:28px;height: 28px;\n}\n.sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;\n}\n.sheetGroup>div{width:96%;margin-left: 3%;\n}\n.sheetTitle{height:45px;line-height: 45px;font-size: 18px;font-weight: bold;text-align: center;\n}\n.sheetContent{min-height:50px;\n}\n.sheetQuestion{height:auto;\n}\n.questTitle{width:100%;height:45px;line-height: 45px;font-size: 16px;font-weight: bold;\n}\n.questContent{width:100%;font-size: 14px;min-height:50px;line-height: 25px;word-break: break-all;\n}\n.sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;\n}\n.sheetGroup>div{width:96%;margin-left: 3%;\n}\n.feelTitle{font-size: 16px;font-weight: bold;height:45px;line-height: 45px;\n}\n.feelImg{height:auto;text-align: center;\n}\n.feelImg>img{width:70%;border:5px solid #fff;\n}\n.feelContent{min-height:50px;line-height: 25px;word-break: break-all;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.active{font-size: 18px;\n}\n.tab-pane{width:70%;margin-left: 15%;\n}\n.back_icon{width:45px;height:45px;line-height: 45px;\n}\n.back_icon>img{width:28px;height: 28px;\n}\n.sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;\n}\n.sheetGroup>div{width:100%;text-indent: 1em;\n}\n.sheetTitle{min-height:45px;line-height: 45px;font-size: 18px;font-weight: bold;text-align: center;\n}\n.sheetContent{min-height:50px;\n}\n.sheetQuestion{height:auto;\n}\n.questTitle{width:100%;min-height:45px;line-height: 45px;font-size: 16px;font-weight: bold;\n}\n.questContent{width:100%;font-size: 14px;min-height:50px;line-height: 25px;word-break: break-all;\n}\n.feelTitle{font-size: 16px;font-weight: bold;min-height:45px;line-height: 45px;\n}\n.feelImg{height:auto;text-align: center;\n}\n.feelImg>img{width:70%;border:5px solid #fff;\n}\n.feelContent{min-height:50px;font-size: 14px;line-height: 25px;word-break: break-all;\n}\n.evaluationGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationTitle{width:100%;height:45px;font-size: 18px;line-height: 45px;background-color: #ffde01;font-weight:bold;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationQuestions{min-height: 90px;\n}\n.evaluationQuestionTitle{width:100%;min-height: 45px;line-height:45px;background-color: #eee;font-size: 16px;\n}\n.evaluationQuestionContent{width:100%;height:45px;line-height: 45px;\n}\n.menuIcon{width:80px;height:45px;float: left;line-height: 45px;margin-left: 10px;\n}\n.menuIcon>img{width:20px;height:20px;\n}\n", ""]);
 
 // exports
 
@@ -51042,19 +51034,91 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             sheetInfos: [],
             evaluations: [],
-            perceptions: []
+            perceptions: [],
+            type3: ["/etravel/public/images/1.png", "/etravel/public/images/2.png", "/etravel/public/images/3.png", "/etravel/public/images/4.png", "/etravel/public/images/5.png"]
         };
     },
 
     mounted: function mounted() {
         this.getSheetInfos();
-        // this.getEvaluations();
+        this.getEvaluations();
         this.getPerceptions();
     },
     methods: {
@@ -51077,8 +51141,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getEvaluations: function getEvaluations() {
             var _this2 = this;
 
-            // 获取旅游下用户的自我评估
-            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/flights', {
+            // 获取旅游下用户的自我评估/api/travels/:travels/users/:user/evaluationCategories?include=evaluations
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/users/' + this.$route.params.id + '/evaluationCategories?include=evaluations', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
@@ -51243,16 +51307,268 @@ var render = function() {
               staticClass: "tab-pane",
               attrs: { role: "tabpanel", id: "flight" }
             },
-            [
-              _c("div", { staticClass: "sheetGroup" }, [
-                _c("div", { staticClass: "answerTitle" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "answerContent" })
-              ])
-            ]
+            _vm._l(_vm.evaluations, function(evaluation, index) {
+              return _c(
+                "div",
+                { staticClass: "sheetGroup" },
+                [
+                  _c("div", { staticClass: "evaluationTitle" }, [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(evaluation.title) +
+                        "\n                        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  evaluation.evaluations.data[0]
+                    ? _vm._l(evaluation.evaluations.data, function(
+                        question,
+                        index
+                      ) {
+                        return _c(
+                          "div",
+                          { staticClass: "evaluationQuestions" },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "evaluationQuestionTitle" },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(index + 1) +
+                                    "." +
+                                    _vm._s(question.content) +
+                                    "\n                                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            question.type == 1
+                              ? _c(
+                                  "div",
+                                  { staticClass: "evaluationQuestionContent" },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "menuIcon" },
+                                      [
+                                        question.answer.option == 1
+                                          ? [
+                                              _c("img", {
+                                                attrs: {
+                                                  src:
+                                                    "/etravel/public/images/Options_sele.png"
+                                                }
+                                              })
+                                            ]
+                                          : [
+                                              _c("img", {
+                                                attrs: {
+                                                  src:
+                                                    "/etravel/public/images/Options.png"
+                                                }
+                                              })
+                                            ]
+                                      ],
+                                      2
+                                    )
+                                  ]
+                                )
+                              : question.type == 2
+                              ? _c(
+                                  "div",
+                                  { staticClass: "evaluationQuestionContent" },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "evaluationQuestionContent"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "menuIcon" },
+                                          [
+                                            question.answer.option == 1
+                                              ? [
+                                                  _c("img", {
+                                                    attrs: {
+                                                      src:
+                                                        "/etravel/public/images/Options_sele.png"
+                                                    }
+                                                  }),
+                                                  _vm._v(
+                                                    "YES     \n                                            "
+                                                  )
+                                                ]
+                                              : [
+                                                  _c("img", {
+                                                    attrs: {
+                                                      src:
+                                                        "/etravel/public/images/Options.png"
+                                                    }
+                                                  }),
+                                                  _vm._v(
+                                                    "YES\n                                            "
+                                                  )
+                                                ]
+                                          ],
+                                          2
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "menuIcon" },
+                                          [
+                                            question.answer.option == 2
+                                              ? [
+                                                  _c("img", {
+                                                    attrs: {
+                                                      src:
+                                                        "/etravel/public/images/Options_sele.png"
+                                                    }
+                                                  }),
+                                                  _vm._v(
+                                                    "NO       \n                                            "
+                                                  )
+                                                ]
+                                              : [
+                                                  _c("img", {
+                                                    attrs: {
+                                                      src:
+                                                        "/etravel/public/images/Options.png"
+                                                    }
+                                                  }),
+                                                  _vm._v(
+                                                    "NO\n                                            "
+                                                  )
+                                                ]
+                                          ],
+                                          2
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              : question.type == 3
+                              ? _c(
+                                  "div",
+                                  { staticClass: "evaluationQuestionContent" },
+                                  _vm._l(_vm.type3, function(typeLink, index) {
+                                    return _c(
+                                      "div",
+                                      { staticClass: "menuIcon" },
+                                      [
+                                        question.answer.option == index + 1
+                                          ? [
+                                              _c("img", {
+                                                attrs: {
+                                                  src:
+                                                    "/etravel/public/images/Options_sele.png"
+                                                }
+                                              })
+                                            ]
+                                          : [
+                                              _c("img", {
+                                                attrs: { src: typeLink }
+                                              })
+                                            ]
+                                      ],
+                                      2
+                                    )
+                                  }),
+                                  0
+                                )
+                              : _vm._e()
+                          ]
+                        )
+                      })
+                    : [_vm._m(3, true)]
+                ],
+                2
+              )
+            }),
+            0
           ),
           _vm._v(" "),
-          _vm._m(3)
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane",
+              attrs: { role: "tabpanel", id: "accommodationInfo" }
+            },
+            _vm._l(_vm.perceptions, function(perception, index) {
+              return _c(
+                "div",
+                { staticClass: "sheetGroup" },
+                [
+                  _c("div", { staticClass: "feelTitle" }, [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(index + 1) +
+                        "." +
+                        _vm._s(perception.title) +
+                        "\n                        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  perception.writes.data[0]
+                    ? [
+                        perception.writes.data[0].image
+                          ? _c("div", { staticClass: "feelImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/etravel/public/images/logo.png"
+                                }
+                              })
+                            ])
+                          : _c("div", { staticClass: "feelImg" }, [
+                              _c("h4", [_vm._v("未上传图片")])
+                            ]),
+                        _vm._v(" "),
+                        perception.writes.data[0].content
+                          ? _c("div", { staticClass: "feelContent" }, [
+                              _vm._v(
+                                "\n                                " +
+                                  _vm._s(perception.writes.data[0].content) +
+                                  "\n                            "
+                              )
+                            ])
+                          : _c(
+                              "div",
+                              {
+                                staticClass: "feelContent",
+                                staticStyle: { color: "red" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                暂无回答\n                            "
+                                )
+                              ]
+                            )
+                      ]
+                    : [
+                        _vm._m(4, true),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "feelContent",
+                            staticStyle: { color: "red" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                暂无回答\n                            "
+                            )
+                          ]
+                        )
+                      ]
+                ],
+                2
+              )
+            }),
+            0
+          )
         ])
       ])
     ])
@@ -51324,24 +51640,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "tab-pane",
-        attrs: { role: "tabpanel", id: "accommodationInfo" }
-      },
-      [
-        _c("div", { staticClass: "sheetGroup" }, [
-          _c("div", { staticClass: "feelTitle" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "feelImg" }, [
-            _c("img", { attrs: { src: "/etravel/public/images/logo.png" } })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "feelContent" })
-        ])
-      ]
-    )
+    return _c("div", { staticClass: "evaluationQuestions" }, [
+      _c("h4", [_vm._v("暂无题目")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "feelImg" }, [
+      _c("h4", [_vm._v("未上传图片")])
+    ])
   }
 ]
 render._withStripped = true
@@ -52719,8 +53028,8 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-// const baseUrl='http://www.bunchparty.com/etravel/public';//线上地址
-var baseUrl = '';
+var baseUrl = 'http://www.bunchparty.com/etravel/public'; //线上地址
+// const baseUrl='';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),
