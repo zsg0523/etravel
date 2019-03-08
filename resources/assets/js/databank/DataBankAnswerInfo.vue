@@ -7,11 +7,20 @@
     .back_icon{width:45px;height:45px;line-height: 45px;}
     .back_icon>img{width:28px;height: 28px;}
 
-    .sheetGroup{width:100%;height:auto;}
-    .sheetTitle{width:100%;height:45px;line-height: 45px;font-size: 16px;font-weight: bold;}
-    .sheetContent{width:100%;min-height:50px;}
-    .sheetQuestion{width:100%;height:auto;}
-    .questTitle{width:100%;height:45px;line-height: 45px;font-size: 16px;}
+    .sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;}
+    .sheetGroup>div{width:96%;margin-left: 3%;}
+    .sheetTitle{height:45px;line-height: 45px;font-size: 18px;font-weight: bold;text-align: center;}
+    .sheetContent{min-height:50px;}
+    .sheetQuestion{height:auto;}
+    .questTitle{width:100%;height:45px;line-height: 45px;font-size: 16px;font-weight: bold;}
+    .questContent{width:100%;font-size: 14px;min-height:50px;line-height: 25px;word-break: break-all;}
+
+    .sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;}
+    .sheetGroup>div{width:96%;margin-left: 3%;}
+    .feelTitle{font-size: 16px;font-weight: bold;height:45px;line-height: 45px;}
+    .feelImg{height:auto;text-align: center;}
+    .feelImg>img{width:70%;border:5px solid #fff;}
+    .feelContent{min-height:50px;line-height: 25px;word-break: break-all;}
 </style>
 
 <template>
@@ -31,22 +40,37 @@
                 <div class="tab-content">
                     <!-- 學習工作紙 -->
                     <div role="tabpanel" class="tab-pane active" id="gather">
-                        <div class="sheetGroup">
-                            <div class="sheetTitle"></div>
-                            <div class="sheetContent"></div>
-                            <div class="sheetQuestion">
-                                <div class="questTitle">
-    
-                                </div> 
-                                <div class="questContent">
-                                
+                        <div class="sheetGroup" v-for="(sheetInfo,index) in sheetInfos">
+                            <div class="sheetTitle" v-text="sheetInfo.title"></div>
+                            <div class="sheetContent" v-html="sheetInfo.body"></div>
+                            <template v-if="sheetInfo.questions.data">
+                                <div class="sheetQuestion" v-for="(question,index) in sheetInfo.questions.data">
+                                    <div class="questTitle">
+                                        {{index+1}}.{{question.content}}
+                                    </div> 
+                                    <template v-if="question.answer">
+                                        <div class="questContent">
+                                            {{question.answer}}
+                                        </div>
+                                    </template>
+                                    <template v-else>
+                                        <div class="questContent" style="color: red;">
+                                            暂无回答
+                                        </div>  
+                                    </template>
+                                    
                                 </div>
-                            </div>
+                            </template>
+                            <template v-else>
+                                <div class="sheetQuestion">
+                                    未设置问题
+                                </div>
+                            </template>
                             
                         </div>
                     </div>
 
-                    <!-- 航班往返 -->
+                    <!-- 自我评估 -->
                     <div role="tabpanel" class="tab-pane" id="flight">
                         <div class="sheetGroup">
                             <div class="answerTitle" v-text=''>
@@ -58,10 +82,18 @@
                         </div>
                     </div>
 
-                    <!-- 住宿资料 -->
+                    <!-- 自我感想 -->
                     <div role="tabpanel" class="tab-pane" id="accommodationInfo">
-                        <div class="pane_content_info" v-for="(hotel,index) in hotels">    
-                            
+                        <div class="sheetGroup">
+                            <div class="feelTitle">
+                                
+                            </div>
+                            <div class="feelImg">
+                                <img src="/etravel/public/images/logo.png">
+                            </div>
+                            <div class="feelContent">
+                                    
+                            </div>    
                         </div>
                     </div>
 
@@ -79,39 +111,33 @@
         data() {
             return {
                 sheetInfos:[],
-                flights:[],
-                hotels:[],
+                evaluations:[],
+                perceptions:[],
             }
         },
         mounted:function(){
-            // this.getAssemblePlaces();
-            // this.getFlights();
-            // this.getHotels();
-          
+            this.getSheetInfos();
+            // this.getEvaluations();
+            this.getPerceptions();
         },
         methods:{
-            getAssemblePlaces(){
-                // 获取旅游的集合信息
-                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId,
+            getSheetInfos(){
+                // 获取旅游下用户的学习工作纸/api/travels/:travel/users/:user/studies?include=questions
+                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/users/'+this.$route.params.id+'/studies?include=questions',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.assemblePlaces=res.data;
-                    this.edAssemblePlaces.assembly_at=this.assemblePlaces.assembly_at;
-                    this.edAssemblePlaces.assembly_station=this.assemblePlaces.assembly_station;
-                    this.edAssemblePlaces.dissolution_at=this.assemblePlaces.dissolution_at;
-                    this.edAssemblePlaces.dissolution_station=this.assemblePlaces.dissolution_station;
-
+                    this.sheetInfos=res.data.data;
                 }).catch(err => {
                     this.$toast('获取失败');
                     console.log(err);
                 });
             },
-            getFlights(){
-                // 获取旅游的航班信息
+            getEvaluations(){
+                // 获取旅游下用户的自我评估
                 this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/flights',
                 {
                     headers: {
@@ -119,7 +145,7 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.flights=res.data.data;
+                    this.evaluations=res.data.data;
                     
                 }).catch(err => {
                     this.$toast('获取失败');
@@ -127,16 +153,16 @@
                 });
 
             },
-            getHotels(){
-                // 获取旅游的住宿酒店
-                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/hotels',
+            getPerceptions(){
+                // 获取旅游下用户的自我感想/api/travels/:travel/users/:user/titles?include=writes
+                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/users/'+this.$route.params.id+'/titles?include=writes',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.hotels=res.data.data;
+                    this.perceptions=res.data.data;
                     
                 }).catch(err => {
                     this.$toast('获取失败');

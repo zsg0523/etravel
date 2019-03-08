@@ -1655,249 +1655,6 @@ var _use = Object(__WEBPACK_IMPORTED_MODULE_2__utils__["j" /* use */])('field'),
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PopupMixin; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__manager__ = __webpack_require__(349);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__context__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__touch__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_event__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_scroll__ = __webpack_require__(20);
-
-
-
-
-
-var PopupMixin = {
-  mixins: [__WEBPACK_IMPORTED_MODULE_2__touch__["a" /* TouchMixin */]],
-  props: {
-    // whether to show popup
-    value: Boolean,
-    // whether to show overlay
-    overlay: Boolean,
-    // overlay custom style
-    overlayStyle: Object,
-    // overlay custom class name
-    overlayClass: String,
-    // whether to close popup when click overlay
-    closeOnClickOverlay: Boolean,
-    // z-index
-    zIndex: [String, Number],
-    // return the mount node for popup
-    getContainer: [String, Function],
-    // prevent body scroll
-    lockScroll: {
-      type: Boolean,
-      default: true
-    },
-    // whether to lazy render
-    lazyRender: {
-      type: Boolean,
-      default: true
-    }
-  },
-  data: function data() {
-    return {
-      inited: this.value
-    };
-  },
-  computed: {
-    shouldRender: function shouldRender() {
-      return this.inited || !this.lazyRender;
-    }
-  },
-  watch: {
-    value: function value(val) {
-      var type = val ? 'open' : 'close';
-      this.inited = this.inited || this.value;
-      this[type]();
-      this.$emit(type);
-    },
-    getContainer: function getContainer() {
-      this.move();
-    },
-    overlay: function overlay() {
-      this.renderOverlay();
-    }
-  },
-  mounted: function mounted() {
-    if (this.getContainer) {
-      this.move();
-    }
-
-    if (this.value) {
-      this.open();
-    }
-  },
-  activated: function activated() {
-    /* istanbul ignore next */
-    if (this.value) {
-      this.open();
-    }
-  },
-  beforeDestroy: function beforeDestroy() {
-    this.close();
-
-    if (this.getContainer && this.$parent && this.$parent.$el) {
-      this.$parent.$el.appendChild(this.$el);
-    }
-  },
-  deactivated: function deactivated() {
-    /* istanbul ignore next */
-    this.close();
-  },
-  methods: {
-    open: function open() {
-      /* istanbul ignore next */
-      if (this.$isServer || this.opened) {
-        return;
-      } // cover default zIndex
-
-
-      if (this.zIndex !== undefined) {
-        __WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].zIndex = this.zIndex;
-      }
-
-      this.opened = true;
-      this.renderOverlay();
-
-      if (this.lockScroll) {
-        Object(__WEBPACK_IMPORTED_MODULE_3__utils_event__["b" /* on */])(document, 'touchstart', this.touchStart);
-        Object(__WEBPACK_IMPORTED_MODULE_3__utils_event__["b" /* on */])(document, 'touchmove', this.onTouchMove);
-
-        if (!__WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].lockCount) {
-          document.body.classList.add('van-overflow-hidden');
-        }
-
-        __WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].lockCount++;
-      }
-    },
-    close: function close() {
-      if (!this.opened) {
-        return;
-      }
-
-      if (this.lockScroll) {
-        __WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].lockCount--;
-        Object(__WEBPACK_IMPORTED_MODULE_3__utils_event__["a" /* off */])(document, 'touchstart', this.touchStart);
-        Object(__WEBPACK_IMPORTED_MODULE_3__utils_event__["a" /* off */])(document, 'touchmove', this.onTouchMove);
-
-        if (!__WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].lockCount) {
-          document.body.classList.remove('van-overflow-hidden');
-        }
-      }
-
-      this.opened = false;
-      __WEBPACK_IMPORTED_MODULE_0__manager__["a" /* default */].close(this);
-      this.$emit('input', false);
-    },
-    move: function move() {
-      var container;
-      var getContainer = this.getContainer;
-
-      if (getContainer) {
-        if (typeof getContainer === 'string') {
-          container = getContainer === 'body' ? document.body : document.querySelector(getContainer);
-        } else {
-          container = getContainer();
-        }
-      } else if (this.$parent) {
-        container = this.$parent.$el;
-      }
-
-      if (container && container !== this.$el.parentNode) {
-        container.appendChild(this.$el);
-      }
-    },
-    onTouchMove: function onTouchMove(e) {
-      this.touchMove(e);
-      var direction = this.deltaY > 0 ? '10' : '01';
-      var el = Object(__WEBPACK_IMPORTED_MODULE_4__utils_scroll__["b" /* getScrollEventTarget */])(e.target, this.$el);
-      var scrollHeight = el.scrollHeight,
-          offsetHeight = el.offsetHeight,
-          scrollTop = el.scrollTop;
-      var status = '11';
-      /* istanbul ignore next */
-
-      if (scrollTop === 0) {
-        status = offsetHeight >= scrollHeight ? '00' : '01';
-      } else if (scrollTop + offsetHeight >= scrollHeight) {
-        status = '10';
-      }
-      /* istanbul ignore next */
-
-
-      if (status !== '11' && this.direction === 'vertical' && !(parseInt(status, 2) & parseInt(direction, 2))) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    },
-    renderOverlay: function renderOverlay() {
-      var _this = this;
-
-      if (this.overlay) {
-        __WEBPACK_IMPORTED_MODULE_0__manager__["a" /* default */].open(this, {
-          zIndex: __WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].zIndex++,
-          className: this.overlayClass,
-          customStyle: this.overlayStyle
-        });
-      } else {
-        __WEBPACK_IMPORTED_MODULE_0__manager__["a" /* default */].close(this);
-      }
-
-      this.$nextTick(function () {
-        _this.$el.style.zIndex = __WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].zIndex++;
-      });
-    }
-  }
-};
-
-/***/ }),
-/* 17 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BLUE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return GREEN; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return WHITE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return GRAY_DARK; });
-var RED = '#f44';
-var BLUE = '#1989fa';
-var GREEN = '#07c160';
-var WHITE = '#fff';
-var GRAY_DARK = '#969799';
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 19 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* unused harmony export Store */
 /* unused harmony export install */
 /* unused harmony export mapState */
@@ -2907,6 +2664,249 @@ var index_esm = {
 
 
 /***/ }),
+/* 17 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PopupMixin; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__manager__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__context__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__touch__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_event__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_scroll__ = __webpack_require__(20);
+
+
+
+
+
+var PopupMixin = {
+  mixins: [__WEBPACK_IMPORTED_MODULE_2__touch__["a" /* TouchMixin */]],
+  props: {
+    // whether to show popup
+    value: Boolean,
+    // whether to show overlay
+    overlay: Boolean,
+    // overlay custom style
+    overlayStyle: Object,
+    // overlay custom class name
+    overlayClass: String,
+    // whether to close popup when click overlay
+    closeOnClickOverlay: Boolean,
+    // z-index
+    zIndex: [String, Number],
+    // return the mount node for popup
+    getContainer: [String, Function],
+    // prevent body scroll
+    lockScroll: {
+      type: Boolean,
+      default: true
+    },
+    // whether to lazy render
+    lazyRender: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data: function data() {
+    return {
+      inited: this.value
+    };
+  },
+  computed: {
+    shouldRender: function shouldRender() {
+      return this.inited || !this.lazyRender;
+    }
+  },
+  watch: {
+    value: function value(val) {
+      var type = val ? 'open' : 'close';
+      this.inited = this.inited || this.value;
+      this[type]();
+      this.$emit(type);
+    },
+    getContainer: function getContainer() {
+      this.move();
+    },
+    overlay: function overlay() {
+      this.renderOverlay();
+    }
+  },
+  mounted: function mounted() {
+    if (this.getContainer) {
+      this.move();
+    }
+
+    if (this.value) {
+      this.open();
+    }
+  },
+  activated: function activated() {
+    /* istanbul ignore next */
+    if (this.value) {
+      this.open();
+    }
+  },
+  beforeDestroy: function beforeDestroy() {
+    this.close();
+
+    if (this.getContainer && this.$parent && this.$parent.$el) {
+      this.$parent.$el.appendChild(this.$el);
+    }
+  },
+  deactivated: function deactivated() {
+    /* istanbul ignore next */
+    this.close();
+  },
+  methods: {
+    open: function open() {
+      /* istanbul ignore next */
+      if (this.$isServer || this.opened) {
+        return;
+      } // cover default zIndex
+
+
+      if (this.zIndex !== undefined) {
+        __WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].zIndex = this.zIndex;
+      }
+
+      this.opened = true;
+      this.renderOverlay();
+
+      if (this.lockScroll) {
+        Object(__WEBPACK_IMPORTED_MODULE_3__utils_event__["b" /* on */])(document, 'touchstart', this.touchStart);
+        Object(__WEBPACK_IMPORTED_MODULE_3__utils_event__["b" /* on */])(document, 'touchmove', this.onTouchMove);
+
+        if (!__WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].lockCount) {
+          document.body.classList.add('van-overflow-hidden');
+        }
+
+        __WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].lockCount++;
+      }
+    },
+    close: function close() {
+      if (!this.opened) {
+        return;
+      }
+
+      if (this.lockScroll) {
+        __WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].lockCount--;
+        Object(__WEBPACK_IMPORTED_MODULE_3__utils_event__["a" /* off */])(document, 'touchstart', this.touchStart);
+        Object(__WEBPACK_IMPORTED_MODULE_3__utils_event__["a" /* off */])(document, 'touchmove', this.onTouchMove);
+
+        if (!__WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].lockCount) {
+          document.body.classList.remove('van-overflow-hidden');
+        }
+      }
+
+      this.opened = false;
+      __WEBPACK_IMPORTED_MODULE_0__manager__["a" /* default */].close(this);
+      this.$emit('input', false);
+    },
+    move: function move() {
+      var container;
+      var getContainer = this.getContainer;
+
+      if (getContainer) {
+        if (typeof getContainer === 'string') {
+          container = getContainer === 'body' ? document.body : document.querySelector(getContainer);
+        } else {
+          container = getContainer();
+        }
+      } else if (this.$parent) {
+        container = this.$parent.$el;
+      }
+
+      if (container && container !== this.$el.parentNode) {
+        container.appendChild(this.$el);
+      }
+    },
+    onTouchMove: function onTouchMove(e) {
+      this.touchMove(e);
+      var direction = this.deltaY > 0 ? '10' : '01';
+      var el = Object(__WEBPACK_IMPORTED_MODULE_4__utils_scroll__["b" /* getScrollEventTarget */])(e.target, this.$el);
+      var scrollHeight = el.scrollHeight,
+          offsetHeight = el.offsetHeight,
+          scrollTop = el.scrollTop;
+      var status = '11';
+      /* istanbul ignore next */
+
+      if (scrollTop === 0) {
+        status = offsetHeight >= scrollHeight ? '00' : '01';
+      } else if (scrollTop + offsetHeight >= scrollHeight) {
+        status = '10';
+      }
+      /* istanbul ignore next */
+
+
+      if (status !== '11' && this.direction === 'vertical' && !(parseInt(status, 2) & parseInt(direction, 2))) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    },
+    renderOverlay: function renderOverlay() {
+      var _this = this;
+
+      if (this.overlay) {
+        __WEBPACK_IMPORTED_MODULE_0__manager__["a" /* default */].open(this, {
+          zIndex: __WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].zIndex++,
+          className: this.overlayClass,
+          customStyle: this.overlayStyle
+        });
+      } else {
+        __WEBPACK_IMPORTED_MODULE_0__manager__["a" /* default */].close(this);
+      }
+
+      this.$nextTick(function () {
+        _this.$el.style.zIndex = __WEBPACK_IMPORTED_MODULE_1__context__["a" /* default */].zIndex++;
+      });
+    }
+  }
+};
+
+/***/ }),
+/* 18 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BLUE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return GREEN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return WHITE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return GRAY_DARK; });
+var RED = '#f44';
+var BLUE = '#1989fa';
+var GREEN = '#07c160';
+var WHITE = '#fff';
+var GRAY_DARK = '#969799';
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
 /* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2959,7 +2959,7 @@ function getVisibleHeight(element) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_popup__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_popup__ = __webpack_require__(17);
 
 
 
@@ -4005,7 +4005,7 @@ function raf(fn) {
 function cancel(id) {
   iCancel.call(root, id);
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(19)))
 
 /***/ }),
 /* 40 */
@@ -4377,7 +4377,7 @@ module.exports = Component.exports
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(16);
 
 
 
@@ -5285,7 +5285,7 @@ var CheckboxMixin = function CheckboxMixin(parent, bem) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vue_babel_helper_vue_jsx_merge_props___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__vue_babel_helper_vue_jsx_merge_props__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_functional__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(18);
 
 
 
@@ -19502,7 +19502,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18), __webpack_require__(79).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19), __webpack_require__(79).setImmediate))
 
 /***/ }),
 /* 79 */
@@ -19572,7 +19572,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
 
 /***/ }),
 /* 80 */
@@ -19765,7 +19765,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18), __webpack_require__(41)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19), __webpack_require__(41)))
 
 /***/ }),
 /* 81 */
@@ -22522,7 +22522,7 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(16);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -22908,7 +22908,7 @@ exports.push([module.i, "\n.commonHead{width: 100%;height: 116px;background-colo
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(16);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -23339,7 +23339,7 @@ exports.push([module.i, "\n.main1{width: 100%;height: auto;-webkit-box-pack: sta
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(16);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -23573,7 +23573,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     mounted: function mounted() {
         this.getUserTravels();
     },
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setTravels']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setTravels']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['userInfo']), {
         getUserTravels: function getUserTravels() {
             var _this = this;
 
@@ -23610,30 +23610,35 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 title: '新建項目',
                 message: '新建項目將會消耗您一枚金幣，是否創建？'
             }).then(function () {
-                _this2.$post(_this2.$config + '/api/travels', {
-                    travel_name: _this2.newTravel.travel_name,
-                    travel_at: _this2.newTravel.travel_at,
-                    travel_return: _this2.newTravel.travel_return,
-                    travel_introduction: _this2.newTravel.travel_introduction
-                }, {
-                    headers: {
-                        "Authorization": 'Bearer ' + sessionStorage.token
-                    }
-                }).then(function (res) {
-                    // console.log(res.data);
-                    _this2.getUserTravels();
-                    _this2.popupHiden();
-                    _this2.$toast('創建成功');
-                    _this2.newTravel.travel_name = '';
-                    _this2.newTravel.travel_at = '';
-                    _this2.newTravel.travel_return = '';
-                    _this2.newTravel.travel_introduction = '';
-                }).catch(function (err) {
-                    _this2.$toast('創建失败');
-                    _this2.errors = err.response.data.errors;
+                if (_this2.$store.state.userInfo.tokens >= 1) {
+                    _this2.$post(_this2.$config + '/api/travels', {
+                        travel_name: _this2.newTravel.travel_name,
+                        travel_at: _this2.newTravel.travel_at,
+                        travel_return: _this2.newTravel.travel_return,
+                        travel_introduction: _this2.newTravel.travel_introduction
+                    }, {
+                        headers: {
+                            "Authorization": 'Bearer ' + sessionStorage.token
+                        }
+                    }).then(function (res) {
+                        // console.log(res.data);
+                        _this2.getUserTravels();
+                        _this2.popupHiden();
+                        _this2.$toast('創建成功');
+                        _this2.newTravel.travel_name = '';
+                        _this2.newTravel.travel_at = '';
+                        _this2.newTravel.travel_return = '';
+                        _this2.newTravel.travel_introduction = '';
+                        _this2.getUserInfo();
+                    }).catch(function (err) {
+                        _this2.$toast('創建失败');
+                        _this2.errors = err.response.data.errors;
 
-                    console.log(err);
-                });
+                        console.log(err);
+                    });
+                } else {
+                    _this2.$toast('您的金幣不足!');
+                }
             }).catch(function (err) {});
         },
         delTravel: function delTravel(projectId, index) {
@@ -23711,6 +23716,27 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 _this4.$toast('修改失败');
                 _this4.errors = err.response.data.errors;
                 console.log(err);
+            });
+        },
+        getUserInfo: function getUserInfo() {
+            var _this5 = this;
+
+            // 获取用户基本信息
+            this.$get(this.$config + '/api/user?include=student.school', {
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                }
+            }).then(function (res) {
+                // console.log(res.data);
+                _this5.setUserInfo(res.data);
+            }).catch(function (err) {
+                console.log(err);
+                _this5.$toast('登录失效');
+                sessionStorage.clear();
+                _this5.setUserInfo('');
+                _this5.setTravels('');
+                _this5.setToken('');
+                _this5.$router.push("/");
             });
         }
     })
@@ -50765,7 +50791,7 @@ var render = function() {
                   on: {
                     click: function($event) {
                       return _vm.$router.push(
-                        "/answer/dataBankAnswerInfo/" + group.id
+                        "/answer/dataBankAnswerInfo/" + group.user_id
                       )
                     }
                   }
@@ -50897,7 +50923,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.active{font-size: 18px;\n}\n.tab-pane{width:70%;margin-left: 15%;\n}\n.back_icon{width:45px;height:45px;line-height: 45px;\n}\n.back_icon>img{width:28px;height: 28px;\n}\n.sheetGroup{width:100%;height:auto;\n}\n.sheetTitle{width:100%;height:45px;line-height: 45px;font-size: 16px;font-weight: bold;\n}\n.sheetContent{width:100%;min-height:50px;\n}\n.sheetQuestion{width:100%;height:auto;\n}\n.questTitle{width:100%;height:45px;line-height: 45px;font-size: 16px;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.active{font-size: 18px;\n}\n.tab-pane{width:70%;margin-left: 15%;\n}\n.back_icon{width:45px;height:45px;line-height: 45px;\n}\n.back_icon>img{width:28px;height: 28px;\n}\n.sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;\n}\n.sheetGroup>div{width:96%;margin-left: 3%;\n}\n.sheetTitle{height:45px;line-height: 45px;font-size: 18px;font-weight: bold;text-align: center;\n}\n.sheetContent{min-height:50px;\n}\n.sheetQuestion{height:auto;\n}\n.questTitle{width:100%;height:45px;line-height: 45px;font-size: 16px;font-weight: bold;\n}\n.questContent{width:100%;font-size: 14px;min-height:50px;line-height: 25px;word-break: break-all;\n}\n.sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;\n}\n.sheetGroup>div{width:96%;margin-left: 3%;\n}\n.feelTitle{font-size: 16px;font-weight: bold;height:45px;line-height: 45px;\n}\n.feelImg{height:auto;text-align: center;\n}\n.feelImg>img{width:70%;border:5px solid #fff;\n}\n.feelContent{min-height:50px;line-height: 25px;word-break: break-all;\n}\n", ""]);
 
 // exports
 
@@ -50984,70 +51010,97 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             sheetInfos: [],
-            flights: [],
-            hotels: []
+            evaluations: [],
+            perceptions: []
         };
     },
 
     mounted: function mounted() {
-        // this.getAssemblePlaces();
-        // this.getFlights();
-        // this.getHotels();
-
+        this.getSheetInfos();
+        // this.getEvaluations();
+        this.getPerceptions();
     },
     methods: {
-        getAssemblePlaces: function getAssemblePlaces() {
+        getSheetInfos: function getSheetInfos() {
             var _this = this;
 
-            // 获取旅游的集合信息
-            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId, {
+            // 获取旅游下用户的学习工作纸/api/travels/:travel/users/:user/studies?include=questions
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/users/' + this.$route.params.id + '/studies?include=questions', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
             }).then(function (res) {
                 // console.log(res.data);
-                _this.assemblePlaces = res.data;
-                _this.edAssemblePlaces.assembly_at = _this.assemblePlaces.assembly_at;
-                _this.edAssemblePlaces.assembly_station = _this.assemblePlaces.assembly_station;
-                _this.edAssemblePlaces.dissolution_at = _this.assemblePlaces.dissolution_at;
-                _this.edAssemblePlaces.dissolution_station = _this.assemblePlaces.dissolution_station;
+                _this.sheetInfos = res.data.data;
             }).catch(function (err) {
                 _this.$toast('获取失败');
                 console.log(err);
             });
         },
-        getFlights: function getFlights() {
+        getEvaluations: function getEvaluations() {
             var _this2 = this;
 
-            // 获取旅游的航班信息
+            // 获取旅游下用户的自我评估
             this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/flights', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
             }).then(function (res) {
                 // console.log(res.data);
-                _this2.flights = res.data.data;
+                _this2.evaluations = res.data.data;
             }).catch(function (err) {
                 _this2.$toast('获取失败');
                 console.log(err);
             });
         },
-        getHotels: function getHotels() {
+        getPerceptions: function getPerceptions() {
             var _this3 = this;
 
-            // 获取旅游的住宿酒店
-            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/hotels', {
+            // 获取旅游下用户的自我感想/api/travels/:travel/users/:user/titles?include=writes
+            this.$get(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/users/' + this.$route.params.id + '/titles?include=writes', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
             }).then(function (res) {
                 // console.log(res.data);
-                _this3.hotels = res.data.data;
+                _this3.perceptions = res.data.data;
             }).catch(function (err) {
                 _this3.$toast('获取失败');
                 console.log(err);
@@ -51102,7 +51155,87 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "tab-content" }, [
-          _vm._m(3),
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane active",
+              attrs: { role: "tabpanel", id: "gather" }
+            },
+            _vm._l(_vm.sheetInfos, function(sheetInfo, index) {
+              return _c(
+                "div",
+                { staticClass: "sheetGroup" },
+                [
+                  _c("div", {
+                    staticClass: "sheetTitle",
+                    domProps: { textContent: _vm._s(sheetInfo.title) }
+                  }),
+                  _vm._v(" "),
+                  _c("div", {
+                    staticClass: "sheetContent",
+                    domProps: { innerHTML: _vm._s(sheetInfo.body) }
+                  }),
+                  _vm._v(" "),
+                  sheetInfo.questions.data
+                    ? _vm._l(sheetInfo.questions.data, function(
+                        question,
+                        index
+                      ) {
+                        return _c(
+                          "div",
+                          { staticClass: "sheetQuestion" },
+                          [
+                            _c("div", { staticClass: "questTitle" }, [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(index + 1) +
+                                  "." +
+                                  _vm._s(question.content) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            question.answer
+                              ? [
+                                  _c("div", { staticClass: "questContent" }, [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(question.answer) +
+                                        "\n                                    "
+                                    )
+                                  ])
+                                ]
+                              : [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "questContent",
+                                      staticStyle: { color: "red" }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                        暂无回答\n                                    "
+                                      )
+                                    ]
+                                  )
+                                ]
+                          ],
+                          2
+                        )
+                      })
+                    : [
+                        _c("div", { staticClass: "sheetQuestion" }, [
+                          _vm._v(
+                            "\n                                未设置问题\n                            "
+                          )
+                        ])
+                      ]
+                ],
+                2
+              )
+            }),
+            0
+          ),
           _vm._v(" "),
           _c(
             "div",
@@ -51119,17 +51252,7 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "tab-pane",
-              attrs: { role: "tabpanel", id: "accommodationInfo" }
-            },
-            _vm._l(_vm.hotels, function(hotel, index) {
-              return _c("div", { staticClass: "pane_content_info" })
-            }),
-            0
-          )
+          _vm._m(3)
         ])
       ])
     ])
@@ -51204,20 +51327,18 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: "tab-pane active",
-        attrs: { role: "tabpanel", id: "gather" }
+        staticClass: "tab-pane",
+        attrs: { role: "tabpanel", id: "accommodationInfo" }
       },
       [
         _c("div", { staticClass: "sheetGroup" }, [
-          _c("div", { staticClass: "sheetTitle" }),
+          _c("div", { staticClass: "feelTitle" }),
           _vm._v(" "),
-          _c("div", { staticClass: "sheetContent" }),
+          _c("div", { staticClass: "feelImg" }, [
+            _c("img", { attrs: { src: "/etravel/public/images/logo.png" } })
+          ]),
           _vm._v(" "),
-          _c("div", { staticClass: "sheetQuestion" }, [
-            _c("div", { staticClass: "questTitle" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "questContent" })
-          ])
+          _c("div", { staticClass: "feelContent" })
         ])
       ]
     )
@@ -52858,7 +52979,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vue_babel_helper_vue_jsx_merge_props___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__vue_babel_helper_vue_jsx_merge_props__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_functional__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_popup__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_popup__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__icon__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__loading__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__popup__ = __webpack_require__(21);
@@ -53961,7 +54082,7 @@ var _use = Object(__WEBPACK_IMPORTED_MODULE_1__utils__["j" /* use */])('picker-c
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_popup__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_popup__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icon__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loading__ = __webpack_require__(12);
 
@@ -54083,7 +54204,7 @@ var STYLE = ['success', 'fail', 'loading'];
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_popup__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_popup__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__button__ = __webpack_require__(11);
 
 
@@ -54753,7 +54874,7 @@ var _use = Object(__WEBPACK_IMPORTED_MODULE_0__utils__["j" /* use */])('checkbox
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_raf__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_color__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_color__ = __webpack_require__(18);
 
 
 
@@ -56286,7 +56407,7 @@ GoodsActionMiniBtn.props = Object(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_hel
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vue_babel_helper_vue_jsx_merge_props__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vue_babel_helper_vue_jsx_merge_props___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__vue_babel_helper_vue_jsx_merge_props__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_popup__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_popup__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_touch__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__swipe__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__swipe_item__ = __webpack_require__(66);
@@ -56929,7 +57050,7 @@ var _use = Object(__WEBPACK_IMPORTED_MODULE_0__utils__["j" /* use */])('notice-b
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Notify__ = __webpack_require__(383);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_functional__ = __webpack_require__(5);
 
@@ -57013,9 +57134,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.$notify = Notify;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vue_babel_helper_vue_jsx_merge_props__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vue_babel_helper_vue_jsx_merge_props___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__vue_babel_helper_vue_jsx_merge_props__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_functional__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_popup__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_popup__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__popup__ = __webpack_require__(21);
 
 
@@ -57614,7 +57735,7 @@ PasswordInput.props = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_color__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_color__ = __webpack_require__(18);
 
 
 
@@ -58963,7 +59084,7 @@ var _use = Object(__WEBPACK_IMPORTED_MODULE_0__utils__["j" /* use */])('step'),
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_color__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_color__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icon__ = __webpack_require__(7);
 
 
@@ -76865,7 +76986,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18), __webpack_require__(412)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19), __webpack_require__(412)(module)))
 
 /***/ }),
 /* 412 */

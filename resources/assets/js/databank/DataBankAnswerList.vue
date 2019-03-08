@@ -52,7 +52,7 @@
                         <td>{{group.class}}</td>
                         <td>{{group.user.name}}</td>
                         <td>{{group.duty}}</td>
-                        <td @click="$router.push('/answer/dataBankAnswerInfo/'+group.id)">查看答題紙></td>
+                        <td @click="$router.push('/answer/dataBankAnswerInfo/'+group.user_id)">查看答題紙></td>
                     </tr>
                    
                 </tbody>

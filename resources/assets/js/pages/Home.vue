@@ -195,8 +195,8 @@
 </template>
 
 <script>
-    import { mapActions } from 'vuex'
-    
+    import { mapActions } from 'vuex';
+    import { mapGetters } from 'vuex';
     export default {
         data() {
             return {
@@ -230,6 +230,7 @@
         },
         methods:{
             ...mapActions(['setTravels']),
+            ...mapGetters(['userInfo']),
             getUserTravels(){
                 // 获取旅游项目
                 this.$get(this.$config+'/api/creater/travels',
@@ -264,31 +265,37 @@
                     title: '新建項目',
                     message: '新建項目將會消耗您一枚金幣，是否創建？'
                 }).then(() => {
-                    this.$post(this.$config+'/api/travels',{
-                        travel_name:this.newTravel.travel_name,
-                        travel_at:this.newTravel.travel_at,
-                        travel_return:this.newTravel.travel_return,
-                        travel_introduction:this.newTravel.travel_introduction, 
-                    },
-                    {
-                        headers: {
-                            "Authorization": 'Bearer '+sessionStorage.token,
-                        }
-                    }).then(res => {
-                        // console.log(res.data);
-                        this.getUserTravels();
-                        this.popupHiden();
-                        this.$toast('創建成功');
-                        this.newTravel.travel_name='';
-                        this.newTravel.travel_at='';
-                        this.newTravel.travel_return='';
-                        this.newTravel.travel_introduction='';
-                    }).catch(err => {
-                        this.$toast('創建失败');
-                        this.errors=err.response.data.errors;
+                    if(this.$store.state.userInfo.tokens>=1){
+                        this.$post(this.$config+'/api/travels',{
+                            travel_name:this.newTravel.travel_name,
+                            travel_at:this.newTravel.travel_at,
+                            travel_return:this.newTravel.travel_return,
+                            travel_introduction:this.newTravel.travel_introduction, 
+                        },
+                        {
+                            headers: {
+                                "Authorization": 'Bearer '+sessionStorage.token,
+                            }
+                        }).then(res => {
+                            // console.log(res.data);
+                            this.getUserTravels();
+                            this.popupHiden();
+                            this.$toast('創建成功');
+                            this.newTravel.travel_name='';
+                            this.newTravel.travel_at='';
+                            this.newTravel.travel_return='';
+                            this.newTravel.travel_introduction='';
+                            this.getUserInfo();
+                        }).catch(err => {
+                            this.$toast('創建失败');
+                            this.errors=err.response.data.errors;
 
-                        console.log(err)
-                    });
+                            console.log(err)
+                        });
+                        
+                    }else{
+                        this.$toast('您的金幣不足!');
+                    }
                 }).catch(err => {
 
                 });
@@ -369,6 +376,26 @@
                     console.log(err)
                 });
 
+            },
+            getUserInfo(){
+                // 获取用户基本信息
+                this.$get(this.$config+'/api/user?include=student.school',
+                {
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    }
+                }).then(res => {
+                    // console.log(res.data);
+                    this.setUserInfo(res.data);
+                }).catch(err => {
+                    console.log(err);
+                    this.$toast('登录失效');
+                    sessionStorage.clear();
+                    this.setUserInfo('');
+                    this.setTravels('');
+                    this.setToken('');
+                    this.$router.push("/");
+                });
             },
         //     pickTimeShow(str){
         //         this.isPickTimeShow=true;
