@@ -21,7 +21,7 @@ class ImagesController extends Controller
          $image->user_id = $user->id;
          $image->save();
 
-         if ($request->type == 1) {
+         if ($request->platform == 1) {
             return $this->response->array([
                'errno' => 0,
                'data'=>[
