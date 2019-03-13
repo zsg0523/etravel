@@ -21,9 +21,21 @@ class ImagesController extends Controller
          $image->user_id = $user->id;
          $image->save();
 
-         return $this->response->array([
-            'errno' => 0,
-            'data'=>[$image->path]
-         ])->setStatusCode(201);
+         if ($request->platform == 1) {
+            return $this->response->array([
+               'errno' => 0,
+               'data'=>[
+                  $image->path
+               ]
+            ])->setStatusCode(201);
+         } else {
+            return $this->response->array([
+               'errno' => 0,
+               'data'=>[
+                  'id' => $image->id,
+                  'path' => $image->path
+               ]
+            ])->setStatusCode(201);
+         }
    	}
 }
