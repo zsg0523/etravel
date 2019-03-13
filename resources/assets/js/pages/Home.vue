@@ -41,7 +41,7 @@
     .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
 
     .van-dialog{width:50%;}
-    .van-picker{width:80%;}
+    /*.van-picker{width:80%;}*/
 </style>
 
 <template>
@@ -55,7 +55,7 @@
     				<img src="/etravel/public/images/add1.png">
     			</div>
     			<div class="project_right disflex">
-    				<span class="addnew" >新建项目</span>
+    				<span class="addnew" >新建項目</span>
     			</div>
                 <div class="project_icon">
                     
@@ -70,16 +70,16 @@
     				<div class="edit_name">
     					<div class="edit_icon disflex fl" @click="editPopupShow(travel.id,index)">
     						<img src="/etravel/public/images/write-icon.png">
-    						<span></span>
+    						<span>編輯</span>
     					</div>
-    					<div class="project_type disflex fr" v-if="travel.pivot['is_promise'] == 1">
+    					<!-- <div class="project_type disflex fr" v-if="travel.pivot['is_promise'] == 1">
     						<img src="/etravel/public/images/sent.png">
     						<span>已发布！</span>
     					</div>
                         <div class="project_type disflex fr" v-else> 
                             <img src="/etravel/public/images/unsent.png">
                             <span>未发布！</span>
-                        </div>
+                        </div> -->
     				</div>
     				<div class="project_name">
     					<p class="overdot">{{travel.travel_name}}</p>
@@ -99,9 +99,9 @@
         <van-popup v-model="isPopupShow" :overlay="true" style="border-radius: 15px;">
             <div class="addNewTravel disflex">
                 <div class="form_item_pro">
-                    <div class="item_title">项目名称<span class="err" v-if="errors.travel_name" v-text="errors.travel_name[0]"></span></div>
+                    <div class="item_title">項目名稱<span class="err" v-if="errors.travel_name" v-text="errors.travel_name[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="项目名称（25个字符内）" type="text"  v-model="newTravel.travel_name">
+                        <input class="item_input" placeholder="項目名稱" type="text"  v-model="newTravel.travel_name">
                     </div>
                 </div>
                 <div class="form_item_pro">
@@ -129,21 +129,21 @@
                     </div>
                 </div> -->
                 <div class="form_item_pro">
-                    <div class="item_title">项目简介<span class="err" v-if="errors.travel_introduction" v-text="errors.travel_introduction[0]"></span></div>
+                    <div class="item_title">項目簡介<span class="err" v-if="errors.travel_introduction" v-text="errors.travel_introduction[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="项目简介" type="text"  v-model="newTravel.travel_introduction">
+                        <input class="item_input" placeholder="項目簡介" type="text"  v-model="newTravel.travel_introduction">
                     </div>
                 </div>
-                <button @click="addNewTravel()">确定</button>
+                <button @click="addNewTravel()">確定</button>
             </div>
 
         </van-popup>
         <van-popup v-model="isEditPopupShow" :overlay="true" style="border-radius: 15px;"> 
             <div class="addNewTravel disflex">
                 <div class="form_item_pro">
-                    <div class="item_title">项目名称</div>
+                    <div class="item_title">項目名稱</div>
                     <div>
-                        <input class="item_input" placeholder="项目名称项目名称（25个字符内）" type="text"  v-model="edTravel.travel_name">
+                        <input class="item_input" placeholder="項目名稱" type="text"  v-model="edTravel.travel_name">
                     </div>
                 </div>
                 <div class="form_item_pro">
@@ -171,12 +171,12 @@
                     </div>
                 </div> -->
                 <div class="form_item_pro">
-                    <div class="item_title">项目简介</div>
+                    <div class="item_title">項目簡介</div>
                     <div>
-                        <input class="item_input" placeholder="项目简介" type="text"  v-model="edTravel.travel_introduction">
+                        <input class="item_input" placeholder="項目簡介" type="text"  v-model="edTravel.travel_introduction">
                     </div>
                 </div>
-                <button @click="editTravel()">确定</button>
+                <button @click="editTravel()">確定</button>
             </div>
         </van-popup>
        <!--  <van-popup v-model="isPickTimeShow" :overlay="true" style="border-radius: 15px;"> 
@@ -195,8 +195,8 @@
 </template>
 
 <script>
-    import { mapActions } from 'vuex'
-    
+    import { mapActions } from 'vuex';
+    import { mapGetters } from 'vuex';
     export default {
         data() {
             return {
@@ -230,6 +230,8 @@
         },
         methods:{
             ...mapActions(['setTravels']),
+            ...mapActions(['setUserInfo']),
+            ...mapGetters(['userInfo']),
             getUserTravels(){
                 // 获取旅游项目
                 this.$get(this.$config+'/api/creater/travels',
@@ -260,37 +262,51 @@
             },
             addNewTravel(){
                 // 新增旅游
-                this.$post(this.$config+'/api/travels',{
-                    travel_name:this.newTravel.travel_name,
-                    travel_at:this.newTravel.travel_at,
-                    travel_return:this.newTravel.travel_return,
-                    travel_introduction:this.newTravel.travel_introduction, 
-                },
-                {
-                    headers: {
-                        "Authorization": 'Bearer '+sessionStorage.token,
-                    }
-                }).then(res => {
-                    // console.log(res.data);
-                    this.getUserTravels();
-                    this.popupHiden();
-                    this.$toast('添加成功');
-                    this.newTravel.travel_name='';
-                    this.newTravel.travel_at='';
-                    this.newTravel.travel_return='';
-                    this.newTravel.travel_introduction='';
-                }).catch(err => {
-                    this.$toast('添加失败');
-                    this.errors=err.response.data.errors;
+                this.$dialog.confirm({
+                    title: '新建項目',
+                    message: '新建項目將會消耗您一枚金幣，是否創建？'
+                }).then(() => {
+                    if(this.$store.state.userInfo.tokens>=1){
+                        this.$post(this.$config+'/api/travels',{
+                            travel_name:this.newTravel.travel_name,
+                            travel_at:this.newTravel.travel_at,
+                            travel_return:this.newTravel.travel_return,
+                            travel_introduction:this.newTravel.travel_introduction, 
+                        },
+                        {
+                            headers: {
+                                "Authorization": 'Bearer '+sessionStorage.token,
+                            }
+                        }).then(res => {
+                            // console.log(res.data);
+                            this.getUserTravels();
+                            this.popupHiden();
+                            this.$toast('創建成功');
+                            this.newTravel.travel_name='';
+                            this.newTravel.travel_at='';
+                            this.newTravel.travel_return='';
+                            this.newTravel.travel_introduction='';
+                            this.getUserInfo();
+                        }).catch(err => {
+                            this.$toast('創建失败');
+                            this.errors=err.response.data.errors;
 
-                    console.log(err)
+                            console.log(err)
+                        });
+                        
+                    }else{
+                        this.$toast('您的金幣不足!');
+                    }
+                }).catch(err => {
+
                 });
+                
             },
             delTravel(projectId,index){
                 // 删除旅游
                 this.$dialog.confirm({
-                    title: '删除项目',
-                    message: '是否删除该旅游'
+                    title: '删除項目',
+                    message: '是否删除該項目'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -361,6 +377,26 @@
                     console.log(err)
                 });
 
+            },
+            getUserInfo(){
+                // 获取用户基本信息
+                this.$get(this.$config+'/api/user?include=student.school',
+                {
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    }
+                }).then(res => {
+                    // console.log(res.data);
+                    this.setUserInfo(res.data);
+                }).catch(err => {
+                    console.log(err);
+                    this.$toast('登录失效');
+                    sessionStorage.clear();
+                    this.setUserInfo('');
+                    this.setTravels('');
+                    this.setToken('');
+                    this.$router.push("/");
+                });
             },
         //     pickTimeShow(str){
         //         this.isPickTimeShow=true;

@@ -16,20 +16,20 @@
 <template>
     <div class="dataBank_left">
         <ul style="padding: 0;margin:0;">
-            <router-link tag='li' to='/dataBankInfo'><div >重要资料<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/dataBankPhone'><div >常用电话<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/rule'><div >团队守则<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/promise'><div >我的承诺<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/dataBankGroup'><div >师生名单分组<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/dataBankLocalCulture'><div >当地文化<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/dataBankHouseTable'><div >分房表<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/luggage'><div >行李清单<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/dataBankInfo'><div >重要資料<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/dataBankPhone'><div >常用電話<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/rule'><div >團隊守則<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/promise'><div >我的承諾<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/dataBankGroup'><div >師生名單分組<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/dataBankLocalCulture'><div >當地文化<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/dataBankHouseTable'><div >分房錶<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/luggage'><div >行李清單<!-- <input type="checkbox" class="checke"> --></div></router-link>
             <router-link tag='li' to='/journey'><div >行程<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/study'><div >学习工作纸<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/study'><div >學習工作紙<!-- <input type="checkbox" class="checke"> --></div></router-link>
             <!-- <router-link tag='li' to='/'><div >每日记事<input type="checkbox" class="checke"></div></router-link> -->
-            <router-link tag='li' to='/topic'><div >自我评估<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/topic'><div >自我評估<!-- <input type="checkbox" class="checke"> --></div></router-link>
             <router-link tag='li' to='/dataBankSelfPerception'><div >自我感想<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/answer'><div >自我感想<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/answer'><div >學生答題紙<!-- <input type="checkbox" class="checke"> --></div></router-link>
 
         </ul>
     </div>

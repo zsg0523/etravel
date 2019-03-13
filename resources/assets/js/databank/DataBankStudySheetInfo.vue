@@ -9,7 +9,7 @@
     .form_content_sheetInfo{width: 94%;min-height: 210px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;}
 
     .form_item_sheetInfo{width: 100%;min-height:90px;}
-    .form_item_sheetInfo>div{min-height:45px;line-height: 45px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;}
+    .form_item_sheetInfo>div{min-height:45px;line-height: 45px;outline: none;width: 97%;border-radius: 8px;}
     .item_input_sheetInfo{height:45px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;}
     .item_area_sheetInfo{width:100%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;}
     .item_title_icon>img{height:25px;margin-left:5px;}
@@ -49,9 +49,10 @@
 		            </div>
                     <div class="form_item_sheetInfo">
                         <div class="item_title">内容</div>
-                        <div>
+                        <!-- <div>
                             <textarea class="item_area_sheetInfo"  placeholder="内容" disabled="disabled" :value="sheet.body"></textarea>
-                        </div>
+                        </div> -->
+                        <div style="border:1px solid #ccc;border-radius: 8px;background-color:#eeeeee" v-html="sheet.body"></div>
                     </div>
 		            <div class="form_item_sheetInfo" v-for="(sheetInfo,index) in sheetInfos">
 		                <div class="item_title">

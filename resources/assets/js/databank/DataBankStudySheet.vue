@@ -1,6 +1,6 @@
 <style>
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
-    .pane_content{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
+    .pane_content_sheet{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
     
     .right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;}
     .title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;}
@@ -40,7 +40,7 @@
 			学习工作纸
         </div>
         <div class="dataBank_input_form disflex">
-            <div class="pane_content">
+            <div class="pane_content_sheet">
                 <div class="form_content_sheet disflex" v-for="(sheet,index) in sheets">
                     <div class="form_item_journeyInfo">
 		                <div class="item_title">标题 <img class="toNext" @click="$router.push('/study/dataBankStudySheetInfo/'+sheet.id)" src="/etravel/public/images/See-next.png"></div>
@@ -48,9 +48,10 @@
 		            </div>
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
-                        <div>
+                        <div style="border:1px solid #ccc;border-radius: 8px;width:93%;background-color:#eeeeee" v-html="sheet.body"></div>
+                        <!-- <div>
                             <textarea class="item_area" disabled="disabled" placeholder="内容" :value="sheet.body"></textarea>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="editBtnGroup_journeyInfo">
 		                <img @click="delSheet(sheet.id)" src="/etravel/public/images/rush-icon.png">
@@ -71,9 +72,7 @@
 		            </div>
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
-                        <div>
-                            <textarea class="item_area" placeholder="内容" v-model="newSheet.body"></textarea>
-                        </div>
+                        <div><Editor @catchData='catchData' :childData='newSheet.body'></Editor></div>
                     </div>
                     <div class="issure">
                         <button @click="addNewSheet()">添加</button>
@@ -90,9 +89,10 @@
 		            </div>
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
-                        <div>
+                        <!-- <div>
                             <textarea class="item_area"  placeholder="内容" v-model="edSheet.body"></textarea>
-                        </div>
+                        </div> -->
+                        <div><Editor @catchData='catchData' :childData='edSheet.body'></Editor></div>
                     </div>
                     <div class="issure">
                         <button @click="editSheet()">修改</button>
@@ -104,7 +104,12 @@
 </template>
 
 <script>
+    import Editor from '../components/Editor.vue';
+
   	export default {
+        components: {
+            Editor,
+        },
   		data() {
             return {
 	        	sheets:[],
@@ -120,6 +125,7 @@
 	        	},
 	        	isNewSheetShow:false,
 	        	isEditSheetShow:false,
+                status:'',
             }
         },
         mounted:function(){
@@ -144,6 +150,7 @@
             },
             addNewSheetShow(){
                 this.isNewSheetShow=true;
+                this.status='newSheet';
             },
             addNewSheet(){
                 // 新增学习工作纸
@@ -170,6 +177,7 @@
                 this.edSheet.body=this.sheets[index].body;
                 this.edSheet.index=index;
                 this.isEditSheetShow=true;
+                this.status='edSheet';
             },
             editSheet(){
                 // 修改学习工作纸信息
@@ -224,6 +232,13 @@
                 }).catch(err => {
 
                 });
+            },
+            catchData(value){
+                if(this.status=='newSheet'){
+                    this.newSheet.body=value;
+                }else if(this.status=='edSheet'){
+                    this.edSheet.body=value;
+                }
             },
 
         },
