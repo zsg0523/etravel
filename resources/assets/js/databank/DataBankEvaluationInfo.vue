@@ -66,7 +66,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">详情</div>
+                        <div class="item_title">题目详情(必填)</div>
                         <div>
                             <textarea class="item_area_eval" placeholder="题目详情" v-model="newEvaluationInfo.content"></textarea>
                         </div>
@@ -75,7 +75,6 @@
                         <div class="item_title">题目类型</div>
                         <div>
                             <select id="edTypeId" v-model="newEvaluationInfo.type">
-                                <option value="">--请选择--</option>
                                 <option v-for="item in optList" :value="item.value">{{ item.title }}</option>
                             </select>
                         </div>
@@ -90,7 +89,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">题目详情</div>
+                        <div class="item_title">题目详情(必填)</div>
                         <div>
                             <textarea class="item_area_eval" placeholder="题目详情" v-model="edEvaluationInfo.content"></textarea>
                         </div>
@@ -99,7 +98,6 @@
                         <div class="item_title">题目类型</div>
                         <div>
                             <select id="edTypeId" v-model="edEvaluationInfo.type">
-                                <option value="">--请选择--</option>
                                 <option v-for="item in optList" :value="item.value">{{ item.title }}</option>
                             </select>
                         </div>

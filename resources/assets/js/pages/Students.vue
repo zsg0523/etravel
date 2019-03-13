@@ -77,40 +77,40 @@
                 <div class="students_input_form disflex" v-if="students!=''">
                     <div class="form_content_student disflex"> 
                         <div class="form_item_student">
-                            <div class="item_title">用户ID</div>
-                            <div><input class="item_input" type="text" placeholder="填写用户ID" disabled="disabled" :value="students[actIndex].user.id"></div>
+                            <div class="item_title">用戶ID</div>
+                            <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" :value="students[actIndex].user.id"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">学生密码</div>
-                            <div><input class="item_input" type="text" placeholder="填写学生密码" disabled="disabled" :value="students[actIndex].user.original_password"></div>
+                            <div class="item_title">學生密碼</div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生密碼" disabled="disabled" :value="students[actIndex].user.original_password"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">学生中文名</div>
-                            <div><input class="item_input" type="text" placeholder="填写学生中文名" disabled="disabled" :value="students[actIndex].user.name"></div>
+                            <div class="item_title">學生中文名</div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生中文名" disabled="disabled" :value="students[actIndex].user.name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">学生英文名</div>
-                            <div><input class="item_input" type="text" placeholder="填写学生英文名" disabled="disabled" :value="students[actIndex].user.en_name"></div>
+                            <div class="item_title">學生英文名</div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生英文名" disabled="disabled" :value="students[actIndex].user.en_name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">联系电话</div>
-                            <div><input class="item_input" type="text" placeholder="填写联系电话" disabled="disabled" :value="students[actIndex].user.phone"></div>
+                            <div class="item_title">聯繫電話</div>
+                            <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" :value="students[actIndex].user.phone"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">学生学号</div>
-                            <div><input class="item_input" type="text" placeholder="填写学生学号" disabled="disabled" :value="students[actIndex].student_number"></div>
+                            <div class="item_title">學生學號</div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生學號" disabled="disabled" :value="students[actIndex].student_number"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">学生班级</div>
-                            <div><input class="item_input" type="text"  placeholder="填写学生班级" disabled="disabled" :value="students[actIndex].class"></div>
+                            <div class="item_title">學生班級</div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生班級" disabled="disabled" :value="students[actIndex].class"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">学生房间号</div>
-                            <div><input class="item_input" type="text"  placeholder="填写学生房间号" disabled="disabled" :value="students[actIndex].room"></div>
+                            <div class="item_title">學生房間號</div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生房間號" disabled="disabled" :value="students[actIndex].room"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生职责</div>
-                            <div><input class="item_input" type="text"  placeholder="填写学生职责" disabled="disabled" :value="students[actIndex].duty"></div>
+                            <div class="item_title">學生職責</div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生職責" disabled="disabled" :value="students[actIndex].duty"></div>
                         </div>
                     </div>
                     <div class="studentEditBtn" @click="editStudentShow()">
@@ -120,40 +120,40 @@
                         <div class="editBox" >
                             <div class="editBoxContent disflex">
                                 <div class="form_item_small">
-                                    <div class="item_title">用户ID</div>
-                                    <div><input class="item_input" type="text" placeholder="填写用户ID" disabled="disabled" v-model="edStudent.id"></div>
+                                    <div class="item_title">用戶ID</div>
+                                    <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" v-model="edStudent.id"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生密码</div>
-                                    <div><input class="item_input" type="text" placeholder="填写学生密码" disabled="disabled" v-model="edStudent.original_password"></div>
+                                    <div class="item_title">學生密碼</div>
+                                    <div><input class="item_input" type="text" placeholder="填寫學生密碼" disabled="disabled" v-model="edStudent.original_password"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生中文名<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填写学生中文名" disabled="disabled" v-model="edStudent.name"></div>
+                                    <div class="item_title">學生中文名<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫學生中文名" disabled="disabled" v-model="edStudent.name"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生英文名<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填写学生英文名" disabled="disabled" v-model="edStudent.en_name"></div>
+                                    <div class="item_title">學生英文名<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫學生英文名" disabled="disabled" v-model="edStudent.en_name"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">联系电话<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填写联系电话" disabled="disabled" v-model="edStudent.phone"></div>
+                                    <div class="item_title">聯繫電話<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" v-model="edStudent.phone"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生学号<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填写学生学号" v-model="edStudent.student_number"></div>
+                                    <div class="item_title">學生學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫學生學號" v-model="edStudent.student_number"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生班级<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
-                                    <div><input class="item_input" type="text"  placeholder="填写学生班级" v-model="edStudent.class"></div>
+                                    <div class="item_title">學生班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
+                                    <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="edStudent.class"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生房间号<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
-                                    <div><input class="item_input" type="text"  placeholder="填写学生房间号" v-model="edStudent.room"></div>
+                                    <div class="item_title">學生房間號(必填)<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
+                                    <div><input class="item_input" type="text"  placeholder="填寫學生房間號" v-model="edStudent.room"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">学生职责<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
-                                    <div><input class="item_input" type="text"  placeholder="填写学生职责" v-model="edStudent.duty"></div>
+                                    <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
+                                    <div><input class="item_input" type="text"  placeholder="填寫學生職責" v-model="edStudent.duty"></div>
                                 </div>
                                 <div class="issureStu">
                                     <button class="issureBtn" @click="editStudent()">修改</button>
@@ -167,36 +167,36 @@
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
                         <div class="form_item">
-                            <div class="item_title">学生密码</div>
-                            <div><input class="item_input" type="text" placeholder="填写学生密码" v-model="newStudent.original_password"></div>
+                            <div class="item_title">學生密碼(必填)</div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生密碼" v-model="newStudent.original_password"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生中文名<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填写学生中文名" v-model="newStudent.name"></div>
+                            <div class="item_title">學生中文名<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生中文名" v-model="newStudent.name"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生英文名<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填写学生英文名" v-model="newStudent.en_name"></div>
+                            <div class="item_title">學生英文名<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生英文名" v-model="newStudent.en_name"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">联系电话<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填写联系电话" v-model="newStudent.phone"></div>
+                            <div class="item_title">聯繫電話<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
+                            <div><input class="item_input" type="text" placeholder="填寫聯繫電話" v-model="newStudent.phone"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生学号<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填写学生学号" v-model="newStudent.student_number"></div>
+                            <div class="item_title">學生學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生學號" v-model="newStudent.student_number"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生班级<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填写学生班级" v-model="newStudent.class"></div>
+                            <div class="item_title">學生班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="newStudent.class"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生房间号<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填写学生房间号" v-model="newStudent.room"></div>
+                            <div class="item_title">學生房間號(必填)<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生房間號" v-model="newStudent.room"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">学生职责<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填写学生职责" v-model="newStudent.duty"></div>
+                            <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生職責" v-model="newStudent.duty"></div>
                         </div>
                         <div class="issureStu">
                             <button class="issureBtn" @click="addNewStudent()">添加</button>
@@ -208,44 +208,44 @@
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
                         <div class="form_item_small">
-                            <div class="item_title">用户ID</div>
-                            <div><input class="item_input" type="text" placeholder="填写用户ID" disabled="disabled" :value="searchStudent.id"></div>
+                            <div class="item_title">用戶ID</div>
+                            <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" :value="searchStudent.id"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">学生密码</div>
-                            <div><input class="item_input" type="text" placeholder="填写学生密码" disabled="disabled" :value="searchStudent.original_password"></div>
+                            <div class="item_title">學生密碼</div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生密碼" disabled="disabled" :value="searchStudent.original_password"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">学生中文名</div>
-                            <div><input class="item_input" type="text" placeholder="填写学生中文名" disabled="disabled" :value="searchStudent.name"></div>
+                            <div class="item_title">學生中文名</div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生中文名" disabled="disabled" :value="searchStudent.name"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">学生英文名</div>
-                            <div><input class="item_input" type="text" placeholder="填写学生英文名" disabled="disabled" :value="searchStudent.en_name"></div>
+                            <div class="item_title">學生英文名</div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生英文名" disabled="disabled" :value="searchStudent.en_name"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">联系电话</div>
-                            <div><input class="item_input" type="text" placeholder="填写联系电话" disabled="disabled" v-model="searchStudent.phone"></div>
+                            <div class="item_title">聯繫電話</div>
+                            <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" v-model="searchStudent.phone"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">学生学号<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填写学生学号" v-model="searchStudent.student_number"></div>
+                            <div class="item_title">學生學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生學號" v-model="searchStudent.student_number"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">学生班级<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填写学生班级" v-model="searchStudent.class"></div>
+                            <div class="item_title">學生班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="searchStudent.class"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">学生房间号<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填写学生房间号" v-model="searchStudent.room"></div>
+                            <div class="item_title">學生房間號(必填)<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生房間號" v-model="searchStudent.room"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">学生职责<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填写学生职责" v-model="searchStudent.duty"></div>
+                            <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生職責" v-model="searchStudent.duty"></div>
                         </div>
                         <div class="issureStu">
                             <button class="twoBtn cancel" @click="cancelAdd()">取消</button>
-                            <button class="twoBtn" style="background-color:#ffde01;border:none;" @click="addOldStudent()">添加学员</button>
+                            <button class="twoBtn" style="background-color:#ffde01;border:none;" @click="addOldStudent()">添加學員</button>
                         </div>
                     </div>
                 </div>
@@ -468,11 +468,11 @@
                             this.searchStudentShow();
                         }
                     }).catch(err => {
-                        this.$toast('请输入正确的用户ID');
+                        this.$toast('请输入正确的用戶ID');
                         // console.log(err);
                     });
                 }else{
-                    this.$toast('请输入用户ID');
+                    this.$toast('请输入用戶ID');
                 }  
             },
             cancelAdd(){

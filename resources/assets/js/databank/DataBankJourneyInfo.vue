@@ -41,16 +41,16 @@
         <div class="dataBank_input_form disflex">
             <div class="pane_content">
                 <div class="form_content_journeyInfo disflex" v-for="(journeyInfo,index) in journeyInfos">
-                    <div class="form_item_journeyInfo">
+                    <!-- <div class="form_item_journeyInfo">
 		                <div class="item_title">时间点</div>
 		                <div><input class="item_input_journeyInfo" placeholder="时间点(hh:mm)" type="text" disabled="disabled"  :value="journeyInfo.time"></div>
-		            </div>
+		            </div> -->
 		            <div class="form_item_journeyInfo">
-		                <div class="item_title">景点内容</div>
+		                <div class="item_title">景点内容(必填)</div>
 		                <div><input class="item_input_journeyInfo" placeholder="景点内容" type="text" disabled="disabled"  :value="journeyInfo.content"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">景点介绍</div>
+                        <div class="item_title">景点介绍(必填)</div>
                         <div>
                             <textarea class="item_area" disabled="disabled" placeholder="景点介绍" :value="journeyInfo.description"></textarea>
                         </div>
@@ -68,16 +68,16 @@
         <van-popup v-model="isNewJourneyInfoShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item_journeyInfo">
+                    <!-- <div class="form_item_journeyInfo">
 		                <div class="item_title">时间点</div>
 		                <div><input class="item_input_journeyInfo" placeholder="时间点(hh:mm)" type="text" v-model="newJourneyInfo.time"></div>
-		            </div>
+		            </div> -->
 		            <div class="form_item_journeyInfo">
-		                <div class="item_title">景点内容</div>
+		                <div class="item_title">景点内容(必填)</div>
 		                <div><input class="item_input_journeyInfo" placeholder="景点内容" type="text" v-model="newJourneyInfo.content"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">景点介绍</div>
+                        <div class="item_title">景点介绍(必填)</div>
                         <div>
                             <textarea class="item_area" placeholder="景点介绍" v-model="newJourneyInfo.description"></textarea>
                         </div>
@@ -91,10 +91,10 @@
         <van-popup v-model="isEditJourneyInfoShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item_journeyInfo">
+                    <!-- <div class="form_item_journeyInfo">
 		                <div class="item_title">时间</div>
 		                <div><input class="item_input_journeyInfo" placeholder="时间" type="text"  v-model="edJourneyInfo.time"></div>
-		            </div>
+		            </div> -->
 		            <div class="form_item_journeyInfo">
 		                <div class="item_title">内容</div>
 		                <div><input class="item_input_journeyInfo" placeholder="内容" type="text" v-model="edJourneyInfo.content" ></div>
@@ -121,13 +121,13 @@
             	journey:'',
 	        	journeyInfos:[],
 	        	newJourneyInfo:{
-	        		time:'',
+	        		// time:'',
 	        		content:'',
 	        		description:'',
 	        	},
 	        	edJourneyInfo:{
 	        		id:'',
-	        		time:'',
+	        		// time:'',
 	        		content:'',
 	        		description:'',
 	        		index:'',
@@ -172,7 +172,7 @@
                     this.$toast('添加成功');
                     this.getJourneyInfos();
                     this.isNewJourneyInfoShow=false;
-                    this.newJourneyInfo.time='';
+                    // this.newJourneyInfo.time='';
                     this.newJourneyInfo.content='';
                     this.newJourneyInfo.description='';
                 }).catch(err => {
@@ -182,7 +182,7 @@
             },
             editJourneyInfoShow(index){
                 this.edJourneyInfo.id=this.journeyInfos[index].id;
-                this.edJourneyInfo.time=this.journeyInfos[index].time;
+                // this.edJourneyInfo.time=this.journeyInfos[index].time;
                 this.edJourneyInfo.content=this.journeyInfos[index].content;
                 this.edJourneyInfo.description=this.journeyInfos[index].description;
                 this.edJourneyInfo.index=index;
@@ -196,14 +196,14 @@
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
                     data:{
-                        time:this.edJourneyInfo.time,
+                        // time:this.edJourneyInfo.time,
                         content:this.edJourneyInfo.content,
                         description:this.edJourneyInfo.description,    
                     },
                     url: this.$config+'/api/route/'+this.$route.params.id+'/scenery/'+this.edJourneyInfo.id,
                 }).then(res => {
                     if(res.status==200){
-                        this.journeyInfos[this.edJourneyInfo.index].time=this.edJourneyInfo.time;
+                        // this.journeyInfos[this.edJourneyInfo.index].time=this.edJourneyInfo.time;
                         this.journeyInfos[this.edJourneyInfo.index].content=this.edJourneyInfo.content;
                         this.journeyInfos[this.edJourneyInfo.index].description=this.edJourneyInfo.description;
                         this.$toast('修改成功');

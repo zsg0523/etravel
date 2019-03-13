@@ -13,7 +13,7 @@
     .form_item_info>div{width: 96%;height: 45px;line-height: 45px;}
     .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
     .input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;}
-    .item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;}
+    .item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;}
     .active{font-size: 18px;}        
 
     .dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}

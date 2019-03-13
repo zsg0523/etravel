@@ -14,22 +14,22 @@
         </div>
         <div class="photo_list disflex">
             <div class="photo_img">
-                <img src="/etravel/public/images/photo.png" alt="">
+                <img src="/etravel/public/images/school.png" alt="">
             </div>
             <div class="photo_img">
-                <img src="/etravel/public/images/photo.png" alt="">
+                <img src="/etravel/public/images/school.png" alt="">
             </div>
             <div class="photo_img">
-                <img src="/etravel/public/images/photo.png" alt="">
+                <img src="/etravel/public/images/school.png" alt="">
             </div>
             <div class="photo_img">
-                <img src="/etravel/public/images/photo.png" alt="">
+                <img src="/etravel/public/images/school.png" alt="">
             </div>
             <div class="photo_img">
-                <img src="/etravel/public/images/photo.png" alt="">
+                <img src="/etravel/public/images/school.png" alt="">
             </div>
             <div class="photo_img">
-                <img src="/etravel/public/images/photo.png" alt="">
+                <img src="/etravel/public/images/school.png" alt="">
             </div>
         </div>
     </div>
