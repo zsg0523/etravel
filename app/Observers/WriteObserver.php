@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-18 16:05:58
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-18 18:20:09
+ * @Last Modified time: 2019-03-13 12:07:37
  */
 namespace App\Observers;
 
@@ -21,4 +21,5 @@ class WriteObserver
 		// 通知管理员,学生提交了感想
 		$user->notify(new InvoiceWrited($write));
 	}
+
 }
