@@ -23,7 +23,10 @@ class ImagesController extends Controller
 
          return $this->response->array([
             'errno' => 0,
-            'data'=>[$image->path]
+            'data'=>[
+               'id' => $image->id,
+               'path' => $image->path
+            ]
          ])->setStatusCode(201);
    	}
 }
