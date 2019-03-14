@@ -3,6 +3,7 @@
     .tablist{width:100%;}
     .nav-tabs>li>a{color: #000;}
     .active{font-size: 18px;}        
+    .tab-pane{}
     .pane-answer{width:70%;margin-left: 15%;}
     .back_icon{width:45px;height:45px;line-height: 45px;}
     .back_icon>img{width:28px;height: 28px;}
