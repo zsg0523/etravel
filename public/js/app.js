@@ -33156,7 +33156,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.pane_content_phone{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;border:1px solid #ccc;border-radius: 15px;margin-top:20px;\n}\n.form_content_phone{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_phone{width: 100%;min-height:100px;\n}\n.form_item_phone>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_phone{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.pane_content_phone{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;border:1px solid #ccc;border-radius: 15px;margin-top:20px;\n}\n.form_content_phone{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_phone{width: 100%;min-height:100px;\n}\n.form_item_phone>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_phone{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
 
 // exports
 
@@ -33167,49 +33167,6 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -33476,245 +33433,100 @@ var render = function() {
     "div",
     { staticClass: "dataBank_input_form disflex" },
     [
-      _c("div", { staticClass: "tablist" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "tab-content" }, [
-          _c(
-            "div",
-            {
-              staticClass: "tab-pane active",
-              attrs: { role: "tabpanel", id: "journey" }
-            },
-            [
-              _vm._l(_vm.phones, function(phone, index) {
-                return _c("div", { staticClass: "pane_content_phone" }, [
-                  _c("div", { staticClass: "form_content_phone disflex" }, [
-                    _c("div", { staticClass: "form_item_phone" }, [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("联系人名称")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          staticClass: "item_input_phone",
-                          attrs: {
-                            placeholder: "联系人名称",
-                            type: "text",
-                            disabled: "disabled"
-                          },
-                          domProps: { value: phone.name }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form_item_phone" }, [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("职责")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          staticClass: "item_input_phone",
-                          attrs: {
-                            placeholder: "职责",
-                            type: "text",
-                            disabled: "disabled"
-                          },
-                          domProps: { value: phone.duty }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form_item_phone" }, [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("电话区号")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          staticClass: "item_input_phone",
-                          attrs: { type: "text", disabled: "disabled" },
-                          domProps: { value: phone.area_code }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form_item_phone" }, [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("联系电话")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          staticClass: "item_input_phone",
-                          attrs: { type: "text", disabled: "disabled" },
-                          domProps: { value: phone.phone }
-                        })
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "editBtnGroup" }, [
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/rush-icon.png" },
-                      on: {
-                        click: function($event) {
-                          return _vm.delPhone(phone.id)
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/edit-all.png" },
-                      on: {
-                        click: function($event) {
-                          return _vm.editPhoneShow(index)
-                        }
-                      }
-                    })
-                  ])
-                ])
-              }),
+      _vm._l(_vm.phones, function(phone, index) {
+        return _c("div", { staticClass: "pane_content_phone" }, [
+          _c("div", { staticClass: "form_content_phone disflex" }, [
+            _c("div", { staticClass: "form_item_phone" }, [
+              _c("div", { staticClass: "item_title" }, [_vm._v("联系人名称")]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "dataBankAddBtn",
-                  on: {
-                    click: function($event) {
-                      return _vm.addNewPhoneShow()
-                    }
-                  }
-                },
-                [
-                  _c("img", {
-                    attrs: { src: "/etravel/public/images/add_y.png" }
-                  })
-                ]
-              )
-            ],
-            2
-          ),
+              _c("div", [
+                _c("input", {
+                  staticClass: "item_input_phone",
+                  attrs: {
+                    placeholder: "联系人名称",
+                    type: "text",
+                    disabled: "disabled"
+                  },
+                  domProps: { value: phone.name }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form_item_phone" }, [
+              _c("div", { staticClass: "item_title" }, [_vm._v("职责")]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  staticClass: "item_input_phone",
+                  attrs: {
+                    placeholder: "职责",
+                    type: "text",
+                    disabled: "disabled"
+                  },
+                  domProps: { value: phone.duty }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form_item_phone" }, [
+              _c("div", { staticClass: "item_title" }, [_vm._v("电话区号")]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  staticClass: "item_input_phone",
+                  attrs: { type: "text", disabled: "disabled" },
+                  domProps: { value: phone.area_code }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form_item_phone" }, [
+              _c("div", { staticClass: "item_title" }, [_vm._v("联系电话")]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  staticClass: "item_input_phone",
+                  attrs: { type: "text", disabled: "disabled" },
+                  domProps: { value: phone.phone }
+                })
+              ])
+            ])
+          ]),
           _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "tab-pane",
-              attrs: { role: "tabpanel", id: "flight" }
-            },
-            [
-              _vm._l(_vm.phones, function(phone, index) {
-                return _c("div", { staticClass: "pane_content_phone" }, [
-                  _c("div", { staticClass: "form_content_phone disflex" }, [
-                    _c("div", { staticClass: "form_item_phone" }, [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("联系人名称")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          staticClass: "item_input_phone",
-                          attrs: {
-                            placeholder: "联系人名称",
-                            type: "text",
-                            disabled: "disabled"
-                          },
-                          domProps: { value: phone.name }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form_item_phone" }, [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("职责")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          staticClass: "item_input_phone",
-                          attrs: {
-                            placeholder: "职责",
-                            type: "text",
-                            disabled: "disabled"
-                          },
-                          domProps: { value: phone.duty }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form_item_phone" }, [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("电话区号")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          staticClass: "item_input_phone",
-                          attrs: { type: "text", disabled: "disabled" },
-                          domProps: { value: phone.area_code }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form_item_phone" }, [
-                      _c("div", { staticClass: "item_title" }, [
-                        _vm._v("联系电话")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          staticClass: "item_input_phone",
-                          attrs: { type: "text", disabled: "disabled" },
-                          domProps: { value: phone.phone }
-                        })
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "editBtnGroup" }, [
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/rush-icon.png" },
-                      on: {
-                        click: function($event) {
-                          return _vm.delPhone(phone.id)
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/edit-all.png" },
-                      on: {
-                        click: function($event) {
-                          return _vm.editPhoneShow(index)
-                        }
-                      }
-                    })
-                  ])
-                ])
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "dataBankAddBtn",
-                  on: {
-                    click: function($event) {
-                      return _vm.addNewPhoneShow()
-                    }
-                  }
-                },
-                [
-                  _c("img", {
-                    attrs: { src: "/etravel/public/images/add_y.png" }
-                  })
-                ]
-              )
-            ],
-            2
-          )
+          _c("div", { staticClass: "editBtnGroup" }, [
+            _c("img", {
+              attrs: { src: "/etravel/public/images/rush-icon.png" },
+              on: {
+                click: function($event) {
+                  return _vm.delPhone(phone.id)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("img", {
+              attrs: { src: "/etravel/public/images/edit-all.png" },
+              on: {
+                click: function($event) {
+                  return _vm.editPhoneShow(index)
+                }
+              }
+            })
+          ])
         ])
-      ]),
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "dataBankAddBtn",
+          on: {
+            click: function($event) {
+              return _vm.addNewPhoneShow()
+            }
+          }
+        },
+        [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+      ),
       _vm._v(" "),
       _c(
         "van-popup",
@@ -34012,51 +33824,10 @@ var render = function() {
         ]
       )
     ],
-    1
+    2
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "ul",
-      { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
-      [
-        _c("li", { staticClass: "active", attrs: { role: "presentation" } }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#journey",
-                "aria-controls": "journey",
-                role: "tab",
-                "data-toggle": "tab"
-              }
-            },
-            [_vm._v("景点安排")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { attrs: { role: "presentation" } }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#flight",
-                "aria-controls": "flight",
-                role: "tab",
-                "data-toggle": "tab"
-              }
-            },
-            [_vm._v("膳食安排")]
-          )
-        ])
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -41226,7 +40997,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -41298,7 +41069,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.editor.customConfig.uploadImgServer = this.$config + '/api/images'; // 上传图片到服务器地址
             this.editor.customConfig.uploadFileName = 'image'; //自定义filename
             this.editor.customConfig.uploadImgParams = {
-                type: 'travel'
+                type: 'travel',
+                platform: 1
             }; //上传图片传参
             this.editor.customConfig.uploadImgHeaders = {
                 "Authorization": 'Bearer ' + sessionStorage.token
@@ -53275,8 +53047,8 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-// const baseUrl='http://www.bunchparty.com/etravel/public';//线上地址
-var baseUrl = '';
+var baseUrl = 'http://www.bunchparty.com/etravel/public'; //线上地址
+// const baseUrl='';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),

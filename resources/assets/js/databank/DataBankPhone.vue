@@ -1,5 +1,5 @@
 <style>
-    .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
+	.dataBank_input_form{width: 100%;min-height:650px;flex-flow:row wrap;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
     .tablist{width:100%;}
     .nav-tabs>li>a{color: #000;}
     .pane_content_phone{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;border:1px solid #ccc;border-radius: 15px;margin-top:20px;}
@@ -10,12 +10,12 @@
     .form_item_phone>div{width: 96%;min-height: 45px;line-height: 45px;}
     .item_input_phone{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;}
     .active{font-size: 18px;}        
-    
+	
 
-    .dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
+	.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
     .dataBankAddBtn:hover{cursor:pointer;}
     .dataBankAddBtn>img{width:50px;height: 50px;}
-    
+	
     .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;}
     .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
     .issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
@@ -30,95 +30,52 @@
 
 <template>
 	<div class="dataBank_input_form disflex">
-        <div class="tablist">
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#journey" aria-controls="journey" role="tab" data-toggle="tab">景点安排</a></li>
-                <li role="presentation"><a href="#flight" aria-controls="flight" role="tab" data-toggle="tab">膳食安排</a></li>
-            </ul>
-            <div class="tab-content">
-                <!-- 行程安排 -->
-                <div role="tabpanel" class="tab-pane active" id="journey">
-                    <div class="pane_content_phone" v-for="(phone,index) in phones">
-                        <div class="form_content_phone disflex">
-                            <div class="form_item_phone">
-                                <div class="item_title">联系人名称</div>
-                                <div><input class="item_input_phone" placeholder="联系人名称" type="text" disabled="disabled" :value="phone.name"></div>
-                            </div>
-                            <div class="form_item_phone">
-                                <div class="item_title">职责</div>
-                                <div><input class="item_input_phone" placeholder="职责" type="text" disabled="disabled" :value="phone.duty"></div>
-                            </div>
-                            <div class="form_item_phone">
-                                <div class="item_title">电话区号</div>
-                                <div><input class="item_input_phone" type="text" disabled="disabled" :value="phone.area_code"></div>
-                            </div>
-                            <div class="form_item_phone">
-                                <div class="item_title">联系电话</div>
-                                <div><input class="item_input_phone" type="text" disabled="disabled" :value="phone.phone"></div>
-                            </div>
-                        </div>
-                        <div class="editBtnGroup">
-                            <img @click="delPhone(phone.id);" src="/etravel/public/images/rush-icon.png">
-                            <img @click="editPhoneShow(index);" src="/etravel/public/images/edit-all.png">
-                        </div>
-                    </div>
-                    <div class="dataBankAddBtn" @click="addNewPhoneShow();">
-                        <img src="/etravel/public/images/add_y.png">
-                    </div>    
+        <div class="pane_content_phone" v-for="(phone,index) in phones">
+            <div class="form_content_phone disflex">
+                <div class="form_item_phone">
+                    <div class="item_title">联系人名称</div>
+                    <div><input class="item_input_phone" placeholder="联系人名称" type="text" disabled="disabled" :value="phone.name"></div>
                 </div>
-
-                <!-- 膳食安排 -->
-                <div role="tabpanel" class="tab-pane" id="flight">
-                    <div class="pane_content_phone" v-for="(phone,index) in phones">
-                        <div class="form_content_phone disflex">
-                            <div class="form_item_phone">
-                                <div class="item_title">联系人名称</div>
-                                <div><input class="item_input_phone" placeholder="联系人名称" type="text" disabled="disabled" :value="phone.name"></div>
-                            </div>
-                            <div class="form_item_phone">
-                                <div class="item_title">职责</div>
-                                <div><input class="item_input_phone" placeholder="职责" type="text" disabled="disabled" :value="phone.duty"></div>
-                            </div>
-                            <div class="form_item_phone">
-                                <div class="item_title">电话区号</div>
-                                <div><input class="item_input_phone" type="text" disabled="disabled" :value="phone.area_code"></div>
-                            </div>
-                            <div class="form_item_phone">
-                                <div class="item_title">联系电话</div>
-                                <div><input class="item_input_phone" type="text" disabled="disabled" :value="phone.phone"></div>
-                            </div>
-                        </div>
-                        <div class="editBtnGroup">
-                            <img @click="delPhone(phone.id);" src="/etravel/public/images/rush-icon.png">
-                            <img @click="editPhoneShow(index);" src="/etravel/public/images/edit-all.png">
-                        </div>
-                    </div>
-                    <div class="dataBankAddBtn" @click="addNewPhoneShow();">
-                        <img src="/etravel/public/images/add_y.png">
-                    </div>     
+                <div class="form_item_phone">
+                    <div class="item_title">职责</div>
+                    <div><input class="item_input_phone" placeholder="职责" type="text" disabled="disabled" :value="phone.duty"></div>
                 </div>
-
+                <div class="form_item_phone">
+                    <div class="item_title">电话区号</div>
+                    <div><input class="item_input_phone" type="text" disabled="disabled" :value="phone.area_code"></div>
+                </div>
+                <div class="form_item_phone">
+                    <div class="item_title">联系电话</div>
+                    <div><input class="item_input_phone" type="text" disabled="disabled" :value="phone.phone"></div>
+                </div>
+            </div>
+            <div class="editBtnGroup">
+                <img @click="delPhone(phone.id);" src="/etravel/public/images/rush-icon.png">
+                <img @click="editPhoneShow(index);" src="/etravel/public/images/edit-all.png">
             </div>
         </div>
-        <van-popup v-model="isNewPhoneShow" :overlay="true" style="border-radius: 15px;">
+        <div class="dataBankAddBtn" @click="addNewPhoneShow();">
+            <img src="/etravel/public/images/add_y.png">
+        </div> 
+  		<van-popup v-model="isNewPhoneShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_phone">
-                        <div class="item_title">联系人姓名</div>
-                        <div><input class="item_input_phone" placeholder="联系人姓名" type="text"  v-model="newPhone.name"></div>
-                    </div>
+		                <div class="item_title">联系人姓名</div>
+		                <div><input class="item_input_phone" placeholder="联系人姓名" type="text"  v-model="newPhone.name"></div>
+		            </div>
                     <div class="form_item_phone">
                         <div class="item_title">职责</div>
                         <div><input class="item_input_phone" placeholder="职责" type="text"  v-model="newPhone.duty"></div>
                     </div>
-                    <div class="form_item_phone">
-                        <div class="item_title">电话区号</div>
-                        <div><input class="item_input_phone" type="text" placeholder="电话区号"  v-model="newPhone.area_code"></div>
-                    </div>
-                    <div class="form_item_phone">
-                        <div class="item_title">联系电话</div>
-                        <div><input class="item_input_phone" type="text" placeholder="联系电话"  v-model="newPhone.phone"></div>
-                    </div>
+		            <div class="form_item_phone">
+		                <div class="item_title">电话区号</div>
+		                <div><input class="item_input_phone" type="text" placeholder="电话区号"  v-model="newPhone.area_code"></div>
+		            </div>
+		            <div class="form_item_phone">
+		                <div class="item_title">联系电话</div>
+		                <div><input class="item_input_phone" type="text" placeholder="联系电话"  v-model="newPhone.phone"></div>
+		            </div>
                     <div class="issure">
                         <button @click="addNewPhone()">添加</button>
                     </div>
@@ -129,21 +86,21 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_phone">
-                        <div class="item_title">联系人姓名</div>
-                        <div><input class="item_input_phone" placeholder="联系人姓名" type="text"  v-model="edPhone.name"></div>
-                    </div>
+		                <div class="item_title">联系人姓名</div>
+		                <div><input class="item_input_phone" placeholder="联系人姓名" type="text"  v-model="edPhone.name"></div>
+		            </div>
                     <div class="form_item_phone">
                         <div class="item_title">职责</div>
                         <div><input class="item_input_phone" placeholder="职责" type="text"  v-model="edPhone.duty"></div>
                     </div>
-                    <div class="form_item_phone">
-                        <div class="item_title">电话区号</div>
-                        <div><input class="item_input_phone" type="text" placeholder="电话区号"  v-model="edPhone.area_code"></div>
-                    </div>
-                    <div class="form_item_phone">
-                        <div class="item_title">联系电话</div>
-                        <div><input class="item_input_phone" type="text" placeholder="联系电话"  v-model="edPhone.phone"></div>
-                    </div>
+		            <div class="form_item_phone">
+		                <div class="item_title">电话区号</div>
+		                <div><input class="item_input_phone" type="text" placeholder="电话区号"  v-model="edPhone.area_code"></div>
+		            </div>
+		            <div class="form_item_phone">
+		                <div class="item_title">联系电话</div>
+		                <div><input class="item_input_phone" type="text" placeholder="联系电话"  v-model="edPhone.phone"></div>
+		            </div>
                     <div class="issure">
                         <button @click="editPhone()">修改</button>
                     </div>
@@ -154,31 +111,31 @@
 </template>
 
 <script>
-    export default {
-        data() {
+  	export default {
+  		data() {
             return {
-                phones:[],
-                newPhone:{
-                    name:'',
-                    phone:'',
+	        	phones:[],
+	        	newPhone:{
+	        		name:'',
+	        		phone:'',
                     duty:'',
-                    area_code:'',
-                    travel_id:sessionStorage.actTravelId,
-                },
-                edPhone:{
-                    name:'',
-                    phone:'',
+	        		area_code:'',
+	        		travel_id:sessionStorage.actTravelId,
+	        	},
+	        	edPhone:{
+	        		name:'',
+	        		phone:'',
                     duty:'',
-                    area_code:'',
-                    id:'',
-                    index:'',
-                },
-                isNewPhoneShow:false,
-                isEditPhoneShow:false,
+	        		area_code:'',
+	        		id:'',
+	        		index:'',
+	        	},
+	        	isNewPhoneShow:false,
+	        	isEditPhoneShow:false,
             }
         },
         mounted:function(){
-            this.getPhones();
+        	this.getPhones();
         },
         methods:{
             getPhones(){
@@ -290,5 +247,5 @@
             },
 
         },
-    }
+  	}
 </script>

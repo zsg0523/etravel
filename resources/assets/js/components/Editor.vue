@@ -54,7 +54,8 @@
                 this.editor.customConfig.uploadImgServer=this.$config+'/api/images';// 上传图片到服务器地址
                 this.editor.customConfig.uploadFileName = 'image'//自定义filename
                 this.editor.customConfig.uploadImgParams = {
-                    type: 'travel'
+                    type: 'travel',
+                    platform:1,
                 };//上传图片传参
                 this.editor.customConfig.uploadImgHeaders = {
                   "Authorization": 'Bearer '+sessionStorage.token,
