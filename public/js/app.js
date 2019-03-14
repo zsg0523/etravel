@@ -50934,7 +50934,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.active{font-size: 18px;\n}\n.tab-pane{width:70%;margin-left: 15%;\n}\n.back_icon{width:45px;height:45px;line-height: 45px;\n}\n.back_icon>img{width:28px;height: 28px;\n}\n.sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;\n}\n.sheetGroup>div{width:100%;text-indent: 1em;\n}\n.sheetTitle{min-height:45px;line-height: 45px;font-size: 18px;font-weight: bold;text-align: center;\n}\n.sheetContent{min-height:50px;\n}\n.sheetQuestion{height:auto;\n}\n.questTitle{width:100%;min-height:45px;line-height: 45px;font-size: 16px;font-weight: bold;\n}\n.questContent{width:100%;font-size: 14px;min-height:50px;line-height: 25px;word-break: break-all;\n}\n.feelTitle{font-size: 16px;font-weight: bold;min-height:45px;line-height: 45px;\n}\n.feelImg{height:auto;text-align: center;\n}\n.feelImg>img{width:70%;border:5px solid #fff;\n}\n.feelContent{min-height:50px;font-size: 14px;line-height: 25px;word-break: break-all;\n}\n.evaluationGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationTitle{width:100%;height:45px;font-size: 18px;line-height: 45px;background-color: #ffde01;font-weight:bold;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationQuestions{min-height: 90px;\n}\n.evaluationQuestionTitle{width:100%;min-height: 45px;line-height:45px;background-color: #eee;font-size: 16px;\n}\n.evaluationQuestionContent{width:100%;height:45px;line-height: 45px;\n}\n.menuIcon{width:80px;height:45px;float: left;line-height: 45px;margin-left: 10px;\n}\n.menuIcon>img{width:20px;height:20px;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.active{font-size: 18px;\n}\n.pane-answer{width:70%;margin-left: 15%;\n}\n.back_icon{width:45px;height:45px;line-height: 45px;\n}\n.back_icon>img{width:28px;height: 28px;\n}\n.sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;\n}\n.sheetGroup>div{width:100%;text-indent: 1em;\n}\n.sheetTitle{min-height:45px;line-height: 45px;font-size: 18px;font-weight: bold;text-align: center;\n}\n.sheetContent{min-height:50px;\n}\n.sheetQuestion{height:auto;\n}\n.questTitle{width:100%;min-height:45px;line-height: 45px;font-size: 16px;font-weight: bold;\n}\n.questContent{width:100%;font-size: 14px;min-height:50px;line-height: 25px;word-break: break-all;\n}\n.feelTitle{font-size: 16px;font-weight: bold;min-height:45px;line-height: 45px;\n}\n.feelImg{height:auto;text-align: center;\n}\n.feelImg>img{width:70%;border:5px solid #fff;\n}\n.feelContent{min-height:50px;font-size: 14px;line-height: 25px;word-break: break-all;\n}\n.evaluationGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationTitle{width:100%;height:45px;font-size: 18px;line-height: 45px;background-color: #ffde01;font-weight:bold;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationQuestions{min-height: 90px;\n}\n.evaluationQuestionTitle{width:100%;min-height: 45px;line-height:45px;background-color: #eee;font-size: 16px;\n}\n.evaluationQuestionContent{width:100%;height:45px;line-height: 45px;\n}\n.menuIcon{width:80px;height:45px;float: left;line-height: 45px;margin-left: 10px;\n}\n.menuIcon>img{width:20px;height:20px;\n}\n", ""]);
 
 // exports
 
@@ -51241,7 +51241,7 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "tab-pane active",
+              staticClass: "tab-pane pane-answer active",
               attrs: { role: "tabpanel", id: "gather" }
             },
             _vm._l(_vm.sheetInfos, function(sheetInfo, index) {
@@ -51282,9 +51282,7 @@ var render = function() {
                               ? [
                                   _c("div", { staticClass: "questContent" }, [
                                     _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(question.answer) +
-                                        "\n                                    "
+                                      "\n                                        {{question.answer.content}\n                                    "
                                     )
                                   ])
                                 ]
@@ -51323,7 +51321,7 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "tab-pane",
+              staticClass: "tab-pane pane-answer",
               attrs: { role: "tabpanel", id: "flight" }
             },
             _vm._l(_vm.evaluations, function(evaluation, index) {
@@ -51513,7 +51511,7 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "tab-pane",
+              staticClass: "tab-pane pane-answer",
               attrs: { role: "tabpanel", id: "accommodationInfo" }
             },
             _vm._l(_vm.perceptions, function(perception, index) {
@@ -51536,9 +51534,7 @@ var render = function() {
                         perception.writes.data[0].image
                           ? _c("div", { staticClass: "feelImg" }, [
                               _c("img", {
-                                attrs: {
-                                  src: "/etravel/public/images/logo.png"
-                                }
+                                attrs: { src: perception.writes.data[0].image }
                               })
                             ])
                           : _c("div", { staticClass: "feelImg" }, [

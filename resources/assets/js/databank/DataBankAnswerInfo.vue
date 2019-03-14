@@ -3,7 +3,7 @@
     .tablist{width:100%;}
     .nav-tabs>li>a{color: #000;}
     .active{font-size: 18px;}        
-    .tab-pane{width:70%;margin-left: 15%;}
+    .pane-answer{width:70%;margin-left: 15%;}
     .back_icon{width:45px;height:45px;line-height: 45px;}
     .back_icon>img{width:28px;height: 28px;}
 
@@ -45,7 +45,7 @@
                 </ul>
                 <div class="tab-content">
                     <!-- 學習工作紙 -->
-                    <div role="tabpanel" class="tab-pane active" id="gather">
+                    <div role="tabpanel" class="tab-pane pane-answer active" id="gather">
                         <div class="sheetGroup" v-for="(sheetInfo,index) in sheetInfos">
                             <div class="sheetTitle" v-text="sheetInfo.title"></div>
                             <div class="sheetContent" v-html="sheetInfo.body"></div>
@@ -56,7 +56,7 @@
                                     </div> 
                                     <template v-if="question.answer">
                                         <div class="questContent">
-                                            {{question.answer}}
+                                            {{question.answer.content}
                                         </div>
                                     </template>
                                     <template v-else>
@@ -77,7 +77,7 @@
                     </div>
 
                     <!-- 自我评估 -->
-                    <div role="tabpanel" class="tab-pane" id="flight">
+                    <div role="tabpanel" class="tab-pane pane-answer" id="flight">
                         <div class="sheetGroup" v-for="(evaluation,index) in evaluations">
                             <div class="evaluationTitle">
                                 {{evaluation.title}}
@@ -138,14 +138,14 @@
                     </div>
 
                     <!-- 自我感想 -->
-                    <div role="tabpanel" class="tab-pane" id="accommodationInfo">
+                    <div role="tabpanel" class="tab-pane pane-answer" id="accommodationInfo">
                         <div class="sheetGroup" v-for="(perception,index) in perceptions">
                             <div class="feelTitle">
                                 {{index+1}}.{{perception.title}}
                             </div>
                             <template v-if="perception.writes.data[0]">
                                 <div class="feelImg" v-if="perception.writes.data[0].image">
-                                    <img src="/etravel/public/images/logo.png">
+                                    <img :src="perception.writes.data[0].image">
                                 </div>
                                 <div class="feelImg" v-else>
                                     <h4>未上传图片</h4>
