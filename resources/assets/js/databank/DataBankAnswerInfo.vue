@@ -57,7 +57,7 @@
                                     </div> 
                                     <template v-if="question.answer">
                                         <div class="questContent">
-                                            {{question.answer.content}
+                                            {{question.answer.content}}
                                         </div>
                                     </template>
                                     <template v-else>

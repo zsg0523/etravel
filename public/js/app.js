@@ -51283,7 +51283,9 @@ var render = function() {
                               ? [
                                   _c("div", { staticClass: "questContent" }, [
                                     _vm._v(
-                                      "\n                                        {{question.answer.content}\n                                    "
+                                      "\n                                        " +
+                                        _vm._s(question.answer.content) +
+                                        "\n                                    "
                                     )
                                   ])
                                 ]
