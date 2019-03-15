@@ -42,11 +42,12 @@ class ChatsController extends Controller
         switch ($request->type) {
             case 'all':
                 Gateway::sendToAll(json_encode([
-                    'type' => 'group',
+                    'type' => 'all',
                     'uid' => $user->id,
                     'username' => $user->name,
                     'avatar' => $user->avatar,
                     'content' => $request->content,
+                    'image' => $request->image,
                 ]));
                 break;
             case 'group':
@@ -56,6 +57,7 @@ class ChatsController extends Controller
                     'username' => $user->name,
                     'avatar' => $user->avatar,
                     'content' => $request->content,
+                    'image' => $request->image,
                 ]));
                 break;
             
@@ -66,6 +68,7 @@ class ChatsController extends Controller
                     'username' => $user->name,
                     'avatar' => $user->avatar,
                     'content' => $request->content,
+                    'image' => $request->image,
                 ]));
                 break;
         }
