@@ -24669,37 +24669,37 @@ var staticRenderFns = [
       _c("div", { staticClass: "photo_list disflex" }, [
         _c("div", { staticClass: "photo_img" }, [
           _c("img", {
-            attrs: { src: "/etravel/public/images/photo.png", alt: "" }
+            attrs: { src: "/etravel/public/images/school.png", alt: "" }
           })
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "photo_img" }, [
           _c("img", {
-            attrs: { src: "/etravel/public/images/photo.png", alt: "" }
+            attrs: { src: "/etravel/public/images/school.png", alt: "" }
           })
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "photo_img" }, [
           _c("img", {
-            attrs: { src: "/etravel/public/images/photo.png", alt: "" }
+            attrs: { src: "/etravel/public/images/school.png", alt: "" }
           })
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "photo_img" }, [
           _c("img", {
-            attrs: { src: "/etravel/public/images/photo.png", alt: "" }
+            attrs: { src: "/etravel/public/images/school.png", alt: "" }
           })
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "photo_img" }, [
           _c("img", {
-            attrs: { src: "/etravel/public/images/photo.png", alt: "" }
+            attrs: { src: "/etravel/public/images/school.png", alt: "" }
           })
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "photo_img" }, [
           _c("img", {
-            attrs: { src: "/etravel/public/images/photo.png", alt: "" }
+            attrs: { src: "/etravel/public/images/school.png", alt: "" }
           })
         ])
       ])
@@ -25287,11 +25287,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         _this5.searchStudentShow();
                     }
                 }).catch(function (err) {
-                    _this5.$toast('请输入正确的用户ID');
+                    _this5.$toast('请输入正确的用戶ID');
                     // console.log(err);
                 });
             } else {
-                this.$toast('请输入用户ID');
+                this.$toast('请输入用戶ID');
             }
         },
         cancelAdd: function cancelAdd() {
@@ -25477,7 +25477,7 @@ var render = function() {
                   _c("div", { staticClass: "form_content_student disflex" }, [
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("用户ID")
+                        _vm._v("用戶ID")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -25485,7 +25485,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填写用户ID",
+                            placeholder: "填寫用戶ID",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -25497,7 +25497,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("学生密码")
+                        _vm._v("學生密碼")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -25505,7 +25505,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填写学生密码",
+                            placeholder: "填寫學生密碼",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -25518,7 +25518,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("学生中文名")
+                        _vm._v("學生中文名")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -25526,7 +25526,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填写学生中文名",
+                            placeholder: "填寫學生中文名",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -25538,7 +25538,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("学生英文名")
+                        _vm._v("學生英文名")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -25546,7 +25546,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填写学生英文名",
+                            placeholder: "填寫學生英文名",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -25558,7 +25558,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("联系电话")
+                        _vm._v("聯繫電話")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -25566,7 +25566,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填写联系电话",
+                            placeholder: "填寫聯繫電話",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -25578,7 +25578,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("学生学号")
+                        _vm._v("學生學號")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -25586,7 +25586,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填写学生学号",
+                            placeholder: "填寫學生學號",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -25598,7 +25598,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("学生班级")
+                        _vm._v("學生班級")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -25606,7 +25606,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填写学生班级",
+                            placeholder: "填寫學生班級",
                             disabled: "disabled"
                           },
                           domProps: { value: _vm.students[_vm.actIndex].class }
@@ -25616,7 +25616,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("学生房间号")
+                        _vm._v("學生房間號")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -25624,7 +25624,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填写学生房间号",
+                            placeholder: "填寫學生房間號",
                             disabled: "disabled"
                           },
                           domProps: { value: _vm.students[_vm.actIndex].room }
@@ -25634,7 +25634,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("学生职责")
+                        _vm._v("學生職責")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -25642,7 +25642,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填写学生职责",
+                            placeholder: "填寫學生職責",
                             disabled: "disabled"
                           },
                           domProps: { value: _vm.students[_vm.actIndex].duty }
@@ -25686,7 +25686,7 @@ var render = function() {
                         _c("div", { staticClass: "editBoxContent disflex" }, [
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("用户ID")
+                              _vm._v("用戶ID")
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -25702,7 +25702,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填写用户ID",
+                                  placeholder: "填寫用戶ID",
                                   disabled: "disabled"
                                 },
                                 domProps: { value: _vm.edStudent.id },
@@ -25724,7 +25724,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生密码")
+                              _vm._v("學生密碼")
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -25740,7 +25740,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填写学生密码",
+                                  placeholder: "填寫學生密碼",
                                   disabled: "disabled"
                                 },
                                 domProps: {
@@ -25764,7 +25764,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生中文名"),
+                              _vm._v("學生中文名"),
                               _vm.errors.name
                                 ? _c("span", {
                                     staticClass: "err",
@@ -25788,7 +25788,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填写学生中文名",
+                                  placeholder: "填寫學生中文名",
                                   disabled: "disabled"
                                 },
                                 domProps: { value: _vm.edStudent.name },
@@ -25810,7 +25810,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生英文名"),
+                              _vm._v("學生英文名"),
                               _vm.errors.en_name
                                 ? _c("span", {
                                     staticClass: "err",
@@ -25834,7 +25834,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填写学生英文名",
+                                  placeholder: "填寫學生英文名",
                                   disabled: "disabled"
                                 },
                                 domProps: { value: _vm.edStudent.en_name },
@@ -25856,7 +25856,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("联系电话"),
+                              _vm._v("聯繫電話"),
                               _vm.errors.phone
                                 ? _c("span", {
                                     staticClass: "err",
@@ -25880,7 +25880,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填写联系电话",
+                                  placeholder: "填寫聯繫電話",
                                   disabled: "disabled"
                                 },
                                 domProps: { value: _vm.edStudent.phone },
@@ -25902,7 +25902,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生学号"),
+                              _vm._v("學生學號"),
                               _vm.errors.student_number
                                 ? _c("span", {
                                     staticClass: "err",
@@ -25928,7 +25928,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填写学生学号"
+                                  placeholder: "填寫學生學號"
                                 },
                                 domProps: {
                                   value: _vm.edStudent.student_number
@@ -25951,7 +25951,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生班级"),
+                              _vm._v("學生班級"),
                               _vm.errors.class
                                 ? _c("span", {
                                     staticClass: "err",
@@ -25975,7 +25975,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填写学生班级"
+                                  placeholder: "填寫學生班級"
                                 },
                                 domProps: { value: _vm.edStudent.class },
                                 on: {
@@ -25996,7 +25996,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生房间号"),
+                              _vm._v("學生房間號(必填)"),
                               _vm.errors.room
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26020,7 +26020,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填写学生房间号"
+                                  placeholder: "填寫學生房間號"
                                 },
                                 domProps: { value: _vm.edStudent.room },
                                 on: {
@@ -26041,7 +26041,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("学生职责"),
+                              _vm._v("學生職責"),
                               _vm.errors.duty
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26065,7 +26065,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填写学生职责"
+                                  placeholder: "填寫學生職責"
                                 },
                                 domProps: { value: _vm.edStudent.duty },
                                 on: {
@@ -26126,7 +26126,7 @@ var render = function() {
               _c("div", { staticClass: "editBoxContent disflex" }, [
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生密码")
+                    _vm._v("學生密碼(必填)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -26140,7 +26140,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生密码" },
+                      attrs: { type: "text", placeholder: "填寫學生密碼" },
                       domProps: { value: _vm.newStudent.original_password },
                       on: {
                         input: function($event) {
@@ -26160,7 +26160,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生中文名"),
+                    _vm._v("學生中文名"),
                     _vm.errors.name
                       ? _c("span", {
                           staticClass: "err",
@@ -26180,7 +26180,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生中文名" },
+                      attrs: { type: "text", placeholder: "填寫學生中文名" },
                       domProps: { value: _vm.newStudent.name },
                       on: {
                         input: function($event) {
@@ -26196,7 +26196,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生英文名"),
+                    _vm._v("學生英文名"),
                     _vm.errors.en_name
                       ? _c("span", {
                           staticClass: "err",
@@ -26218,7 +26218,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生英文名" },
+                      attrs: { type: "text", placeholder: "填寫學生英文名" },
                       domProps: { value: _vm.newStudent.en_name },
                       on: {
                         input: function($event) {
@@ -26238,7 +26238,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("联系电话"),
+                    _vm._v("聯繫電話"),
                     _vm.errors.phone
                       ? _c("span", {
                           staticClass: "err",
@@ -26258,7 +26258,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写联系电话" },
+                      attrs: { type: "text", placeholder: "填寫聯繫電話" },
                       domProps: { value: _vm.newStudent.phone },
                       on: {
                         input: function($event) {
@@ -26274,7 +26274,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生学号"),
+                    _vm._v("學生學號"),
                     _vm.errors.student_number
                       ? _c("span", {
                           staticClass: "err",
@@ -26296,7 +26296,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生学号" },
+                      attrs: { type: "text", placeholder: "填寫學生學號" },
                       domProps: { value: _vm.newStudent.student_number },
                       on: {
                         input: function($event) {
@@ -26316,7 +26316,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生班级"),
+                    _vm._v("學生班級"),
                     _vm.errors.class
                       ? _c("span", {
                           staticClass: "err",
@@ -26336,7 +26336,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生班级" },
+                      attrs: { type: "text", placeholder: "填寫學生班級" },
                       domProps: { value: _vm.newStudent.class },
                       on: {
                         input: function($event) {
@@ -26352,7 +26352,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生房间号"),
+                    _vm._v("學生房間號(必填)"),
                     _vm.errors.room
                       ? _c("span", {
                           staticClass: "err",
@@ -26372,7 +26372,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生房间号" },
+                      attrs: { type: "text", placeholder: "填寫學生房間號" },
                       domProps: { value: _vm.newStudent.room },
                       on: {
                         input: function($event) {
@@ -26388,7 +26388,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生职责"),
+                    _vm._v("學生職責"),
                     _vm.errors.duty
                       ? _c("span", {
                           staticClass: "err",
@@ -26408,7 +26408,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生职责" },
+                      attrs: { type: "text", placeholder: "填寫學生職責" },
                       domProps: { value: _vm.newStudent.duty },
                       on: {
                         input: function($event) {
@@ -26458,14 +26458,14 @@ var render = function() {
             _c("div", { staticClass: "editBox" }, [
               _c("div", { staticClass: "editBoxContent disflex" }, [
                 _c("div", { staticClass: "form_item_small" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("用户ID")]),
+                  _c("div", { staticClass: "item_title" }, [_vm._v("用戶ID")]),
                   _vm._v(" "),
                   _c("div", [
                     _c("input", {
                       staticClass: "item_input",
                       attrs: {
                         type: "text",
-                        placeholder: "填写用户ID",
+                        placeholder: "填寫用戶ID",
                         disabled: "disabled"
                       },
                       domProps: { value: _vm.searchStudent.id }
@@ -26475,7 +26475,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生密码")
+                    _vm._v("學生密碼")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -26483,7 +26483,7 @@ var render = function() {
                       staticClass: "item_input",
                       attrs: {
                         type: "text",
-                        placeholder: "填写学生密码",
+                        placeholder: "填寫學生密碼",
                         disabled: "disabled"
                       },
                       domProps: { value: _vm.searchStudent.original_password }
@@ -26493,7 +26493,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生中文名")
+                    _vm._v("學生中文名")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -26501,7 +26501,7 @@ var render = function() {
                       staticClass: "item_input",
                       attrs: {
                         type: "text",
-                        placeholder: "填写学生中文名",
+                        placeholder: "填寫學生中文名",
                         disabled: "disabled"
                       },
                       domProps: { value: _vm.searchStudent.name }
@@ -26511,7 +26511,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生英文名")
+                    _vm._v("學生英文名")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -26519,7 +26519,7 @@ var render = function() {
                       staticClass: "item_input",
                       attrs: {
                         type: "text",
-                        placeholder: "填写学生英文名",
+                        placeholder: "填寫學生英文名",
                         disabled: "disabled"
                       },
                       domProps: { value: _vm.searchStudent.en_name }
@@ -26529,7 +26529,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("联系电话")
+                    _vm._v("聯繫電話")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -26545,7 +26545,7 @@ var render = function() {
                       staticClass: "item_input",
                       attrs: {
                         type: "text",
-                        placeholder: "填写联系电话",
+                        placeholder: "填寫聯繫電話",
                         disabled: "disabled"
                       },
                       domProps: { value: _vm.searchStudent.phone },
@@ -26567,7 +26567,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生学号"),
+                    _vm._v("學生學號"),
                     _vm.errors.student_number
                       ? _c("span", {
                           staticClass: "err",
@@ -26589,7 +26589,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生学号" },
+                      attrs: { type: "text", placeholder: "填寫學生學號" },
                       domProps: { value: _vm.searchStudent.student_number },
                       on: {
                         input: function($event) {
@@ -26609,7 +26609,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生班级"),
+                    _vm._v("學生班級"),
                     _vm.errors.class
                       ? _c("span", {
                           staticClass: "err",
@@ -26629,7 +26629,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生班级" },
+                      attrs: { type: "text", placeholder: "填寫學生班級" },
                       domProps: { value: _vm.searchStudent.class },
                       on: {
                         input: function($event) {
@@ -26649,7 +26649,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生房间号"),
+                    _vm._v("學生房間號(必填)"),
                     _vm.errors.room
                       ? _c("span", {
                           staticClass: "err",
@@ -26669,7 +26669,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生房间号" },
+                      attrs: { type: "text", placeholder: "填寫學生房間號" },
                       domProps: { value: _vm.searchStudent.room },
                       on: {
                         input: function($event) {
@@ -26689,7 +26689,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("学生职责"),
+                    _vm._v("學生職責"),
                     _vm.errors.duty
                       ? _c("span", {
                           staticClass: "err",
@@ -26709,7 +26709,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填写学生职责" },
+                      attrs: { type: "text", placeholder: "填寫學生職責" },
                       domProps: { value: _vm.searchStudent.duty },
                       on: {
                         input: function($event) {
@@ -26755,7 +26755,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("添加学员")]
+                    [_vm._v("添加學員")]
                   )
                 ])
               ])
@@ -29600,7 +29600,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.tab-pane{position: relative;\n}\n.pane_content_info{width:70%;margin-left: 15%;height:auto;margin: 0 auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info{width:100%;height: auto;\n}\n.gather_info_title{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_info{width: 50%;height:100px;\n}\n.form_item_info>div{width: 96%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.bigRadio{width:20px;height:20px;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.tab-pane{position: relative;\n}\n.pane_content_info{width:70%;margin-left: 15%;height:auto;margin: 0 auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info{width:100%;height: auto;\n}\n.gather_info_title{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_info{width: 50%;height:100px;\n}\n.form_item_info>div{width: 96%;height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.bigRadio{width:20px;height:20px;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
 
 // exports
 
@@ -33267,6 +33267,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -33275,12 +33287,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             newPhone: {
                 name: '',
                 phone: '',
+                duty: '',
                 area_code: '',
                 travel_id: sessionStorage.actTravelId
             },
             edPhone: {
                 name: '',
                 phone: '',
+                duty: '',
                 area_code: '',
                 id: '',
                 index: ''
@@ -33329,6 +33343,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.newPhone.name = '';
                 _this2.newPhone.area_code = '';
                 _this2.newPhone.phone = '';
+                _this2.newPhone.duty = '';
             }).catch(function (err) {
                 _this2.$toast('添加失败');
                 console.log(err);
@@ -33339,6 +33354,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edPhone.name = this.phones[index].name;
             this.edPhone.area_code = this.phones[index].area_code;
             this.edPhone.phone = this.phones[index].phone;
+            this.edPhone.duty = this.phones[index].duty;
             this.edPhone.index = index;
             this.isEditPhoneShow = true;
         },
@@ -33354,7 +33370,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     name: this.edPhone.name,
                     area_code: this.edPhone.area_code,
-                    phone: this.edPhone.phone
+                    phone: this.edPhone.phone,
+                    duty: this.edPhone.duty
                 },
                 url: this.$config + '/api/telephones/' + this.edPhone.id
             }).then(function (res) {
@@ -33362,6 +33379,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.phones[_this3.edPhone.index].name = _this3.edPhone.name;
                     _this3.phones[_this3.edPhone.index].area_code = _this3.edPhone.area_code;
                     _this3.phones[_this3.edPhone.index].phone = _this3.edPhone.phone;
+                    _this3.phones[_this3.edPhone.index].duty = _this3.edPhone.duty;
                     _this3.$toast('修改成功');
                     _this3.isEditPhoneShow = false;
                 } else {
@@ -33419,17 +33437,33 @@ var render = function() {
         return _c("div", { staticClass: "pane_content_phone" }, [
           _c("div", { staticClass: "form_content_phone disflex" }, [
             _c("div", { staticClass: "form_item_phone" }, [
-              _c("div", { staticClass: "item_title" }, [_vm._v("联系人姓名")]),
+              _c("div", { staticClass: "item_title" }, [_vm._v("联系人名称")]),
               _vm._v(" "),
               _c("div", [
                 _c("input", {
                   staticClass: "item_input_phone",
                   attrs: {
-                    placeholder: "联系人姓名",
+                    placeholder: "联系人名称",
                     type: "text",
                     disabled: "disabled"
                   },
                   domProps: { value: phone.name }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form_item_phone" }, [
+              _c("div", { staticClass: "item_title" }, [_vm._v("职责")]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  staticClass: "item_input_phone",
+                  attrs: {
+                    placeholder: "职责",
+                    type: "text",
+                    disabled: "disabled"
+                  },
+                  domProps: { value: phone.duty }
                 })
               ])
             ]),
@@ -33534,6 +33568,34 @@ var render = function() {
                           return
                         }
                         _vm.$set(_vm.newPhone, "name", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_phone" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("职责")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newPhone.duty,
+                        expression: "newPhone.duty"
+                      }
+                    ],
+                    staticClass: "item_input_phone",
+                    attrs: { placeholder: "职责", type: "text" },
+                    domProps: { value: _vm.newPhone.duty },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newPhone, "duty", $event.target.value)
                       }
                     }
                   })
@@ -33654,6 +33716,34 @@ var render = function() {
                           return
                         }
                         _vm.$set(_vm.edPhone, "name", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_phone" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("职责")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edPhone.duty,
+                        expression: "edPhone.duty"
+                      }
+                    ],
+                    staticClass: "item_input_phone",
+                    attrs: { placeholder: "职责", type: "text" },
+                    domProps: { value: _vm.edPhone.duty },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edPhone, "duty", $event.target.value)
                       }
                     }
                   })
@@ -36728,7 +36818,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_group" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("房号")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("房号(必填)")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -38592,13 +38684,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             journey: '',
             journeyInfos: [],
             newJourneyInfo: {
-                time: '',
+                // time:'',
                 content: '',
                 description: ''
             },
             edJourneyInfo: {
                 id: '',
-                time: '',
+                // time:'',
                 content: '',
                 description: '',
                 index: ''
@@ -38647,7 +38739,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.$toast('添加成功');
                 _this2.getJourneyInfos();
                 _this2.isNewJourneyInfoShow = false;
-                _this2.newJourneyInfo.time = '';
+                // this.newJourneyInfo.time='';
                 _this2.newJourneyInfo.content = '';
                 _this2.newJourneyInfo.description = '';
             }).catch(function (err) {
@@ -38657,7 +38749,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         editJourneyInfoShow: function editJourneyInfoShow(index) {
             this.edJourneyInfo.id = this.journeyInfos[index].id;
-            this.edJourneyInfo.time = this.journeyInfos[index].time;
+            // this.edJourneyInfo.time=this.journeyInfos[index].time;
             this.edJourneyInfo.content = this.journeyInfos[index].content;
             this.edJourneyInfo.description = this.journeyInfos[index].description;
             this.edJourneyInfo.index = index;
@@ -38673,14 +38765,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     "Authorization": 'Bearer ' + sessionStorage.token
                 },
                 data: {
-                    time: this.edJourneyInfo.time,
+                    // time:this.edJourneyInfo.time,
                     content: this.edJourneyInfo.content,
                     description: this.edJourneyInfo.description
                 },
                 url: this.$config + '/api/route/' + this.$route.params.id + '/scenery/' + this.edJourneyInfo.id
             }).then(function (res) {
                 if (res.status == 200) {
-                    _this3.journeyInfos[_this3.edJourneyInfo.index].time = _this3.edJourneyInfo.time;
+                    // this.journeyInfos[this.edJourneyInfo.index].time=this.edJourneyInfo.time;
                     _this3.journeyInfos[_this3.edJourneyInfo.index].content = _this3.edJourneyInfo.content;
                     _this3.journeyInfos[_this3.edJourneyInfo.index].description = _this3.edJourneyInfo.description;
                     _this3.$toast('修改成功');
@@ -38762,24 +38854,8 @@ var render = function() {
               { staticClass: "form_content_journeyInfo disflex" },
               [
                 _c("div", { staticClass: "form_item_journeyInfo" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("时间点")]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      staticClass: "item_input_journeyInfo",
-                      attrs: {
-                        placeholder: "时间点(hh:mm)",
-                        type: "text",
-                        disabled: "disabled"
-                      },
-                      domProps: { value: journeyInfo.time }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item_journeyInfo" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("景点内容")
+                    _vm._v("景点内容(必填)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -38797,7 +38873,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_journeyInfo" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("景点介绍")
+                    _vm._v("景点介绍(必填)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -38865,39 +38941,9 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("时间点")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newJourneyInfo.time,
-                        expression: "newJourneyInfo.time"
-                      }
-                    ],
-                    staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "时间点(hh:mm)", type: "text" },
-                    domProps: { value: _vm.newJourneyInfo.time },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newJourneyInfo,
-                          "time",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("景点内容")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("景点内容(必填)")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -38929,7 +38975,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("景点介绍")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("景点介绍(必填)")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("textarea", {
@@ -38994,34 +39042,6 @@ var render = function() {
         [
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("时间")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edJourneyInfo.time,
-                        expression: "edJourneyInfo.time"
-                      }
-                    ],
-                    staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "时间", type: "text" },
-                    domProps: { value: _vm.edJourneyInfo.time },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edJourneyInfo, "time", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
                 _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
                 _vm._v(" "),
@@ -39505,7 +39525,7 @@ var render = function() {
             return _c("div", { staticClass: "form_content disflex" }, [
               _c("div", { staticClass: "form_item_journeyInfo" }, [
                 _c("div", { staticClass: "item_title" }, [
-                  _vm._v("早/中/晚餐")
+                  _vm._v("早/中/晚餐(必填)")
                 ]),
                 _vm._v(" "),
                 _c("div", [
@@ -39522,7 +39542,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("膳食内容")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("膳食内容(必填)")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -39538,7 +39560,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("膳食介绍")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("膳食介绍(必填)")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("textarea", {
@@ -39605,7 +39629,7 @@ var render = function() {
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_journeyInfo" }, [
                 _c("div", { staticClass: "item_title" }, [
-                  _vm._v("早/中/晚餐")
+                  _vm._v("早/中/晚餐(必填)")
                 ]),
                 _vm._v(" "),
                 _c("div", [
@@ -39634,7 +39658,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("膳食内容")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("膳食内容(必填)")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -39662,7 +39688,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("膳食介绍")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("膳食介绍(必填)")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("textarea", {
@@ -40969,7 +40997,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -41041,7 +41069,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.editor.customConfig.uploadImgServer = this.$config + '/api/images'; // 上传图片到服务器地址
             this.editor.customConfig.uploadFileName = 'image'; //自定义filename
             this.editor.customConfig.uploadImgParams = {
-                type: 'travel'
+                type: 'travel',
+                platform: 1
             }; //上传图片传参
             this.editor.customConfig.uploadImgHeaders = {
                 "Authorization": 'Bearer ' + sessionStorage.token
@@ -49091,7 +49120,9 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_evaluations" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("题目标题")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("题目标题(必填)")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -49157,7 +49188,9 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_evaluations" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("题目标题")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("题目标题(必填)")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -49312,8 +49345,6 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
 //
 //
 //
@@ -49665,7 +49696,9 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_evaluationInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("详情")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("题目详情(必填)")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("textarea", {
@@ -49732,20 +49765,12 @@ var render = function() {
                         }
                       }
                     },
-                    [
-                      _c("option", { attrs: { value: "" } }, [
-                        _vm._v("--请选择--")
-                      ]),
-                      _vm._v(" "),
-                      _vm._l(_vm.optList, function(item) {
-                        return _c(
-                          "option",
-                          { domProps: { value: item.value } },
-                          [_vm._v(_vm._s(item.title))]
-                        )
-                      })
-                    ],
-                    2
+                    _vm._l(_vm.optList, function(item) {
+                      return _c("option", { domProps: { value: item.value } }, [
+                        _vm._v(_vm._s(item.title))
+                      ])
+                    }),
+                    0
                   )
                 ])
               ]),
@@ -49785,7 +49810,9 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_evaluationInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("题目详情")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("题目详情(必填)")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("textarea", {
@@ -49852,20 +49879,12 @@ var render = function() {
                         }
                       }
                     },
-                    [
-                      _c("option", { attrs: { value: "" } }, [
-                        _vm._v("--请选择--")
-                      ]),
-                      _vm._v(" "),
-                      _vm._l(_vm.optList, function(item) {
-                        return _c(
-                          "option",
-                          { domProps: { value: item.value } },
-                          [_vm._v(_vm._s(item.title))]
-                        )
-                      })
-                    ],
-                    2
+                    _vm._l(_vm.optList, function(item) {
+                      return _c("option", { domProps: { value: item.value } }, [
+                        _vm._v(_vm._s(item.title))
+                      ])
+                    }),
+                    0
                   )
                 ])
               ]),
@@ -50915,7 +50934,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.active{font-size: 18px;\n}\n.tab-pane{width:70%;margin-left: 15%;\n}\n.back_icon{width:45px;height:45px;line-height: 45px;\n}\n.back_icon>img{width:28px;height: 28px;\n}\n.sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;\n}\n.sheetGroup>div{width:100%;text-indent: 1em;\n}\n.sheetTitle{min-height:45px;line-height: 45px;font-size: 18px;font-weight: bold;text-align: center;\n}\n.sheetContent{min-height:50px;\n}\n.sheetQuestion{height:auto;\n}\n.questTitle{width:100%;min-height:45px;line-height: 45px;font-size: 16px;font-weight: bold;\n}\n.questContent{width:100%;font-size: 14px;min-height:50px;line-height: 25px;word-break: break-all;\n}\n.feelTitle{font-size: 16px;font-weight: bold;min-height:45px;line-height: 45px;\n}\n.feelImg{height:auto;text-align: center;\n}\n.feelImg>img{width:70%;border:5px solid #fff;\n}\n.feelContent{min-height:50px;font-size: 14px;line-height: 25px;word-break: break-all;\n}\n.evaluationGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationTitle{width:100%;height:45px;font-size: 18px;line-height: 45px;background-color: #ffde01;font-weight:bold;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationQuestions{min-height: 90px;\n}\n.evaluationQuestionTitle{width:100%;min-height: 45px;line-height:45px;background-color: #eee;font-size: 16px;\n}\n.evaluationQuestionContent{width:100%;height:45px;line-height: 45px;\n}\n.menuIcon{width:80px;height:45px;float: left;line-height: 45px;margin-left: 10px;\n}\n.menuIcon>img{width:20px;height:20px;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.active{font-size: 18px;\n}\n.tab-pane{\n}\n.pane-answer{width:70%;margin-left: 15%;\n}\n.back_icon{width:45px;height:45px;line-height: 45px;\n}\n.back_icon>img{width:28px;height: 28px;\n}\n.sheetGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;\n}\n.sheetGroup>div{width:100%;text-indent: 1em;\n}\n.sheetTitle{min-height:45px;line-height: 45px;font-size: 18px;font-weight: bold;text-align: center;\n}\n.sheetContent{min-height:50px;\n}\n.sheetQuestion{height:auto;\n}\n.questTitle{width:100%;min-height:45px;line-height: 45px;font-size: 16px;font-weight: bold;\n}\n.questContent{width:100%;font-size: 14px;min-height:50px;line-height: 25px;word-break: break-all;\n}\n.feelTitle{font-size: 16px;font-weight: bold;min-height:45px;line-height: 45px;\n}\n.feelImg{height:auto;text-align: center;\n}\n.feelImg>img{width:70%;border:5px solid #fff;\n}\n.feelContent{min-height:50px;font-size: 14px;line-height: 25px;word-break: break-all;\n}\n.evaluationGroup{width:100%;height:auto;margin:20px 0;border:2px solid #eee;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationTitle{width:100%;height:45px;font-size: 18px;line-height: 45px;background-color: #ffde01;font-weight:bold;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationQuestions{min-height: 90px;\n}\n.evaluationQuestionTitle{width:100%;min-height: 45px;line-height:45px;background-color: #eee;font-size: 16px;\n}\n.evaluationQuestionContent{width:100%;height:45px;line-height: 45px;\n}\n.menuIcon{width:80px;height:45px;float: left;line-height: 45px;margin-left: 10px;\n}\n.menuIcon>img{width:20px;height:20px;\n}\n", ""]);
 
 // exports
 
@@ -50926,6 +50945,7 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -51222,7 +51242,7 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "tab-pane active",
+              staticClass: "tab-pane pane-answer active",
               attrs: { role: "tabpanel", id: "gather" }
             },
             _vm._l(_vm.sheetInfos, function(sheetInfo, index) {
@@ -51264,7 +51284,7 @@ var render = function() {
                                   _c("div", { staticClass: "questContent" }, [
                                     _vm._v(
                                       "\n                                        " +
-                                        _vm._s(question.answer) +
+                                        _vm._s(question.answer.content) +
                                         "\n                                    "
                                     )
                                   ])
@@ -51304,7 +51324,7 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "tab-pane",
+              staticClass: "tab-pane pane-answer",
               attrs: { role: "tabpanel", id: "flight" }
             },
             _vm._l(_vm.evaluations, function(evaluation, index) {
@@ -51494,7 +51514,7 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "tab-pane",
+              staticClass: "tab-pane pane-answer",
               attrs: { role: "tabpanel", id: "accommodationInfo" }
             },
             _vm._l(_vm.perceptions, function(perception, index) {
@@ -51517,9 +51537,7 @@ var render = function() {
                         perception.writes.data[0].image
                           ? _c("div", { staticClass: "feelImg" }, [
                               _c("img", {
-                                attrs: {
-                                  src: "/etravel/public/images/logo.png"
-                                }
+                                attrs: { src: perception.writes.data[0].image }
                               })
                             ])
                           : _c("div", { staticClass: "feelImg" }, [

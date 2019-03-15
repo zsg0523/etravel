@@ -57,7 +57,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluations">
-                        <div class="item_title">题目标题</div>
+                        <div class="item_title">题目标题(必填)</div>
                         <div><input class="item_input" placeholder="请填写题目标题" type="text" v-model="newEvaluation.title"></div>
                     </div>
                     <div class="issure">
@@ -70,7 +70,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluations">
-                        <div class="item_title">题目标题</div>
+                        <div class="item_title">题目标题(必填)</div>
                         <div><input class="item_input" placeholder="请填写题目标题" type="text" v-model="edEvaluation.title"></div>
                     </div>
                     <div class="issure">
