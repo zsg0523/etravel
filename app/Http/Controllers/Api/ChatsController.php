@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use \GatewayWorker\Lib\Gateway;
 use App\Models\User;
 use App\Models\Travel;
+use App\Models\Chat;
+use App\Handlers\ImageUploadHandler;
 
 class ChatsController extends Controller
 {
@@ -36,9 +38,22 @@ class ChatsController extends Controller
      * @param  Request $request [发送内容]
      * @return [type]           [description]
      */
-    public function messages(Request $request)
+    public function messages(Request $request, ImageUploadHandler $uploader, Chat $chat)
     {	
         $user = $this->user();
+
+        $chat->fill($request->all());
+        $chat->user_id = $user->id;
+
+        if(isset($request->image)) {
+            // 存储图片返回图片路径
+            $result = $uploader->saveBase64($request->image, 'chats', $user->id, 1024);
+
+            $chat->image = $result['path'];
+        }
+
+        $chat->save();
+
         switch ($request->type) {
             case 'all':
                 Gateway::sendToAll(json_encode([
@@ -47,28 +62,28 @@ class ChatsController extends Controller
                     'username' => $user->name,
                     'avatar' => $user->avatar,
                     'content' => $request->content,
-                    'image' => $request->image,
+                    'image' => $chat->image,
                 ]));
                 break;
             case 'group':
-                Gateway::sendToGroup($request->room_id, json_encode([
+                Gateway::sendToGroup($request->to_id, json_encode([
                     'type' => 'group',
                     'uid' => $user->id,
                     'username' => $user->name,
                     'avatar' => $user->avatar,
                     'content' => $request->content,
-                    'image' => $request->image,
+                    'image' => $chat->image,
                 ]));
                 break;
             
             case 'to':
-                Gateway::sendToUid($request->user_id, json_encode([
+                Gateway::sendToUid($request->to_id, json_encode([
                     'type' => 'to',
                     'uid' => $user->id,
                     'username' => $user->name,
                     'avatar' => $user->avatar,
                     'content' => $request->content,
-                    'image' => $request->image,
+                    'image' => $chat->image,
                 ]));
                 break;
         }
