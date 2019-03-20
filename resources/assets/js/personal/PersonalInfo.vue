@@ -40,7 +40,7 @@
     .head_edit .info_photo,.head_edit .info_name{width: 50%;display: inline-block;padding: 0 20px;}
     .head_edit .info_name, .information_edit .info_name{position: absolute;}
     .head_edit .info_photo .photo{width: 150px;height: 150px;}
-    .head_edit .info_photo .photo img{width: 100%;border-radius: 50%;}
+    .head_edit .info_photo .photo img{width: 100%;max-height:100%;border-radius: 50%;}
 
     .head_edit .info_name input[type="text"]{height: 40px;margin: 10px 0; width: 80%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;}
     .head_edit .info_name .sex{margin: 10px 0;color: #666666;}
@@ -61,13 +61,12 @@
                         </div>
                         <div class="info_photo">
                             <p class="padding_none">头像</p>
-
                             <div class="photo" v-if="personalInfos.avatar">
                                 <img class="photo-circle" :src="personalInfos.avatar" />                                                            
                             </div>
-                            <div class="photo"  v-else>
-                                <img class="photo-circle" src="/etravel/public/images/poto-icon.png" />                                                                                     </div>
-                            
+                            <div class="photo" v-else>
+                                <img class="photo-circle" src="/etravel/public/images/poto-icon.png"/> 
+                            </div>
                         </div>
                         <div class="info_name">
                             <p class="padding_none">昵称</p>
