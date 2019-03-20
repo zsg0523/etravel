@@ -51,15 +51,7 @@ class Events
     */
    public static function onMessage($client_id, $message)
    {
-       // debug
-
-       self::debug($client_id, $message);
-       $user = User::find(1);
-       \Log::info($message);
-       // \Log::info($user);
-       \Log::info($client_id);
-       Gateway::sendToAll($message);
-       return Gateway::sendToCurrentClient($user->name);
+      
    }
 
    /**

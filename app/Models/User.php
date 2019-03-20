@@ -217,6 +217,11 @@ class User extends Authenticatable implements JWTSubject
         $this->evaluations()->detach($evaluation_ids);
     }
 
+    public function chats()
+    {
+        return $this->hasMany(Chat::class);
+    }
+
 
 
 
