@@ -72,6 +72,7 @@ $api->version('v1', [
 			$api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');
 			// 通知统计
 			$api->get('user/notifications/stats', 'NotificationsController@stats')->name('api.user.notifications.stats');
+			
 
 
 			// 所有学校列表
@@ -406,6 +407,8 @@ $api->version('v1', [
 			$api->post('messages', 'ChatsController@messages');
 			// 获取房间人员列表
 			$api->post('rooms', 'ChatsController@room')->name('api.rooms');
+			// 房间消息记录
+			$api->post('groups/chats', 'ChatsController@group')->name('api.groups');
 
 
 

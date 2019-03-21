@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Travel;
 use App\Models\Chat;
 use App\Handlers\ImageUploadHandler;
+use App\Transformers\ChatTransformer;
 
 class ChatsController extends Controller
 {
@@ -112,6 +113,19 @@ class ChatsController extends Controller
         Gateway::sendToGroup($request->room_id, json_encode($new_message));
 
         return $this->response->array($new_message);
+    }
+
+    /**
+     * [group 获取房间聊天记录]
+     * @param  Request $request [房间号 ID]
+     * @param  Chat    $chat    [实例]
+     * @return [type]           [分页数组]
+     */
+    public function group(Request $request, Chat $chat)
+    {
+        $chats = $chat->where(['type' => 'group', 'to_id' => $request->room_id])->paginate(20);
+
+        return $this->response->paginator($chats, new ChatTransformer());
     }
 
 
