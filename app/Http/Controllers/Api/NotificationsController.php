@@ -23,6 +23,14 @@ class NotificationsController extends Controller
 	    ]);
 	}
 
+	/** [read 标记通知为已读] */
+	public function read()
+	{
+		$this->user()->markAsRead();
+
+		return $this->response->noContent();
+	}
+
 
 
 	
