@@ -4,15 +4,16 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use Overtrue\EasySms\EasySms;
+use Overtrue\EasySms\PhoneNumber;
 use App\Http\Requests\Api\VerificationCodeRequest;
 
 class VerificationCodesController extends Controller
 {
 	/** [store 注册生成短信验证码] */
     public function store(VerificationCodeRequest $request, EasySms $easySms)
-    {
-    	$phone = $request->phone;
-
+    {	
+    	// 根据区号不同，发送国际短信
+    	$phone = new PhoneNumber($request->phone, $request->idd_code);
     	// 生成四位随机数 左侧补0
     	$code = str_pad(random_int(1, 9999), 4, 0, STR_PAD_LEFT);
 

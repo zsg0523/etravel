@@ -14,7 +14,12 @@ class ImagesController extends Controller
    	{
    		$user = $this->user();
    		$size = $request->type == 'avatar' ? 362 : 1024;
-   		$result = $uploader->save($request->image, str_plural($request->type), $user->id, $size);
+         // 上传图片
+         if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $request->image, $res)) {
+            $result = $uploader->saveBase64($request->image, str_plural($request->type), $user->id, $size);
+         } else {
+            $result = $uploader->save($request->image, str_plural($request->type), $user->id, $size);
+         }
 
    		$image->path = $result['path'];
          $image->type = $request->type;

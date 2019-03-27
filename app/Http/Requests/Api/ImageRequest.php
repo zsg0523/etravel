@@ -19,7 +19,7 @@ class ImageRequest extends FormRequest
             $rules['image'] = 'required';
 
         }else {
-            $rules['image'] = 'required|mimes:jpeg,bmp,png,gif';
+            $rules['image'] = 'required';
         }
 
         return $rules;
