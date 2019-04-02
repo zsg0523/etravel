@@ -27,6 +27,7 @@
             <div class="disflex login">
                 <div class="title tc">A-Team-Travel</div>
                 <div><input type="text" placeholder="用户名" v-model="username"></div>
+                <div><input type="text" placeholder="区号" v-model="areaCode"></div>
                 <div><input type="text" placeholder="手机号" v-model="phoneNumber"></div>
                 <div class="disflex" style="justify-content: space-between;">
                     <input type="text" placeholder="验证码" v-model="smscode" style="width: 56%;">
@@ -46,6 +47,7 @@
 	  	data() {
 	    	return {
 	    		username:'',
+	    		areaCode:'',
 		      	phoneNumber: '',
 		      	smscode:'',
 		      	password: '',
@@ -86,10 +88,11 @@
 		      	}
 		    },
 		    getCode() {
-		    	if (this.phoneNumber) {
+		    	if (this.phoneNumber&&this.areaCode) {
 		    		this.run();
 		        	axios.post(this.$config+'/api/verificationCodes', {
-			          	phone: this.phoneNumber
+			          	phone: this.phoneNumber,
+			          	idd_code:this.areaCode,
 			        }).then(res => {
 			        	console.log(res.data);
 			          	if (res.data.key) {
@@ -103,7 +106,7 @@
 			          	console.log(err)
 			        });
 		      	} else {
-		        	this.$toast('请填写手机号码');
+		        	this.$toast('请填写手机区号和号码');
 		      	}
 		    },
 		    run() {
