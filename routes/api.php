@@ -409,7 +409,7 @@ $api->version('v1', [
 			// 获取房间人员列表
 			$api->post('rooms', 'ChatsController@room')->name('api.rooms');
 			// 房间消息记录
-			$api->post('groups/chats', 'ChatsController@group')->name('api.groups');
+			$api->get('groups/chats', 'ChatsController@group')->name('api.groups');
 
 
 
