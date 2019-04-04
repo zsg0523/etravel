@@ -9,11 +9,13 @@
     .icon{width: 50%;height:570px;border-right: 1px solid #fff;align-items: center;justify-content: center;}
     .icon>img{width: 300px;}
     .login{width: 50%;height:570px;flex-flow:column nowrap;align-items: center;justify-content: center;}
-    .login>div{width:70%;height: 70px;color: #000;}
+    .login>div{width:70%;height: 60px;color: #000;}
     .title{font-size: 25px;font-weight: bold;}
     .login>div input{width: 100%;height:50px;border:none;outline: none;background: #fff;border-radius: 8px;padding-left: 8px;font-size: 16px;}
     .login>div a{color: #000;font-size: 14px;}
     .login>div button{width: 100%;height: 50px;border: none;outline: none;background-color: #fff;border-radius: 8px;font-weight: bold;font-size: 16px;}
+    .sel{width: 100%;height:50px;border:none;outline: none;background: #fff;border-radius: 8px;padding-left: 3px;font-size: 16px;}
+    .sel>option{width:100%;height: 50px;line-height: 50px;}
     #sendCode{width:40%;height: 50px;line-height: 50px;font-size: 16px;background-color: #fff;border-radius: 8px;outline: none;border: none;}
     #sendCode:hover{cursor: pointer;}
 </style>
@@ -27,7 +29,12 @@
             <div class="disflex login">
                 <div class="title tc">A-Team-Travel</div>
                 <div><input type="text" placeholder="用户名" v-model="username"></div>
-                <div><input type="text" placeholder="区号" v-model="areaCode"></div>
+                <div>
+                	<!-- <input type="text" placeholder="区号" v-model="idd_code"> -->
+                	<select class="sel" v-model="idd_code">
+                        <option value="">请选择区号</option>
+                        <option v-for="item in optList" :value="item.value">{{ item.name }}</option>
+                    </select></div>
                 <div><input type="text" placeholder="手机号" v-model="phoneNumber"></div>
                 <div class="disflex" style="justify-content: space-between;">
                     <input type="text" placeholder="验证码" v-model="smscode" style="width: 56%;">
@@ -41,13 +48,59 @@
         </div>
     </div>
 </template>
-
+<!--  <select class="tel_input selectBox" id="areaCode" name="interest" lay-filter="aihao">
+				 <option value="673" selected="">Brunei+673</option>
+				 <option value="49">Germany+49</option>
+				 <option value="39">Italy+39</option>
+				 <option value="81">Japan+81</option>
+				 <option value="82">South Korea+82</option>
+				 <option value="1473">United Kingdom+1473</option>
+				 <option value="86" selected="">中国大陆+86</option>
+				 <option value="852">中国香港+852</option>
+				 <option value="886">中国台湾+886</option>
+				 <option value="853">中国澳门+853</option>
+			 </select> -->
 <script>
 	  export default {
 	  	data() {
 	    	return {
+	    		optList:[{
+                    value:'86',
+                    name:'中国大陆(+86)'
+                },{
+                    value:'852',
+                    name:'中国香港(+852)'
+                },
+                {
+                    value:'886',
+                    name:'中国台湾(+886)'
+                },
+                {
+                    value:'853',
+                    name:'中国澳门(+853)'
+                },
+                {
+                    value:'1473',
+                    name:'United Kingdom(+1473)'
+                },
+                {
+                    value:'82',
+                    name:'South Korea(+82)'
+                },
+                {
+                    value:'81',
+                    name:'Japan(+81)'
+                },
+                {
+                    value:'49',
+                    name:'Germany(+49)'
+                },
+                {
+                    value:'673',
+                    name:'Brunei(+673)'
+                }],
 	    		username:'',
-	    		areaCode:'',
+	    		idd_code:'',
 		      	phoneNumber: '',
 		      	smscode:'',
 		      	password: '',
@@ -88,11 +141,11 @@
 		      	}
 		    },
 		    getCode() {
-		    	if (this.phoneNumber&&this.areaCode) {
+		    	if (this.phoneNumber&&this.idd_code) {
 		    		this.run();
 		        	axios.post(this.$config+'/api/verificationCodes', {
 			          	phone: this.phoneNumber,
-			          	idd_code:this.areaCode,
+			          	idd_code:this.idd_code,
 			        }).then(res => {
 			        	console.log(res.data);
 			          	if (res.data.key) {

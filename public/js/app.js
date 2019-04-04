@@ -28253,11 +28253,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             phoneNumber: '',
+            idd_code: '',
             smscode: '',
             password: '',
             repassword: '',
@@ -28277,6 +28282,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }).then(function (res) {
             // console.log(res.data);
             _this.phoneNumber = res.data.phone;
+            _this.idd_code = res.data.idd_code;
         }).catch(function (err) {
             console.log(err);
             _this.$toast('登录失效');
@@ -28381,6 +28387,37 @@ var render = function() {
     _c("div", { staticClass: "personal_input_form disflex" }, [
       _c("div", { staticClass: "pane_content_promise" }, [
         _c("div", { staticClass: "form_content disflex" }, [
+          _c("div", { staticClass: "form_item_password" }, [
+            _c("div", { staticClass: "item_title" }, [_vm._v("区号")]),
+            _vm._v(" "),
+            _c("div", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.idd_code,
+                    expression: "idd_code"
+                  }
+                ],
+                attrs: {
+                  type: "text",
+                  placeholder: "区号",
+                  disabled: "disabled"
+                },
+                domProps: { value: _vm.idd_code },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.idd_code = $event.target.value
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "form_item_password" }, [
             _c("div", { staticClass: "item_title" }, [_vm._v("手机号码")]),
             _vm._v(" "),
@@ -51765,7 +51802,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.main{width: 100%;height: 100vh;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.disflex{display: -webkit-box;display: -ms-flexbox;display: flex;\n}\n.tc{text-align: center;\n}\n.fl{float: left;\n}\n.fr{float: right;\n}\na:hover{text-decoration: none;\n}\n.contentReg{width: 900px;height:570px;border-radius:10px;-webkit-box-shadow: 0 0 10px #ccc;box-shadow: 0 0 10px #ccc;background-color: #ffde01;\n}\n.icon{width: 50%;height:570px;border-right: 1px solid #fff;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.icon>img{width: 300px;\n}\n.login{width: 50%;height:570px;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-flow:column nowrap;flex-flow:column nowrap;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.login>div{width:70%;height: 70px;color: #000;\n}\n.title{font-size: 25px;font-weight: bold;\n}\n.login>div input{width: 100%;height:50px;border:none;outline: none;background: #fff;border-radius: 8px;padding-left: 8px;font-size: 16px;\n}\n.login>div a{color: #000;font-size: 14px;\n}\n.login>div button{width: 100%;height: 50px;border: none;outline: none;background-color: #fff;border-radius: 8px;font-weight: bold;font-size: 16px;\n}\n#sendCode{width:40%;height: 50px;line-height: 50px;font-size: 16px;background-color: #fff;border-radius: 8px;outline: none;border: none;\n}\n#sendCode:hover{cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "\n.main{width: 100%;height: 100vh;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.disflex{display: -webkit-box;display: -ms-flexbox;display: flex;\n}\n.tc{text-align: center;\n}\n.fl{float: left;\n}\n.fr{float: right;\n}\na:hover{text-decoration: none;\n}\n.contentReg{width: 900px;height:570px;border-radius:10px;-webkit-box-shadow: 0 0 10px #ccc;box-shadow: 0 0 10px #ccc;background-color: #ffde01;\n}\n.icon{width: 50%;height:570px;border-right: 1px solid #fff;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.icon>img{width: 300px;\n}\n.login{width: 50%;height:570px;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-flow:column nowrap;flex-flow:column nowrap;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;\n}\n.login>div{width:70%;height: 60px;color: #000;\n}\n.title{font-size: 25px;font-weight: bold;\n}\n.login>div input{width: 100%;height:50px;border:none;outline: none;background: #fff;border-radius: 8px;padding-left: 8px;font-size: 16px;\n}\n.login>div a{color: #000;font-size: 14px;\n}\n.login>div button{width: 100%;height: 50px;border: none;outline: none;background-color: #fff;border-radius: 8px;font-weight: bold;font-size: 16px;\n}\n.sel{width: 100%;height:50px;border:none;outline: none;background: #fff;border-radius: 8px;padding-left: 3px;font-size: 16px;\n}\n.sel>option{width:100%;height: 50px;line-height: 50px;\n}\n#sendCode{width:40%;height: 50px;line-height: 50px;font-size: 16px;background-color: #fff;border-radius: 8px;outline: none;border: none;\n}\n#sendCode:hover{cursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -51819,100 +51856,149 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
-		return {
-			username: '',
-			phoneNumber: '',
-			smscode: '',
-			password: '',
-			repassword: '',
-			key: '',
-			time: 0,
-			disabled: false
-		};
-	},
+				data: function data() {
+								return {
+												optList: [{
+																value: '86',
+																name: '中国大陆(+86)'
+												}, {
+																value: '852',
+																name: '中国香港(+852)'
+												}, {
+																value: '886',
+																name: '中国台湾(+886)'
+												}, {
+																value: '853',
+																name: '中国澳门(+853)'
+												}, {
+																value: '1473',
+																name: 'United Kingdom(+1473)'
+												}, {
+																value: '82',
+																name: 'South Korea(+82)'
+												}, {
+																value: '81',
+																name: 'Japan(+81)'
+												}, {
+																value: '49',
+																name: 'Germany(+49)'
+												}, {
+																value: '673',
+																name: 'Brunei(+673)'
+												}],
+												username: '',
+												idd_code: '',
+												phoneNumber: '',
+												smscode: '',
+												password: '',
+												repassword: '',
+												key: '',
+												time: 0,
+												disabled: false
+								};
+				},
 
-	methods: {
-		register: function register() {
-			var _this = this;
+				methods: {
+								register: function register() {
+												var _this = this;
 
-			if (this.password && this.username && this.repassword && this.smscode) {
-				if (this.password == this.repassword) {
-					this.$post(this.$config + '/api/users', {
-						name: this.username,
-						password: this.password,
-						verification_code: this.smscode,
-						verification_key: this.key
-					}).then(function (res) {
-						console.log(res.data);
-						// this.$toast('数据');
-						if (res.data.meta.access_token) {
-							// this.setUserInfo(res)
-							_this.$toast('注册成功');
-							_this.$router.push('/');
-						} else {
-							_this.$toast(res.data.message);
-						}
-					}).catch(function (err) {
-						console.log(err);
-					});
-				} else {
-					this.$toast('两次密码不一致！');
-					this.repassword = '';
+												if (this.password && this.username && this.repassword && this.smscode) {
+																if (this.password == this.repassword) {
+																				this.$post(this.$config + '/api/users', {
+																								name: this.username,
+																								password: this.password,
+																								verification_code: this.smscode,
+																								verification_key: this.key
+																				}).then(function (res) {
+																								console.log(res.data);
+																								// this.$toast('数据');
+																								if (res.data.meta.access_token) {
+																												// this.setUserInfo(res)
+																												_this.$toast('注册成功');
+																												_this.$router.push('/');
+																								} else {
+																												_this.$toast(res.data.message);
+																								}
+																				}).catch(function (err) {
+																								console.log(err);
+																				});
+																} else {
+																				this.$toast('两次密码不一致！');
+																				this.repassword = '';
+																}
+												} else {
+																this.$toast('请填写完整信息');
+												}
+								},
+								getCode: function getCode() {
+												var _this2 = this;
+
+												if (this.phoneNumber && this.idd_code) {
+																this.run();
+																axios.post(this.$config + '/api/verificationCodes', {
+																				phone: this.phoneNumber,
+																				idd_code: this.idd_code
+																}).then(function (res) {
+																				console.log(res.data);
+																				if (res.data.key) {
+																								// this.setUserInfo(res)
+																								_this2.key = res.data.key;
+																								_this2.$toast('验证码已成功发送，请注意查收。');
+																				} else {
+																								_this2.$toast(res.data.message);
+																				}
+																}).catch(function (err) {
+																				console.log(err);
+																});
+												} else {
+																this.$toast('请填写手机区号和号码');
+												}
+								},
+								run: function run() {
+												this.time = 60;
+												this.timer();
+								},
+
+								setDisabled: function setDisabled(val) {
+												this.disabled = val;
+								},
+								timer: function timer() {
+												if (this.time > 0) {
+																this.time--;
+																this.disabled = true;
+																setTimeout(this.timer, 1000);
+												} else {
+																this.disabled = false;
+																this.time = 0;
+												}
+								}
+				},
+				computed: {
+								text: function text() {
+												return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
+								}
 				}
-			} else {
-				this.$toast('请填写完整信息');
-			}
-		},
-		getCode: function getCode() {
-			var _this2 = this;
-
-			if (this.phoneNumber) {
-				this.run();
-				axios.post(this.$config + '/api/verificationCodes', {
-					phone: this.phoneNumber
-				}).then(function (res) {
-					console.log(res.data);
-					if (res.data.key) {
-						// this.setUserInfo(res)
-						_this2.key = res.data.key;
-						_this2.$toast('验证码已成功发送，请注意查收。');
-					} else {
-						_this2.$toast(res.data.message);
-					}
-				}).catch(function (err) {
-					console.log(err);
-				});
-			} else {
-				this.$toast('请填写手机号码');
-			}
-		},
-		run: function run() {
-			this.time = 60;
-			this.timer();
-		},
-
-		setDisabled: function setDisabled(val) {
-			this.disabled = val;
-		},
-		timer: function timer() {
-			if (this.time > 0) {
-				this.time--;
-				this.disabled = true;
-				setTimeout(this.timer, 1000);
-			} else {
-				this.disabled = false;
-				this.time = 0;
-			}
-		}
-	},
-	computed: {
-		text: function text() {
-			return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
-		}
-	}
 });
 
 /***/ }),
@@ -51951,6 +52037,48 @@ var render = function() {
               }
             }
           })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.idd_code,
+                  expression: "idd_code"
+                }
+              ],
+              staticClass: "sel",
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.idd_code = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "" } }, [_vm._v("请选择区号")]),
+              _vm._v(" "),
+              _vm._l(_vm.optList, function(item) {
+                return _c("option", { domProps: { value: item.value } }, [
+                  _vm._v(_vm._s(item.name))
+                ])
+              })
+            ],
+            2
+          )
         ]),
         _vm._v(" "),
         _c("div", [
