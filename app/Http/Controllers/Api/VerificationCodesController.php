@@ -12,10 +12,10 @@ class VerificationCodesController extends Controller
 	/** [store 注册生成短信验证码] */
     public function store(VerificationCodeRequest $request, EasySms $easySms)
     {	
-    	$phones = explode('-', $request->phone);
+    	// $phones = explode('-', $request->phone);
     	// 根据区号不同，发送国际短信
-    	// $phone = new PhoneNumber($request->phone, $request->idd_code);
-    	$phone = new PhoneNumber($phones[1], $phones[0]);
+    	$phone = new PhoneNumber($request->phone, $request->idd_code);
+    	// $phone = new PhoneNumber($phones[1], $phones[0]);
     	// 生成四位随机数 左侧补0
     	$code = str_pad(random_int(1, 9999), 4, 0, STR_PAD_LEFT);
 

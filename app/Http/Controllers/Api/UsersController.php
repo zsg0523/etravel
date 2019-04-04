@@ -23,12 +23,6 @@ class UsersController extends Controller
 	 */
     public function store(UserRequest $request)
     {
-    	// $user = User::create([
-    	// 	'name' => $request->name,
-    	// 	'email' => $request->email,
-    	// 	'password' => bcrypt($request->password),
-    	// ]);
-
         $verifyData = \Cache::get($request->verification_key);
 
         if ( ! $verifyData) {
@@ -45,7 +39,6 @@ class UsersController extends Controller
             'phone' => $verifyData['phone'],
             'password' => bcrypt($request->password),
         ]);
-
         // 清除验证码缓存
         \Cache::forget($request->verification_key);
         
