@@ -9,7 +9,7 @@
 
 	.project_right{width: 240px;height: 100%;align-items: center;flex-direction: column; justify-content: flex-start;background-color: #ebebeb;}
 	.project_right>div{width: 90%;}
-    .project_icon{width:30px;height:100%;background-color: #ebebeb;border-bottom-right-radius: 15px;border-top-right-radius: 15px;flex-direction: column;justify-content: space-around;}
+    .project_icon{width:30px;height:100%;background-color: #ebebeb;border-bottom-right-radius: 15px;border-top-right-radius: 15px;flex-direction: column;justify-content: flex-start;}
     .project_icon>div{width:30px;height:30px;margin-top: 4px;}
     .project_icon>div>img{width:30px;height:30px;}
 
@@ -32,24 +32,30 @@
 	.del_icon{width: 60px;height: 60px;position: absolute;right: 50px;top:50px;z-index: 5;}
 	.del_icon>img{width: 60px;height: 60px;}
     
-    .addNewTravel{width: 400px;min-height:260px;background-color: #fff;border-radius: 15px;box-shadow: 0 0 10px #ccc;flex-direction: column;justify-content: center;align-items: center;}
-    .addNewTravel>input{width:300px;height:50px;margin-top:20px;border-radius: 8px;}
+    .addNewTravel{width: 600px;min-height:260px;background-color: #fff;border-radius: 15px;box-shadow: 0 0 10px #ccc;flex-direction: column;justify-content: center;align-items: center;}
     .addNewTravel>button{width:60%;height:50px;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;margin-top: 20px;margin-bottom: 20px;}
+    .form_item_pro{width: 90%;min-height:100px;margin-left: 5%;}
+    .form_item_pro>div{height: 45px;line-height: 45px;}
+    .form_item{width: 90%;min-height:100px;}
+    .form_item>div{height: 45px;line-height: 45px;}
+    .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
+
     .van-dialog{width:50%;}
+    /*.van-picker{width:80%;}*/
 </style>
 
 <template>
 	<div class="main1 disflex" v-if="travels">
     	<!-- <div class="del_icon">
-    		<img src="../../images/rush-icon.png">
+    		<img src="/etravel/public/images/rush-icon.png">
     	</div> -->
     	<div class="project_list disflex" >
     		<div class="project disflex" @click="popupShow();">
     			<div class="project_left disflex huise">
-    				<img src="../../images/add1.png">
+    				<img src="/etravel/public/images/add1.png">
     			</div>
     			<div class="project_right disflex">
-    				<span class="addnew" >新建项目</span>
+    				<span class="addnew" >新建項目</span>
     			</div>
                 <div class="project_icon">
                     
@@ -58,30 +64,30 @@
     		
     		<div class="project disflex" v-for="(travel,index) in travels">
     			<div class="project_left disflex yellowbg"  @click="$router.push('/projectDetail/'+travel.id)">
-    				<img src="../../images/plane-icon.png">
+    				<img src="/etravel/public/images/plane-icon.png">
     			</div>
     			<div class="project_right disflex">
     				<div class="edit_name">
     					<div class="edit_icon disflex fl" @click="editPopupShow(travel.id,index)">
-    						<img src="../../images/write-icon.png">
-    						<span>（4-X个字符内）</span>
+    						<img src="/etravel/public/images/write-icon.png">
+    						<span>編輯</span>
     					</div>
-    					<div class="project_type disflex fr" v-if="travel.pivot['is_promise'] == 1">
-    						<img src="../../images/sent.png">
+    					<!-- <div class="project_type disflex fr" v-if="travel.pivot['is_promise'] == 1">
+    						<img src="/etravel/public/images/sent.png">
     						<span>已发布！</span>
     					</div>
-                        <div class="project_type disflex fr" v-else>
-                            <img src="../../images/unsent.png">
+                        <div class="project_type disflex fr" v-else> 
+                            <img src="/etravel/public/images/unsent.png">
                             <span>未发布！</span>
-                        </div>
+                        </div> -->
     				</div>
     				<div class="project_name">
     					<p class="overdot">{{travel.travel_name}}</p>
     				</div>
     			</div>
                 <div class="project_icon disflex">
-                    <div @click="delTravel(travel.id,index)"><img src="../../images/rush-icon.png"></div>
-                    <div><img src="../../images/Released.png"></div>       
+                    <div @click="delTravel(travel.id,index)"><img src="/etravel/public/images/rush-icon.png"></div>
+                    <!-- <div><img src="/etravel/public/images/Released.png"></div>        -->
 
                 </div>
     		</div>
@@ -91,28 +97,106 @@
     		<button type="button">发布</button>
     	</div> -->
         <van-popup v-model="isPopupShow" :overlay="true" style="border-radius: 15px;">
-            <div class="addNewTravel disflex" >
-                <input type="text" name="" v-model="newTravel.travel_name" placeholder="项目名称">
-                <input type="text" name="" v-model="newTravel.travel_at" placeholder="出行时间">
-                <input type="text" name="" v-model="newTravel.travel_introduction" placeholder="项目简介">
-                <button @click="addNewTravel()">确定</button>
+            <div class="addNewTravel disflex">
+                <div class="form_item_pro">
+                    <div class="item_title">項目名稱<span class="err" v-if="errors.travel_name" v-text="errors.travel_name[0]"></span></div>
+                    <div>
+                        <input class="item_input" placeholder="項目名稱" type="text"  v-model="newTravel.travel_name">
+                    </div>
+                </div>
+                <div class="form_item_pro">
+                    <div class="item_title">出行日期<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
+                    <div>
+                        <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_at">
+                    </div>
+                </div>
+                <div class="form_item_pro">
+                    <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
+                    <div>
+                        <input class="item_input" placeholder="回程日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_return">
+                    </div>
+                </div>
+                <!-- <div class="form_item_pro">
+                    <div class="item_title">出行日期<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
+                    <div>
+                        <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_at" readonly="readonly" @click="pickTimeShow('newTravel')">
+                    </div>
+                </div>
+                <div class="form_item_pro">
+                    <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
+                    <div>
+                        <input class="item_input" placeholder="回程日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
+                    </div>
+                </div> -->
+                <div class="form_item_pro">
+                    <div class="item_title">項目簡介<span class="err" v-if="errors.travel_introduction" v-text="errors.travel_introduction[0]"></span></div>
+                    <div>
+                        <input class="item_input" placeholder="項目簡介" type="text"  v-model="newTravel.travel_introduction">
+                    </div>
+                </div>
+                <button @click="addNewTravel()">確定</button>
             </div>
 
         </van-popup>
-        <van-popup v-model="isEditPopupShow" :overlay="true" style="border-radius: 15px;">
-            <div class="addNewTravel disflex" >
-                <input type="text" name="" v-model="edTravel.travel_name" placeholder="项目名称">
-                <input type="text" name="" v-model="edTravel.travel_at" placeholder="出行时间">
-                <input type="text" name="" v-model="edTravel.travel_introduction" placeholder="项目简介">
-                <button @click="editTravel()">确定</button>
+        <van-popup v-model="isEditPopupShow" :overlay="true" style="border-radius: 15px;"> 
+            <div class="addNewTravel disflex">
+                <div class="form_item_pro">
+                    <div class="item_title">項目名稱</div>
+                    <div>
+                        <input class="item_input" placeholder="項目名稱" type="text"  v-model="edTravel.travel_name">
+                    </div>
+                </div>
+                <div class="form_item_pro">
+                    <div class="item_title">出行日期</div>
+                    <div>
+                        <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="edTravel.travel_at">
+                    </div>
+                </div>
+                <div class="form_item_pro">
+                    <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
+                    <div>
+                        <input class="item_input" placeholder="回程日期（例:1979-01-01）" type="text"  v-model="edTravel.travel_return">
+                    </div>
+                </div>
+                <!-- <div class="form_item_pro">
+                    <div class="item_title">出行日期</div>
+                    <div>
+                        <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="edTravel.travel_at" readonly="readonly" @click="pickTimeShow('edTravel')">
+                    </div>
+                </div>
+                <div class="form_item_pro">
+                    <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
+                    <div>
+                        <input class="item_input" placeholder="回程日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
+                    </div>
+                </div> -->
+                <div class="form_item_pro">
+                    <div class="item_title">項目簡介</div>
+                    <div>
+                        <input class="item_input" placeholder="項目簡介" type="text"  v-model="edTravel.travel_introduction">
+                    </div>
+                </div>
+                <button @click="editTravel()">確定</button>
             </div>
         </van-popup>
+       <!--  <van-popup v-model="isPickTimeShow" :overlay="true" style="border-radius: 15px;"> 
+            <div class="addNewTravel disflex">
+                <van-datetime-picker
+                    v-model="currentDate"
+                    type="date"
+                    :min-date="minDate"
+                    :max-date="maxDate"
+                    :formatter="formatter"
+                    @cancel="pickTimeCancel()"
+                    @confirm="pickTimeConfirm()"/>
+            </div>
+        </van-popup> -->
     </div>
 </template>
 
 <script>
-    import { mapActions } from 'vuex'
-    
+    import { mapActions } from 'vuex';
+    import { mapGetters } from 'vuex';
     export default {
         data() {
             return {
@@ -122,15 +206,23 @@
                 newTravel:{
                     travel_name:'',
                     travel_at:'',
+                    travel_return:'',
                     travel_introduction:'',
                 },
                 edTravel:{
                     travel_name:'',
                     travel_at:'',
+                    travel_return:'',
                     travel_introduction:'',
                 },
                 edTravelId:'',
                 edTravelIndex:'',
+                errors:{},
+                // isPickTimeShow:false,
+                // currentDate:new Date(),
+                // minDate:new Date(1999,1,1),
+                // maxDate:new Date(2200,1,1),
+                // actDate:'',
             }
         },
         mounted:function(){
@@ -138,9 +230,11 @@
         },
         methods:{
             ...mapActions(['setTravels']),
+            ...mapActions(['setUserInfo']),
+            ...mapGetters(['userInfo']),
             getUserTravels(){
                 // 获取旅游项目
-                this.$get('/api/travels',
+                this.$get(this.$config+'/api/creater/travels',
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
@@ -152,14 +246,15 @@
                     // console.log(this.travels);
                    
                 }).catch(err => {
-                    this.$toast('获取失败');
-                    this.$router.push('/');
+                    // this.$toast('获取失败');
+                    // this.$router.push('/');
                     console.log(err);
                 });
             },
             popupShow(){
                 // 显示新增弹窗
                 this.isPopupShow=true;
+                this.errors={};
             },
             popupHiden(){
                 // 隐藏新增弹窗
@@ -167,40 +262,58 @@
             },
             addNewTravel(){
                 // 新增旅游
-                this.$post('/api/travels',{
-                    travel_name:this.newTravel.travel_name,
-                    travel_at:this.newTravel.travel_at,
-                    travel_introduction:this.newTravel.travel_introduction, 
-                },
-                {
-                    headers: {
-                        "Authorization": 'Bearer '+sessionStorage.token,
+                this.$dialog.confirm({
+                    title: '新建項目',
+                    message: '新建項目將會消耗您一枚金幣，是否創建？'
+                }).then(() => {
+                    if(this.$store.state.userInfo.tokens>=1){
+                        this.$post(this.$config+'/api/travels',{
+                            travel_name:this.newTravel.travel_name,
+                            travel_at:this.newTravel.travel_at,
+                            travel_return:this.newTravel.travel_return,
+                            travel_introduction:this.newTravel.travel_introduction, 
+                        },
+                        {
+                            headers: {
+                                "Authorization": 'Bearer '+sessionStorage.token,
+                            }
+                        }).then(res => {
+                            // console.log(res.data);
+                            this.getUserTravels();
+                            this.popupHiden();
+                            this.$toast('創建成功');
+                            this.newTravel.travel_name='';
+                            this.newTravel.travel_at='';
+                            this.newTravel.travel_return='';
+                            this.newTravel.travel_introduction='';
+                            this.getUserInfo();
+                        }).catch(err => {
+                            this.$toast('創建失败');
+                            this.errors=err.response.data.errors;
+
+                            console.log(err)
+                        });
+                        
+                    }else{
+                        this.$toast('您的金幣不足!');
                     }
-                }).then(res => {
-                    console.log(res.data);
-                    this.getUserTravels();
-                    this.popupHiden();
-                    this.$toast('添加成功');
-                    this.newTravel.travel_name='';
-                    this.newTravel.travel_at='';
-                    this.newTravel.travel_introduction='';
                 }).catch(err => {
-                    this.$toast('添加失败');
-                    console.log(err)
+
                 });
+                
             },
             delTravel(projectId,index){
                 // 删除旅游
                 this.$dialog.confirm({
-                    title: '删除项目',
-                    message: '是否删除该旅游'
+                    title: '删除項目',
+                    message: '是否删除該項目'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
                         headers: {
                             "Authorization": 'Bearer '+sessionStorage.token,
                         },
-                        url: '/api/travels/'+projectId,
+                        url: this.$config+'/api/travels/'+projectId,
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
@@ -223,6 +336,7 @@
                 this.edTravelIndex=index;
                 this.edTravel.travel_name=this.travels[index].travel_name;
                 this.edTravel.travel_at=this.travels[index].travel_at;
+                this.edTravel.travel_return=this.travels[index].travel_return;
                 this.edTravel.travel_introduction=this.travels[index].introduction;
                 this.isEditPopupShow=true;
             },
@@ -240,14 +354,16 @@
                     data:{
                         travel_name:this.edTravel.travel_name,
                         travel_at:this.edTravel.travel_at,
+                        travel_return:this.edTravel.travel_return,
                         travel_introduction:this.edTravel.travel_introduction,
                     },
-                    url: '/api/travels/'+this.edTravelId,
+                    url: this.$config+'/api/travels/'+this.edTravelId,
                 }).then(res => {
                     // console.log(res);
                     if(res.status==200){
                         this.travels[this.edTravelIndex].travel_name=this.edTravel.travel_name;
                         this.travels[this.edTravelIndex].travel_at=this.edTravel.travel_at;
+                        this.travels[this.edTravelIndex].travel_return=this.edTravel.travel_return;
                         this.travels[this.edTravelIndex].introduction=this.edTravel.travel_introduction;
                         // this.getUserTravels();
                         this.$toast('修改成功');
@@ -257,10 +373,64 @@
                     this.editPopupHiden();
                 }).catch(err => {
                     this.$toast('修改失败');
+                    this.errors=err.response.data.errors;
                     console.log(err)
                 });
 
             },
+            getUserInfo(){
+                // 获取用户基本信息
+                this.$get(this.$config+'/api/user?include=student.school',
+                {
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    }
+                }).then(res => {
+                    // console.log(res.data);
+                    this.setUserInfo(res.data);
+                }).catch(err => {
+                    console.log(err);
+                    this.$toast('登录失效');
+                    sessionStorage.clear();
+                    this.setUserInfo('');
+                    this.setTravels('');
+                    this.setToken('');
+                    this.$router.push("/");
+                });
+            },
+        //     pickTimeShow(str){
+        //         this.isPickTimeShow=true;
+        //         this.actDate=str;
+        //     },
+        //     pickTimeCancel(){
+        //         this.isPickTimeShow=false;
+        //     },
+        //     pickTimeConfirm(){
+        //         this.isPickTimeShow=false;
+        //         if(this.actDate=='newTravel'){
+        //             this.newTravel.travel_at=this.formatDate(this.currentDate); 
+        //         }else if(this.actDate=='edTravel'){
+        //             this.edTravel.travel_at=this.formatDate(this.currentDate); 
+        //         }
+        //         this.currentDate=new Date();
+        //     },
+        //     formatter(type, value) {
+        //   　　  if (type === 'year') {
+        //     　　    return value+'年';
+        //   　　  } else if (type === 'month') {
+        //   　　      return value+'月'
+        //   　　  } else if (type === 'day') {
+        //     　　    return value+'日'
+        //   　　  } 
+        //   　　  return value;
+        // 　　},
+        //     formatDate(obj){
+        //         var date =  new Date(obj);
+        //         var y = 1900+date.getYear();
+        //         var m = "0"+(date.getMonth()+1);
+        //         var d = "0"+date.getDate();
+        //         return y+"-"+m.substring(m.length-2,m.length)+"-"+d.substring(d.length-2,d.length);
+        //     }
         },
     }
 </script>

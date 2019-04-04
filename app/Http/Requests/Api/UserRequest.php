@@ -13,22 +13,28 @@ class UserRequest extends FormRequest
     {
         switch ($this->method()) {
             case 'POST':
-                // return [
-                //     'name' => 'required|between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name',
-                //     'email' => 'required|email',
-                //     'password' => 'required|string|min:6',
-                // ];
-                return [
-                    'name' => 'required|between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name',
-                    'password' => 'required|string|min:6',
-                    'verification_key' => 'required|string',
-                    'verification_code' => 'required|string',
-                ];
+                if(isset($this->verification_key) && $this->verification_code)
+                {
+                    return [
+                        'name' => 'required|between:2,25|unique:users,name',
+                        'password' => 'required|string|min:6',
+                        'verification_key' => 'required|string',
+                        'verification_code' => 'required|string',
+                    ]; 
+                } else {
+                    return [
+                        'name' => 'required|between:2,25|unique:users,name',
+                        'original_password' => 'required|string|min:6',
+                        'email' => 'unique:users,email',
+                        'phone' => 'required|unique:users,phone',
+                    ];
+                }
                 break;
             case 'PATCH':
-                $userId = \Auth::guard('api')->id();
+                $userId = isset($this->user_id) ? $this->user_id :  \Auth::guard('api')->id();
+
                 return [
-                    'name' => 'between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name,' . $userId,
+                    'name' => 'between:2,25|unique:users,name,' . $userId,
                     'email' => 'email',
                     'introduction' => 'max:80',
                     'avatar_image_id' => 'exists:images,id,type,avatar,user_id,' . $userId,
@@ -46,7 +52,12 @@ class UserRequest extends FormRequest
         ];
     }
 
-
+    public function messages()
+    {
+        return [
+            'name.required' => '名称不能为空！',
+        ];
+    }
 
 
 

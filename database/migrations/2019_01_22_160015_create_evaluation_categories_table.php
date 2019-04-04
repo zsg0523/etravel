@@ -15,7 +15,7 @@ class CreateEvaluationCategoriesTable extends Migration
     {
         Schema::create('evaluation_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('travel_id')->index();
+            $table->integer('travel_id')->unsigned()->index();
             $table->string('title')->index()->comment('分类名称');
             $table->timestamps();
         });

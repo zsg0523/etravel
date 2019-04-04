@@ -8,19 +8,20 @@ use App\Models\Group;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\GroupRequest;
 use App\Transformers\GroupTransformer;
+use App\Transformers\UserTransformer;
 
 class GroupsController extends Controller
 {
 	/** [index 所有分组] */
     public function index()
     {
-    	return $this->response->collection(Group::all(), new GroupTransformer());
+    	return $this->response->collection(Group::room()->get(), new GroupTransformer());
     }
 
     /** [travelIndex 旅行团分组安排] */
     public function travelIndex(Travel $travel)
     {
-    	$groups = $travel->groups;
+    	$groups = $travel->groups()->room()->get();
     	return $this->response->collection($groups, new GroupTransformer());
     }
 
@@ -39,7 +40,9 @@ class GroupsController extends Controller
             return $this->response->errorBadRequest();
         }
         
-    	return $this->response->item($group, new GroupTransformer());
+        $schools = User::find($travel->add_by)->schools;
+
+    	return $this->response->item($group, new GroupTransformer())->setMeta($schools->toArray());
     }
 
     /** [store 新建分组] */
@@ -78,6 +81,14 @@ class GroupsController extends Controller
 
     	return $this->response->noContent();
     }
+
+
+    // private function roomGroupBy($array)
+    // {
+    //     foreach ($array as $value) {
+    //         if ($value->room)
+    //     }
+    // }
 
 
 }

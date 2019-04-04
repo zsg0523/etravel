@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Models\Travel;
+use App\Models\User;
 use App\Models\EvaluationCategory;
 use App\Transformers\EvaCategoryTransformer;
 use App\Http\Requests\Api\EvaluationCategoryRequest;
@@ -20,6 +21,12 @@ class EvaCategoriesController extends Controller
     public function travelIndex(Travel $travel)
     {
     	return $this->response->collection($travel->evaluation_categories, new EvaCategoryTransformer($this->user()->id));
+    }
+
+    /** [travelUserIndex 旅游下某用户分类列表] */
+    public function travelUserIndex(Travel $travel, User $user)
+    {
+        return $this->response->collection($travel->evaluation_categories, new EvaCategoryTransformer($user->id));
     }
 
     /** [show 旅游下评估详情] */

@@ -12,14 +12,14 @@ class ImageRequest extends FormRequest
     public function rules()
     {
         $rules =  [
-            'type' => 'required|string|in:avatar,travel',
+            'type' => 'required|string|in:avatar,travel,local',
         ];
         if($this->type =='avatar') {
             // $rules['image'] = 'required|mimes:jpeg,bmp,png,gif|dimensions:min_width:200,min_height:200';
             $rules['image'] = 'required';
 
         }else {
-            $rules['image'] = 'required|mimes:jpeg,bmp,png,gif';
+            $rules['image'] = 'required';
         }
 
         return $rules;

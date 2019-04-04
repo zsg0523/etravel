@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Write;
 use App\Models\User;
 use App\Models\Travel;
+use App\Models\Image;
 use App\Models\WriteTitle;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\WriteRequest;
@@ -31,8 +32,9 @@ class WritesController extends Controller
     {
     	return $this->response->collection($travel->summaries, new WriteTransformer());
     }
+    
     /** [show 用户单篇感想] */
-    public function show(User $user, Travel $travel, Write $title)
+    public function show(User $user, Travel $travel, WriteTitle $title)
     {
         return $this->response->item($user->summaries()->where('travel_id', $travel->id)->where('write_title_id', $title->id)->firstOrFail(), new WriteTransformer());
     }
@@ -40,10 +42,19 @@ class WritesController extends Controller
     /** [store 增加感想] */
     public function store(WriteRequest $request, Travel $travel, WriteTitle $title, Write $write)
     {   
+        if (isset($request->travel_image_id)) {
+
+            $image = Image::find($request->travel_image_id);
+
+            $image_path = $image->path;
+        } else {
+            $image_path = "";
+        }
+        
         // 更新现有模型，如果不存在则创建
         $write = $write->updateOrCreate(
             ['user_id' => $this->user()->id, 'travel_id' => $travel->id, 'write_title_id'=>$title->id],
-            ['content' => $request->content]
+            ['content' => $request->content, 'image' => $image_path]
         );
     	return $this->response->item($write, new WriteTransformer())->setStatusCode(201);
     }

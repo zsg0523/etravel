@@ -15,7 +15,7 @@ class TravelRequest extends FormRequest
         switch ($this->method()) {
             case 'POST':
                 return [
-                    'travel_name' => 'required|max:25',
+                    'travel_name' => 'required|max:50',
                     'travel_introduction' => 'required|max:255',
                     'travel_at' => 'required|date'
                 ];
@@ -29,5 +29,14 @@ class TravelRequest extends FormRequest
                 ];
                 break;
         }
+    }
+
+    public function messages()
+    {
+        return [
+            'travel_name.required' => "项目名称不能为空！",
+            'travel_introduction.required' => "项目介绍不能为空！",
+            'travel_at' => "时间不能空！"
+        ];
     }
 }

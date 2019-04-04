@@ -9,6 +9,7 @@ $factory->define(App\Models\Travel::class, function (Faker $faker) {
     return [
         'travel_name' => $faker->name,
         'travel_at' => $faker->date,
+        'travel_return' => $faker->date,
         'travel_introduction' => $faker->text,
         'assembly_station' => $faker->streetAddress,
         'assembly_at' => $now,

@@ -19,6 +19,12 @@ class TravelsController extends Controller
     	return $this->response->collection(Travel::all(), new TravelTransformer());
     }
 
+    /** [createrIndex 创建人项目列表] */
+    public function createrIndex()
+    {
+        return $this->response->collection(Travel::where('add_by', $this->user()->id)->get(), new TravelTransformer());
+    }
+
     /** [userIndex 用户的旅游团] */
     public function userIndex(User $user)
     {
@@ -34,7 +40,13 @@ class TravelsController extends Controller
     /** [store 创建旅游信息] */
     public function store(TravelRequest $request, Travel $travel)
     {
+        if ($this->user()->tokens < config('user.tokens')) {
+            return $this->response->error('金币不足，无法创建项目！', 422);
+        }
+
         $travel->fill($request->all());
+        // 新增项目责任人
+        $travel->add_by = $this->user()->id;
         $travel->save();
         return $this->response->item($travel, new TravelTransformer())->setStatusCode(201);
     }

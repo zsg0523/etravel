@@ -15,8 +15,8 @@ class CreateGroupsTable extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->index();
-            $table->integer('travel_id')->index();
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('travel_id')->unsigned()->index();
             $table->string('duty')->nullable();
             $table->string('group')->nullable()->index();
             $table->string('room')->nullable()->index();

@@ -16,7 +16,6 @@ class LeaderRequest extends FormRequest
             case 'POST':
                 return [
                     'leader' => 'required|string|max:50',
-                    'phone' => 'required',
                     'duty' => 'required|string'
                 ];
                 break;
@@ -24,7 +23,6 @@ class LeaderRequest extends FormRequest
             case 'PATCH':
                 return [
                     'leader' =>'string',
-                    'phone' => 'string',
                     'duty' => 'string'
                 ];
                 break;

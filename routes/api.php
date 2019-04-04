@@ -27,7 +27,7 @@ $api->version('v1', [
 		'expires' => config('api.rate_limits.sign.expires'),
 	], function($api) {
 		// 游客可访问接口
-		// 短信验证码
+		// 注册获取短信验证码（手机号需唯一）
 		$api->post('verificationCodes', 'VerificationCodesController@store')->name('api.verificationCodes.store'); 
 		// 用户注册
 		$api->post('users','UsersController@store')->name('api.users.store');
@@ -37,12 +37,14 @@ $api->version('v1', [
 		$api->put('authorizations/current','AuthorizationsController@update')->name('api.authorizations.update');
 		// 删除token	
 		$api->delete('authorizations/current','AuthorizationsController@destroy')->name('api.authorizations.destroy');
-		
 		// 新闻列表
 		$api->get('news','NewsController@index')->name('api.news.index');
 		// 新闻详情
 		$api->get('new/{new}','NewsController@show')->name('api.news.show');
+		// 重设密码
+		$api->post('password/reset', 'ResetPasswordController@reset')->name('password.update');
 
+		$api->get('test', 'ResetPasswordController@test');
 
 
 
@@ -50,17 +52,41 @@ $api->version('v1', [
 		$api->group(['middleware' => 'api.auth'], function($api) {
 			// 用户列表
 			$api->get('userlist','UsersController@index')->name('api.user.index');
+			// 管理员添加用户列表
+			$api->get('users/{user}/userList', 'UsersController@userList')->name('api.user.userList');
+			// 用户 ID 查询列表
+			$api->post('users/{user}/userInfo', 'UsersController@userInfo')->name('api.user.userInfo');
+			// 管理员所属学校用户列表
+			$api->get('users/{user}/schoolUser', 'UsersController@schoolUser')->name('api.user.schoolUser');
 			// 当前登录用户信息
 			$api->get('user','UsersController@me')->name('api.user.show');
 			// 访问图片资源
 			$api->post('images','ImagesController@store')->name('api.images.store');
-			// 编辑用户资料
+			// 个人编辑用户资料
 			$api->patch('user','UsersController@update')->name('api.user.update');
+			// 管理员添加用户并且分组
+			$api->post('userGroup', 'UsersController@userGroup')->name('api.userGroup');
+			// 管理员编辑用户资料
+			$api->patch('users/{user}/groups/{group}/information', 'UsersController@information')->name('api.users.information');
 			// 用户通知列表
 			$api->get('user/notifications', 'NotificationsController@index')->name('api.user.notifications.index');
 			// 通知统计
 			$api->get('user/notifications/stats', 'NotificationsController@stats')->name('api.user.notifications.stats');
+			// 标记通知为已读
+			$api->patch('user/read/notifications', 'NotificationsController@read')->name('api.user.notifications.read');
 
+
+			// 所有学校列表
+			$api->get('schools', 'SchoolsController@index')->name('api.school.index');
+			// 显示学校信息
+			$api->get('schools/{school}', 'SchoolsController@show')->name('api.school.show');
+			// 创建学校信息
+			$api->post('schools', 'SchoolsController@store')->name('api.school.store');
+			// 编辑学校信息
+			$api->patch('schools/{school}', 'SchoolsController@update')->name('api.school.update');
+			// 删除学校信息
+			$api->delete('schools/{school}', 'SchoolsController@destroy')->name('api.school.destroy');
+			
 
 			
 			// 创建新闻
@@ -70,8 +96,10 @@ $api->version('v1', [
 			// 删除新闻	
 			$api->delete('new/{new}','NewsController@destroy')->name('api.news.destroy');
 
-			// 旅游团基本信息
+			// 所有旅游项目列表
 			$api->get('travels','TravelsController@index')->name('api.travel.index');
+			// 创建人旅游项目列表
+			$api->get('creater/travels', 'TravelsController@createrIndex')->name('api.travel.creater');
 			// 用户的旅游团
 			$api->get('users/{user}/travels', 'TravelsController@userIndex')->name('api.users.travels.index');
 			// 旅游团详情
@@ -121,8 +149,11 @@ $api->version('v1', [
 			// 删除酒店
 			$api->delete('hotels/{hotel}','HotelsController@destroy')->name('api.hotels.destroy');
 
+
 			// 领队老师
 			$api->get('leaders', 'LeadersController@index')->name('api.leaders.index');
+			// 旅游下领队老师
+			$api->get('travels/{travel}/leaders', 'LeadersController@travelIndex')->name('api.travels.leaders.index');;
 			// 领队老师详情
 			$api->get('travels/{travel}/leaders/{assembly}', 'LeadersController@show')->name('api.leaders.show');
 			// 添加领队老师
@@ -163,7 +194,7 @@ $api->version('v1', [
 			$api->post('rules', 'RulesController@store')->name('api.rules.store');
 			// 更新守则
 			$api->patch('rules/{rule}', 'RulesController@update')->name('api.rules.update');
-			// 删除守则
+			// 删除守则 
 			$api->delete('rules/{rule}', 'RulesController@destroy')->name('api.rules.destroy');
 			// 行李清单列表
 			$api->get('travels/{travel}/packages', 'RulesController@packages')->name('api.travels.packages.index');
@@ -190,6 +221,7 @@ $api->version('v1', [
 			$api->patch('users/{user}/travels/{travel}/groups/{group}','GroupsController@update')->name('api.group.update');
 			// 删除分组安排
 			$api->delete('users/{user}/travels/{travel}/groups/{group}','GroupsController@destroy')->name('api.group.destroy');
+			
 
 
 			// 所有行程安排
@@ -236,6 +268,10 @@ $api->version('v1', [
 			$api->get('studies','StudiesController@index')->name('api.studies.index');
 			// 行程下学习工作纸
 			$api->get('routes/{route}/studies','StudiesController@routeIndex')->name('api.routes.studies.index');
+			// 旅游下所有学习工作纸
+			$api->get('travels/{travel}/studies', 'StudiesController@travelIndex')->name('api.travels.studies.index');
+			// 旅游下某用户学习工作纸
+			$api->get('travels/{travel}/users/{user}/studies', 'StudiesController@travelUserIndex')->name('api.travels.users.studies.index');
 			// 工作纸详情
 			$api->get('routes/{route}/studies/{study}','StudiesController@show')->name('api.routes.studies.show'); 
 			// 创建工作纸
@@ -280,14 +316,18 @@ $api->version('v1', [
 
 			// 感想标题列表
 			$api->get('titles','WriteTitlesController@index')->name('api.titles.index');
+			// 旅游下所有标题
+			$api->get('travels/{travel}/titles', 'WriteTitlesController@travelIndex')->name('api.travels.titles.index');
+			// 旅游下某用户所有标题
+			$api->get('travels/{travel}/users/{user}/titles', 'WriteTitlesController@travelUserIndex')->name('api.travels.users.titles.index');
 			// 标题详情
-			$api->get('titles/{writetitle}','WriteTitlesController@show')->name('api.titles.show');
+			$api->get('travels/{travel}/titles/{writetitle}','WriteTitlesController@show')->name('api.titles.show');
 			// 增加标题
-			$api->post('titles','WriteTitlesController@store')->name('api.titles.store');
+			$api->post('travels/{travel}/titles','WriteTitlesController@store')->name('api.titles.store');
 			// 更新标题
-			$api->patch('titles/{writetitle}','WriteTitlesController@update')->name('api.titles.update');
+			$api->patch('travels/{travel}/titles/{writetitle}','WriteTitlesController@update')->name('api.titles.update');
 			// 删除标题
-			$api->delete('titles/{writetitle}','WriteTitlesController@destroy')->name('api.titles.destroy');
+			$api->delete('travels/{travel}/titles/{writetitle}','WriteTitlesController@destroy')->name('api.titles.destroy');
 
 
 			// 所有旅游所有感想
@@ -325,6 +365,8 @@ $api->version('v1', [
 			$api->get('evaluationCategories', 'EvaCategoriesController@index')->name('api.evaluationCategories.index');
 			// 旅游下评估分类
 			$api->get('travels/{travel}/evaluationCategories', 'EvaCategoriesController@travelIndex')->name('api.travels.evaluationCategories.index');
+			// 旅游下某用户所有评估分类
+			$api->get('travels/{travel}/users/{user}/evaluationCategories', 'EvaCategoriesController@travelUserIndex')->name('api.travels.users.evaluationCategories.index');
 			// 评估分类详情
 			$api->get('evaluationCategories/{category}', 'EvaCategoriesController@show')->name('api.evaluationCategories.show');
 			// 创建评估分类
@@ -351,6 +393,23 @@ $api->version('v1', [
 			$api->post('evaluations/{evaluation}/evaluatedes', 'EvaluatesController@store')->name('api.evaluatedes.store');
 			// 删除评估结果
 			$api->delete('evaluations/{evaluation}/evaluatedes/{evaluate_user}', 'EvaluatesController@destroy')->name('api.evaluatedes.destroy');
+
+
+			// 连接学校
+			$api->post('users/{user}/schools/{school}', 'UserSchoolsController@store')->name('api.users.schools.store');
+			// 移除学校
+			$api->delete('users/{user}/schools/{school}', 'UserSchoolsController@destroy')->name('api.users.schools.destroy');
+
+
+
+			// 聊天消息,绑定客户端和uid
+			$api->post('users/{user}/bind', 'ChatsController@bind');
+			// 发送消息
+			$api->post('messages', 'ChatsController@messages');
+			// 获取房间人员列表
+			$api->post('rooms', 'ChatsController@room')->name('api.rooms');
+			// 房间消息记录
+			$api->post('groups/chats', 'ChatsController@group')->name('api.groups');
 
 
 
@@ -417,8 +476,18 @@ $api->version('v1', [
 
 
 
-$api->version('v2', function($api) {
-	$api->get('version', function() {
-		return response('this is v2 version api');
+$api->version('v2', [
+	'namespace' => 'App\Http\Controllers\Api',
+	// 手动注册模型中间件
+	'middleware' => ['serializer:array','bindings']
+], function($api) {
+	$api->group([
+		'middleware' => 'api.throttle',
+		'limit' => config('api.rate_limits.sign.limit'),
+		'expires' => config('api.rate_limits.sign.expires'),
+	], function ($api) {
+		// 游客可访问接口
+		// 注册获取短信验证码（手机号需唯一）
+		$api->post('verificationCodes', 'VerificationCodesController@store_v2')->name('api.verificationCodes.store'); 
 	});
 });

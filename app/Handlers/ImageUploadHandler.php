@@ -43,7 +43,41 @@ class ImageUploadHandler
         ];
     }
 
+    // 上传base64数据图片
+    public function saveBase64($file, $folder, $file_prefix, $max_width = false)
+    {
+        if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $file, $res)) {
+            
+            // 构建存储的文件夹的规则
+            $folder_name = "uploads/images/$folder/" . date("Ym/d", time());
 
+            // 文件相对存储路径
+            $upload_path = public_path() . '/' . $folder_name;
+
+            // 设置文件夹权限
+            if ( ! is_dir($upload_path)) {
+                mkdir($upload_path, 0777, true);
+            }
+
+            // 获取文件的后缀名
+            $extension = strtolower($res[2]) ?: 'png';
+
+            // 文件名
+            $filename = $file_prefix . '_' . time() . '_' . str_random(10) . '.' .$extension;
+
+            $imageSrc = $upload_path . '/' . $filename;
+
+            $result = file_put_contents($imageSrc, base64_decode(substr(strstr($file, ','), 1)));
+
+            return [
+                'path' => config('app.url') . "/$folder_name/$filename"
+            ];
+        }
+        
+    }
+
+
+    // 图片尺寸剪裁
     public function reduceSize($file_path, $max_width)
     {
         // 先实例化，传参是文件的磁盘物理路径

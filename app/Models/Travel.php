@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Travel extends Model
 {
-    protected $fillable = ['travel_name', 'travel_at', 'travel_introduction', 'urgency', 'assembly_station', 'assembly_at', 'dissolution_station', 'dissolution_at'];
+    protected $fillable = ['travel_name', 'travel_at', 'travel_return','travel_introduction', 'urgency', 'assembly_station', 'assembly_at', 'dissolution_station', 'dissolution_at', 'add_by'];
 
     public function users()
     {
@@ -57,6 +57,11 @@ class Travel extends Model
         return $this->hasMany(Route::class);
     }
 
+    public function studies()
+    {
+        return $this->hasManyThrough(Study::class, Route::class);
+    }
+
     public function summaries()
     {
         return $this->hasMany(Write::class);
@@ -70,5 +75,10 @@ class Travel extends Model
     public function evaluation_categories()
     {
         return $this->hasMany(EvaluationCategory::class);
+    }
+
+    public function write_titles()
+    {
+        return $this->hasMany(WriteTitle::class);
     }
 }

@@ -15,7 +15,7 @@ class CreateHotelsTable extends Migration
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('travel_id')->index();
+            $table->integer('travel_id')->unsigned()->index();
             $table->string('hotel_name')->index();
             $table->string('check_at')->nullable()->comment('入住日期');
             $table->string('leave_at')->nullable()->comment('离开日期');

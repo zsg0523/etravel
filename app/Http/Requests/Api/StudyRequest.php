@@ -14,16 +14,16 @@ class StudyRequest extends FormRequest
         switch ($this->method()) {
             case 'POST':
                 return [
-                    'title' => 'required|max:25',
-                    'body' => 'required|max:255',
+                    'title' => 'required|max:50',
+                    'body' => 'required',
                     'image' => 'mimes:jpeg,bmp,png,gif'
                 ];
                 break;
             
             case 'PATCH':
                 return [
-                    'title' => 'string|max:25',
-                    'body' => 'string|max:255',
+                    'title' => 'string|max:50',
+                    'body' => 'string',
                     'image' => 'mimes:jpeg,bmp,png,gif'
                 ];
                 break;

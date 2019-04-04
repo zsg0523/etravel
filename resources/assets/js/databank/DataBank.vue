@@ -38,5 +38,10 @@
             HistoryLink,
             CommonLeft,
         },
+        mounted(){
+            this.$store.state.links=[{link:'/home',linkName:'项目'},{link:'/projectDetail/'+sessionStorage.actTravelId,linkName:'项目详情'}];
+            // var obj=[{link:'/home',linkName:'项目'},{link:'/projectDetail/'+sessionStorage.actTravelId,linkName:'项目详情'}];
+            // sessionStorage.setItem("links",JSON.stringify(obj));
+        }
     }
 </script> 

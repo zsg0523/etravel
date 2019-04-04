@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-03 18:57:23
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-14 15:27:16
+ * @Last Modified time: 2019-03-05 12:44:31
  */
 namespace App\Transformers;
 
@@ -14,17 +14,22 @@ use League\Fractal\TransformerAbstract;
 
 class UserTransformer extends TransformerAbstract
 {	
-	protected $availableIncludes = ['student'];
+	protected $availableIncludes = ['student', 'schools'];
 
 	public function transform(User $user)
 	{
 		return [
 			'id' => $user->id,
 			'name' => $user->name,
+			'en_name' => $user->en_name,
+			'sex' => $user->sex,
 			'phone' => $user->phone,
 			'email' => $user->email,
 			'phone' => $user->phone,
 			'avatar' => $user->avatar,
+			'tokens' => $user->tokens,
+			'original_password' => $user->original_password,
+			'manage_contents' => $user->can('manage_contents'),
 			'introduction' => $user->introduction,
 			'created_at' => $user->created_at->toDateTimeString(),
 			'updated_at' => $user->updated_at->toDateTimeString(),
@@ -37,6 +42,13 @@ class UserTransformer extends TransformerAbstract
 	{
 		if ($user->student) {
 			return $this->item($user->student, new StudentTransformer());
+		}
+	}
+
+	public function includeSchools(User $user)
+	{
+		if ($user->schools) {
+			return $this->collection($user->schools, new SchoolTransformer());
 		}
 	}
 

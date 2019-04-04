@@ -15,15 +15,17 @@
 	<div class="disflex mainLogin">
         <div class="disflex contentLogin">
             <div class="disflex icon">
-                <img src="../../images/logo_big.png">
+
+                <img src="/etravel/public/images/logo_big.png">
+
             </div>
             <div class="disflex login">
-                <div class="title tc">后台系统</div>
-                <div><input type="text" v-model="loginName" placeholder="用户名或手机号" ></div>
+                <div class="title tc">A-Team-Travel</div>
+                <div><input type="text" v-model="loginName" placeholder="手机号" ></div>
                 <div><input type="password" v-model="password" placeholder="密码" ></div>
                 <div style="height: 40px;">
                 	<a href="javascript:void(0);" @click="$router.push('/register')" class="fl">立即注册</a>
-                	<a href="javascript:void(0);" @click="$router.push('/forgotPsd')" class="fr">忘记密码</a>
+                	<!-- <a href="javascript:void(0);" @click="$router.push('/forgotPsd')" class="fr">忘记密码</a> -->
                 </div>
                 <div><button type="button" @click="login();">登录</button></div>
             </div>
@@ -38,7 +40,7 @@
 	  	data() {
 	    	return {
 	      		loginName: '',
-	      		password: ''
+	      		password: '',
 	    	}
 	  	},
 	  	methods: {
@@ -46,7 +48,7 @@
 	  		...mapActions(['setToken']),
 		    login() {
 		      	if (this.password && this.loginName) {
-		        	this.$post('/api/authorizations', {
+		        	this.$post(this.$config+'/api/authorizations', {
 			          	username: this.loginName,
 			          	password: this.password
 			        }).then(res => {
@@ -55,7 +57,7 @@
 			          		this.setToken(res.data.access_token);
 			          		// console.log(res.data.access_token);
 			          		// 获取用户基本信息
-			            	this.$get('/api/user?include=student.school',
+			            	this.$get(this.$config+'/api/user?include=student.school',
 			            	{
 				      			headers: {
 						        	"Authorization": 'Bearer '+sessionStorage.token,
@@ -64,14 +66,14 @@
 					        	// console.log(res.data);
 					        	this.setUserInfo(res.data);
 					        	sessionStorage.setItem('userId', res.data.id);
-				            	this.$toast('密码正确');
+				            	// this.$toast('密码正确');
 				            	setTimeout(() => {
 					                this.$router.push("/home");      
 					            },1000);
 			            		
 					        }).catch(err => {
 					        	this.$toast('账号或密码错误')
-					          	console.log(err)
+					          	console.log(err);
 					        });
 			            	
 			          	} else {
@@ -79,7 +81,8 @@
 			              	this.password = ''
 			          	}
 			        }).catch(err => {
-			          	console.log(err)
+			        	this.$toast(err.response.data.message);
+			          	console.log(err);
 			        });
 		      	} else {
 		        	this.$toast('请填写账号密码');

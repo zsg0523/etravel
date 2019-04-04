@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model
 {
-	protected $fillable = ['duty','room','group','is_promise'];
+	protected $fillable = ['user_id', 'travel_id', 'duty', 'room', 'group', 'is_promise', 'student_number', 'class'];
 
 	public function travel()
 	{
@@ -17,4 +17,23 @@ class Group extends Model
 	{
 		return $this->belongsTo(User::class);
 	}
+
+	/** [scopeRoom 按房间号码大小排序] */
+	public function scopeRoom($query)
+	{
+		return $query->orderBy('room', 'asc');
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

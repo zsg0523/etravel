@@ -16,7 +16,8 @@ class CreateTravelsTable extends Migration
         Schema::create('travels', function (Blueprint $table) {
             $table->increments('id');
             $table->string('travel_name')->index();
-            $table->string('travel_at');
+            $table->string('travel_at')->nullable();
+            $table->string('travel_return')->nullable();
             $table->text('travel_introduction')->nullable();
             $table->timestamps();
         });

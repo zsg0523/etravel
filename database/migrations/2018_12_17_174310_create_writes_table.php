@@ -15,11 +15,11 @@ class CreateWritesTable extends Migration
     {
         Schema::create('writes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('write_title_id')->index();
-            $table->integer('user_id')->index();
-            $table->integer('travel_id')->index();
+            $table->integer('write_title_id')->unsigned()->index();
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('travel_id')->unsigned()->index();
             $table->string('image')->nullable();
-            $table->string('content');
+            $table->text('content');
             $table->timestamps();
         });
     }

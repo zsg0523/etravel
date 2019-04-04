@@ -15,7 +15,7 @@ class CreateFoodsTable extends Migration
     {
         Schema::create('foods', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('route_id')->index();
+            $table->integer('route_id')->unsigned()->index();
             $table->string('title')->comment('早餐/午餐/晚餐');
             $table->string('content')->nullable();
             $table->string('description')->nullable();

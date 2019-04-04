@@ -17,24 +17,25 @@
 <template>
 	<div class="commonHead">
 	    <div class="left disflex" @click="$router.push('/home')">
-	        <img src="../../images/logo.png">
+	        <img src="/etravel/public/images/logo.png">
 	    </div>
 	    <div class="right disflex">
-	        <div class="letter disflex"><img src="../../images/letter.png"></div>
+	        <div class="letter disflex"><img src="/etravel/public/images/letter.png"></div>
 
 	        <div class="person_icon disflex" v-if="userInfo.avatar">
-	        	<img :src="userInfo.avatar">
+	        	<img :src="userInfo.avatar" @click="$router.push('/personalInfo')">
 	        </div>
 	        <div class="person_icon disflex" v-else>
-				<img src="../../images/photo.png">
+				<img src="/etravel/public/images/photo.png" @click="$router.push('/personalInfo')">
 	        </div>
 	        	
 	        <div class="info disflex">
 	            <div>{{userInfo.name}}</div>
-	            <div>积分：0</div>
+	            <div>金幣：{{userInfo.tokens}}</div>
+	            <!-- <div v-if="userInfo.manage_contents" onclick="window.location.assign('/admin')">管理系统</div> -->
 	        </div>
 	        <div class="exit disflex" @click="logout();">
-	            <img src="../../images/Vector-icon.png">
+	            <img src="/etravel/public/images/logout.png">
 	        </div>
 	    </div>
 	</div>
@@ -58,7 +59,7 @@
 	  		...mapActions(['setToken']),
 	  		getUserInfo(){
 	  			// 获取用户基本信息
-            	this.$get('/api/user?include=student.school',
+            	this.$get(this.$config+'/api/user?include=student.school',
             	{
 	      			headers: {
 			        	"Authorization": 'Bearer '+sessionStorage.token,
@@ -68,15 +69,27 @@
 		        	this.setUserInfo(res.data);
 		        }).catch(err => {
 		          	console.log(err);
-		          	this.logout();
+		          	this.$toast('登录失效');
+		          	sessionStorage.clear();
+					this.setUserInfo('');
+					this.setTravels('');
+					this.setToken('');
+					this.$router.push("/");
 		        });
 	  		},
 			logout(){
-				sessionStorage.clear();
-				this.setUserInfo('');
-				this.setTravels('');
-				this.setToken('');
-				this.$router.push("/");
+				this.$dialog.confirm({
+                    title: '退出登录',
+                    message: '是否退出登录'
+                }).then(() => {
+					sessionStorage.clear();
+					this.setUserInfo('');
+					this.setTravels('');
+					this.setToken('');
+					this.$router.push("/");
+                }).catch(err => {
+
+                });
 			},
 	  	},
 	  	computed: {

@@ -8,6 +8,7 @@ export default new Vuex.Store({
     userInfo: {},
     travels: {},
     token: '',
+    links:[{link:'/home',linkName:'项目'}],
   },
   getters: {
     userInfo: state => state.userInfo,
@@ -16,7 +17,8 @@ export default new Vuex.Store({
   },
   mutations: {
     userInfo(state, theme) {
-      state.userInfo = theme
+      state.userInfo = theme;
+      sessionStorage.setItem('userId', theme.id)
     },
     travels(state, theme) {
       state.travels = theme

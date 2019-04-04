@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-12 17:04:12
  * @Last Modified by:   Eden
- * @Last Modified time: 2018-12-28 17:41:10
+ * @Last Modified time: 2019-02-18 16:47:32
  */
 namespace App\Transformers;
 
@@ -21,6 +21,8 @@ class GroupTransformer extends TransformerAbstract
 			'id' => $group->id,
 			'user_id' => $group->user_id,
 			'travel_id' => $group->travel_id,
+			'student_number' => $group->student_number,
+			'class' => $group->class,
 			'duty' => $group->duty,
 			'room' => $group->room,
 			'group' => $group->group,

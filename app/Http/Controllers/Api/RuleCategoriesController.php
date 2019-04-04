@@ -22,9 +22,9 @@ class RuleCategoriesController extends Controller
     }
 
     /** [travelIndex 旅游团下的分类] */
-    public function travelIndex(Travel $travel)
+    public function travelIndex(CategoryRequest $request, Travel $travel)
     {   
-        return $this->response->collection($travel->rule_categories, new RuleCategoryTransformer(null));
+        return $this->response->collection($travel->rule_categories()->where('type',$request->type)->get(), new RuleCategoryTransformer(null));
     }
 
 

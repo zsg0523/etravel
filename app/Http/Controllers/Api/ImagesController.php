@@ -14,13 +14,33 @@ class ImagesController extends Controller
    	{
    		$user = $this->user();
    		$size = $request->type == 'avatar' ? 362 : 1024;
-   		$result = $uploader->save($request->image, str_plural($request->type), $user->id, $size);
+         // 上传图片
+         if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $request->image, $res)) {
+            $result = $uploader->saveBase64($request->image, str_plural($request->type), $user->id, $size);
+         } else {
+            $result = $uploader->save($request->image, str_plural($request->type), $user->id, $size);
+         }
 
    		$image->path = $result['path'];
-        $image->type = $request->type;
-        $image->user_id = $user->id;
-        $image->save();
+         $image->type = $request->type;
+         $image->user_id = $user->id;
+         $image->save();
 
-        return $this->response->item($image, new ImageTransformer())->setStatusCode(201);
+         if ($request->platform == 1) {
+            return $this->response->array([
+               'errno' => 0,
+               'data'=>[
+                  $image->path
+               ]
+            ])->setStatusCode(201);
+         } else {
+            return $this->response->array([
+               'errno' => 0,
+               'data'=>[
+                  'id' => $image->id,
+                  'path' => $image->path
+               ]
+            ])->setStatusCode(201);
+         }
    	}
 }
