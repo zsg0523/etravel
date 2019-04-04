@@ -35,6 +35,7 @@ class ResetPasswordController extends Controller
 
         $verifyData = \Cache::get($request->verification_key);
 
+
         if ( ! $verifyData) {
             return $this->response->error('验证码已失效', 422);
         }
@@ -44,8 +45,7 @@ class ResetPasswordController extends Controller
             return $this->response->errorUnauthorized('验证码错误');
         }
 
-        
-        $user = User::where('phone', $request->phone)->first();
+        $user = User::where('phone', $verifyData['phone'])->first();
 
         $response = $this->resetPassword($user, $request->password);
         
@@ -85,7 +85,6 @@ class ResetPasswordController extends Controller
         	'verification_key' => 'required',
         	'verification_code' => 'required',
             'password' => 'required|confirmed|min:6',
-            'phone' => 'required',
         ];
     }
 

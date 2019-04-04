@@ -476,8 +476,18 @@ $api->version('v1', [
 
 
 
-$api->version('v2', function($api) {
-	$api->get('version', function() {
-		return response('this is v2 version api');
+$api->version('v2', [
+	'namespace' => 'App\Http\Controllers\Api',
+	// 手动注册模型中间件
+	'middleware' => ['serializer:array','bindings']
+], function($api) {
+	$api->group([
+		'middleware' => 'api.throttle',
+		'limit' => config('api.rate_limits.sign.limit'),
+		'expires' => config('api.rate_limits.sign.expires'),
+	], function ($api) {
+		// 游客可访问接口
+		// 注册获取短信验证码（手机号需唯一）
+		$api->post('verificationCodes', 'VerificationCodesController@store_v2')->name('api.verificationCodes.store'); 
 	});
 });
