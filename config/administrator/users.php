@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-09 12:52:11
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-14 10:56:46
+ * @Last Modified time: 2019-04-09 17:20:44
  */
 use App\Models\User;
 
@@ -28,7 +28,6 @@ return [
 	'columns' => [
 		'id',
 
-		
 		'avatar' => [
 			'title' => '头像',
 			// 默认情况直接输出数据，可是使用 output 选项来定制输出内容
@@ -86,10 +85,7 @@ return [
 		'email' => [
 			'title' => '邮箱',
 		],
-		'password' => [
-			'title' => '密码',
-			'type' => 'password',
-		],
+		
 		'avatar' => [
 			'title' => '用户头像',
 			'type' => 'image',
