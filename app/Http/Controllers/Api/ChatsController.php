@@ -55,6 +55,7 @@ class ChatsController extends Controller
 
         $chat->save();
 
+
         switch ($request->type) {
             case 'all':
                 Gateway::sendToAll(json_encode([
