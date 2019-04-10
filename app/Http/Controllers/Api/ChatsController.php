@@ -123,9 +123,11 @@ class ChatsController extends Controller
      */
     public function group(Request $request, Chat $chat)
     {
-        $chats = $chat->where(['type' => 'group', 'to_id' => $request->room_id])->latest()->paginate(20);
+        $chats = $chat->where(['type' => 'group', 'to_id' => $request->room_id])
+                      ->paginate($request->get('per_page',3))
+                      ->appends($request->except('page'));
 
-        return $this->response->paginator($chats, new ChatTransformer());
+        return $this->response->paginator($chats, new ChatTransformer(3));
     }
 
 
