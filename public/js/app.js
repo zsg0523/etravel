@@ -53173,7 +53173,7 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-var baseUrl = 'http://www.bunchparty.com/etravel/public'; //线上地址
+var baseUrl = 'https://www.bunchparty.com/etravel/public'; //线上地址
 // const baseUrl='';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
