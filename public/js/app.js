@@ -53173,8 +53173,8 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-var baseUrl = 'https://www.bunchparty.com/etravel/public'; //线上地址
-// const baseUrl='';
+// const baseUrl='https://www.bunchparty.com/etravel/public';//线上地址
+var baseUrl = '';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),
