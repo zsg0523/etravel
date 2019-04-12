@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-03-05 12:26:49
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-04-11 19:13:13
+ * @Last Modified time: 2019-04-12 16:50:56
  */
 namespace App\Observers;
 
@@ -34,7 +34,7 @@ class TravelObserver
 	public function saving(Travel $travel)
 	{
 		if (empty($travel->image)) {
-			$travel->image = 'https://iocaffcdn.phphub.org/uploads/images/201710/30/1/TrJS40Ey5k.png';
+			$travel->image = 'http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555059034_CNDm3c7vCL.png';
 		}
 	}
 
