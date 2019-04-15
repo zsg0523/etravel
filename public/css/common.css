@@ -63,4 +63,4 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     transition: all 0.2s linear;
 }
 .err{color:red;float: right;font-size: 14px;}
-input:disabled,input[disabled]{background-color : #eee;} 
+input:disabled,input[disabled]{background-color : #eee;padding: none;border: 1px solid #999 !important;}

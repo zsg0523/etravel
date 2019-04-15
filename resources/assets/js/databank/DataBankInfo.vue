@@ -110,15 +110,27 @@
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.arrival_time"></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">出发站点</div>
+                                    <div class="item_title">出发城市</div>
                                     <div>
                                         <div><input class="item_input" type="text" disabled="disabled"  :value="flight.from"></div>
                                     </div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">达到站点</div>
+                                    <div class="item_title">到达城市</div>
                                     <div>
                                         <div><input class="item_input" type="text" disabled="disabled"  :value="flight.to"></div>
+                                    </div>
+                                </div>
+                                <div class="form_item_info">
+                                    <div class="item_title">出发站点</div>
+                                    <div>
+                                        <div><input class="item_input" type="text" disabled="disabled"  :value="flight.from_flight"></div>
+                                    </div>
+                                </div>
+                                <div class="form_item_info">
+                                    <div class="item_title">到达站点</div>
+                                    <div>
+                                        <div><input class="item_input" type="text" disabled="disabled"  :value="flight.to_flight"></div>
                                     </div>
                                 </div>
                             </div>
@@ -275,12 +287,20 @@
                         <div><input class="item_input" type="text" placeholder="填写到达时间(hh:mm)" v-model="newFlight.arrival_time"></div>
                     </div>
                     <div class="form_item_info">
+                        <div class="item_title">出发城市</div>
+                        <div><input class="item_input" type="text" placeholder="填写出发城市" v-model="newFlight.from"></div>
+                    </div>
+                    <div class="form_item_info">
+                        <div class="item_title">达到城市</div>
+                        <div><input class="item_input" type="text" placeholder="填写达到城市" v-model="newFlight.to"></div>
+                    </div>
+                    <div class="form_item_info">
                         <div class="item_title">出发站点</div>
-                        <div><input class="item_input" type="text" placeholder="填写出发站点" v-model="newFlight.from"></div>
+                        <div><input class="item_input" type="text" placeholder="填写出发站点" v-model="newFlight.from_flight"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">达到站点</div>
-                        <div><input class="item_input" type="text" placeholder="填写达到站点" v-model="newFlight.to"></div>
+                        <div><input class="item_input" type="text" placeholder="填写达到站点" v-model="newFlight.to_flight"></div>
                     </div>
                     <div style="width:100%;height:50px;">
                         <span style="width:70px;text-align: center;display: block;float:left;">出发</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="newFlight.is_return">
@@ -313,12 +333,20 @@
                         <div><input class="item_input" type="text" placeholder="填写到达时间(hh:mm)" v-model="edFlight.arrival_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发站点</div>
-                        <div><input class="item_input" type="text" placeholder="填写出发站点" v-model="edFlight.from"></div>
+                        <div class="item_title">出发城市</div>
+                        <div><input class="item_input" type="text" placeholder="填写出发城市" v-model="edFlight.from"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">达到站点</div>
-                        <div><input class="item_input" type="text" placeholder="填写达到站点" v-model="edFlight.to"></div>
+                        <div class="item_title">到达城市</div>
+                        <div><input class="item_input" type="text" placeholder="填写到达城市" v-model="edFlight.to"></div>
+                    </div>
+                    <div class="form_item_info">
+                        <div class="item_title">出发站点</div>
+                        <div><input class="item_input" type="text" placeholder="填写出发站点" v-model="edFlight.from_flight"></div>
+                    </div>
+                    <div class="form_item_info">
+                        <div class="item_title">到达站点</div>
+                        <div><input class="item_input" type="text" placeholder="填写到达站点" v-model="edFlight.to_flight"></div>
                     </div>
                     <div style="width:100%;height:50px;">
                         <span style="width:70px;text-align: center;display: block;float:left;">出发</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="edFlight.is_return">
@@ -485,6 +513,8 @@
                     arrival_time:'',
                     from:'',
                     to:'',
+                    from_flight:'',
+                    to_flight:'',
                 },
                 edFlight:{
                     id:'',
@@ -495,6 +525,8 @@
                     arrival_time:'',
                     from:'',
                     to:'',
+                    from_flight:'',
+                    to_flight:'',
                     index:'',
                 },
                 hotels:[],
@@ -645,6 +677,8 @@
                     this.newFlight.arrival_time='';
                     this.newFlight.from='';
                     this.newFlight.to='';
+                    this.newFlight.from_flight='';
+                    this.newFlight.to_flight='';
                 }).catch(err => {
                     this.$toast('添加失败');
                     console.log(err)
@@ -658,6 +692,8 @@
                 this.edFlight.arrival_time=this.flights[index].arrival_time;
                 this.edFlight.from=this.flights[index].from;
                 this.edFlight.to=this.flights[index].to;
+                this.edFlight.from_flight=this.flights[index].from_flight;
+                this.edFlight.to_flight=this.flights[index].to_flight;
                 this.edFlight.is_return=this.flights[index].is_return;
                 this.edFlight.index=index;
 

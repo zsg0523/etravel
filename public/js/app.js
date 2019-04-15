@@ -30113,6 +30113,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -30133,7 +30161,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 takeoff_time: '',
                 arrival_time: '',
                 from: '',
-                to: ''
+                to: '',
+                from_flight: '',
+                to_flight: ''
             },
             edFlight: {
                 id: '',
@@ -30144,6 +30174,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 arrival_time: '',
                 from: '',
                 to: '',
+                from_flight: '',
+                to_flight: '',
                 index: ''
             },
             hotels: [],
@@ -30297,6 +30329,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this4.newFlight.arrival_time = '';
                 _this4.newFlight.from = '';
                 _this4.newFlight.to = '';
+                _this4.newFlight.from_flight = '';
+                _this4.newFlight.to_flight = '';
             }).catch(function (err) {
                 _this4.$toast('添加失败');
                 console.log(err);
@@ -30310,6 +30344,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edFlight.arrival_time = this.flights[index].arrival_time;
             this.edFlight.from = this.flights[index].from;
             this.edFlight.to = this.flights[index].to;
+            this.edFlight.from_flight = this.flights[index].from_flight;
+            this.edFlight.to_flight = this.flights[index].to_flight;
             this.edFlight.is_return = this.flights[index].is_return;
             this.edFlight.index = index;
 
@@ -30974,7 +31010,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "form_item_info" }, [
                         _c("div", { staticClass: "item_title" }, [
-                          _vm._v("出发站点")
+                          _vm._v("出发城市")
                         ]),
                         _vm._v(" "),
                         _c("div", [
@@ -30990,7 +31026,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "form_item_info" }, [
                         _c("div", { staticClass: "item_title" }, [
-                          _vm._v("达到站点")
+                          _vm._v("到达城市")
                         ]),
                         _vm._v(" "),
                         _c("div", [
@@ -30999,6 +31035,38 @@ var render = function() {
                               staticClass: "item_input",
                               attrs: { type: "text", disabled: "disabled" },
                               domProps: { value: flight.to }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("出发站点")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: flight.from_flight }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("到达站点")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: flight.to_flight }
                             })
                           ])
                         ])
@@ -31740,7 +31808,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("出发站点")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("出发城市")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -31753,7 +31821,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填写出发站点" },
+                    attrs: { type: "text", placeholder: "填写出发城市" },
                     domProps: { value: _vm.newFlight.from },
                     on: {
                       input: function($event) {
@@ -31761,6 +31829,66 @@ var render = function() {
                           return
                         }
                         _vm.$set(_vm.newFlight, "from", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("达到城市")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.to,
+                        expression: "newFlight.to"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写达到城市" },
+                    domProps: { value: _vm.newFlight.to },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newFlight, "to", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("出发站点")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.from_flight,
+                        expression: "newFlight.from_flight"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写出发站点" },
+                    domProps: { value: _vm.newFlight.from_flight },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newFlight,
+                          "from_flight",
+                          $event.target.value
+                        )
                       }
                     }
                   })
@@ -31776,19 +31904,23 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.newFlight.to,
-                        expression: "newFlight.to"
+                        value: _vm.newFlight.to_flight,
+                        expression: "newFlight.to_flight"
                       }
                     ],
                     staticClass: "item_input",
                     attrs: { type: "text", placeholder: "填写达到站点" },
-                    domProps: { value: _vm.newFlight.to },
+                    domProps: { value: _vm.newFlight.to_flight },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.newFlight, "to", $event.target.value)
+                        _vm.$set(
+                          _vm.newFlight,
+                          "to_flight",
+                          $event.target.value
+                        )
                       }
                     }
                   })
@@ -32019,7 +32151,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("出发站点")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("出发城市")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -32032,7 +32164,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填写出发站点" },
+                    attrs: { type: "text", placeholder: "填写出发城市" },
                     domProps: { value: _vm.edFlight.from },
                     on: {
                       input: function($event) {
@@ -32047,7 +32179,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("达到站点")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("到达城市")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -32060,7 +32192,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填写达到站点" },
+                    attrs: { type: "text", placeholder: "填写到达城市" },
                     domProps: { value: _vm.edFlight.to },
                     on: {
                       input: function($event) {
@@ -32068,6 +32200,66 @@ var render = function() {
                           return
                         }
                         _vm.$set(_vm.edFlight, "to", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("出发站点")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.from_flight,
+                        expression: "edFlight.from_flight"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写出发站点" },
+                    domProps: { value: _vm.edFlight.from_flight },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edFlight,
+                          "from_flight",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("到达站点")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.to_flight,
+                        expression: "edFlight.to_flight"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填写到达站点" },
+                    domProps: { value: _vm.edFlight.to_flight },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFlight, "to_flight", $event.target.value)
                       }
                     }
                   })
