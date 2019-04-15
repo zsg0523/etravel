@@ -23,6 +23,7 @@ class UsersController extends Controller
 	 */
     public function store(UserRequest $request)
     {
+        // 获取缓存的手机号和区号，以及验证码
         $verifyData = \Cache::get($request->verification_key);
 
         if ( ! $verifyData) {
@@ -36,6 +37,7 @@ class UsersController extends Controller
 
         $user = User::create([
             'name' => $request->name,
+            'code' => $verifyData['idd_code'],
             'phone' => $verifyData['phone'],
             'password' => bcrypt($request->password),
         ]);

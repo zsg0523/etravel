@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-12 17:04:12
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-02-18 16:47:32
+ * @Last Modified time: 2019-04-09 15:40:59
  */
 namespace App\Transformers;
 
@@ -27,8 +27,8 @@ class GroupTransformer extends TransformerAbstract
 			'room' => $group->room,
 			'group' => $group->group,
 			'is_promise' => $group->is_promise,
-			'created_at' => $group->created_at->toDateTimeString(),
-			'updated_at' => $group->updated_at->toDateTimeString(),
+			'created_at' => $group->created_at ?$group->created_at->toDateTimeString(): '',
+			'updated_at' => $group->updated_at ?$group->updated_at->toDateTimeString() : '',
  		];
 	}
 

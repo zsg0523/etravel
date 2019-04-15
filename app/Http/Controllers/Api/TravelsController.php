@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Travel;
 use App\Models\Assembly;
 use App\Models\User;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\TravelRequest;
 use App\Transformers\TravelTransformer;
@@ -44,7 +45,14 @@ class TravelsController extends Controller
             return $this->response->error('金币不足，无法创建项目！', 422);
         }
 
+        if (isset($request->travel_image_id)) {
+            $image = Image::find($request->travel_image_id);
+            $image_path = $image->path;
+            $travel->image = $image_path;
+        }
+
         $travel->fill($request->all());
+
         // 新增项目责任人
         $travel->add_by = $this->user()->id;
         $travel->save();
@@ -54,6 +62,13 @@ class TravelsController extends Controller
     /** [update 更新旅游信息] */
     public function update(TravelRequest $request, Travel $travel)
     {
+        
+        if (isset($request->travel_image_id)) {
+            $image = Image::find($request->travel_image_id);
+            $image_path = $image->path;
+            $travel->image = $image_path;
+        }
+
         $travel->update($request->all());
         return $this->response->item($travel, new TravelTransformer());
     }

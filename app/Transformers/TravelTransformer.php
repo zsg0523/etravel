@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-05 10:11:20
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-03-28 16:20:36
+ * @Last Modified time: 2019-04-11 18:36:07
  */
 namespace App\Transformers;
 
@@ -20,6 +20,8 @@ class TravelTransformer extends TransformerAbstract
 		return [
 			'id' => $travel->id,
 			'travel_name' => $travel->travel_name,
+			'school_name' => $travel->school_name,
+			'image' => $travel->image,
 			'introduction' => $travel->travel_introduction,
 			'travel_at' => $travel->travel_at,
 			'travel_return' => $travel->travel_return,
@@ -29,6 +31,7 @@ class TravelTransformer extends TransformerAbstract
 			'dissolution_station' => $travel->dissolution_station,
 			'add_by' => $travel->add_by,
 			'urgency' => $travel->urgency,
+			'travel_status' => $travel->travel_status,
 			'created_at' => $travel->created_at->toDateTimeString(),
 			'updated_at' => $travel->updated_at->toDateTimeString(),
 			'pivot' => [

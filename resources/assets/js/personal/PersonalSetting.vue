@@ -27,6 +27,10 @@
             <div class="pane_content_promise">
                 <div class="form_content disflex">
                     <div class="form_item_password">
+                        <div class="item_title">区号</div>
+                        <div><input type="text" placeholder="区号" disabled="disabled" v-model="idd_code"></div>
+                    </div>
+                    <div class="form_item_password">
                         <div class="item_title">手机号码</div>
                         <div><input type="text" placeholder="手机号" disabled="disabled" v-model="phoneNumber"></div>
                     </div>
@@ -66,6 +70,7 @@
         data() {
             return {
                 phoneNumber: '',
+                idd_code:'',
                 smscode:'',
                 password: '',
                 repassword:'',
@@ -83,6 +88,7 @@
             }).then(res => {
                 // console.log(res.data);
                 this.phoneNumber=res.data.phone;
+                this.idd_code=res.data.idd_code;
             }).catch(err => {
                 console.log(err);
                 this.$toast('登录失效');
