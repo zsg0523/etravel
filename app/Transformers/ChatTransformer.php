@@ -24,7 +24,9 @@ class ChatTransformer extends TransformerAbstract
 			'type' => $chat->type,
 			'content' => $chat->content,
 			'image' => $chat->image,
-			'crated_at' => $chat->created_at->toDateTimeString()
+			'crated_at' => $chat->created_at->toDateTimeString(),
+			'name' => $chat->name,
+			'avatar' => $chat->avatar
 		];
 	}
 
