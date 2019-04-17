@@ -31,6 +31,8 @@ class TravelTransformer extends TransformerAbstract
 			'dissolution_station' => $travel->dissolution_station,
 			'add_by' => $travel->add_by,
 			'urgency' => $travel->urgency,
+			'view_plan' => $travel->view_plan,
+			'meal_plan' => $travel->meal_plan,
 			'travel_status' => $travel->travel_status,
 			'created_at' => $travel->created_at->toDateTimeString(),
 			'updated_at' => $travel->updated_at->toDateTimeString(),

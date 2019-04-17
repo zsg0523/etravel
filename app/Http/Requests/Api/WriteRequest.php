@@ -15,7 +15,7 @@ class WriteRequest extends FormRequest
         switch ($this->method()) {
             case 'POST':
                return [
-                    'content' => 'required|max:255'
+                    // 'content' => 'required|max:255'
                ];
                 break;
             
