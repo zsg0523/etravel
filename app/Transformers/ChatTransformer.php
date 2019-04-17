@@ -16,7 +16,7 @@ class ChatTransformer extends TransformerAbstract
 	protected $availableIncludes = ['user'];
 
 	public function transform(Chat $chat)
-	{
+	{	
 		return [
 			'id' => $chat->id,
 			'user_id' => $chat->user_id,
@@ -25,8 +25,8 @@ class ChatTransformer extends TransformerAbstract
 			'content' => $chat->content,
 			'image' => $chat->image,
 			'crated_at' => $chat->created_at->toDateTimeString(),
-			'name' => $chat->name,
-			'avatar' => $chat->avatar
+			'name' => $chat->user->name,
+			'avatar' => $chat->user->avatar
 		];
 	}
 
