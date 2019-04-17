@@ -13,7 +13,9 @@ class AddAreaCodeToAssembliesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('assemblies', function (Blueprint $table) {
+            $table->string('area_code')->nullable()->comment('区号');
+        });
     }
 
     /**
@@ -23,6 +25,8 @@ class AddAreaCodeToAssembliesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('assemblies', function (Blueprint $table) {
+            $table->dropColumn('code');
+        });
     }
 }

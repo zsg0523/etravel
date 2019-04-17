@@ -21,7 +21,8 @@ class AssemblyTransformer extends TransformerAbstract
 			'travel_id' => $assembly->travel_id,
 			'leader' => $assembly->leader,
 			'duty' => $assembly->duty,
-			'phone' => $assembly->phone
+			'phone' => $assembly->phone,
+			'area_code' => $assembly->area_code
 		];
 	}
 }
