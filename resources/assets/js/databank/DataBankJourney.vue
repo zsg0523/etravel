@@ -42,24 +42,14 @@
                 <!-- 行程安排 -->
                 <div role="tabpanel" class="tab-pane active" id="journey">
                     <div class="pane_content_journey">
-                        <div class="form_content_journey disflex" v-for="(journey,index) in journeys">
-                            <div class="form_item_journey disflex">
-                                <div class="item_left disflex">
-                                    <div style="width:40%;margin-left: 5%;">{{journey.day}}</div>
-                                    <div style="width:20%;text-align: center;">日期</div>
-                                    <input type="text" style="width:30%;" disabled="disabled" :value="journey.date">
-                                </div>
-                                <div class="item_right">
-                                    <img @click="$router.push('/journey/dataBankJourneyInfo/'+journey.id)" src="/etravel/public/images/See-next.png">
-                                </div>
+                        <div class="form_content_journey disflex">
+                            <div class="form_item_journey">
+                                <div class="item_title">景点安排</div>
+                                <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee" v-html="travelInfo.view_plan"></div>
                             </div>
-                            <div class="editBtnGroup_journey">
-				                <img @click="delJourney(journey.id);" src="/etravel/public/images/rush-icon.png">
-				                <img @click="editJourneyShow(index);" src="/etravel/public/images/edit-all.png">
-				            </div>
                         </div>
                         <div class="dataBankAddBtn_journey" @click="addNewJourneyShow();">
-				            <img src="/etravel/public/images/add_y.png">
+				            <img src="/etravel/public/images/edit-all.png">
 				        </div>
                     </div>   
                 </div>
@@ -67,191 +57,107 @@
                 <!-- 膳食安排 -->
                 <div role="tabpanel" class="tab-pane" id="flight">
                     <div class="pane_content_journey">
-                        <div class="form_content_journey disflex" v-for="(journey,index) in journeys">
-                            <div class="form_item_journey disflex">
-                                <div class="item_left disflex">
-                                    <div style="width:40%;margin-left: 5%;">{{journey.day}}</div>
-                                    <div style="width:20%;text-align: center;">日期</div>
-                                    <input type="text" style="width:30%;" disabled="disabled" :value="journey.date">
-                                </div>
-                                <div class="item_right">
-                                    <img @click="$router.push('/journey/dataBankMealsInfo/'+journey.id)" src="/etravel/public/images/See-next.png">
-                                </div>
+                        <div class="form_content_journey disflex">
+                            <div class="form_item_journey">
+                                <div class="item_title">膳食安排</div>
+                                <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee" v-html="travelInfo.meal_plan"></div>
                             </div>
-                            <div class="editBtnGroup_journey">
-				                <img @click="delJourney(journey.id);" src="/etravel/public/images/rush-icon.png">
-				                <img @click="editJourneyShow(index);" src="/etravel/public/images/edit-all.png">
-				            </div>
                         </div>
                         <div class="dataBankAddBtn_journey" @click="addNewJourneyShow();">
-				            <img src="/etravel/public/images/add_y.png">
+				            <img src="/etravel/public/images/edit-all.png">
 				        </div>
                     </div>    
                 </div>
-
             </div>
         </div>
         <van-popup v-model="isNewJourneyShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
-		                <div class="item_title">第几天</div>
-		                <div><input class="item_input" placeholder="第几天" type="text"  v-model="newJourney.day"></div>
-		            </div>
-		            <div class="form_item_journey">
-		                <div class="item_title">日期</div>
-		                <div><input class="item_input" placeholder="填写日期(yyyy-mm-dd)" type="text"  v-model="newJourney.date"></div>
-		            </div>
+                        <div class="item_title">景点安排</div>
+                        <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee" v-html="travelInfo.meal_plan"></div>
+                    </div>
                     <div class="issure">
-                        <button @click="addNewJourney()">添加</button>
+                        <button @click="addNewJourney()">保存</button>
                     </div>
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditJourneyShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isNewJourneyShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
-		                <div class="item_title">第几天</div>
-		                <div><input class="item_input" placeholder="第几天" type="text"  v-model="edJourney.day"></div>
-		            </div>
-		            <div class="form_item_journey">
-		                <div class="item_title">日期</div>
-		                <div><input class="item_input" placeholder="填写日期(yyyy-mm-dd)" type="text"  v-model="edJourney.date"></div>
-		            </div>
+                        <div class="item_title">膳食安排</div>
+                        <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee" v-html="travelInfo.meal_plan"></div>
+                    </div>
                     <div class="issure">
-                        <button @click="editJourney()">修改</button>
+                        <button @click="addNewJourney()">保存</button>
                     </div>
                 </div>
             </div>
-        </van-popup>                
+        </van-popup>
     </div>
 </template>
 
 <script>
+    import Editor from '../components/Editor.vue';
   	export default {
+        components: {
+            Editor,
+        },
   		data() {
             return {
-	        	journeys:[],
-	        	newJourney:{
-	        		day:'',
-	        		date:'',
-	        		description:'描述'
-	        	},
-	        	edJourney:{
-	        		id:'',
-	        		day:'',
-	        		date:'',
-	        		index:'',
-	        	},
-	        	isNewJourneyShow:false,
-	        	isEditJourneyShow:false,
+	        	travelInfo:{},
+	        	isEditJourneyViewShow:false,
+	        	isEditJourneyMealShow:false,
             }
         },
         mounted:function(){
-        	this.getJourneys();
+            getTravelInfo();
         },
         methods:{
-            getJourneys(){
-                // 获取行程
-                this.$ajax({
-                    method: 'GET',
-                    headers: {
-                        "Authorization": 'Bearer '+sessionStorage.token,
-                    },
-                    url: this.$config+'/api/travel/'+sessionStorage.actTravelId+'/routes',
-                }).then(res => {
-                    // console.log(res.data);
-                    this.journeys=res.data.data;
-                }).catch(err => {
-                    this.$toast('获取失败');
-                    console.log(err);
-                });
-            },
-            addNewJourneyShow(){
-                this.isNewJourneyShow=true;
-            },
-            addNewJourney(){
-                // 新增行程
-                this.$post(this.$config+'/api/travel/'+sessionStorage.actTravelId+'/route',this.newJourney,
+            getTravelInfo(){
+                // 获取旅游的基本信息
+                this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId,
                 {
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     }
                 }).then(res => {
-                    // console.log(res.data);
-                    this.$toast('添加成功');
-                    this.getJourneys();
-                    this.isNewJourneyShow=false;
-                    this.newJourney.day='';
-                    this.newJourney.date='';
+                    this.travelInfo=res.data;
                 }).catch(err => {
-                    this.$toast('添加失败');
-                    console.log(err)
+                    this.$toast('获取失败');
+                    console.log(err);
                 });
             },
-            editJourneyShow(index){
-                this.edJourney.id=this.journeys[index].id;
-                this.edJourney.day=this.journeys[index].day;
-                this.edJourney.date=this.journeys[index].date;
-                this.edJourney.index=index;
-                this.isEditJourneyShow=true;
-            },
-            editJourney(){
-                // 修改行程信息
+            editTravelInfo(){
+                // 修改旅游基本信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
-                    data:{
-                        day:this.edJourney.day,
-                        date:this.edJourney.date,
-                    },
-                    url: this.$config+'/api/travel/'+sessionStorage.actTravelId+'/route/'+this.edJourney.id,
+                    data:this.travelInfo,
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId,
                 }).then(res => {
+                    // console.log(res);
                     if(res.status==200){
-                        this.journeys[this.edJourney.index].day=this.edJourney.day;
-                        this.journeys[this.edJourney.index].date=this.edJourney.date;
                         this.$toast('修改成功');
-                        this.isEditJourneyShow=false;    
                     }else{
                         this.$toast('修改失败');
                     }
                 }).catch(err => {
                     this.$toast('修改失败');
-                    console.log(err)
+                    console.log(err);
                 });
             },
-            delJourney(journeyId){
-                // 删除行程
-                this.$dialog.confirm({
-                    title: '删除行程',
-                    message: '是否删除该行程'
-                }).then(() => {
-                    this.$ajax({
-                        method: 'DELETE',
-                        headers: {
-                            "Authorization": 'Bearer '+sessionStorage.token,
-                        },
-                        url: this.$config+'/api/travel/'+sessionStorage.actTravelId+'/route/'+journeyId,
-                    }).then(res => {
-                        // console.log(res);
-                        if(res.status==204){
-                            this.getJourneys();
-                            this.$toast('删除成功');
-                        }else{
-                            this.$toast('删除失败');
-                        }
-                    }).catch(err => {
-                        this.$toast('删除失败');
-                        console.log(err)
-                    });
-                }).catch(err => {
-
-                });
+            catchData(value){
+                if(this.status=='newLocal'){
+                    this.newLocal.content=value;
+                }else if(this.status=='edLocal'){
+                    this.edLocal.content=value;
+                }
             },
-
         },
   	}
 </script>

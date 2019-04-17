@@ -9,11 +9,11 @@
     .gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2}
     .gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;} 
     .form_content{width: 100%;min-height: 100px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;}
-    .form_item_info{width: 50%;height:100px;}
-    .form_item_info>div{width: 96%;height: 45px;line-height: 45px;}
+    .form_item_info{width: 50%;min-height:100px;}
+    .form_item_info>div{width: 96%;min-height: 45px;line-height: 45px;}
     .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
     .input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;}
-    .item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;}
+    .item_area{width:97%;min-height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;}
     .active{font-size: 18px;}        
 
     .dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
@@ -21,12 +21,14 @@
     .dataBankAddBtn>img{width:50px;height: 50px;}
 
     .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;}
-    .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
+    .editBoxContent{width:90%;margin-left: 5%;min-height:200px;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
     .issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
     .issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;}
 
     .editBtnGroup{width:97%;height:50px;line-height: 50px;}
     .editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;}
+
+    .simulateShade{width:90%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;}
     
     .bigRadio{width:20px;height:20px;}
     .van-dialog{width:50%;}
@@ -221,9 +223,10 @@
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;height:120px;">
                                     <div class="item_title">安排</div>
-                                    <div>
+                                    <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee" v-html="badWeathers.urgency"></div>
+                                    <!-- <div>
                                         <textarea class="item_area" placeholder="安排" disabled="disabled" :value="badWeathers.urgency"></textarea>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -434,17 +437,25 @@
         <van-popup v-model="isNewLeadTeacherShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item_info">
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">老师姓名</div>
                         <div><input class="item_input" type="text" placeholder="老师姓名" v-model="newLeadTeacher.leader" ></div>
                     </div>
-                    <div class="form_item_info">
+                    <div class="form_item_info" style="width:100%;">
+                        <div class="item_title">区号</div>
+                        <div>
+                            <div class="simulateShade">
+                                <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newLeadTeacher.area_code' v-model='newLeadTeacher.area_code'></AreaCodeSelector>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">老师电话</div>
                         <div><input class="item_input" type="text" placeholder="老师电话" v-model="newLeadTeacher.phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">职责</div>
-                        <div><input class="item_input" style="width:97%;" type="text" placeholder="职责" v-model="newLeadTeacher.duty"></div>
+                        <div><input class="item_input" type="text" placeholder="职责" v-model="newLeadTeacher.duty"></div>
                     </div>
                     <div class="issure">
                         <button @click="addNewLeadTeacher()">添加</button>
@@ -455,17 +466,25 @@
         <van-popup v-model="isEditLeadTeacherShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item_info">
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">老师姓名</div>
                         <div><input class="item_input" type="text" placeholder="老师姓名" v-model="edLeadTeacher.leader" ></div>
                     </div>
-                    <div class="form_item_info">
+                    <div class="form_item_info" style="width:100%;">
+                        <div class="item_title">区号</div>
+                        <div>
+                            <div class="simulateShade">
+                                <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='edLeadTeacher.area_code' v-model='edLeadTeacher.area_code'></AreaCodeSelector>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">老师电话</div>
                         <div><input class="item_input" type="text" placeholder="老师电话" v-model="edLeadTeacher.phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">职责</div>
-                        <div><input class="item_input" style="width:97%;" type="text" placeholder="职责" v-model="edLeadTeacher.duty"></div>
+                        <div><input class="item_input" type="text" placeholder="职责" v-model="edLeadTeacher.duty"></div>
                     </div>
                     <div class="issure">
                         <button @click="editLeadTeacher()">修改</button>
@@ -476,10 +495,11 @@
         <van-popup v-model="isEditBadWeatherShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item_info" style="width:100%;height:120px;">
+                    <div class="form_item_info" style="width:100%;">
                         <div class="item_title">安排</div>
                         <div>
-                            <textarea class="item_area" placeholder="安排" v-model="edBadWeather.urgency"></textarea>
+                            <!-- <textarea class="item_area" placeholder="安排" v-model="edBadWeather.urgency"></textarea> -->
+                            <div><Editor @catchData='catchData' :childData='edBadWeather.urgency'></Editor></div>
                         </div>
                     </div>
                     <div class="issure">
@@ -493,7 +513,13 @@
     
 </template>
 <script>
+    import AreaCodeSelector from '../components/AreaCodeSelector.vue';
+    import Editor from '../components/Editor.vue';
 	export default {
+        components: {
+            AreaCodeSelector,
+            Editor,
+        },
         data() {
             return {
                 assemblePlaces:[],
@@ -553,12 +579,14 @@
                 newLeadTeacher:{
                     leader:'',
                     phone:'',
+                    area_code:'',
                     duty:'',
                 },
                 edLeadTeacher:{
                     id:'',
                     leader:'',
                     phone:'',
+                    area_code:'',
                     duty:'',
                     index:'',
                 },
@@ -574,6 +602,7 @@
                 isNewLeadTeacherShow:false,
                 isEditLeadTeacherShow:false,
                 isEditBadWeatherShow:false,
+                isNew:true,
             }
         },
         mounted:function(){
@@ -713,6 +742,8 @@
                         arrival_time:this.edFlight.arrival_time,
                         from:this.edFlight.from,
                         to:this.edFlight.to,
+                        from_flight:this.edFlight.from_flight,
+                        to_flight:this.edFlight.to_flight,
                         is_return:this.edFlight.is_return,
                     },
                     url: this.$config+'/api/flights/'+this.edFlight.id,
@@ -724,6 +755,8 @@
                         this.flights[this.edFlight.index].arrival_time=this.edFlight.arrival_time;
                         this.flights[this.edFlight.index].from=this.edFlight.from;
                         this.flights[this.edFlight.index].to=this.edFlight.to;
+                        this.flights[this.edFlight.index].from_flight=this.edFlight.from_flight;
+                        this.flights[this.edFlight.index].to_flight=this.edFlight.to_flight;
                         this.flights[this.edFlight.index].is_return=this.edFlight.is_return;
                         this.$toast('修改成功');
                         this.isEditFlightShow=false;    
@@ -898,6 +931,7 @@
             },
             addNewLeadTeacherShow(){
                 this.isNewLeadTeacherShow=true;
+                this.isNew=true;
             },
             addNewLeadTeacher(){
                 // 新增领队
@@ -913,6 +947,7 @@
                     this.isNewLeadTeacherShow=false;
                     this.newLeadTeacher.leader='';
                     this.newLeadTeacher.duty='';
+                    this.newLeadTeacher.area_code='';
                     this.newLeadTeacher.phone='';
                 }).catch(err => {
                     this.$toast('添加失败');
@@ -923,9 +958,11 @@
                 this.edLeadTeacher.id=this.leadTeachers[index].id;
                 this.edLeadTeacher.leader=this.leadTeachers[index].leader;
                 this.edLeadTeacher.duty=this.leadTeachers[index].duty;
+                this.edLeadTeacher.area_code=this.leadTeachers[index].area_code;
                 this.edLeadTeacher.phone=this.leadTeachers[index].phone;
                 this.edLeadTeacher.index=index;
                 this.isEditLeadTeacherShow=true;
+                this.isNew=false;
             },
             editLeadTeacher(){
                 // 修改领队信息
@@ -937,6 +974,7 @@
                     data:{
                         leader:this.edLeadTeacher.leader,
                         duty:this.edLeadTeacher.duty,
+                        area_code:this.edLeadTeacher.area_code,
                         phone:this.edLeadTeacher.phone,
                     },
                     url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/leaders/'+this.edLeadTeacher.id,
@@ -944,6 +982,7 @@
                     if(res.status==200){
                         this.leadTeachers[this.edLeadTeacher.index].leader=this.edLeadTeacher.leader;
                         this.leadTeachers[this.edLeadTeacher.index].duty=this.edLeadTeacher.duty;
+                        this.leadTeachers[this.edLeadTeacher.index].area_code=this.edLeadTeacher.area_code;
                         this.leadTeachers[this.edLeadTeacher.index].phone=this.edLeadTeacher.phone;
                         this.$toast('修改成功');
                         this.isEditLeadTeacherShow=false;    
@@ -1027,6 +1066,17 @@
                     this.$toast('修改失败');
                     console.log(err)
                 });
+            },
+            selectedAreaCode(value){
+                if(this.isNew){
+                    this.newLeadTeacher.area_code=value;
+                }else{
+                    this.edLeadTeacher.area_code=value;
+                }
+                console.log(value);
+            },
+            catchData(value){
+                this.edBadWeather.urgency=value;
             },
         },
     }

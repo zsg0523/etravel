@@ -26,7 +26,7 @@
 	        	<img :src="userInfo.avatar" @click="$router.push('/personalInfo')">
 	        </div>
 	        <div class="person_icon disflex" v-else>
-				<img src="/etravel/public/images/photo.png" @click="$router.push('/personalInfo')">
+				<img src="/etravel/public/images/poto-icon.png" @click="$router.push('/personalInfo')">
 	        </div>
 	        	
 	        <div class="info disflex">

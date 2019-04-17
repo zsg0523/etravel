@@ -34,7 +34,8 @@
                 	<select class="sel" v-model="idd_code">
                         <option value="">请选择区号</option>
                         <option v-for="item in optList" :value="item.value">{{ item.name }}</option>
-                    </select></div>
+                    </select>
+                </div>
                 <div><input type="text" placeholder="手机号" v-model="phoneNumber"></div>
                 <div class="disflex" style="justify-content: space-between;">
                     <input type="text" placeholder="验证码" v-model="smscode" style="width: 56%;">

@@ -68,10 +68,22 @@
     			</div>
     			<div class="project_right disflex">
     				<div class="edit_name">
-    					<div class="edit_icon disflex fl" @click="editPopupShow(travel.id,index)">
+    					<!-- <div class="edit_icon disflex fl" @click="editPopupShow(travel.id,index)">
     						<img src="/etravel/public/images/write-icon.png">
     						<span>編輯</span>
-    					</div>
+    					</div> -->
+                        <div class="edit_icon disflex fl" v-if="travel.travel_status==10">
+                            <img src="/etravel/public/images/Not_progress.png">
+                            <span>未进行</span>
+                        </div>
+                        <div class="edit_icon disflex fl" v-else-if="travel.travel_status==20">
+                            <img src="/etravel/public/images/In_progress.png">
+                            <span>进行中</span>
+                        </div>
+                        <div class="edit_icon disflex fl" v-else="">
+                            <img src="/etravel/public/images/ending.png">
+                            <span>已完成</span>
+                        </div>
     					<!-- <div class="project_type disflex fr" v-if="travel.pivot['is_promise'] == 1">
     						<img src="/etravel/public/images/sent.png">
     						<span>已发布！</span>
@@ -86,7 +98,7 @@
     				</div>
     			</div>
                 <div class="project_icon disflex">
-                    <div @click="delTravel(travel.id,index)"><img src="/etravel/public/images/rush-icon.png"></div>
+                    <div @click="delTravel(travel.id,index)"><img src="/etravel/public/images/rush_small.png"></div>
                     <!-- <div><img src="/etravel/public/images/Released.png"></div>        -->
 
                 </div>
@@ -227,6 +239,7 @@
         },
         mounted:function(){
             this.getUserTravels();
+            this.$store.state.links=[{link:'/home',linkName:'项目'}];
         },
         methods:{
             ...mapActions(['setTravels']),
