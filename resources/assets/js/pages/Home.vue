@@ -16,7 +16,7 @@
 
 	.edit_name{width:100%; height: 40px;margin-top: 10px;}
 	.edit_icon{width: auto;height: 40px;align-items: center;justify-content: flex-start;}
-	.edit_icon>span{font-size: 14px;color:#c1c1c1;}
+	.edit_icon>span{font-size: 16px;color:#c1c1c1;margin-left: 5px;}
 	.edit_icon>img{width: 30px;height:30px;}
 	.project_type{width: auto;height: 40px;align-items: center;justify-content: flex-start;}
 	.project_type>img{width: 20px;height:20px;}

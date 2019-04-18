@@ -22641,7 +22641,7 @@ var render = function() {
                 expression: "loginName"
               }
             ],
-            attrs: { type: "text", placeholder: "手机号" },
+            attrs: { type: "text", placeholder: "手机号码或邮箱账号" },
             domProps: { value: _vm.loginName },
             on: {
               input: function($event) {
@@ -23328,7 +23328,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.main1{width: 100%;height: auto;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;position: relative;\n}\n.project_list{width: 94%;min-height:550px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap; -ms-flex-line-pack:start; align-content:flex-start;margin-top: 50px;\n}\n.project{margin: 10px;min-width:380px;height: 140px;border: none;font-size: 18px;border-radius: 15px;\n}\n.project_left{width: 110px;height: 100%;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;border-bottom-left-radius: 15px;border-top-left-radius: 15px;\n}\n.project_left>img{width: 80px;height: 100px;\n}\n.project_right{width: 240px;height: 100%;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start;background-color: #ebebeb;\n}\n.project_right>div{width: 90%;\n}\n.project_icon{width:30px;height:100%;background-color: #ebebeb;border-bottom-right-radius: 15px;border-top-right-radius: 15px;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.project_icon>div{width:30px;height:30px;margin-top: 4px;\n}\n.project_icon>div>img{width:30px;height:30px;\n}\n.edit_name{width:100%; height: 40px;margin-top: 10px;\n}\n.edit_icon{width: auto;height: 40px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.edit_icon>span{font-size: 14px;color:#c1c1c1;\n}\n.edit_icon>img{width: 30px;height:30px;\n}\n.project_type{width: auto;height: 40px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.project_type>img{width: 20px;height:20px;\n}\n.project_type>span{font-size: 14px;color:#c1c1c1;\n}\n.project_name{height: 80px;overflow: hidden;\n}\n.project_name>p{line-height: 40px;width: 100%;font-size: 24px;word-break: break-all;overflow: hidden;\n}\n.addnew{font-size: 30px;color: #c1c1c1;height: 100%;line-height: 140px;display: block;\n}\n.btn_publish{width: 100%;height: 60px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;margin-top:20px;\n}\n.btn_publish>button{width: 350px;height: 50px;border-radius: 8px;background-color: #ffde01;border: none;font-size: 18px;\n}\n.del_icon{width: 60px;height: 60px;position: absolute;right: 50px;top:50px;z-index: 5;\n}\n.del_icon>img{width: 60px;height: 60px;\n}\n.addNewTravel{width: 600px;min-height:260px;background-color: #fff;border-radius: 15px;-webkit-box-shadow: 0 0 10px #ccc;box-shadow: 0 0 10px #ccc;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.addNewTravel>button{width:60%;height:50px;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;margin-top: 20px;margin-bottom: 20px;\n}\n.form_item_pro{width: 90%;min-height:100px;margin-left: 5%;\n}\n.form_item_pro>div{height: 45px;line-height: 45px;\n}\n.form_item{width: 90%;min-height:100px;\n}\n.form_item>div{height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.van-dialog{width:50%;\n}\n    /*.van-picker{width:80%;}*/\n", ""]);
+exports.push([module.i, "\n.main1{width: 100%;height: auto;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;position: relative;\n}\n.project_list{width: 94%;min-height:550px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap; -ms-flex-line-pack:start; align-content:flex-start;margin-top: 50px;\n}\n.project{margin: 10px;min-width:380px;height: 140px;border: none;font-size: 18px;border-radius: 15px;\n}\n.project_left{width: 110px;height: 100%;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;border-bottom-left-radius: 15px;border-top-left-radius: 15px;\n}\n.project_left>img{width: 80px;height: 100px;\n}\n.project_right{width: 240px;height: 100%;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start;background-color: #ebebeb;\n}\n.project_right>div{width: 90%;\n}\n.project_icon{width:30px;height:100%;background-color: #ebebeb;border-bottom-right-radius: 15px;border-top-right-radius: 15px;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.project_icon>div{width:30px;height:30px;margin-top: 4px;\n}\n.project_icon>div>img{width:30px;height:30px;\n}\n.edit_name{width:100%; height: 40px;margin-top: 10px;\n}\n.edit_icon{width: auto;height: 40px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.edit_icon>span{font-size: 16px;color:#c1c1c1;margin-left: 5px;\n}\n.edit_icon>img{width: 30px;height:30px;\n}\n.project_type{width: auto;height: 40px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.project_type>img{width: 20px;height:20px;\n}\n.project_type>span{font-size: 14px;color:#c1c1c1;\n}\n.project_name{height: 80px;overflow: hidden;\n}\n.project_name>p{line-height: 40px;width: 100%;font-size: 24px;word-break: break-all;overflow: hidden;\n}\n.addnew{font-size: 30px;color: #c1c1c1;height: 100%;line-height: 140px;display: block;\n}\n.btn_publish{width: 100%;height: 60px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;margin-top:20px;\n}\n.btn_publish>button{width: 350px;height: 50px;border-radius: 8px;background-color: #ffde01;border: none;font-size: 18px;\n}\n.del_icon{width: 60px;height: 60px;position: absolute;right: 50px;top:50px;z-index: 5;\n}\n.del_icon>img{width: 60px;height: 60px;\n}\n.addNewTravel{width: 600px;min-height:260px;background-color: #fff;border-radius: 15px;-webkit-box-shadow: 0 0 10px #ccc;box-shadow: 0 0 10px #ccc;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.addNewTravel>button{width:60%;height:50px;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;margin-top: 20px;margin-bottom: 20px;\n}\n.form_item_pro{width: 90%;min-height:100px;margin-left: 5%;\n}\n.form_item_pro>div{height: 45px;line-height: 45px;\n}\n.form_item{width: 90%;min-height:100px;\n}\n.form_item>div{height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.van-dialog{width:50%;\n}\n    /*.van-picker{width:80%;}*/\n", ""]);
 
 // exports
 
@@ -25131,7 +25131,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 student_number: '',
                 class: '',
                 duty: '',
-                room: ''
+                group: ''
             },
             edStudent: {
                 id: '',
@@ -25144,7 +25144,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 student_number: '',
                 class: '',
                 duty: '',
-                room: '',
+                group: '',
                 user_id: ''
             },
             searchStudent: {
@@ -25156,7 +25156,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 student_number: '',
                 class: '',
                 duty: '',
-                room: ''
+                group: ''
             },
             isNewStudentShow: false,
             isEditStudentShow: false,
@@ -25213,7 +25213,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.newStudent.original_password = '';
                 _this2.newStudent.student_number = '';
                 _this2.newStudent.duty = '';
-                _this2.newStudent.room = '';
+                _this2.newStudent.group = '';
                 _this2.newStudent.class = '';
             }).catch(function (err) {
                 _this2.$toast('添加失败');
@@ -25230,7 +25230,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edStudent.student_number = this.students[this.actIndex].student_number;
             this.edStudent.class = this.students[this.actIndex].class;
             this.edStudent.duty = this.students[this.actIndex].duty;
-            this.edStudent.room = this.students[this.actIndex].room;
+            this.edStudent.group = this.students[this.actIndex].group;
             this.edStudent.user_id = this.students[this.actIndex].user_id;
             this.errors = {};
             this.isEditStudentShow = true;
@@ -25252,7 +25252,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     student_number: this.edStudent.student_number,
                     class: this.edStudent.class,
                     duty: this.edStudent.duty,
-                    room: this.edStudent.room,
+                    group: this.edStudent.group,
                     user_id: this.edStudent.user_id
                 },
                 url: this.$config + '/api/users/' + this.edStudent.user_id + '/groups/' + this.edStudent.id + '/information'
@@ -25265,7 +25265,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.students[_this3.actIndex].student_number = _this3.edStudent.student_number;
                     _this3.students[_this3.actIndex].class = _this3.edStudent.class;
                     _this3.students[_this3.actIndex].duty = _this3.edStudent.duty;
-                    _this3.students[_this3.actIndex].room = _this3.edStudent.room;
+                    _this3.students[_this3.actIndex].group = _this3.edStudent.group;
                     _this3.$toast('修改成功');
                     _this3.isEditStudentShow = false;
                 } else {
@@ -25357,7 +25357,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 student_number: this.searchStudent.student_number,
                 class: this.searchStudent.class,
                 duty: this.searchStudent.duty,
-                room: this.searchStudent.room
+                group: this.searchStudent.group
             }, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
@@ -25376,8 +25376,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 // if(err.response.data.errors.duty){
                 //     this.$toast(err.response.data.errors.duty[0]);
                 // }
-                // if(err.response.data.errors.room){
-                //     this.$toast(err.response.data.errors.room[0]);
+                // if(err.response.data.errors.group){
+                //     this.$toast(err.response.data.errors.group[0]);
                 // }
             });
         },
@@ -25665,7 +25665,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("學生房間號")
+                        _vm._v("學生分組號")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -25673,10 +25673,10 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填寫學生房間號",
+                            placeholder: "填寫學生分組號",
                             disabled: "disabled"
                           },
-                          domProps: { value: _vm.students[_vm.actIndex].room }
+                          domProps: { value: _vm.students[_vm.actIndex].group }
                         })
                       ])
                     ]),
@@ -26045,12 +26045,12 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("學生房間號(必填)"),
-                              _vm.errors.room
+                              _vm._v("學生分組號(必填)"),
+                              _vm.errors.group
                                 ? _c("span", {
                                     staticClass: "err",
                                     domProps: {
-                                      textContent: _vm._s(_vm.errors.room[0])
+                                      textContent: _vm._s(_vm.errors.group[0])
                                     }
                                   })
                                 : _vm._e()
@@ -26062,16 +26062,16 @@ var render = function() {
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value: _vm.edStudent.room,
-                                    expression: "edStudent.room"
+                                    value: _vm.edStudent.group,
+                                    expression: "edStudent.group"
                                   }
                                 ],
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填寫學生房間號"
+                                  placeholder: "填寫學生分組號"
                                 },
-                                domProps: { value: _vm.edStudent.room },
+                                domProps: { value: _vm.edStudent.group },
                                 on: {
                                   input: function($event) {
                                     if ($event.target.composing) {
@@ -26079,7 +26079,7 @@ var render = function() {
                                     }
                                     _vm.$set(
                                       _vm.edStudent,
-                                      "room",
+                                      "group",
                                       $event.target.value
                                     )
                                   }
@@ -26401,11 +26401,11 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生房間號(必填)"),
-                    _vm.errors.room
+                    _vm._v("學生分組號(必填)"),
+                    _vm.errors.group
                       ? _c("span", {
                           staticClass: "err",
-                          domProps: { textContent: _vm._s(_vm.errors.room[0]) }
+                          domProps: { textContent: _vm._s(_vm.errors.group[0]) }
                         })
                       : _vm._e()
                   ]),
@@ -26416,19 +26416,19 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.newStudent.room,
-                          expression: "newStudent.room"
+                          value: _vm.newStudent.group,
+                          expression: "newStudent.group"
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生房間號" },
-                      domProps: { value: _vm.newStudent.room },
+                      attrs: { type: "text", placeholder: "填寫學生分組號" },
+                      domProps: { value: _vm.newStudent.group },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.newStudent, "room", $event.target.value)
+                          _vm.$set(_vm.newStudent, "group", $event.target.value)
                         }
                       }
                     })
@@ -26698,11 +26698,11 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生房間號(必填)"),
-                    _vm.errors.room
+                    _vm._v("學生分組號(必填)"),
+                    _vm.errors.group
                       ? _c("span", {
                           staticClass: "err",
-                          domProps: { textContent: _vm._s(_vm.errors.room[0]) }
+                          domProps: { textContent: _vm._s(_vm.errors.group[0]) }
                         })
                       : _vm._e()
                   ]),
@@ -26713,13 +26713,13 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.searchStudent.room,
-                          expression: "searchStudent.room"
+                          value: _vm.searchStudent.group,
+                          expression: "searchStudent.group"
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生房間號" },
-                      domProps: { value: _vm.searchStudent.room },
+                      attrs: { type: "text", placeholder: "填寫學生分組號" },
+                      domProps: { value: _vm.searchStudent.group },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
@@ -26727,7 +26727,7 @@ var render = function() {
                           }
                           _vm.$set(
                             _vm.searchStudent,
-                            "room",
+                            "group",
                             $event.target.value
                           )
                         }
@@ -29938,10 +29938,6 @@ var render = function() {
           _c("div", [_vm._v("我的承諾")])
         ]),
         _vm._v(" "),
-        _c("router-link", { attrs: { tag: "li", to: "/dataBankGroup" } }, [
-          _c("div", [_vm._v("師生名單分組")])
-        ]),
-        _vm._v(" "),
         _c(
           "router-link",
           { attrs: { tag: "li", to: "/dataBankLocalCulture" } },
@@ -29949,7 +29945,7 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/dataBankHouseTable" } }, [
-          _c("div", [_vm._v("分房錶")])
+          _c("div", [_vm._v("分組分房錶")])
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/luggage" } }, [
@@ -30135,7 +30131,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.tab-pane{position: relative;\n}\n.pane_content_info{width:70%;margin-left: 15%;height:auto;margin: 0 auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info{width:100%;height: auto;\n}\n.gather_info_title{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_info{width: 50%;min-height:100px;\n}\n.form_item_info>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;min-height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;min-height:200px;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.simulateShade{width:90%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;\n}\n.bigRadio{width:20px;height:20px;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.tab-pane{position: relative;\n}\n.pane_content_info{width:70%;margin-left: 15%;height:auto;margin: 0 auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info{width:100%;height: auto;\n}\n.gather_info_title{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_info{width: 50%;min-height:100px;\n}\n.form_item_info>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area{width:97%;min-height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;min-height:200px;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.simulateShade{width:90%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;\n}\n.bigRadio{width:20px;height:20px;\n}\n.van-dialog{width:50%;\n}\n.imgIcon{\n    width:100px;\n    height: 40px;\n    float: right;\n}\n.imgIcon img{\n    height: 35px;\n    float: right;\n}\n.imgs{\n    width:95%;\n    position: relative;\n}\n.travelImg{\n    width:100%;\n    border-radius: 15px;\n}\n.cancelImg{\n    width:30px;\n    height: 30px;\n    top: 15px;\n    right: 15px;\n    position: absolute;\n}\n\n", ""]);
 
 // exports
 
@@ -30150,6 +30146,72 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Editor_vue__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Editor_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Editor_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -30715,6 +30777,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 hotel_name: '',
                 hotel_address: '',
                 hotel_phone: '',
+                hotel_location: '',
+                image: '',
                 travel_id: sessionStorage.actTravelId
             },
             edHotel: {
@@ -30725,6 +30789,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 hotel_name: '',
                 hotel_address: '',
                 hotel_phone: '',
+                hotel_location: '',
+                image: '',
                 index: ''
             },
             leadTeachers: [],
@@ -30754,7 +30820,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             isNewLeadTeacherShow: false,
             isEditLeadTeacherShow: false,
             isEditBadWeatherShow: false,
-            isNew: true
+            isNew: true,
+            isNewImg: true
         };
     },
 
@@ -30971,6 +31038,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         addNewHotelShow: function addNewHotelShow() {
             this.isNewHotelShow = true;
+            this.isNewImg = true;
         },
         addNewHotel: function addNewHotel() {
             var _this8 = this;
@@ -30991,6 +31059,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this8.newHotel.hotel_name = '';
                 _this8.newHotel.hotel_address = '';
                 _this8.newHotel.hotel_phone = '';
+                _this8.newHotel.hotel_location = '';
+                _this8.newHotel.image = '';
             }).catch(function (err) {
                 _this8.$toast('添加失败');
                 console.log(err);
@@ -31004,8 +31074,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edHotel.hotel_name = this.hotels[index].hotel_name;
             this.edHotel.hotel_address = this.hotels[index].hotel_address;
             this.edHotel.hotel_phone = this.hotels[index].hotel_phone;
+            this.edHotel.hotel_location = this.hotels[index].hotel_location;
+            this.edHotel.image = this.hotels[index].image;
             this.edHotel.index = index;
             this.isEditHotelShow = true;
+            this.isNewImg = false;
         },
         editHotel: function editHotel() {
             var _this9 = this;
@@ -31022,7 +31095,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     times: this.edHotel.times,
                     hotel_name: this.edHotel.hotel_name,
                     hotel_address: this.edHotel.hotel_address,
-                    hotel_phone: this.edHotel.hotel_phone
+                    hotel_phone: this.edHotel.hotel_phone,
+                    image: this.edHotel.image,
+                    hotel_location: this.edHotel.hotel_location
                 },
                 url: this.$config + '/api/hotels/' + this.edHotel.id
             }).then(function (res) {
@@ -31033,6 +31108,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this9.hotels[_this9.edHotel.index].hotel_name = _this9.edHotel.hotel_name;
                     _this9.hotels[_this9.edHotel.index].hotel_address = _this9.edHotel.hotel_address;
                     _this9.hotels[_this9.edHotel.index].hotel_phone = _this9.edHotel.hotel_phone;
+                    _this9.hotels[_this9.edHotel.index].hotel_location = _this9.edHotel.hotel_location;
+                    _this9.hotels[_this9.edHotel.index].image = _this9.edHotel.image;
                     _this9.$toast('修改成功');
                     _this9.isEditHotelShow = false;
                 } else {
@@ -31241,6 +31318,50 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         catchData: function catchData(value) {
             this.edBadWeather.urgency = value;
+        },
+        onRead: function onRead(file) {
+            var _this17 = this;
+
+            this.$ajax({
+                method: 'post',
+                headers: {
+                    "Authorization": 'Bearer ' + sessionStorage.token
+                },
+                data: {
+                    type: 'travel',
+                    image: file.content
+                },
+                url: this.$config + '/api/images'
+            }).then(function (res) {
+                console.log(res);
+                if (res.status == 201) {
+                    _this17.$toast('上传成功');
+                    if (_this17.isNewImg) {
+                        _this17.newHotel.image = res.data.data.path;
+                    } else {
+                        _this17.edHotel.image = res.data.data.path;
+                    }
+                } else {
+                    _this17.$toast('上传失败');
+                }
+            }).catch(function (err) {
+                _this17.$toast('上传失败');
+                console.log(err);
+            });
+        },
+        resetImg: function resetImg() {
+            var _this18 = this;
+
+            this.$dialog.confirm({
+                title: '重置图片',
+                message: '是否重置該图片'
+            }).then(function () {
+                if (_this18.isNewImg) {
+                    _this18.newHotel.image = "http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png";
+                } else {
+                    _this18.edHotel.image = "http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png";
+                }
+            }).catch(function (err) {});
         }
     }
 });
@@ -36396,7 +36517,7 @@ var render = function() {
                       "div",
                       {
                         staticClass: "form_item_info",
-                        staticStyle: { width: "100%", height: "120px" }
+                        staticStyle: { width: "100%", "min-height": "120px" }
                       },
                       [
                         _c("div", { staticClass: "item_title" }, [
@@ -36496,7 +36617,7 @@ var render = function() {
                       "div",
                       {
                         staticClass: "form_item_info",
-                        staticStyle: { width: "100%", height: "120px" }
+                        staticStyle: { width: "100%", "min-height": "120px" }
                       },
                       [
                         _c("div", { staticClass: "item_title" }, [
@@ -36803,7 +36924,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "form_item_info" }, [
                         _c("div", { staticClass: "item_title" }, [
-                          _vm._v("几晚")
+                          _vm._v("入住天数")
                         ]),
                         _vm._v(" "),
                         _c("div", [
@@ -36833,7 +36954,7 @@ var render = function() {
                         "div",
                         {
                           staticClass: "form_item_info",
-                          staticStyle: { width: "100%", height: "120px" }
+                          staticStyle: { width: "100%" }
                         },
                         [
                           _c("div", { staticClass: "item_title" }, [
@@ -36841,13 +36962,53 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("div", [
-                            _c("textarea", {
-                              staticClass: "item_area",
-                              attrs: {
-                                placeholder: "酒店地址",
-                                disabled: "disabled"
-                              },
+                            _c("input", {
+                              staticClass: "item_input",
+                              staticStyle: { width: "97%" },
+                              attrs: { type: "text", disabled: "disabled" },
                               domProps: { value: hotel.hotel_address }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("酒店经纬度")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              staticStyle: { width: "97%" },
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: hotel.hotel_location }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("酒店图片")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("img", {
+                              staticStyle: { width: "97%" },
+                              attrs: { src: hotel.image }
                             })
                           ])
                         ]
@@ -37032,7 +37193,7 @@ var render = function() {
                       "div",
                       {
                         staticClass: "form_item_info",
-                        staticStyle: { width: "100%", height: "120px" }
+                        staticStyle: { width: "100%", "min-height": "120px" }
                       },
                       [
                         _c("div", { staticClass: "item_title" }, [
@@ -38099,7 +38260,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("几晚")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("入住天数")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -38112,7 +38273,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "几晚(1-N)" },
+                    attrs: { type: "text", placeholder: "入住天数" },
                     domProps: { value: _vm.newHotel.times },
                     on: {
                       input: function($event) {
@@ -38162,7 +38323,7 @@ var render = function() {
                 "div",
                 {
                   staticClass: "form_item_info",
-                  staticStyle: { width: "100%", height: "120px" }
+                  staticStyle: { width: "100%" }
                 },
                 [
                   _c("div", { staticClass: "item_title" }, [
@@ -38170,7 +38331,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", [
-                    _c("textarea", {
+                    _c("input", {
                       directives: [
                         {
                           name: "model",
@@ -38179,8 +38340,9 @@ var render = function() {
                           expression: "newHotel.hotel_address"
                         }
                       ],
-                      staticClass: "item_area",
-                      attrs: { placeholder: "酒店地址" },
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: { type: "text", placeholder: "酒店地址" },
                       domProps: { value: _vm.newHotel.hotel_address },
                       on: {
                         input: function($event) {
@@ -38195,6 +38357,114 @@ var render = function() {
                         }
                       }
                     })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("酒店经纬度")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newHotel.hotel_location,
+                          expression: "newHotel.hotel_location"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: { type: "text", placeholder: "酒店经纬度" },
+                      domProps: { value: _vm.newHotel.hotel_location },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newHotel,
+                            "hotel_location",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticStyle: { width: "93%" } }, [
+                    _vm._v(
+                      "\n                        酒店图片\n                        "
+                    ),
+                    _c(
+                      "div",
+                      { staticClass: "imgIcon" },
+                      [
+                        _c(
+                          "van-uploader",
+                          {
+                            staticStyle: {
+                              width: "50px",
+                              height: "40px",
+                              float: "right"
+                            },
+                            attrs: {
+                              "after-read": _vm.onRead,
+                              accept: "image/*"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "/etravel/public/images/sm-insert.png"
+                              }
+                            })
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticStyle: { width: "93%" } }, [
+                    _c(
+                      "div",
+                      { staticClass: "imgs", staticStyle: { width: "97%" } },
+                      [
+                        _c("img", {
+                          staticClass: "travelImg",
+                          attrs: { src: _vm.edHotel.image }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          staticClass: "cancelImg",
+                          attrs: { src: "/etravel/public/images/delete.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.resetImg()
+                            }
+                          }
+                        })
+                      ]
+                    )
                   ])
                 ]
               ),
@@ -38338,7 +38608,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("几晚")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("入住天数")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -38351,7 +38621,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "几晚(1-N)" },
+                    attrs: { type: "text", placeholder: "入住天数" },
                     domProps: { value: _vm.edHotel.times },
                     on: {
                       input: function($event) {
@@ -38401,7 +38671,7 @@ var render = function() {
                 "div",
                 {
                   staticClass: "form_item_info",
-                  staticStyle: { width: "100%", height: "120px" }
+                  staticStyle: { width: "100%" }
                 },
                 [
                   _c("div", { staticClass: "item_title" }, [
@@ -38409,7 +38679,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", [
-                    _c("textarea", {
+                    _c("input", {
                       directives: [
                         {
                           name: "model",
@@ -38418,8 +38688,9 @@ var render = function() {
                           expression: "edHotel.hotel_address"
                         }
                       ],
-                      staticClass: "item_area",
-                      attrs: { placeholder: "酒店地址" },
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: { type: "text", placeholder: "酒店地址" },
                       domProps: { value: _vm.edHotel.hotel_address },
                       on: {
                         input: function($event) {
@@ -38434,6 +38705,117 @@ var render = function() {
                         }
                       }
                     })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("酒店经纬度")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edHotel.hotel_location,
+                          expression: "edHotel.hotel_location"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: {
+                        type: "text",
+                        placeholder: "酒店经纬度(经度,纬度)"
+                      },
+                      domProps: { value: _vm.edHotel.hotel_location },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edHotel,
+                            "hotel_location",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticStyle: { width: "93%" } }, [
+                    _vm._v(
+                      "\n                        酒店图片\n                        "
+                    ),
+                    _c(
+                      "div",
+                      { staticClass: "imgIcon" },
+                      [
+                        _c(
+                          "van-uploader",
+                          {
+                            staticStyle: {
+                              width: "50px",
+                              height: "40px",
+                              float: "right"
+                            },
+                            attrs: {
+                              "after-read": _vm.onRead,
+                              accept: "image/*"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "/etravel/public/images/sm-insert.png"
+                              }
+                            })
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "div",
+                      { staticClass: "imgs", staticStyle: { width: "97%" } },
+                      [
+                        _c("img", {
+                          staticClass: "travelImg",
+                          attrs: { src: _vm.edHotel.image }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          staticClass: "cancelImg",
+                          attrs: { src: "/etravel/public/images/delete.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.resetImg()
+                            }
+                          }
+                        })
+                      ]
+                    )
                   ])
                 ]
               ),
@@ -43079,6 +43461,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -43093,6 +43491,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 house_room: '',
                 house_class: '',
                 house_name: '',
+                house_group: '',
+                house_duty: '',
                 id: '',
                 user_id: '',
                 index: ''
@@ -43154,6 +43554,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edHouse.house_room = this.houses[index].room;
             this.edHouse.house_class = this.houses[index].class;
             this.edHouse.house_name = this.houses[index].user.name;
+            this.edHouse.house_group = this.houses[index].group;
+            this.edHouse.house_duty = this.houses[index].duty;
             this.edHouse.index = index;
             this.isEditHouseShow = true;
         },
@@ -43169,7 +43571,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     room: this.edHouse.house_room,
                     class: this.edHouse.house_class,
-                    name: this.edHouse.house_name
+                    name: this.edHouse.house_name,
+                    group: this.edHouse.house_group,
+                    duty: this.edHouse.house_duty
                 },
                 // /api/users/:user/travels/:travel/groups/:group
                 url: this.$config + '/api/users/' + this.edHouse.user_id + '/travels/' + sessionStorage.actTravelId + '/groups/' + this.edHouse.id
@@ -43178,6 +43582,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this2.houses[_this2.edHouse.index].room = _this2.edHouse.house_room;
                     _this2.houses[_this2.edHouse.index].class = _this2.edHouse.house_class;
                     _this2.houses[_this2.edHouse.index].user.name = _this2.edHouse.house_name;
+                    _this2.houses[_this2.edHouse.index].user.group = _this2.edHouse.house_group;
+                    _this2.houses[_this2.edHouse.index].user.duty = _this2.edHouse.house_duty;
                     _this2.$toast('修改成功');
                     _this2.isEditHouseShow = false;
                 } else {
@@ -43239,11 +43645,15 @@ var render = function() {
             "tbody",
             _vm._l(_vm.houses, function(house, index) {
               return _c("tr", [
+                _c("td", [_vm._v(_vm._s(house.group))]),
+                _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(house.room))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(house.class))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(house.user.name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(house.duty))]),
                 _vm._v(" "),
                 _c("td", { attrs: { width: "100px" } }, [
                   _c("div", { staticClass: "editIcon" }, [
@@ -43292,7 +43702,41 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_house" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("房间")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("分组分组编号")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHouse.house_group,
+                        expression: "edHouse.house_group"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "填写分组编号", type: "text" },
+                    domProps: { value: _vm.edHouse.house_group },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHouse,
+                          "house_group",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_house" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("房间编号")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -43379,6 +43823,34 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
+              _c("div", { staticClass: "form_item_house" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("职责")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHouse.house_duty,
+                        expression: "edHouse.house_duty"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "填写职责", type: "text" },
+                    domProps: { value: _vm.edHouse.house_duty },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHouse, "house_duty", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
               _c("div", { staticClass: "issure" }, [
                 _c(
                   "button",
@@ -43407,11 +43879,15 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
+        _c("th", [_vm._v("分组编号")]),
+        _vm._v(" "),
         _c("th", [_vm._v("房间编号")]),
         _vm._v(" "),
         _c("th", [_vm._v("班级")]),
         _vm._v(" "),
         _c("th", [_vm._v("学生姓名")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("职责")]),
         _vm._v(" "),
         _c("th", [_vm._v("编辑")])
       ])

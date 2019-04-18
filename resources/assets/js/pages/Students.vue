@@ -105,8 +105,8 @@
                             <div><input class="item_input" type="text"  placeholder="填寫學生班級" disabled="disabled" :value="students[actIndex].class"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">學生房間號</div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生房間號" disabled="disabled" :value="students[actIndex].room"></div>
+                            <div class="item_title">學生分組號</div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生分組號" disabled="disabled" :value="students[actIndex].group"></div>
                         </div>
                         <div class="form_item">
                             <div class="item_title">學生職責</div>
@@ -148,8 +148,8 @@
                                     <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="edStudent.class"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">學生房間號(必填)<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
-                                    <div><input class="item_input" type="text"  placeholder="填寫學生房間號" v-model="edStudent.room"></div>
+                                    <div class="item_title">學生分組號(必填)<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                                    <div><input class="item_input" type="text"  placeholder="填寫學生分組號" v-model="edStudent.group"></div>
                                 </div>
                                 <div class="form_item_small">
                                     <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
@@ -191,8 +191,8 @@
                             <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="newStudent.class"></div>
                         </div>
                         <div class="form_item">
-                            <div class="item_title">學生房間號(必填)<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生房間號" v-model="newStudent.room"></div>
+                            <div class="item_title">學生分組號(必填)<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生分組號" v-model="newStudent.group"></div>
                         </div>
                         <div class="form_item">
                             <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
@@ -236,8 +236,8 @@
                             <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="searchStudent.class"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">學生房間號(必填)<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生房間號" v-model="searchStudent.room"></div>
+                            <div class="item_title">學生分組號(必填)<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生分組號" v-model="searchStudent.group"></div>
                         </div>
                         <div class="form_item_small">
                             <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
@@ -268,7 +268,7 @@
                     student_number:'',
                     class:'',
                     duty:'',
-                    room:'',
+                    group:'',
                 },
                 edStudent:{
                     id:'',
@@ -281,7 +281,7 @@
                     student_number:'',
                     class:'',
                     duty:'',
-                    room:'',
+                    group:'',
                     user_id:'',
                 },
                 searchStudent:{
@@ -293,7 +293,7 @@
                     student_number:'',
                     class:'',
                     duty:'',
-                    room:'', 
+                    group:'', 
                 },
                 isNewStudentShow:false,
                 isEditStudentShow:false,
@@ -346,7 +346,7 @@
                     this.newStudent.original_password='';
                     this.newStudent.student_number='';
                     this.newStudent.duty='';
-                    this.newStudent.room='';
+                    this.newStudent.group='';
                     this.newStudent.class='';
 
                 }).catch(err => {
@@ -364,7 +364,7 @@
                 this.edStudent.student_number=this.students[this.actIndex].student_number;
                 this.edStudent.class=this.students[this.actIndex].class;
                 this.edStudent.duty=this.students[this.actIndex].duty;
-                this.edStudent.room=this.students[this.actIndex].room;
+                this.edStudent.group=this.students[this.actIndex].group;
                 this.edStudent.user_id=this.students[this.actIndex].user_id;
                 this.errors={};
                 this.isEditStudentShow=true;
@@ -385,7 +385,7 @@
                         student_number:this.edStudent.student_number, 
                         class:this.edStudent.class, 
                         duty:this.edStudent.duty, 
-                        room:this.edStudent.room,
+                        group:this.edStudent.group,
                         user_id:this.edStudent.user_id,  
                     },
                     url: this.$config+'/api/users/'+this.edStudent.user_id+'/groups/'+this.edStudent.id+'/information',
@@ -398,7 +398,7 @@
                         this.students[this.actIndex].student_number=this.edStudent.student_number;
                         this.students[this.actIndex].class=this.edStudent.class;
                         this.students[this.actIndex].duty=this.edStudent.duty;
-                        this.students[this.actIndex].room=this.edStudent.room;
+                        this.students[this.actIndex].group=this.edStudent.group;
                         this.$toast('修改成功');
                         this.isEditStudentShow=false;    
                     }else{
@@ -488,7 +488,7 @@
                     student_number: this.searchStudent.student_number,
                     class: this.searchStudent.class,
                     duty: this.searchStudent.duty,
-                    room: this.searchStudent.room,
+                    group: this.searchStudent.group,
                 },
                 {
                     headers: {
@@ -509,8 +509,8 @@
                     // if(err.response.data.errors.duty){
                     //     this.$toast(err.response.data.errors.duty[0]);
                     // }
-                    // if(err.response.data.errors.room){
-                    //     this.$toast(err.response.data.errors.room[0]);
+                    // if(err.response.data.errors.group){
+                    //     this.$toast(err.response.data.errors.group[0]);
                     // }
                 });
             },
