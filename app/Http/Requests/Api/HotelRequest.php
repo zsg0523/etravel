@@ -20,7 +20,8 @@ class HotelRequest extends FormRequest
                     'leave_at' => 'required|date',
                     'times' => 'required|integer',
                     'hotel_address' => 'required',
-                    'hotel_phone' => 'required'
+                    'hotel_phone' => 'required',
+                    'hotel_location' => 'required'
                 ];
                 break;
             
@@ -32,7 +33,8 @@ class HotelRequest extends FormRequest
                     'leave_at' => 'date',
                     'times' => 'integer',
                     'hotel_address' => 'string',
-                    'hotel_phone' => 'string'
+                    'hotel_phone' => 'string',
+                    'hotel_location' => 'string'
                 ];
                 break;
         }

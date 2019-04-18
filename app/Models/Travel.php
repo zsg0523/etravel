@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Travel extends Model
 {
-    protected $fillable = ['travel_name', 'travel_at', 'travel_return','travel_introduction', 'urgency', 'assembly_station', 'assembly_at', 'dissolution_station', 'dissolution_at', 'add_by', 'travel_status', 'image', 'school_name','view_plan','meal_plan'];
+    protected $fillable = ['travel_name', 'travel_at', 'travel_return','travel_introduction', 'urgency', 'assembly_station', 'assembly_at', 'dissolution_station', 'dissolution_at', 'add_by', 'travel_status', 'image', 'school_name', 'view_plan', 'meal_plan', 'school_id'];
 
     public function users()
     {
@@ -80,5 +80,10 @@ class Travel extends Model
     public function write_titles()
     {
         return $this->hasMany(WriteTitle::class);
+    }
+
+    public function school()
+    {
+        return $this->belongsTo(School::class);
     }
 }
