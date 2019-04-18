@@ -74,6 +74,10 @@ $api->version('v1', [
 			$api->get('user/notifications/stats', 'NotificationsController@stats')->name('api.user.notifications.stats');
 			// 标记通知为已读
 			$api->patch('user/read/notifications', 'NotificationsController@read')->name('api.user.notifications.read');
+			// 修改用户手机号码
+			$api->patch('phone','UsersController@updatePhone')->name('api.user.updatePhone');
+			
+			$api->get('travels/school', 'TravelsController@test')->name('api.travel.test');
 
 
 			// 所有学校列表

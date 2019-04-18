@@ -24,6 +24,12 @@ class Group extends Model
 		return $query->orderBy('room', 'asc');
 	}
 
+	/** [scopeGroup 按分组大小排序] */
+	public function scopeGroup($query)
+	{
+		return $query->orderBy('group', 'asc');
+	}
+
 
 
 

@@ -21,7 +21,10 @@ class GroupsController extends Controller
     /** [travelIndex 旅行团分组安排] */
     public function travelIndex(Travel $travel)
     {
-    	$groups = $travel->groups()->room()->get();
+        // 按照房间排序
+        // $groups = $travel->groups()->room()->get();
+        // 按照分组排序
+    	$groups = $travel->groups()->group()->get();
     	return $this->response->collection($groups, new GroupTransformer());
     }
 

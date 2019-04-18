@@ -141,6 +141,31 @@ class UsersController extends Controller
         return $this->response->item($user, new UserTransformer());
     }
 
+    /** [updatePhone 修改用户手机号码] */ 
+    public function updatePhone(UserRequest $request)
+    {
+        // 获取缓存的手机号和区号，以及验证码
+        $verifyData = \Cache::get($request->verification_key);
+        if ( ! $verifyData) {
+            return $this->response->error('验证码已失效', 422);
+        }
+
+        if ( ! hash_equals($verifyData['code'], $request->verification_code)) {
+            // 返回401
+            return $this->response->errorUnauthorized('验证码错误');
+        }
+
+        $user = $this->user();
+
+        $attributes['phone'] = $request->phone;
+        // 清除验证码缓存
+        \Cache::forget($request->verification_key);
+
+        $user->update($attributes);
+
+        return $this->response->item($user, new UserTransformer());
+        
+    }
 
     
 

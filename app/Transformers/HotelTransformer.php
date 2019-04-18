@@ -24,6 +24,7 @@ class HotelTransformer extends TransformerAbstract
 			'times' => $hotel->times,
 			'image' => $hotel->image,
 			'hotel_phone' => $hotel->hotel_phone,
+			'hotel_location' => $hotel->hotel_location,
 			'created_at' => $hotel->created_at->toDateTimeString(),
 			'updated_at' => $hotel->updated_at->toDateTimeString(),
 		];

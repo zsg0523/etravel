@@ -40,7 +40,8 @@ class UserRequest extends FormRequest
                     'email' => 'email',
                     'introduction' => 'max:80',
                     'avatar_image_id' => 'exists:images,id,type,avatar,user_id,' . $userId,
-                    'en_name' => 'between:2,25|unique:users,en_name' . $userId
+                    'en_name' => 'between:2,25|unique:users,en_name' . $userId,
+                    'phone' => 'required|unique:users,phone'
                 ];
                 break;
         }
