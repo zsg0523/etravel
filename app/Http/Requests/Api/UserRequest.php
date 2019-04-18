@@ -20,6 +20,7 @@ class UserRequest extends FormRequest
                         'password' => 'required|string|min:6',
                         'verification_key' => 'required|string',
                         'verification_code' => 'required|string',
+                        'en_name' => 'required|between:2,25|unique:users,en_name'
                     ]; 
                 } else {
                     return [
@@ -27,6 +28,7 @@ class UserRequest extends FormRequest
                         'original_password' => 'required|string|min:6',
                         'email' => 'unique:users,email',
                         'phone' => 'required|unique:users,phone',
+                        'en_name' => 'required|between:2,25|unique:users,en_name'
                     ];
                 }
                 break;
@@ -38,6 +40,7 @@ class UserRequest extends FormRequest
                     'email' => 'email',
                     'introduction' => 'max:80',
                     'avatar_image_id' => 'exists:images,id,type,avatar,user_id,' . $userId,
+                    'en_name' => 'between:2,25|unique:users,en_name' . $userId
                 ];
                 break;
         }
@@ -56,6 +59,7 @@ class UserRequest extends FormRequest
     {
         return [
             'name.required' => '名称不能为空！',
+            'en_name.required' => '英文名称不能为空！',
         ];
     }
 

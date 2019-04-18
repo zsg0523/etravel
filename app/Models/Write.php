@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Write extends Model
 {
-    protected $fillable = ['image', 'content', 'user_id', 'travel_id', 'write_title_id'];
+    protected $fillable = ['image', 'content', 'user_id', 'travel_id', 'write_title_id', 'image_id'];
 
     public function user()
     {
@@ -21,6 +21,11 @@ class Write extends Model
     public function write_title()
     {
     	return $this->belongsTo(WriteTitle::class);
+    }
+
+    public function image()
+    {
+        return $this->belongsTo(Image::class);
     }
 
 
