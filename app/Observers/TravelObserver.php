@@ -14,11 +14,11 @@ use App\Models\Travel;
 class TravelObserver
 {	
 	/**
-	 * [saved 扣除金币，每次创建项目扣除相应数量金币]
+	 * [created 扣除金币，每次创建项目扣除相应数量金币]
 	 * @param  Travel $travel [description]
 	 * @return [type]         [description]
 	 */
-	public function saved(Travel $travel)
+	public function created(Travel $travel)
 	{
 		$user = User::where('id', $travel->add_by)->first();
 

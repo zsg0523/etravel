@@ -20,6 +20,7 @@ class WriteTransformer extends TransformerAbstract
 			'write_title_id' => $write->write_title_id,
 			'user_id' => $write->user_id,
 			'travel_id' => $write->travel_id,
+			'image_id' => $write->image_id,
 			'image' => $write->image,
 			'content' => $write->content,
 			'created_at' => $write->created_at->toDateTimeString(),

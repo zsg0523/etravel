@@ -55,13 +55,13 @@ class WritesController extends Controller
             // 更新现有模型，如果不存在则创建
             $write = $write->updateOrCreate(
                 ['user_id' => $this->user()->id, 'travel_id' => $travel->id, 'write_title_id'=>$title->id],
-                ['content' => $request->content, 'image' => $image_path]
+                ['content' => $request->content, 'image' => $image_path, 'image_id' => $request->travel_image_id]
             );
         } else {
             // 更新现有模型，如果不存在则创建
             $write = $write->updateOrCreate(
                 ['user_id' => $this->user()->id, 'travel_id' => $travel->id, 'write_title_id'=>$title->id],
-                ['image' => $image_path]
+                ['image' => $image_path, 'image_id' => $request->travel_image_id]
             );
         }
     	return $this->response->item($write, new WriteTransformer())->setStatusCode(201);

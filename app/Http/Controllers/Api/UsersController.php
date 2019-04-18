@@ -40,6 +40,7 @@ class UsersController extends Controller
             'code' => $verifyData['idd_code'],
             'phone' => $verifyData['phone'],
             'password' => bcrypt($request->password),
+            'en_name' => $request->en_name
         ]);
         // 清除验证码缓存
         \Cache::forget($request->verification_key);
