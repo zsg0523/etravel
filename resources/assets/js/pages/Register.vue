@@ -119,6 +119,7 @@
 		      		if(this.password == this.repassword){
 		      			this.$post(this.$config+'/api/users', {
 				          	name: this.username,
+				          	en_name: this.en_name,
 				          	password: this.password,
 				          	verification_code: this.smscode,
 				          	verification_key: this.key,

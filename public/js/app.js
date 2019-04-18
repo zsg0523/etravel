@@ -52697,6 +52697,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 																if (this.password == this.repassword) {
 																				this.$post(this.$config + '/api/users', {
 																								name: this.username,
+																								en_name: this.en_name,
 																								password: this.password,
 																								verification_code: this.smscode,
 																								verification_key: this.key
@@ -53976,8 +53977,8 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-var baseUrl = 'https://www.bunchparty.com/etravel/public'; //线上地址
-// const baseUrl='';
+// const baseUrl='https://www.bunchparty.com/etravel/public';//线上地址
+var baseUrl = '';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),
