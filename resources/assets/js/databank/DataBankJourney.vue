@@ -19,7 +19,7 @@
     .dataBankAddBtn_journey:hover{cursor:pointer;}
     .dataBankAddBtn_journey>img{width:50px;height: 50px;}
 	
-    .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;}
+    .editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;}
     .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
     .issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
     .issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;}
@@ -45,10 +45,10 @@
                         <div class="form_content_journey disflex">
                             <div class="form_item_journey">
                                 <div class="item_title">景点安排</div>
-                                <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee" v-html="travelInfo.view_plan"></div>
+                                <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee;line-height:25px;" v-html="travelInfo.view_plan"></div>
                             </div>
                         </div>
-                        <div class="dataBankAddBtn_journey" @click="addNewJourneyShow();">
+                        <div class="dataBankAddBtn_journey" @click="editViewShow();">
 				            <img src="/etravel/public/images/edit-all.png">
 				        </div>
                     </div>   
@@ -60,38 +60,38 @@
                         <div class="form_content_journey disflex">
                             <div class="form_item_journey">
                                 <div class="item_title">膳食安排</div>
-                                <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee" v-html="travelInfo.meal_plan"></div>
+                                <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee;line-height:25px;" v-html="travelInfo.meal_plan"></div>
                             </div>
                         </div>
-                        <div class="dataBankAddBtn_journey" @click="addNewJourneyShow();">
+                        <div class="dataBankAddBtn_journey" @click="editMealShow();">
 				            <img src="/etravel/public/images/edit-all.png">
 				        </div>
                     </div>    
                 </div>
             </div>
         </div>
-        <van-popup v-model="isNewJourneyShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditViewShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
                         <div class="item_title">景点安排</div>
-                        <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee" v-html="travelInfo.meal_plan"></div>
+                        <div><Editor @catchData='catchData' :childData='view_plan'></Editor></div>
                     </div>
                     <div class="issure">
-                        <button @click="addNewJourney()">保存</button>
+                        <button @click="editTravelInfo()">保存</button>
                     </div>
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isNewJourneyShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditMealShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
                         <div class="item_title">膳食安排</div>
-                        <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee" v-html="travelInfo.meal_plan"></div>
+                        <div><Editor @catchData='catchData' :childData='meal_plan'></Editor></div>
                     </div>
                     <div class="issure">
-                        <button @click="addNewJourney()">保存</button>
+                        <button @click="editTravelInfo()">保存</button>
                     </div>
                 </div>
             </div>
@@ -107,13 +107,16 @@
         },
   		data() {
             return {
-	        	travelInfo:{},
-	        	isEditJourneyViewShow:false,
-	        	isEditJourneyMealShow:false,
+                travelInfo:{},
+	        	isEditViewShow:false,
+	        	isEditMealShow:false,
+                edStatus:0,
+                view_plan:'',
+                meal_plan:'',
             }
         },
         mounted:function(){
-            getTravelInfo();
+            this.getTravelInfo();
         },
         methods:{
             getTravelInfo(){
@@ -125,10 +128,20 @@
                     }
                 }).then(res => {
                     this.travelInfo=res.data;
+                    this.view_plan=res.data.view_plan;
+                    this.meal_plan=res.data.meal_plan;
                 }).catch(err => {
                     this.$toast('获取失败');
                     console.log(err);
                 });
+            },
+            editViewShow(){
+                this.isEditViewShow=true;
+                this.edStatus=0;
+            },
+            editMealShow(){
+                this.isEditMealShow=true;
+                this.edStatus=1;
             },
             editTravelInfo(){
                 // 修改旅游基本信息
@@ -137,12 +150,19 @@
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
-                    data:this.travelInfo,
+                    data:{
+                        view_plan:this.view_plan,
+                        meal_plan:this.meal_plan,
+                    },
                     url: this.$config+'/api/travels/'+sessionStorage.actTravelId,
                 }).then(res => {
                     // console.log(res);
                     if(res.status==200){
                         this.$toast('修改成功');
+                        this.travelInfo.view_plan=this.view_plan;
+                        this.travelInfo.meal_plan=this.meal_plan;
+                        this.isEditViewShow=false;
+                        this.isEditMealShow=false;
                     }else{
                         this.$toast('修改失败');
                     }
@@ -152,10 +172,10 @@
                 });
             },
             catchData(value){
-                if(this.status=='newLocal'){
-                    this.newLocal.content=value;
-                }else if(this.status=='edLocal'){
-                    this.edLocal.content=value;
+                if(this.edStatus==0){
+                    this.view_plan=value;
+                }else if(this.edStatus==1){
+                    this.meal_plan=value;
                 }
             },
         },

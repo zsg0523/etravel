@@ -24,7 +24,7 @@
         min-height: 45px;
         line-height: 45px;
     }
-    .item_input{
+    .item_input_school{
         height:40px;
         padding-left:10px;
         outline: none;
@@ -85,6 +85,10 @@
     [v-cloak]{
         display: none;
     }
+    .van-dialog{
+        width:50%;
+    }
+
 </style>
 
 <template>
@@ -92,23 +96,23 @@
         <div v-cloak class="travelInfo disflex">    
             <div class="travelInfoItem">
                 <div>旅游名称</div>
-                <div><input class="item_input" placeholder="旅游名称" v-model="travelInfo.travel_name" type="text"></div>
+                <div><input class="item_input_school" placeholder="旅游名称" v-model="travelInfo.travel_name" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
                 <div>出行日期</div>
-                <div><input class="item_input" style="width:90%;" v-model="travelInfo.travel_at" placeholder="出行日期" type="text"></div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_at" placeholder="出行日期" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
                 <div>结束日期</div>
-                <div><input class="item_input" style="width:90%;" v-model="travelInfo.travel_return" placeholder="结束日期" type="text"></div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_return" placeholder="结束日期" type="text"></div>
             </div>
             <div class="travelInfoItem">
                 <div>旅游简介</div>
-                <div><input class="item_input" placeholder="旅游简介" v-model="travelInfo.introduction" type="text"></div>
+                <div><input class="item_input_school" placeholder="旅游简介" v-model="travelInfo.introduction" type="text"></div>
             </div> 
             <div class="travelInfoItem">
                 <div>学校名称</div>
-                <div><input class="item_input" placeholder="学校名称" v-model="travelInfo.school_name" type="text"></div>
+                <div><input class="item_input_school" placeholder="学校名称" v-model="travelInfo.school_name" type="text"></div>
             </div>
             <div class="travelInfoItem">
                 <div>项目进行状态</div>

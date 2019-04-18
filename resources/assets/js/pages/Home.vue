@@ -82,7 +82,7 @@
                         </div>
                         <div class="edit_icon disflex fl" v-else="">
                             <img src="/etravel/public/images/ending.png">
-                            <span>已完成</span>
+                            <span>已结束</span>
                         </div>
     					<!-- <div class="project_type disflex fr" v-if="travel.pivot['is_promise'] == 1">
     						<img src="/etravel/public/images/sent.png">

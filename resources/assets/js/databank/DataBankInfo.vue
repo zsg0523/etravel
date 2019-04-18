@@ -20,7 +20,7 @@
     .dataBankAddBtn:hover{cursor:pointer;}
     .dataBankAddBtn>img{width:50px;height: 50px;}
 
-    .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;}
+    .editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;}
     .editBoxContent{width:90%;margin-left: 5%;min-height:200px;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
     .issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
     .issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;}
@@ -223,7 +223,7 @@
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;height:120px;">
                                     <div class="item_title">安排</div>
-                                    <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee" v-html="badWeathers.urgency"></div>
+                                    <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee;line-height:25px;" v-html="badWeathers.urgency"></div>
                                     <!-- <div>
                                         <textarea class="item_area" placeholder="安排" disabled="disabled" :value="badWeathers.urgency"></textarea>
                                     </div> -->

@@ -21,7 +21,7 @@
 
     .active{font-size: 18px;}        
 
-    .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;}
+    .editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;}
     .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
 
     .editBoxContent .form_item_info{width: 100%;text-align: center;padding: 10px 0; border-bottom: 1px solid #e3e3e3; }

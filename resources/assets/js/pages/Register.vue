@@ -10,10 +10,10 @@
     .icon>img{width: 300px;}
     .login{width: 50%;height:570px;flex-flow:column nowrap;align-items: center;justify-content: center;}
     .login>div{width:70%;height: 60px;color: #000;}
-    .title{font-size: 25px;font-weight: bold;}
+    .title{font-size: 25px;font-weight: bold;line-height: 60px;}
     .login>div input{width: 100%;height:50px;border:none;outline: none;background: #fff;border-radius: 8px;padding-left: 8px;font-size: 16px;}
     .login>div a{color: #000;font-size: 14px;}
-    .login>div button{width: 100%;height: 50px;border: none;outline: none;background-color: #fff;border-radius: 8px;font-weight: bold;font-size: 16px;}
+    .login>div button{width: 100%;height: 50px;line-height: 50px;border: none;outline: none;background-color: #fff;border-radius: 8px;font-weight: bold;font-size: 16px;}
     .sel{width: 100%;height:50px;border:none;outline: none;background: #fff;border-radius: 8px;padding-left: 3px;font-size: 16px;}
     .sel>option{width:100%;height: 50px;line-height: 50px;}
     #sendCode{width:40%;height: 50px;line-height: 50px;font-size: 16px;background-color: #fff;border-radius: 8px;outline: none;border: none;}
@@ -28,7 +28,8 @@
             </div>
             <div class="disflex login">
                 <div class="title tc">A-Team-Travel</div>
-                <div><input type="text" placeholder="用户名" v-model="username"></div>
+                <div><input type="text" placeholder="中文名" v-model="username"></div>
+                <div><input type="text" placeholder="英文名" v-model="en_name"></div>
                 <div>
                 	<!-- <input type="text" placeholder="区号" v-model="idd_code"> -->
                 	<select class="sel" v-model="idd_code">
@@ -101,6 +102,7 @@
                     name:'Brunei(+673)'
                 }],
 	    		username:'',
+	    		en_name:'',
 	    		idd_code:'',
 		      	phoneNumber: '',
 		      	smscode:'',
@@ -113,7 +115,7 @@
 	  	},
 	  	methods: {
 		    register() {
-		      	if (this.password && this.username && this.repassword && this.smscode) {
+		      	if (this.password && this.username && this.en_name && this.repassword && this.smscode) {
 		      		if(this.password == this.repassword){
 		      			this.$post(this.$config+'/api/users', {
 				          	name: this.username,
@@ -131,7 +133,12 @@
 				              	this.$toast(res.data.message);
 				          	}
 				        }).catch(err => {
-				          	console.log(err)
+				          	console.log(err);
+				          	if(err.response.data.errors){
+				          		for(var key in err.response.data.errors){
+									this.$toast(err.response.data.errors[key][0]);
+								}
+			          		}
 				        });
 		      		}else{
 		      			this.$toast('两次密码不一致！');
@@ -157,7 +164,13 @@
 			              	this.$toast(res.data.message);
 			          	}
 			        }).catch(err => {
-			          	console.log(err)
+			          	console.log(err);
+			          	if(err.response.data.errors){
+			          		for(var key in err.response.data.errors){
+								this.$toast(err.response.data.errors[key][0]);
+							}
+			          	}
+			          	
 			        });
 		      	} else {
 		        	this.$toast('请填写手机区号和号码');

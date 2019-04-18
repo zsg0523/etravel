@@ -48,7 +48,7 @@
 		            </div>
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
-                        <div style="border:1px solid #ccc;border-radius: 8px;width:93%;background-color:#eeeeee" v-html="sheet.body"></div>
+                        <div style="border:1px solid #ccc;border-radius: 8px;width:93%;background-color:#eeeeee;line-height:25px;" v-html="sheet.body"></div>
                         <!-- <div>
                             <textarea class="item_area" disabled="disabled" placeholder="内容" :value="sheet.body"></textarea>
                         </div> -->

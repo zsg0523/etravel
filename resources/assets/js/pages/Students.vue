@@ -32,7 +32,7 @@
     .studentEditBtn>img{width:50px;height: 50px;}
     .act{background-color: #ffde01;}
 
-    .editBox{width: 600px;min-height:240px;background-color: #fff;border-radius: 15px;font-size: 16px;}
+    .editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;font-size: 16px;}
     .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
     .editBoxTitle{width:100%;height:50px;text-align: center;line-height: 50px;font-size: 18px;}
     .issureStu{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
