@@ -26,6 +26,7 @@
     .form_item>div{width: 97%;margin-left: 1.5%;height: 45px;line-height: 45px;}
     .form_item_small{width: 100%;height:80px;}
     .form_item_small>div{width: 97%;margin-left: 1.5%;height: 40px;line-height: 40px;}
+    .form_item_small>div>input{width:95% !important;}
     .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
     .studentEditBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
     .studentEditBtn:hover{cursor:pointer;}
@@ -41,7 +42,7 @@
     .cancel{background-color:#fff;border:1px solid #ccc;}
     .van-dialog{width:50%;}
     .err{color:red;float: right;font-size: 14px;}
-
+    .simulateShade{width:90%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;}
 </style>
 
 <template>
@@ -93,22 +94,26 @@
                             <div><input class="item_input" type="text" placeholder="填寫學生英文名" disabled="disabled" :value="students[actIndex].user.en_name"></div>
                         </div>
                         <div class="form_item_student">
+                            <div class="item_title">電話区号</div>
+                            <div><input class="item_input" type="text" placeholder="填寫電話区号" disabled="disabled" :value="students[actIndex].user.code"></div>
+                        </div>
+                        <div class="form_item_student">
                             <div class="item_title">聯繫電話</div>
                             <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" :value="students[actIndex].user.phone"></div>
                         </div>
-                        <div class="form_item_student">
+                        <div class="form_item_small">
                             <div class="item_title">學生學號</div>
                             <div><input class="item_input" type="text" placeholder="填寫學生學號" disabled="disabled" :value="students[actIndex].student_number"></div>
                         </div>
-                        <div class="form_item_student">
+                        <div class="form_item_small">
                             <div class="item_title">學生班級</div>
                             <div><input class="item_input" type="text"  placeholder="填寫學生班級" disabled="disabled" :value="students[actIndex].class"></div>
                         </div>
-                        <div class="form_item_student">
-                            <div class="item_title">學生房間號</div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生房間號" disabled="disabled" :value="students[actIndex].room"></div>
+                        <div class="form_item_small">
+                            <div class="item_title">學生分組號</div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生分組號" disabled="disabled" :value="students[actIndex].group"></div>
                         </div>
-                        <div class="form_item">
+                        <div class="form_item_small">
                             <div class="item_title">學生職責</div>
                             <div><input class="item_input" type="text"  placeholder="填寫學生職責" disabled="disabled" :value="students[actIndex].duty"></div>
                         </div>
@@ -119,24 +124,28 @@
                     <van-popup v-model="isEditStudentShow" :overlay="true" style="border-radius: 15px;">
                         <div class="editBox" >
                             <div class="editBoxContent disflex">
-                                <div class="form_item_small">
-                                    <div class="item_title">用戶ID</div>
+                                <div class="form_item_student">
+                                    <div class="item_title">用戶ID(不可编辑)</div>
                                     <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" v-model="edStudent.id"></div>
                                 </div>
-                                <div class="form_item_small">
-                                    <div class="item_title">學生密碼</div>
+                                <div class="form_item_student">
+                                    <div class="item_title">學生密碼(不可编辑)</div>
                                     <div><input class="item_input" type="text" placeholder="填寫學生密碼" disabled="disabled" v-model="edStudent.original_password"></div>
                                 </div>
-                                <div class="form_item_small">
-                                    <div class="item_title">學生中文名<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
+                                <div class="form_item_student">
+                                    <div class="item_title">學生中文名(不可编辑)<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填寫學生中文名" disabled="disabled" v-model="edStudent.name"></div>
                                 </div>
-                                <div class="form_item_small">
-                                    <div class="item_title">學生英文名<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
+                                <div class="form_item_student">
+                                    <div class="item_title">學生英文名(不可编辑)<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填寫學生英文名" disabled="disabled" v-model="edStudent.en_name"></div>
                                 </div>
-                                <div class="form_item_small">
-                                    <div class="item_title">聯繫電話<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
+                                <div class="form_item_student">
+                                    <div class="item_title">電話区号(不可编辑)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫電話区号" disabled="disabled" v-model="edStudent.code"></div>
+                                </div>
+                                <div class="form_item_student">
+                                    <div class="item_title">聯繫電話(不可编辑)<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" v-model="edStudent.phone"></div>
                                 </div>
                                 <div class="form_item_small">
@@ -148,8 +157,8 @@
                                     <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="edStudent.class"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">學生房間號(必填)<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
-                                    <div><input class="item_input" type="text"  placeholder="填寫學生房間號" v-model="edStudent.room"></div>
+                                    <div class="item_title">學生分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                                    <div><input class="item_input" type="text"  placeholder="填寫學生分組號" v-model="edStudent.group"></div>
                                 </div>
                                 <div class="form_item_small">
                                     <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
@@ -166,35 +175,44 @@
             <van-popup v-model="isNewStudentShow" :overlay="true" style="border-radius: 15px;">
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
-                        <div class="form_item">
+                        <div class="form_item_student">
                             <div class="item_title">學生密碼(必填)</div>
                             <div><input class="item_input" type="text" placeholder="填寫學生密碼" v-model="newStudent.original_password"></div>
                         </div>
-                        <div class="form_item">
-                            <div class="item_title">學生中文名<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
+                        <div class="form_item_student">
+                            <div class="item_title">學生中文名(必填)<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
                             <div><input class="item_input" type="text" placeholder="填寫學生中文名" v-model="newStudent.name"></div>
                         </div>
-                        <div class="form_item">
-                            <div class="item_title">學生英文名<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
+                        <div class="form_item_student">
+                            <div class="item_title">學生英文名(必填)<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
                             <div><input class="item_input" type="text" placeholder="填寫學生英文名" v-model="newStudent.en_name"></div>
                         </div>
-                        <div class="form_item">
-                            <div class="item_title">聯繫電話<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
+                        <div class="form_item_student">
+                            <div class="item_title">電話区号(必填)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
+                            <div>
+                                <div class="simulateShade">
+                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newStudent.code' v-model='newStudent.code'></AreaCodeSelector>
+                                </div>
+                                <!-- <input class="item_input" type="text" placeholder="填寫電話区号" v-model="newStudent.code"> -->
+                            </div>
+                        </div>
+                        <div class="form_item_small">
+                            <div class="item_title">聯繫電話(必填)<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
                             <div><input class="item_input" type="text" placeholder="填寫聯繫電話" v-model="newStudent.phone"></div>
                         </div>
-                        <div class="form_item">
+                        <div class="form_item_small">
                             <div class="item_title">學生學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
                             <div><input class="item_input" type="text" placeholder="填寫學生學號" v-model="newStudent.student_number"></div>
                         </div>
-                        <div class="form_item">
+                        <div class="form_item_small">
                             <div class="item_title">學生班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
                             <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="newStudent.class"></div>
                         </div>
-                        <div class="form_item">
-                            <div class="item_title">學生房間號(必填)<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生房間號" v-model="newStudent.room"></div>
+                        <div class="form_item_small">
+                            <div class="item_title">學生分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生分組號" v-model="newStudent.group"></div>
                         </div>
-                        <div class="form_item">
+                        <div class="form_item_small">
                             <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
                             <div><input class="item_input" type="text"  placeholder="填寫學生職責" v-model="newStudent.duty"></div>
                         </div>
@@ -207,24 +225,28 @@
             <van-popup v-model="isSearchStudentShow" :overlay="true" style="border-radius: 15px;">
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
-                        <div class="form_item_small">
-                            <div class="item_title">用戶ID</div>
+                        <div class="form_item_student">
+                            <div class="item_title">用戶ID(不可编辑)</div>
                             <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" :value="searchStudent.id"></div>
                         </div>
-                        <div class="form_item_small">
-                            <div class="item_title">學生密碼</div>
+                        <div class="form_item_student">
+                            <div class="item_title">學生密碼(不可编辑)</div>
                             <div><input class="item_input" type="text" placeholder="填寫學生密碼" disabled="disabled" :value="searchStudent.original_password"></div>
                         </div>
-                        <div class="form_item_small">
-                            <div class="item_title">學生中文名</div>
+                        <div class="form_item_student">
+                            <div class="item_title">學生中文名(不可编辑)</div>
                             <div><input class="item_input" type="text" placeholder="填寫學生中文名" disabled="disabled" :value="searchStudent.name"></div>
                         </div>
-                        <div class="form_item_small">
-                            <div class="item_title">學生英文名</div>
+                        <div class="form_item_student">
+                            <div class="item_title">學生英文名(不可编辑)</div>
                             <div><input class="item_input" type="text" placeholder="填寫學生英文名" disabled="disabled" :value="searchStudent.en_name"></div>
                         </div>
-                        <div class="form_item_small">
-                            <div class="item_title">聯繫電話</div>
+                        <div class="form_item_student">
+                            <div class="item_title">電話区号(不可编辑)</div>
+                            <div><input class="item_input" type="text" placeholder="填寫電話区号" disabled="disabled" v-model="searchStudent.code"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">聯繫電話(不可编辑)</div>
                             <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" v-model="searchStudent.phone"></div>
                         </div>
                         <div class="form_item_small">
@@ -236,8 +258,8 @@
                             <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="searchStudent.class"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">學生房間號(必填)<span class="err" v-if="errors.room" v-text="errors.room[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生房間號" v-model="searchStudent.room"></div>
+                            <div class="item_title">學生分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生分組號" v-model="searchStudent.group"></div>
                         </div>
                         <div class="form_item_small">
                             <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
@@ -254,13 +276,19 @@
     </div>
 </template>
 <script>
+    import AreaCodeSelector from '../components/AreaCodeSelector.vue';
+
     export default {
+        components: {
+            AreaCodeSelector,
+        },
         data() {
             return {
                 students:[],
                 newStudent:{
                     name:'',
                     en_name:'',
+                    code:'',
                     phone:'',
                     original_password:'',
                     add_by:sessionStorage.userId,
@@ -268,12 +296,13 @@
                     student_number:'',
                     class:'',
                     duty:'',
-                    room:'',
+                    group:'',
                 },
                 edStudent:{
                     id:'',
                     name:'',
                     en_name:'',
+                    code:'',
                     phone:'',
                     original_password:'',
                     add_by:sessionStorage.userId,
@@ -281,19 +310,20 @@
                     student_number:'',
                     class:'',
                     duty:'',
-                    room:'',
+                    group:'',
                     user_id:'',
                 },
                 searchStudent:{
                     id:'',
                     name:'',
                     en_name:'',
+                    code:'',
                     phone:'',
                     original_password:'',
                     student_number:'',
                     class:'',
                     duty:'',
-                    room:'', 
+                    group:'', 
                 },
                 isNewStudentShow:false,
                 isEditStudentShow:false,
@@ -342,11 +372,12 @@
                     this.isNewStudentShow=false;
                     this.newStudent.name='';
                     this.newStudent.en_name='';
+                    this.newStudent.code='';
                     this.newStudent.phone='';
                     this.newStudent.original_password='';
                     this.newStudent.student_number='';
                     this.newStudent.duty='';
-                    this.newStudent.room='';
+                    this.newStudent.group='';
                     this.newStudent.class='';
 
                 }).catch(err => {
@@ -360,11 +391,12 @@
                 this.edStudent.original_password=this.students[this.actIndex].user.original_password;
                 this.edStudent.name=this.students[this.actIndex].user.name;
                 this.edStudent.en_name=this.students[this.actIndex].user.en_name;
+                this.edStudent.code=this.students[this.actIndex].user.code;
                 this.edStudent.phone=this.students[this.actIndex].user.phone;
                 this.edStudent.student_number=this.students[this.actIndex].student_number;
                 this.edStudent.class=this.students[this.actIndex].class;
                 this.edStudent.duty=this.students[this.actIndex].duty;
-                this.edStudent.room=this.students[this.actIndex].room;
+                this.edStudent.group=this.students[this.actIndex].group;
                 this.edStudent.user_id=this.students[this.actIndex].user_id;
                 this.errors={};
                 this.isEditStudentShow=true;
@@ -381,11 +413,12 @@
                         original_password:this.edStudent.original_password, 
                         name:this.edStudent.name, 
                         en_name:this.edStudent.en_name, 
+                        code:this.edStudent.code, 
                         phone:this.edStudent.phone, 
                         student_number:this.edStudent.student_number, 
                         class:this.edStudent.class, 
                         duty:this.edStudent.duty, 
-                        room:this.edStudent.room,
+                        group:this.edStudent.group,
                         user_id:this.edStudent.user_id,  
                     },
                     url: this.$config+'/api/users/'+this.edStudent.user_id+'/groups/'+this.edStudent.id+'/information',
@@ -394,11 +427,12 @@
                         this.students[this.actIndex].user.original_password=this.edStudent.original_password;
                         this.students[this.actIndex].user.name=this.edStudent.name;
                         this.students[this.actIndex].user.en_name=this.edStudent.en_name;
+                        this.students[this.actIndex].user.code=this.edStudent.code;
                         this.students[this.actIndex].user.phone=this.edStudent.phone;
                         this.students[this.actIndex].student_number=this.edStudent.student_number;
                         this.students[this.actIndex].class=this.edStudent.class;
                         this.students[this.actIndex].duty=this.edStudent.duty;
-                        this.students[this.actIndex].room=this.edStudent.room;
+                        this.students[this.actIndex].group=this.edStudent.group;
                         this.$toast('修改成功');
                         this.isEditStudentShow=false;    
                     }else{
@@ -463,6 +497,7 @@
                             this.searchStudent.id=res.data.id;
                             this.searchStudent.name=res.data.name;
                             this.searchStudent.en_name=res.data.en_name;
+                            this.searchStudent.code=res.data.code;
                             this.searchStudent.phone=res.data.phone;
                             this.searchStudent.original_password=res.data.original_password;
                             this.searchStudentShow();
@@ -484,11 +519,12 @@
                 // 添加已有用户到旅游/api/users/:user/travels/:travel/groups
                 this.$post(this.$config+'/api/users/'+this.searchStudent.id+'/travels/'+sessionStorage.actTravelId+'/groups',
                 {
+                    code:this.searchStudent.code,
                     phone:this.searchStudent.phone,
                     student_number: this.searchStudent.student_number,
                     class: this.searchStudent.class,
                     duty: this.searchStudent.duty,
-                    room: this.searchStudent.room,
+                    group: this.searchStudent.group,
                 },
                 {
                     headers: {
@@ -509,8 +545,8 @@
                     // if(err.response.data.errors.duty){
                     //     this.$toast(err.response.data.errors.duty[0]);
                     // }
-                    // if(err.response.data.errors.room){
-                    //     this.$toast(err.response.data.errors.room[0]);
+                    // if(err.response.data.errors.group){
+                    //     this.$toast(err.response.data.errors.group[0]);
                     // }
                 });
             },
@@ -521,6 +557,9 @@
                 return {
                     act: index==this.actIndex? true:false,
                 }
+            },
+            selectedAreaCode(value){
+                this.newStudent.code=value;
             },
         },
     }

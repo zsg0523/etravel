@@ -31,11 +31,9 @@
                 <div><input type="text" placeholder="中文名" v-model="username"></div>
                 <div><input type="text" placeholder="英文名" v-model="en_name"></div>
                 <div>
-                	<!-- <input type="text" placeholder="区号" v-model="idd_code"> -->
-                	<select class="sel" v-model="idd_code">
-                        <option value="">请选择区号</option>
-                        <option v-for="item in optList" :value="item.value">{{ item.name }}</option>
-                    </select>
+                    <div class="areaSel">
+                        <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='idd_code' v-model='idd_code'></AreaCodeSelector>
+                    </div>
                 </div>
                 <div><input type="text" placeholder="手机号" v-model="phoneNumber"></div>
                 <div class="disflex" style="justify-content: space-between;">
@@ -63,44 +61,14 @@
 				 <option value="853">中国澳门+853</option>
 			 </select> -->
 <script>
-	  export default {
+    import AreaCodeSelector from '../components/AreaCodeSelector.vue';
+
+	export default {
+	  	components: {
+            AreaCodeSelector,
+        },
 	  	data() {
 	    	return {
-	    		optList:[{
-                    value:'86',
-                    name:'中国大陆(+86)'
-                },{
-                    value:'852',
-                    name:'中国香港(+852)'
-                },
-                {
-                    value:'886',
-                    name:'中国台湾(+886)'
-                },
-                {
-                    value:'853',
-                    name:'中国澳门(+853)'
-                },
-                {
-                    value:'1473',
-                    name:'United Kingdom(+1473)'
-                },
-                {
-                    value:'82',
-                    name:'South Korea(+82)'
-                },
-                {
-                    value:'81',
-                    name:'Japan(+81)'
-                },
-                {
-                    value:'49',
-                    name:'Germany(+49)'
-                },
-                {
-                    value:'673',
-                    name:'Brunei(+673)'
-                }],
 	    		username:'',
 	    		en_name:'',
 	    		idd_code:'',
@@ -194,6 +162,9 @@
 					this.time=0;
             	}
         	},
+			selectedAreaCode(value){
+               	this.idd_code=value;
+            },
 	  	},
 	  	computed: {
 	        text() {

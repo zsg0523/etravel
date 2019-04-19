@@ -23,6 +23,7 @@
 
     .editBtnGroup{width:97%;height:50px;line-height: 50px;}
     .editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;}
+    .areaSel{width:100%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;}
 
     .van-dialog{width:50%;}
 
@@ -70,7 +71,11 @@
                     </div>
 		            <div class="form_item_phone">
 		                <div class="item_title">电话区号</div>
-		                <div><input class="item_input_phone" type="text" placeholder="电话区号"  v-model="newPhone.area_code"></div>
+		                <div>
+                            <div class="areaSel">
+                                <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newPhone.area_code' v-model='newPhone.area_code'></AreaCodeSelector>
+                            </div>      
+                        </div>
 		            </div>
 		            <div class="form_item_phone">
 		                <div class="item_title">联系电话</div>
@@ -95,8 +100,14 @@
                     </div>
 		            <div class="form_item_phone">
 		                <div class="item_title">电话区号</div>
-		                <div><input class="item_input_phone" type="text" placeholder="电话区号"  v-model="edPhone.area_code"></div>
+                        <!-- <div><input class="item_input_phone" type="text" placeholder="电话区号"  v-model="edPhone.area_code"></div> -->
+		                <div>
+                            <div class="areaSel">
+                                <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='edPhone.area_code' v-model='edPhone.area_code'></AreaCodeSelector>
+                            </div>
+                        </div>
 		            </div>
+
 		            <div class="form_item_phone">
 		                <div class="item_title">联系电话</div>
 		                <div><input class="item_input_phone" type="text" placeholder="联系电话"  v-model="edPhone.phone"></div>
@@ -111,7 +122,12 @@
 </template>
 
 <script>
+    import AreaCodeSelector from '../components/AreaCodeSelector.vue';
+
   	export default {
+        components: {
+            AreaCodeSelector,
+        },
   		data() {
             return {
 	        	phones:[],
@@ -132,6 +148,7 @@
 	        	},
 	        	isNewPhoneShow:false,
 	        	isEditPhoneShow:false,
+                isNew:true,
             }
         },
         mounted:function(){
@@ -156,6 +173,7 @@
             },
             addNewPhoneShow(){
                 this.isNewPhoneShow=true;
+                this.isNew=true;
             },
             addNewPhone(){
                 // 新增联系人
@@ -175,7 +193,7 @@
                     this.newPhone.duty='';
                 }).catch(err => {
                     this.$toast('添加失败');
-                    console.log(err)
+                    console.log(err);
                 });
             },
             editPhoneShow(index){
@@ -186,6 +204,7 @@
                 this.edPhone.duty=this.phones[index].duty;
                 this.edPhone.index=index;
                 this.isEditPhoneShow=true;
+                this.isNew=false;
             },
             editPhone(){
                 // 修改联系人信息
@@ -245,7 +264,13 @@
 
                 });
             },
-
+            selectedAreaCode(value){
+                if(this.isNew){
+                    this.newPhone.area_code=value;
+                }else{
+                    this.edPhone.area_code=value;
+                }
+            },
         },
   	}
 </script>

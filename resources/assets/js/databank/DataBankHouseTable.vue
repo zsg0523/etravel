@@ -36,17 +36,23 @@
             <table>
                 <thead>
                     <tr>
+                        <th>分组编号</th>
                         <th>房间编号</th>
                         <th>班级</th>
-                        <th>学生姓名</th>
+                        <th>中文名</th>
+                        <th>英文名</th>
+                        <th>职责</th>
                         <th>编辑</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(house,index) in houses">
+                        <td>{{house.group}}</td>
                         <td>{{house.room}}</td>
                         <td>{{house.class}}</td>
                         <td>{{house.user.name}}</td>
+                        <td>{{house.user.en_name}}</td>
+                        <td>{{house.duty}}</td>
                         <td width="100px">
                             <div class="editIcon"><img src="/etravel/public/images/edit.png" @click="editHouseShow(index);"></div>
                             <!-- <div class="editIcon"><img src="/etravel/public/images/appointAdd.png" @click="addNewHouseShow();"></div> -->
@@ -75,7 +81,7 @@
                     <div class="form_item_house">
                         <div class="item_title">学生姓名</div>
                         <div>
-                            <input class="item_input" placeholder="学生姓名" type="text"  v-model="newHouse.house_name">
+                            <input class="item_input" placeholder="学生姓名" type="text"  v-model="newHouse.name">
                         </div>
                     </div>
                     <div class="issure">
@@ -88,7 +94,13 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_house">
-                        <div class="item_title">房间</div>
+                        <div class="item_title">分组编号</div>
+                        <div>
+                            <input class="item_input" placeholder="填写分组编号" type="text"  v-model="edHouse.house_group">
+                        </div>
+                    </div>
+                    <div class="form_item_house">
+                        <div class="item_title">房间编号</div>
                         <div>
                             <input class="item_input" placeholder="填写房间编号" type="text"  v-model="edHouse.house_room">
                         </div>
@@ -99,10 +111,22 @@
                             <input class="item_input" placeholder="填写班级" type="text"  v-model="edHouse.house_class">
                         </div>
                     </div>
-                    <div class="form_item_house">
-                        <div class="item_title">学生姓名</div>
+                    <!-- <div class="form_item_house">
+                        <div class="item_title">中文名</div>
                         <div>
-                            <input class="item_input" placeholder="填写学生姓名" type="text"  v-model="edHouse.house_name">
+                            <input class="item_input" placeholder="填写中文名" type="text"  v-model="edHouse.name">
+                        </div>
+                    </div>
+                    <div class="form_item_house">
+                        <div class="item_title">英文名</div>
+                        <div>
+                            <input class="item_input" placeholder="填写英文名" type="text"  v-model="edHouse.en_name">
+                        </div>
+                    </div> -->
+                    <div class="form_item_house">
+                        <div class="item_title">职责</div>
+                        <div>
+                            <input class="item_input" placeholder="填写职责" type="text"  v-model="edHouse.house_duty">
                         </div>
                     </div>
                     <div class="issure">
@@ -127,7 +151,10 @@
                 edHouse:{
                     house_room:'',
                     house_class:'',
-                    house_name:'',
+                    // name:'',
+                    // en_name:'',
+                    house_group:'',
+                    house_duty:'',
                     id:'',
                     user_id:'',
                     index:'',
@@ -141,7 +168,7 @@
         },
         methods:{
             getHouses(){
-                // 获取分房表信息
+                // 获取分组分房表信息
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -184,7 +211,10 @@
                 this.edHouse.user_id=this.houses[index].user_id;
                 this.edHouse.house_room=this.houses[index].room;
                 this.edHouse.house_class=this.houses[index].class;
-                this.edHouse.house_name=this.houses[index].user.name;
+                // this.edHouse.name=this.houses[index].user.name;
+                // this.edHouse.en_name=this.houses[index].user.en_name;
+                this.edHouse.house_group=this.houses[index].group;
+                this.edHouse.house_duty=this.houses[index].duty;
                 this.edHouse.index=index;
                 this.isEditHouseShow=true;
             },
@@ -198,7 +228,10 @@
                     data:{
                         room:this.edHouse.house_room,
                         class:this.edHouse.house_class,
-                        name:this.edHouse.house_name,
+                        name:this.edHouse.name,
+                        en_name:this.edHouse.en_name,
+                        group:this.edHouse.house_group,
+                        duty:this.edHouse.house_duty,
                     },
                     // /api/users/:user/travels/:travel/groups/:group
                     url: this.$config+'/api/users/'+this.edHouse.user_id+'/travels/'+sessionStorage.actTravelId+'/groups/'+this.edHouse.id,
@@ -206,7 +239,10 @@
                     if(res.status==200){
                         this.houses[this.edHouse.index].room=this.edHouse.house_room;
                         this.houses[this.edHouse.index].class=this.edHouse.house_class;
-                        this.houses[this.edHouse.index].user.name=this.edHouse.house_name;
+                        this.houses[this.edHouse.index].user.name=this.edHouse.name;
+                        this.houses[this.edHouse.index].user.en_name=this.edHouse.en_name;
+                        this.houses[this.edHouse.index].group=this.edHouse.house_group;
+                        this.houses[this.edHouse.index].duty=this.edHouse.house_duty;
                         this.$toast('修改成功');
                         this.isEditHouseShow=false;    
                     }else{
@@ -220,8 +256,8 @@
             delHouse(userId,houseId){
                 // 删除分房信息
                 this.$dialog.confirm({
-                    title: '删除分房表信息',
-                    message: '是否删除该分房'
+                    title: '删除分组分房表信息',
+                    message: '是否删除该条信息'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

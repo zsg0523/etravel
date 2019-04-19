@@ -35,10 +35,10 @@
         <div class="dataBank_input_form disflex">
             <div class="pane_content_localculture">
                 <div class="form_content disflex" v-for="(local,index) in locals">
-                    <div class="form_item_journeyInfo">
+                    <!-- <div class="form_item_journeyInfo">
                         <div class="item_title">标题</div>
                         <div><input class="item_input_journeyInfo" placeholder="标题" type="text" disabled="disabled"  :value="local.title"></div>
-                    </div>
+                    </div> -->
                     <!-- <div class="form_item_journeyInfo">
                         <div class="item_title">地点</div>
                         <div>
@@ -66,10 +66,10 @@
         <van-popup v-model="isNewLocalShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item_journeyInfo">
+                    <!-- <div class="form_item_journeyInfo">
                         <div class="item_title">标题</div>
                         <div><input class="item_input_journeyInfo" placeholder="标题" type="text" v-model="newLocal.title"></div>
-                    </div>
+                    </div> -->
                     <!-- <div class="form_item_journeyInfo">
                         <div class="item_title">地点</div>
                         <div>
@@ -93,10 +93,10 @@
         <van-popup v-model="isEditLocalShow" :overlay="true" style="border-radius: 15px;">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
-                    <div class="form_item_journeyInfo">
+                    <!-- <div class="form_item_journeyInfo">
                         <div class="item_title">标题</div>
                         <div><input class="item_input_journeyInfo" placeholder="标题" type="text"  v-model="edLocal.title"></div>
-                    </div>
+                    </div> -->
                     <!-- <div class="form_item_journeyInfo">
                         <div class="item_title">地点</div>
                         <div>
@@ -131,13 +131,13 @@
             return {
                 locals:[],
                 newLocal:{
-                    title:'',
+                    // title:'',
                     content:'',
                     // sites:'',
                 },
                 edLocal:{
                     id:'',
-                    title:'',
+                    // title:'',
                     content:'',
                     // sites:'',
                     index:'',
@@ -182,7 +182,7 @@
                     this.$toast('添加成功');
                     this.getLocals();
                     this.isNewLocalShow=false;
-                    this.newLocal.title='';
+                    // this.newLocal.title='';
                     this.newLocal.content='';
                     // this.newLocal.sites='';
                 }).catch(err => {
@@ -192,7 +192,7 @@
             },
             editLocalShow(index){
                 this.edLocal.id=this.locals[index].id;
-                this.edLocal.title=this.locals[index].title;
+                // this.edLocal.title=this.locals[index].title;
                 this.edLocal.content=this.locals[index].content;
                 // this.edLocal.sites=this.locals[index].sites;
                 this.edLocal.index=index;
@@ -207,14 +207,14 @@
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
                     data:{
-                        title:this.edLocal.title,
+                        // title:this.edLocal.title,
                         content:this.edLocal.content,
                         // sites:this.edLocal.sites,
                     },
                     url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/locals/'+this.edLocal.id,
                 }).then(res => {
                     if(res.status==200){
-                        this.locals[this.edLocal.index].title=this.edLocal.title;
+                        // this.locals[this.edLocal.index].title=this.edLocal.title;
                         this.locals[this.edLocal.index].content=this.edLocal.content;
                         // this.locals[this.edLocal.index].sites=this.edLocal.sites;
                         this.$toast('修改成功');

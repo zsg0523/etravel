@@ -117,7 +117,7 @@
             return {
                 evaluationInfos:[],
                 eval:'',
-                optList: [{value:'1',title:'1'},{value:'2',title:'2'},{value:'3',title:'3'}],
+                optList: [{value:'1',title:'1(一个选项)'},{value:'2',title:'2(两个选项)'},{value:'3',title:'3(五个选项)'}],
                 newEvaluationInfo:{
                     content:'',
                     type:'',

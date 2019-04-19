@@ -32,6 +32,30 @@
     
     .bigRadio{width:20px;height:20px;}
     .van-dialog{width:50%;}
+    .imgIcon{
+        width:100px;
+        height: 40px;
+        float: right;
+    }
+    .imgIcon img{
+        height: 35px;
+        float: right;
+    }
+    .imgs{
+        width:95%;
+        position: relative;
+    }
+    .travelImg{
+        width:100%;
+        border-radius: 15px;
+    }
+    .cancelImg{
+        width:30px;
+        height: 30px;
+        top: 15px;
+        right: 15px;
+        position: absolute;
+    }
 
 </style>
 
@@ -58,7 +82,7 @@
                                     <div class="item_title">日期及时间</div>
                                     <div><input class="item_input" placeholder="日期及时间" style="width:97%;" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
                                  </div>
-                                <div class="form_item_info" style="width:100%;height:120px;">
+                                <div class="form_item_info" style="width:100%;min-height:120px;">
                                     <div class="item_title">详细地址</div>
                                     <div>
                                         <textarea class="item_area" placeholder="详细地址" disabled="disabled" v-model="assemblePlaces.assembly_station"></textarea>
@@ -75,7 +99,7 @@
                                     <div class="item_title">日期及时间</div>
                                     <div><input class="item_input"  placeholder="日期及时间" style="width:97%;" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
                                 </div>
-                                <div class="form_item_info" style="width:100%;height:120px;">
+                                <div class="form_item_info" style="width:100%;min-height:120px;">
                                     <div class="item_title">地址</div>
                                     <div>
                                         <textarea class="item_area" placeholder="详细地址" disabled="disabled" v-model="assemblePlaces.dissolution_station"></textarea>
@@ -164,18 +188,24 @@
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.leave_at" ></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">几晚</div>
+                                    <div class="item_title">入住天数</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.times" ></div>
                                 </div>
                                 <div class="form_item_info">
                                     <div class="item_title">联系电话</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_phone" ></div>
                                 </div>
-                                <div class="form_item_info" style="width:100%;height:120px;">
+                                <div class="form_item_info" >
                                     <div class="item_title">酒店地址</div>
-                                    <div>
-                                        <textarea class="item_area" placeholder="酒店地址" disabled="disabled" :value="hotel.hotel_address"></textarea>
-                                    </div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_address" ></div>
+                                </div>
+                                <div class="form_item_info" >
+                                    <div class="item_title">酒店经纬度</div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_location" ></div>
+                                </div>
+                                <div class="form_item_info"  style="width:100%;">
+                                    <div class="item_title">酒店图片</div>
+                                    <div><img style="width:97%;" :src="hotel.image"></div>
                                 </div>
                                 <div class="editBtnGroup">
                                     <img @click="delHotel(hotel.id);" src="/etravel/public/images/rush-icon.png">
@@ -196,6 +226,10 @@
                                 <div class="form_item_info" style="width:100%;">
                                     <div class="item_title">老师姓名</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.leader" ></div>
+                                </div>
+                                <div class="form_item_info" style="width:100%;">
+                                    <div class="item_title">区号</div>
+                                    <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.area_code" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
                                     <div class="item_title">老师电话</div>
@@ -221,7 +255,7 @@
                     <div role="tabpanel" class="tab-pane" id="heavyWeather">
                         <div class="pane_content_info">
                             <div class="form_content disflex">
-                                <div class="form_item_info" style="width:100%;height:120px;">
+                                <div class="form_item_info" style="width:100%;min-height:120px;">
                                     <div class="item_title">安排</div>
                                     <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee;line-height:25px;" v-html="badWeathers.urgency"></div>
                                     <!-- <div>
@@ -378,17 +412,35 @@
                         <div><input class="item_input" type="text" placeholder="离开日期(yyyy-mm-dd)" v-model="newHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">几晚</div>
-                        <div><input class="item_input" type="text" placeholder="几晚(1-N)" v-model="newHotel.times" ></div>
+                        <div class="item_title">入住天数</div>
+                        <div><input class="item_input" type="text" placeholder="入住天数" v-model="newHotel.times" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">联系电话</div>
                         <div><input class="item_input" type="text" placeholder="联系电话" v-model="newHotel.hotel_phone" ></div>
                     </div>
-                    <div class="form_item_info" style="width:100%;height:120px;">
+                    <div class="form_item_info">
                         <div class="item_title">酒店地址</div>
-                        <div>
-                            <textarea class="item_area" placeholder="酒店地址" v-model="newHotel.hotel_address"></textarea>
+                        <div><input class="item_input"  type="text" placeholder="酒店地址" v-model="newHotel.hotel_address" ></div>
+                    </div>
+                    <div class="form_item_info">
+                        <div class="item_title">酒店经纬度</div>
+                        <div><input class="item_input"  type="text" placeholder="酒店经纬度" v-model="newHotel.hotel_location" ></div>
+                    </div>
+                    <div class="form_item_info" style="width:100%;">
+                        <div style="width:93%;">
+                            酒店图片
+                            <div class="imgIcon">
+                                <van-uploader style="width:50px;height:40px;float:right;" :after-read="onRead" accept="image/*">
+                                    <img src="/etravel/public/images/sm-insert.png">
+                                </van-uploader>
+                            </div>
+                        </div>
+                        <div style="width:93%;">
+                            <div class="imgs" style="width:97%">    
+                                <img class="travelImg" :src="newHotel.image">
+                                <img class="cancelImg" src="/etravel/public/images/delete.png" @click="resetImg();" />
+                            </div>
                         </div>
                     </div>
                     <div class="issure">
@@ -414,17 +466,35 @@
                         <div><input class="item_input" type="text" placeholder="离开日期(yyyy-mm-dd)" v-model="edHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">几晚</div>
-                        <div><input class="item_input" type="text" placeholder="几晚(1-N)" v-model="edHotel.times" ></div>
+                        <div class="item_title">入住天数</div>
+                        <div><input class="item_input" type="text" placeholder="入住天数" v-model="edHotel.times" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">联系电话</div>
                         <div><input class="item_input" type="text" placeholder="联系电话" v-model="edHotel.hotel_phone" ></div>
                     </div>
-                    <div class="form_item_info" style="width:100%;height:120px;">
+                    <div class="form_item_info">
                         <div class="item_title">酒店地址</div>
+                        <div><input class="item_input" type="text" placeholder="酒店地址" v-model="edHotel.hotel_address" ></div>
+                    </div>
+                    <div class="form_item_info">
+                        <div class="item_title">酒店经纬度</div>
+                        <div><input class="item_input" type="text" placeholder="酒店经纬度(经度,纬度)" v-model="edHotel.hotel_location" ></div>
+                    </div>
+                    <div class="form_item_info" style="width:100%;">
+                        <div style="width:93%;">
+                            酒店图片
+                            <div class="imgIcon">
+                                <van-uploader style="width:50px;height:40px;float:right;" :after-read="onRead" accept="image/*">
+                                    <img src="/etravel/public/images/sm-insert.png">
+                                </van-uploader>
+                            </div>
+                        </div>
                         <div>
-                            <textarea class="item_area" placeholder="酒店地址" v-model="edHotel.hotel_address"></textarea>
+                            <div class="imgs" style="width:97%">    
+                                <img class="travelImg" :src="edHotel.image">
+                                <img class="cancelImg" src="/etravel/public/images/delete.png" @click="resetImg();" />
+                            </div>
                         </div>
                     </div>
                     <div class="issure">
@@ -563,6 +633,8 @@
                     hotel_name:'',
                     hotel_address:'',
                     hotel_phone:'',
+                    hotel_location:'',
+                    image:'',
                     travel_id:sessionStorage.actTravelId,
                 },
                 edHotel:{
@@ -573,6 +645,8 @@
                     hotel_name:'',
                     hotel_address:'',
                     hotel_phone:'',
+                    hotel_location:'',
+                    image:'',
                     index:'',
                 },
                 leadTeachers:[],
@@ -603,6 +677,7 @@
                 isEditLeadTeacherShow:false,
                 isEditBadWeatherShow:false,
                 isNew:true,
+                isNewImg:true,
             }
         },
         mounted:function(){
@@ -815,6 +890,7 @@
             },
             addNewHotelShow(){
                 this.isNewHotelShow=true;
+                this.isNewImg=true;
             },
             addNewHotel(){
                 // 新增酒店
@@ -834,6 +910,8 @@
                     this.newHotel.hotel_name='';
                     this.newHotel.hotel_address='';
                     this.newHotel.hotel_phone='';
+                    this.newHotel.hotel_location='';
+                    this.newHotel.image='';
                 }).catch(err => {
                     this.$toast('添加失败');
                     console.log(err)
@@ -847,8 +925,11 @@
                 this.edHotel.hotel_name=this.hotels[index].hotel_name;
                 this.edHotel.hotel_address=this.hotels[index].hotel_address;
                 this.edHotel.hotel_phone=this.hotels[index].hotel_phone;
+                this.edHotel.hotel_location=this.hotels[index].hotel_location;
+                this.edHotel.image=this.hotels[index].image;
                 this.edHotel.index=index;
                 this.isEditHotelShow=true;
+                this.isNewImg=false;
             },
             editHotel(){
                 // 修改酒店信息
@@ -864,6 +945,8 @@
                         hotel_name:this.edHotel.hotel_name,
                         hotel_address:this.edHotel.hotel_address,
                         hotel_phone:this.edHotel.hotel_phone,
+                        image:this.edHotel.image,
+                        hotel_location:this.edHotel.hotel_location,
                     },
                     url: this.$config+'/api/hotels/'+this.edHotel.id,
                 }).then(res => {
@@ -874,6 +957,8 @@
                         this.hotels[this.edHotel.index].hotel_name=this.edHotel.hotel_name;
                         this.hotels[this.edHotel.index].hotel_address=this.edHotel.hotel_address;
                         this.hotels[this.edHotel.index].hotel_phone=this.edHotel.hotel_phone;
+                        this.hotels[this.edHotel.index].hotel_location=this.edHotel.hotel_location;
+                        this.hotels[this.edHotel.index].image=this.edHotel.image;
                         this.$toast('修改成功');
                         this.isEditHotelShow=false;    
                     }else{
@@ -1073,11 +1158,53 @@
                 }else{
                     this.edLeadTeacher.area_code=value;
                 }
-                console.log(value);
+                // console.log(value);
             },
             catchData(value){
                 this.edBadWeather.urgency=value;
             },
+            onRead(file){
+                this.$ajax({
+                    method: 'post',
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    },
+                    data:{
+                        type:'travel',
+                        image:file.content,
+                    },
+                    url: this.$config+'/api/images',
+                }).then(res => {
+                    console.log(res);
+                    if(res.status==201){
+                        this.$toast('上传成功');
+                        if(this.isNewImg){
+                            this.newHotel.image=res.data.data.path;
+                        }else{
+                            this.edHotel.image=res.data.data.path;
+                        }
+                    }else{
+                        this.$toast('上传失败');
+                    }
+                }).catch(err => {
+                    this.$toast('上传失败');
+                    console.log(err)
+                });
+            },
+            resetImg(){
+                this.$dialog.confirm({
+                    title: '重置图片',
+                    message: '是否重置該图片'
+                }).then(() => {
+                    if(this.isNewImg){
+                        this.newHotel.image="http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png";
+                    }else{
+                        this.edHotel.image="http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png";
+                    }
+                }).catch(err => {
+
+                });
+            }
         },
     }
 </script>
