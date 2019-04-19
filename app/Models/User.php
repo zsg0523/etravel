@@ -90,9 +90,13 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /** [schools 用户和学校] */
-    public function schools()
+    // public function schools()
+    // {
+    //     return $this->belongsToMany(School::class);
+    // }
+    public function school()
     {
-        return $this->belongsToMany(School::class);
+        return $this->belongsTo(School::class);
     }
 
     /**

@@ -23,4 +23,9 @@ class School extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    // public function travels()
+    // {
+    //     return $this->hasMany(Travel::class);
+    // }
 }

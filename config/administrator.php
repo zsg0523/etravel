@@ -67,7 +67,8 @@ return array(
         ],
         '旅游项目' => [
             'travels',
-            'telephones',
+            'relevant',
+            'telephones'
         ],
         'news',
         'locals',
@@ -82,8 +83,8 @@ return array(
         ],
         '行程安排' => [
             'routes',
-            'foods',
-            'sceneries'
+            // 'foods',
+            // 'sceneries'
         ],
         '学习纸' => [
             'studies',

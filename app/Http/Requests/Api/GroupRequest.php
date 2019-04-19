@@ -14,14 +14,14 @@ class GroupRequest extends FormRequest
         switch ($this->method()) {
             case 'POST':
                 return [
-                    'duty' => 'required|string',
-                    'room' => 'required'
+                    // 'duty' => 'required|string',
+                    // 'room' => 'required'
                 ];
                 break;
             
             case 'PATCH':
                 return [
-                    'duty' => 'string',
+                    // 'duty' => 'string',
                 ];
                 break;
         }

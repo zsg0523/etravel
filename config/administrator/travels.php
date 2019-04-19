@@ -18,6 +18,16 @@ return [
 		'id' => [
 			'title' => 'ID',
 		],
+		'school_id' => [
+			'title' => '关联学校名称',
+			'output' => function ($value, $model) {
+				return empty($model->school->school_name) ? 'N/A' : $model->school->school_name;
+			},
+		],
+		'school_name' => [
+			'title' => '自定义学校名称',
+			'sortable' => false,
+		],
 		'travel_name' => [
 			'title' => '旅游名称',
 			'sortable' => false,
@@ -29,6 +39,9 @@ return [
 		'travel_introduction' => [
 			'title' => '简介',
 			'sortable' => false,
+			'output' => function($value, $model) {
+				return '<div style="max-width:100px">' . $value . '</div>';
+			}
 		],
 		'assembly_station' => [
 			'title' => '集合地点',
@@ -46,21 +59,27 @@ return [
 			'title' => '解散时间',
 			'sortable' => false,
 		],
-		'urgency' => [
-			'title' => '恶劣天气安排',
-			'output' => function ($value, $model) {
-				return '<div style="max-width:260px">' . html_entity_decode($value) . '</div>';
-			},
-			'sortable' => false,
-		],
-		'view_plan' => [
-			'title' => '景点安排',
-			'sortable' => false,
-		],
-		'meal_plan' => [
-			'title' => '膳食安排',
-			'sortable' => false,
-		],
+		// 'urgency' => [
+		// 	'title' => '恶劣天气安排',
+		// 	'output' => function ($value, $model) {
+		// 		return '<div style="max-width:250px">' . html_entity_decode($value) . '</div>';
+		// 	},
+		// 	'sortable' => false,
+		// ],
+		// 'view_plan' => [
+		// 	'title' => '景点安排',
+		// 	'output' => function ($value, $model) {
+		// 		return '<div style="max-width:250px">' . html_entity_decode($value) . '</div>';
+		// 	},
+		// 	'sortable' => false,
+		// ],
+		// 'meal_plan' => [
+		// 	'title' => '膳食安排',
+		// 	'output' => function ($value, $model) {
+		// 		return '<div style="max-width:250px">' . html_entity_decode($value) . '</div>';
+		// 	},
+		// 	'sortable' => false,
+		// ],
 		'operation' => [
 			'title' => '管理',
 			'sortable' => false,
@@ -68,6 +87,14 @@ return [
 	],
 
 	'edit_fields' => [
+		'school' => [
+			'title' => '关联学校名称',
+			'type' => 'relationship',
+			'name_field' => 'school_name',
+		],
+		'school_name' => [
+			'title' => '自定义学校名称'
+		],
 		'travel_name' => [
 			'title' => '旅游名称'
 		],
@@ -77,7 +104,6 @@ return [
 		],
 		'travel_introduction' => [
 			'title' => '简介',
-			'type'  => 'wysiwyg',
 		],
 		'assembly_station' => [
 			'title' => '集合地点'
@@ -93,15 +119,18 @@ return [
 			'title' => '解散时间',
 			'type' => 'datetime'
 		],
-		'urgency' => [
-			'title' => '恶劣天气安排'
-		],
-		'view_plan' => [
-			'title' => '景点安排'
-		],
-		'meal_plan' => [
-			'title' => '膳食安排'
-		],
+		// 'urgency' => [
+		// 	'title' => '恶劣天气安排',
+		// 	'type'  => 'wysiwyg',
+		// ],
+		// 'view_plan' => [
+		// 	'title' => '景点安排',
+		// 	'type'  => 'wysiwyg',
+		// ],
+		// 'meal_plan' => [
+		// 	'title' => '膳食安排',
+		// 	'type'  => 'wysiwyg',
+		// ],
 	],
 
 	'filters' => [
