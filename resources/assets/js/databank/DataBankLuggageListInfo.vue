@@ -74,7 +74,7 @@
                 </tbody>
             </table>   
         </div>
-        <van-popup v-model="isNewLuggageListInfoShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isNewLuggageListInfoShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageListInfo">
@@ -89,7 +89,7 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditLuggageListInfoShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditLuggageListInfoShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageListInfo">

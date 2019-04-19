@@ -108,7 +108,7 @@
     	<!-- <div class="btn_publish disflex">
     		<button type="button">发布</button>
     	</div> -->
-        <van-popup v-model="isPopupShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isPopupShow" :overlay="true">
             <div class="addNewTravel disflex">
                 <div class="form_item_pro">
                     <div class="item_title">項目名稱<span class="err" v-if="errors.travel_name" v-text="errors.travel_name[0]"></span></div>
@@ -150,7 +150,7 @@
             </div>
 
         </van-popup>
-        <van-popup v-model="isEditPopupShow" :overlay="true" style="border-radius: 15px;"> 
+        <van-popup v-model="isEditPopupShow" :overlay="true"> 
             <div class="addNewTravel disflex">
                 <div class="form_item_pro">
                     <div class="item_title">項目名稱</div>
@@ -191,7 +191,7 @@
                 <button @click="editTravel()">確定</button>
             </div>
         </van-popup>
-       <!--  <van-popup v-model="isPickTimeShow" :overlay="true" style="border-radius: 15px;"> 
+       <!--  <van-popup v-model="isPickTimeShow" :overlay="true"> 
             <div class="addNewTravel disflex">
                 <van-datetime-picker
                     v-model="currentDate"

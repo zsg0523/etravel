@@ -53,7 +53,7 @@
         <div class="dataBankAddBtn" @click="addNewEvaluationShow();">
             <img src="/etravel/public/images/add_y.png">
         </div>
-        <van-popup v-model="isNewEvaluationShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isNewEvaluationShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluations">
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditevaluationShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditevaluationShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluations">

@@ -91,7 +91,7 @@
 
             </div>
         </div>
-        <van-popup v-model="isNewJourneyShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isNewJourneyShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
@@ -108,7 +108,7 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditJourneyShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditJourneyShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">

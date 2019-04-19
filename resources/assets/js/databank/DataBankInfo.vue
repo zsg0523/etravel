@@ -200,7 +200,7 @@
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_address" ></div>
                                 </div>
                                 <div class="form_item_info" >
-                                    <div class="item_title">酒店经纬度</div>
+                                    <div class="item_title">酒店经纬度(必填)</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_location" ></div>
                                 </div>
                                 <div class="form_item_info"  style="width:100%;">
@@ -273,7 +273,7 @@
             </div>             
             
         </div>
-        <van-popup v-model="isAssemblePlacePopupShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isAssemblePlacePopupShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="gather_info">
@@ -304,39 +304,39 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isNewFlightShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isNewFlightShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
-                        <div class="item_title">航班信息</div>
+                        <div class="item_title">航班信息(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写航班信息" v-model="newFlight.flight"></div>
                     </div> 
                     <div class="form_item_info">
-                        <div class="item_title">日期</div>
+                        <div class="item_title">日期(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写日期(yyyy-mm-dd)" v-model="newFlight.date"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发时间</div>
+                        <div class="item_title">出发时间(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写出发时间(hh:mm)" v-model="newFlight.takeoff_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到达时间</div>
+                        <div class="item_title">到达时间(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写到达时间(hh:mm)" v-model="newFlight.arrival_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发城市</div>
+                        <div class="item_title">出发城市(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写出发城市" v-model="newFlight.from"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">达到城市</div>
+                        <div class="item_title">达到城市(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写达到城市" v-model="newFlight.to"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发站点</div>
+                        <div class="item_title">出发站点(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写出发站点" v-model="newFlight.from_flight"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">达到站点</div>
+                        <div class="item_title">达到站点(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写达到站点" v-model="newFlight.to_flight"></div>
                     </div>
                     <div style="width:100%;height:50px;">
@@ -350,39 +350,39 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditFlightShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditFlightShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
-                        <div class="item_title">航班信息</div>
+                        <div class="item_title">航班信息(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写航班信息" v-model="edFlight.flight"></div>
                     </div> 
                     <div class="form_item_info">
-                        <div class="item_title">日期</div>
+                        <div class="item_title">日期(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写日期(yyyy-mm-dd)" v-model="edFlight.date"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发时间</div>
+                        <div class="item_title">出发时间(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写出发时间(hh:mm)" v-model="edFlight.takeoff_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到达时间</div>
+                        <div class="item_title">到达时间(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写到达时间(hh:mm)" v-model="edFlight.arrival_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发城市</div>
+                        <div class="item_title">出发城市(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写出发城市" v-model="edFlight.from"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到达城市</div>
+                        <div class="item_title">到达城市(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写到达城市" v-model="edFlight.to"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发站点</div>
+                        <div class="item_title">出发站点(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写出发站点" v-model="edFlight.from_flight"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到达站点</div>
+                        <div class="item_title">到达站点(必填)</div>
                         <div><input class="item_input" type="text" placeholder="填写到达站点" v-model="edFlight.to_flight"></div>
                     </div>
                     <div style="width:100%;height:50px;">
@@ -396,35 +396,35 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isNewHotelShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isNewHotelShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">酒店名称</div>
+                        <div class="item_title">酒店名称(必填)</div>
                         <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店名称" v-model="newHotel.hotel_name" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">入住日期</div>
+                        <div class="item_title">入住日期(必填)</div>
                         <div><input class="item_input" type="text" placeholder="入住日期(yyyy-mm-dd)" v-model="newHotel.check_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">离开日期</div>
+                        <div class="item_title">离开日期(必填)</div>
                         <div><input class="item_input" type="text" placeholder="离开日期(yyyy-mm-dd)" v-model="newHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">入住天数</div>
+                        <div class="item_title">入住天数(必填)</div>
                         <div><input class="item_input" type="text" placeholder="入住天数" v-model="newHotel.times" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">联系电话</div>
+                        <div class="item_title">联系电话(必填)</div>
                         <div><input class="item_input" type="text" placeholder="联系电话" v-model="newHotel.hotel_phone" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">酒店地址</div>
+                        <div class="item_title">酒店地址(必填)</div>
                         <div><input class="item_input"  type="text" placeholder="酒店地址" v-model="newHotel.hotel_address" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">酒店经纬度</div>
+                        <div class="item_title">酒店经纬度(必填)</div>
                         <div><input class="item_input"  type="text" placeholder="酒店经纬度" v-model="newHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
@@ -450,35 +450,35 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditHotelShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditHotelShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">酒店名称</div>
+                        <div class="item_title">酒店名称(必填)</div>
                         <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店名称" v-model="edHotel.hotel_name" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">入住日期</div>
+                        <div class="item_title">入住日期(必填)</div>
                         <div><input class="item_input" type="text" placeholder="入住日期(yyyy-mm-dd)" v-model="edHotel.check_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">离开日期</div>
+                        <div class="item_title">离开日期(必填)</div>
                         <div><input class="item_input" type="text" placeholder="离开日期(yyyy-mm-dd)" v-model="edHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">入住天数</div>
+                        <div class="item_title">入住天数(必填)</div>
                         <div><input class="item_input" type="text" placeholder="入住天数" v-model="edHotel.times" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">联系电话</div>
+                        <div class="item_title">联系电话(必填)</div>
                         <div><input class="item_input" type="text" placeholder="联系电话" v-model="edHotel.hotel_phone" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">酒店地址</div>
+                        <div class="item_title">酒店地址(必填)</div>
                         <div><input class="item_input" type="text" placeholder="酒店地址" v-model="edHotel.hotel_address" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">酒店经纬度</div>
+                        <div class="item_title">酒店经纬度(必填)</div>
                         <div><input class="item_input" type="text" placeholder="酒店经纬度(经度,纬度)" v-model="edHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
@@ -504,7 +504,7 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isNewLeadTeacherShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isNewLeadTeacherShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
@@ -533,7 +533,7 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditLeadTeacherShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditLeadTeacherShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
@@ -562,7 +562,7 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditBadWeatherShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditBadWeatherShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">

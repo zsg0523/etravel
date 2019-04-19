@@ -76,7 +76,7 @@
                 </tbody>
             </table>   
         </div>
-        <!-- <van-popup v-model="isNewGroupShow" :overlay="true" style="border-radius: 15px;">
+        <!-- <van-popup v-model="isNewGroupShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_group">
@@ -109,7 +109,7 @@
                 </div>
             </div>
         </van-popup> -->
-        <van-popup v-model="isEditGroupShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditGroupShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_group">
