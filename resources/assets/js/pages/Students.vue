@@ -121,7 +121,7 @@
                     <div class="studentEditBtn" @click="editStudentShow()">
                         <img src="/etravel/public/images/editAll.png">
                     </div>
-                    <van-popup v-model="isEditStudentShow" :overlay="true" style="border-radius: 15px;">
+                    <van-popup v-model="isEditStudentShow" :overlay="true">
                         <div class="editBox" >
                             <div class="editBoxContent disflex">
                                 <div class="form_item_student">
@@ -172,7 +172,7 @@
                     </van-popup>
                 </div>
             </div>
-            <van-popup v-model="isNewStudentShow" :overlay="true" style="border-radius: 15px;">
+            <van-popup v-model="isNewStudentShow" :overlay="true">
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
                         <div class="form_item_student">
@@ -222,7 +222,7 @@
                     </div>
                 </div>
             </van-popup>
-            <van-popup v-model="isSearchStudentShow" :overlay="true" style="border-radius: 15px;">
+            <van-popup v-model="isSearchStudentShow" :overlay="true">
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
                         <div class="form_item_student">

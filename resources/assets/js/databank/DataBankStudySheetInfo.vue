@@ -75,7 +75,7 @@
                 <img src="/etravel/public/images/add_y.png">
             </div>      
 		</div>
-		<van-popup v-model="isNewSheetInfoShow" :overlay="true" style="border-radius: 15px;">
+		<van-popup v-model="isNewSheetInfoShow" :overlay="true">
             <div class="editBox_sheetInfo" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_sheetInfo">
@@ -90,7 +90,7 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditSheetInfoShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditSheetInfoShow" :overlay="true">
             <div class="editBox_sheetInfo" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_sheetInfo">

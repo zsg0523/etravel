@@ -62,7 +62,7 @@
 	            <img src="/etravel/public/images/add_y.png">
 	        </div>
         </div>
-        <van-popup v-model="isNewEvaluationInfoShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isNewEvaluationInfoShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluationInfo">
@@ -85,7 +85,7 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditEvaluationInfoShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditEvaluationInfoShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluationInfo">

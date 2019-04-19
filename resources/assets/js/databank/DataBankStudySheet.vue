@@ -63,7 +63,7 @@
 	            <img src="/etravel/public/images/add_y.png">
 	        </div>   
         </div>
-        <van-popup v-model="isNewSheetShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isNewSheetShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journeyInfo">
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditSheetShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditSheetShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journeyInfo">

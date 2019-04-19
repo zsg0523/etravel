@@ -52,7 +52,7 @@
         <div class="dataBankAddBtn" @click="addNewRuleShow();">
             <img src="/etravel/public/images/add_y.png">
         </div>
-  		<van-popup v-model="isNewRuleShow" :overlay="true" style="border-radius: 15px;">
+  		<van-popup v-model="isNewRuleShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditRuleShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditRuleShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">

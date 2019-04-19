@@ -113,7 +113,7 @@
 		        </div>
             </div>       
         </div>
-         <van-popup v-model="isEditInformationShow" :overlay="true" style="border-radius: 15px;">
+         <van-popup v-model="isEditInformationShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="gather_info">

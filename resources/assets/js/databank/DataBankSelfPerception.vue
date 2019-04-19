@@ -51,7 +51,7 @@
                 </div>
             </div>       
         </div>
-        <van-popup v-model="isAddFeelShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isAddFeelShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_feel">
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </van-popup>
-        <van-popup v-model="isEditFeelShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditFeelShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_feel">

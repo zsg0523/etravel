@@ -63,7 +63,7 @@
                 </tbody>
             </table>   
         </div>
-       <!--  <van-popup v-model="isNewHouseShow" :overlay="true" style="border-radius: 15px;">
+       <!--  <van-popup v-model="isNewHouseShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_house">
@@ -90,7 +90,7 @@
                 </div>
             </div>
         </van-popup> -->
-        <van-popup v-model="isEditHouseShow" :overlay="true" style="border-radius: 15px;">
+        <van-popup v-model="isEditHouseShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_house">
