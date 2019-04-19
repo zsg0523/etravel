@@ -7,7 +7,7 @@
 		<div style="height:40px;width: 100%;border-radius: 8px;">
 	    	<select class="sel" v-model="idd_code" @change="changed();">
 	            <option value="">请选择区号</option>
-	            <option v-for="item in optList" :value="item.value">{{ item.name }}</option>
+	            <option v-for="item in optList" :value="item.acnumber">{{ item.acname_cn }}({{item.acnumber}})</option>
 	        </select>
 	    </div>
     
@@ -20,44 +20,48 @@
             return {
             	idd_code:'',
 	    		optList:[{
-                    value:'86',
-                    name:'中国大陆(+86)'
+                    acnumber:'86',
+                    acname_cn:'中国大陆'
                 },{
-                    value:'852',
-                    name:'中国香港(+852)'
+                    acnumber:'852',
+                    acname_cn:'中国香港'
                 },
                 {
-                    value:'886',
-                    name:'中国台湾(+886)'
+                    acnumber:'886',
+                    acname_cn:'中国台湾'
                 },
                 {
-                    value:'853',
-                    name:'中国澳门(+853)'
+                    acnumber:'853',
+                    acname_cn:'中国澳门'
                 },
                 {
-                    value:'1473',
-                    name:'United Kingdom(+1473)'
+                    acnumber:'1473',
+                    acname_cn:'United Kingdom'
                 }, 
                 {
-                    value:'82',
-                    name:'South Korea(+82)'
+                    acnumber:'82',
+                    acname_cn:'South Korea'
                 },
                 {
-                    value:'81',
-                    name:'Japan(+81)'
+                    acnumber:'81',
+                    acname_cn:'Japan'
                 },
                 {
-                    value:'49',
-                    name:'Germany(+49)'
+                    acnumber:'49',
+                    acname_cn:'Germany'
                 },
                 {
-                    value:'673',
-                    name:'Brunei(+673)'
+                    acnumber:'673',
+                    acname_cn:'Brunei'
                 }],
             }
         },
-        mounted() {
+        created(){
             this.getAreacode();
+        },
+        beforeMounte(){
+        },
+        mounted() {
             this.idd_code=this.areaCode;
             console.log(this.areaCode);
         },

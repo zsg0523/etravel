@@ -39,7 +39,8 @@
                         <th>分组编号</th>
                         <th>房间编号</th>
                         <th>班级</th>
-                        <th>学生姓名</th>
+                        <th>中文名</th>
+                        <th>英文名</th>
                         <th>职责</th>
                         <th>编辑</th>
                     </tr>
@@ -50,6 +51,7 @@
                         <td>{{house.room}}</td>
                         <td>{{house.class}}</td>
                         <td>{{house.user.name}}</td>
+                        <td>{{house.user.en_name}}</td>
                         <td>{{house.duty}}</td>
                         <td width="100px">
                             <div class="editIcon"><img src="/etravel/public/images/edit.png" @click="editHouseShow(index);"></div>
@@ -79,7 +81,7 @@
                     <div class="form_item_house">
                         <div class="item_title">学生姓名</div>
                         <div>
-                            <input class="item_input" placeholder="学生姓名" type="text"  v-model="newHouse.house_name">
+                            <input class="item_input" placeholder="学生姓名" type="text"  v-model="newHouse.name">
                         </div>
                     </div>
                     <div class="issure">
@@ -92,7 +94,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_house">
-                        <div class="item_title">分组分组编号</div>
+                        <div class="item_title">分组编号</div>
                         <div>
                             <input class="item_input" placeholder="填写分组编号" type="text"  v-model="edHouse.house_group">
                         </div>
@@ -109,12 +111,18 @@
                             <input class="item_input" placeholder="填写班级" type="text"  v-model="edHouse.house_class">
                         </div>
                     </div>
-                    <div class="form_item_house">
-                        <div class="item_title">学生姓名</div>
+                    <!-- <div class="form_item_house">
+                        <div class="item_title">中文名</div>
                         <div>
-                            <input class="item_input" placeholder="填写学生姓名" type="text"  v-model="edHouse.house_name">
+                            <input class="item_input" placeholder="填写中文名" type="text"  v-model="edHouse.name">
                         </div>
                     </div>
+                    <div class="form_item_house">
+                        <div class="item_title">英文名</div>
+                        <div>
+                            <input class="item_input" placeholder="填写英文名" type="text"  v-model="edHouse.en_name">
+                        </div>
+                    </div> -->
                     <div class="form_item_house">
                         <div class="item_title">职责</div>
                         <div>
@@ -143,7 +151,8 @@
                 edHouse:{
                     house_room:'',
                     house_class:'',
-                    house_name:'',
+                    // name:'',
+                    // en_name:'',
                     house_group:'',
                     house_duty:'',
                     id:'',
@@ -202,7 +211,8 @@
                 this.edHouse.user_id=this.houses[index].user_id;
                 this.edHouse.house_room=this.houses[index].room;
                 this.edHouse.house_class=this.houses[index].class;
-                this.edHouse.house_name=this.houses[index].user.name;
+                // this.edHouse.name=this.houses[index].user.name;
+                // this.edHouse.en_name=this.houses[index].user.en_name;
                 this.edHouse.house_group=this.houses[index].group;
                 this.edHouse.house_duty=this.houses[index].duty;
                 this.edHouse.index=index;
@@ -218,7 +228,8 @@
                     data:{
                         room:this.edHouse.house_room,
                         class:this.edHouse.house_class,
-                        name:this.edHouse.house_name,
+                        name:this.edHouse.name,
+                        en_name:this.edHouse.en_name,
                         group:this.edHouse.house_group,
                         duty:this.edHouse.house_duty,
                     },
@@ -228,7 +239,8 @@
                     if(res.status==200){
                         this.houses[this.edHouse.index].room=this.edHouse.house_room;
                         this.houses[this.edHouse.index].class=this.edHouse.house_class;
-                        this.houses[this.edHouse.index].user.name=this.edHouse.house_name;
+                        this.houses[this.edHouse.index].user.name=this.edHouse.name;
+                        this.houses[this.edHouse.index].user.en_name=this.edHouse.en_name;
                         this.houses[this.edHouse.index].group=this.edHouse.house_group;
                         this.houses[this.edHouse.index].duty=this.edHouse.house_duty;
                         this.$toast('修改成功');

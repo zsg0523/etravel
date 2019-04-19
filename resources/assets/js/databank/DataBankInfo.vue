@@ -195,13 +195,13 @@
                                     <div class="item_title">联系电话</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_phone" ></div>
                                 </div>
-                                <div class="form_item_info"  style="width:100%;">
+                                <div class="form_item_info" >
                                     <div class="item_title">酒店地址</div>
-                                    <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="hotel.hotel_address" ></div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_address" ></div>
                                 </div>
-                                <div class="form_item_info"  style="width:100%;">
+                                <div class="form_item_info" >
                                     <div class="item_title">酒店经纬度</div>
-                                    <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="hotel.hotel_location" ></div>
+                                    <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_location" ></div>
                                 </div>
                                 <div class="form_item_info"  style="width:100%;">
                                     <div class="item_title">酒店图片</div>
@@ -419,13 +419,13 @@
                         <div class="item_title">联系电话</div>
                         <div><input class="item_input" type="text" placeholder="联系电话" v-model="newHotel.hotel_phone" ></div>
                     </div>
-                    <div class="form_item_info" style="width:100%;">
+                    <div class="form_item_info">
                         <div class="item_title">酒店地址</div>
-                        <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店地址" v-model="newHotel.hotel_address" ></div>
+                        <div><input class="item_input"  type="text" placeholder="酒店地址" v-model="newHotel.hotel_address" ></div>
                     </div>
-                    <div class="form_item_info" style="width:100%;">
+                    <div class="form_item_info">
                         <div class="item_title">酒店经纬度</div>
-                        <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店经纬度" v-model="newHotel.hotel_location" ></div>
+                        <div><input class="item_input"  type="text" placeholder="酒店经纬度" v-model="newHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div style="width:93%;">
@@ -438,7 +438,7 @@
                         </div>
                         <div style="width:93%;">
                             <div class="imgs" style="width:97%">    
-                                <img class="travelImg" :src="edHotel.image">
+                                <img class="travelImg" :src="newHotel.image">
                                 <img class="cancelImg" src="/etravel/public/images/delete.png" @click="resetImg();" />
                             </div>
                         </div>
@@ -473,13 +473,13 @@
                         <div class="item_title">联系电话</div>
                         <div><input class="item_input" type="text" placeholder="联系电话" v-model="edHotel.hotel_phone" ></div>
                     </div>
-                    <div class="form_item_info" style="width:100%;">
+                    <div class="form_item_info">
                         <div class="item_title">酒店地址</div>
-                        <div><input class="item_input" style="width:97%" type="text" placeholder="酒店地址" v-model="edHotel.hotel_address" ></div>
+                        <div><input class="item_input" type="text" placeholder="酒店地址" v-model="edHotel.hotel_address" ></div>
                     </div>
-                    <div class="form_item_info" style="width:100%;">
+                    <div class="form_item_info">
                         <div class="item_title">酒店经纬度</div>
-                        <div><input class="item_input" style="width:97%" type="text" placeholder="酒店经纬度(经度,纬度)" v-model="edHotel.hotel_location" ></div>
+                        <div><input class="item_input" type="text" placeholder="酒店经纬度(经度,纬度)" v-model="edHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div style="width:93%;">
@@ -1158,7 +1158,7 @@
                 }else{
                     this.edLeadTeacher.area_code=value;
                 }
-                console.log(value);
+                // console.log(value);
             },
             catchData(value){
                 this.edBadWeather.urgency=value;

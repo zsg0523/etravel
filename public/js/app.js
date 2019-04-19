@@ -24850,7 +24850,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.students{width: 100%;min-height: 700px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.studentsList{width: 100%;height: 100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;\n}\n.students_left{width: 18%;min-height:100%;border-right: 3px solid #d6d6d6;\n}\n.students_left>ul{width: 100%;height: auto;\n}\n.students_left>ul>li{width: 100%;height:50px;line-height: 50px;font-size: 18px;\n}\n.students_left>ul>li>div{width: 90%;height:50px;line-height: 50px;margin-left: 5%;overflow: hidden;\n}\n.left_title{-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;\n}\n.left_title_icon{width: auto;height: auto;\n}\n.left_title_icon>div{width: 40px;height: 40px;line-height: 40px;float: left;text-align: center;margin-right: 5px;\n}\n.left_title_icon>div:hover{cursor: pointer;\n}\n.left_title_icon>div>img{width:30px;height:30px;\n}\n.students_right{width: 82%;min-height:100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.students_right_title{width: 100%;height: 50px;line-height: 50px;border-bottom: 1px solid #ccc;\n}\n.search_input{width: 100%;height: 50px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.search_input>input{width: 30%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.search_icon{width: 50px;height: 50px;\n}\n.search_icon>img{width:40px;height: 40px\n}\n.search_icon>img:hover{cursor: pointer;\n}\n.students_input_form{width: 100%;min-height:600px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 18px;position: relative;\n}\n.form_content_student{width: 70%;min-height: 600px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_student{width: 50%;height:100px;\n}\n.form_item_student>div{width: 94%;margin-left: 3%;height: 45px;line-height: 45px;\n}\n.form_item{width: 100%;height:100px;\n}\n.form_item>div{width: 97%;margin-left: 1.5%;height: 45px;line-height: 45px;\n}\n.form_item_small{width: 100%;height:80px;\n}\n.form_item_small>div{width: 97%;margin-left: 1.5%;height: 40px;line-height: 40px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.studentEditBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.studentEditBtn:hover{cursor:pointer;\n}\n.studentEditBtn>img{width:50px;height: 50px;\n}\n.act{background-color: #ffde01;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;font-size: 16px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.editBoxTitle{width:100%;height:50px;text-align: center;line-height: 50px;font-size: 18px;\n}\n.issureStu{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issureBtn{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.twoBtn{width:40%;margin-left:5%;margin-right:5%;float:left;height:50px;font-size: 16px;border-radius: 8px;outline: none;\n}\n.cancel{background-color:#fff;border:1px solid #ccc;\n}\n.van-dialog{width:50%;\n}\n.err{color:red;float: right;font-size: 14px;\n}\n\n", ""]);
+exports.push([module.i, "\n.students{width: 100%;min-height: 700px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.studentsList{width: 100%;height: 100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;\n}\n.students_left{width: 18%;min-height:100%;border-right: 3px solid #d6d6d6;\n}\n.students_left>ul{width: 100%;height: auto;\n}\n.students_left>ul>li{width: 100%;height:50px;line-height: 50px;font-size: 18px;\n}\n.students_left>ul>li>div{width: 90%;height:50px;line-height: 50px;margin-left: 5%;overflow: hidden;\n}\n.left_title{-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;\n}\n.left_title_icon{width: auto;height: auto;\n}\n.left_title_icon>div{width: 40px;height: 40px;line-height: 40px;float: left;text-align: center;margin-right: 5px;\n}\n.left_title_icon>div:hover{cursor: pointer;\n}\n.left_title_icon>div>img{width:30px;height:30px;\n}\n.students_right{width: 82%;min-height:100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n.students_right_title{width: 100%;height: 50px;line-height: 50px;border-bottom: 1px solid #ccc;\n}\n.search_input{width: 100%;height: 50px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.search_input>input{width: 30%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.search_icon{width: 50px;height: 50px;\n}\n.search_icon>img{width:40px;height: 40px\n}\n.search_icon>img:hover{cursor: pointer;\n}\n.students_input_form{width: 100%;min-height:600px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 18px;position: relative;\n}\n.form_content_student{width: 70%;min-height: 600px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_student{width: 50%;height:100px;\n}\n.form_item_student>div{width: 94%;margin-left: 3%;height: 45px;line-height: 45px;\n}\n.form_item{width: 100%;height:100px;\n}\n.form_item>div{width: 97%;margin-left: 1.5%;height: 45px;line-height: 45px;\n}\n.form_item_small{width: 100%;height:80px;\n}\n.form_item_small>div{width: 97%;margin-left: 1.5%;height: 40px;line-height: 40px;\n}\n.form_item_small>div>input{width:95% !important;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.studentEditBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.studentEditBtn:hover{cursor:pointer;\n}\n.studentEditBtn>img{width:50px;height: 50px;\n}\n.act{background-color: #ffde01;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;font-size: 16px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.editBoxTitle{width:100%;height:50px;text-align: center;line-height: 50px;font-size: 18px;\n}\n.issureStu{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issureBtn{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.twoBtn{width:40%;margin-left:5%;margin-right:5%;float:left;height:50px;font-size: 16px;border-radius: 8px;outline: none;\n}\n.cancel{background-color:#fff;border:1px solid #ccc;\n}\n.van-dialog{width:50%;\n}\n.err{color:red;float: right;font-size: 14px;\n}\n.simulateShade{width:90%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;\n}\n", ""]);
 
 // exports
 
@@ -24861,6 +24861,30 @@ exports.push([module.i, "\n.students{width: 100%;min-height: 700px;-webkit-box-p
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -25117,13 +25141,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        AreaCodeSelector: __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default.a
+    },
     data: function data() {
         return {
             students: [],
             newStudent: {
                 name: '',
                 en_name: '',
+                code: '',
                 phone: '',
                 original_password: '',
                 add_by: sessionStorage.userId,
@@ -25137,6 +25167,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 id: '',
                 name: '',
                 en_name: '',
+                code: '',
                 phone: '',
                 original_password: '',
                 add_by: sessionStorage.userId,
@@ -25151,6 +25182,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 id: '',
                 name: '',
                 en_name: '',
+                code: '',
                 phone: '',
                 original_password: '',
                 student_number: '',
@@ -25209,6 +25241,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.isNewStudentShow = false;
                 _this2.newStudent.name = '';
                 _this2.newStudent.en_name = '';
+                _this2.newStudent.code = '';
                 _this2.newStudent.phone = '';
                 _this2.newStudent.original_password = '';
                 _this2.newStudent.student_number = '';
@@ -25226,6 +25259,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edStudent.original_password = this.students[this.actIndex].user.original_password;
             this.edStudent.name = this.students[this.actIndex].user.name;
             this.edStudent.en_name = this.students[this.actIndex].user.en_name;
+            this.edStudent.code = this.students[this.actIndex].user.code;
             this.edStudent.phone = this.students[this.actIndex].user.phone;
             this.edStudent.student_number = this.students[this.actIndex].student_number;
             this.edStudent.class = this.students[this.actIndex].class;
@@ -25248,6 +25282,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     original_password: this.edStudent.original_password,
                     name: this.edStudent.name,
                     en_name: this.edStudent.en_name,
+                    code: this.edStudent.code,
                     phone: this.edStudent.phone,
                     student_number: this.edStudent.student_number,
                     class: this.edStudent.class,
@@ -25261,6 +25296,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.students[_this3.actIndex].user.original_password = _this3.edStudent.original_password;
                     _this3.students[_this3.actIndex].user.name = _this3.edStudent.name;
                     _this3.students[_this3.actIndex].user.en_name = _this3.edStudent.en_name;
+                    _this3.students[_this3.actIndex].user.code = _this3.edStudent.code;
                     _this3.students[_this3.actIndex].user.phone = _this3.edStudent.phone;
                     _this3.students[_this3.actIndex].student_number = _this3.edStudent.student_number;
                     _this3.students[_this3.actIndex].class = _this3.edStudent.class;
@@ -25331,6 +25367,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         _this5.searchStudent.id = res.data.id;
                         _this5.searchStudent.name = res.data.name;
                         _this5.searchStudent.en_name = res.data.en_name;
+                        _this5.searchStudent.code = res.data.code;
                         _this5.searchStudent.phone = res.data.phone;
                         _this5.searchStudent.original_password = res.data.original_password;
                         _this5.searchStudentShow();
@@ -25353,6 +25390,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             // 添加已有用户到旅游/api/users/:user/travels/:travel/groups
             this.$post(this.$config + '/api/users/' + this.searchStudent.id + '/travels/' + sessionStorage.actTravelId + '/groups', {
+                code: this.searchStudent.code,
                 phone: this.searchStudent.phone,
                 student_number: this.searchStudent.student_number,
                 class: this.searchStudent.class,
@@ -25388,6 +25426,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return {
                 act: index == this.actIndex ? true : false
             };
+        },
+        selectedAreaCode: function selectedAreaCode(value) {
+            this.newStudent.code = value;
         }
     }
 });
@@ -25607,6 +25648,26 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
+                        _vm._v("電話区号")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填寫電話区号",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value: _vm.students[_vm.actIndex].user.code
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
                         _vm._v("聯繫電話")
                       ]),
                       _vm._v(" "),
@@ -25625,7 +25686,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form_item_student" }, [
+                    _c("div", { staticClass: "form_item_small" }, [
                       _c("div", { staticClass: "item_title" }, [
                         _vm._v("學生學號")
                       ]),
@@ -25645,7 +25706,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form_item_student" }, [
+                    _c("div", { staticClass: "form_item_small" }, [
                       _c("div", { staticClass: "item_title" }, [
                         _vm._v("學生班級")
                       ]),
@@ -25663,7 +25724,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form_item_student" }, [
+                    _c("div", { staticClass: "form_item_small" }, [
                       _c("div", { staticClass: "item_title" }, [
                         _vm._v("學生分組號")
                       ]),
@@ -25681,7 +25742,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form_item" }, [
+                    _c("div", { staticClass: "form_item_small" }, [
                       _c("div", { staticClass: "item_title" }, [
                         _vm._v("學生職責")
                       ]),
@@ -25733,9 +25794,9 @@ var render = function() {
                     [
                       _c("div", { staticClass: "editBox" }, [
                         _c("div", { staticClass: "editBoxContent disflex" }, [
-                          _c("div", { staticClass: "form_item_small" }, [
+                          _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("用戶ID")
+                              _vm._v("用戶ID(不可编辑)")
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -25771,9 +25832,9 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form_item_small" }, [
+                          _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("學生密碼")
+                              _vm._v("學生密碼(不可编辑)")
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -25811,9 +25872,9 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form_item_small" }, [
+                          _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("學生中文名"),
+                              _vm._v("學生中文名(不可编辑)"),
                               _vm.errors.name
                                 ? _c("span", {
                                     staticClass: "err",
@@ -25857,9 +25918,9 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form_item_small" }, [
+                          _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("學生英文名"),
+                              _vm._v("學生英文名(不可编辑)"),
                               _vm.errors.en_name
                                 ? _c("span", {
                                     staticClass: "err",
@@ -25903,9 +25964,55 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form_item_small" }, [
+                          _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("聯繫電話"),
+                              _vm._v("電話区号(不可编辑)"),
+                              _vm.errors.code
+                                ? _c("span", {
+                                    staticClass: "err",
+                                    domProps: {
+                                      textContent: _vm._s(_vm.errors.code[0])
+                                    }
+                                  })
+                                : _vm._e()
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.edStudent.code,
+                                    expression: "edStudent.code"
+                                  }
+                                ],
+                                staticClass: "item_input",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "填寫電話区号",
+                                  disabled: "disabled"
+                                },
+                                domProps: { value: _vm.edStudent.code },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.edStudent,
+                                      "code",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form_item_student" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("聯繫電話(不可编辑)"),
                               _vm.errors.phone
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26045,7 +26152,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("學生分組號(必填)"),
+                              _vm._v("學生分組號"),
                               _vm.errors.group
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26173,7 +26280,7 @@ var render = function() {
           [
             _c("div", { staticClass: "editBox" }, [
               _c("div", { staticClass: "editBoxContent disflex" }, [
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
                     _vm._v("學生密碼(必填)")
                   ]),
@@ -26207,9 +26314,9 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生中文名"),
+                    _vm._v("學生中文名(必填)"),
                     _vm.errors.name
                       ? _c("span", {
                           staticClass: "err",
@@ -26243,9 +26350,9 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生英文名"),
+                    _vm._v("學生英文名(必填)"),
                     _vm.errors.en_name
                       ? _c("span", {
                           staticClass: "err",
@@ -26285,9 +26392,42 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("聯繫電話"),
+                    _vm._v("電話区号(必填)"),
+                    _vm.errors.code
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.code[0]) }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "div",
+                      { staticClass: "simulateShade" },
+                      [
+                        _c("AreaCodeSelector", {
+                          attrs: { areaCode: _vm.newStudent.code },
+                          on: { selectedAreaCode: _vm.selectedAreaCode },
+                          model: {
+                            value: _vm.newStudent.code,
+                            callback: function($$v) {
+                              _vm.$set(_vm.newStudent, "code", $$v)
+                            },
+                            expression: "newStudent.code"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_small" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("聯繫電話(必填)"),
                     _vm.errors.phone
                       ? _c("span", {
                           staticClass: "err",
@@ -26321,7 +26461,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
                     _vm._v("學生學號"),
                     _vm.errors.student_number
@@ -26363,7 +26503,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
                     _vm._v("學生班級"),
                     _vm.errors.class
@@ -26399,9 +26539,9 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生分組號(必填)"),
+                    _vm._v("學生分組號"),
                     _vm.errors.group
                       ? _c("span", {
                           staticClass: "err",
@@ -26435,7 +26575,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item" }, [
+                _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
                     _vm._v("學生職責"),
                     _vm.errors.duty
@@ -26506,8 +26646,10 @@ var render = function() {
           [
             _c("div", { staticClass: "editBox" }, [
               _c("div", { staticClass: "editBoxContent disflex" }, [
-                _c("div", { staticClass: "form_item_small" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("用戶ID")]),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("用戶ID(不可编辑)")
+                  ]),
                   _vm._v(" "),
                   _c("div", [
                     _c("input", {
@@ -26522,9 +26664,9 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item_small" }, [
+                _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生密碼")
+                    _vm._v("學生密碼(不可编辑)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -26540,9 +26682,9 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item_small" }, [
+                _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生中文名")
+                    _vm._v("學生中文名(不可编辑)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -26558,9 +26700,9 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item_small" }, [
+                _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生英文名")
+                    _vm._v("學生英文名(不可编辑)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -26576,9 +26718,47 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form_item_small" }, [
+                _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("聯繫電話")
+                    _vm._v("電話区号(不可编辑)")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.searchStudent.code,
+                          expression: "searchStudent.code"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: {
+                        type: "text",
+                        placeholder: "填寫電話区号",
+                        disabled: "disabled"
+                      },
+                      domProps: { value: _vm.searchStudent.code },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.searchStudent,
+                            "code",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("聯繫電話(不可编辑)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -26698,7 +26878,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生分組號(必填)"),
+                    _vm._v("學生分組號"),
                     _vm.errors.group
                       ? _c("span", {
                           staticClass: "err",
@@ -31318,7 +31498,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             } else {
                 this.edLeadTeacher.area_code = value;
             }
-            console.log(value);
+            // console.log(value);
         },
         catchData: function catchData(value) {
             this.edBadWeather.urgency = value;
@@ -31489,37 +31669,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             idd_code: '',
             optList: [{
-                value: '86',
-                name: '中国大陆(+86)'
+                acnumber: '86',
+                acname_cn: '中国大陆'
             }, {
-                value: '852',
-                name: '中国香港(+852)'
+                acnumber: '852',
+                acname_cn: '中国香港'
             }, {
-                value: '886',
-                name: '中国台湾(+886)'
+                acnumber: '886',
+                acname_cn: '中国台湾'
             }, {
-                value: '853',
-                name: '中国澳门(+853)'
+                acnumber: '853',
+                acname_cn: '中国澳门'
             }, {
-                value: '1473',
-                name: 'United Kingdom(+1473)'
+                acnumber: '1473',
+                acname_cn: 'United Kingdom'
             }, {
-                value: '82',
-                name: 'South Korea(+82)'
+                acnumber: '82',
+                acname_cn: 'South Korea'
             }, {
-                value: '81',
-                name: 'Japan(+81)'
+                acnumber: '81',
+                acname_cn: 'Japan'
             }, {
-                value: '49',
-                name: 'Germany(+49)'
+                acnumber: '49',
+                acname_cn: 'Germany'
             }, {
-                value: '673',
-                name: 'Brunei(+673)'
+                acnumber: '673',
+                acname_cn: 'Brunei'
             }]
         };
     },
-    mounted: function mounted() {
+    created: function created() {
         this.getAreacode();
+    },
+    beforeMounte: function beforeMounte() {},
+    mounted: function mounted() {
         this.idd_code = this.areaCode;
         console.log(this.areaCode);
     },
@@ -31602,8 +31785,8 @@ var render = function() {
           _c("option", { attrs: { value: "" } }, [_vm._v("请选择区号")]),
           _vm._v(" "),
           _vm._l(_vm.optList, function(item) {
-            return _c("option", { domProps: { value: item.value } }, [
-              _vm._v(_vm._s(item.name))
+            return _c("option", { domProps: { value: item.acnumber } }, [
+              _vm._v(_vm._s(item.acname_cn) + "(" + _vm._s(item.acnumber) + ")")
             ])
           })
         ],
@@ -36971,49 +37154,33 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "form_item_info",
-                          staticStyle: { width: "100%" }
-                        },
-                        [
-                          _c("div", { staticClass: "item_title" }, [
-                            _vm._v("酒店地址")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", [
-                            _c("input", {
-                              staticClass: "item_input",
-                              staticStyle: { width: "97%" },
-                              attrs: { type: "text", disabled: "disabled" },
-                              domProps: { value: hotel.hotel_address }
-                            })
-                          ])
-                        ]
-                      ),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("酒店地址")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: hotel.hotel_address }
+                          })
+                        ])
+                      ]),
                       _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "form_item_info",
-                          staticStyle: { width: "100%" }
-                        },
-                        [
-                          _c("div", { staticClass: "item_title" }, [
-                            _vm._v("酒店经纬度")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", [
-                            _c("input", {
-                              staticClass: "item_input",
-                              staticStyle: { width: "97%" },
-                              attrs: { type: "text", disabled: "disabled" },
-                              domProps: { value: hotel.hotel_location }
-                            })
-                          ])
-                        ]
-                      ),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("酒店经纬度")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: hotel.hotel_location }
+                          })
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -38362,89 +38529,71 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("酒店地址")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newHotel.hotel_address,
-                          expression: "newHotel.hotel_address"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      staticStyle: { width: "97%" },
-                      attrs: { type: "text", placeholder: "酒店地址" },
-                      domProps: { value: _vm.newHotel.hotel_address },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.newHotel,
-                            "hotel_address",
-                            $event.target.value
-                          )
-                        }
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("酒店地址")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHotel.hotel_address,
+                        expression: "newHotel.hotel_address"
                       }
-                    })
-                  ])
-                ]
-              ),
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "酒店地址" },
+                    domProps: { value: _vm.newHotel.hotel_address },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newHotel,
+                          "hotel_address",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("酒店经纬度")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newHotel.hotel_location,
-                          expression: "newHotel.hotel_location"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      staticStyle: { width: "97%" },
-                      attrs: { type: "text", placeholder: "酒店经纬度" },
-                      domProps: { value: _vm.newHotel.hotel_location },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.newHotel,
-                            "hotel_location",
-                            $event.target.value
-                          )
-                        }
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("酒店经纬度")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHotel.hotel_location,
+                        expression: "newHotel.hotel_location"
                       }
-                    })
-                  ])
-                ]
-              ),
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "酒店经纬度" },
+                    domProps: { value: _vm.newHotel.hotel_location },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newHotel,
+                          "hotel_location",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
               _vm._v(" "),
               _c(
                 "div",
@@ -38494,7 +38643,7 @@ var render = function() {
                       [
                         _c("img", {
                           staticClass: "travelImg",
-                          attrs: { src: _vm.edHotel.image }
+                          attrs: { src: _vm.newHotel.image }
                         }),
                         _vm._v(" "),
                         _c("img", {
@@ -38710,92 +38859,74 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("酒店地址")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edHotel.hotel_address,
-                          expression: "edHotel.hotel_address"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      staticStyle: { width: "97%" },
-                      attrs: { type: "text", placeholder: "酒店地址" },
-                      domProps: { value: _vm.edHotel.hotel_address },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.edHotel,
-                            "hotel_address",
-                            $event.target.value
-                          )
-                        }
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("酒店地址")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.hotel_address,
+                        expression: "edHotel.hotel_address"
                       }
-                    })
-                  ])
-                ]
-              ),
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "酒店地址" },
+                    domProps: { value: _vm.edHotel.hotel_address },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHotel,
+                          "hotel_address",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("酒店经纬度")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edHotel.hotel_location,
-                          expression: "edHotel.hotel_location"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      staticStyle: { width: "97%" },
-                      attrs: {
-                        type: "text",
-                        placeholder: "酒店经纬度(经度,纬度)"
-                      },
-                      domProps: { value: _vm.edHotel.hotel_location },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.edHotel,
-                            "hotel_location",
-                            $event.target.value
-                          )
-                        }
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("酒店经纬度")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.hotel_location,
+                        expression: "edHotel.hotel_location"
                       }
-                    })
-                  ])
-                ]
-              ),
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "酒店经纬度(经度,纬度)"
+                    },
+                    domProps: { value: _vm.edHotel.hotel_location },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHotel,
+                          "hotel_location",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
               _vm._v(" "),
               _c(
                 "div",
@@ -39520,7 +39651,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.pane_content_phone{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;border:1px solid #ccc;border-radius: 15px;margin-top:20px;\n}\n.form_content_phone{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_phone{width: 100%;min-height:100px;\n}\n.form_item_phone>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_phone{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.pane_content_phone{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;border:1px solid #ccc;border-radius: 15px;margin-top:20px;\n}\n.form_content_phone{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_phone{width: 100%;min-height:100px;\n}\n.form_item_phone>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_phone{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.areaSel{width:100%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
 
 // exports
 
@@ -39531,6 +39662,19 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -39644,7 +39788,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        AreaCodeSelector: __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default.a
+    },
     data: function data() {
         return {
             phones: [],
@@ -39664,7 +39813,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 index: ''
             },
             isNewPhoneShow: false,
-            isEditPhoneShow: false
+            isEditPhoneShow: false,
+            isNew: true
         };
     },
 
@@ -39690,6 +39840,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         addNewPhoneShow: function addNewPhoneShow() {
             this.isNewPhoneShow = true;
+            this.isNew = true;
         },
         addNewPhone: function addNewPhone() {
             var _this2 = this;
@@ -39721,6 +39872,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edPhone.duty = this.phones[index].duty;
             this.edPhone.index = index;
             this.isEditPhoneShow = true;
+            this.isNew = false;
         },
         editPhone: function editPhone() {
             var _this3 = this;
@@ -39781,6 +39933,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     console.log(err);
                 });
             }).catch(function (err) {});
+        },
+        selectedAreaCode: function selectedAreaCode(value) {
+            if (this.isNew) {
+                this.newPhone.area_code = value;
+            } else {
+                this.edPhone.area_code = value;
+            }
         }
     }
 });
@@ -39970,27 +40129,24 @@ var render = function() {
                 _c("div", { staticClass: "item_title" }, [_vm._v("电话区号")]),
                 _vm._v(" "),
                 _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newPhone.area_code,
-                        expression: "newPhone.area_code"
-                      }
-                    ],
-                    staticClass: "item_input_phone",
-                    attrs: { type: "text", placeholder: "电话区号" },
-                    domProps: { value: _vm.newPhone.area_code },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+                  _c(
+                    "div",
+                    { staticClass: "areaSel" },
+                    [
+                      _c("AreaCodeSelector", {
+                        attrs: { areaCode: _vm.newPhone.area_code },
+                        on: { selectedAreaCode: _vm.selectedAreaCode },
+                        model: {
+                          value: _vm.newPhone.area_code,
+                          callback: function($$v) {
+                            _vm.$set(_vm.newPhone, "area_code", $$v)
+                          },
+                          expression: "newPhone.area_code"
                         }
-                        _vm.$set(_vm.newPhone, "area_code", $event.target.value)
-                      }
-                    }
-                  })
+                      })
+                    ],
+                    1
+                  )
                 ])
               ]),
               _vm._v(" "),
@@ -40118,27 +40274,24 @@ var render = function() {
                 _c("div", { staticClass: "item_title" }, [_vm._v("电话区号")]),
                 _vm._v(" "),
                 _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edPhone.area_code,
-                        expression: "edPhone.area_code"
-                      }
-                    ],
-                    staticClass: "item_input_phone",
-                    attrs: { type: "text", placeholder: "电话区号" },
-                    domProps: { value: _vm.edPhone.area_code },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+                  _c(
+                    "div",
+                    { staticClass: "areaSel" },
+                    [
+                      _c("AreaCodeSelector", {
+                        attrs: { areaCode: _vm.edPhone.area_code },
+                        on: { selectedAreaCode: _vm.selectedAreaCode },
+                        model: {
+                          value: _vm.edPhone.area_code,
+                          callback: function($$v) {
+                            _vm.$set(_vm.edPhone, "area_code", $$v)
+                          },
+                          expression: "edPhone.area_code"
                         }
-                        _vm.$set(_vm.edPhone, "area_code", $event.target.value)
-                      }
-                    }
-                  })
+                      })
+                    ],
+                    1
+                  )
                 ])
               ]),
               _vm._v(" "),
@@ -43520,6 +43673,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -43533,7 +43694,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             edHouse: {
                 house_room: '',
                 house_class: '',
-                house_name: '',
+                // name:'',
+                // en_name:'',
                 house_group: '',
                 house_duty: '',
                 id: '',
@@ -43596,7 +43758,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edHouse.user_id = this.houses[index].user_id;
             this.edHouse.house_room = this.houses[index].room;
             this.edHouse.house_class = this.houses[index].class;
-            this.edHouse.house_name = this.houses[index].user.name;
+            // this.edHouse.name=this.houses[index].user.name;
+            // this.edHouse.en_name=this.houses[index].user.en_name;
             this.edHouse.house_group = this.houses[index].group;
             this.edHouse.house_duty = this.houses[index].duty;
             this.edHouse.index = index;
@@ -43614,7 +43777,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     room: this.edHouse.house_room,
                     class: this.edHouse.house_class,
-                    name: this.edHouse.house_name,
+                    name: this.edHouse.name,
+                    en_name: this.edHouse.en_name,
                     group: this.edHouse.house_group,
                     duty: this.edHouse.house_duty
                 },
@@ -43624,7 +43788,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (res.status == 200) {
                     _this2.houses[_this2.edHouse.index].room = _this2.edHouse.house_room;
                     _this2.houses[_this2.edHouse.index].class = _this2.edHouse.house_class;
-                    _this2.houses[_this2.edHouse.index].user.name = _this2.edHouse.house_name;
+                    _this2.houses[_this2.edHouse.index].user.name = _this2.edHouse.name;
+                    _this2.houses[_this2.edHouse.index].user.en_name = _this2.edHouse.en_name;
                     _this2.houses[_this2.edHouse.index].group = _this2.edHouse.house_group;
                     _this2.houses[_this2.edHouse.index].duty = _this2.edHouse.house_duty;
                     _this2.$toast('修改成功');
@@ -43696,6 +43861,8 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(house.user.name))]),
                 _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(house.user.en_name))]),
+                _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(house.duty))]),
                 _vm._v(" "),
                 _c("td", { attrs: { width: "100px" } }, [
@@ -43745,9 +43912,7 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_house" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("分组分组编号")
-                ]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("分组编号")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -43839,34 +44004,6 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_house" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("学生姓名")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edHouse.house_name,
-                        expression: "edHouse.house_name"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "填写学生姓名", type: "text" },
-                    domProps: { value: _vm.edHouse.house_name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edHouse, "house_name", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_house" }, [
                 _c("div", { staticClass: "item_title" }, [_vm._v("职责")]),
                 _vm._v(" "),
                 _c("div", [
@@ -43928,7 +44065,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("班级")]),
         _vm._v(" "),
-        _c("th", [_vm._v("学生姓名")]),
+        _c("th", [_vm._v("中文名")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("英文名")]),
         _vm._v(" "),
         _c("th", [_vm._v("职责")]),
         _vm._v(" "),
@@ -51962,6 +52101,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -52022,6 +52163,8 @@ var render = function() {
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(group.user.name))]),
               _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(group.user.en_name))]),
+              _vm._v(" "),
               _c("td", [_vm._v(_vm._s(group.duty))]),
               _vm._v(" "),
               _c(
@@ -52058,7 +52201,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("學生班級")]),
         _vm._v(" "),
-        _c("th", [_vm._v("學生姓名")]),
+        _c("th", [_vm._v("中文名")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("英文名")]),
         _vm._v(" "),
         _c("th", [_vm._v("學生職責")]),
         _vm._v(" "),
@@ -53005,6 +53150,8 @@ exports.push([module.i, "\n.main{width: 100%;height: 100vh;-webkit-box-align: ce
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__);
 //
 //
 //
@@ -53067,144 +53214,122 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-				data: function data() {
-								return {
-												optList: [{
-																value: '86',
-																name: '中国大陆(+86)'
-												}, {
-																value: '852',
-																name: '中国香港(+852)'
-												}, {
-																value: '886',
-																name: '中国台湾(+886)'
-												}, {
-																value: '853',
-																name: '中国澳门(+853)'
-												}, {
-																value: '1473',
-																name: 'United Kingdom(+1473)'
-												}, {
-																value: '82',
-																name: 'South Korea(+82)'
-												}, {
-																value: '81',
-																name: 'Japan(+81)'
-												}, {
-																value: '49',
-																name: 'Germany(+49)'
-												}, {
-																value: '673',
-																name: 'Brunei(+673)'
-												}],
-												username: '',
-												en_name: '',
-												idd_code: '',
-												phoneNumber: '',
-												smscode: '',
-												password: '',
-												repassword: '',
-												key: '',
-												time: 0,
-												disabled: false
-								};
-				},
+					components: {
+										AreaCodeSelector: __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default.a
+					},
+					data: function data() {
+										return {
+															username: '',
+															en_name: '',
+															idd_code: '',
+															phoneNumber: '',
+															smscode: '',
+															password: '',
+															repassword: '',
+															key: '',
+															time: 0,
+															disabled: false
+										};
+					},
 
-				methods: {
-								register: function register() {
-												var _this = this;
+					methods: {
+										register: function register() {
+															var _this = this;
 
-												if (this.password && this.username && this.en_name && this.repassword && this.smscode) {
-																if (this.password == this.repassword) {
-																				this.$post(this.$config + '/api/users', {
-																								name: this.username,
-																								en_name: this.en_name,
-																								password: this.password,
-																								verification_code: this.smscode,
-																								verification_key: this.key
-																				}).then(function (res) {
-																								console.log(res.data);
-																								// this.$toast('数据');
-																								if (res.data.meta.access_token) {
-																												// this.setUserInfo(res)
-																												_this.$toast('注册成功');
-																												_this.$router.push('/');
-																								} else {
-																												_this.$toast(res.data.message);
-																								}
-																				}).catch(function (err) {
-																								console.log(err);
-																								if (err.response.data.errors) {
-																												for (var key in err.response.data.errors) {
-																																_this.$toast(err.response.data.errors[key][0]);
-																												}
-																								}
-																				});
-																} else {
-																				this.$toast('两次密码不一致！');
-																				this.repassword = '';
-																}
-												} else {
-																this.$toast('请填写完整信息');
-												}
-								},
-								getCode: function getCode() {
-												var _this2 = this;
-
-												if (this.phoneNumber && this.idd_code) {
-																this.run();
-																axios.post(this.$config + '/api/verificationCodes', {
-																				phone: this.phoneNumber,
-																				idd_code: this.idd_code
-																}).then(function (res) {
-																				console.log(res.data);
-																				if (res.data.key) {
-																								// this.setUserInfo(res)
-																								_this2.key = res.data.key;
-																								_this2.$toast('验证码已成功发送，请注意查收。');
+															if (this.password && this.username && this.en_name && this.repassword && this.smscode) {
+																				if (this.password == this.repassword) {
+																									this.$post(this.$config + '/api/users', {
+																														name: this.username,
+																														en_name: this.en_name,
+																														password: this.password,
+																														verification_code: this.smscode,
+																														verification_key: this.key
+																									}).then(function (res) {
+																														console.log(res.data);
+																														// this.$toast('数据');
+																														if (res.data.meta.access_token) {
+																																			// this.setUserInfo(res)
+																																			_this.$toast('注册成功');
+																																			_this.$router.push('/');
+																														} else {
+																																			_this.$toast(res.data.message);
+																														}
+																									}).catch(function (err) {
+																														console.log(err);
+																														if (err.response.data.errors) {
+																																			for (var key in err.response.data.errors) {
+																																								_this.$toast(err.response.data.errors[key][0]);
+																																			}
+																														}
+																									});
 																				} else {
-																								_this2.$toast(res.data.message);
+																									this.$toast('两次密码不一致！');
+																									this.repassword = '';
 																				}
-																}).catch(function (err) {
-																				console.log(err);
-																				if (err.response.data.errors) {
-																								for (var key in err.response.data.errors) {
-																												_this2.$toast(err.response.data.errors[key][0]);
-																								}
-																				}
-																});
-												} else {
-																this.$toast('请填写手机区号和号码');
-												}
-								},
-								run: function run() {
-												this.time = 60;
-												this.timer();
-								},
+															} else {
+																				this.$toast('请填写完整信息');
+															}
+										},
+										getCode: function getCode() {
+															var _this2 = this;
 
-								setDisabled: function setDisabled(val) {
-												this.disabled = val;
-								},
-								timer: function timer() {
-												if (this.time > 0) {
-																this.time--;
-																this.disabled = true;
-																setTimeout(this.timer, 1000);
-												} else {
-																this.disabled = false;
-																this.time = 0;
-												}
-								}
-				},
-				computed: {
-								text: function text() {
-												return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
-								}
-				}
+															if (this.phoneNumber && this.idd_code) {
+																				this.run();
+																				axios.post(this.$config + '/api/verificationCodes', {
+																									phone: this.phoneNumber,
+																									idd_code: this.idd_code
+																				}).then(function (res) {
+																									console.log(res.data);
+																									if (res.data.key) {
+																														// this.setUserInfo(res)
+																														_this2.key = res.data.key;
+																														_this2.$toast('验证码已成功发送，请注意查收。');
+																									} else {
+																														_this2.$toast(res.data.message);
+																									}
+																				}).catch(function (err) {
+																									console.log(err);
+																									if (err.response.data.errors) {
+																														for (var key in err.response.data.errors) {
+																																			_this2.$toast(err.response.data.errors[key][0]);
+																														}
+																									}
+																				});
+															} else {
+																				this.$toast('请填写手机区号和号码');
+															}
+										},
+										run: function run() {
+															this.time = 60;
+															this.timer();
+										},
+
+										setDisabled: function setDisabled(val) {
+															this.disabled = val;
+										},
+										timer: function timer() {
+															if (this.time > 0) {
+																				this.time--;
+																				this.disabled = true;
+																				setTimeout(this.timer, 1000);
+															} else {
+																				this.disabled = false;
+																				this.time = 0;
+															}
+										},
+										selectedAreaCode: function selectedAreaCode(value) {
+															this.idd_code = value;
+										}
+					},
+					computed: {
+										text: function text() {
+															return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
+										}
+					}
 });
 
 /***/ }),
@@ -53270,43 +53395,22 @@ var render = function() {
         _vm._v(" "),
         _c("div", [
           _c(
-            "select",
-            {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
+            "div",
+            { staticClass: "areaSel" },
+            [
+              _c("AreaCodeSelector", {
+                attrs: { areaCode: _vm.idd_code },
+                on: { selectedAreaCode: _vm.selectedAreaCode },
+                model: {
                   value: _vm.idd_code,
+                  callback: function($$v) {
+                    _vm.idd_code = $$v
+                  },
                   expression: "idd_code"
                 }
-              ],
-              staticClass: "sel",
-              on: {
-                change: function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.idd_code = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
-                }
-              }
-            },
-            [
-              _c("option", { attrs: { value: "" } }, [_vm._v("请选择区号")]),
-              _vm._v(" "),
-              _vm._l(_vm.optList, function(item) {
-                return _c("option", { domProps: { value: item.value } }, [
-                  _vm._v(_vm._s(item.name))
-                ])
               })
             ],
-            2
+            1
           )
         ]),
         _vm._v(" "),
@@ -54402,8 +54506,8 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-// const baseUrl='https://www.bunchparty.com/etravel/public';//线上地址
-var baseUrl = '';
+var baseUrl = 'https://www.bunchparty.com/etravel/public'; //线上地址
+// const baseUrl='';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),

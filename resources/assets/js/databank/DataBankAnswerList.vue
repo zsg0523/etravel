@@ -40,7 +40,8 @@
                         <th>分組</th>
                         <th>學生學號</th>
                         <th>學生班級</th>
-                        <th>學生姓名</th>
+                        <th>中文名</th>
+                        <th>英文名</th>
                         <th>學生職責</th>
                         <th>查看答題紙</th>
                     </tr>
@@ -51,6 +52,7 @@
                         <td>{{group.student_number}}</td>
                         <td>{{group.class}}</td>
                         <td>{{group.user.name}}</td>
+                        <td>{{group.user.en_name}}</td>
                         <td>{{group.duty}}</td>
                         <td @click="$router.push('/answer/dataBankAnswerInfo/'+group.user_id)">查看答題紙></td>
                     </tr>
