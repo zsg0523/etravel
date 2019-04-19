@@ -158,6 +158,7 @@ class UsersController extends Controller
         $user = $this->user();
 
         $attributes['phone'] = $request->phone;
+        $attributes['code'] = $request->code;
         // 清除验证码缓存
         \Cache::forget($request->verification_key);
 

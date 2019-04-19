@@ -28,9 +28,6 @@ return [
 		],
 		'travel_introduction' => [
 			'title' => '简介',
-			'output' => function ($value, $model) {
-				return '<div style="max-width:260px">' . $value . '</div>';
-			},
 			'sortable' => false,
 		],
 		'assembly_station' => [
@@ -51,6 +48,17 @@ return [
 		],
 		'urgency' => [
 			'title' => '恶劣天气安排',
+			'output' => function ($value, $model) {
+				return '<div style="max-width:260px">' . html_entity_decode($value) . '</div>';
+			},
+			'sortable' => false,
+		],
+		'view_plan' => [
+			'title' => '景点安排',
+			'sortable' => false,
+		],
+		'meal_plan' => [
+			'title' => '膳食安排',
 			'sortable' => false,
 		],
 		'operation' => [
@@ -87,6 +95,12 @@ return [
 		],
 		'urgency' => [
 			'title' => '恶劣天气安排'
+		],
+		'view_plan' => [
+			'title' => '景点安排'
+		],
+		'meal_plan' => [
+			'title' => '膳食安排'
 		],
 	],
 

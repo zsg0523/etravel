@@ -46,6 +46,9 @@ $api->version('v1', [
 
 		$api->get('test', 'ResetPasswordController@test');
 
+		// 获取区号列表
+		$api->get('areacode', 'AreacodesController@index')->name('api.areacodes.index');
+
 
 
 		// 需要 token 验证的接口
@@ -76,8 +79,6 @@ $api->version('v1', [
 			$api->patch('user/read/notifications', 'NotificationsController@read')->name('api.user.notifications.read');
 			// 修改用户手机号码
 			$api->patch('phone','UsersController@updatePhone')->name('api.user.updatePhone');
-			
-			$api->get('travels/school', 'TravelsController@test')->name('api.travel.test');
 
 
 			// 所有学校列表

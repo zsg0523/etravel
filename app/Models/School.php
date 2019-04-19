@@ -23,5 +23,4 @@ class School extends Model
     {
         return $this->belongsToMany(User::class);
     }
-
 }
