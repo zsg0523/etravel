@@ -37,8 +37,8 @@
             <table>
                 <thead>
                     <tr>
-                        <th>編號</th>
-                        <th>學生編號</th>
+                        <th>分組</th>
+                        <th>學生學號</th>
                         <th>學生班級</th>
                         <th>學生姓名</th>
                         <th>學生職責</th>
@@ -47,7 +47,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="(group,index) in groups">
-                        <td>{{index+1}}</td>
+                        <td>{{group.group}}</td>
                         <td>{{group.student_number}}</td>
                         <td>{{group.class}}</td>
                         <td>{{group.user.name}}</td>

@@ -228,6 +228,10 @@
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.leader" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
+                                    <div class="item_title">区号</div>
+                                    <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.area_code" ></div>
+                                </div>
+                                <div class="form_item_info" style="width:100%;">
                                     <div class="item_title">老师电话</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.phone" ></div>
                                 </div>

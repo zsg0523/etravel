@@ -57,6 +57,7 @@
             }
         },
         mounted() {
+            this.getAreacode();
             this.idd_code=this.areaCode;
             console.log(this.areaCode);
         },
@@ -64,6 +65,22 @@
             
         },
         methods: {
+            getAreacode(){
+                // 获取区号列表
+                this.$get(this.$config+'/api/areacode',
+                {
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    }
+                }).then(res => {
+                    // console.log(res.data);
+                    this.optList=res.data.data;
+                }).catch(err => {
+                    // this.$toast('获取失败');
+                    console.log(err);
+
+                });
+            },
  			changed(){
  				this.$emit('selectedAreaCode',this.idd_code);
  			},

@@ -38,22 +38,19 @@
 		    <div class="title_icon" @click="$router.push('/study/dataBankStudySheet/'+sessionStorage.routeId)">
 		        <img src="/etravel/public/images/back.png">
 		    </div>
-		    工作纸
+		    {{sheet.title}}
 		</div>
 		<div class="dataBank_input_form disflex">
 		    <div class="pane_content_sheetInfo">
-		        <div class="form_content_sheetInfo disflex">
-		        	<div class="form_item_sheetInfo">
+		        <div class="form_content_sheetInfo disflex" v-if="sheetInfos[0]" >
+		        	<!-- <div class="form_item_sheetInfo">
 		                <div class="item_title">标题</div>
 		                <div><input class="item_input_sheetInfo" placeholder="标题" type="text" disabled="disabled" :value="sheet.title"></div>
 		            </div>
                     <div class="form_item_sheetInfo">
                         <div class="item_title">内容</div>
-                        <!-- <div>
-                            <textarea class="item_area_sheetInfo"  placeholder="内容" disabled="disabled" :value="sheet.body"></textarea>
-                        </div> -->
                         <div style="border:1px solid #ccc;border-radius: 8px;background-color:#eeeeee" v-html="sheet.body"></div>
-                    </div>
+                    </div> -->
 		            <div class="form_item_sheetInfo" v-for="(sheetInfo,index) in sheetInfos">
 		                <div class="item_title">
 		                    问题{{index+1}}
@@ -68,6 +65,11 @@
                         </div>
 		            </div>
 		        </div>
+                <div class="form_content_sheetInfo" v-else>
+                        暂未添加任何问题，请添加。
+                    <div style="text-align:center;" >
+                    </div>
+                </div>
 		    </div>
             <div class="dataBankAddBtn_journeyInfo" @click="addNewSheetInfoShow()">
                 <img src="/etravel/public/images/add_y.png">
@@ -137,9 +139,9 @@
                     },
                     url: this.$config+'/api/routes/'+sessionStorage.routeId+'/studies/'+this.$route.params.id+'?include=questions',
                 }).then(res => {
-                    // console.log(res.data.questions.data);
                     this.sheet=res.data;
                     this.sheetInfos=res.data.questions.data;
+                    console.log(this.sheetInfos.length);
                 }).catch(err => {
                     this.$toast('获取失败');
                     console.log(err);

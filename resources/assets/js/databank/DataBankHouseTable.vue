@@ -159,7 +159,7 @@
         },
         methods:{
             getHouses(){
-                // 获取分房表信息
+                // 获取分组分房表信息
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -229,8 +229,8 @@
                         this.houses[this.edHouse.index].room=this.edHouse.house_room;
                         this.houses[this.edHouse.index].class=this.edHouse.house_class;
                         this.houses[this.edHouse.index].user.name=this.edHouse.house_name;
-                        this.houses[this.edHouse.index].user.group=this.edHouse.house_group;
-                        this.houses[this.edHouse.index].user.duty=this.edHouse.house_duty;
+                        this.houses[this.edHouse.index].group=this.edHouse.house_group;
+                        this.houses[this.edHouse.index].duty=this.edHouse.house_duty;
                         this.$toast('修改成功');
                         this.isEditHouseShow=false;    
                     }else{
@@ -244,8 +244,8 @@
             delHouse(userId,houseId){
                 // 删除分房信息
                 this.$dialog.confirm({
-                    title: '删除分房表信息',
-                    message: '是否删除该分房'
+                    title: '删除分组分房表信息',
+                    message: '是否删除该条信息'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
