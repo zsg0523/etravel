@@ -25,21 +25,21 @@ return [
 		'urgency' => [
 			'title' => '恶劣天气安排',
 			'output' => function ($value, $model) {
-				return '<div class="imageNote" style="width:500px">' . html_entity_decode($value) . '</div>';
+				return '<div style="max-width:500px; min-width:300px;">' . html_entity_decode($value) . '</div>';
 			},
 			'sortable' => false,
 		],
 		'view_plan' => [
 			'title' => '景点安排',
 			'output' => function ($value, $model) {
-				return '<div class="imageNote" style="width:500px">' . html_entity_decode($value) . '</div>';
+				return '<div style="max-width:500px; min-width:300px;">' . html_entity_decode($value) . '</div>';
 			},
 			'sortable' => false,
 		],
 		'meal_plan' => [
 			'title' => '膳食安排',
 			'output' => function ($value, $model) {
-				return '<div class="imageNote" style="width:500px">' . html_entity_decode($value) . '</div>';
+				return '<div style="max-width:500px; min-width:300px;">' . html_entity_decode($value) . '</div>';
 			},
 			'sortable' => false,
 		],

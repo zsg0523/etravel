@@ -15,7 +15,7 @@ class GroupsController extends Controller
 	/** [index 所有分组] */
     public function index()
     {
-    	return $this->response->collection(Group::room()->get(), new GroupTransformer());
+    	return $this->response->collection(Group::group()->get(), new GroupTransformer());
     }
 
     /** [travelIndex 旅行团分组安排] */
@@ -42,10 +42,16 @@ class GroupsController extends Controller
         if($group->user_id != $this->user()->id || $group->travel_id != $travel->id) {
             return $this->response->errorBadRequest();
         }
-        
-        $schools = User::find($travel->add_by)->schools;
+        // dd($travel);
+        // $schools = User::find($travel->add_by)->schools;
 
-    	return $this->response->item($group, new GroupTransformer())->setMeta($schools->toArray());
+        // return $this->response->item($group, new GroupTransformer())->setMeta($schools->toArray());
+        // $school = User::find($travel->school_id)->school;
+    	// return $this->response->item($group, new GroupTransformer())->setMeta($school->toArray());
+        $travel = $group->travel()->get();
+
+        return $this->response->item($group, new GroupTransformer())->setMeta($travel->toArray());
+
     }
 
     /** [store 新建分组] */
