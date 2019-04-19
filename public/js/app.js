@@ -28088,7 +28088,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.personal_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_promise{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.form_content_pe{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_information{width: 100%;min-height:100px;\n}\n.form_item_information>div{width: 96%;min-height: 40px;\n}\n.form_item_information input{width: 100%;min-height: 40px;border: none;border-radius: 8px;border: 1px solid rgb(136,136,136);padding: 0 10px;\n}\n.item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.personalEditBtn{width:50px;height: 50px;position: absolute;right: 20px;top: 20px;\n}\n.personalEditBtn:hover{cursor:pointer;\n}\n.personalEditBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n.info_phone,.info_profession{padding: 0 20px;\n}\n.head_edit, .information_edit{position: relative;\n}\n.head_edit .info_title,.information_edit .info_title1{  height: 50px;line-height: 50px;font-size: 0;\n}\n.head_edit .info_title span,.information_edit .info_title1 span{font-size: 16px; text-align: center; display: inline-block;\n}\n.info_title hr, .info_title1 hr{   margin: 5px 0px;  display: inline-block; padding: 0;border: 0; height: 0; border-top: 1px solid #ffde01; -webkit-box-sizing: content-box; box-sizing: content-box; width: 85%;\n}\np.padding_none{margin-bottom:0px;\n}\nselect{width:100%;min-height:40px;border-radius: 8px;line-height:38px;font-size: 14px;outline: none;overflow: hidden;padding: 0 10px;\n}\noption{ border:1px solid #CCC;border-radius: 8px;background: #fff;\n}\noption:hover{background-color: #ffde01;\n}\n.head_edit .info_photo,.head_edit .info_name{width: 50%;display: inline-block;padding: 0 20px;\n}\n.head_edit .info_name, .information_edit .info_name{position: absolute;\n}\n.head_edit .info_photo .photo{width: 150px;height: 150px;\n}\n.head_edit .info_photo .photo img{width: 100%;max-height:100%;border-radius: 50%;\n}\n.head_edit .info_name input[type=\"text\"]{height: 40px;margin: 10px 0; width: 80%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;\n}\n.head_edit .info_name .sex{margin: 10px 0;color: #666666;\n}\n.info_phone input[type=\"text\"]{height: 40px;margin: 10px 0; width: 35%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;min-width: 350px;\n}\n\n", ""]);
+exports.push([module.i, "\n.personal_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_promise{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.form_content_pe{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_information{width: 100%;min-height:100px;\n}\n.form_item_information>div{width: 96%;min-height: 40px;\n}\n.form_item_information input{width: 100%;min-height: 40px;border: none;border-radius: 8px;border: 1px solid rgb(136,136,136);padding: 0 10px;\n}\n.item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.personalEditBtn{width:50px;height: 50px;position: absolute;right: 20px;top: 20px;\n}\n.personalEditBtn:hover{cursor:pointer;\n}\n.personalEditBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n.info_phone,.info_profession{padding: 0 20px;\n}\n.head_edit, .information_edit{position: relative;\n}\n.head_edit .info_title,.information_edit .info_title1{  height: 50px;line-height: 50px;font-size: 0;\n}\n.head_edit .info_title span,.information_edit .info_title1 span{font-size: 16px; text-align: center; display: inline-block;\n}\n.info_title hr, .info_title1 hr{   margin: 5px 0px;  display: inline-block; padding: 0;border: 0; height: 0; border-top: 1px solid #ffde01; -webkit-box-sizing: content-box; box-sizing: content-box; width: 85%;\n}\np.padding_none{margin-bottom:0px;\n}\nselect{width:100%;min-height:40px;border-radius: 8px;line-height:38px;font-size: 14px;outline: none;overflow: hidden;padding: 0 10px;\n}\noption{ border:1px solid #CCC;border-radius: 8px;background: #fff;\n}\noption:hover{background-color: #ffde01;\n}\n.head_edit .info_photo,.head_edit .info_name{width: 50%;display: inline-block;padding: 0 20px;\n}\n.head_edit .info_name, .information_edit .info_name{position: absolute;\n}\n.head_edit .info_photo .photo{width: 150px;height: 150px;\n}\n.head_edit .info_photo .photo img{width: 100%;max-height:100%;border-radius: 50%;\n}\n.head_edit .info_name input[type=\"text\"]{height: 40px;margin: 10px 0; width: 70%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;\n}\n.head_edit .info_name span{width:30%;display: block;float:left;height: 40px;line-height: 40px;margin: 10px 0;\n}\n.info_phone input[type=\"text\"]{height: 40px;margin: 10px 0; width: 35%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;min-width: 350px;\n}\n\n", ""]);
 
 // exports
 
@@ -28099,6 +28099,18 @@ exports.push([module.i, "\n.personal_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -28266,9 +28278,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             edInformation: {
                 id: '',
                 name: '',
-                sex: '',
+                en_name: '',
+                sex: ''
                 // phome:'',
-                email: ''
+                // email:'',
             },
             isEditInformationShow: false,
             errors: {}
@@ -28297,8 +28310,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         edInformationInfoShow: function edInformationInfoShow() {
             this.edInformation.name = this.personalInfos.name;
+            this.edInformation.en_name = this.personalInfos.en_name;
             // this.edInformation.phone=this.personalInfos.phone;
-            this.edInformation.email = this.personalInfos.email;
+            // this.edInformation.email=this.personalInfos.email;
             this.edInformation.sex = this.personalInfos.sex;
             this.isEditInformationShow = true;
         },
@@ -28313,17 +28327,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 },
                 data: {
                     name: this.edInformation.name,
-                    phone: this.edInformation.phone,
-                    sex: this.edInformation.sex,
-                    email: this.edInformation.email
+                    en_name: this.edInformation.en_name,
+                    // phone:this.edInformation.phone,
+                    sex: this.edInformation.sex
+                    // email:this.edInformation.email,  
                 },
                 url: this.$config + '/api/user'
             }).then(function (res) {
                 if (res.status == 200) {
                     _this2.personalInfos.name = _this2.edInformation.name;
+                    _this2.personalInfos.en_name = _this2.edInformation.en_name;
                     // this.personalInfos.phone=this.edInformation.phone;
                     _this2.personalInfos.sex = _this2.edInformation.sex;
-                    _this2.personalInfos.email = _this2.edInformation.email;
+                    // this.personalInfos.email=this.edInformation.email;
                     _this2.$toast('修改成功');
                     _this2.isEditInformationShow = false;
                 } else {
@@ -28375,10 +28391,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "info_name" }, [
-                _c("p", { staticClass: "padding_none" }, [_vm._v("昵称")]),
-                _vm._v(" "),
                 _vm.personalInfos.name
                   ? _c("div", { staticClass: "info_view" }, [
+                      _c("span", [_vm._v("中文名：")]),
                       _c("input", {
                         directives: [
                           {
@@ -28405,6 +28420,7 @@ var render = function() {
                       })
                     ])
                   : _c("div", { staticClass: "info_view" }, [
+                      _c("span", [_vm._v("中文名：")]),
                       _c("input", {
                         attrs: {
                           disabled: "disabled",
@@ -28414,10 +28430,48 @@ var render = function() {
                       })
                     ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "padding_none" }, [_vm._v("性别")]),
+                _vm.personalInfos.en_name
+                  ? _c("div", { staticClass: "info_view" }, [
+                      _c("span", [_vm._v("英文名：")]),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.personalInfos.en_name,
+                            expression: "personalInfos.en_name"
+                          }
+                        ],
+                        attrs: { disabled: "disabled", type: "text" },
+                        domProps: { value: _vm.personalInfos.en_name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.personalInfos,
+                              "en_name",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  : _c("div", { staticClass: "info_view" }, [
+                      _c("span", [_vm._v("英文名：")]),
+                      _c("input", {
+                        attrs: {
+                          disabled: "disabled",
+                          type: "text",
+                          placeholder: "未设置"
+                        }
+                      })
+                    ]),
                 _vm._v(" "),
                 _vm.personalInfos.sex == 0
                   ? _c("div", { staticClass: "sex" }, [
+                      _c("span", [_vm._v("性别：")]),
                       _c("input", {
                         attrs: {
                           disabled: "disabled",
@@ -28428,6 +28482,7 @@ var render = function() {
                     ])
                   : _vm.personalInfos.sex == 1
                   ? _c("div", { staticClass: "sex" }, [
+                      _c("span", [_vm._v("性别：")]),
                       _c("input", {
                         attrs: {
                           disabled: "disabled",
@@ -28437,6 +28492,7 @@ var render = function() {
                       })
                     ])
                   : _c("div", { staticClass: "sex" }, [
+                      _c("span", [_vm._v("性别：")]),
                       _c("input", {
                         attrs: {
                           disabled: "disabled",
@@ -28582,7 +28638,7 @@ var render = function() {
                   staticStyle: { width: "100%" }
                 },
                 [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("昵称")]),
+                  _c("div", { staticClass: "item_title" }, [_vm._v("中文名")]),
                   _vm._v(" "),
                   _c("div", [
                     _c("input", {
@@ -28595,7 +28651,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { placeholder: "昵称", type: "text" },
+                      attrs: { placeholder: "中文名", type: "text" },
                       domProps: { value: _vm.edInformation.name },
                       on: {
                         input: function($event) {
@@ -28605,6 +28661,45 @@ var render = function() {
                           _vm.$set(
                             _vm.edInformation,
                             "name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_information",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("英文名")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edInformation.en_name,
+                          expression: "edInformation.en_name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { placeholder: "英文名", type: "text" },
+                      domProps: { value: _vm.edInformation.en_name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edInformation,
+                            "en_name",
                             $event.target.value
                           )
                         }
@@ -28671,53 +28766,6 @@ var render = function() {
                       ],
                       2
                     )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_information",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("邮箱"),
-                    _vm.errors.email
-                      ? _c("span", {
-                          staticClass: "err",
-                          domProps: { textContent: _vm._s(_vm.errors.email[0]) }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edInformation.email,
-                          expression: "edInformation.email"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { placeholder: "邮箱", type: "text" },
-                      domProps: { value: _vm.edInformation.email },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.edInformation,
-                            "email",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
                   ])
                 ]
               ),

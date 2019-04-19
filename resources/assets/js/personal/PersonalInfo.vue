@@ -42,9 +42,8 @@
     .head_edit .info_photo .photo{width: 150px;height: 150px;}
     .head_edit .info_photo .photo img{width: 100%;max-height:100%;border-radius: 50%;}
 
-    .head_edit .info_name input[type="text"]{height: 40px;margin: 10px 0; width: 80%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;}
-    .head_edit .info_name .sex{margin: 10px 0;color: #666666;}
-    
+    .head_edit .info_name input[type="text"]{height: 40px;margin: 10px 0; width: 70%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;}
+    .head_edit .info_name span{width:30%;display: block;float:left;height: 40px;line-height: 40px;margin: 10px 0;}
     .info_phone input[type="text"]{height: 40px;margin: 10px 0; width: 35%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;min-width: 350px;}
 
 </style>
@@ -69,22 +68,29 @@
                             </div>
                         </div>
                         <div class="info_name">
-                            <p class="padding_none">昵称</p>
+                            <!-- <p class="padding_none">中文名</p> -->
                             <div class="info_view" v-if="personalInfos.name" >
-                                <input disabled="disabled" type="text" v-model="personalInfos.name"/>                                                                
+                                <span>中文名：</span><input disabled="disabled" type="text" v-model="personalInfos.name"/>                                                                
                             </div>
                             <div class="info_view" v-else >
-                                <input disabled="disabled" type="text" placeholder="未设置" />                                                                               
+                                <span>中文名：</span><input disabled="disabled" type="text" placeholder="未设置" />                                                                               
                             </div>
-                            <p class="padding_none">性别</p>
+                            <!-- <p class="padding_none">英文名</p> -->
+                            <div class="info_view" v-if="personalInfos.en_name" >
+                                <span>英文名：</span><input disabled="disabled" type="text" v-model="personalInfos.en_name"/>                                             
+                            </div>
+                            <div class="info_view" v-else >
+                                <span>英文名：</span><input disabled="disabled" type="text" placeholder="未设置" />                                                                               
+                            </div>
+                            <!-- <p class="padding_none">性别</p> -->
                             <div class="sex" v-if="personalInfos.sex==0">
-                                <input disabled="disabled" type="text" value="女" />                                               
+                                  <span>性别：</span><input disabled="disabled" type="text" value="女" />                                               
                             </div>
                             <div class="sex" v-else-if="personalInfos.sex==1">
-                                <input disabled="disabled" type="text" value="男" />                                               
+                                  <span>性别：</span><input disabled="disabled" type="text" value="男" />                                               
                             </div>
                             <div class="sex"  v-else>
-                                <input disabled="disabled" type="text" placeholder="未设置" />                                                                             
+                                  <span>性别：</span><input disabled="disabled" type="text" placeholder="未设置" />                                            
                             </div>
                         </div>
                     </div>
@@ -114,9 +120,15 @@
                         <div class="gather_info_title"><span>编辑信息</span><hr></div>
                     </div>   
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">昵称</div>
+                        <div class="item_title">中文名</div>
                         <div>
-                            <input class="item_input" placeholder="昵称" type="text" v-model="edInformation.name">
+                            <input class="item_input" placeholder="中文名" type="text" v-model="edInformation.name">
+                        </div>
+                    </div>
+                    <div class="form_item_information" style="width:100%;">
+                        <div class="item_title">英文名</div>
+                        <div>
+                            <input class="item_input" placeholder="英文名" type="text" v-model="edInformation.en_name">
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
@@ -134,12 +146,12 @@
                             <input class="item_input" placeholder="手机号" type="text" v-model="edInformation.phone">
                         </div>
                     </div> -->
-                    <div class="form_item_information" style="width:100%;">
+                    <!-- <div class="form_item_information" style="width:100%;">
                         <div class="item_title">邮箱<span class="err" v-if="errors.email" v-text="errors.email[0]"></span></div>
                         <div>
                             <input class="item_input" placeholder="邮箱" type="text" v-model="edInformation.email">
                         </div>
-                    </div>
+                    </div> -->
                     
                     <div class="issure">
                         <button @click="editInformation()">修改</button>
@@ -165,9 +177,10 @@
                 edInformation:{
                     id:'',
                     name:'',
+                    en_name:'',
                     sex:'',
                     // phome:'',
-                    email:'',
+                    // email:'',
                 },
                 isEditInformationShow:false,
                 errors:{},
@@ -194,8 +207,9 @@
             },
             edInformationInfoShow(){
                 this.edInformation.name=this.personalInfos.name;
+                this.edInformation.en_name=this.personalInfos.en_name;
                 // this.edInformation.phone=this.personalInfos.phone;
-                this.edInformation.email=this.personalInfos.email;
+                // this.edInformation.email=this.personalInfos.email;
                 this.edInformation.sex=this.personalInfos.sex;
                 this.isEditInformationShow=true;
             },
@@ -208,17 +222,19 @@
                     },
                     data:{
                         name:this.edInformation.name,
-                        phone:this.edInformation.phone,
+                        en_name:this.edInformation.en_name,
+                        // phone:this.edInformation.phone,
                         sex:this.edInformation.sex,    
-                        email:this.edInformation.email,  
+                        // email:this.edInformation.email,  
                     },
                     url: this.$config+'/api/user',
                 }).then(res => {
                     if(res.status==200){
                         this.personalInfos.name=this.edInformation.name;
+                        this.personalInfos.en_name=this.edInformation.en_name;
                         // this.personalInfos.phone=this.edInformation.phone;
                         this.personalInfos.sex=this.edInformation.sex;
-                        this.personalInfos.email=this.edInformation.email;
+                        // this.personalInfos.email=this.edInformation.email;
                         this.$toast('修改成功');
                         this.isEditInformationShow=false;    
                     }else{
