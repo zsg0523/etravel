@@ -78,9 +78,4 @@ class TravelsController extends Controller
         $travel->delete();
         return $this->response->noContent();
     }
-
-    public function test(Travel $travel)
-    {
-        dd($travel->school());
-    }
 }

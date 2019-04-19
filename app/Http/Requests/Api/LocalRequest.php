@@ -15,7 +15,7 @@ class LocalRequest extends FormRequest
         switch ($this->method()) {
             case 'POST':
                 return [
-                    'title' => 'required|string|max:50',
+                    // 'title' => 'required|string|max:50',
                     'content' => 'required',
                 ];
                 break;
