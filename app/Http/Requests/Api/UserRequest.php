@@ -36,11 +36,11 @@ class UserRequest extends FormRequest
                 $userId = isset($this->user_id) ? $this->user_id :  \Auth::guard('api')->id();
 
                 return [
-                    'name' => 'between:2,25|unique:users,name,' . $userId,
+                    'name' => 'between:2,25' . $userId,
                     'email' => 'email',
                     'introduction' => 'max:80',
                     'avatar_image_id' => 'exists:images,id,type,avatar,user_id,' . $userId,
-                    'en_name' => 'between:2,25|unique:users,en_name'
+                    'en_name' => 'between:2,25'
                 ];
                 break;
         }
