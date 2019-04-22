@@ -81,4 +81,9 @@ class Travel extends Model
     {
         return $this->hasMany(WriteTitle::class);
     }
+
+    public function school()
+    {
+        return $this->belongsTo(School::class);
+    }
 }

@@ -59,6 +59,12 @@ return [
 			},
 			'sortable' => false,
 		],
+		'school' => [
+			'title' => '关联学校名称',
+			'output' => function ($value, $model) {
+				return empty($model->school->school_name) ? 'N/A' : $model->school->school_name;
+			}
+		],
 		'travels' => [
 			'title' => '旅游项目',
 			'output' => function ($value, $model) {
@@ -98,6 +104,11 @@ return [
 			'type' => 'relationship',
 			// 关联模型的字段，用来做关联显示
 			'name_field' => 'name',
+		],
+		'school' => [
+			'title' => '关联学校名称',
+			'type' => 'relationship',
+			'name_field' => 'school_name',
 		],
 		'travels' => [
 			'title' => '旅游项目',
