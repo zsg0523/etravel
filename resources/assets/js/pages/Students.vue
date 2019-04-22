@@ -126,7 +126,7 @@
                             <div class="editBoxContent disflex">
                                 <div class="form_item_student">
                                     <div class="item_title">用戶ID(不可编辑)</div>
-                                    <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" v-model="edStudent.id"></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" v-model="edStudent.user_id"></div>
                                 </div>
                                 <div class="form_item_student">
                                     <div class="item_title">學生密碼(不可编辑)</div>
@@ -315,6 +315,7 @@
                 },
                 searchStudent:{
                     id:'',
+                    user_id:'',
                     name:'',
                     en_name:'',
                     code:'',
