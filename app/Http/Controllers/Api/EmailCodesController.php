@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\EmailCodesRequest;
+use App\Http\Requests\Api\UserRequest;
+use Illuminate\Support\Facades\Mail;
 
 class EmailCodesController extends Controller
 {
@@ -14,26 +15,24 @@ class EmailCodesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EmailCodesRequest $request)
+    public function store(UserRequest $request)
     {
         // 定义自定义key
         $key = 'emailCode_'.str_random(15);
-        // 自定义code
-        $code = rand(1000,9999);
-        // 用户信息
-        $user = $this->user();
-        dd($user);
+        // 生成四位随机数 左侧补0
+        $code = str_pad(random_int(1, 9999), 4, 0, STR_PAD_LEFT);
+
         $expiredAt = now()->addMinutes(10);
         // 缓存码十分钟后过期
         \Cache::put($key, ['code' => $code], $expiredAt);
 
-        $data = ['email'=>'262323675@qq.com', 'name'=>'name', 'uid'=>'123', 'activationcode'=>'123'];
+        $email = $request->email;
+        $data = ['email'=>$email, 'activationcode'=>$code];
         Mail::send('activemail', $data, function($message) use($data)
         {
-            $result = $message->to($data['email'], $data['name'])->subject('欢迎注册我们的网站，请激活您的账号！');
+            $message->to($data['email'])->subject('验证码');
         });
-    
-        dd($result);
+
         return $this->response->array([
             'key' => $key,
             'expired_at' => $expiredAt->toDateTimeString(),

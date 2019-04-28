@@ -65,7 +65,7 @@ return [
 			'type' => 'date'
 		],
 		'description' => [
-			'title' => '描述',
+			'title' => '简介',
 			'type' => 'textarea',
 		],
 	],

@@ -24,7 +24,8 @@
         "summerblue/administrator": "~1.1",
         "tymon/jwt-auth": "1.0.0-rc.2",
         "workerman/gateway-worker": "^3.0",
-        "workerman/workerman": "^3.5"
+        "workerman/workerman": "^3.5",
+        "jpush/jpush": "v3.5.*"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

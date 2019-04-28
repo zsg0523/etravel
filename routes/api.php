@@ -48,6 +48,11 @@ $api->version('v1', [
 
 		// 获取区号列表
 		$api->get('areacode', 'AreacodesController@index')->name('api.areacodes.index');
+		// 获取修改邮箱验证码
+		$api->post('emailCodes','EmailCodesController@store')->name('api.emailCodes.store');
+
+		// 测试极光推送
+		$api->get('jpush','JpushsController@index')->name('api.Jpush.index');
 
 
 
@@ -79,8 +84,6 @@ $api->version('v1', [
 			$api->patch('user/read/notifications', 'NotificationsController@read')->name('api.user.notifications.read');
 			// 修改用户手机号码
 			$api->patch('phone','UsersController@updatePhone')->name('api.user.updatePhone');
-			// 获取修改邮箱验证码
-			$api->post('emailCodes','EmailCodesController@store')->name('api.emailCodes.store');
 			// 修改用户邮箱地址
 			$api->post('email','UsersController@editEmail')->name('api.user.editEmail');
 

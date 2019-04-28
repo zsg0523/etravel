@@ -8,9 +8,7 @@ use App\Models\Student;
 use App\Models\Group;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\UserRequest;
-use App\Http\Requests\Api\EmailRequest;
 use App\Transformers\UserTransformer;
-use Illuminate\Support\Facades\Mail;
 
 class UsersController extends Controller
 {
@@ -169,29 +167,31 @@ class UsersController extends Controller
         return $this->response->item($user, new UserTransformer());
         
     }
-// qxxltddzvjxxbgea
-    /** [editEmail 修改用户邮箱地址] */
-    public function editEmail(EmailRequest $request)
-    {
-        $key = 'verificationCode_'.str_random(15);
-        $expiredAt = now()->addMinutes(10);
-        // 缓存码十分钟后过期
-        \Cache::put($key, [
-                            'phone' => $request->phone, 
-                            'idd_code'=>$request->idd_code, 
-                            'code' => $code
-                        ], $expiredAt);
 
-        return $this->response->array([
-            'key' => $key,
-            'expired_at' => $expiredAt->toDateTimeString(),
-        ])->setStatusCode(201);
+    /** [editEmail 修改用户邮箱地址] */
+    public function editEmail(UserRequest $request)
+    {
+        // 获取缓存的手机号和区号，以及验证码
+        $verifyData = \Cache::get($request->key);
+
+        if ( ! $verifyData) {
+            return $this->response->error('验证码已失效', 422);
+        }
+
+        if ( ! hash_equals($verifyData['code'], $request->code)) {
+            // 返回401
+            return $this->response->errorUnauthorized('验证码错误');
+        }
         
-        $data = ['email'=>'262323675@qq.com', 'name'=>'name', 'uid'=>'123', 'activationcode'=>'123'];
-        Mail::send('activemail', $data, function($message) use($data)
-        {
-            $message->to($data['email'], $data['name'])->subject('欢迎注册我们的网站，请激活您的账号！');
-        });
+        $user = $this->user();
+
+        $attributes['email'] = $request->email;
+        // 清除验证码缓存
+        \Cache::forget($request->key);
+
+        $user->update($attributes);
+
+        return $this->response->item($user, new UserTransformer());
     } 
     
 

@@ -30,6 +30,9 @@ return [
 		'rule' => [
 			'title' => '内容',
 			'sortable' => false,
+			'output' => function ($value, $model) {
+				return '<div style="max-width:500px; min-width:300px;">' . html_entity_decode($value) . '</div>';
+			},
 		],
 		'operation' => [
 			'title' => '管理',
@@ -51,6 +54,7 @@ return [
 		],
 		'rule' => [
 			'title' => '内容',
+			'type'  => 'wysiwyg'
 		],
 	],
 

@@ -22,6 +22,14 @@ class UserRequest extends FormRequest
                         'verification_code' => 'required|string',
                         'en_name' => 'required|between:2,25|unique:users,en_name'
                     ]; 
+                } else if(isset($this->key) && $this->code) {
+                    return [
+                        'email' => 'required|unique:users,email',
+                    ];
+                } else if(isset($this->email) || empty($this->email)) {
+                    return [
+                        'email' => 'required|email',
+                    ];
                 } else {
                     return [
                         'name' => 'required|between:2,25|unique:users,name',

@@ -24,9 +24,7 @@ return [
 
 		'travel' => [
 			'title' => '旅游项目',
-
 			'sortable' => false,
-
 			'output' => function ($value, $model) {
 				return $model->travel->travel_name;
 			}
@@ -38,6 +36,9 @@ return [
 		'content' => [
 			'title' => '简介',
 			'sortable' => false,
+			'output' => function ($value, $model) {
+				return '<div style="max-width:500px; min-width:300px;">' . html_entity_decode($value) . '</div>';
+			},
 		],
 		'operation' => [
 			'title' => '管理',

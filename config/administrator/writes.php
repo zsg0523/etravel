@@ -44,6 +44,9 @@ return [
 		'content' => [
 			'title' => '内容',
 			'sortable' => true,
+			'output' => function ($value, $model) {
+				return '<div style="max-width:500px; min-width:300px;">' . html_entity_decode($value) . '</div>';
+			},
 		],
 		'operation' => [
 			'title' => '管理',

@@ -42,6 +42,9 @@ return [
 		'body' => [
 			'title' => '内容',
 			'sortable' => false,
+			'output' => function ($value, $model) {
+				return '<div>' . html_entity_decode($value) . '</div>';
+			},
 		],
 		'operation' => [
 			'title' => '管理',

@@ -99,6 +99,7 @@ return array(
             'evaluateCategories',
             'evaluations'
         ],
+        '区号管理' => 'areacodes'
     ],
 
     /*
