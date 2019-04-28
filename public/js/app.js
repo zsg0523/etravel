@@ -28339,7 +28339,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.personal_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_promise{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.form_content_pe{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_information{width: 100%;min-height:100px;\n}\n.form_item_information>div{width: 96%;min-height: 40px;\n}\n.form_item_information input{width: 100%;min-height: 40px;border: none;border-radius: 8px;border: 1px solid rgb(136,136,136);padding: 0 10px;\n}\n.item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.personalEditBtn{width:50px;height: 50px;position: absolute;right: 20px;top: 20px;\n}\n.personalEditBtn:hover{cursor:pointer;\n}\n.personalEditBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n.info_phone,.info_profession{padding: 0 20px;\n}\n.head_edit, .information_edit{position: relative;\n}\n.head_edit .info_title,.information_edit .info_title1{  height: 50px;line-height: 50px;font-size: 0;\n}\n.head_edit .info_title span,.information_edit .info_title1 span{font-size: 16px; text-align: center; display: inline-block;\n}\n.info_title hr, .info_title1 hr{   margin: 5px 0px;  display: inline-block; padding: 0;border: 0; height: 0; border-top: 1px solid #ffde01; -webkit-box-sizing: content-box; box-sizing: content-box; width: 85%;\n}\np.padding_none{margin-bottom:0px;\n}\nselect{width:100%;min-height:40px;border-radius: 8px;line-height:38px;font-size: 14px;outline: none;overflow: hidden;padding: 0 10px;\n}\noption{ border:1px solid #CCC;border-radius: 8px;background: #fff;\n}\noption:hover{background-color: #ffde01;\n}\n.head_edit .info_photo,.head_edit .info_name{width: 50%;display: inline-block;padding: 0 20px;\n}\n.head_edit .info_name, .information_edit .info_name{position: absolute;\n}\n.head_edit .info_photo .photo{width: 150px;height: 150px;\n}\n.head_edit .info_photo .photo img{width: 100%;max-height:100%;border-radius: 50%;\n}\n.head_edit .info_name input[type=\"text\"]{height: 40px;margin: 10px 0; width: 70%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;\n}\n.head_edit .info_name span{width:30%;display: block;float:left;height: 40px;line-height: 40px;margin: 10px 0;\n}\n.info_phone input[type=\"text\"]{height: 40px;margin: 10px 0; width: 35%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;min-width: 350px;\n}\n\n", ""]);
+exports.push([module.i, "\n.personal_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_promise{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.form_content_pe{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_information{width: 100%;min-height:100px;\n}\n.form_item_information>div{width: 96%;min-height: 40px;\n}\n.form_item_information input{width: 100%;min-height: 40px;border: none;border-radius: 8px;border: 1px solid rgb(136,136,136);padding: 0 10px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.personalEditBtn{width:50px;height: 50px;position: absolute;right: 20px;top: 20px;\n}\n.personalEditBtn:hover{cursor:pointer;\n}\n.personalEditBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n.info_phone,.info_profession{padding: 0 20px;\n}\n.head_edit, .information_edit{position: relative;\n}\n.head_edit .info_title,.information_edit .info_title1{  height: 50px;line-height: 50px;font-size: 0;\n}\n.head_edit .info_title span,.information_edit .info_title1 span{font-size: 16px; text-align: center; display: inline-block;\n}\n.info_title hr, .info_title1 hr{   margin: 5px 0px;  display: inline-block; padding: 0;border: 0; height: 0; border-top: 1px solid #ffde01; -webkit-box-sizing: content-box; box-sizing: content-box; width: 85%;\n}\np.padding_none{margin-bottom:0px;\n}\nselect{width:100%;min-height:40px;border-radius: 8px;line-height:38px;font-size: 14px;outline: none;overflow: hidden;padding: 0 10px;\n}\noption{ border:1px solid #CCC;border-radius: 8px;background: #fff;\n}\noption:hover{background-color: #ffde01;\n}\n.head_edit .info_photo,.head_edit .info_name{width: 50%;display: inline-block;padding: 0 20px;\n}\n.head_edit .info_name, .information_edit .info_name{position: absolute;\n}\n.head_edit .info_photo .photo{width: 150px;height: 150px;\n}\n.head_edit .info_photo .photo img{width: 100%;max-height:100%;border-radius: 50%;\n}\n.head_edit .info_name input[type=\"text\"]{height: 40px;margin: 10px 0; width: 70%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;\n}\n.head_edit .info_name span{width:30%;display: block;float:left;height: 40px;line-height: 40px;margin: 10px 0;\n}\n.info_phone input[type=\"text\"]{height: 40px;margin: 10px 0; width: 70%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;min-width: 350px;\n}\n.editPerson{width:60px;height: 60px;line-height: 60px;display: inline-block;\n}\n.editPerson>img{width:35px;height: 35px;\n}\n.getCodeBtn{display:inline-block;width:31%;height:40px;border-radius: 8px;background-color:#ffde01;text-align:center;line-height:40px;\n}\n\n", ""]);
 
 // exports
 
@@ -28350,6 +28350,64 @@ exports.push([module.i, "\n.personal_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -28535,7 +28593,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 // email:'',
             },
             isEditInformationShow: false,
-            errors: {}
+            errors: {},
+            isEditPhone: false,
+            isEditEmail: false
         };
     },
 
@@ -28601,7 +28661,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 console.log(err);
                 _this2.errors = err.response.data.errors;
             });
-        }
+        },
+        editPhoneShow: function editPhoneShow() {
+            this.isEditPhone = true;
+        },
+        editPhone: function editPhone() {},
+        editEmailShow: function editEmailShow() {
+            this.isEditEmail = true;
+        },
+        editEmail: function editEmail() {}
     }
 });
 
@@ -28786,7 +28854,18 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "editPerson" }, [
+                        _c("img", {
+                          attrs: { src: "/etravel/public/images/edit-all.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.editPhoneShow()
+                            }
+                          }
+                        })
+                      ])
                     ])
                   : _c("div", { staticClass: "info_view" }, [
                       _c("input", {
@@ -28795,7 +28874,18 @@ var render = function() {
                           type: "text",
                           placeholder: "未设置"
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "editPerson" }, [
+                        _c("img", {
+                          attrs: { src: "/etravel/public/images/edit-all.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.editPhoneShow()
+                            }
+                          }
+                        })
+                      ])
                     ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "padding_none" }, [_vm._v("邮箱")]),
@@ -28825,7 +28915,18 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "editPerson" }, [
+                        _c("img", {
+                          attrs: { src: "/etravel/public/images/edit-all.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.editEmailShow()
+                            }
+                          }
+                        })
+                      ])
                     ])
                   : _c("div", { staticClass: "info_view" }, [
                       _c("input", {
@@ -28834,7 +28935,18 @@ var render = function() {
                           type: "text",
                           placeholder: "未设置"
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "editPerson" }, [
+                        _c("img", {
+                          attrs: { src: "/etravel/public/images/edit-all.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.editEmailShow()
+                            }
+                          }
+                        })
+                      ])
                     ])
               ])
             ])
@@ -28876,7 +28988,7 @@ var render = function() {
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "gather_info" }, [
                 _c("div", { staticClass: "gather_info_title" }, [
-                  _c("span", [_vm._v("编辑信息")]),
+                  _c("span", [_vm._v("编辑")]),
                   _c("hr")
                 ])
               ]),
@@ -29027,6 +29139,238 @@ var render = function() {
                     on: {
                       click: function($event) {
                         return _vm.editInformation()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditPhone,
+            callback: function($$v) {
+              _vm.isEditPhone = $$v
+            },
+            expression: "isEditPhone"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_information",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("手机号")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edInformation.name,
+                          expression: "edInformation.name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { placeholder: "手机号", type: "text" },
+                      domProps: { value: _vm.edInformation.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edInformation,
+                            "name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_information",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("验证码")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edInformation.en_name,
+                          expression: "edInformation.en_name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "68%" },
+                      attrs: { placeholder: "验证码", type: "text" },
+                      domProps: { value: _vm.edInformation.en_name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edInformation,
+                            "en_name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "getCodeBtn" }, [
+                      _vm._v("获取验证码")
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editPhone()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditEmail,
+            callback: function($$v) {
+              _vm.isEditEmail = $$v
+            },
+            expression: "isEditEmail"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_information",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("新邮箱")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edInformation.name,
+                          expression: "edInformation.name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { placeholder: "新邮箱", type: "text" },
+                      domProps: { value: _vm.edInformation.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edInformation,
+                            "name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_information",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("验证码")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edInformation.en_name,
+                          expression: "edInformation.en_name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "68%" },
+                      attrs: { placeholder: "验证码", type: "text" },
+                      domProps: { value: _vm.edInformation.en_name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edInformation,
+                            "en_name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "getCodeBtn" }, [
+                      _vm._v("获取验证码")
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editPhone()
                       }
                     }
                   },
@@ -43852,8 +44196,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     room: this.edHouse.house_room,
                     class: this.edHouse.house_class,
-                    name: this.edHouse.name,
-                    en_name: this.edHouse.en_name,
+                    // name:this.edHouse.name,
+                    // en_name:this.edHouse.en_name,
                     group: this.edHouse.house_group,
                     duty: this.edHouse.house_duty
                 },
@@ -43863,8 +44207,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (res.status == 200) {
                     _this2.houses[_this2.edHouse.index].room = _this2.edHouse.house_room;
                     _this2.houses[_this2.edHouse.index].class = _this2.edHouse.house_class;
-                    _this2.houses[_this2.edHouse.index].user.name = _this2.edHouse.name;
-                    _this2.houses[_this2.edHouse.index].user.en_name = _this2.edHouse.en_name;
+                    // this.houses[this.edHouse.index].user.name=this.edHouse.name;
+                    // this.houses[this.edHouse.index].user.en_name=this.edHouse.en_name;
                     _this2.houses[_this2.edHouse.index].group = _this2.edHouse.house_group;
                     _this2.houses[_this2.edHouse.index].duty = _this2.edHouse.house_duty;
                     _this2.$toast('修改成功');
@@ -53268,118 +53612,120 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-					components: {
-										AreaCodeSelector: __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default.a
-					},
-					data: function data() {
-										return {
-															username: '',
-															en_name: '',
-															idd_code: '',
-															phoneNumber: '',
-															smscode: '',
-															password: '',
-															repassword: '',
-															key: '',
-															time: 0,
-															disabled: false
-										};
-					},
+	components: {
+		AreaCodeSelector: __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default.a
+	},
+	data: function data() {
+		return {
+			username: '',
+			en_name: '',
+			idd_code: '',
+			phoneNumber: '',
+			smscode: '',
+			password: '',
+			repassword: '',
+			key: '',
+			time: 0,
+			disabled: false
+		};
+	},
 
-					methods: {
-										register: function register() {
-															var _this = this;
+	methods: {
+		register: function register() {
+			var _this = this;
 
-															if (this.password && this.username && this.en_name && this.repassword && this.smscode) {
-																				if (this.password == this.repassword) {
-																									this.$post(this.$config + '/api/users', {
-																														name: this.username,
-																														en_name: this.en_name,
-																														password: this.password,
-																														verification_code: this.smscode,
-																														verification_key: this.key
-																									}).then(function (res) {
-																														console.log(res.data);
-																														// this.$toast('数据');
-																														if (res.data.meta.access_token) {
-																																			// this.setUserInfo(res)
-																																			_this.$toast('注册成功');
-																																			_this.$router.push('/');
-																														} else {
-																																			_this.$toast(res.data.message);
-																														}
-																									}).catch(function (err) {
-																														console.log(err);
-																														if (err.response.data.errors) {
-																																			for (var key in err.response.data.errors) {
-																																								_this.$toast(err.response.data.errors[key][0]);
-																																			}
-																														}
-																									});
-																				} else {
-																									this.$toast('两次密码不一致！');
-																									this.repassword = '';
-																				}
-															} else {
-																				this.$toast('请填写完整信息');
-															}
-										},
-										getCode: function getCode() {
-															var _this2 = this;
+			if (this.password && this.username && this.en_name && this.repassword && this.smscode) {
+				if (this.password == this.repassword) {
+					this.$post(this.$config + '/api/users', {
+						name: this.username,
+						en_name: this.en_name,
+						idd_code: this.idd_code,
+						phoneNumber: this.phoneNumber,
+						password: this.password,
+						verification_code: this.smscode,
+						verification_key: this.key
+					}).then(function (res) {
+						console.log(res.data);
+						// this.$toast('数据');
+						if (res.data.meta.access_token) {
+							// this.setUserInfo(res)
+							_this.$toast('注册成功');
+							_this.$router.push('/');
+						} else {
+							_this.$toast(res.data.message);
+						}
+					}).catch(function (err) {
+						console.log(err);
+						if (err.response.data.errors) {
+							for (var key in err.response.data.errors) {
+								_this.$toast(err.response.data.errors[key][0]);
+							}
+						}
+					});
+				} else {
+					this.$toast('两次密码不一致！');
+					this.repassword = '';
+				}
+			} else {
+				this.$toast('请填写完整信息');
+			}
+		},
+		getCode: function getCode() {
+			var _this2 = this;
 
-															if (this.phoneNumber && this.idd_code) {
-																				this.run();
-																				axios.post(this.$config + '/api/verificationCodes', {
-																									phone: this.phoneNumber,
-																									idd_code: this.idd_code
-																				}).then(function (res) {
-																									console.log(res.data);
-																									if (res.data.key) {
-																														// this.setUserInfo(res)
-																														_this2.key = res.data.key;
-																														_this2.$toast('验证码已成功发送，请注意查收。');
-																									} else {
-																														_this2.$toast(res.data.message);
-																									}
-																				}).catch(function (err) {
-																									console.log(err);
-																									if (err.response.data.errors) {
-																														for (var key in err.response.data.errors) {
-																																			_this2.$toast(err.response.data.errors[key][0]);
-																														}
-																									}
-																				});
-															} else {
-																				this.$toast('请填写手机区号和号码');
-															}
-										},
-										run: function run() {
-															this.time = 60;
-															this.timer();
-										},
-
-										setDisabled: function setDisabled(val) {
-															this.disabled = val;
-										},
-										timer: function timer() {
-															if (this.time > 0) {
-																				this.time--;
-																				this.disabled = true;
-																				setTimeout(this.timer, 1000);
-															} else {
-																				this.disabled = false;
-																				this.time = 0;
-															}
-										},
-										selectedAreaCode: function selectedAreaCode(value) {
-															this.idd_code = value;
-										}
-					},
-					computed: {
-										text: function text() {
-															return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
-										}
+			if (this.phoneNumber && this.idd_code) {
+				axios.post(this.$config + '/api/verificationCodes', {
+					phone: this.phoneNumber,
+					idd_code: this.idd_code
+				}).then(function (res) {
+					console.log(res.data);
+					if (res.data.key) {
+						// this.setUserInfo(res)
+						_this2.run();
+						_this2.key = res.data.key;
+						_this2.$toast('验证码已成功发送，请注意查收。');
+					} else {
+						_this2.$toast(res.data.message);
 					}
+				}).catch(function (err) {
+					console.log(err);
+					if (err.response.data.errors) {
+						for (var key in err.response.data.errors) {
+							_this2.$toast(err.response.data.errors[key][0]);
+						}
+					}
+				});
+			} else {
+				this.$toast('请填写手机区号和号码');
+			}
+		},
+		run: function run() {
+			this.time = 60;
+			this.timer();
+		},
+
+		setDisabled: function setDisabled(val) {
+			this.disabled = val;
+		},
+		timer: function timer() {
+			if (this.time > 0) {
+				this.time--;
+				this.disabled = true;
+				setTimeout(this.timer, 1000);
+			} else {
+				this.disabled = false;
+				this.time = 0;
+			}
+		},
+		selectedAreaCode: function selectedAreaCode(value) {
+			this.idd_code = value;
+		}
+	},
+	computed: {
+		text: function text() {
+			return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
+		}
+	}
 });
 
 /***/ }),
@@ -54556,9 +54902,9 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-var baseUrl = 'https://www.bunchparty.com/etravel/public'; //公司线上地址
+// const baseUrl='https://www.bunchparty.com/etravel/public';//公司线上地址
 // const baseUrl='http://app.ateamtravel.hk/etravel/public';//学游线上地址
-// const baseUrl='';
+var baseUrl = '';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),

@@ -88,6 +88,8 @@
 		      			this.$post(this.$config+'/api/users', {
 				          	name: this.username,
 				          	en_name: this.en_name,
+				          	idd_code: this.idd_code,
+				          	phoneNumber: this.phoneNumber,
 				          	password: this.password,
 				          	verification_code: this.smscode,
 				          	verification_key: this.key,
@@ -119,7 +121,6 @@
 		    },
 		    getCode() {
 		    	if (this.phoneNumber&&this.idd_code) {
-		    		this.run();
 		        	axios.post(this.$config+'/api/verificationCodes', {
 			          	phone: this.phoneNumber,
 			          	idd_code:this.idd_code,
@@ -127,6 +128,7 @@
 			        	console.log(res.data);
 			          	if (res.data.key) {
 			            	// this.setUserInfo(res)
+		    				this.run();
 			            	this.key=res.data.key;
 			            	this.$toast('验证码已成功发送，请注意查收。');
 			          	} else {

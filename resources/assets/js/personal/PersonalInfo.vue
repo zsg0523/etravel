@@ -8,9 +8,8 @@
     .form_item_information{width: 100%;min-height:100px;}
     .form_item_information>div{width: 96%;min-height: 40px;}
     .form_item_information input{width: 100%;min-height: 40px;border: none;border-radius: 8px;border: 1px solid rgb(136,136,136);padding: 0 10px; }
-    .item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;}
+    .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
 
-    .active{font-size: 18px;}        
 
 	.personalEditBtn{width:50px;height: 50px;position: absolute;right: 20px;top: 20px;}
     .personalEditBtn:hover{cursor:pointer;}
@@ -30,7 +29,7 @@
     .head_edit, .information_edit{position: relative;}
     .head_edit .info_title,.information_edit .info_title1{  height: 50px;line-height: 50px;font-size: 0;}
     .head_edit .info_title span,.information_edit .info_title1 span{font-size: 16px; text-align: center; display: inline-block;}
-     .info_title hr, .info_title1 hr{   margin: 5px 0px;  display: inline-block; padding: 0;border: 0; height: 0; border-top: 1px solid #ffde01; box-sizing: content-box; width: 85%;}
+    .info_title hr, .info_title1 hr{   margin: 5px 0px;  display: inline-block; padding: 0;border: 0; height: 0; border-top: 1px solid #ffde01; box-sizing: content-box; width: 85%;}
      p.padding_none{margin-bottom:0px;}
 
     select{width:100%;min-height:40px;border-radius: 8px;line-height:38px;font-size: 14px;outline: none;overflow: hidden;padding: 0 10px;}
@@ -44,7 +43,10 @@
 
     .head_edit .info_name input[type="text"]{height: 40px;margin: 10px 0; width: 70%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;}
     .head_edit .info_name span{width:30%;display: block;float:left;height: 40px;line-height: 40px;margin: 10px 0;}
-    .info_phone input[type="text"]{height: 40px;margin: 10px 0; width: 35%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;min-width: 350px;}
+    .info_phone input[type="text"]{height: 40px;margin: 10px 0; width: 70%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;min-width: 350px;}
+    .editPerson{width:60px;height: 60px;line-height: 60px;display: inline-block;}
+    .editPerson>img{width:35px;height: 35px;}
+    .getCodeBtn{display:inline-block;width:31%;height:40px;border-radius: 8px;background-color:#ffde01;text-align:center;line-height:40px;}
 
 </style>
 
@@ -100,11 +102,23 @@
                         </div>
                         <div class="info_phone">
                             <p class="padding_none">手机号</p>               
-                            <div class="info_view" v-if="personalInfos.phone"><input disabled="disabled" type="text" v-model="personalInfos.phone"/></div>
-                            <div class="info_view" v-else><input disabled="disabled" type="text" placeholder="未设置" /></div>
+                            <div class="info_view" v-if="personalInfos.phone">
+                                <input disabled="disabled" type="text" v-model="personalInfos.phone"/>
+                                <div class="editPerson"><img src="/etravel/public/images/edit-all.png" @click="editPhoneShow()"></div>
+                            </div>
+                            <div class="info_view" v-else>
+                                <input disabled="disabled" type="text" placeholder="未设置" />
+                                <div class="editPerson"><img src="/etravel/public/images/edit-all.png" @click="editPhoneShow()"></div>
+                            </div>
                             <p class="padding_none">邮箱</p>
-                            <div class="info_view" v-if="personalInfos.email"><input disabled="disabled" type="text" v-model="personalInfos.email"/></div>
-                            <div class="info_view" v-else><input disabled="disabled" type="text" placeholder="未设置" /></div>      
+                            <div class="info_view" v-if="personalInfos.email">
+                                <input disabled="disabled" type="text" v-model="personalInfos.email"/>
+                                <div class="editPerson"><img src="/etravel/public/images/edit-all.png" @click="editEmailShow()"></div>
+                            </div>
+                            <div class="info_view" v-else>
+                                <input disabled="disabled" type="text" placeholder="未设置" />
+                                <div class="editPerson"><img src="/etravel/public/images/edit-all.png" @click="editEmailShow()"></div>
+                            </div>      
                         </div>
                     </div>
                 </div>
@@ -113,11 +127,11 @@
 		        </div>
             </div>       
         </div>
-         <van-popup v-model="isEditInformationShow" :overlay="true">
+        <van-popup v-model="isEditInformationShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="gather_info">
-                        <div class="gather_info_title"><span>编辑信息</span><hr></div>
+                        <div class="gather_info_title"><span>编辑</span><hr></div>
                     </div>   
                     <div class="form_item_information" style="width:100%;">
                         <div class="item_title">中文名</div>
@@ -159,6 +173,50 @@
                 </div>
             </div>
         </van-popup>
+        <van-popup v-model="isEditPhone" :overlay="true">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item_information" style="width:100%;">
+                        <div class="item_title">手机号</div>
+                        <div>
+                            <input class="item_input" placeholder="手机号" type="text" v-model="edInformation.name">
+                        </div>
+                    </div>
+                    <div class="form_item_information" style="width:100%;">
+                        <div class="item_title">验证码</div>
+                        <div>
+                            <input class="item_input" style="width:68%" placeholder="验证码" type="text" v-model="edInformation.en_name">
+                            <div class="getCodeBtn">获取验证码</div>
+                        </div>
+                    </div>
+                    <div class="issure">
+                        <button @click="editPhone()">修改</button>
+                    </div>
+                </div>
+            </div>
+        </van-popup>
+        <van-popup v-model="isEditEmail" :overlay="true">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item_information" style="width:100%;">
+                        <div class="item_title">新邮箱</div>
+                        <div>
+                            <input class="item_input" placeholder="新邮箱" type="text" v-model="edInformation.name">
+                        </div>
+                    </div>
+                    <div class="form_item_information" style="width:100%;">
+                        <div class="item_title">验证码</div>
+                        <div>
+                            <input class="item_input" style="width:68%" placeholder="验证码" type="text" v-model="edInformation.en_name">
+                            <div class="getCodeBtn">获取验证码</div>
+                        </div>
+                    </div>
+                    <div class="issure">
+                        <button @click="editPhone()">修改</button>
+                    </div>
+                </div>
+            </div>
+        </van-popup>
     </div>
 </template>
 
@@ -184,6 +242,8 @@
                 },
                 isEditInformationShow:false,
                 errors:{},
+                isEditPhone:false,
+                isEditEmail:false,
             }
         },
         mounted:function(){
@@ -245,6 +305,18 @@
                     console.log(err)
                     this.errors=err.response.data.errors;
                 });
+            },
+            editPhoneShow(){
+                this.isEditPhone=true;
+            },
+            editPhone(){
+
+            },
+            editEmailShow(){
+                this.isEditEmail=true;
+            },
+            editEmail(){
+
             },
         }
   	}

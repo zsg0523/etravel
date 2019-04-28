@@ -228,8 +228,8 @@
                     data:{
                         room:this.edHouse.house_room,
                         class:this.edHouse.house_class,
-                        name:this.edHouse.name,
-                        en_name:this.edHouse.en_name,
+                        // name:this.edHouse.name,
+                        // en_name:this.edHouse.en_name,
                         group:this.edHouse.house_group,
                         duty:this.edHouse.house_duty,
                     },
@@ -239,8 +239,8 @@
                     if(res.status==200){
                         this.houses[this.edHouse.index].room=this.edHouse.house_room;
                         this.houses[this.edHouse.index].class=this.edHouse.house_class;
-                        this.houses[this.edHouse.index].user.name=this.edHouse.name;
-                        this.houses[this.edHouse.index].user.en_name=this.edHouse.en_name;
+                        // this.houses[this.edHouse.index].user.name=this.edHouse.name;
+                        // this.houses[this.edHouse.index].user.en_name=this.edHouse.en_name;
                         this.houses[this.edHouse.index].group=this.edHouse.house_group;
                         this.houses[this.edHouse.index].duty=this.edHouse.house_duty;
                         this.$toast('修改成功');
