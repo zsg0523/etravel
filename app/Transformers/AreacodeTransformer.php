@@ -17,7 +17,7 @@ class AreacodeTransformer extends TransformerAbstract
 	public function transform(Areacode $areacode)
 	{
 		return [
-			'id' => $areacode->acid,
+			'id' => $areacode->id,
 			'acname_en' => $areacode->acname_en,
 			'acname_cn' => $areacode->acname_cn,
 			'codename' => $areacode->codename,

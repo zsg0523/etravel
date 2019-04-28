@@ -39,9 +39,9 @@ return [
 		'travel_introduction' => [
 			'title' => '简介',
 			'sortable' => false,
-			'output' => function($value, $model) {
-				return '<div style="max-width:100px">' . $value . '</div>';
-			}
+			'output' => function ($value, $model) {
+				return '<div style="max-width:500px; min-width:300px;">' . html_entity_decode($value) . '</div>';
+			},
 		],
 		'assembly_station' => [
 			'title' => '集合地点',
@@ -104,6 +104,7 @@ return [
 		],
 		'travel_introduction' => [
 			'title' => '简介',
+			'type' => 'wysiwyg'
 		],
 		'assembly_station' => [
 			'title' => '集合地点'

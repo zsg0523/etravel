@@ -33,6 +33,7 @@ class SchoolsController extends Controller
     /** [update 更新学校信息] */
     public function update(SchoolRequest $request, School $school)
     {
+        dd($school);
     	$school->fill($request->all());
     	$school->update();
 

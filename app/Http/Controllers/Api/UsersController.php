@@ -168,6 +168,31 @@ class UsersController extends Controller
         
     }
 
+    /** [editEmail 修改用户邮箱地址] */
+    public function editEmail(UserRequest $request)
+    {
+        // 获取缓存的手机号和区号，以及验证码
+        $verifyData = \Cache::get($request->key);
+
+        if ( ! $verifyData) {
+            return $this->response->error('验证码已失效', 422);
+        }
+
+        if ( ! hash_equals($verifyData['code'], $request->code)) {
+            // 返回401
+            return $this->response->errorUnauthorized('验证码错误');
+        }
+        
+        $user = $this->user();
+
+        $attributes['email'] = $request->email;
+        // 清除验证码缓存
+        \Cache::forget($request->key);
+
+        $user->update($attributes);
+
+        return $this->response->item($user, new UserTransformer());
+    } 
     
 
 

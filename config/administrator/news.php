@@ -25,6 +25,9 @@ return [
 		'body' => [
 			'title' => '内容',
 			'sortable' => false,
+			'output' => function ($value, $model) {
+				return '<div style="max-width:500px; min-width:300px;">' . html_entity_decode($value) . '</div>';
+			},
 		],
 		'view_counts' => [
 			'title' => '点击量',

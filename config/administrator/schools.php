@@ -25,6 +25,9 @@ return [
 		'school_introduction' => [
 			'title' => '简介',
 			'sortable' => false,
+			'output' => function ($value, $model) {
+				return '<div style="max-width:500px; min-width:300px;">' . html_entity_decode($value) . '</div>';
+			},
 		],
 		'school_address' => [
 			'title' => '地址',
