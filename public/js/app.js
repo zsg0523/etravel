@@ -28595,7 +28595,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             isEditInformationShow: false,
             errors: {},
             isEditPhone: false,
-            isEditEmail: false
+            isEditEmail: false,
+            time: 0,
+            disabled: false
         };
     },
 
@@ -28665,11 +28667,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         editPhoneShow: function editPhoneShow() {
             this.isEditPhone = true;
         },
-        editPhone: function editPhone() {},
+        editPhone: function editPhone() {
+            var _this3 = this;
+
+            this.$post(this.$config + '/api/emailCodes', {}).then(function (res) {
+                console.log(res.data);
+                _this3.isEditPhone = false;
+
+                if (res.data.meta.access_token) {} else {
+                    _this3.$toast(res.data.message);
+                }
+            }).catch(function (err) {
+                console.log(err);
+                if (err.response.data.errors) {
+                    for (var key in err.response.data.errors) {
+                        _this3.$toast(err.response.data.errors[key][0]);
+                    }
+                }
+            });
+        },
         editEmailShow: function editEmailShow() {
             this.isEditEmail = true;
         },
-        editEmail: function editEmail() {}
+        editEmail: function editEmail() {},
+        run: function run() {
+            this.time = 60;
+            this.timer();
+        },
+
+        setDisabled: function setDisabled(val) {
+            this.disabled = val;
+        },
+        timer: function timer() {
+            if (this.time > 0) {
+                this.time--;
+                this.disabled = true;
+                setTimeout(this.timer, 1000);
+            } else {
+                this.disabled = false;
+                this.time = 0;
+            }
+        }
+    },
+    computed: {
+        text: function text() {
+            return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
+        }
     }
 });
 

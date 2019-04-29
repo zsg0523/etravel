@@ -244,6 +244,8 @@
                 errors:{},
                 isEditPhone:false,
                 isEditEmail:false,
+                time: 0,
+                disabled:false,
             }
         },
         mounted:function(){
@@ -310,7 +312,25 @@
                 this.isEditPhone=true;
             },
             editPhone(){
+                this.$post(this.$config+'/api/emailCodes', {
+                       
+                }).then(res => {
+                    console.log(res.data);
+                    this.isEditPhone=false;
 
+                    if (res.data.meta.access_token) {
+                        
+                    } else {
+                        this.$toast(res.data.message);
+                    }
+                }).catch(err => {
+                    console.log(err);
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                });
             },
             editEmailShow(){
                 this.isEditEmail=true;
@@ -318,6 +338,28 @@
             editEmail(){
 
             },
-        }
+            run() {
+                this.time=60;
+                this.timer();
+            },
+            setDisabled: function(val){
+                this.disabled = val;
+            },
+            timer() {
+                if (this.time > 0) {
+                    this.time--;
+                    this.disabled = true;
+                    setTimeout(this.timer, 1000);
+                }else{
+                    this.disabled = false;
+                    this.time=0;
+                }
+            },
+        },
+        computed: {
+            text() {
+                return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
+            }
+        }
   	}
 </script>
