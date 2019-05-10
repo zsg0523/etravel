@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
                     return [
                         'email' => 'required|unique:users,email',
                     ];
-                } else if(isset($this->email) || empty($this->email)) {
+                } else if(isset($this->email)) {
                     return [
                         'email' => 'required|email',
                     ];
@@ -49,7 +49,7 @@ class UserRequest extends FormRequest
                     'introduction' => 'max:80',
                     'avatar_image_id' => 'exists:images,id,type,avatar,user_id,' . $userId,
                     'en_name' => 'between:2,25'
-                ];
+                ];      
                 break;
         }
     }

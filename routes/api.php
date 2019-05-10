@@ -413,7 +413,6 @@ $api->version('v1', [
 			$api->delete('users/{user}/schools/{school}', 'UserSchoolsController@destroy')->name('api.users.schools.destroy');
 
 
-
 			// 聊天消息,绑定客户端和uid
 			$api->post('users/{user}/bind', 'ChatsController@bind');
 			// 发送消息
@@ -423,6 +422,11 @@ $api->version('v1', [
 			// 房间消息记录
 			$api->get('groups/chats', 'ChatsController@group')->name('api.groups');
 
+
+			// 更新用户最后位置
+			$api->post('location', 'LocationsController@update')->name('api.location');
+			// 旅游团下的人员定位信息
+			$api->post('travels/{travel}/information', 'GroupsController@information')->name('api.group.information');
 		});
 
 

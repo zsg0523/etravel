@@ -13,7 +13,7 @@ use League\Fractal\TransformerAbstract;
 
 class GroupTransformer extends TransformerAbstract
 {
-	protected $availableIncludes = ['user','travel'];
+	protected $availableIncludes = ['user','travel','location'];
 
 	public function transform(Group $group)
 	{
@@ -44,6 +44,13 @@ class GroupTransformer extends TransformerAbstract
 	{
 		if($group->travel){
 			return $this->item($group->travel, new TravelTransformer());
+		}
+	}
+
+	public function includeLocation(Group $group)
+	{
+		if($group->location){
+			return $this->item($group->location, new LocationTransformer());
 		}
 	}
 }

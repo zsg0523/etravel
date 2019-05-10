@@ -13,7 +13,7 @@ use League\Fractal\TransformerAbstract;
 
 class TravelTransformer extends TransformerAbstract
 {
-	protected $availableIncludes = ['assemblies','flight','hotel','groups','routes'];
+	protected $availableIncludes = ['assemblies','flight','hotel','groups','routes', 'location'];
 
 	public function transform(Travel $travel)
 	{
@@ -80,5 +80,4 @@ class TravelTransformer extends TransformerAbstract
 			return $this->collection($travel->routes, new RouteTransformer());
 		}
 	}
-
 }

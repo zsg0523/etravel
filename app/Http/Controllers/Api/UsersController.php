@@ -6,6 +6,7 @@ use App\Models\Image;
 use App\Models\User;
 use App\Models\Student;
 use App\Models\Group;
+use App\Models\Emergency;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\UserRequest;
 use App\Transformers\UserTransformer;
@@ -18,9 +19,9 @@ class UsersController extends Controller
         return $this->response->collection(User::all(), new UserTransformer());
     }
 
-	/**
-	 * 用户注册
-	 */
+    /**
+     * 用户注册
+     */
     public function store(UserRequest $request)
     {
         // 获取缓存的手机号和区号，以及验证码
@@ -45,7 +46,7 @@ class UsersController extends Controller
         // 清除验证码缓存
         \Cache::forget($request->verification_key);
         
-    	return $this->response->item($user, new UserTransformer())
+        return $this->response->item($user, new UserTransformer())
                 ->setMeta([
                     'access_token' => \Auth::guard('api')->fromUser($user),
                     'token_type' => 'Bearer',
@@ -65,7 +66,7 @@ class UsersController extends Controller
     {
         $user = $this->user();
 
-        $attributes = $request->only(['name', 'en_name', 'email', 'introduction', 'sex']);
+        $attributes = $request->only(['name', 'en_name', 'introduction', 'sex']);
 
         if($request->avatar_image_id) {
             $image = Image::find($request->avatar_image_id);
@@ -73,6 +74,25 @@ class UsersController extends Controller
             $attributes['avatar'] = $image->path;
         }
         $user->update($attributes);
+
+        $emergency = $this->user->emergency;
+        // 添加到紧急联系人
+        if($emergency){
+            $update = $request->only(['user_id', 'code_one', 'code_two', 'emergency_phone_one', 'emergency_phone_two', 'emergency_email_one', 'emergency_email_two']);
+            $update['user_id'] = $user->id;
+            $emergency->update($update);
+        }else{
+            $emergency = Emergency::firstOrCreate ([
+                'user_id' => $user->id,
+                'code_one' => $request->code_one,
+                'code_two' => $request->code_two,
+                'emergency_phone_one' => $request->emergency_phone_one,
+                'emergency_phone_two' => $request->emergency_phone_two,
+                'emergency_email_one' => $request->emergency_email_one,
+                'emergency_email_two' => $request->emergency_email_two,
+            ]);
+        }
+        $user['emergency'] = $emergency;
 
         return $this->response->item($user, new UserTransformer());
     }
@@ -108,6 +128,7 @@ class UsersController extends Controller
     public function userGroup(UserRequest $request,User $user, Group $group)
     {
         $data = $request->all();
+        // dd($data);
         // 加密明文密码
         $data['password'] = bcrypt((string)$request->original_password);
         // 添加用户
@@ -156,9 +177,7 @@ class UsersController extends Controller
         }
 
         $user = $this->user();
-
-        $attributes['phone'] = $request->phone;
-        $attributes['code'] = $request->code;
+        $attributes = $request->only(['phone', 'code']);
         // 清除验证码缓存
         \Cache::forget($request->verification_key);
 
@@ -194,7 +213,10 @@ class UsersController extends Controller
         return $this->response->item($user, new UserTransformer());
     } 
     
-
+    public function informations(User $user)
+    {   
+        dd($user->locations()->get()->toArray());
+    }
 
 
 
