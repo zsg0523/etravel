@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\UserRequest;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\SendCode;
 
 class EmailCodesController extends Controller
 {
@@ -28,10 +29,15 @@ class EmailCodesController extends Controller
 
         $email = $request->email;
         $data = ['email'=>$email, 'activationcode'=>$code];
-        Mail::send('activemail', $data, function($message) use($data)
-        {
-            $message->to($data['email'])->subject('验证码');
-        });
+
+        // Mail::send('activemail', $data, function($message) use($data)
+        // {
+        //     $message->to($data['email'])->subject('验证码');
+        // });
+
+        Mail::to($email)
+            ->cc('262323675@qq.com')
+            ->queue(new SendCode($code));
 
         return $this->response->array([
             'key' => $key,
