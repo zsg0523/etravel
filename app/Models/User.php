@@ -236,9 +236,4 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasOne(Location::class);
     }
-
-    public function locations()
-    {
-        return $this->hasManyThrough(Location::class, User::class);
-    }
 }

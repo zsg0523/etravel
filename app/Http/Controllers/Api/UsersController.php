@@ -211,26 +211,5 @@ class UsersController extends Controller
         $user->update($attributes);
 
         return $this->response->item($user, new UserTransformer());
-    } 
-    
-    public function informations(User $user)
-    {   
-        dd($user->locations()->get()->toArray());
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

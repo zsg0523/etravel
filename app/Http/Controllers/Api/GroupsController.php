@@ -90,11 +90,4 @@ class GroupsController extends Controller
 
     	return $this->response->noContent();
     }
-
-    /** [information 旅游团下的人员定位信息] */
-    public function information(Group $group)
-    {
-        return $this->response->collection(Group::with('location','user')->get(), new GroupTransformer());
-    } 
-
 }

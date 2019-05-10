@@ -18,11 +18,6 @@ class Group extends Model
 		return $this->belongsTo(User::class);
 	}
 
-	public function location()
-	{
-		return $this->belongsTo(Location::class, 'user_id', 'user_id');
-	}
-
 	/** [scopeRoom 按房间号码大小排序] */
 	public function scopeRoom($query)
 	{
