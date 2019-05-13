@@ -6,6 +6,7 @@ use App\Models\Travel;
 use App\Models\Assembly;
 use App\Models\User;
 use App\Models\Image;
+use App\Models\Emergency;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\TravelRequest;
 use App\Transformers\TravelTransformer;
@@ -60,7 +61,7 @@ class TravelsController extends Controller
     }
 
     /** [update 更新旅游信息] */
-    public function update(TravelRequest $request, Travel $travel)
+    public function update(TravelRequest $request, Travel $travel, Emergency $emergency)
     {
         
         if (isset($request->travel_image_id)) {
@@ -69,7 +70,25 @@ class TravelsController extends Controller
             $travel->image = $image_path;
         }
 
+        $emergency = $travel->emergency;
+        if ($emergency) {
+            $update = $request->only(['travel_id', 'code_one', 'code_two', 'emergency_phone_one', 'emergency_phone_two', 'emergency_email_one', 'emergency_email_two']);
+            $update['travel_id'] = $travel->id;
+            $emergency->update($update);
+        } else {
+            $emergency = Emergency::firstOrCreate([
+                'travel_id' => $travel->id,
+                'code_one' => $request->code_one,
+                'code_two' => $request->code_two,
+                'emergency_phone_one' => $request->emergency_phone_one,
+                'emergency_phone_two' => $request->emergency_phone_two,
+                'emergency_email_one' => $request->emergency_email_one,
+                'emergency_email_two' => $request->emergency_email_two,
+            ]);
+        }
+
         $travel->update($request->all());
+        $travel['emergency'] = $emergency;
         return $this->response->item($travel, new TravelTransformer());
     }
     /** [destriy 旅游项目的删除] */

@@ -86,4 +86,10 @@ class Travel extends Model
     {
         return $this->belongsTo(School::class);
     }
+
+    /** [emergency紧急联系人] */ 
+    public function emergency()
+    {
+        return $this->hasOne(Emergency::class,'travel_id');
+    }
 }

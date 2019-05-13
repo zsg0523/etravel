@@ -425,8 +425,6 @@ $api->version('v1', [
 
 			// 更新用户最后位置
 			$api->post('location', 'LocationsController@update')->name('api.location');
-			// 旅游团下的人员定位信息
-			$api->post('travels/{travel}/information', 'GroupsController@information')->name('api.group.information');
 		});
 
 
