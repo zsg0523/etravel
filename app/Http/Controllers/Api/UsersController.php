@@ -205,34 +205,48 @@ class UsersController extends Controller
         return $this->response->item($user, new UserTransformer());
     }
 
-    /** [sos 一键报警] */
-    public function sos(Company $company, Travel $travel, Emergency $emergency, EasySms $easySms)
+    /**
+     * [sos 一键报警]
+     * @param  Travel    $travel    
+     * @param  Emergency $emergency [description]
+     * @param  EasySms   $easySms   [description]
+     * @return [type]               [description]
+     */
+    public function sos(Travel $travel, Emergency $emergency, EasySms $easySms)
     {   
-        // 用户紧急联系人电话和邮箱 
-        $user_emergency = $this->user()->emergency;
-        // 旅游团紧急联系人电话和邮箱
-        $travel_emergency = $travel->emergency;
-        // 公司紧急联系人
-        $company_emergency = $company->emergency;
-
-        // 发送短信
-        $this->sendSms($easySms, $user_emergency->code_one, $user_emergency->emergency_phone_one, '127203');
-        $this->sendSms($easySms, $user_emergency->code_two, $user_emergency->emergency_phone_two, '127203');
-
-        $this->sendSms($easySms, $travel_emergency->code_one, $travel_emergency->emergency_phone_one, '127203');
-        $this->sendSms($easySms, $travel_emergency->code_two, $travel_emergency->emergency_phone_two, '127203');
-
-        $this->sendSms($easySms, $company_emergency->code_one, $company_emergency->emergency_phone_one, '127203');
-        $this->sendSms($easySms, $company_emergency->code_two, $company_emergency->emergency_phone_two, '127203');
-
-        // 发送邮件
-        $this->sendMail($user_emergency->emergency_email_one, $user_emergency->emergency_email_two, $this->user);
-
-        $this->sendMail($travel_emergency->emergency_email_one, $travel_emergency->emergency_email_two, $this->user);
-
-        $this->sendMail($company_emergency->emergency_email_one, $company_emergency->emergency_email_two, $this->user);
-
-       return $this->response->array(['message' => '求救短信和邮箱已发出！']);
+        
+        try {
+            // 用户紧急联系人电话和邮箱 
+            $user_emergency = $this->user()->emergency;
+            if ($user_emergency) {
+                $this->sendSms($easySms, $user_emergency->code_one, $user_emergency->emergency_phone_one, '127203');
+                $this->sendSms($easySms, $user_emergency->code_two, $user_emergency->emergency_phone_two, '127203');
+                $this->sendMail($user_emergency->emergency_email_one, $user_emergency->emergency_email_two, $this->user);   
+            }
+        } finally {
+            try {
+                // 旅游团紧急联系人电话和邮箱
+                $travel_emergency = $travel->emergency;
+                if ($travel_emergency) {
+                    $this->sendSms($easySms, $travel_emergency->code_one, $travel_emergency->emergency_phone_one, '127203');
+                    $this->sendSms($easySms, $travel_emergency->code_two, $travel_emergency->emergency_phone_two, '127203');
+                    $this->sendMail($travel_emergency->emergency_email_one, $travel_emergency->emergency_email_two, $this->user);
+                }
+            } finally {
+                try {
+                    // 公司紧急联系人
+                    $company = Company::whereShow('1')->first();
+                    $company_emergency = $company->emergency;
+                    if ($company_emergency) {
+                        $this->sendSms($easySms, $company_emergency->code_one, $company_emergency->emergency_phone_one, '127203');
+                        $this->sendSms($easySms, $company_emergency->code_two, $company_emergency->emergency_phone_two, '127203');
+                        $this->sendMail($company_emergency->emergency_email_one, $company_emergency->emergency_email_two, $this->user);
+                    }
+                } finally {
+                    return $this->response->array(['message' => '求救短信和邮箱已发出！']);
+                }  
+            }
+        }
     }
 
     /**
@@ -255,8 +269,9 @@ class UsersController extends Controller
                 'template'  => '127203',
             ]);
         } catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $exception) {
+
             $message = $exception->getException('qcloud')->getMessage();
-            return $this->response->errorInternal($message ?: '短信发送异常');
+            // return $this->response->errorInternal($message ?: '短信发送异常');
         }
     }
 
