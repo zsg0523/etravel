@@ -44,10 +44,13 @@
     .head_edit .info_name input[type="text"]{height: 40px;margin: 10px 0; width: 70%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;}
     .head_edit .info_name span{width:30%;display: block;float:left;height: 40px;line-height: 40px;margin: 10px 0;}
     .info_phone input[type="text"]{height: 40px;margin: 10px 0; width: 70%;   padding-left: 15px; border: 1px solid #cdcdcd;  border-radius: 8px;min-width: 350px;}
+
+    .simulateShade01{width:100%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;}
     .editPerson{width:60px;height: 60px;line-height: 60px;display: inline-block;}
     .editPerson>img{width:35px;height: 35px;}
-    .getCodeBtn{display:inline-block;width:31%;height:40px;border-radius: 8px;background-color:#ffde01;text-align:center;line-height:40px;}
-
+    .sendCode{width:40%;height:40px;line-height:40px;font-size: 16px;background-color: #ffde01;border-radius: 8px;outline: none;border: none;}
+    .sendCode:hover{cursor: pointer;}
+    button:disabled{background-color: #eee;}
 </style>
 
 <template>
@@ -177,16 +180,36 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">手机号</div>
+                        <div class="item_title">旧区号</div>
                         <div>
-                            <input class="item_input" placeholder="手机号" type="text" v-model="edInformation.name">
+                            <input class="item_input" placeholder="区号" type="text" disabled="disabled" v-model="personalInfos.code">
+                        </div>
+                    </div>
+                    <div class="form_item_information" style="width:100%;">
+                        <div class="item_title">旧手机号</div>
+                        <div>
+                            <input class="item_input" placeholder="手机号" type="text" disabled="disabled" v-model="personalInfos.phone">
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
                         <div class="item_title">验证码</div>
+                        <div class="disflex" style="justify-content: space-between;">
+                            <input type="text" placeholder="验证码" v-model="phoneCode" style="width: 56%;">
+                            <button class="tc sendCode" @click='getPhoneCode()' :disabled="disabled || time > 0">{{text}}</button>
+                        </div>
+                    </div>
+                    <div class="form_item_information" style="width:100%;">
+                        <div class="item_title">区号</div>
                         <div>
-                            <input class="item_input" style="width:68%" placeholder="验证码" type="text" v-model="edInformation.en_name">
-                            <div class="getCodeBtn">获取验证码</div>
+                            <div class="simulateShade01">
+                                <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='areacode'></AreaCodeSelector>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_item_information" style="width:100%;">
+                        <div class="item_title">新手机号</div>
+                        <div>
+                            <input class="item_input" placeholder="手机号" type="text" v-model="phone">
                         </div>
                     </div>
                     <div class="issure">
@@ -201,18 +224,18 @@
                     <div class="form_item_information" style="width:100%;">
                         <div class="item_title">新邮箱</div>
                         <div>
-                            <input class="item_input" placeholder="新邮箱" type="text" v-model="edInformation.name">
+                            <input class="item_input" placeholder="新邮箱" type="text" v-model="email">
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
                         <div class="item_title">验证码</div>
-                        <div>
-                            <input class="item_input" style="width:68%" placeholder="验证码" type="text" v-model="edInformation.en_name">
-                            <div class="getCodeBtn">获取验证码</div>
+                        <div class="disflex" style="justify-content: space-between;">
+                            <input type="text" placeholder="验证码" v-model="emailCode" style="width: 56%;">
+                            <button class="tc sendCode" @click='getEmailCode()' :disabled="emailDisabled">获取验证码</button>
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="editPhone()">修改</button>
+                        <button @click="editEmail()">修改</button>
                     </div>
                 </div>
             </div>
@@ -221,7 +244,11 @@
 </template>
 
 <script>
+    import AreaCodeSelector from '../components/AreaCodeSelector.vue';
   	export default {
+        components: {
+            AreaCodeSelector,
+        },
         data(){
             return{
                 personalInfos:[],
@@ -237,8 +264,6 @@
                     name:'',
                     en_name:'',
                     sex:'',
-                    // phome:'',
-                    // email:'',
                 },
                 isEditInformationShow:false,
                 errors:{},
@@ -246,6 +271,14 @@
                 isEditEmail:false,
                 time: 0,
                 disabled:false,
+                phone:'',
+                phoneCode:'',
+                phoneKey:'',
+                areacode:'',
+                email:'',
+                emailCode:'',
+                emailKey:'',
+                emailDisabled:false,
             }
         },
         mounted:function(){
@@ -311,17 +344,113 @@
             editPhoneShow(){
                 this.isEditPhone=true;
             },
-            editPhone(){
-                this.$post(this.$config+'/api/emailCodes', {
-                       
-                }).then(res => {
-                    console.log(res.data);
-                    this.isEditPhone=false;
-
-                    if (res.data.meta.access_token) {
+            getPhoneCode() {
+                if (this.personalInfos.phone&&this.personalInfos.code) {
+                    axios.post(this.$config+'/api/verificationCodes', {
+                        phone: this.personalInfos.phone,
+                        idd_code:this.personalInfos.code,
+                        un_unique:1,
+                    }).then(res => {
+                        console.log(res.data);
+                        if (res.data.key) {
+                            // this.setUserInfo(res)
+                            this.run();
+                            this.phoneKey=res.data.key;
+                            this.$toast('验证码已成功发送，请注意查收。');
+                        } else {
+                            this.$toast(res.data.message);
+                        }
+                    }).catch(err => {
+                        console.log(err);
+                        if(err.response.data.errors){
+                            for(var key in err.response.data.errors){
+                                this.$toast(err.response.data.errors[key][0]);
+                            }
+                        }
                         
-                    } else {
-                        this.$toast(res.data.message);
+                    });
+                } else {
+                    this.$toast('号码信息不全!');
+                }
+            },
+            editPhone(){
+                this.$ajax({
+                    method: 'PATCH',
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    },
+                    data:{
+                        code: this.areacode,
+                        phone: this.phone,
+                        verification_code: this.phoneCode,
+                        verification_key: this.phoneKey,       
+                    },
+                    url: this.$config+'/api/phone',
+                }).then(res => {
+                    if(res.status==200){
+                        this.$toast('修改成功');
+                        this.personalInfos.phone=this.phone;
+                        this.personalInfos.code=this.areacode;
+                        this.isEditPhone=false;    
+                    }else{
+                        this.$toast('修改失败');
+                    }
+                }).catch(err => {
+                    this.$toast('修改失败');
+                    console.log(err)
+                    this.errors=err.response.data.errors;
+                });
+            },
+            editEmailShow(){
+                this.isEditEmail=true;
+                this.email=this.personalInfos.email;
+            },
+            getEmailCode() {
+                if (this.email) {
+                    axios.post(this.$config+'/api/emailCodes', {
+                        email: this.email,
+                    }).then(res => {
+                        console.log(res.data);
+                        if (res.data.key) {
+                            // this.setUserInfo(res)
+                            this.emailKey=res.data.key;
+                            this.emailDisabled=true;
+                            this.$toast('验证码已成功发送至您的邮箱，请注意查收。');
+                        } else {
+                            this.$toast(res.data.message);
+                        }
+                    }).catch(err => {
+                        console.log(err);
+                        if(err.response.data.errors){
+                            for(var key in err.response.data.errors){
+                                this.$toast(err.response.data.errors[key][0]);
+                            }
+                        }
+                        
+                    });
+                } else {
+                    this.$toast('请填写邮箱');
+                }
+            },
+            editEmail(){
+                this.$ajax({
+                    method: 'PATCH',
+                    headers: {
+                        "Authorization": 'Bearer '+sessionStorage.token,
+                    },
+                    data:{
+                        email: this.email,
+                        code: this.emailCode,
+                        key: this.emailKey,       
+                    },
+                    url: this.$config+'/api/email',
+                }).then(res => {
+                    if(res.status==200){
+                        this.$toast('修改成功');
+                        this.personalInfos.email=this.email;
+                        this.isEditEmail=false;    
+                    }else{
+                        this.$toast('修改失败');
                     }
                 }).catch(err => {
                     console.log(err);
@@ -331,12 +460,6 @@
                         }
                     }
                 });
-            },
-            editEmailShow(){
-                this.isEditEmail=true;
-            },
-            editEmail(){
-
             },
             run() {
                 this.time=60;
@@ -355,6 +478,9 @@
                     this.time=0;
                 }
             },
+            selectedAreaCode(value){
+                this.areacode=value;
+            },
         },
         computed: {
             text() {

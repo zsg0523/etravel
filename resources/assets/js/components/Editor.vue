@@ -1,9 +1,74 @@
+<style type="text/css">
+    .w-e-toolbar {
+        flex-wrap: wrap;
+        -webkit-box-lines: multiple;
+    }
+
+    .w-e-toolbar .w-e-menu:hover{
+        z-index: 10002!important;
+    }
+
+    .w-e-menu span{
+        text-decoration: none;
+    }
+
+    .fullscreen-editor {
+        position: fixed !important;
+        width: 100% !important;
+        height: 100% !important;
+        left: 0px !important;
+        top: 0px !important;
+        background-color: white;
+        z-index: 9999;
+    }
+
+    .fullscreen-editor .w-e-text-container {
+        width: 100% !important;
+        height: 95% !important;
+    }
+    .previewBox{
+        width: 760px;
+        height:100%;
+        background-color: #fff;
+        position:fixed;
+        right:0px;
+        top:0px;
+        z-index: 10005;
+    }
+    .closePreviewBox{
+        width:30px;
+        height: 30px;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+    }
+    .showContent{
+        width:640px;
+        min-height: 400px;
+        border:2px solid #ccc;
+        margin: 15px 60px 15px 60px;
+    }
+</style>
 <template>
     <div style="width: 100%;">
-        <div ref="editor" style="text-align:left;width:100%;"></div>
+        <div ref="editor" style="text-align:left;width:100%;">
+            
+        </div>
+        <!-- <van-popup v-model="isPreviewShow" position="right" style="width:100% !important;position:fixed;right:0px;top:0px;" :overlay="true">
+            <div class="previewBox">
+                <button @click="isPreviewShow=false" class="closePreviewBox">关闭</button>
+                <div class="showContent" v-html="editorContent"></div>
+            </div>
+        </van-popup> -->
+        <div class="previewBox" :style="{display:isPreviewShow}">
+            <div class="showContent" v-html="editorContent"></div>
+            <div @click="isPreviewShow='none'" class="closePreviewBox"><img src="/etravel/public/images/delete.png" alt="关闭"></div>
+        </div>
+        <div class="w-e-menu" ref="preview" style="display: none;">
+            <span class="_wangEditor_btn_fullscreen" @click="toPreview()">预览</span>
+        </div>
     </div>
 </template>
-
 <script>
     import E from 'wangeditor'
 
@@ -11,13 +76,21 @@
         name: 'editor',
         data () {
             return {
-                editorContent: '请编辑内容',
+                editorContent: '',
                 editor:'',
+                isPreviewShow:'none',
             }
         },
-        props:['childData'],    //接收父组件的方法
+        props:['childData'],//接收父组件的方法
+        created(){
+            this.isPreviewShow='none';
+        },  
         mounted() {
             this.createEditor();
+            var preview=this.$refs.preview;
+            console.log(preview);
+            preview.setAttribute('style','z-index:10001;display:block;');
+            this.$refs.editor.firstChild.appendChild(preview);
         },
         beforeDestroy(){
             this.destroyEditor();
@@ -61,7 +134,6 @@
                   "Authorization": 'Bearer '+sessionStorage.token,
                 };//自定义header
                 this.editor.create();
-                // console.log(this.childData); 
                 this.editor.txt.html(this.childData);
             },
             destroyEditor(){  // 销毁编辑器，
@@ -69,7 +141,11 @@
                 // $('#account--editor').remove();  // 不报错的话，这一步可以省略
                 this.editor = null;
                 // WangEditor.numberOfLocation--;  // 手动清除地图的重复引用。否则单页面来回切换时，地图报错重复引用
-            }, 
+            },
+            toPreview(){
+                this.editorContent=this.editor.txt.html()
+                this.isPreviewShow='block';
+            } 
         },
         watch:{
             childData(){

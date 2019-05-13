@@ -634,7 +634,7 @@
                     hotel_address:'',
                     hotel_phone:'',
                     hotel_location:'',
-                    image:'',
+                    image:'http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png',
                     travel_id:sessionStorage.actTravelId,
                 },
                 edHotel:{
@@ -911,7 +911,7 @@
                     this.newHotel.hotel_address='';
                     this.newHotel.hotel_phone='';
                     this.newHotel.hotel_location='';
-                    this.newHotel.image='';
+                    this.newHotel.image='http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png';
                 }).catch(err => {
                     this.$toast('添加失败');
                     console.log(err)

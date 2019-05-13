@@ -5,6 +5,7 @@ import ajax from './http';
 import config from './config'
 import {
   Popup,
+  Button,
   Toast,
   Dialog,
   Uploader,
@@ -13,6 +14,7 @@ import {
 
 Vue
 	.use(Popup)
+	.use(Button)
 	.use(Toast)
 	.use(Dialog)
 	.use(Uploader)
