@@ -235,8 +235,7 @@ class UsersController extends Controller
             } finally {
                 try {
                     // 公司紧急联系人
-                    $company = Company::whereShow('1')->first();
-                    $company_emergency = $company->emergency;
+                    $company_emergency = Company::whereShow('1')->first();
                     if ($company_emergency) {
                         $this->sendSms($easySms, $company_emergency->code_one, $company_emergency->emergency_phone_one, '127203');
                         $this->sendSms($easySms, $company_emergency->code_two, $company_emergency->emergency_phone_two, '127203');
