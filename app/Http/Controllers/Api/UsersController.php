@@ -63,7 +63,7 @@ class UsersController extends Controller
     }
 
     /** [update 更新用户信息] */
-    public function update(UserRequest $request)
+    public function update(UserRequest $request, Emergency $emergency)
     {
         $user = $this->user();
 
@@ -76,22 +76,8 @@ class UsersController extends Controller
         }
 
         $user->update($attributes);
-        
-        // 更新紧急联系人信息
-        $emergency = Emergency::UpdateOrCreate (
-            [
-                'user_id' => $user->id
-            ],
-            [
-                'user_id' => $user->id,
-                'code_one' => $request->code_one,
-                'code_two' => $request->code_two,
-                'emergency_phone_one' => $request->emergency_phone_one,
-                'emergency_phone_two' => $request->emergency_phone_two,
-                'emergency_email_one' => $request->emergency_email_one,
-                'emergency_email_two' => $request->emergency_email_two,
-            ]
-        );
+
+        $emergency = $emergency->updateOrCreate(['user_id' => $user->id],$request->all());
 
         return $this->response->item($user, new UserTransformer());
     }
