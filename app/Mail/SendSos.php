@@ -6,19 +6,22 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-
-class ResetMail extends Mailable
+use App\Models\User;
+ 
+class SendSos extends Mailable
 {
     use Queueable, SerializesModels;
+
+    public $user;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -28,7 +31,6 @@ class ResetMail extends Mailable
      */
     public function build()
     {
-        return $this->from(['address' => env('MAIL_FROM_ADDRESS'), 'name' => env('MAIL_FROM_NAME')])
-                    ->markdown('emails.user.welcome');
+        return $this->markdown('emails.user.sendSos');
     }
 }

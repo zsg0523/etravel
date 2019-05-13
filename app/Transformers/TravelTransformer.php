@@ -13,7 +13,7 @@ use League\Fractal\TransformerAbstract;
 
 class TravelTransformer extends TransformerAbstract
 {
-	protected $availableIncludes = ['assemblies','flight','hotel','groups','routes'];
+	protected $availableIncludes = ['assemblies','flight','hotel','groups','routes', 'location'];
 
 	public function transform(Travel $travel)
 	{
@@ -34,6 +34,12 @@ class TravelTransformer extends TransformerAbstract
 			'view_plan' => $travel->view_plan,
 			'meal_plan' => $travel->meal_plan,
 			'travel_status' => $travel->travel_status,
+			'code_one' => isset($travel->emergency) ? $travel->emergency->code_one : '',
+			'code_two' => isset($travel->emergency) ? $travel->emergency->code_two : '',
+			'emergency_phone_one' => isset($travel->emergency) ? $travel->emergency->emergency_phone_one : '',
+			'emergency_phone_two' => isset($travel->emergency) ? $travel->emergency->emergency_phone_two : '',
+			'emergency_email_one' => isset($travel->emergency) ? $travel->emergency->emergency_email_one : '',
+			'emergency_email_two' => isset($travel->emergency) ? $travel->emergency->emergency_email_two : '',
 			'created_at' => $travel->created_at->toDateTimeString(),
 			'updated_at' => $travel->updated_at->toDateTimeString(),
 			'pivot' => [
@@ -80,5 +86,4 @@ class TravelTransformer extends TransformerAbstract
 			return $this->collection($travel->routes, new RouteTransformer());
 		}
 	}
-
 }

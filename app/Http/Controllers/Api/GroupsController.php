@@ -19,7 +19,7 @@ class GroupsController extends Controller
     }
 
     /** [travelIndex 旅行团分组安排] */
-    public function travelIndex(Travel $travel)
+    public function travelIndex(Travel $travel, Group $group)
     {
         // 按照房间排序
         // $groups = $travel->groups()->room()->get();
@@ -90,14 +90,4 @@ class GroupsController extends Controller
 
     	return $this->response->noContent();
     }
-
-
-    // private function roomGroupBy($array)
-    // {
-    //     foreach ($array as $value) {
-    //         if ($value->room)
-    //     }
-    // }
-
-
 }

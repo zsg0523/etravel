@@ -28,7 +28,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'en_name', 'email', 'password', 'avatar', 'introduction', 'phone', 'add_by', 'original_password', 'sex', 'tokens', 'code'
+        'name', 'en_name', 'email', 'password', 'avatar', 'introduction', 'phone', 'add_by', 'original_password', 'sex', 'tokens', 'code', 'emergency_phone_one', 'emergency_phone_two', 'emergency_email_one', 'emergency_email_two'
     ];
 
     /**
@@ -226,17 +226,14 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Chat::class);
     }
 
+    /** [emergency紧急联系人] */ 
+    public function emergency()
+    {
+        return $this->hasOne(Emergency::class);
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    public function location()
+    {
+        return $this->hasOne(Location::class);
+    }
 }

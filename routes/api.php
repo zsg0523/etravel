@@ -86,6 +86,8 @@ $api->version('v1', [
 			$api->patch('phone','UsersController@updatePhone')->name('api.user.updatePhone');
 			// 修改用户邮箱地址
 			$api->post('email','UsersController@editEmail')->name('api.user.editEmail');
+			// 紧急求助
+			$api->get('travel/{travel}/sos', 'UsersController@sos');
 
 
 			// 所有学校列表
@@ -413,7 +415,6 @@ $api->version('v1', [
 			$api->delete('users/{user}/schools/{school}', 'UserSchoolsController@destroy')->name('api.users.schools.destroy');
 
 
-
 			// 聊天消息,绑定客户端和uid
 			$api->post('users/{user}/bind', 'ChatsController@bind');
 			// 发送消息
@@ -423,6 +424,9 @@ $api->version('v1', [
 			// 房间消息记录
 			$api->get('groups/chats', 'ChatsController@group')->name('api.groups');
 
+
+			// 更新用户最后位置
+			$api->post('location', 'LocationsController@update')->name('api.location');
 		});
 
 

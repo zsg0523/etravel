@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Image;
-use App\Models\User;
-use App\Models\Student;
-use App\Models\Group;
+use App\Models\{Image, User, Company, Travel, Student, Group, Emergency};
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\UserRequest;
 use App\Transformers\UserTransformer;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendSos;
+use Overtrue\EasySms\{EasySms, PhoneNumber};
+
+
 
 class UsersController extends Controller
 {
@@ -18,9 +20,9 @@ class UsersController extends Controller
         return $this->response->collection(User::all(), new UserTransformer());
     }
 
-	/**
-	 * 用户注册
-	 */
+    /**
+     * 用户注册
+     */
     public function store(UserRequest $request)
     {
         // 获取缓存的手机号和区号，以及验证码
@@ -45,7 +47,7 @@ class UsersController extends Controller
         // 清除验证码缓存
         \Cache::forget($request->verification_key);
         
-    	return $this->response->item($user, new UserTransformer())
+        return $this->response->item($user, new UserTransformer())
                 ->setMeta([
                     'access_token' => \Auth::guard('api')->fromUser($user),
                     'token_type' => 'Bearer',
@@ -65,14 +67,31 @@ class UsersController extends Controller
     {
         $user = $this->user();
 
-        $attributes = $request->only(['name', 'en_name', 'email', 'introduction', 'sex']);
+        $attributes = $request->only(['name', 'en_name', 'introduction', 'sex']);
 
         if($request->avatar_image_id) {
             $image = Image::find($request->avatar_image_id);
 
             $attributes['avatar'] = $image->path;
         }
+
         $user->update($attributes);
+        
+        // 更新紧急联系人信息
+        $emergency = Emergency::UpdateOrCreate (
+            [
+                'user_id' => $user->id
+            ],
+            [
+                'user_id' => $user->id,
+                'code_one' => $request->code_one,
+                'code_two' => $request->code_two,
+                'emergency_phone_one' => $request->emergency_phone_one,
+                'emergency_phone_two' => $request->emergency_phone_two,
+                'emergency_email_one' => $request->emergency_email_one,
+                'emergency_email_two' => $request->emergency_email_two,
+            ]
+        );
 
         return $this->response->item($user, new UserTransformer());
     }
@@ -95,12 +114,6 @@ class UsersController extends Controller
         }
 
         return $this->response->item($user, new UserTransformer());
-    }
-
-    /** [schoolUser 查询管理员所有学校的学生] *2
-    public function schoolUser(User $user)
-    {
-        // return $this->response->collection();
     }
 
 
@@ -156,9 +169,7 @@ class UsersController extends Controller
         }
 
         $user = $this->user();
-
-        $attributes['phone'] = $request->phone;
-        $attributes['code'] = $request->code;
+        $attributes = $request->only(['phone', 'code']);
         // 清除验证码缓存
         \Cache::forget($request->verification_key);
 
@@ -192,8 +203,101 @@ class UsersController extends Controller
         $user->update($attributes);
 
         return $this->response->item($user, new UserTransformer());
-    } 
-    
+    }
+
+    /**
+     * [sos 一键报警]
+     * @param  Travel    $travel    
+     * @param  Emergency $emergency [description]
+     * @param  EasySms   $easySms   [description]
+     * @return [type]               [description]
+     */
+    public function sos(Travel $travel, Emergency $emergency, EasySms $easySms)
+    {   
+        
+        try {
+            // 用户紧急联系人电话和邮箱 
+            $user_emergency = $this->user()->emergency;
+            if ($user_emergency) {
+                $this->sendSms($easySms, $user_emergency->code_one, $user_emergency->emergency_phone_one, '127203');
+                $this->sendSms($easySms, $user_emergency->code_two, $user_emergency->emergency_phone_two, '127203');
+                $this->sendMail($user_emergency->emergency_email_one, $user_emergency->emergency_email_two, $this->user);   
+            }
+        } finally {
+            try {
+                // 旅游团紧急联系人电话和邮箱
+                $travel_emergency = $travel->emergency;
+                if ($travel_emergency) {
+                    $this->sendSms($easySms, $travel_emergency->code_one, $travel_emergency->emergency_phone_one, '127203');
+                    $this->sendSms($easySms, $travel_emergency->code_two, $travel_emergency->emergency_phone_two, '127203');
+                    $this->sendMail($travel_emergency->emergency_email_one, $travel_emergency->emergency_email_two, $this->user);
+                }
+            } finally {
+                try {
+                    // 公司紧急联系人
+                    $company = Company::whereShow('1')->first();
+                    $company_emergency = $company->emergency;
+                    if ($company_emergency) {
+                        $this->sendSms($easySms, $company_emergency->code_one, $company_emergency->emergency_phone_one, '127203');
+                        $this->sendSms($easySms, $company_emergency->code_two, $company_emergency->emergency_phone_two, '127203');
+                        $this->sendMail($company_emergency->emergency_email_one, $company_emergency->emergency_email_two, $this->user);
+                    }
+                } finally {
+                    return $this->response->array(['message' => '求救短信和邮箱已发出！']);
+                }  
+            }
+        }
+    }
+
+    /**
+     * [sendSms 腾讯云发送短信]
+     * @param  [type]  $code     [区号]
+     * @param  [type]  $phone    [电话]
+     * @param  [type]  $template [模版 ID]
+     * @param  [type] $easySms  [实例]
+     * @return [type]            [description]
+     */
+    private function sendSms($easySms, $idd_code, $phone, $template)
+    {
+        $phone = new PhoneNumber($phone, $idd_code);
+        try {
+            $easySms->send($phone, [
+                'data' => [
+                    '12345',
+                    '1',
+                ],
+                'template'  => '127203',
+            ]);
+        } catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $exception) {
+
+            $message = $exception->getException('qcloud')->getMessage();
+            // return $this->response->errorInternal($message ?: '短信发送异常');
+        }
+    }
+
+    /**
+     * [sendMail 发送邮件]
+     * @param  [type] $to       [收件人邮箱]
+     * @param  [type] $cc       [抄送人]
+     * @param  [type] $instance [实例]
+     * @return [type]           [异步发送]
+     */
+    private function sendMail($to, $cc, $instance)
+    {
+        Mail::to($to)
+            ->cc($cc)
+            ->queue(new SendSos($instance));
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 
