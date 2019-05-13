@@ -26,7 +26,7 @@ class AddAreaCodeToAssembliesTable extends Migration
     public function down()
     {
         Schema::table('assemblies', function (Blueprint $table) {
-            $table->dropColumn('code');
+            $table->dropColumn('area_code');
         });
     }
 }
