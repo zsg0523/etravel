@@ -1,25 +1,20 @@
 <?php
-use App\Models\Emergency;
+use App\Models\Company;
 
 return [
 
-	'title' => '紧急联系人管理',
+	'title' => '公司信息管理',
 
-	'single' => '紧急联系人管理',
+	'single' => '公司信息管理',
 
-	'model' => Emergency::class,
+	'model' => Company::class,
 
 	'columns' => [
 		'id' => [
 			'title' => 'ID',
 		],
-		'user' => [
-			'title' => '所属',
-			'sortable' => false,
-			'output' => function ($value, $model) {
-				return !empty($model->user->name) ? "用户：".$model->user->name : "旅游团：".$model->travel->travel_name;
-			},
-
+		'name' => [
+			'title' => '公司名称'
 		],
 		'code_one' => [
 			'title' => '区号A',
@@ -38,6 +33,10 @@ return [
 		],
 		'emergency_email_two' => [
 			'title' => '邮箱B',
+		],
+		'show' => [
+			'title' => '是否使用',
+			'select' => "IF((:table).show, '使用', '不使用')"
 		],
 		'operation' => [
 			'title' => '管理',
@@ -46,6 +45,9 @@ return [
 	],
 
 	'edit_fields' => [
+		'name' => [
+			'title' => '公司名称'
+		],
 		'code_one' => [
 			'title' => '区号A',
 		],
@@ -63,6 +65,11 @@ return [
 		],
 		'emergency_email_two' => [
 			'title' => '邮箱B',
+		],
+		'show' => [
+			'type' => 'bool',
+			'title' => '是否使用',
+			'hint' => '是否需要使用该公司信息'
 		],
 	],
 

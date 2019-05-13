@@ -17,4 +17,9 @@ class Emergency extends Model
     {
     	return $this->belongsTo(Travel::class);
     }
+    
+    public function company()
+    {
+    	return $this->belongsTo(Company::class);
+    }
 }

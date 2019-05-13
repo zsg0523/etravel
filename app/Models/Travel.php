@@ -90,6 +90,6 @@ class Travel extends Model
     /** [emergency紧急联系人] */ 
     public function emergency()
     {
-        return $this->hasOne(Emergency::class,'travel_id');
+        return $this->hasOne(Emergency::class);
     }
 }

@@ -19,8 +19,6 @@ class CreateEmergenciesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('travel_id')->unsigned()->nullable();
             $table->foreign('travel_id')->references('id')->on('travels');
-            $table->integer('company_id')->unsigned()->nullable();
-            $table->foreign('company_id')->references('id')->on('companies');
             $table->integer('code_one')->nullable()->commit('区号1');
             $table->integer('code_two')->nullable()->commit('区号2');
             $table->string('emergency_phone_one')->nullable()->commit('紧急联系人手机号码');

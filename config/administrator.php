@@ -101,6 +101,7 @@ return array(
         ],
         '区号管理' => 'areacodes',
         '紧急联人管理' => 'emergencies',
+        '公司紧急联系人管理' => 'companies'
     ],
 
     /*

@@ -229,7 +229,7 @@ class User extends Authenticatable implements JWTSubject
     /** [emergency紧急联系人] */ 
     public function emergency()
     {
-        return $this->hasOne(Emergency::class,'user_id');
+        return $this->hasOne(Emergency::class);
     }
 
     public function location()
