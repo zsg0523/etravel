@@ -154,7 +154,7 @@
                 <div>
                     <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_one" placeholder="区号A" type="text"> -->
                     <div class="simulateShade">
-                        <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='travelInfo.code_one' v-model='travelInfo.code_one'></AreaCodeSelector>
+                        <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='travelInfo.code_one'></AreaCodeSelector>
                     </div>
                 </div>
             </div>
@@ -167,7 +167,7 @@
                 <div>
                     <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_two" placeholder="区号B" type="text"> -->
                     <div class="simulateShade">
-                        <AreaCodeSelector @selectedAreaCode='selectedAreaCode1' :areaCode='travelInfo.code_two' v-model='travelInfo.code_two'></AreaCodeSelector>
+                        <AreaCodeSelector @selectedAreaCode='selectedAreaCode1' :areaCode='travelInfo.code_two'></AreaCodeSelector>
                     </div>
                 </div>
             </div>

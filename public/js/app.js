@@ -26668,13 +26668,6 @@ var render = function() {
                                     attrs: { areaCode: _vm.edStudent.code_one },
                                     on: {
                                       selectedAreaCode: _vm.selectedAreaCodeOne
-                                    },
-                                    model: {
-                                      value: _vm.edStudent.code_one,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.edStudent, "code_one", $$v)
-                                      },
-                                      expression: "edStudent.code_one"
                                     }
                                   })
                                 ],
@@ -26736,13 +26729,6 @@ var render = function() {
                                     attrs: { areaCode: _vm.edStudent.code_two },
                                     on: {
                                       selectedAreaCode: _vm.selectedAreaCodeTwo
-                                    },
-                                    model: {
-                                      value: _vm.edStudent.code_two,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.edStudent, "code_two", $$v)
-                                      },
-                                      expression: "edStudent.code_two"
                                     }
                                   })
                                 ],
@@ -27249,14 +27235,7 @@ var render = function() {
                       [
                         _c("AreaCodeSelector", {
                           attrs: { areaCode: _vm.searchStudent.code_one },
-                          on: { selectedAreaCode: _vm.selectedAreaCodeOne },
-                          model: {
-                            value: _vm.searchStudent.code_one,
-                            callback: function($$v) {
-                              _vm.$set(_vm.searchStudent, "code_one", $$v)
-                            },
-                            expression: "searchStudent.code_one"
-                          }
+                          on: { selectedAreaCode: _vm.selectedAreaCodeOne }
                         })
                       ],
                       1
@@ -27310,14 +27289,7 @@ var render = function() {
                       [
                         _c("AreaCodeSelector", {
                           attrs: { areaCode: _vm.searchStudent.code_two },
-                          on: { selectedAreaCode: _vm.selectedAreaCodeTwo },
-                          model: {
-                            value: _vm.searchStudent.code_two,
-                            callback: function($$v) {
-                              _vm.$set(_vm.searchStudent, "code_two", $$v)
-                            },
-                            expression: "searchStudent.code_two"
-                          }
+                          on: { selectedAreaCode: _vm.selectedAreaCodeTwo }
                         })
                       ],
                       1
@@ -27776,14 +27748,7 @@ var render = function() {
                       [
                         _c("AreaCodeSelector", {
                           attrs: { areaCode: _vm.newStudent.code },
-                          on: { selectedAreaCode: _vm.selectedAreaCode },
-                          model: {
-                            value: _vm.newStudent.code,
-                            callback: function($$v) {
-                              _vm.$set(_vm.newStudent, "code", $$v)
-                            },
-                            expression: "newStudent.code"
-                          }
+                          on: { selectedAreaCode: _vm.selectedAreaCode }
                         })
                       ],
                       1
@@ -27831,14 +27796,7 @@ var render = function() {
                       [
                         _c("AreaCodeSelector", {
                           attrs: { areaCode: _vm.newStudent.code_one },
-                          on: { selectedAreaCode: _vm.selectedAreaCodeOne },
-                          model: {
-                            value: _vm.newStudent.code_one,
-                            callback: function($$v) {
-                              _vm.$set(_vm.newStudent, "code_one", $$v)
-                            },
-                            expression: "newStudent.code_one"
-                          }
+                          on: { selectedAreaCode: _vm.selectedAreaCodeOne }
                         })
                       ],
                       1
@@ -27890,14 +27848,7 @@ var render = function() {
                       [
                         _c("AreaCodeSelector", {
                           attrs: { areaCode: _vm.newStudent.code_two },
-                          on: { selectedAreaCode: _vm.selectedAreaCodeTwo },
-                          model: {
-                            value: _vm.newStudent.code_two,
-                            callback: function($$v) {
-                              _vm.$set(_vm.newStudent, "code_two", $$v)
-                            },
-                            expression: "newStudent.code_two"
-                          }
+                          on: { selectedAreaCode: _vm.selectedAreaCodeTwo }
                         })
                       ],
                       1
@@ -28857,14 +28808,7 @@ var render = function() {
               [
                 _c("AreaCodeSelector", {
                   attrs: { areaCode: _vm.travelInfo.code_one },
-                  on: { selectedAreaCode: _vm.selectedAreaCode },
-                  model: {
-                    value: _vm.travelInfo.code_one,
-                    callback: function($$v) {
-                      _vm.$set(_vm.travelInfo, "code_one", $$v)
-                    },
-                    expression: "travelInfo.code_one"
-                  }
+                  on: { selectedAreaCode: _vm.selectedAreaCode }
                 })
               ],
               1
@@ -28923,14 +28867,7 @@ var render = function() {
               [
                 _c("AreaCodeSelector", {
                   attrs: { areaCode: _vm.travelInfo.code_two },
-                  on: { selectedAreaCode: _vm.selectedAreaCode1 },
-                  model: {
-                    value: _vm.travelInfo.code_two,
-                    callback: function($$v) {
-                      _vm.$set(_vm.travelInfo, "code_two", $$v)
-                    },
-                    expression: "travelInfo.code_two"
-                  }
+                  on: { selectedAreaCode: _vm.selectedAreaCode1 }
                 })
               ],
               1

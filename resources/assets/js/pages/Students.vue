@@ -181,7 +181,7 @@
                                     <div class="item_title">区号A</div>
                                     <div>
                                         <div class="simulateShade">
-                                            <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='edStudent.code_one' v-model='edStudent.code_one'></AreaCodeSelector>
+                                            <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='edStudent.code_one'></AreaCodeSelector>
                                         </div>
                                         <!-- <input class="item_input" type="text" placeholder="填寫区号A" v-model="edStudent.code_one"> -->
                                     </div>
@@ -194,7 +194,7 @@
                                     <div class="item_title">区号B</div>
                                     <div>
                                         <div class="simulateShade">
-                                            <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='edStudent.code_two' v-model='edStudent.code_two'></AreaCodeSelector>
+                                            <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='edStudent.code_two'></AreaCodeSelector>
                                         </div>
                                         <!-- <input class="item_input" type="text" placeholder="填寫区号B" v-model="edStudent.code_two"> -->
                                     </div>
@@ -268,7 +268,7 @@
                             <div class="item_title">区号A</div>
                             <div>
                                 <div class="simulateShade">
-                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='searchStudent.code_one' v-model='searchStudent.code_one'></AreaCodeSelector>
+                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='searchStudent.code_one'></AreaCodeSelector>
                                 </div>
                                 <!-- <input class="item_input" type="text" placeholder="填寫区号A" v-model="searchStudent.code_one"> -->
                             </div>
@@ -281,7 +281,7 @@
                             <div class="item_title">区号B</div>
                             <div>
                                 <div class="simulateShade">
-                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='searchStudent.code_two' v-model='searchStudent.code_two'></AreaCodeSelector>
+                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='searchStudent.code_two'></AreaCodeSelector>
                                 </div>
                                 <!-- <input class="item_input" type="text" placeholder="填寫区号B" v-model="searchStudent.code_two"> -->
                             </div>
@@ -342,7 +342,7 @@
                             <div class="item_title">電話区号(必填)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
                             <div>
                                 <div class="simulateShade">
-                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newStudent.code' v-model='newStudent.code'></AreaCodeSelector>
+                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newStudent.code'></AreaCodeSelector>
                                 </div>
                                 <!-- <input class="item_input" type="text" placeholder="填寫電話区号" v-model="newStudent.code"> -->
                             </div>
@@ -357,7 +357,7 @@
                             <div class="item_title">区号A</div>
                             <div>
                                 <div class="simulateShade">
-                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='newStudent.code_one' v-model='newStudent.code_one'></AreaCodeSelector>
+                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='newStudent.code_one'></AreaCodeSelector>
                                 </div>
                                 <!-- <input class="item_input" type="text" placeholder="填寫区号A" v-model="newStudent.code_one"> -->
                             </div>
@@ -370,7 +370,7 @@
                             <div class="item_title">区号B</div>
                             <div>
                                 <div class="simulateShade">
-                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='newStudent.code_two' v-model='newStudent.code_two'></AreaCodeSelector>
+                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='newStudent.code_two'></AreaCodeSelector>
                                 </div>
                                 <!-- <input class="item_input" type="text" placeholder="填寫区号B" v-model="newStudent.code_two"> -->
                             </div>
