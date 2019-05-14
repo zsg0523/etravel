@@ -125,7 +125,7 @@ class UsersController extends Controller
 
 
     /** [information 管理员编辑用户信息] */
-    public function information(UserRequest $request, User $user, Group $group)
+    public function information(UserRequest $request, User $user, Group $group, Emergency $emergency)
     {   
         $manager = $this->user();
 
@@ -138,6 +138,8 @@ class UsersController extends Controller
 
         // 更新分组学生信息
         $group->update($request->all());
+
+        $emergency = $emergency->updateOrCreate(['user_id' => $manager->id],$request->all());
 
         return $this->response->item($user, new UserTransformer());
     }
