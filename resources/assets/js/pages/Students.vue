@@ -765,20 +765,20 @@
                 this.newStudent.code=value;
             },
             selectedAreaCodeOne(value){
-                if(this.selectStatus="search"){
+                if(this.selectStatus=="search"){
                     this.searchStudent.code_two=value;
-                }else if(this.selectStatus="edit"){
+                }else if(this.selectStatus=="edit"){
                     this.editStudent.code_two=value;
-                }else if(this.selectStatus="new"){
+                }else if(this.selectStatus=="new"){
                     this.newStudent.code_two=value;
                 }
             },
             selectedAreaCodeTwo(value){
-                if(this.selectStatus="search"){
+                if(this.selectStatus=="search"){
                     this.searchStudent.code_two=value;
-                }else if(this.selectStatus="edit"){
+                }else if(this.selectStatus=="edit"){
                     this.editStudent.code_two=value;
-                }else if(this.selectStatus="new"){
+                }else if(this.selectStatus=="new"){
                     this.newStudent.code_two=value;
                 }
             },
