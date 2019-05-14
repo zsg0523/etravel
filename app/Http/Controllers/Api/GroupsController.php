@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\User;
 use App\Models\Travel;
 use App\Models\Group;
+use App\Models\Emergency;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\GroupRequest;
 use App\Transformers\GroupTransformer;
@@ -55,12 +56,14 @@ class GroupsController extends Controller
     }
 
     /** [store 新建分组] */
-    public function store(GroupRequest $request,User $user, Travel $travel, Group $group)
+    public function store(GroupRequest $request,User $user, Travel $travel, Group $group, Emergency $emergency)
     {
     	$group->fill($request->all());
     	$group->travel_id = $travel->id;
     	$group->user_id = $user->id;
     	$group->save();
+
+        $emergency = $emergency->updateOrCreate(['user_id' => $user->id],$request->all());
 
     	return $this->response->item($group, new GroupTransformer())->setStatusCode(201);
 
