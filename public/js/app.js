@@ -27502,6 +27502,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -27854,6 +27878,220 @@ var render = function() {
           ])
         ])
       ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
+        [
+          _c("div", [_vm._v("区号1")]),
+          _vm._v(" "),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.travelInfo.code_one,
+                  expression: "travelInfo.code_one"
+                }
+              ],
+              staticClass: "item_input_school",
+              staticStyle: { width: "90%" },
+              attrs: { placeholder: "区号1", type: "text" },
+              domProps: { value: _vm.travelInfo.code_one },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.travelInfo, "code_one", $event.target.value)
+                }
+              }
+            })
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
+        [
+          _c("div", [_vm._v("联系电话1")]),
+          _vm._v(" "),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.travelInfo.emergency_phone_one,
+                  expression: "travelInfo.emergency_phone_one"
+                }
+              ],
+              staticClass: "item_input_school",
+              staticStyle: { width: "90%" },
+              attrs: { placeholder: "联系电话1", type: "text" },
+              domProps: { value: _vm.travelInfo.emergency_phone_one },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.travelInfo,
+                    "emergency_phone_one",
+                    $event.target.value
+                  )
+                }
+              }
+            })
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
+        [
+          _c("div", [_vm._v("区号2")]),
+          _vm._v(" "),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.travelInfo.code_two,
+                  expression: "travelInfo.code_two"
+                }
+              ],
+              staticClass: "item_input_school",
+              staticStyle: { width: "90%" },
+              attrs: { placeholder: "区号2", type: "text" },
+              domProps: { value: _vm.travelInfo.code_two },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.travelInfo, "code_two", $event.target.value)
+                }
+              }
+            })
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
+        [
+          _c("div", [_vm._v("联系电话2")]),
+          _vm._v(" "),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.travelInfo.emergency_phone_two,
+                  expression: "travelInfo.emergency_phone_two"
+                }
+              ],
+              staticClass: "item_input_school",
+              staticStyle: { width: "90%" },
+              attrs: { placeholder: "联系电话2", type: "text" },
+              domProps: { value: _vm.travelInfo.emergency_phone_two },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.travelInfo,
+                    "emergency_phone_two",
+                    $event.target.value
+                  )
+                }
+              }
+            })
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
+        [
+          _c("div", [_vm._v("联系邮箱1")]),
+          _vm._v(" "),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.travelInfo.emergency_email_one,
+                  expression: "travelInfo.emergency_email_one"
+                }
+              ],
+              staticClass: "item_input_school",
+              staticStyle: { width: "90%" },
+              attrs: { placeholder: "联系邮箱1", type: "text" },
+              domProps: { value: _vm.travelInfo.emergency_email_one },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.travelInfo,
+                    "emergency_email_one",
+                    $event.target.value
+                  )
+                }
+              }
+            })
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
+        [
+          _c("div", [_vm._v("联系邮箱2")]),
+          _vm._v(" "),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.travelInfo.emergency_email_two,
+                  expression: "travelInfo.emergency_email_two"
+                }
+              ],
+              staticClass: "item_input_school",
+              staticStyle: { width: "90%" },
+              attrs: { placeholder: "联系邮箱2", type: "text" },
+              domProps: { value: _vm.travelInfo.emergency_email_two },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.travelInfo,
+                    "emergency_email_two",
+                    $event.target.value
+                  )
+                }
+              }
+            })
+          ])
+        ]
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "travelInfoItem" }, [
         _c(
@@ -55382,9 +55620,9 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-// const baseUrl='https://www.bunchparty.com/etravel/public';//公司线上地址
+var baseUrl = 'https://www.bunchparty.com/etravel/public'; //公司线上地址
 // const baseUrl='http://app.ateamtravel.hk/etravel/public';//学游线上地址
-var baseUrl = '';
+// const baseUrl='';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),

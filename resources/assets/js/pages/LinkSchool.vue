@@ -138,6 +138,30 @@
                     </div>
                 </div>
             </div>
+            <div class="travelInfoItem" style="width:50%;">
+                <div>区号1</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.code_one" placeholder="区号1" type="text"></div>
+            </div>
+            <div class="travelInfoItem" style="width:50%;">
+                <div>联系电话1</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_phone_one" placeholder="联系电话1" type="text"></div>
+            </div>
+            <div class="travelInfoItem" style="width:50%;">
+                <div>区号2</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.code_two" placeholder="区号2" type="text"></div>
+            </div>
+            <div class="travelInfoItem" style="width:50%;">
+                <div>联系电话2</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_phone_two" placeholder="联系电话2" type="text"></div>
+            </div>
+            <div class="travelInfoItem" style="width:50%;">
+                <div>联系邮箱1</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_email_one" placeholder="联系邮箱1" type="text"></div>
+            </div>
+            <div class="travelInfoItem" style="width:50%;">
+                <div>联系邮箱2</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_email_two" placeholder="联系邮箱2" type="text"></div>
+            </div>
             <div class="travelInfoItem">
                 <button class="changBtn" @click="editTravelInfo();">保存修改</button>
             </div>
