@@ -181,35 +181,35 @@
                                     <div class="item_title">区号A</div>
                                     <div>
                                         <div class="simulateShade">
-                                            <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='searchStudent.code_one' v-model='searchStudent.code_one'></AreaCodeSelector>
+                                            <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='edStudent.code_one' v-model='edStudent.code_one'></AreaCodeSelector>
                                         </div>
-                                        <!-- <input class="item_input" type="text" placeholder="填寫区号A" v-model="searchStudent.code_one"> -->
+                                        <!-- <input class="item_input" type="text" placeholder="填寫区号A" v-model="edStudent.code_one"> -->
                                     </div>
                                 </div>
                                 <div class="form_item_student">
                                     <div class="item_title">緊急電話A</div>
-                                    <div><input class="item_input" type="text" placeholder="填寫緊急電話A" v-model="searchStudent.emergency_phone_one"></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫緊急電話A" v-model="edStudent.emergency_phone_one"></div>
                                 </div>
                                 <div class="form_item_student">
                                     <div class="item_title">区号B</div>
                                     <div>
                                         <div class="simulateShade">
-                                            <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='searchStudent.code_two' v-model='searchStudent.code_two'></AreaCodeSelector>
+                                            <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='edStudent.code_two' v-model='edStudent.code_two'></AreaCodeSelector>
                                         </div>
-                                        <!-- <input class="item_input" type="text" placeholder="填寫区号B" v-model="searchStudent.code_two"> -->
+                                        <!-- <input class="item_input" type="text" placeholder="填寫区号B" v-model="edStudent.code_two"> -->
                                     </div>
                                 </div>
                                 <div class="form_item_student">
                                     <div class="item_title">緊急電話B</div>
-                                    <div><input class="item_input" type="text" placeholder="填寫緊急電話B" v-model="searchStudent.emergency_phone_two"></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫緊急電話B" v-model="edStudent.emergency_phone_two"></div>
                                 </div>
                                 <div class="form_item_student">
                                     <div class="item_title">緊急郵箱A</div>
-                                    <div><input class="item_input" type="text" placeholder="填寫緊急郵箱A" v-model="searchStudent.emergency_email_one"></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫緊急郵箱A" v-model="edStudent.emergency_email_one"></div>
                                 </div>
                                 <div class="form_item_student">
                                     <div class="item_title">緊急郵箱B</div>
-                                    <div><input class="item_input" type="text" placeholder="填寫緊急郵箱B" v-model="searchStudent.emergency_email_two"></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫緊急郵箱B" v-model="edStudent.emergency_email_two"></div>
                                 </div>
                                 <!-- 分组信息 -->
                                 <div class="form_item_small">
@@ -761,23 +761,24 @@
                     act: index==this.actIndex? true:false,
                 }
             },
+            //接收区号组件返回的值
             selectedAreaCode(value){
                 this.newStudent.code=value;
             },
             selectedAreaCodeOne(value){
                 if(this.selectStatus=="search"){
-                    this.searchStudent.code_two=value;
+                    this.searchStudent.code_one=value;
                 }else if(this.selectStatus=="edit"){
-                    this.editStudent.code_two=value;
+                    this.edStudent.code_one=value;
                 }else if(this.selectStatus=="new"){
-                    this.newStudent.code_two=value;
+                    this.newStudent.code_one=value;
                 }
             },
             selectedAreaCodeTwo(value){
                 if(this.selectStatus=="search"){
                     this.searchStudent.code_two=value;
                 }else if(this.selectStatus=="edit"){
-                    this.editStudent.code_two=value;
+                    this.edStudent.code_two=value;
                 }else if(this.selectStatus=="new"){
                     this.newStudent.code_two=value;
                 }

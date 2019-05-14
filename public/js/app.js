@@ -25672,23 +25672,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 act: index == this.actIndex ? true : false
             };
         },
+
+        //接收区号组件返回的值
         selectedAreaCode: function selectedAreaCode(value) {
             this.newStudent.code = value;
         },
         selectedAreaCodeOne: function selectedAreaCodeOne(value) {
             if (this.selectStatus == "search") {
-                this.searchStudent.code_two = value;
+                this.searchStudent.code_one = value;
             } else if (this.selectStatus == "edit") {
-                this.editStudent.code_two = value;
+                this.edStudent.code_one = value;
             } else if (this.selectStatus == "new") {
-                this.newStudent.code_two = value;
+                this.newStudent.code_one = value;
             }
         },
         selectedAreaCodeTwo: function selectedAreaCodeTwo(value) {
             if (this.selectStatus == "search") {
                 this.searchStudent.code_two = value;
             } else if (this.selectStatus == "edit") {
-                this.editStudent.code_two = value;
+                this.edStudent.code_two = value;
             } else if (this.selectStatus == "new") {
                 this.newStudent.code_two = value;
             }
@@ -26663,22 +26665,16 @@ var render = function() {
                                 { staticClass: "simulateShade" },
                                 [
                                   _c("AreaCodeSelector", {
-                                    attrs: {
-                                      areaCode: _vm.searchStudent.code_one
-                                    },
+                                    attrs: { areaCode: _vm.edStudent.code_one },
                                     on: {
                                       selectedAreaCode: _vm.selectedAreaCodeOne
                                     },
                                     model: {
-                                      value: _vm.searchStudent.code_one,
+                                      value: _vm.edStudent.code_one,
                                       callback: function($$v) {
-                                        _vm.$set(
-                                          _vm.searchStudent,
-                                          "code_one",
-                                          $$v
-                                        )
+                                        _vm.$set(_vm.edStudent, "code_one", $$v)
                                       },
-                                      expression: "searchStudent.code_one"
+                                      expression: "edStudent.code_one"
                                     }
                                   })
                                 ],
@@ -26698,10 +26694,8 @@ var render = function() {
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value:
-                                      _vm.searchStudent.emergency_phone_one,
-                                    expression:
-                                      "searchStudent.emergency_phone_one"
+                                    value: _vm.edStudent.emergency_phone_one,
+                                    expression: "edStudent.emergency_phone_one"
                                   }
                                 ],
                                 staticClass: "item_input",
@@ -26710,7 +26704,7 @@ var render = function() {
                                   placeholder: "填寫緊急電話A"
                                 },
                                 domProps: {
-                                  value: _vm.searchStudent.emergency_phone_one
+                                  value: _vm.edStudent.emergency_phone_one
                                 },
                                 on: {
                                   input: function($event) {
@@ -26718,7 +26712,7 @@ var render = function() {
                                       return
                                     }
                                     _vm.$set(
-                                      _vm.searchStudent,
+                                      _vm.edStudent,
                                       "emergency_phone_one",
                                       $event.target.value
                                     )
@@ -26739,22 +26733,16 @@ var render = function() {
                                 { staticClass: "simulateShade" },
                                 [
                                   _c("AreaCodeSelector", {
-                                    attrs: {
-                                      areaCode: _vm.searchStudent.code_two
-                                    },
+                                    attrs: { areaCode: _vm.edStudent.code_two },
                                     on: {
                                       selectedAreaCode: _vm.selectedAreaCodeTwo
                                     },
                                     model: {
-                                      value: _vm.searchStudent.code_two,
+                                      value: _vm.edStudent.code_two,
                                       callback: function($$v) {
-                                        _vm.$set(
-                                          _vm.searchStudent,
-                                          "code_two",
-                                          $$v
-                                        )
+                                        _vm.$set(_vm.edStudent, "code_two", $$v)
                                       },
-                                      expression: "searchStudent.code_two"
+                                      expression: "edStudent.code_two"
                                     }
                                   })
                                 ],
@@ -26774,10 +26762,8 @@ var render = function() {
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value:
-                                      _vm.searchStudent.emergency_phone_two,
-                                    expression:
-                                      "searchStudent.emergency_phone_two"
+                                    value: _vm.edStudent.emergency_phone_two,
+                                    expression: "edStudent.emergency_phone_two"
                                   }
                                 ],
                                 staticClass: "item_input",
@@ -26786,7 +26772,7 @@ var render = function() {
                                   placeholder: "填寫緊急電話B"
                                 },
                                 domProps: {
-                                  value: _vm.searchStudent.emergency_phone_two
+                                  value: _vm.edStudent.emergency_phone_two
                                 },
                                 on: {
                                   input: function($event) {
@@ -26794,7 +26780,7 @@ var render = function() {
                                       return
                                     }
                                     _vm.$set(
-                                      _vm.searchStudent,
+                                      _vm.edStudent,
                                       "emergency_phone_two",
                                       $event.target.value
                                     )
@@ -26815,10 +26801,8 @@ var render = function() {
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value:
-                                      _vm.searchStudent.emergency_email_one,
-                                    expression:
-                                      "searchStudent.emergency_email_one"
+                                    value: _vm.edStudent.emergency_email_one,
+                                    expression: "edStudent.emergency_email_one"
                                   }
                                 ],
                                 staticClass: "item_input",
@@ -26827,7 +26811,7 @@ var render = function() {
                                   placeholder: "填寫緊急郵箱A"
                                 },
                                 domProps: {
-                                  value: _vm.searchStudent.emergency_email_one
+                                  value: _vm.edStudent.emergency_email_one
                                 },
                                 on: {
                                   input: function($event) {
@@ -26835,7 +26819,7 @@ var render = function() {
                                       return
                                     }
                                     _vm.$set(
-                                      _vm.searchStudent,
+                                      _vm.edStudent,
                                       "emergency_email_one",
                                       $event.target.value
                                     )
@@ -26856,10 +26840,8 @@ var render = function() {
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value:
-                                      _vm.searchStudent.emergency_email_two,
-                                    expression:
-                                      "searchStudent.emergency_email_two"
+                                    value: _vm.edStudent.emergency_email_two,
+                                    expression: "edStudent.emergency_email_two"
                                   }
                                 ],
                                 staticClass: "item_input",
@@ -26868,7 +26850,7 @@ var render = function() {
                                   placeholder: "填寫緊急郵箱B"
                                 },
                                 domProps: {
-                                  value: _vm.searchStudent.emergency_email_two
+                                  value: _vm.edStudent.emergency_email_two
                                 },
                                 on: {
                                   input: function($event) {
@@ -26876,7 +26858,7 @@ var render = function() {
                                       return
                                     }
                                     _vm.$set(
-                                      _vm.searchStudent,
+                                      _vm.edStudent,
                                       "emergency_email_two",
                                       $event.target.value
                                     )
