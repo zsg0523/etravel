@@ -88,6 +88,17 @@
     .van-dialog{
         width:50%;
     }
+    .simulateShade{
+        width:90%;
+        height: 44px;
+        border-width: 2px;
+        border-style: solid;
+        border-top-color: #999;
+        border-left-color: #999;
+        border-right-color: #eee;
+        border-bottom-color: #eee;
+        border-radius: 8px;
+    }
 
 </style>
 
@@ -140,7 +151,12 @@
             </div>
             <div class="travelInfoItem" style="width:50%;">
                 <div>区号1</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.code_one" placeholder="区号1" type="text"></div>
+                <div>
+                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_one" placeholder="区号1" type="text"> -->
+                    <div class="simulateShade">
+                        <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='travelInfo.code_one' v-model='travelInfo.code_one'></AreaCodeSelector>
+                    </div>
+                </div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
                 <div>联系电话1</div>
@@ -148,7 +164,12 @@
             </div>
             <div class="travelInfoItem" style="width:50%;">
                 <div>区号2</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.code_two" placeholder="区号2" type="text"></div>
+                <div>
+                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_two" placeholder="区号2" type="text"> -->
+                    <div class="simulateShade">
+                        <AreaCodeSelector @selectedAreaCode='selectedAreaCode1' :areaCode='travelInfo.code_two' v-model='travelInfo.code_two'></AreaCodeSelector>
+                    </div>
+                </div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
                 <div>联系电话2</div>
@@ -170,7 +191,11 @@
 </template>
 
 <script>
+    import AreaCodeSelector from '../components/AreaCodeSelector.vue';
     export default {
+        components: {
+            AreaCodeSelector,
+        },
         data() {
             return {
                 travelInfo:{},
@@ -251,7 +276,13 @@
                     this.travelInfo.image='http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555059034_CNDm3c7vCL.png';
                 }).catch(err => {
                 });
-            }
+            },
+            selectedAreaCode(value){
+                this.travelInfo.code_one=value;
+            },
+            selectedAreaCode1(value){
+                this.travelInfo.code_two=value;
+            },
         },
     }
 </script>

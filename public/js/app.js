@@ -27344,7 +27344,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.linkSchool{\n    width: 100%;\n    min-height: 700px;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n    -webkit-box-align:start;\n        -ms-flex-align:start;\n            align-items:flex-start;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n}\n.travelInfo{\n    width: 60%;\n    min-height: 100px;\n    -ms-flex-line-pack:start;\n        align-content:flex-start;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    font-size: 16px;\n    margin-top: 20px;\n}\n.travelInfoItem{\n    width: 100%;\n    min-height:100px;\n}\n.travelInfoItem>div{\n    width: 100%;\n    min-height: 45px;\n    line-height: 45px;\n}\n.item_input_school{\n    height:40px;\n    padding-left:10px;\n    outline: none;\n    width: 95%;\n    border-radius: 8px;\n}\n.imgIcon{\n    width:100px;\n    height: 40px;\n    float: right;\n}\n.imgIcon img{\n    height: 35px;\n    float: right;\n}\n.imgs{\n    width:95%;\n    position: relative;\n}\n.travelImg{\n    width:100%;\n    border-radius: 15px;\n}\n.cancelImg{\n    width:30px;\n    height: 30px;\n    top: 15px;\n    right: 15px;\n    position: absolute;\n}\n.changBtn{\n    width:50%;\n    height: 45px;\n    border-radius: 8px;\n    background: #ffde01;\n    text-align: center;\n    line-height: 45px;\n    border: none;\n    outline: none;\n    margin-top: 20px;\n    margin-left: 25%;\n}\n.travelStatus{\n    -webkit-box-pack:justify;\n        -ms-flex-pack:justify;\n            justify-content:space-between;\n    -webkit-box-align:center;\n        -ms-flex-align:center;\n            align-items:center;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n}\n.travelStatus>div{\n    width:100px;\n    height:43px;\n    border-radius: 8px;\n    border: 1px solid #ccc;\n    text-align: center;\n}\n.actStatus{\n    background: #ccc;\n}\n[v-cloak]{\n    display: none;\n}\n.van-dialog{\n    width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.linkSchool{\n    width: 100%;\n    min-height: 700px;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n    -webkit-box-align:start;\n        -ms-flex-align:start;\n            align-items:flex-start;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n}\n.travelInfo{\n    width: 60%;\n    min-height: 100px;\n    -ms-flex-line-pack:start;\n        align-content:flex-start;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    font-size: 16px;\n    margin-top: 20px;\n}\n.travelInfoItem{\n    width: 100%;\n    min-height:100px;\n}\n.travelInfoItem>div{\n    width: 100%;\n    min-height: 45px;\n    line-height: 45px;\n}\n.item_input_school{\n    height:40px;\n    padding-left:10px;\n    outline: none;\n    width: 95%;\n    border-radius: 8px;\n}\n.imgIcon{\n    width:100px;\n    height: 40px;\n    float: right;\n}\n.imgIcon img{\n    height: 35px;\n    float: right;\n}\n.imgs{\n    width:95%;\n    position: relative;\n}\n.travelImg{\n    width:100%;\n    border-radius: 15px;\n}\n.cancelImg{\n    width:30px;\n    height: 30px;\n    top: 15px;\n    right: 15px;\n    position: absolute;\n}\n.changBtn{\n    width:50%;\n    height: 45px;\n    border-radius: 8px;\n    background: #ffde01;\n    text-align: center;\n    line-height: 45px;\n    border: none;\n    outline: none;\n    margin-top: 20px;\n    margin-left: 25%;\n}\n.travelStatus{\n    -webkit-box-pack:justify;\n        -ms-flex-pack:justify;\n            justify-content:space-between;\n    -webkit-box-align:center;\n        -ms-flex-align:center;\n            align-items:center;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n}\n.travelStatus>div{\n    width:100px;\n    height:43px;\n    border-radius: 8px;\n    border: 1px solid #ccc;\n    text-align: center;\n}\n.actStatus{\n    background: #ccc;\n}\n[v-cloak]{\n    display: none;\n}\n.van-dialog{\n    width:50%;\n}\n.simulateShade{\n    width:90%;\n    height: 44px;\n    border-width: 2px;\n    border-style: solid;\n    border-top-color: #999;\n    border-left-color: #999;\n    border-right-color: #eee;\n    border-bottom-color: #eee;\n    border-radius: 8px;\n}\n\n", ""]);
 
 // exports
 
@@ -27355,6 +27355,29 @@ exports.push([module.i, "\n.linkSchool{\n    width: 100%;\n    min-height: 700px
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -27527,7 +27550,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        AreaCodeSelector: __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default.a
+    },
     data: function data() {
         return {
             travelInfo: {}
@@ -27615,6 +27642,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).then(function () {
                 _this4.travelInfo.image = 'http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555059034_CNDm3c7vCL.png';
             }).catch(function (err) {});
+        },
+        selectedAreaCode: function selectedAreaCode(value) {
+            this.travelInfo.code_one = value;
+        },
+        selectedAreaCode1: function selectedAreaCode1(value) {
+            this.travelInfo.code_two = value;
         }
     }
 });
@@ -27886,28 +27919,24 @@ var render = function() {
           _c("div", [_vm._v("区号1")]),
           _vm._v(" "),
           _c("div", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.travelInfo.code_one,
-                  expression: "travelInfo.code_one"
-                }
-              ],
-              staticClass: "item_input_school",
-              staticStyle: { width: "90%" },
-              attrs: { placeholder: "区号1", type: "text" },
-              domProps: { value: _vm.travelInfo.code_one },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+            _c(
+              "div",
+              { staticClass: "simulateShade" },
+              [
+                _c("AreaCodeSelector", {
+                  attrs: { areaCode: _vm.travelInfo.code_one },
+                  on: { selectedAreaCode: _vm.selectedAreaCode },
+                  model: {
+                    value: _vm.travelInfo.code_one,
+                    callback: function($$v) {
+                      _vm.$set(_vm.travelInfo, "code_one", $$v)
+                    },
+                    expression: "travelInfo.code_one"
                   }
-                  _vm.$set(_vm.travelInfo, "code_one", $event.target.value)
-                }
-              }
-            })
+                })
+              ],
+              1
+            )
           ])
         ]
       ),
@@ -27956,28 +27985,24 @@ var render = function() {
           _c("div", [_vm._v("区号2")]),
           _vm._v(" "),
           _c("div", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.travelInfo.code_two,
-                  expression: "travelInfo.code_two"
-                }
-              ],
-              staticClass: "item_input_school",
-              staticStyle: { width: "90%" },
-              attrs: { placeholder: "区号2", type: "text" },
-              domProps: { value: _vm.travelInfo.code_two },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+            _c(
+              "div",
+              { staticClass: "simulateShade" },
+              [
+                _c("AreaCodeSelector", {
+                  attrs: { areaCode: _vm.travelInfo.code_two },
+                  on: { selectedAreaCode: _vm.selectedAreaCode1 },
+                  model: {
+                    value: _vm.travelInfo.code_two,
+                    callback: function($$v) {
+                      _vm.$set(_vm.travelInfo, "code_two", $$v)
+                    },
+                    expression: "travelInfo.code_two"
                   }
-                  _vm.$set(_vm.travelInfo, "code_two", $event.target.value)
-                }
-              }
-            })
+                })
+              ],
+              1
+            )
           ])
         ]
       ),
@@ -55620,9 +55645,9 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-var baseUrl = 'https://www.bunchparty.com/etravel/public'; //公司线上地址
+// const baseUrl='https://www.bunchparty.com/etravel/public';//公司线上地址
 // const baseUrl='http://app.ateamtravel.hk/etravel/public';//学游线上地址
-// const baseUrl='';
+var baseUrl = '';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),
