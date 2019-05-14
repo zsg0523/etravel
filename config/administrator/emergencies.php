@@ -1,5 +1,6 @@
 <?php
 use App\Models\Emergency;
+use App\Models\Areacode;
 
 return [
 
@@ -46,8 +47,20 @@ return [
 	],
 
 	'edit_fields' => [
+		'user' => [
+			'title' => '用户名称',
+			'type' => 'relationship',
+		],
+		'travel' => [
+			'title' => '旅游团名称',
+			'type' => 'relationship',
+			'name_field' => 'travel_name',
+		],
 		'code_one' => [
 			'title' => '区号A',
+			'output' => function ($value, $model) {
+				return Areacode::find(1)->name;
+			},
 		],
 		'emergency_phone_one' => [
 			'title' => '电话A',
