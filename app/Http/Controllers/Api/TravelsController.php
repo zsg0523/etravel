@@ -70,13 +70,12 @@ class TravelsController extends Controller
             $travel->image = $image_path;
         }
 
-        $emergency = $travel->emergency;
-        if ($emergency) {
-            $update = $request->only(['travel_id', 'code_one', 'code_two', 'emergency_phone_one', 'emergency_phone_two', 'emergency_email_one', 'emergency_email_two']);
-            $update['travel_id'] = $travel->id;
-            $emergency->update($update);
-        } else {
-            $emergency = Emergency::firstOrCreate([
+        // 添加紧急人
+        $emergency = Emergency::UpdateOrCreate(
+            [
+                'travel_id' => $travel->id,
+            ],
+            [
                 'travel_id' => $travel->id,
                 'code_one' => $request->code_one,
                 'code_two' => $request->code_two,
@@ -84,11 +83,10 @@ class TravelsController extends Controller
                 'emergency_phone_two' => $request->emergency_phone_two,
                 'emergency_email_one' => $request->emergency_email_one,
                 'emergency_email_two' => $request->emergency_email_two,
-            ]);
-        }
+            ]
+        );
 
         $travel->update($request->all());
-        $travel['emergency'] = $emergency;
         return $this->response->item($travel, new TravelTransformer());
     }
     /** [destriy 旅游项目的删除] */

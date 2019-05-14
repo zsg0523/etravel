@@ -63,7 +63,7 @@ class UsersController extends Controller
     }
 
     /** [update 更新用户信息] */
-    public function update(UserRequest $request)
+    public function update(UserRequest $request, Emergency $emergency)
     {
         $user = $this->user();
 
@@ -76,22 +76,8 @@ class UsersController extends Controller
         }
 
         $user->update($attributes);
-        
-        // 更新紧急联系人信息
-        $emergency = Emergency::UpdateOrCreate (
-            [
-                'user_id' => $user->id
-            ],
-            [
-                'user_id' => $user->id,
-                'code_one' => $request->code_one,
-                'code_two' => $request->code_two,
-                'emergency_phone_one' => $request->emergency_phone_one,
-                'emergency_phone_two' => $request->emergency_phone_two,
-                'emergency_email_one' => $request->emergency_email_one,
-                'emergency_email_two' => $request->emergency_email_two,
-            ]
-        );
+
+        $emergency = $emergency->updateOrCreate(['user_id' => $user->id],$request->all());
 
         return $this->response->item($user, new UserTransformer());
     }
@@ -235,8 +221,7 @@ class UsersController extends Controller
             } finally {
                 try {
                     // 公司紧急联系人
-                    $company = Company::whereShow('1')->first();
-                    $company_emergency = $company->emergency;
+                    $company_emergency = Company::whereShow('1')->first();
                     if ($company_emergency) {
                         $this->sendSms($easySms, $company_emergency->code_one, $company_emergency->emergency_phone_one, '127203');
                         $this->sendSms($easySms, $company_emergency->code_two, $company_emergency->emergency_phone_two, '127203');
