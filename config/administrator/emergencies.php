@@ -59,7 +59,7 @@ return [
 		'code_one' => [
 			'title' => '区号A',
 			'output' => function ($value, $model) {
-				return Areacode::find(1)->name;
+				return Areacode::find(1)->acname_cn;
 			},
 		],
 		'emergency_phone_one' => [
