@@ -71,20 +71,7 @@ class TravelsController extends Controller
         }
 
         // 添加紧急人
-        $emergency = Emergency::UpdateOrCreate(
-            [
-                'travel_id' => $travel->id,
-            ],
-            [
-                'travel_id' => $travel->id,
-                'code_one' => $request->code_one,
-                'code_two' => $request->code_two,
-                'emergency_phone_one' => $request->emergency_phone_one,
-                'emergency_phone_two' => $request->emergency_phone_two,
-                'emergency_email_one' => $request->emergency_email_one,
-                'emergency_email_two' => $request->emergency_email_two,
-            ]
-        );
+        $emergency = $emergency->updateOrCreate(['travel_id' => $travel->id],$request->all());
 
         $travel->update($request->all());
         return $this->response->item($travel, new TravelTransformer());
