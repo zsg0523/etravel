@@ -101,6 +101,32 @@
                             <div class="item_title">聯繫電話</div>
                             <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" :value="students[actIndex].user.phone"></div>
                         </div>
+                        <!-- 紧急联系人 -->
+                        <div class="form_item_student">
+                            <div class="item_title">区号A</div>
+                            <div><input class="item_input" type="text" placeholder="填寫区号A" disabled="disabled" :value="students[actIndex].user.code_one"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">緊急電話A</div>
+                            <div><input class="item_input" type="text" placeholder="填寫緊急電話A" disabled="disabled" :value="students[actIndex].user.emergency_phone_one"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">区号B</div>
+                            <div><input class="item_input" type="text" placeholder="填寫区号B" disabled="disabled" :value="students[actIndex].user.code_two"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">緊急電話B</div>
+                            <div><input class="item_input" type="text" placeholder="填寫緊急電話B" disabled="disabled" :value="students[actIndex].user.emergency_phone_two"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">緊急郵箱A</div>
+                            <div><input class="item_input" type="text" placeholder="填寫緊急郵箱A" disabled="disabled" :value="students[actIndex].user.emergency_email_one"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">緊急郵箱B</div>
+                            <div><input class="item_input" type="text" placeholder="填寫緊急郵箱B" disabled="disabled" :value="students[actIndex].user.emergency_email_two"></div>
+                        </div>
+                        <!-- 分组信息 -->
                         <div class="form_item_small">
                             <div class="item_title">學生學號</div>
                             <div><input class="item_input" type="text" placeholder="填寫學生學號" disabled="disabled" :value="students[actIndex].student_number"></div>
@@ -117,6 +143,8 @@
                             <div class="item_title">學生職責</div>
                             <div><input class="item_input" type="text"  placeholder="填寫學生職責" disabled="disabled" :value="students[actIndex].duty"></div>
                         </div>
+                        <!-- 撑高度 -->
+                        <div class="form_item_small"></div>
                     </div>
                     <div class="studentEditBtn" @click="editStudentShow()">
                         <img src="/etravel/public/images/editAll.png">
@@ -148,6 +176,42 @@
                                     <div class="item_title">聯繫電話(不可编辑)<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" v-model="edStudent.phone"></div>
                                 </div>
+                                <!-- 紧急联系人 -->
+                                <div class="form_item_student">
+                                    <div class="item_title">区号A</div>
+                                    <div>
+                                        <div class="simulateShade">
+                                            <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='searchStudent.code_one' v-model='searchStudent.code_one'></AreaCodeSelector>
+                                        </div>
+                                        <!-- <input class="item_input" type="text" placeholder="填寫区号A" v-model="searchStudent.code_one"> -->
+                                    </div>
+                                </div>
+                                <div class="form_item_student">
+                                    <div class="item_title">緊急電話A</div>
+                                    <div><input class="item_input" type="text" placeholder="填寫緊急電話A" v-model="searchStudent.emergency_phone_one"></div>
+                                </div>
+                                <div class="form_item_student">
+                                    <div class="item_title">区号B</div>
+                                    <div>
+                                        <div class="simulateShade">
+                                            <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='searchStudent.code_two' v-model='searchStudent.code_two'></AreaCodeSelector>
+                                        </div>
+                                        <!-- <input class="item_input" type="text" placeholder="填寫区号B" v-model="searchStudent.code_two"> -->
+                                    </div>
+                                </div>
+                                <div class="form_item_student">
+                                    <div class="item_title">緊急電話B</div>
+                                    <div><input class="item_input" type="text" placeholder="填寫緊急電話B" v-model="searchStudent.emergency_phone_two"></div>
+                                </div>
+                                <div class="form_item_student">
+                                    <div class="item_title">緊急郵箱A</div>
+                                    <div><input class="item_input" type="text" placeholder="填寫緊急郵箱A" v-model="searchStudent.emergency_email_one"></div>
+                                </div>
+                                <div class="form_item_student">
+                                    <div class="item_title">緊急郵箱B</div>
+                                    <div><input class="item_input" type="text" placeholder="填寫緊急郵箱B" v-model="searchStudent.emergency_email_two"></div>
+                                </div>
+                                <!-- 分组信息 -->
                                 <div class="form_item_small">
                                     <div class="item_title">學生學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填寫學生學號" v-model="edStudent.student_number"></div>
@@ -172,56 +236,6 @@
                     </van-popup>
                 </div>
             </div>
-            <van-popup v-model="isNewStudentShow" :overlay="true">
-                <div class="editBox" >
-                    <div class="editBoxContent disflex">
-                        <div class="form_item_student">
-                            <div class="item_title">學生密碼(必填)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生密碼" v-model="newStudent.original_password"></div>
-                        </div>
-                        <div class="form_item_student">
-                            <div class="item_title">學生中文名(必填)<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生中文名" v-model="newStudent.name"></div>
-                        </div>
-                        <div class="form_item_student">
-                            <div class="item_title">學生英文名(必填)<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生英文名" v-model="newStudent.en_name"></div>
-                        </div>
-                        <div class="form_item_student">
-                            <div class="item_title">電話区号(必填)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
-                            <div>
-                                <div class="simulateShade">
-                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newStudent.code' v-model='newStudent.code'></AreaCodeSelector>
-                                </div>
-                                <!-- <input class="item_input" type="text" placeholder="填寫電話区号" v-model="newStudent.code"> -->
-                            </div>
-                        </div>
-                        <div class="form_item_small">
-                            <div class="item_title">聯繫電話(必填)<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填寫聯繫電話" v-model="newStudent.phone"></div>
-                        </div>
-                        <div class="form_item_small">
-                            <div class="item_title">學生學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生學號" v-model="newStudent.student_number"></div>
-                        </div>
-                        <div class="form_item_small">
-                            <div class="item_title">學生班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="newStudent.class"></div>
-                        </div>
-                        <div class="form_item_small">
-                            <div class="item_title">學生分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生分組號" v-model="newStudent.group"></div>
-                        </div>
-                        <div class="form_item_small">
-                            <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生職責" v-model="newStudent.duty"></div>
-                        </div>
-                        <div class="issureStu">
-                            <button class="issureBtn" @click="addNewStudent()">添加</button>
-                        </div>
-                    </div>
-                </div>
-            </van-popup>
             <van-popup v-model="isSearchStudentShow" :overlay="true">
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
@@ -249,6 +263,43 @@
                             <div class="item_title">聯繫電話(不可编辑)</div>
                             <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" v-model="searchStudent.phone"></div>
                         </div>
+                        <!-- 紧急联系人 -->
+                        <div class="form_item_student">
+                            <div class="item_title">区号A</div>
+                            <div>
+                                <div class="simulateShade">
+                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='searchStudent.code_one' v-model='searchStudent.code_one'></AreaCodeSelector>
+                                </div>
+                                <!-- <input class="item_input" type="text" placeholder="填寫区号A" v-model="searchStudent.code_one"> -->
+                            </div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">緊急電話A</div>
+                            <div><input class="item_input" type="text" placeholder="填寫緊急電話A" v-model="searchStudent.emergency_phone_one"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">区号B</div>
+                            <div>
+                                <div class="simulateShade">
+                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='searchStudent.code_two' v-model='searchStudent.code_two'></AreaCodeSelector>
+                                </div>
+                                <!-- <input class="item_input" type="text" placeholder="填寫区号B" v-model="searchStudent.code_two"> -->
+                            </div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">緊急電話B</div>
+                            <div><input class="item_input" type="text" placeholder="填寫緊急電話B" v-model="searchStudent.emergency_phone_two"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">緊急郵箱A</div>
+                            <div><input class="item_input" type="text" placeholder="填寫緊急郵箱A" v-model="searchStudent.emergency_email_one"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">緊急郵箱B</div>
+                            <div><input class="item_input" type="text" placeholder="填寫緊急郵箱B" v-model="searchStudent.emergency_email_two"></div>
+                        </div>
+
+                        <!-- 分组信息 -->
                         <div class="form_item_small">
                             <div class="item_title">學生學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
                             <div><input class="item_input" type="text" placeholder="填寫學生學號" v-model="searchStudent.student_number"></div>
@@ -272,6 +323,93 @@
                     </div>
                 </div>
             </van-popup>
+            <van-popup v-model="isNewStudentShow" :overlay="true">
+                <div class="editBox" >
+                    <div class="editBoxContent disflex">
+                        <div class="form_item_small">
+                            <div class="item_title">學生密碼(必填)</div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生密碼" v-model="newStudent.original_password"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">學生中文名(必填)<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生中文名" v-model="newStudent.name"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">學生英文名(必填)<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生英文名" v-model="newStudent.en_name"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">電話区号(必填)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
+                            <div>
+                                <div class="simulateShade">
+                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newStudent.code' v-model='newStudent.code'></AreaCodeSelector>
+                                </div>
+                                <!-- <input class="item_input" type="text" placeholder="填寫電話区号" v-model="newStudent.code"> -->
+                            </div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">聯繫電話(必填)</div>
+                            <div><input class="item_input" type="text" placeholder="填寫聯繫電話" v-model="newStudent.phone"></div>
+                        </div>
+
+                        <!-- 紧急联系人 -->
+                        <div class="form_item_student">
+                            <div class="item_title">区号A</div>
+                            <div>
+                                <div class="simulateShade">
+                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='newStudent.code_one' v-model='newStudent.code_one'></AreaCodeSelector>
+                                </div>
+                                <!-- <input class="item_input" type="text" placeholder="填寫区号A" v-model="newStudent.code_one"> -->
+                            </div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">緊急電話A</div>
+                            <div><input class="item_input" type="text" placeholder="填寫緊急電話A" v-model="newStudent.emergency_phone_one"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">区号B</div>
+                            <div>
+                                <div class="simulateShade">
+                                    <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='newStudent.code_two' v-model='newStudent.code_two'></AreaCodeSelector>
+                                </div>
+                                <!-- <input class="item_input" type="text" placeholder="填寫区号B" v-model="newStudent.code_two"> -->
+                            </div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">緊急電話B</div>
+                            <div><input class="item_input" type="text" placeholder="填寫緊急電話B" v-model="newStudent.emergency_phone_two"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">緊急郵箱A</div>
+                            <div><input class="item_input" type="text" placeholder="填寫緊急郵箱A" v-model="newStudent.emergency_email_one"></div>
+                        </div>
+                        <div class="form_item_student">
+                            <div class="item_title">緊急郵箱B</div>
+                            <div><input class="item_input" type="text" placeholder="填寫緊急郵箱B" v-model="newStudent.emergency_email_two"></div>
+                        </div>
+                        <!-- 分组信息 -->
+                        <div class="form_item_small">
+                            <div class="item_title">學生學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
+                            <div><input class="item_input" type="text" placeholder="填寫學生學號" v-model="newStudent.student_number"></div>
+                        </div>
+                        <div class="form_item_small">
+                            <div class="item_title">學生班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="newStudent.class"></div>
+                        </div>
+                        <div class="form_item_small">
+                            <div class="item_title">學生分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生分組號" v-model="newStudent.group"></div>
+                        </div>
+                        <div class="form_item_small">
+                            <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫學生職責" v-model="newStudent.duty"></div>
+                        </div>
+                        <div class="issureStu">
+                            <button class="issureBtn" @click="addNewStudent()">添加</button>
+                        </div>
+                    </div>
+                </div>
+            </van-popup>
         </div>
     </div>
 </template>
@@ -290,6 +428,12 @@
                     en_name:'',
                     code:'',
                     phone:'',
+                    code_one:'',
+                    code_two:'',
+                    emergency_phone_one:'',
+                    emergency_phone_two:'',
+                    emergency_email_one:'',
+                    emergency_email_two:'',
                     original_password:'',
                     add_by:sessionStorage.userId,
                     travel_id:sessionStorage.actTravelId,
@@ -304,6 +448,13 @@
                     en_name:'',
                     code:'',
                     phone:'',
+                    code_one:'',
+                    code_two:'',
+                    emergency_phone_one:'',
+                    emergency_phone_two:'',
+                    emergency_email_one:'',
+                    emergency_email_two:'',
+                    original_password:'',
                     original_password:'',
                     add_by:sessionStorage.userId,
                     travel_id:sessionStorage.actTravelId,
@@ -320,6 +471,13 @@
                     en_name:'',
                     code:'',
                     phone:'',
+                    code_one:'',
+                    code_two:'',
+                    emergency_phone_one:'',
+                    emergency_phone_two:'',
+                    emergency_email_one:'',
+                    emergency_email_two:'',
+                    original_password:'',
                     original_password:'',
                     student_number:'',
                     class:'',
@@ -332,6 +490,7 @@
                 actIndex:0,
                 searchId:'',
                 errors:{},
+                selectStatus:'new',
             }
         },
         mounted:function(){
@@ -358,6 +517,7 @@
             addNewStudentShow(){
                 this.errors={};
                 this.isNewStudentShow=true;
+                this.selectStatus='new';
             },
             addNewStudent(){
                 // 新增学员信息/api/userGroup
@@ -381,6 +541,13 @@
                     this.newStudent.group='';
                     this.newStudent.class='';
 
+                    this.newStudent.code_one='';
+                    this.newStudent.code_two='';
+                    this.newStudent.emergency_phone_one='';
+                    this.newStudent.emergency_phone_two='';
+                    this.newStudent.emergency_email_one='';
+                    this.newStudent.emergency_email_two='';
+
                 }).catch(err => {
                     this.$toast('添加失败');
                     this.errors=err.response.data.errors;
@@ -399,9 +566,17 @@
                 this.edStudent.duty=this.students[this.actIndex].duty;
                 this.edStudent.group=this.students[this.actIndex].group;
                 this.edStudent.user_id=this.students[this.actIndex].user_id;
+
+                this.edStudent.code_one=this.students[this.actIndex].user.code_one;
+                this.edStudent.code_two=this.students[this.actIndex].user.code_two;
+                this.edStudent.emergency_phone_one=this.students[this.actIndex].user.emergency_phone_one;
+                this.edStudent.emergency_phone_two=this.students[this.actIndex].user.emergency_phone_two;
+                this.edStudent.emergency_email_one=this.students[this.actIndex].user.emergency_email_one;
+                this.edStudent.emergency_email_two=this.students[this.actIndex].user.emergency_email_two;
                 this.errors={};
                 this.isEditStudentShow=true;
 
+                this.selectStatus='edit';
             },
             editStudent(){
                 // 修改学员信息信息/api/users/:user/groups/:group/information
@@ -421,6 +596,12 @@
                         duty:this.edStudent.duty, 
                         group:this.edStudent.group,
                         user_id:this.edStudent.user_id,  
+                        code_one:this.edStudent.code_one, 
+                        code_two:this.edStudent.code_two, 
+                        emergency_phone_one:this.edStudent.emergency_phone_one, 
+                        emergency_phone_two:this.edStudent.emergency_phone_two, 
+                        emergency_email_one:this.edStudent.emergency_email_one,
+                        emergency_email_two:this.edStudent.emergency_email_two,  
                     },
                     url: this.$config+'/api/users/'+this.edStudent.user_id+'/groups/'+this.edStudent.id+'/information',
                 }).then(res => {
@@ -434,6 +615,13 @@
                         this.students[this.actIndex].class=this.edStudent.class;
                         this.students[this.actIndex].duty=this.edStudent.duty;
                         this.students[this.actIndex].group=this.edStudent.group;
+
+                        this.students[this.actIndex].user.code_one=this.edStudent.code_one;
+                        this.students[this.actIndex].user.code_two=this.edStudent.code_two;
+                        this.students[this.actIndex].user.emergency_phone_one=this.edStudent.emergency_phone_one;
+                        this.students[this.actIndex].user.emergency_phone_two=this.edStudent.emergency_phone_two;
+                        this.students[this.actIndex].user.emergency_email_one=this.edStudent.emergency_email_one;
+                        this.students[this.actIndex].user.emergency_email_two=this.edStudent.emergency_email_two;
                         this.$toast('修改成功');
                         this.isEditStudentShow=false;    
                     }else{
@@ -477,6 +665,7 @@
             searchStudentShow(){
                 this.errors={};
                 this.isSearchStudentShow=true;
+                this.selectStatus='search';
             },
             toSearchStudent(){
                 // 搜索学员
@@ -501,6 +690,13 @@
                             this.searchStudent.code=res.data.code;
                             this.searchStudent.phone=res.data.phone;
                             this.searchStudent.original_password=res.data.original_password;
+
+                            this.searchStudent.code_one=res.data.code_one;
+                            this.searchStudent.code_two=res.data.code_two;
+                            this.searchStudent.emergency_phone_one=res.data.emergency_phone_one;
+                            this.searchStudent.emergency_phone_two=res.data.emergency_phone_two;
+                            this.searchStudent.emergency_email_one=res.data.emergency_email_one;
+                            this.searchStudent.emergency_email_two=res.data.emergency_email_two;
                             this.searchStudentShow();
                         }
                     }).catch(err => {
@@ -526,6 +722,12 @@
                     class: this.searchStudent.class,
                     duty: this.searchStudent.duty,
                     group: this.searchStudent.group,
+                    code_one:this.searchStudent.code_one,
+                    code_two:this.searchStudent.code_two,
+                    emergency_phone_one: this.searchStudent.emergency_phone_one,
+                    emergency_phone_two: this.searchStudent.emergency_phone_two,
+                    emergency_email_one: this.searchStudent.emergency_email_one,
+                    emergency_email_two: this.searchStudent.emergency_email_two,
                 },
                 {
                     headers: {
@@ -561,6 +763,24 @@
             },
             selectedAreaCode(value){
                 this.newStudent.code=value;
+            },
+            selectedAreaCodeOne(value){
+                if(this.selectStatus="search"){
+                    this.searchStudent.code_two=value;
+                }else if(this.selectStatus="edit"){
+                    this.editStudent.code_two=value;
+                }else if(this.selectStatus="new"){
+                    this.newStudent.code_two=value;
+                }
+            },
+            selectedAreaCodeTwo(value){
+                if(this.selectStatus="search"){
+                    this.searchStudent.code_two=value;
+                }else if(this.selectStatus="edit"){
+                    this.editStudent.code_two=value;
+                }else if(this.selectStatus="new"){
+                    this.newStudent.code_two=value;
+                }
             },
         },
     }

@@ -106,36 +106,36 @@
 	<div class="linkSchool disflex">
         <div v-cloak class="travelInfo disflex">    
             <div class="travelInfoItem">
-                <div>旅游名称</div>
-                <div><input class="item_input_school" placeholder="旅游名称" v-model="travelInfo.travel_name" type="text"></div>
+                <div>旅遊名稱</div>
+                <div><input class="item_input_school" placeholder="旅遊名稱" v-model="travelInfo.travel_name" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
                 <div>出行日期</div>
                 <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_at" placeholder="出行日期" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>结束日期</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_return" placeholder="结束日期" type="text"></div>
+                <div>結束日期</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_return" placeholder="結束日期" type="text"></div>
             </div>
             <div class="travelInfoItem">
-                <div>旅游简介</div>
-                <div><input class="item_input_school" placeholder="旅游简介" v-model="travelInfo.introduction" type="text"></div>
+                <div>旅遊簡介</div>
+                <div><input class="item_input_school" placeholder="旅遊簡介" v-model="travelInfo.introduction" type="text"></div>
             </div> 
             <div class="travelInfoItem">
-                <div>学校名称</div>
-                <div><input class="item_input_school" placeholder="学校名称" v-model="travelInfo.school_name" type="text"></div>
+                <div>學校名稱</div>
+                <div><input class="item_input_school" placeholder="學校名稱" v-model="travelInfo.school_name" type="text"></div>
             </div>
             <div class="travelInfoItem">
-                <div>项目进行状态</div>
+                <div>項目進行狀態</div>
                 <div class="travelStatus disflex" style="width:95%;">
-                    <div :class="{ actStatus: travelInfo.travel_status==10 }" @click="changeStatus(10);">未进行</div>
-                    <div :class="{ actStatus: travelInfo.travel_status==20 }" @click="changeStatus(20);">进行中</div>
-                    <div :class="{ actStatus: travelInfo.travel_status==30 }" @click="changeStatus(30);">已结束</div>
+                    <div :class="{ actStatus: travelInfo.travel_status==10 }" @click="changeStatus(10);">未進行</div>
+                    <div :class="{ actStatus: travelInfo.travel_status==20 }" @click="changeStatus(20);">進行中</div>
+                    <div :class="{ actStatus: travelInfo.travel_status==30 }" @click="changeStatus(30);">已結束</div>
                 </div>
             </div>
             <div class="travelInfoItem">
                 <div style="width:95%;">
-                    背景图
+                    背景圖
                     <div class="imgIcon">
                         <van-uploader style="width:50px;height:40px;float:right;" :after-read="onRead" accept="image/*">
                             <img src="/etravel/public/images/sm-insert.png">
@@ -150,38 +150,38 @@
                 </div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>区号1</div>
+                <div>区号A</div>
                 <div>
-                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_one" placeholder="区号1" type="text"> -->
+                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_one" placeholder="区号A" type="text"> -->
                     <div class="simulateShade">
                         <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='travelInfo.code_one' v-model='travelInfo.code_one'></AreaCodeSelector>
                     </div>
                 </div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>联系电话1</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_phone_one" placeholder="联系电话1" type="text"></div>
+                <div>緊急電話A</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_phone_one" placeholder="緊急電話A" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>区号2</div>
+                <div>区号B</div>
                 <div>
-                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_two" placeholder="区号2" type="text"> -->
+                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_two" placeholder="区号B" type="text"> -->
                     <div class="simulateShade">
                         <AreaCodeSelector @selectedAreaCode='selectedAreaCode1' :areaCode='travelInfo.code_two' v-model='travelInfo.code_two'></AreaCodeSelector>
                     </div>
                 </div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>联系电话2</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_phone_two" placeholder="联系电话2" type="text"></div>
+                <div>緊急電話B</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_phone_two" placeholder="緊急電話B" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>联系邮箱1</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_email_one" placeholder="联系邮箱1" type="text"></div>
+                <div>緊急郵箱A</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_email_one" placeholder="緊急郵箱A" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>联系邮箱2</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_email_two" placeholder="联系邮箱2" type="text"></div>
+                <div>緊急郵箱B</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_email_two" placeholder="緊急郵箱B" type="text"></div>
             </div>
             <div class="travelInfoItem">
                 <button class="changBtn" @click="editTravelInfo();">保存修改</button>
@@ -202,7 +202,7 @@
             }
         },
         mounted:function(){
-            this.$store.state.links=[{link:'/home',linkName:'项目'},{link:'/projectDetail/'+sessionStorage.actTravelId,linkName:'项目详情'}];
+            this.$store.state.links=[{link:'/home',linkName:'項目'},{link:'/projectDetail/'+sessionStorage.actTravelId,linkName:'項目詳情'}];
             this.getTravelInfo();
         },
         methods:{
