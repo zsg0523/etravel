@@ -104,7 +104,7 @@ class UsersController extends Controller
 
 
     /** [userGroup 管理员创建学生并分组] */
-    public function userGroup(UserRequest $request,User $user, Group $group)
+    public function userGroup(UserRequest $request,User $user, Group $group, Emergency $emergency)
     {
         $data = $request->all();
         // 加密明文密码
@@ -117,6 +117,8 @@ class UsersController extends Controller
         $group->fill($data);
         $group->user_id = $user->id;
         $group->save();
+
+        $emergency = $emergency->updateOrCreate(['user_id' => $user->id],$request->all());
 
         return $this->response->item($user, new UserTransformer())->setStatusCode(201);
     }
