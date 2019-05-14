@@ -139,7 +139,7 @@ class UsersController extends Controller
         // 更新分组学生信息
         $group->update($request->all());
 
-        $emergency = $emergency->updateOrCreate(['user_id' => $manager->id],$request->all());
+        $emergency = $emergency->updateOrCreate(['user_id' => $user->id],$request->all());
 
         return $this->response->item($user, new UserTransformer());
     }
