@@ -2665,6 +2665,57 @@ var index_esm = {
 
 /***/ }),
 /* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(121)
+}
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(123)
+/* template */
+var __vue_template__ = __webpack_require__(124)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/AreaCodeSelector.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-07af37d0", Component.options)
+  } else {
+    hotAPI.reload("data-v-07af37d0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2864,7 +2915,7 @@ var PopupMixin = {
 };
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2880,7 +2931,7 @@ var WHITE = '#fff';
 var GRAY_DARK = '#969799';
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports) {
 
 var g;
@@ -2904,57 +2955,6 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(121)
-}
-var normalizeComponent = __webpack_require__(3)
-/* script */
-var __vue_script__ = __webpack_require__(123)
-/* template */
-var __vue_template__ = __webpack_require__(124)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/AreaCodeSelector.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-07af37d0", Component.options)
-  } else {
-    hotAPI.reload("data-v-07af37d0", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
 
 
 /***/ }),
@@ -3010,7 +3010,7 @@ function getVisibleHeight(element) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_popup__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_popup__ = __webpack_require__(18);
 
 
 
@@ -4108,7 +4108,7 @@ function raf(fn) {
 function cancel(id) {
   iCancel.call(root, id);
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(19)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(20)))
 
 /***/ }),
 /* 42 */
@@ -5337,7 +5337,7 @@ var CheckboxMixin = function CheckboxMixin(parent, bem) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vue_babel_helper_vue_jsx_merge_props___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__vue_babel_helper_vue_jsx_merge_props__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_functional__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(19);
 
 
 
@@ -19554,7 +19554,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19), __webpack_require__(80).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(20), __webpack_require__(80).setImmediate))
 
 /***/ }),
 /* 80 */
@@ -19624,7 +19624,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(20)))
 
 /***/ }),
 /* 81 */
@@ -19817,7 +19817,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19), __webpack_require__(43)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(20), __webpack_require__(43)))
 
 /***/ }),
 /* 82 */
@@ -24911,8 +24911,148 @@ exports.push([module.i, "\n.students{width: 100%;min-height: 700px;-webkit-box-p
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -25198,6 +25338,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         AreaCodeSelector: __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default.a
     },
     data: function data() {
+        var _edStudent, _searchStudent;
+
         return {
             students: [],
             newStudent: {
@@ -25205,6 +25347,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 en_name: '',
                 code: '',
                 phone: '',
+                code_one: '',
+                code_two: '',
+                emergency_phone_one: '',
+                emergency_phone_two: '',
+                emergency_email_one: '',
+                emergency_email_two: '',
                 original_password: '',
                 add_by: sessionStorage.userId,
                 travel_id: sessionStorage.actTravelId,
@@ -25213,40 +25361,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 duty: '',
                 group: ''
             },
-            edStudent: {
+            edStudent: (_edStudent = {
                 id: '',
                 name: '',
                 en_name: '',
                 code: '',
                 phone: '',
-                original_password: '',
-                add_by: sessionStorage.userId,
-                travel_id: sessionStorage.actTravelId,
-                student_number: '',
-                class: '',
-                duty: '',
-                group: '',
-                user_id: ''
-            },
-            searchStudent: {
+                code_one: '',
+                code_two: '',
+                emergency_phone_one: '',
+                emergency_phone_two: '',
+                emergency_email_one: '',
+                emergency_email_two: '',
+                original_password: ''
+            }, _defineProperty(_edStudent, 'original_password', ''), _defineProperty(_edStudent, 'add_by', sessionStorage.userId), _defineProperty(_edStudent, 'travel_id', sessionStorage.actTravelId), _defineProperty(_edStudent, 'student_number', ''), _defineProperty(_edStudent, 'class', ''), _defineProperty(_edStudent, 'duty', ''), _defineProperty(_edStudent, 'group', ''), _defineProperty(_edStudent, 'user_id', ''), _edStudent),
+            searchStudent: (_searchStudent = {
                 id: '',
                 user_id: '',
                 name: '',
                 en_name: '',
                 code: '',
                 phone: '',
-                original_password: '',
-                student_number: '',
-                class: '',
-                duty: '',
-                group: ''
-            },
+                code_one: '',
+                code_two: '',
+                emergency_phone_one: '',
+                emergency_phone_two: '',
+                emergency_email_one: '',
+                emergency_email_two: '',
+                original_password: ''
+            }, _defineProperty(_searchStudent, 'original_password', ''), _defineProperty(_searchStudent, 'student_number', ''), _defineProperty(_searchStudent, 'class', ''), _defineProperty(_searchStudent, 'duty', ''), _defineProperty(_searchStudent, 'group', ''), _searchStudent),
             isNewStudentShow: false,
             isEditStudentShow: false,
             isSearchStudentShow: false,
             actIndex: 0,
             searchId: '',
-            errors: {}
+            errors: {},
+            selectStatus: 'new'
         };
     },
 
@@ -25276,6 +25426,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         addNewStudentShow: function addNewStudentShow() {
             this.errors = {};
             this.isNewStudentShow = true;
+            this.selectStatus = 'new';
         },
         addNewStudent: function addNewStudent() {
             var _this2 = this;
@@ -25299,6 +25450,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.newStudent.duty = '';
                 _this2.newStudent.group = '';
                 _this2.newStudent.class = '';
+
+                _this2.newStudent.code_one = '';
+                _this2.newStudent.code_two = '';
+                _this2.newStudent.emergency_phone_one = '';
+                _this2.newStudent.emergency_phone_two = '';
+                _this2.newStudent.emergency_email_one = '';
+                _this2.newStudent.emergency_email_two = '';
             }).catch(function (err) {
                 _this2.$toast('添加失败');
                 _this2.errors = err.response.data.errors;
@@ -25317,8 +25475,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.edStudent.duty = this.students[this.actIndex].duty;
             this.edStudent.group = this.students[this.actIndex].group;
             this.edStudent.user_id = this.students[this.actIndex].user_id;
+
+            this.edStudent.code_one = this.students[this.actIndex].user.code_one;
+            this.edStudent.code_two = this.students[this.actIndex].user.code_two;
+            this.edStudent.emergency_phone_one = this.students[this.actIndex].user.emergency_phone_one;
+            this.edStudent.emergency_phone_two = this.students[this.actIndex].user.emergency_phone_two;
+            this.edStudent.emergency_email_one = this.students[this.actIndex].user.emergency_email_one;
+            this.edStudent.emergency_email_two = this.students[this.actIndex].user.emergency_email_two;
             this.errors = {};
             this.isEditStudentShow = true;
+
+            this.selectStatus = 'edit';
         },
         editStudent: function editStudent() {
             var _this3 = this;
@@ -25339,7 +25506,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     class: this.edStudent.class,
                     duty: this.edStudent.duty,
                     group: this.edStudent.group,
-                    user_id: this.edStudent.user_id
+                    user_id: this.edStudent.user_id,
+                    code_one: this.edStudent.code_one,
+                    code_two: this.edStudent.code_two,
+                    emergency_phone_one: this.edStudent.emergency_phone_one,
+                    emergency_phone_two: this.edStudent.emergency_phone_two,
+                    emergency_email_one: this.edStudent.emergency_email_one,
+                    emergency_email_two: this.edStudent.emergency_email_two
                 },
                 url: this.$config + '/api/users/' + this.edStudent.user_id + '/groups/' + this.edStudent.id + '/information'
             }).then(function (res) {
@@ -25353,6 +25526,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.students[_this3.actIndex].class = _this3.edStudent.class;
                     _this3.students[_this3.actIndex].duty = _this3.edStudent.duty;
                     _this3.students[_this3.actIndex].group = _this3.edStudent.group;
+
+                    _this3.students[_this3.actIndex].user.code_one = _this3.edStudent.code_one;
+                    _this3.students[_this3.actIndex].user.code_two = _this3.edStudent.code_two;
+                    _this3.students[_this3.actIndex].user.emergency_phone_one = _this3.edStudent.emergency_phone_one;
+                    _this3.students[_this3.actIndex].user.emergency_phone_two = _this3.edStudent.emergency_phone_two;
+                    _this3.students[_this3.actIndex].user.emergency_email_one = _this3.edStudent.emergency_email_one;
+                    _this3.students[_this3.actIndex].user.emergency_email_two = _this3.edStudent.emergency_email_two;
                     _this3.$toast('修改成功');
                     _this3.isEditStudentShow = false;
                 } else {
@@ -25395,6 +25575,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         searchStudentShow: function searchStudentShow() {
             this.errors = {};
             this.isSearchStudentShow = true;
+            this.selectStatus = 'search';
         },
         toSearchStudent: function toSearchStudent() {
             var _this5 = this;
@@ -25421,6 +25602,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         _this5.searchStudent.code = res.data.code;
                         _this5.searchStudent.phone = res.data.phone;
                         _this5.searchStudent.original_password = res.data.original_password;
+
+                        _this5.searchStudent.code_one = res.data.code_one;
+                        _this5.searchStudent.code_two = res.data.code_two;
+                        _this5.searchStudent.emergency_phone_one = res.data.emergency_phone_one;
+                        _this5.searchStudent.emergency_phone_two = res.data.emergency_phone_two;
+                        _this5.searchStudent.emergency_email_one = res.data.emergency_email_one;
+                        _this5.searchStudent.emergency_email_two = res.data.emergency_email_two;
                         _this5.searchStudentShow();
                     }
                 }).catch(function (err) {
@@ -25446,7 +25634,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 student_number: this.searchStudent.student_number,
                 class: this.searchStudent.class,
                 duty: this.searchStudent.duty,
-                group: this.searchStudent.group
+                group: this.searchStudent.group,
+                code_one: this.searchStudent.code_one,
+                code_two: this.searchStudent.code_two,
+                emergency_phone_one: this.searchStudent.emergency_phone_one,
+                emergency_phone_two: this.searchStudent.emergency_phone_two,
+                emergency_email_one: this.searchStudent.emergency_email_one,
+                emergency_email_two: this.searchStudent.emergency_email_two
             }, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
@@ -25478,8 +25672,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 act: index == this.actIndex ? true : false
             };
         },
+
+        //接收区号组件返回的值
         selectedAreaCode: function selectedAreaCode(value) {
             this.newStudent.code = value;
+        },
+        selectedAreaCodeOne: function selectedAreaCodeOne(value) {
+            if (this.selectStatus == "search") {
+                this.searchStudent.code_one = value;
+            } else if (this.selectStatus == "edit") {
+                this.edStudent.code_one = value;
+            } else if (this.selectStatus == "new") {
+                this.newStudent.code_one = value;
+            }
+        },
+        selectedAreaCodeTwo: function selectedAreaCodeTwo(value) {
+            if (this.selectStatus == "search") {
+                this.searchStudent.code_two = value;
+            } else if (this.selectStatus == "edit") {
+                this.edStudent.code_two = value;
+            } else if (this.selectStatus == "new") {
+                this.newStudent.code_two = value;
+            }
         }
     }
 });
@@ -25941,6 +26155,134 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("区号A")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填寫区号A",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value: _vm.students[_vm.actIndex].user.code_one
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("緊急電話A")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填寫緊急電話A",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value:
+                              _vm.students[_vm.actIndex].user
+                                .emergency_phone_one
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("区号B")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填寫区号B",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value: _vm.students[_vm.actIndex].user.code_two
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("緊急電話B")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填寫緊急電話B",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value:
+                              _vm.students[_vm.actIndex].user
+                                .emergency_phone_two
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("緊急郵箱A")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填寫緊急郵箱A",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value:
+                              _vm.students[_vm.actIndex].user
+                                .emergency_email_one
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_student" }, [
+                      _c("div", { staticClass: "item_title" }, [
+                        _vm._v("緊急郵箱B")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          staticClass: "item_input",
+                          attrs: {
+                            type: "text",
+                            placeholder: "填寫緊急郵箱B",
+                            disabled: "disabled"
+                          },
+                          domProps: {
+                            value:
+                              _vm.students[_vm.actIndex].user
+                                .emergency_email_two
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
                     _c("div", { staticClass: "form_item_small" }, [
                       _c("div", { staticClass: "item_title" }, [
                         _vm._v("學生學號")
@@ -26013,7 +26355,9 @@ var render = function() {
                           domProps: { value: _vm.students[_vm.actIndex].duty }
                         })
                       ])
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_item_small" })
                   ]),
                   _vm._v(" "),
                   _c(
@@ -26310,6 +26654,206 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
+                          _c("div", { staticClass: "form_item_student" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("区号A")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c(
+                                "div",
+                                { staticClass: "simulateShade" },
+                                [
+                                  _c("AreaCodeSelector", {
+                                    attrs: { areaCode: _vm.edStudent.code_one },
+                                    on: {
+                                      selectedAreaCode: _vm.selectedAreaCodeOne
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form_item_student" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("緊急電話A")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.edStudent.emergency_phone_one,
+                                    expression: "edStudent.emergency_phone_one"
+                                  }
+                                ],
+                                staticClass: "item_input",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "填寫緊急電話A"
+                                },
+                                domProps: {
+                                  value: _vm.edStudent.emergency_phone_one
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.edStudent,
+                                      "emergency_phone_one",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form_item_student" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("区号B")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c(
+                                "div",
+                                { staticClass: "simulateShade" },
+                                [
+                                  _c("AreaCodeSelector", {
+                                    attrs: { areaCode: _vm.edStudent.code_two },
+                                    on: {
+                                      selectedAreaCode: _vm.selectedAreaCodeTwo
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form_item_student" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("緊急電話B")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.edStudent.emergency_phone_two,
+                                    expression: "edStudent.emergency_phone_two"
+                                  }
+                                ],
+                                staticClass: "item_input",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "填寫緊急電話B"
+                                },
+                                domProps: {
+                                  value: _vm.edStudent.emergency_phone_two
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.edStudent,
+                                      "emergency_phone_two",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form_item_student" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("緊急郵箱A")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.edStudent.emergency_email_one,
+                                    expression: "edStudent.emergency_email_one"
+                                  }
+                                ],
+                                staticClass: "item_input",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "填寫緊急郵箱A"
+                                },
+                                domProps: {
+                                  value: _vm.edStudent.emergency_email_one
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.edStudent,
+                                      "emergency_email_one",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form_item_student" }, [
+                            _c("div", { staticClass: "item_title" }, [
+                              _vm._v("緊急郵箱B")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.edStudent.emergency_email_two,
+                                    expression: "edStudent.emergency_email_two"
+                                  }
+                                ],
+                                staticClass: "item_input",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "填寫緊急郵箱B"
+                                },
+                                domProps: {
+                                  value: _vm.edStudent.emergency_email_two
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.edStudent,
+                                      "emergency_email_two",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
                               _vm._v("學生學號"),
@@ -26523,371 +27067,6 @@ var render = function() {
           {
             attrs: { overlay: true },
             model: {
-              value: _vm.isNewStudentShow,
-              callback: function($$v) {
-                _vm.isNewStudentShow = $$v
-              },
-              expression: "isNewStudentShow"
-            }
-          },
-          [
-            _c("div", { staticClass: "editBox" }, [
-              _c("div", { staticClass: "editBoxContent disflex" }, [
-                _c("div", { staticClass: "form_item_student" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生密碼(必填)")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newStudent.original_password,
-                          expression: "newStudent.original_password"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生密碼" },
-                      domProps: { value: _vm.newStudent.original_password },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.newStudent,
-                            "original_password",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item_student" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生中文名(必填)"),
-                    _vm.errors.name
-                      ? _c("span", {
-                          staticClass: "err",
-                          domProps: { textContent: _vm._s(_vm.errors.name[0]) }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newStudent.name,
-                          expression: "newStudent.name"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生中文名" },
-                      domProps: { value: _vm.newStudent.name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.newStudent, "name", $event.target.value)
-                        }
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item_student" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生英文名(必填)"),
-                    _vm.errors.en_name
-                      ? _c("span", {
-                          staticClass: "err",
-                          domProps: {
-                            textContent: _vm._s(_vm.errors.en_name[0])
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newStudent.en_name,
-                          expression: "newStudent.en_name"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生英文名" },
-                      domProps: { value: _vm.newStudent.en_name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.newStudent,
-                            "en_name",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item_student" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("電話区号(必填)"),
-                    _vm.errors.code
-                      ? _c("span", {
-                          staticClass: "err",
-                          domProps: { textContent: _vm._s(_vm.errors.code[0]) }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c(
-                      "div",
-                      { staticClass: "simulateShade" },
-                      [
-                        _c("AreaCodeSelector", {
-                          attrs: { areaCode: _vm.newStudent.code },
-                          on: { selectedAreaCode: _vm.selectedAreaCode },
-                          model: {
-                            value: _vm.newStudent.code,
-                            callback: function($$v) {
-                              _vm.$set(_vm.newStudent, "code", $$v)
-                            },
-                            expression: "newStudent.code"
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item_small" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("聯繫電話(必填)"),
-                    _vm.errors.phone
-                      ? _c("span", {
-                          staticClass: "err",
-                          domProps: { textContent: _vm._s(_vm.errors.phone[0]) }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newStudent.phone,
-                          expression: "newStudent.phone"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫聯繫電話" },
-                      domProps: { value: _vm.newStudent.phone },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.newStudent, "phone", $event.target.value)
-                        }
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item_small" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生學號"),
-                    _vm.errors.student_number
-                      ? _c("span", {
-                          staticClass: "err",
-                          domProps: {
-                            textContent: _vm._s(_vm.errors.student_number[0])
-                          }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newStudent.student_number,
-                          expression: "newStudent.student_number"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生學號" },
-                      domProps: { value: _vm.newStudent.student_number },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.newStudent,
-                            "student_number",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item_small" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生班級"),
-                    _vm.errors.class
-                      ? _c("span", {
-                          staticClass: "err",
-                          domProps: { textContent: _vm._s(_vm.errors.class[0]) }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newStudent.class,
-                          expression: "newStudent.class"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生班級" },
-                      domProps: { value: _vm.newStudent.class },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.newStudent, "class", $event.target.value)
-                        }
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item_small" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生分組號"),
-                    _vm.errors.group
-                      ? _c("span", {
-                          staticClass: "err",
-                          domProps: { textContent: _vm._s(_vm.errors.group[0]) }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newStudent.group,
-                          expression: "newStudent.group"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生分組號" },
-                      domProps: { value: _vm.newStudent.group },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.newStudent, "group", $event.target.value)
-                        }
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item_small" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生職責"),
-                    _vm.errors.duty
-                      ? _c("span", {
-                          staticClass: "err",
-                          domProps: { textContent: _vm._s(_vm.errors.duty[0]) }
-                        })
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newStudent.duty,
-                          expression: "newStudent.duty"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生職責" },
-                      domProps: { value: _vm.newStudent.duty },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.newStudent, "duty", $event.target.value)
-                        }
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "issureStu" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "issureBtn",
-                      on: {
-                        click: function($event) {
-                          return _vm.addNewStudent()
-                        }
-                      }
-                    },
-                    [_vm._v("添加")]
-                  )
-                ])
-              ])
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "van-popup",
-          {
-            attrs: { overlay: true },
-            model: {
               value: _vm.isSearchStudentShow,
               callback: function($$v) {
                 _vm.isSearchStudentShow = $$v
@@ -27038,6 +27217,186 @@ var render = function() {
                           _vm.$set(
                             _vm.searchStudent,
                             "phone",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("区号A")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "div",
+                      { staticClass: "simulateShade" },
+                      [
+                        _c("AreaCodeSelector", {
+                          attrs: { areaCode: _vm.searchStudent.code_one },
+                          on: { selectedAreaCode: _vm.selectedAreaCodeOne }
+                        })
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("緊急電話A")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.searchStudent.emergency_phone_one,
+                          expression: "searchStudent.emergency_phone_one"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫緊急電話A" },
+                      domProps: {
+                        value: _vm.searchStudent.emergency_phone_one
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.searchStudent,
+                            "emergency_phone_one",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("区号B")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "div",
+                      { staticClass: "simulateShade" },
+                      [
+                        _c("AreaCodeSelector", {
+                          attrs: { areaCode: _vm.searchStudent.code_two },
+                          on: { selectedAreaCode: _vm.selectedAreaCodeTwo }
+                        })
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("緊急電話B")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.searchStudent.emergency_phone_two,
+                          expression: "searchStudent.emergency_phone_two"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫緊急電話B" },
+                      domProps: {
+                        value: _vm.searchStudent.emergency_phone_two
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.searchStudent,
+                            "emergency_phone_two",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("緊急郵箱A")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.searchStudent.emergency_email_one,
+                          expression: "searchStudent.emergency_email_one"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫緊急郵箱A" },
+                      domProps: {
+                        value: _vm.searchStudent.emergency_email_one
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.searchStudent,
+                            "emergency_email_one",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("緊急郵箱B")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.searchStudent.emergency_email_two,
+                          expression: "searchStudent.emergency_email_two"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫緊急郵箱B" },
+                      domProps: {
+                        value: _vm.searchStudent.emergency_email_two
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.searchStudent,
+                            "emergency_email_two",
                             $event.target.value
                           )
                         }
@@ -27242,6 +27601,530 @@ var render = function() {
               ])
             ])
           ]
+        ),
+        _vm._v(" "),
+        _c(
+          "van-popup",
+          {
+            attrs: { overlay: true },
+            model: {
+              value: _vm.isNewStudentShow,
+              callback: function($$v) {
+                _vm.isNewStudentShow = $$v
+              },
+              expression: "isNewStudentShow"
+            }
+          },
+          [
+            _c("div", { staticClass: "editBox" }, [
+              _c("div", { staticClass: "editBoxContent disflex" }, [
+                _c("div", { staticClass: "form_item_small" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("學生密碼(必填)")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.original_password,
+                          expression: "newStudent.original_password"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫學生密碼" },
+                      domProps: { value: _vm.newStudent.original_password },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newStudent,
+                            "original_password",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("學生中文名(必填)"),
+                    _vm.errors.name
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.name[0]) }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.name,
+                          expression: "newStudent.name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫學生中文名" },
+                      domProps: { value: _vm.newStudent.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.newStudent, "name", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("學生英文名(必填)"),
+                    _vm.errors.en_name
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: {
+                            textContent: _vm._s(_vm.errors.en_name[0])
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.en_name,
+                          expression: "newStudent.en_name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫學生英文名" },
+                      domProps: { value: _vm.newStudent.en_name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newStudent,
+                            "en_name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("電話区号(必填)"),
+                    _vm.errors.code
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.code[0]) }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "div",
+                      { staticClass: "simulateShade" },
+                      [
+                        _c("AreaCodeSelector", {
+                          attrs: { areaCode: _vm.newStudent.code },
+                          on: { selectedAreaCode: _vm.selectedAreaCode }
+                        })
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("聯繫電話(必填)")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.phone,
+                          expression: "newStudent.phone"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫聯繫電話" },
+                      domProps: { value: _vm.newStudent.phone },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.newStudent, "phone", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("区号A")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "div",
+                      { staticClass: "simulateShade" },
+                      [
+                        _c("AreaCodeSelector", {
+                          attrs: { areaCode: _vm.newStudent.code_one },
+                          on: { selectedAreaCode: _vm.selectedAreaCodeOne }
+                        })
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("緊急電話A")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.emergency_phone_one,
+                          expression: "newStudent.emergency_phone_one"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫緊急電話A" },
+                      domProps: { value: _vm.newStudent.emergency_phone_one },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newStudent,
+                            "emergency_phone_one",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("区号B")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "div",
+                      { staticClass: "simulateShade" },
+                      [
+                        _c("AreaCodeSelector", {
+                          attrs: { areaCode: _vm.newStudent.code_two },
+                          on: { selectedAreaCode: _vm.selectedAreaCodeTwo }
+                        })
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("緊急電話B")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.emergency_phone_two,
+                          expression: "newStudent.emergency_phone_two"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫緊急電話B" },
+                      domProps: { value: _vm.newStudent.emergency_phone_two },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newStudent,
+                            "emergency_phone_two",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("緊急郵箱A")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.emergency_email_one,
+                          expression: "newStudent.emergency_email_one"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫緊急郵箱A" },
+                      domProps: { value: _vm.newStudent.emergency_email_one },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newStudent,
+                            "emergency_email_one",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_student" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("緊急郵箱B")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.emergency_email_two,
+                          expression: "newStudent.emergency_email_two"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫緊急郵箱B" },
+                      domProps: { value: _vm.newStudent.emergency_email_two },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newStudent,
+                            "emergency_email_two",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_small" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("學生學號"),
+                    _vm.errors.student_number
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: {
+                            textContent: _vm._s(_vm.errors.student_number[0])
+                          }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.student_number,
+                          expression: "newStudent.student_number"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫學生學號" },
+                      domProps: { value: _vm.newStudent.student_number },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newStudent,
+                            "student_number",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_small" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("學生班級"),
+                    _vm.errors.class
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.class[0]) }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.class,
+                          expression: "newStudent.class"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫學生班級" },
+                      domProps: { value: _vm.newStudent.class },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.newStudent, "class", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_small" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("學生分組號"),
+                    _vm.errors.group
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.group[0]) }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.group,
+                          expression: "newStudent.group"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫學生分組號" },
+                      domProps: { value: _vm.newStudent.group },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.newStudent, "group", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_small" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("學生職責"),
+                    _vm.errors.duty
+                      ? _c("span", {
+                          staticClass: "err",
+                          domProps: { textContent: _vm._s(_vm.errors.duty[0]) }
+                        })
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newStudent.duty,
+                          expression: "newStudent.duty"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "填寫學生職責" },
+                      domProps: { value: _vm.newStudent.duty },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.newStudent, "duty", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "issureStu" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "issureBtn",
+                      on: {
+                        click: function($event) {
+                          return _vm.addNewStudent()
+                        }
+                      }
+                    },
+                    [_vm._v("添加")]
+                  )
+                ])
+              ])
+            ])
+          ]
         )
       ],
       1
@@ -27344,7 +28227,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.linkSchool{\n    width: 100%;\n    min-height: 700px;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n    -webkit-box-align:start;\n        -ms-flex-align:start;\n            align-items:flex-start;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n}\n.travelInfo{\n    width: 60%;\n    min-height: 100px;\n    -ms-flex-line-pack:start;\n        align-content:flex-start;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    font-size: 16px;\n    margin-top: 20px;\n}\n.travelInfoItem{\n    width: 100%;\n    min-height:100px;\n}\n.travelInfoItem>div{\n    width: 100%;\n    min-height: 45px;\n    line-height: 45px;\n}\n.item_input_school{\n    height:40px;\n    padding-left:10px;\n    outline: none;\n    width: 95%;\n    border-radius: 8px;\n}\n.imgIcon{\n    width:100px;\n    height: 40px;\n    float: right;\n}\n.imgIcon img{\n    height: 35px;\n    float: right;\n}\n.imgs{\n    width:95%;\n    position: relative;\n}\n.travelImg{\n    width:100%;\n    border-radius: 15px;\n}\n.cancelImg{\n    width:30px;\n    height: 30px;\n    top: 15px;\n    right: 15px;\n    position: absolute;\n}\n.changBtn{\n    width:50%;\n    height: 45px;\n    border-radius: 8px;\n    background: #ffde01;\n    text-align: center;\n    line-height: 45px;\n    border: none;\n    outline: none;\n    margin-top: 20px;\n    margin-left: 25%;\n}\n.travelStatus{\n    -webkit-box-pack:justify;\n        -ms-flex-pack:justify;\n            justify-content:space-between;\n    -webkit-box-align:center;\n        -ms-flex-align:center;\n            align-items:center;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n}\n.travelStatus>div{\n    width:100px;\n    height:43px;\n    border-radius: 8px;\n    border: 1px solid #ccc;\n    text-align: center;\n}\n.actStatus{\n    background: #ccc;\n}\n[v-cloak]{\n    display: none;\n}\n.van-dialog{\n    width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.linkSchool{\n    width: 100%;\n    min-height: 700px;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n    -webkit-box-align:start;\n        -ms-flex-align:start;\n            align-items:flex-start;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n}\n.travelInfo{\n    width: 60%;\n    min-height: 100px;\n    -ms-flex-line-pack:start;\n        align-content:flex-start;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    font-size: 16px;\n    margin-top: 20px;\n}\n.travelInfoItem{\n    width: 100%;\n    min-height:100px;\n}\n.travelInfoItem>div{\n    width: 100%;\n    min-height: 45px;\n    line-height: 45px;\n}\n.item_input_school{\n    height:40px;\n    padding-left:10px;\n    outline: none;\n    width: 95%;\n    border-radius: 8px;\n}\n.imgIcon{\n    width:100px;\n    height: 40px;\n    float: right;\n}\n.imgIcon img{\n    height: 35px;\n    float: right;\n}\n.imgs{\n    width:95%;\n    position: relative;\n}\n.travelImg{\n    width:100%;\n    border-radius: 15px;\n}\n.cancelImg{\n    width:30px;\n    height: 30px;\n    top: 15px;\n    right: 15px;\n    position: absolute;\n}\n.changBtn{\n    width:50%;\n    height: 45px;\n    border-radius: 8px;\n    background: #ffde01;\n    text-align: center;\n    line-height: 45px;\n    border: none;\n    outline: none;\n    margin-top: 20px;\n    margin-left: 25%;\n}\n.travelStatus{\n    -webkit-box-pack:justify;\n        -ms-flex-pack:justify;\n            justify-content:space-between;\n    -webkit-box-align:center;\n        -ms-flex-align:center;\n            align-items:center;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n}\n.travelStatus>div{\n    width:100px;\n    height:43px;\n    border-radius: 8px;\n    border: 1px solid #ccc;\n    text-align: center;\n}\n.actStatus{\n    background: #ccc;\n}\n[v-cloak]{\n    display: none;\n}\n.van-dialog{\n    width:50%;\n}\n.simulateShade{\n    width:90%;\n    height: 44px;\n    border-width: 2px;\n    border-style: solid;\n    border-top-color: #999;\n    border-left-color: #999;\n    border-right-color: #eee;\n    border-bottom-color: #eee;\n    border-radius: 8px;\n}\n\n", ""]);
 
 // exports
 
@@ -27355,6 +28238,29 @@ exports.push([module.i, "\n.linkSchool{\n    width: 100%;\n    min-height: 700px
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -27527,7 +28433,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        AreaCodeSelector: __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default.a
+    },
     data: function data() {
         return {
             travelInfo: {}
@@ -27535,7 +28445,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     mounted: function mounted() {
-        this.$store.state.links = [{ link: '/home', linkName: '项目' }, { link: '/projectDetail/' + sessionStorage.actTravelId, linkName: '项目详情' }];
+        this.$store.state.links = [{ link: '/home', linkName: '項目' }, { link: '/projectDetail/' + sessionStorage.actTravelId, linkName: '項目詳情' }];
         this.getTravelInfo();
     },
     methods: {
@@ -27615,6 +28525,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).then(function () {
                 _this4.travelInfo.image = 'http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555059034_CNDm3c7vCL.png';
             }).catch(function (err) {});
+        },
+        selectedAreaCode: function selectedAreaCode(value) {
+            this.travelInfo.code_one = value;
+        },
+        selectedAreaCode1: function selectedAreaCode1(value) {
+            this.travelInfo.code_two = value;
         }
     }
 });
@@ -27630,7 +28546,7 @@ var render = function() {
   return _c("div", { staticClass: "linkSchool disflex" }, [
     _c("div", { staticClass: "travelInfo disflex" }, [
       _c("div", { staticClass: "travelInfoItem" }, [
-        _c("div", [_vm._v("旅游名称")]),
+        _c("div", [_vm._v("旅遊名稱")]),
         _vm._v(" "),
         _c("div", [
           _c("input", {
@@ -27643,7 +28559,7 @@ var render = function() {
               }
             ],
             staticClass: "item_input_school",
-            attrs: { placeholder: "旅游名称", type: "text" },
+            attrs: { placeholder: "旅遊名稱", type: "text" },
             domProps: { value: _vm.travelInfo.travel_name },
             on: {
               input: function($event) {
@@ -27694,7 +28610,7 @@ var render = function() {
         "div",
         { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
         [
-          _c("div", [_vm._v("结束日期")]),
+          _c("div", [_vm._v("結束日期")]),
           _vm._v(" "),
           _c("div", [
             _c("input", {
@@ -27708,7 +28624,7 @@ var render = function() {
               ],
               staticClass: "item_input_school",
               staticStyle: { width: "90%" },
-              attrs: { placeholder: "结束日期", type: "text" },
+              attrs: { placeholder: "結束日期", type: "text" },
               domProps: { value: _vm.travelInfo.travel_return },
               on: {
                 input: function($event) {
@@ -27724,7 +28640,7 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "travelInfoItem" }, [
-        _c("div", [_vm._v("旅游简介")]),
+        _c("div", [_vm._v("旅遊簡介")]),
         _vm._v(" "),
         _c("div", [
           _c("input", {
@@ -27737,7 +28653,7 @@ var render = function() {
               }
             ],
             staticClass: "item_input_school",
-            attrs: { placeholder: "旅游简介", type: "text" },
+            attrs: { placeholder: "旅遊簡介", type: "text" },
             domProps: { value: _vm.travelInfo.introduction },
             on: {
               input: function($event) {
@@ -27752,7 +28668,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "travelInfoItem" }, [
-        _c("div", [_vm._v("学校名称")]),
+        _c("div", [_vm._v("學校名稱")]),
         _vm._v(" "),
         _c("div", [
           _c("input", {
@@ -27765,7 +28681,7 @@ var render = function() {
               }
             ],
             staticClass: "item_input_school",
-            attrs: { placeholder: "学校名称", type: "text" },
+            attrs: { placeholder: "學校名稱", type: "text" },
             domProps: { value: _vm.travelInfo.school_name },
             on: {
               input: function($event) {
@@ -27780,7 +28696,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "travelInfoItem" }, [
-        _c("div", [_vm._v("项目进行状态")]),
+        _c("div", [_vm._v("項目進行狀態")]),
         _vm._v(" "),
         _c(
           "div",
@@ -27799,7 +28715,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("未进行")]
+              [_vm._v("未進行")]
             ),
             _vm._v(" "),
             _c(
@@ -27812,7 +28728,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("进行中")]
+              [_vm._v("進行中")]
             ),
             _vm._v(" "),
             _c(
@@ -27825,7 +28741,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("已结束")]
+              [_vm._v("已結束")]
             )
           ]
         )
@@ -27833,7 +28749,7 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "travelInfoItem" }, [
         _c("div", { staticStyle: { width: "95%" } }, [
-          _vm._v("\n                    背景图\n                    "),
+          _vm._v("\n                    背景圖\n                    "),
           _c(
             "div",
             { staticClass: "imgIcon" },
@@ -27883,31 +28799,20 @@ var render = function() {
         "div",
         { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
         [
-          _c("div", [_vm._v("区号1")]),
+          _c("div", [_vm._v("区号A")]),
           _vm._v(" "),
           _c("div", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.travelInfo.code_one,
-                  expression: "travelInfo.code_one"
-                }
+            _c(
+              "div",
+              { staticClass: "simulateShade" },
+              [
+                _c("AreaCodeSelector", {
+                  attrs: { areaCode: _vm.travelInfo.code_one },
+                  on: { selectedAreaCode: _vm.selectedAreaCode }
+                })
               ],
-              staticClass: "item_input_school",
-              staticStyle: { width: "90%" },
-              attrs: { placeholder: "区号1", type: "text" },
-              domProps: { value: _vm.travelInfo.code_one },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.travelInfo, "code_one", $event.target.value)
-                }
-              }
-            })
+              1
+            )
           ])
         ]
       ),
@@ -27916,7 +28821,7 @@ var render = function() {
         "div",
         { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
         [
-          _c("div", [_vm._v("联系电话1")]),
+          _c("div", [_vm._v("緊急電話A")]),
           _vm._v(" "),
           _c("div", [
             _c("input", {
@@ -27930,7 +28835,7 @@ var render = function() {
               ],
               staticClass: "item_input_school",
               staticStyle: { width: "90%" },
-              attrs: { placeholder: "联系电话1", type: "text" },
+              attrs: { placeholder: "緊急電話A", type: "text" },
               domProps: { value: _vm.travelInfo.emergency_phone_one },
               on: {
                 input: function($event) {
@@ -27953,31 +28858,20 @@ var render = function() {
         "div",
         { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
         [
-          _c("div", [_vm._v("区号2")]),
+          _c("div", [_vm._v("区号B")]),
           _vm._v(" "),
           _c("div", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.travelInfo.code_two,
-                  expression: "travelInfo.code_two"
-                }
+            _c(
+              "div",
+              { staticClass: "simulateShade" },
+              [
+                _c("AreaCodeSelector", {
+                  attrs: { areaCode: _vm.travelInfo.code_two },
+                  on: { selectedAreaCode: _vm.selectedAreaCode1 }
+                })
               ],
-              staticClass: "item_input_school",
-              staticStyle: { width: "90%" },
-              attrs: { placeholder: "区号2", type: "text" },
-              domProps: { value: _vm.travelInfo.code_two },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.travelInfo, "code_two", $event.target.value)
-                }
-              }
-            })
+              1
+            )
           ])
         ]
       ),
@@ -27986,7 +28880,7 @@ var render = function() {
         "div",
         { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
         [
-          _c("div", [_vm._v("联系电话2")]),
+          _c("div", [_vm._v("緊急電話B")]),
           _vm._v(" "),
           _c("div", [
             _c("input", {
@@ -28000,7 +28894,7 @@ var render = function() {
               ],
               staticClass: "item_input_school",
               staticStyle: { width: "90%" },
-              attrs: { placeholder: "联系电话2", type: "text" },
+              attrs: { placeholder: "緊急電話B", type: "text" },
               domProps: { value: _vm.travelInfo.emergency_phone_two },
               on: {
                 input: function($event) {
@@ -28023,7 +28917,7 @@ var render = function() {
         "div",
         { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
         [
-          _c("div", [_vm._v("联系邮箱1")]),
+          _c("div", [_vm._v("緊急郵箱A")]),
           _vm._v(" "),
           _c("div", [
             _c("input", {
@@ -28037,7 +28931,7 @@ var render = function() {
               ],
               staticClass: "item_input_school",
               staticStyle: { width: "90%" },
-              attrs: { placeholder: "联系邮箱1", type: "text" },
+              attrs: { placeholder: "緊急郵箱A", type: "text" },
               domProps: { value: _vm.travelInfo.emergency_email_one },
               on: {
                 input: function($event) {
@@ -28060,7 +28954,7 @@ var render = function() {
         "div",
         { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
         [
-          _c("div", [_vm._v("联系邮箱2")]),
+          _c("div", [_vm._v("緊急郵箱B")]),
           _vm._v(" "),
           _c("div", [
             _c("input", {
@@ -28074,7 +28968,7 @@ var render = function() {
               ],
               staticClass: "item_input_school",
               staticStyle: { width: "90%" },
-              attrs: { placeholder: "联系邮箱2", type: "text" },
+              attrs: { placeholder: "緊急郵箱B", type: "text" },
               domProps: { value: _vm.travelInfo.emergency_email_two },
               on: {
                 input: function($event) {
@@ -28589,7 +29483,7 @@ exports.push([module.i, "\n.personal_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__);
 //
 //
@@ -31514,7 +32408,7 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Editor_vue__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Editor_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Editor_vue__);
@@ -40810,7 +41704,7 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__);
 //
 //
@@ -48123,7 +49017,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_sheet{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content_sheet{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journeyInfo{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.toNext{width:30px;height: 30px;text-align: center;line-height: 30px;float: right;margin-right: 15px;margin-top: 13px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox{width:600px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left:20%;background-color:#ffde01;font-size:16px;border-radius: 8px;border:none;outline:none;\n}\n.editBtnGroup_journeyInfo{width:94%;height:50px;line-height:50px;\n}\n.editBtnGroup_journeyInfo>img{width:40px;height:40px;margin-left:25px;float:right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_sheet{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content_sheet{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journeyInfo{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.toNext{width:30px;height: 30px;text-align: center;line-height: 30px;float: right;margin-right: 15px;margin-top: 13px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox{width:760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left:20%;background-color:#ffde01;font-size:16px;border-radius: 8px;border:none;outline:none;\n}\n.editBtnGroup_journeyInfo{width:94%;height:50px;line-height:50px;\n}\n.editBtnGroup_journeyInfo>img{width:40px;height:40px;margin-left:25px;float:right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
 
 // exports
 
@@ -48754,7 +49648,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_sheetInfo{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content_sheetInfo{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_sheetInfo{width: 100%;min-height:90px;\n}\n.form_item_sheetInfo>div{min-height:45px;line-height: 45px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_input_sheetInfo{height:45px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.item_area_sheetInfo{width:100%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.item_title_icon>img{height:25px;margin-left:5px;\n}\n.item_title_icon>img:hover{cursor: pointer;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox_sheetInfo{width: 600px;min-height:160px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_sheetInfo{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.form_content_sheetInfo{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_sheetInfo{width: 100%;min-height:90px;\n}\n.form_item_sheetInfo>div{min-height:45px;line-height: 45px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_input_sheetInfo{height:45px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.item_area_sheetInfo{width:100%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.item_title_icon>img{height:25px;margin-left:5px;\n}\n.item_title_icon>img:hover{cursor: pointer;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;\n}\n.editBox_sheetInfo{width: 760px;min-height:160px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
 
 // exports
 
@@ -54262,7 +55156,7 @@ exports.push([module.i, "\n.main{width: 100%;height: 100vh;-webkit-box-align: ce
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__);
 //
 //
@@ -55881,7 +56775,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vue_babel_helper_vue_jsx_merge_props___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__vue_babel_helper_vue_jsx_merge_props__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_functional__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_popup__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_popup__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__icon__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__loading__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__popup__ = __webpack_require__(22);
@@ -56984,7 +57878,7 @@ var _use = Object(__WEBPACK_IMPORTED_MODULE_1__utils__["j" /* use */])('picker-c
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_popup__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_popup__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icon__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loading__ = __webpack_require__(12);
 
@@ -57106,7 +58000,7 @@ var STYLE = ['success', 'fail', 'loading'];
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_popup__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_popup__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__button__ = __webpack_require__(11);
 
 
@@ -57776,7 +58670,7 @@ var _use = Object(__WEBPACK_IMPORTED_MODULE_0__utils__["j" /* use */])('checkbox
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_raf__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_color__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_color__ = __webpack_require__(19);
 
 
 
@@ -59309,7 +60203,7 @@ GoodsActionMiniBtn.props = Object(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_hel
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vue_babel_helper_vue_jsx_merge_props__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vue_babel_helper_vue_jsx_merge_props___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__vue_babel_helper_vue_jsx_merge_props__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_popup__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_popup__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_touch__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__swipe__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__swipe_item__ = __webpack_require__(67);
@@ -59952,7 +60846,7 @@ var _use = Object(__WEBPACK_IMPORTED_MODULE_0__utils__["j" /* use */])('notice-b
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Notify__ = __webpack_require__(390);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_functional__ = __webpack_require__(5);
 
@@ -60036,9 +60930,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.$notify = Notify;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vue_babel_helper_vue_jsx_merge_props__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vue_babel_helper_vue_jsx_merge_props___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__vue_babel_helper_vue_jsx_merge_props__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_functional__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_popup__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_popup__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__popup__ = __webpack_require__(22);
 
 
@@ -60637,7 +61531,7 @@ PasswordInput.props = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_color__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_color__ = __webpack_require__(19);
 
 
 
@@ -61986,7 +62880,7 @@ var _use = Object(__WEBPACK_IMPORTED_MODULE_0__utils__["j" /* use */])('step'),
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_color__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_color__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icon__ = __webpack_require__(7);
 
 
@@ -79888,7 +80782,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19), __webpack_require__(419)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(20), __webpack_require__(419)(module)))
 
 /***/ }),
 /* 419 */
