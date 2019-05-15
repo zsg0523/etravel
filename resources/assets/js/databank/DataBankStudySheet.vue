@@ -20,7 +20,7 @@
     .dataBankAddBtn_journeyInfo:hover{cursor:pointer;}
     .dataBankAddBtn_journeyInfo>img{width:50px;height: 50px;}
 	
-    .editBox{width:600px;min-height:240px;background-color: #fff;border-radius: 15px;}
+    .editBox{width:760px;min-height:240px;background-color: #fff;border-radius: 15px;}
     .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
     .issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
     .issure>button{width:60%;height:50px;margin-left:20%;background-color:#ffde01;font-size:16px;border-radius: 8px;border:none;outline:none;}
