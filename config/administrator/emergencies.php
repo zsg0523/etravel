@@ -1,6 +1,5 @@
 <?php
 use App\Models\Emergency;
-use App\Models\Areacode;
 
 return [
 
@@ -58,10 +57,6 @@ return [
 		],
 		'code_one' => [
 			'title' => '区号A',
-			'output' => function ($value, $model) {
-				dd(Areacode::all());
-				// return $model->areacode;
-			},
 		],
 		'emergency_phone_one' => [
 			'title' => '电话A',
