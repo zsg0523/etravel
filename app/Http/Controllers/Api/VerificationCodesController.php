@@ -17,6 +17,7 @@ class VerificationCodesController extends Controller
     	// 生成四位随机数 左侧补0
     	$code = str_pad(random_int(1, 9999), 4, 0, STR_PAD_LEFT);
 
+
     	if ( ! app()->environment('production')) {
     		$code = '1234';
     	} else {
@@ -26,7 +27,8 @@ class VerificationCodesController extends Controller
 			        	$code,
 			        	'1',
 			        ],
-			        'template'  => '127203',
+			        // 'template'  => '127203',
+                    'template' => '331300',
 			    ]);
 			} catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $exception) {
 			    $message = $exception->getException('qcloud')->getMessage();
@@ -69,7 +71,7 @@ class VerificationCodesController extends Controller
 			        	$code,
 			        	'1',
 			        ],
-			        'template'  => '127203',
+			        'template'  => '331300',
 			    ]);
 			} catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $exception) {
 			    $message = $exception->getException('qcloud')->getMessage();

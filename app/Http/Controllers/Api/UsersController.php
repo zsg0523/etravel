@@ -209,8 +209,8 @@ class UsersController extends Controller
             // 用户紧急联系人电话和邮箱 
             $user_emergency = $this->user()->emergency;
             if ($user_emergency) {
-                $this->sendSms($easySms, $user_emergency->code_one, $user_emergency->emergency_phone_one, '127203');
-                $this->sendSms($easySms, $user_emergency->code_two, $user_emergency->emergency_phone_two, '127203');
+                $this->sendSms($this->user, $easySms, $user_emergency->code_one, $user_emergency->emergency_phone_one, '331302');
+                $this->sendSms($this->user, $easySms, $user_emergency->code_two, $user_emergency->emergency_phone_two, '331302');
                 $this->sendMail($user_emergency->emergency_email_one, $user_emergency->emergency_email_two, $this->user);   
             }
         } finally {
@@ -218,8 +218,8 @@ class UsersController extends Controller
                 // 旅游团紧急联系人电话和邮箱
                 $travel_emergency = $travel->emergency;
                 if ($travel_emergency) {
-                    $this->sendSms($easySms, $travel_emergency->code_one, $travel_emergency->emergency_phone_one, '127203');
-                    $this->sendSms($easySms, $travel_emergency->code_two, $travel_emergency->emergency_phone_two, '127203');
+                    $this->sendSms($this->user, $easySms, $travel_emergency->code_one, $travel_emergency->emergency_phone_one, '331302');
+                    $this->sendSms($this->user, $easySms, $travel_emergency->code_two, $travel_emergency->emergency_phone_two, '331302');
                     $this->sendMail($travel_emergency->emergency_email_one, $travel_emergency->emergency_email_two, $this->user);
                 }
             } finally {
@@ -227,8 +227,8 @@ class UsersController extends Controller
                     // 公司紧急联系人
                     $company_emergency = Company::whereShow('1')->first();
                     if ($company_emergency) {
-                        $this->sendSms($easySms, $company_emergency->code_one, $company_emergency->emergency_phone_one, '127203');
-                        $this->sendSms($easySms, $company_emergency->code_two, $company_emergency->emergency_phone_two, '127203');
+                        $this->sendSms($this->user, $easySms, $company_emergency->code_one, $company_emergency->emergency_phone_one, '331302');
+                        $this->sendSms($this->user, $easySms, $company_emergency->code_two, $company_emergency->emergency_phone_two, '331302');
                         $this->sendMail($company_emergency->emergency_email_one, $company_emergency->emergency_email_two, $this->user);
                     }
                 } finally {
@@ -246,16 +246,17 @@ class UsersController extends Controller
      * @param  [type] $easySms  [实例]
      * @return [type]            [description]
      */
-    private function sendSms($easySms, $idd_code, $phone, $template)
+    private function sendSms($user, $easySms, $idd_code, $phone, $template)
     {
         $phone = new PhoneNumber($phone, $idd_code);
         try {
             $easySms->send($phone, [
                 'data' => [
-                    '12345',
-                    '1',
+                    $user->name,
+                    $user->name,
+                    date('Y-m-d H:i:s', time())
                 ],
-                'template'  => '127203',
+                'template'  => $template,
             ]);
         } catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $exception) {
 
