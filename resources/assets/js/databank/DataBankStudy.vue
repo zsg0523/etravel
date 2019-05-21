@@ -60,8 +60,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
-		                <div class="item_title">第幾天</div>
-		                <div><input class="item_input" placeholder="第幾天" type="text"  v-model="newJourney.day"></div>
+		                <div class="item_title">景點</div>
+		                <div><input class="item_input" placeholder="景點" type="text"  v-model="newJourney.day"></div>
 		            </div>
 		            <div class="form_item_journey">
 		                <div class="item_title">日期</div>
@@ -77,8 +77,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
-		                <div class="item_title">第幾天</div>
-		                <div><input class="item_input" placeholder="第幾天" type="text"  v-model="edJourney.day"></div>
+		                <div class="item_title">景點</div>
+		                <div><input class="item_input" placeholder="景點" type="text"  v-model="edJourney.day"></div>
 		            </div>
 		            <div class="form_item_journey">
 		                <div class="item_title">日期</div>

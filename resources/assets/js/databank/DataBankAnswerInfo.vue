@@ -49,7 +49,7 @@
                     <div role="tabpanel" class="tab-pane pane-answer active" id="gather">
                         <div class="sheetGroup" v-for="(sheetInfo,index) in sheetInfos">
                             <div class="sheetTitle" v-text="sheetInfo.title"></div>
-                            <div class="sheetContent" v-html="sheetInfo.body"></div>
+                            <!-- <div class="sheetContent" v-html="sheetInfo.body"></div> -->
                             <template v-if="sheetInfo.questions.data">
                                 <div class="sheetQuestion" v-for="(question,index) in sheetInfo.questions.data">
                                     <div class="questTitle">

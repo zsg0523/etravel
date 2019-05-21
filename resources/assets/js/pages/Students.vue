@@ -52,7 +52,7 @@
                 <ul style="padding: 0;margin:0;">
                     <li>
                         <div class="left_title disflex">
-                            <span>学员信息</span>
+                            <span>團員信息</span>
                             <div class="left_title_icon">
                                 <div @click="delStudent()"> 
                                     <img src="/etravel/public/images/dele-inf.png" alt="">
@@ -82,16 +82,16 @@
                             <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" :value="students[actIndex].user.id"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">學生密碼</div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生密碼" disabled="disabled" :value="students[actIndex].user.original_password"></div>
+                            <div class="item_title">團員密碼</div>
+                            <div><input class="item_input" type="text" placeholder="填寫團員密碼" disabled="disabled" :value="students[actIndex].user.original_password"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">學生中文名</div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生中文名" disabled="disabled" :value="students[actIndex].user.name"></div>
+                            <div class="item_title">團員中文名</div>
+                            <div><input class="item_input" type="text" placeholder="填寫團員中文名" disabled="disabled" :value="students[actIndex].user.name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">學生英文名</div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生英文名" disabled="disabled" :value="students[actIndex].user.en_name"></div>
+                            <div class="item_title">團員英文名</div>
+                            <div><input class="item_input" type="text" placeholder="填寫團員英文名" disabled="disabled" :value="students[actIndex].user.en_name"></div>
                         </div>
                         <div class="form_item_student">
                             <div class="item_title">電話区号</div>
@@ -128,20 +128,20 @@
                         </div>
                         <!-- 分组信息 -->
                         <div class="form_item_small">
-                            <div class="item_title">學生學號</div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生學號" disabled="disabled" :value="students[actIndex].student_number"></div>
+                            <div class="item_title">團員學號</div>
+                            <div><input class="item_input" type="text" placeholder="填寫團員學號" disabled="disabled" :value="students[actIndex].student_number"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">學生班級</div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生班級" disabled="disabled" :value="students[actIndex].class"></div>
+                            <div class="item_title">團員班級</div>
+                            <div><input class="item_input" type="text"  placeholder="填寫團員班級" disabled="disabled" :value="students[actIndex].class"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">學生分組號</div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生分組號" disabled="disabled" :value="students[actIndex].group"></div>
+                            <div class="item_title">團員分組號</div>
+                            <div><input class="item_input" type="text"  placeholder="填寫團員分組號" disabled="disabled" :value="students[actIndex].group"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">學生職責</div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生職責" disabled="disabled" :value="students[actIndex].duty"></div>
+                            <div class="item_title">團員職責</div>
+                            <div><input class="item_input" type="text"  placeholder="填寫團員職責" disabled="disabled" :value="students[actIndex].duty"></div>
                         </div>
                         <!-- 撑高度 -->
                         <div class="form_item_small"></div>
@@ -157,16 +157,16 @@
                                     <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" v-model="edStudent.user_id"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">學生密碼(不可编辑)</div>
-                                    <div><input class="item_input" type="text" placeholder="填寫學生密碼" disabled="disabled" v-model="edStudent.original_password"></div>
+                                    <div class="item_title">團員密碼(不可编辑)</div>
+                                    <div><input class="item_input" type="text" placeholder="填寫團員密碼" disabled="disabled" v-model="edStudent.original_password"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">學生中文名(不可编辑)<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填寫學生中文名" disabled="disabled" v-model="edStudent.name"></div>
+                                    <div class="item_title">團員中文名(不可编辑)<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫團員中文名" disabled="disabled" v-model="edStudent.name"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">學生英文名(不可编辑)<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填寫學生英文名" disabled="disabled" v-model="edStudent.en_name"></div>
+                                    <div class="item_title">團員英文名(不可编辑)<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫團員英文名" disabled="disabled" v-model="edStudent.en_name"></div>
                                 </div>
                                 <div class="form_item_student">
                                     <div class="item_title">電話区号(不可编辑)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
@@ -213,20 +213,20 @@
                                 </div>
                                 <!-- 分组信息 -->
                                 <div class="form_item_small">
-                                    <div class="item_title">學生學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填寫學生學號" v-model="edStudent.student_number"></div>
+                                    <div class="item_title">團員學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫團員學號" v-model="edStudent.student_number"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">學生班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
-                                    <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="edStudent.class"></div>
+                                    <div class="item_title">團員班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
+                                    <div><input class="item_input" type="text"  placeholder="填寫團員班級" v-model="edStudent.class"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">學生分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
-                                    <div><input class="item_input" type="text"  placeholder="填寫學生分組號" v-model="edStudent.group"></div>
+                                    <div class="item_title">團員分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                                    <div><input class="item_input" type="text"  placeholder="填寫團員分組號" v-model="edStudent.group"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
-                                    <div><input class="item_input" type="text"  placeholder="填寫學生職責" v-model="edStudent.duty"></div>
+                                    <div class="item_title">團員職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
+                                    <div><input class="item_input" type="text"  placeholder="填寫團員職責" v-model="edStudent.duty"></div>
                                 </div>
                                 <div class="issureStu">
                                     <button class="issureBtn" @click="editStudent()">修改</button>
@@ -244,16 +244,16 @@
                             <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" :value="searchStudent.id"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">學生密碼(不可编辑)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生密碼" disabled="disabled" :value="searchStudent.original_password"></div>
+                            <div class="item_title">團員密碼(不可编辑)</div>
+                            <div><input class="item_input" type="text" placeholder="填寫團員密碼" disabled="disabled" :value="searchStudent.original_password"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">學生中文名(不可编辑)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生中文名" disabled="disabled" :value="searchStudent.name"></div>
+                            <div class="item_title">團員中文名(不可编辑)</div>
+                            <div><input class="item_input" type="text" placeholder="填寫團員中文名" disabled="disabled" :value="searchStudent.name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">學生英文名(不可编辑)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生英文名" disabled="disabled" :value="searchStudent.en_name"></div>
+                            <div class="item_title">團員英文名(不可编辑)</div>
+                            <div><input class="item_input" type="text" placeholder="填寫團員英文名" disabled="disabled" :value="searchStudent.en_name"></div>
                         </div>
                         <div class="form_item_student">
                             <div class="item_title">電話区号(不可编辑)</div>
@@ -301,20 +301,20 @@
 
                         <!-- 分组信息 -->
                         <div class="form_item_small">
-                            <div class="item_title">學生學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生學號" v-model="searchStudent.student_number"></div>
+                            <div class="item_title">團員學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
+                            <div><input class="item_input" type="text" placeholder="填寫團員學號" v-model="searchStudent.student_number"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">學生班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="searchStudent.class"></div>
+                            <div class="item_title">團員班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫團員班級" v-model="searchStudent.class"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">學生分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生分組號" v-model="searchStudent.group"></div>
+                            <div class="item_title">團員分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫團員分組號" v-model="searchStudent.group"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生職責" v-model="searchStudent.duty"></div>
+                            <div class="item_title">團員職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫團員職責" v-model="searchStudent.duty"></div>
                         </div>
                         <div class="issureStu">
                             <button class="twoBtn cancel" @click="cancelAdd()">取消</button>
@@ -327,16 +327,16 @@
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
                         <div class="form_item_small">
-                            <div class="item_title">學生密碼(必填)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生密碼" v-model="newStudent.original_password"></div>
+                            <div class="item_title">團員密碼(必填)</div>
+                            <div><input class="item_input" type="text" placeholder="填寫團員密碼" v-model="newStudent.original_password"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">學生中文名(必填)<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生中文名" v-model="newStudent.name"></div>
+                            <div class="item_title">團員中文名(必填)<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
+                            <div><input class="item_input" type="text" placeholder="填寫團員中文名" v-model="newStudent.name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">學生英文名(必填)<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生英文名" v-model="newStudent.en_name"></div>
+                            <div class="item_title">團員英文名(必填)<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
+                            <div><input class="item_input" type="text" placeholder="填寫團員英文名" v-model="newStudent.en_name"></div>
                         </div>
                         <div class="form_item_student">
                             <div class="item_title">電話区号(必填)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
@@ -389,20 +389,20 @@
                         </div>
                         <!-- 分组信息 -->
                         <div class="form_item_small">
-                            <div class="item_title">學生學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填寫學生學號" v-model="newStudent.student_number"></div>
+                            <div class="item_title">團員學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
+                            <div><input class="item_input" type="text" placeholder="填寫團員學號" v-model="newStudent.student_number"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">學生班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生班級" v-model="newStudent.class"></div>
+                            <div class="item_title">團員班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫團員班級" v-model="newStudent.class"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">學生分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生分組號" v-model="newStudent.group"></div>
+                            <div class="item_title">團員分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫團員分組號" v-model="newStudent.group"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">學生職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫學生職責" v-model="newStudent.duty"></div>
+                            <div class="item_title">團員職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
+                            <div><input class="item_input" type="text"  placeholder="填寫團員職責" v-model="newStudent.duty"></div>
                         </div>
                         <div class="issureStu">
                             <button class="issureBtn" @click="addNewStudent()">添加</button>

@@ -24559,7 +24559,7 @@ var render = function() {
       [
         _vm._m(2),
         _vm._v(" "),
-        _c("div", { staticClass: "detail_info" }, [_vm._v("學員信息")])
+        _c("div", { staticClass: "detail_info" }, [_vm._v("團員信息")])
       ]
     ),
     _vm._v(" "),
@@ -25947,7 +25947,7 @@ var render = function() {
             [
               _c("li", [
                 _c("div", { staticClass: "left_title disflex" }, [
-                  _c("span", [_vm._v("学员信息")]),
+                  _c("span", [_vm._v("團員信息")]),
                   _vm._v(" "),
                   _c("div", { staticClass: "left_title_icon" }, [
                     _c(
@@ -26081,7 +26081,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("學生密碼")
+                        _vm._v("團員密碼")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -26089,7 +26089,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填寫學生密碼",
+                            placeholder: "填寫團員密碼",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -26102,7 +26102,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("學生中文名")
+                        _vm._v("團員中文名")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -26110,7 +26110,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填寫學生中文名",
+                            placeholder: "填寫團員中文名",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -26122,7 +26122,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("學生英文名")
+                        _vm._v("團員英文名")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -26130,7 +26130,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填寫學生英文名",
+                            placeholder: "填寫團員英文名",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -26310,7 +26310,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_small" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("學生學號")
+                        _vm._v("團員學號")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -26318,7 +26318,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填寫學生學號",
+                            placeholder: "填寫團員學號",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -26330,7 +26330,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_small" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("學生班級")
+                        _vm._v("團員班級")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -26338,7 +26338,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填寫學生班級",
+                            placeholder: "填寫團員班級",
                             disabled: "disabled"
                           },
                           domProps: { value: _vm.students[_vm.actIndex].class }
@@ -26348,7 +26348,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_small" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("學生分組號")
+                        _vm._v("團員分組號")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -26356,7 +26356,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填寫學生分組號",
+                            placeholder: "填寫團員分組號",
                             disabled: "disabled"
                           },
                           domProps: { value: _vm.students[_vm.actIndex].group }
@@ -26366,7 +26366,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_small" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("學生職責")
+                        _vm._v("團員職責")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -26374,7 +26374,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填寫學生職責",
+                            placeholder: "填寫團員職責",
                             disabled: "disabled"
                           },
                           domProps: { value: _vm.students[_vm.actIndex].duty }
@@ -26457,7 +26457,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("學生密碼(不可编辑)")
+                              _vm._v("團員密碼(不可编辑)")
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -26473,7 +26473,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填寫學生密碼",
+                                  placeholder: "填寫團員密碼",
                                   disabled: "disabled"
                                 },
                                 domProps: {
@@ -26497,7 +26497,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("學生中文名(不可编辑)"),
+                              _vm._v("團員中文名(不可编辑)"),
                               _vm.errors.name
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26521,7 +26521,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填寫學生中文名",
+                                  placeholder: "填寫團員中文名",
                                   disabled: "disabled"
                                 },
                                 domProps: { value: _vm.edStudent.name },
@@ -26543,7 +26543,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("學生英文名(不可编辑)"),
+                              _vm._v("團員英文名(不可编辑)"),
                               _vm.errors.en_name
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26567,7 +26567,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填寫學生英文名",
+                                  placeholder: "填寫團員英文名",
                                   disabled: "disabled"
                                 },
                                 domProps: { value: _vm.edStudent.en_name },
@@ -26881,7 +26881,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("學生學號"),
+                              _vm._v("團員學號"),
                               _vm.errors.student_number
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26907,7 +26907,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填寫學生學號"
+                                  placeholder: "填寫團員學號"
                                 },
                                 domProps: {
                                   value: _vm.edStudent.student_number
@@ -26930,7 +26930,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("學生班級"),
+                              _vm._v("團員班級"),
                               _vm.errors.class
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26954,7 +26954,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填寫學生班級"
+                                  placeholder: "填寫團員班級"
                                 },
                                 domProps: { value: _vm.edStudent.class },
                                 on: {
@@ -26975,7 +26975,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("學生分組號"),
+                              _vm._v("團員分組號"),
                               _vm.errors.group
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26999,7 +26999,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填寫學生分組號"
+                                  placeholder: "填寫團員分組號"
                                 },
                                 domProps: { value: _vm.edStudent.group },
                                 on: {
@@ -27020,7 +27020,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_small" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("學生職責"),
+                              _vm._v("團員職責"),
                               _vm.errors.duty
                                 ? _c("span", {
                                     staticClass: "err",
@@ -27044,7 +27044,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填寫學生職責"
+                                  placeholder: "填寫團員職責"
                                 },
                                 domProps: { value: _vm.edStudent.duty },
                                 on: {
@@ -27122,7 +27122,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生密碼(不可编辑)")
+                    _vm._v("團員密碼(不可编辑)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -27130,7 +27130,7 @@ var render = function() {
                       staticClass: "item_input",
                       attrs: {
                         type: "text",
-                        placeholder: "填寫學生密碼",
+                        placeholder: "填寫團員密碼",
                         disabled: "disabled"
                       },
                       domProps: { value: _vm.searchStudent.original_password }
@@ -27140,7 +27140,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生中文名(不可编辑)")
+                    _vm._v("團員中文名(不可编辑)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -27148,7 +27148,7 @@ var render = function() {
                       staticClass: "item_input",
                       attrs: {
                         type: "text",
-                        placeholder: "填寫學生中文名",
+                        placeholder: "填寫團員中文名",
                         disabled: "disabled"
                       },
                       domProps: { value: _vm.searchStudent.name }
@@ -27158,7 +27158,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生英文名(不可编辑)")
+                    _vm._v("團員英文名(不可编辑)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -27166,7 +27166,7 @@ var render = function() {
                       staticClass: "item_input",
                       attrs: {
                         type: "text",
-                        placeholder: "填寫學生英文名",
+                        placeholder: "填寫團員英文名",
                         disabled: "disabled"
                       },
                       domProps: { value: _vm.searchStudent.en_name }
@@ -27432,7 +27432,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生學號"),
+                    _vm._v("團員學號"),
                     _vm.errors.student_number
                       ? _c("span", {
                           staticClass: "err",
@@ -27454,7 +27454,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生學號" },
+                      attrs: { type: "text", placeholder: "填寫團員學號" },
                       domProps: { value: _vm.searchStudent.student_number },
                       on: {
                         input: function($event) {
@@ -27474,7 +27474,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生班級"),
+                    _vm._v("團員班級"),
                     _vm.errors.class
                       ? _c("span", {
                           staticClass: "err",
@@ -27494,7 +27494,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生班級" },
+                      attrs: { type: "text", placeholder: "填寫團員班級" },
                       domProps: { value: _vm.searchStudent.class },
                       on: {
                         input: function($event) {
@@ -27514,7 +27514,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生分組號"),
+                    _vm._v("團員分組號"),
                     _vm.errors.group
                       ? _c("span", {
                           staticClass: "err",
@@ -27534,7 +27534,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生分組號" },
+                      attrs: { type: "text", placeholder: "填寫團員分組號" },
                       domProps: { value: _vm.searchStudent.group },
                       on: {
                         input: function($event) {
@@ -27554,7 +27554,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生職責"),
+                    _vm._v("團員職責"),
                     _vm.errors.duty
                       ? _c("span", {
                           staticClass: "err",
@@ -27574,7 +27574,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生職責" },
+                      attrs: { type: "text", placeholder: "填寫團員職責" },
                       domProps: { value: _vm.searchStudent.duty },
                       on: {
                         input: function($event) {
@@ -27645,7 +27645,7 @@ var render = function() {
               _c("div", { staticClass: "editBoxContent disflex" }, [
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生密碼(必填)")
+                    _vm._v("團員密碼(必填)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -27659,7 +27659,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生密碼" },
+                      attrs: { type: "text", placeholder: "填寫團員密碼" },
                       domProps: { value: _vm.newStudent.original_password },
                       on: {
                         input: function($event) {
@@ -27679,7 +27679,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生中文名(必填)"),
+                    _vm._v("團員中文名(必填)"),
                     _vm.errors.name
                       ? _c("span", {
                           staticClass: "err",
@@ -27699,7 +27699,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生中文名" },
+                      attrs: { type: "text", placeholder: "填寫團員中文名" },
                       domProps: { value: _vm.newStudent.name },
                       on: {
                         input: function($event) {
@@ -27715,7 +27715,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生英文名(必填)"),
+                    _vm._v("團員英文名(必填)"),
                     _vm.errors.en_name
                       ? _c("span", {
                           staticClass: "err",
@@ -27737,7 +27737,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生英文名" },
+                      attrs: { type: "text", placeholder: "填寫團員英文名" },
                       domProps: { value: _vm.newStudent.en_name },
                       on: {
                         input: function($event) {
@@ -27985,7 +27985,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生學號"),
+                    _vm._v("團員學號"),
                     _vm.errors.student_number
                       ? _c("span", {
                           staticClass: "err",
@@ -28007,7 +28007,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生學號" },
+                      attrs: { type: "text", placeholder: "填寫團員學號" },
                       domProps: { value: _vm.newStudent.student_number },
                       on: {
                         input: function($event) {
@@ -28027,7 +28027,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生班級"),
+                    _vm._v("團員班級"),
                     _vm.errors.class
                       ? _c("span", {
                           staticClass: "err",
@@ -28047,7 +28047,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生班級" },
+                      attrs: { type: "text", placeholder: "填寫團員班級" },
                       domProps: { value: _vm.newStudent.class },
                       on: {
                         input: function($event) {
@@ -28063,7 +28063,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生分組號"),
+                    _vm._v("團員分組號"),
                     _vm.errors.group
                       ? _c("span", {
                           staticClass: "err",
@@ -28083,7 +28083,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生分組號" },
+                      attrs: { type: "text", placeholder: "填寫團員分組號" },
                       domProps: { value: _vm.newStudent.group },
                       on: {
                         input: function($event) {
@@ -28099,7 +28099,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_small" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("學生職責"),
+                    _vm._v("團員職責"),
                     _vm.errors.duty
                       ? _c("span", {
                           staticClass: "err",
@@ -28119,7 +28119,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "填寫學生職責" },
+                      attrs: { type: "text", placeholder: "填寫團員職責" },
                       domProps: { value: _vm.newStudent.duty },
                       on: {
                         input: function($event) {
@@ -32236,7 +32236,7 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/dataBankHouseTable" } }, [
-          _c("div", [_vm._v("分組分房錶")])
+          _c("div", [_vm._v("分組分房表")])
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/luggage" } }, [
@@ -45968,7 +45968,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             // 删除分房信息
             this.$dialog.confirm({
-                title: '删除分組分房錶資訊',
+                title: '删除分組分房表資訊',
                 message: '是否删除該條資訊'
             }).then(function () {
                 _this3.$ajax({
@@ -48895,7 +48895,7 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_journey" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("第幾天")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("景點")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -48908,7 +48908,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "第幾天", type: "text" },
+                    attrs: { placeholder: "景點", type: "text" },
                     domProps: { value: _vm.newJourney.day },
                     on: {
                       input: function($event) {
@@ -48987,7 +48987,7 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_journey" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("第幾天")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("景點")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -49000,7 +49000,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "第幾天", type: "text" },
+                    attrs: { placeholder: "景點", type: "text" },
                     domProps: { value: _vm.edJourney.day },
                     on: {
                       input: function($event) {
@@ -54872,11 +54872,6 @@ var render = function() {
                   _c("div", {
                     staticClass: "sheetTitle",
                     domProps: { textContent: _vm._s(sheetInfo.title) }
-                  }),
-                  _vm._v(" "),
-                  _c("div", {
-                    staticClass: "sheetContent",
-                    domProps: { innerHTML: _vm._s(sheetInfo.body) }
                   }),
                   _vm._v(" "),
                   sheetInfo.questions.data

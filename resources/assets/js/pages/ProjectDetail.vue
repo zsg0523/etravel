@@ -24,7 +24,7 @@
             <div class="detail_icon disflex">
                 <img src="/etravel/public/images/IDmage-icon.png">
             </div>
-            <div class="detail_info">學員信息</div>
+            <div class="detail_info">團員信息</div>
         </div>
         <div class="detail_btn" @click="$router.push('/photo')">
             <div class="detail_icon disflex">

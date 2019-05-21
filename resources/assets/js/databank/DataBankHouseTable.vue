@@ -261,7 +261,7 @@
             delHouse(userId,houseId){
                 // 删除分房信息
                 this.$dialog.confirm({
-                    title: '删除分組分房錶資訊',
+                    title: '删除分組分房表資訊',
                     message: '是否删除該條資訊'
                 }).then(() => {
                     this.$ajax({
