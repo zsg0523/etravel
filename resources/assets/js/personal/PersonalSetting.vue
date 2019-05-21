@@ -27,30 +27,30 @@
             <div class="pane_content_promise">
                 <div class="form_content disflex">
                     <div class="form_item_password">
-                        <div class="item_title">区号</div>
-                        <div><input type="text" placeholder="区号" disabled="disabled" v-model="idd_code"></div>
+                        <div class="item_title">區號</div>
+                        <div><input type="text" placeholder="區號" disabled="disabled" v-model="idd_code"></div>
                     </div>
                     <div class="form_item_password">
-                        <div class="item_title">手机号码</div>
-                        <div><input type="text" placeholder="手机号" disabled="disabled" v-model="phoneNumber"></div>
+                        <div class="item_title">手機號碼</div>
+                        <div><input type="text" placeholder="手機號" disabled="disabled" v-model="phoneNumber"></div>
                     </div>
                     <div class="form_item_password">
-                        <div class="item_title">验证码</div>
+                        <div class="item_title">驗證碼</div>
                         <div class="disflex" style="justify-content: space-between;">
-                            <input type="text" placeholder="验证码" v-model="smscode" style="width: 56%;">
+                            <input type="text" placeholder="驗證碼" v-model="smscode" style="width: 56%;">
                             <button class="tc" id="sendCodeUser" @click='getCode()' :disabled="disabled || time > 0">{{text}}</button>
                         </div>
                     </div>
                     <div class="form_item_password">
-                        <div class="item_title">新密码</div>
+                        <div class="item_title">新密碼</div>
                         <div>
-                            <input type="password" placeholder="请输入新密码" v-model="password"/>
+                            <input type="password" placeholder="請輸入新密碼" v-model="password"/>
                         </div>
                     </div>
                     <div class="form_item_password">
-                        <div class="item_title">确认密码</div>
+                        <div class="item_title">確認密碼</div>
                         <div>
-                            <input type="password" placeholder="请输入确认密码" v-model="repassword"/>
+                            <input type="password" placeholder="請輸入確認密碼" v-model="repassword"/>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                 this.idd_code=res.data.idd_code;
             }).catch(err => {
                 console.log(err);
-                this.$toast('登录失效');
+                this.$toast('登入失效');
                 sessionStorage.clear();
                 this.setUserInfo('');
                 this.setTravels('');
@@ -118,11 +118,11 @@
                             console.log(err)
                         });
                     }else{
-                        this.$toast('两次密码不一致！');
+                        this.$toast('兩次密碼不一致！');
                         this.repassword='';
                     }
                 } else {
-                    this.$toast('请填写完整信息');
+                    this.$toast('請填寫完整資訊');
                 }
             },
             getCode() {
@@ -136,7 +136,7 @@
                         if (res.data.key) {
                             // this.setUserInfo(res)
                             this.key=res.data.key;
-                            this.$toast('验证码已成功发送，请注意查收。');
+                            this.$toast('驗證碼已成功發送，請注意查收。');
                         } else {
                             this.$toast(res.data.message);
                         }
@@ -144,11 +144,11 @@
                         if(err.response.data.errors){
                             console.log(err.response.data.errors.phone[0]);
                         }else{
-                            console.log('获取验证码失败');
+                            console.log('獲取驗證碼失敗');
                         }
                     });
                 } else {
-                    this.$toast('请填写手机号码');
+                    this.$toast('請填寫手機號碼');
                 }
             },
             run() {
@@ -171,7 +171,7 @@
         },
         computed: {
             text() {
-                return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
+                return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
             }
         }
     }

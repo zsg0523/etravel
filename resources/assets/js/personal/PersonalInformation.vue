@@ -39,7 +39,7 @@
                     <div class="form_item_informations disflex" v-for="(information,index) in informations">
                         <div class="informationl"><img src="/etravel/public/images/information.png" /></div>
                         <div class="informationr">
-                            <div class="item_title_information">系统消息<span  @click="changeShow(index)"><img src="/etravel/public/images/down.png"></span></div>
+                            <div class="item_title_information">系統消息<span  @click="changeShow(index)"><img src="/etravel/public/images/down.png"></span></div>
                             <div class="item_content_information">{{information.data.travel_name}}</div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
-                        <div class="item_title">消息详情</div>
+                        <div class="item_title">消息詳情</div>
                     </div>
                     <div class="form_item_contact">
                         <div style="text-indent: 2em;">{{showInformation.travel_name}}</div>
@@ -78,7 +78,7 @@
         },
         methods:{
             getInformations(){
-                // 获取消息详情
+                // 获取消息詳情
                 this.$get(this.$config+'/api/user/notifications',
                 {
                     headers: {
@@ -89,7 +89,7 @@
                     //this.eval=res.data;
                     this.informations=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },

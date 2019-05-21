@@ -27,7 +27,7 @@
                 <img src="/etravel/public/images/logo_big.png">
             </div>
             <div class="disflex login">
-                <div class="title tc">A-Team-Travel</div>
+                <div class="title tc">Study2go</div>
                 <div><input type="text" placeholder="中文名" v-model="username"></div>
                 <div><input type="text" placeholder="英文名" v-model="en_name"></div>
                 <div>
@@ -35,14 +35,14 @@
                         <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='idd_code' v-model='idd_code'></AreaCodeSelector>
                     </div>
                 </div>
-                <div><input type="text" placeholder="手机号" v-model="phoneNumber"></div>
+                <div><input type="text" placeholder="手機號" v-model="phoneNumber"></div>
                 <div class="disflex" style="justify-content: space-between;">
-                    <input type="text" placeholder="验证码" v-model="smscode" style="width: 56%;">
+                    <input type="text" placeholder="驗證碼" v-model="smscode" style="width: 56%;">
                     <button class="tc" id="sendCode" @click='getCode()' :disabled="disabled || time > 0">{{text}}</button>
                 </div>
-                <div><input type="password" placeholder="密码" v-model="password"></div>
-                <div><input type="password" placeholder="确认密码" v-model="repassword"></div>  
-                <div style="height: 40px;"><a href="javascript:void(0);" @click="$router.push('/');" class="fl">已有账号？立即登录</a></div>
+                <div><input type="password" placeholder="密碼" v-model="password"></div>
+                <div><input type="password" placeholder="確認密碼" v-model="repassword"></div>  
+                <div style="height: 40px;"><a href="javascript:void(0);" @click="$router.push('/');" class="fl">已有帳號？立即登入</a></div>
                 <div><button type="button" @click="register();">注册</button></div>
             </div>
         </div>
@@ -112,11 +112,11 @@
 			          		}
 				        });
 		      		}else{
-		      			this.$toast('两次密码不一致！');
+		      			this.$toast('兩次密碼不一致！');
 		      			this.repassword='';
 		      		}
 		      	} else {
-		        	this.$toast('请填写完整信息');
+		        	this.$toast('請填寫完整資訊');
 		      	}
 		    },
 		    getCode() {
@@ -130,7 +130,7 @@
 			            	// this.setUserInfo(res)
 		    				this.run();
 			            	this.key=res.data.key;
-			            	this.$toast('验证码已成功发送，请注意查收。');
+			            	this.$toast('驗證碼已成功發送，請注意查收。');
 			          	} else {
 			              	this.$toast(res.data.message);
 			          	}
@@ -144,7 +144,7 @@
 			          	
 			        });
 		      	} else {
-		        	this.$toast('请填写手机区号和号码');
+		        	this.$toast('請填寫手機區號和號碼');
 		      	}
 		    },
 		    run() {
@@ -170,7 +170,7 @@
 	  	},
 	  	computed: {
 	        text() {
-	            return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
+	            return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
 	        }
 	    }
 	}

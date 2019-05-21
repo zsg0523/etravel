@@ -153,7 +153,7 @@
                     this.journey=res.data;
                     this.journeyInfos=res.data.sceneries.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },

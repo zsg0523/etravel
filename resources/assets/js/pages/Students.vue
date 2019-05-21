@@ -41,7 +41,7 @@
     .twoBtn{width:40%;margin-left:5%;margin-right:5%;float:left;height:50px;font-size: 16px;border-radius: 8px;outline: none;}
     .cancel{background-color:#fff;border:1px solid #ccc;}
     .van-dialog{width:50%;}
-    .err{color:red;float: right;font-size: 14px;}
+    .err{color:red;float: right;font-size: 14px;display: block;overflow: hidden;max-width: 150px;}
     .simulateShade{width:90%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;}
 </style>
 
@@ -495,7 +495,7 @@
         },
         mounted:function(){
             this.getStudents();
-            this.$store.state.links=[{link:'/home',linkName:'项目'},{link:'/projectDetail/'+sessionStorage.actTravelId,linkName:'项目详情'}];
+            this.$store.state.links=[{link:'/home',linkName:'項目'},{link:'/projectDetail/'+sessionStorage.actTravelId,linkName:'項目詳情'}];
         },
         methods:{
             getStudents(){
@@ -628,6 +628,11 @@
                         this.$toast('修改失败');
                     }
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('修改失败');
                     this.errors=err.response.data.errors;
 
@@ -742,6 +747,11 @@
                     this.isSearchStudentShow=false;
 
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     console.log(err.response);
                     this.$toast('添加失败');
                     this.errors=err.response.data.errors;

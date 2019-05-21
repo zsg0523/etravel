@@ -43,9 +43,9 @@
             <div class="pane_content">
                 <div class="form_content disflex" v-for="(ruleInfo,index) in ruleInfos">
                     <div class="form_item_ruleInfo">
-                        <div class="item_title">守则详情{{index+1}}</div>
+                        <div class="item_title">準則詳情{{index+1}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="守则详情" disabled="disabled" :value="ruleInfo.rule"></textarea>
+                            <textarea class="item_area" placeholder="準則詳情" disabled="disabled" :value="ruleInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="editBtnGroup">
@@ -62,9 +62,9 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_ruleInfo">
-                        <div class="item_title">守则详情</div>
+                        <div class="item_title">準則詳情</div>
                         <div>
-                            <textarea class="item_area" placeholder="守则详情" v-model="newRuleInfo.rule"></textarea>
+                            <textarea class="item_area" placeholder="準則詳情" v-model="newRuleInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="issure">
@@ -77,9 +77,9 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_ruleInfo">
-                        <div class="item_title">守则详情</div>
+                        <div class="item_title">準則詳情</div>
                         <div>
-                            <textarea class="item_area" placeholder="守则详情" v-model="edRuleInfo.rule"></textarea>
+                            <textarea class="item_area" placeholder="準則詳情" v-model="edRuleInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="issure">
@@ -116,7 +116,7 @@
         },
         methods:{
             getRuleInfos(){
-                // 获取守则详情/api/categories/3?include=rules
+                // 获取準則詳情/api/categories/3?include=rules
                 this.$get(this.$config+'/api/categories/'+this.$route.params.id+'?include=rules',
                 {
                     headers: {
@@ -127,7 +127,7 @@
                     this.rule=res.data;
                     this.ruleInfos=res.data.rules.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
 
@@ -136,7 +136,7 @@
                 this.isNewRuleInfoShow=true;
             },
             addNewRuleInfo(){
-                // 新增守则详情
+                // 新增準則詳情
                 this.$post(this.$config+'/api/rules',this.newRuleInfo,
                 {
                     headers: {
@@ -149,7 +149,12 @@
                     this.isNewRuleInfoShow=false;
                     this.newRuleInfo.rule='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('添加失敗');
                     console.log(err)
                 });
             },
@@ -161,7 +166,7 @@
                 this.isEditRuleInfoShow=true;
             },
             editRuleInfo(){
-                // 修改守则详情信息
+                // 修改準則詳情信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -179,18 +184,23 @@
                         this.$toast('修改成功');
                         this.isEditRuleInfoShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
             delRuleInfo(RuleInfoId){
-                // 删除守则详情
+                // 删除準則詳情
                 this.$dialog.confirm({
-                    title: '删除守则详情',
-                    message: '是否删除该守则详情'
+                    title: '删除準則詳情',
+                    message: '是否删除该準則詳情'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -204,10 +214,10 @@
                             this.getRuleInfos();
                             this.$toast('删除成功');
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast('删除失敗');
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast('删除失敗');
                         console.log(err)
                     });
                 }).catch(err => {

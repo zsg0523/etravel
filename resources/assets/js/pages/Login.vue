@@ -20,14 +20,14 @@
 
             </div>
             <div class="disflex login">
-                <div class="title tc">A-Team-Travel</div>
-                <div><input type="text" v-model="loginName" placeholder="手机号码或邮箱账号" ></div>
-                <div><input type="password" v-model="password" placeholder="密码" ></div>
+                <div class="title tc">Study2go</div>
+                <div><input type="text" v-model="loginName" placeholder="手機號碼或郵箱帳號" ></div>
+                <div><input type="password" v-model="password" placeholder="密碼" ></div>
                 <div style="height: 40px;">
                 	<a href="javascript:void(0);" @click="$router.push('/register')" class="fl">立即注册</a>
                 	<!-- <a href="javascript:void(0);" @click="$router.push('/forgotPsd')" class="fr">忘记密码</a> -->
                 </div>
-                <div><button type="button" @click="login();">登录</button></div>
+                <div><button type="button" @click="login();">登入</button></div>
             </div>
         </div>
     </div>
@@ -72,12 +72,12 @@
 					            },1000);
 			            		
 					        }).catch(err => {
-					        	this.$toast('账号或密码错误')
+					        	this.$toast('帳號或密碼錯誤')
 					          	console.log(err);
 					        });
 			            	
 			          	} else {
-			              	this.$toast('账号或密码错误')
+			              	this.$toast('帳號或密碼錯誤')
 			              	this.password = ''
 			          	}
 			        }).catch(err => {
@@ -85,7 +85,7 @@
 			          	console.log(err);
 			        });
 		      	} else {
-		        	this.$toast('请填写账号密码');
+		        	this.$toast('請填寫帳號密碼');
 		      	}
 		    },
 	  	}

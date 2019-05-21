@@ -34,19 +34,19 @@
         <div class="pane_content_phone" v-for="(phone,index) in phones">
             <div class="form_content_phone disflex">
                 <div class="form_item_phone">
-                    <div class="item_title">联系人名称</div>
-                    <div><input class="item_input_phone" placeholder="联系人名称" type="text" disabled="disabled" :value="phone.name"></div>
+                    <div class="item_title">聯繫人名稱</div>
+                    <div><input class="item_input_phone" placeholder="聯繫人名稱" type="text" disabled="disabled" :value="phone.name"></div>
                 </div>
                 <div class="form_item_phone">
-                    <div class="item_title">职责</div>
-                    <div><input class="item_input_phone" placeholder="职责" type="text" disabled="disabled" :value="phone.duty"></div>
+                    <div class="item_title">職責</div>
+                    <div><input class="item_input_phone" placeholder="職責" type="text" disabled="disabled" :value="phone.duty"></div>
                 </div>
                 <div class="form_item_phone">
-                    <div class="item_title">电话区号</div>
+                    <div class="item_title">電話區號</div>
                     <div><input class="item_input_phone" type="text" disabled="disabled" :value="phone.area_code"></div>
                 </div>
                 <div class="form_item_phone">
-                    <div class="item_title">联系电话</div>
+                    <div class="item_title">聯繫電話</div>
                     <div><input class="item_input_phone" type="text" disabled="disabled" :value="phone.phone"></div>
                 </div>
             </div>
@@ -62,15 +62,15 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_phone">
-		                <div class="item_title">联系人姓名</div>
-		                <div><input class="item_input_phone" placeholder="联系人姓名" type="text"  v-model="newPhone.name"></div>
+		                <div class="item_title">聯繫人名稱</div>
+		                <div><input class="item_input_phone" placeholder="聯繫人名稱" type="text"  v-model="newPhone.name"></div>
 		            </div>
                     <div class="form_item_phone">
-                        <div class="item_title">职责</div>
-                        <div><input class="item_input_phone" placeholder="职责" type="text"  v-model="newPhone.duty"></div>
+                        <div class="item_title">職責</div>
+                        <div><input class="item_input_phone" placeholder="職責" type="text"  v-model="newPhone.duty"></div>
                     </div>
 		            <div class="form_item_phone">
-		                <div class="item_title">电话区号</div>
+		                <div class="item_title">電話區號</div>
 		                <div>
                             <div class="areaSel">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newPhone.area_code' v-model='newPhone.area_code'></AreaCodeSelector>
@@ -78,8 +78,8 @@
                         </div>
 		            </div>
 		            <div class="form_item_phone">
-		                <div class="item_title">联系电话</div>
-		                <div><input class="item_input_phone" type="text" placeholder="联系电话"  v-model="newPhone.phone"></div>
+		                <div class="item_title">聯繫電話</div>
+		                <div><input class="item_input_phone" type="text" placeholder="聯繫電話"  v-model="newPhone.phone"></div>
 		            </div>
                     <div class="issure">
                         <button @click="addNewPhone()">添加</button>
@@ -91,16 +91,16 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_phone">
-		                <div class="item_title">联系人姓名</div>
-		                <div><input class="item_input_phone" placeholder="联系人姓名" type="text"  v-model="edPhone.name"></div>
+		                <div class="item_title">聯繫人名稱</div>
+		                <div><input class="item_input_phone" placeholder="聯繫人名稱" type="text"  v-model="edPhone.name"></div>
 		            </div>
                     <div class="form_item_phone">
-                        <div class="item_title">职责</div>
-                        <div><input class="item_input_phone" placeholder="职责" type="text"  v-model="edPhone.duty"></div>
+                        <div class="item_title">職責</div>
+                        <div><input class="item_input_phone" placeholder="職責" type="text"  v-model="edPhone.duty"></div>
                     </div>
 		            <div class="form_item_phone">
-		                <div class="item_title">电话区号</div>
-                        <!-- <div><input class="item_input_phone" type="text" placeholder="电话区号"  v-model="edPhone.area_code"></div> -->
+		                <div class="item_title">電話區號</div>
+                        <!-- <div><input class="item_input_phone" type="text" placeholder="電話區號"  v-model="edPhone.area_code"></div> -->
 		                <div>
                             <div class="areaSel">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='edPhone.area_code' v-model='edPhone.area_code'></AreaCodeSelector>
@@ -109,8 +109,8 @@
 		            </div>
 
 		            <div class="form_item_phone">
-		                <div class="item_title">联系电话</div>
-		                <div><input class="item_input_phone" type="text" placeholder="联系电话"  v-model="edPhone.phone"></div>
+		                <div class="item_title">聯繫電話</div>
+		                <div><input class="item_input_phone" type="text" placeholder="聯繫電話"  v-model="edPhone.phone"></div>
 		            </div>
                     <div class="issure">
                         <button @click="editPhone()">修改</button>
@@ -166,7 +166,7 @@
                     // console.log(res.data);
                     this.phones=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
 
@@ -192,6 +192,11 @@
                     this.newPhone.phone='';
                     this.newPhone.duty='';
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('添加失败');
                     console.log(err);
                 });
@@ -232,6 +237,11 @@
                         this.$toast('修改失败');
                     }
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('修改失败');
                     console.log(err)
                 });

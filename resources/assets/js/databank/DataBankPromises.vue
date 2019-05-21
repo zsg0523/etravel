@@ -1,4 +1,4 @@
-<style>
+y<style>
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
     .pane_content_rule{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
 
@@ -35,9 +35,9 @@
         <div class="pane_content_rule" >
             <div class="form_content_rules disflex">
                 <div class="form_item_rules"  v-for="(rule,index) in ruless">
-                    <div class="item_title">承诺标题{{index+1}}</div>
+                    <div class="item_title">承諾標題{{index+1}}</div>
                     <div class="input_icon disflex">
-                        <input placeholder="承诺标题" type="text" disabled="disabled" :value="rule.rule_category_name">
+                        <input placeholder="承諾標題" type="text" disabled="disabled" :value="rule.rule_category_name">
                         <div @click="$router.push('/promise/dataBankPromisesInfo/'+rule.id)">
                             <img src="/etravel/public/images/See-next.png" alt="">
                         </div>
@@ -56,8 +56,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
-		                <div class="item_title">承诺标题</div>
-		                <div><input class="item_input" placeholder="承诺标题" type="text"  v-model="newRule.rule_category_name"></div>
+		                <div class="item_title">承諾標題</div>
+		                <div><input class="item_input" placeholder="承諾標題" type="text"  v-model="newRule.rule_category_name"></div>
 		            </div>
                     <div class="issure">
                         <button @click="addNewRule()">添加</button>
@@ -69,8 +69,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
-		                <div class="item_title">承诺标题</div>
-		                <div><input class="item_input" placeholder="承诺标题" type="text"  v-model="edRule.rule_category_name"></div>
+		                <div class="item_title">承諾標題</div>
+		                <div><input class="item_input" placeholder="承諾標題" type="text"  v-model="edRule.rule_category_name"></div>
 		            </div>
                     <div class="issure">
                         <button @click="editRule()">修改</button>
@@ -118,7 +118,7 @@
                     // console.log(res.data);
                     this.ruless=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
 
@@ -140,6 +140,11 @@
                     this.isNewRuleShow=false;
                     this.newRule.rule_category_name='';
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('添加失败');
                     console.log(err)
                 });
@@ -170,6 +175,11 @@
                         this.$toast('修改失败');
                     }
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('修改失败');
                     console.log(err)
                 });

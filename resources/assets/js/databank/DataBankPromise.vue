@@ -31,15 +31,15 @@
 <template>
     <div style="width:100%;">
         <div class="right_title">
-            承诺书
+            承諾書
         </div>
         <div class="dataBank_input_form disflex">
             <div class="pane_content_promise">
                 <div class="form_content disflex" v-for="(promise,index) in promises">
                     <div class="form_item_promise">
-                        <div class="item_title">承诺{{index+1}}</div>
+                        <div class="item_title">承諾{{index+1}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="承诺" disabled="disabled" :value="promise.rule_category_name" ></textarea>
+                            <textarea class="item_area" placeholder="承諾" disabled="disabled" :value="promise.rule_category_name" ></textarea>
                         </div>
                     </div>
                     <div class="editBtnGroup">
@@ -56,9 +56,9 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_promise">
-                        <div class="item_title">承诺</div>
+                        <div class="item_title">承諾</div>
                         <div>
-                            <textarea class="item_area" placeholder="承诺" v-model="newPromise.rule_category_name"></textarea>
+                            <textarea class="item_area" placeholder="承諾" v-model="newPromise.rule_category_name"></textarea>
                         </div>
                     </div>
                     <div class="issure">
@@ -71,9 +71,9 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_promise">
-                        <div class="item_title">承诺</div>
+                        <div class="item_title">承諾</div>
                         <div>
-                            <textarea class="item_area" placeholder="承诺" v-model="edPromise.rule_category_name"></textarea>
+                            <textarea class="item_area" placeholder="承諾" v-model="edPromise.rule_category_name"></textarea>
                         </div>
                     </div>
                     <div class="issure">
@@ -109,7 +109,7 @@
         },
         methods:{
             getPromises(){
-                // 获取承诺
+                // 获取承諾
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -123,7 +123,7 @@
                     // console.log(res.data);
                     this.promises=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -131,7 +131,7 @@
                 this.isNewPromiseShow=true;
             },
             addNewPromise(){
-                // 新增承诺
+                // 新增承諾
                 this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',this.newPromise,
                 {
                     headers: {
@@ -144,7 +144,12 @@
                     this.isNewPromiseShow=false;
                     this.newPromise.rule_category_name='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('添加失敗');
                     console.log(err)
                 });
             },
@@ -155,7 +160,7 @@
                 this.isEditPromiseShow=true;
             },
             editPromise(){
-                // 修改承诺信息
+                // 修改承諾信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -171,18 +176,23 @@
                         this.$toast('修改成功');
                         this.isEditPromiseShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
             delPromise(promiseId){
-                // 删除承诺
+                // 删除承諾
                 this.$dialog.confirm({
-                    title: '删除承诺',
-                    message: '是否删除该承诺'
+                    title: '删除承諾',
+                    message: '是否删除该承諾'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -196,10 +206,10 @@
                             this.getPromises();
                             this.$toast('删除成功');
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast('删除失敗');
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast('删除失敗');
                         console.log(err)
                     });
                 }).catch(err => {

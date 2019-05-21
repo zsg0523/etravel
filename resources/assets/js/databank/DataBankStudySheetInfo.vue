@@ -53,7 +53,7 @@
                     </div> -->
 		            <div class="form_item_sheetInfo" v-for="(sheetInfo,index) in sheetInfos">
 		                <div class="item_title">
-		                    问题{{index+1}}
+		                    問題{{index+1}}
 		                    <div class="fr item_title_icon">
 		                    	<!-- <img @click="addNewSheetInfoShow()" src="/etravel/public/images/appointAdd.png"> -->
 		                        <img @click="editSheetInfoShow(index)" src="/etravel/public/images/edit.png">
@@ -66,7 +66,7 @@
 		            </div>
 		        </div>
                 <div class="form_content_sheetInfo" v-else>
-                        暂未添加任何问题，请添加。
+                        暂未添加任何問題，请添加。
                     <div style="text-align:center;" >
                     </div>
                 </div>
@@ -79,9 +79,9 @@
             <div class="editBox_sheetInfo" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_sheetInfo">
-		                <div class="item_title">问题</div>
+		                <div class="item_title">問題</div>
                         <div>
-                            <textarea class="item_area_sheetInfo"  placeholder="问题" v-model="newSheetInfo.content"></textarea>
+                            <textarea class="item_area_sheetInfo"  placeholder="問題" v-model="newSheetInfo.content"></textarea>
                         </div>
 		            </div>
                     <div class="issure">
@@ -94,9 +94,9 @@
             <div class="editBox_sheetInfo" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_sheetInfo">
-		                <div class="item_title">问题</div>
+		                <div class="item_title">問題</div>
                         <div>
-                            <textarea class="item_area_sheetInfo"  placeholder="问题" v-model="edSheetInfo.content"></textarea>
+                            <textarea class="item_area_sheetInfo"  placeholder="問題" v-model="edSheetInfo.content"></textarea>
                         </div>
 		            </div>
                     <div class="issure">
@@ -131,7 +131,7 @@
         },
         methods:{
             getSheetInfos(){
-                // 获取问题
+                // 获取問題
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -143,7 +143,7 @@
                     this.sheetInfos=res.data.questions.data;
                     console.log(this.sheetInfos.length);
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -151,7 +151,7 @@
                 this.isNewSheetInfoShow=true;
             },
             addNewSheetInfo(){
-                // 新增问题
+                // 新增問題
                 this.$post(this.$config+'/api/studies/'+this.$route.params.id+'/questions',this.newSheetInfo,
                 {
                     headers: {
@@ -164,7 +164,12 @@
                     this.isNewSheetInfoShow=false;
                     this.newSheetInfo.content='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('添加失敗');
                     console.log(err)
                 });
             },
@@ -175,7 +180,7 @@
                 this.isEditSheetInfoShow=true;
             },
             editSheetInfo(){
-                // 修改问题信息/api/route/2/questions/101
+                // 修改問題信息/api/route/2/questions/101
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -191,18 +196,23 @@
                         this.$toast('修改成功');
                         this.isEditSheetInfoShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
             delSheetInfo(sheetInfoId){
-                // 删除问题
+                // 删除問題
                 this.$dialog.confirm({
-                    title: '删除问题',
-                    message: '是否删除该问题'
+                    title: '删除問題',
+                    message: '是否删除该問題'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -216,10 +226,10 @@
                             this.getSheetInfos();
                             this.$toast('删除成功');
                         }else{ 
-                            this.$toast('删除失败');
+                            this.$toast('删除失敗');
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast('删除失敗');
                         console.log(err)
                     });
                 }).catch(err => {

@@ -37,14 +37,14 @@
             <div class="title_icon" @click="$router.push('/study/dataBankStudy')">
                 <img src="/etravel/public/images/back.png">
             </div>
-			学习工作纸
+			學習工作紙
         </div>
         <div class="dataBank_input_form disflex">
             <div class="pane_content_sheet">
                 <div class="form_content_sheet disflex" v-for="(sheet,index) in sheets">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">标题 <img class="toNext" @click="$router.push('/study/dataBankStudySheetInfo/'+sheet.id)" src="/etravel/public/images/See-next.png"></div>
-		                <div><input class="item_input_journeyInfo" placeholder="标题" type="text" disabled="disabled"  :value="sheet.title"></div>
+		                <div class="item_title">標題 <img class="toNext" @click="$router.push('/study/dataBankStudySheetInfo/'+sheet.id)" src="/etravel/public/images/See-next.png"></div>
+		                <div><input class="item_input_journeyInfo" placeholder="標題" type="text" disabled="disabled"  :value="sheet.title"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
@@ -67,8 +67,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">标题</div>
-		                <div><input class="item_input_journeyInfo" placeholder="标题" type="text" v-model="newSheet.title"></div>
+		                <div class="item_title">標題</div>
+		                <div><input class="item_input_journeyInfo" placeholder="標題" type="text" v-model="newSheet.title"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
@@ -84,8 +84,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">标题</div>
-		                <div><input class="item_input_journeyInfo" placeholder="标题" type="text"  v-model="edSheet.title"></div>
+		                <div class="item_title">標題</div>
+		                <div><input class="item_input_journeyInfo" placeholder="標題" type="text"  v-model="edSheet.title"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
                         <div class="item_title">内容</div>
@@ -134,7 +134,7 @@
         },
         methods:{
             getSheets(){
-                // 获取学习工作纸
+                // 获取學習工作紙
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -144,7 +144,7 @@
                 }).then(res => {
                     this.sheets=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -153,7 +153,7 @@
                 this.status='newSheet';
             },
             addNewSheet(){
-                // 新增学习工作纸
+                // 新增學習工作紙
                 this.$post(this.$config+'/api/routes/'+this.$route.params.id+'/studies',this.newSheet,
                 {
                     headers: {
@@ -167,7 +167,12 @@
                     this.newSheet.title='';
                     this.newSheet.body='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('添加失敗');
                     console.log(err)
                 });
             },
@@ -180,7 +185,7 @@
                 this.status='edSheet';
             },
             editSheet(){
-                // 修改学习工作纸信息
+                // 修改學習工作紙信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -198,18 +203,23 @@
                         this.$toast('修改成功');
                         this.isEditSheetShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
             delSheet(sheetId){
-                // 删除学习工作纸
+                // 删除學習工作紙
                 this.$dialog.confirm({
-                    title: '删除学习工作纸',
-                    message: '是否删除该学习工作纸'
+                    title: '删除學習工作紙',
+                    message: '是否删除该學習工作紙'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -223,10 +233,10 @@
                             this.getSheets();
                             this.$toast('删除成功');
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast('删除失敗');
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast('删除失敗');
                         console.log(err)
                     });
                 }).catch(err => {

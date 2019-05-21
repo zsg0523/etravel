@@ -60,12 +60,12 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
-		                <div class="item_title">第几天</div>
-		                <div><input class="item_input" placeholder="第几天" type="text"  v-model="newJourney.day"></div>
+		                <div class="item_title">第幾天</div>
+		                <div><input class="item_input" placeholder="第幾天" type="text"  v-model="newJourney.day"></div>
 		            </div>
 		            <div class="form_item_journey">
 		                <div class="item_title">日期</div>
-		                <div><input class="item_input" placeholder="填写日期(yyyy-mm-dd)" type="text"  v-model="newJourney.date"></div>
+		                <div><input class="item_input" placeholder="填寫日期(2020-01-01)" type="text"  v-model="newJourney.date"></div>
 		            </div>
                     <div class="issure">
                         <button @click="addNewJourney()">添加</button>
@@ -77,12 +77,12 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
-		                <div class="item_title">第几天</div>
-		                <div><input class="item_input" placeholder="第几天" type="text"  v-model="edJourney.day"></div>
+		                <div class="item_title">第幾天</div>
+		                <div><input class="item_input" placeholder="第幾天" type="text"  v-model="edJourney.day"></div>
 		            </div>
 		            <div class="form_item_journey">
 		                <div class="item_title">日期</div>
-		                <div><input class="item_input" placeholder="填写日期(yyyy-mm-dd)" type="text"  v-model="edJourney.date"></div>
+		                <div><input class="item_input" placeholder="填寫日期(2020-01-01)" type="text"  v-model="edJourney.date"></div>
 		            </div>
                     <div class="issure">
                         <button @click="editJourney()">修改</button>
@@ -129,7 +129,7 @@
                     // console.log(res.data);
                     this.journeys=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
