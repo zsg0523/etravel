@@ -50,9 +50,9 @@
 		                <div><input class="item_input_journeyInfo" placeholder="膳食内容" type="text" disabled="disabled"  :value="meal.content"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">膳食介绍(必填)</div>
+                        <div class="item_title">膳食介紹(必填)</div>
                         <div>
-                            <textarea class="item_area" disabled="disabled" placeholder="膳食介绍" :value="meal.description"></textarea>
+                            <textarea class="item_area" disabled="disabled" placeholder="膳食介紹" :value="meal.description"></textarea>
                         </div>
                     </div>
                     <div class="editBtnGroup_journeyInfo">
@@ -77,9 +77,9 @@
 		                <div><input class="item_input_journeyInfo" placeholder="膳食内容" type="text" v-model="newMeal.content"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">膳食介绍(必填)</div>
+                        <div class="item_title">膳食介紹(必填)</div>
                         <div>
-                            <textarea class="item_area" placeholder="膳食介绍" v-model="newMeal.description"></textarea>
+                            <textarea class="item_area" placeholder="膳食介紹" v-model="newMeal.description"></textarea>
                         </div>
                     </div>
                     <div class="issure">
@@ -100,9 +100,9 @@
 		                <div><input class="item_input_journeyInfo" placeholder="膳食内容" type="text" v-model="edMeal.content" ></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">膳食介绍</div>
+                        <div class="item_title">膳食介紹</div>
                         <div>
-                            <textarea class="item_area"  placeholder="膳食介绍" v-model="edMeal.description"></textarea>
+                            <textarea class="item_area"  placeholder="膳食介紹" v-model="edMeal.description"></textarea>
                         </div>
                     </div>
                     <div class="issure">
@@ -153,7 +153,7 @@
                     this.journey=res.data;
                     this.meals=res.data.foods.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -176,6 +176,11 @@
                     this.newMeal.content='';
                     this.newMeal.description='';
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('添加失败');
                     console.log(err)
                 });
@@ -212,6 +217,11 @@
                         this.$toast('修改失败');
                     }
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('修改失败');
                     console.log(err)
                 });

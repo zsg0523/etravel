@@ -12,25 +12,25 @@
             <div class="detail_icon disflex">
                 <img src="/etravel/public/images/settings.png">
             </div>
-            <div class="detail_info">基本资料</div>
+            <div class="detail_info">基本資料</div>
         </div>
         <div class="detail_btn" @click="$router.push('/dataBankInfo')">
             <div class="detail_icon disflex">
                 <img src="/etravel/public/images/base-icon.png">
             </div>
-            <div class="detail_info">资料库</div>
+            <div class="detail_info">資料庫</div>
         </div>
         <div class="detail_btn" @click="$router.push('/students')">
             <div class="detail_icon disflex">
                 <img src="/etravel/public/images/IDmage-icon.png">
             </div>
-            <div class="detail_info">学员信息</div>
+            <div class="detail_info">團員信息</div>
         </div>
         <div class="detail_btn" @click="$router.push('/photo')">
             <div class="detail_icon disflex">
                 <img src="/etravel/public/images/poto-icon.png">
             </div>
-            <div class="detail_info">图库</div>
+            <div class="detail_info">圖庫</div>
         </div>
     </div>
 </template>
@@ -43,7 +43,7 @@
         },
         mounted:function(){
             sessionStorage.setItem('actTravelId', this.$route.params.id);
-            this.$store.state.links=[{link:'/home',linkName:'项目'}];
+            this.$store.state.links=[{link:'/home',linkName:'項目'}];
         },
         methods:{
 

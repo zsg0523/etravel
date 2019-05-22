@@ -15,10 +15,10 @@
 <template>
     <div class="dataBank_left">
         <ul style="padding: 0;margin:0;">
-            <router-link tag='li' to='/personalInfo'><div >个人资料</div></router-link>
-            <router-link tag='li' to='/personalSetting'><div >账户设置</div></router-link>
-            <router-link tag='li' to='/personalCoin'><div >金币管理</div></router-link>
-            <router-link tag='li' to='/personalInformation'><div >信息中心</div></router-link>
+            <router-link tag='li' to='/personalInfo'><div >個人資料</div></router-link>
+            <router-link tag='li' to='/personalSetting'><div >帳戶設定</div></router-link>
+            <router-link tag='li' to='/personalCoin'><div >金幣管理</div></router-link>
+            <router-link tag='li' to='/personalInformation'><div >資訊中心</div></router-link>
         </ul>
     </div>
 </template>

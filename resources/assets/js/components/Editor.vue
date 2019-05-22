@@ -62,10 +62,10 @@
         </van-popup> -->
         <div class="previewBox" :style="{display:isPreviewShow}">
             <div class="showContent" v-html="editorContent"></div>
-            <div @click="isPreviewShow='none'" class="closePreviewBox"><img src="/etravel/public/images/delete.png" alt="关闭"></div>
+            <div @click="isPreviewShow='none'" class="closePreviewBox"><img src="/etravel/public/images/delete.png" alt="關閉"></div>
         </div>
         <div class="w-e-menu" ref="preview" style="display: none;">
-            <span class="_wangEditor_btn_fullscreen" @click="toPreview()">预览</span>
+            <span class="_wangEditor_btn_fullscreen" @click="toPreview()">預覽</span>
         </div>
     </div>
 </template>

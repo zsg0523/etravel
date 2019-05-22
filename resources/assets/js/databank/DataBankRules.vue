@@ -35,9 +35,9 @@
         <div class="pane_content_rule" >
             <div class="form_content_rules disflex">
                 <div class="form_item_rules"  v-for="(rule,index) in ruless">
-                    <div class="item_title">准则{{index+1}}</div>
+                    <div class="item_title">準則{{index+1}}</div>
                     <div class="input_icon disflex">
-                        <input placeholder="准则" type="text" disabled="disabled" :value="rule.rule_category_name">
+                        <input placeholder="準則" type="text" disabled="disabled" :value="rule.rule_category_name">
                         <div @click="$router.push('/rule/dataBankRulesInfo/'+rule.id)">
                             <img src="/etravel/public/images/See-next.png" alt="">
                         </div>
@@ -56,8 +56,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
-		                <div class="item_title">准则</div>
-		                <div><input class="item_input" placeholder="准则" type="text"  v-model="newRule.rule_category_name"></div>
+		                <div class="item_title">準則</div>
+		                <div><input class="item_input" placeholder="準則" type="text"  v-model="newRule.rule_category_name"></div>
 		            </div>
                     <div class="issure">
                         <button @click="addNewRule()">添加</button>
@@ -69,8 +69,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
-		                <div class="item_title">准则</div>
-		                <div><input class="item_input" placeholder="准则" type="text"  v-model="edRule.rule_category_name"></div>
+		                <div class="item_title">準則</div>
+		                <div><input class="item_input" placeholder="準則" type="text"  v-model="edRule.rule_category_name"></div>
 		            </div>
                     <div class="issure">
                         <button @click="editRule()">修改</button>
@@ -104,7 +104,7 @@
         },
         methods:{
             getRules(){
-                // 获取守则分类
+                // 获取準則分类
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -118,7 +118,7 @@
                     // console.log(res.data);
                     this.ruless=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
 
@@ -127,7 +127,7 @@
                 this.isNewRuleShow=true;
             },
             addNewRule(){
-                // 新增守则
+                // 新增準則
                 this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',this.newRule,
                 {
                     headers: {
@@ -140,6 +140,11 @@
                     this.isNewRuleShow=false;
                     this.newRule.rule_category_name='';
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('添加失败');
                     console.log(err)
                 });
@@ -151,7 +156,7 @@
                 this.isEditRuleShow=true;
             },
             editRule(){
-                // 修改守则信息
+                // 修改準則信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -170,15 +175,20 @@
                         this.$toast('修改失败');
                     }
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('修改失败');
                     console.log(err)
                 });
             },
             delRule(ruleId){
-                // 删除守则
+                // 删除準則
                 this.$dialog.confirm({
-                    title: '删除守则',
-                    message: '是否删除该守则'
+                    title: '删除準則',
+                    message: '是否删除该準則'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

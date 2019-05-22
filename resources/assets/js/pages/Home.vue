@@ -74,15 +74,15 @@
     					</div> -->
                         <div class="edit_icon disflex fl" v-if="travel.travel_status==10">
                             <img src="/etravel/public/images/Not_progress.png">
-                            <span>未进行</span>
+                            <span>未進行</span>
                         </div>
                         <div class="edit_icon disflex fl" v-else-if="travel.travel_status==20">
                             <img src="/etravel/public/images/In_progress.png">
-                            <span>进行中</span>
+                            <span>進行中</span>
                         </div>
                         <div class="edit_icon disflex fl" v-else="">
                             <img src="/etravel/public/images/ending.png">
-                            <span>已结束</span>
+                            <span>已結束</span>
                         </div>
     					<!-- <div class="project_type disflex fr" v-if="travel.pivot['is_promise'] == 1">
     						<img src="/etravel/public/images/sent.png">
@@ -119,25 +119,25 @@
                 <div class="form_item_pro">
                     <div class="item_title">出行日期<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_at">
+                        <input class="item_input" placeholder="出行日期（例：2020-01-01）" type="text"  v-model="newTravel.travel_at">
                     </div>
                 </div>
                 <div class="form_item_pro">
                     <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="回程日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_return">
+                        <input class="item_input" placeholder="回程日期（例：2020-01-01）" type="text"  v-model="newTravel.travel_return">
                     </div>
                 </div>
                 <!-- <div class="form_item_pro">
                     <div class="item_title">出行日期<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_at" readonly="readonly" @click="pickTimeShow('newTravel')">
+                        <input class="item_input" placeholder="出行日期（例：2020-01-01）" type="text"  v-model="newTravel.travel_at" readonly="readonly" @click="pickTimeShow('newTravel')">
                     </div>
                 </div>
                 <div class="form_item_pro">
                     <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="回程日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
+                        <input class="item_input" placeholder="回程日期（例：2020-01-01）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
                     </div>
                 </div> -->
                 <div class="form_item_pro">
@@ -161,25 +161,25 @@
                 <div class="form_item_pro">
                     <div class="item_title">出行日期</div>
                     <div>
-                        <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="edTravel.travel_at">
+                        <input class="item_input" placeholder="出行日期（例：2020-01-01）" type="text"  v-model="edTravel.travel_at">
                     </div>
                 </div>
                 <div class="form_item_pro">
                     <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="回程日期（例:1979-01-01）" type="text"  v-model="edTravel.travel_return">
+                        <input class="item_input" placeholder="回程日期（例：2020-01-01）" type="text"  v-model="edTravel.travel_return">
                     </div>
                 </div>
                 <!-- <div class="form_item_pro">
                     <div class="item_title">出行日期</div>
                     <div>
-                        <input class="item_input" placeholder="出行日期（例:1979-01-01）" type="text"  v-model="edTravel.travel_at" readonly="readonly" @click="pickTimeShow('edTravel')">
+                        <input class="item_input" placeholder="出行日期（例：2020-01-01）" type="text"  v-model="edTravel.travel_at" readonly="readonly" @click="pickTimeShow('edTravel')">
                     </div>
                 </div>
                 <div class="form_item_pro">
                     <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="回程日期（例:1979-01-01）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
+                        <input class="item_input" placeholder="回程日期（例：2020-01-01）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
                     </div>
                 </div> -->
                 <div class="form_item_pro">
@@ -239,14 +239,14 @@
         },
         mounted:function(){
             this.getUserTravels();
-            this.$store.state.links=[{link:'/home',linkName:'项目'}];
+            this.$store.state.links=[{link:'/home',linkName:'項目'}];
         },
         methods:{
             ...mapActions(['setTravels']),
             ...mapActions(['setUserInfo']),
             ...mapGetters(['userInfo']),
             getUserTravels(){
-                // 获取旅游项目
+                // 获取旅游項目
                 this.$get(this.$config+'/api/creater/travels',
                 {
                     headers: {
@@ -259,7 +259,7 @@
                     // console.log(this.travels);
                    
                 }).catch(err => {
-                    // this.$toast('获取失败');
+                    // this.$toast('获取失敗');
                     // this.$router.push('/');
                     console.log(err);
                 });
@@ -301,8 +301,13 @@
                             this.newTravel.travel_introduction='';
                             this.getUserInfo();
                         }).catch(err => {
-                            this.$toast('創建失败');
+                            this.$toast('創建失敗');
                             this.errors=err.response.data.errors;
+                            if(err.response.data.errors){
+                                for(var key in err.response.data.errors){
+                                    this.$toast(err.response.data.errors[key][0]);
+                                }
+                            }
 
                             console.log(err)
                         });
@@ -333,11 +338,16 @@
                             this.getUserTravels();
                             this.$toast('删除成功');
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast('删除失敗');
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast('删除失敗');
                         console.log(err)
+                        if(err.response.data.errors){
+                            for(var key in err.response.data.errors){
+                                this.$toast(err.response.data.errors[key][0]);
+                            }
+                        }
                     });
                 }).catch(err => {
 
@@ -381,11 +391,16 @@
                         // this.getUserTravels();
                         this.$toast('修改成功');
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
+                        if(err.response.data.errors){
+                            for(var key in err.response.data.errors){
+                                this.$toast(err.response.data.errors[key][0]);
+                            }
+                        }
                     }
                     this.editPopupHiden();
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast('修改失敗');
                     this.errors=err.response.data.errors;
                     console.log(err)
                 });

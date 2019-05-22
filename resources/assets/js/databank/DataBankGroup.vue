@@ -40,21 +40,21 @@
             <table>
                 <thead>
                     <tr>
-                        <th>编号</th>
-                        <th>班级</th>
-                        <th>学生姓名</th>
-                        <th>房号</th>
-                        <th>职责</th>
-                        <th>编辑</th>
+                        <th>編號</th>
+                        <th>班級</th>
+                        <th>學生姓名</th>
+                        <th>房號</th>
+                        <th>職責</th>
+                        <th>編輯</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- <tr>
-                        <td>编号</td>
-                        <td>填写班级</td>
-                        <td>填写名字</td>
-                        <td>填写房号</td>
-                        <td>填写职责</td>
+                        <td>編號</td>
+                        <td>填寫班級</td>
+                        <td>填寫名字</td>
+                        <td>填寫房號</td>
+                        <td>填寫職責</td>
                         <td width="100px">
                             <div class="editIcon"><img src="/etravel/public/images/edit.png"></div>
                             <div class="editIcon"><img src="/etravel/public/images/appointAdd.png"></div>
@@ -68,7 +68,7 @@
                         <td>{{group.room}}</td>
                         <td>{{group.duty}}</td>
                         <td width="100px">
-                            <div class="editIcon" name="编辑"><img src="/etravel/public/images/edit.png" @click="editGroupShow(index);"></div>
+                            <div class="editIcon" name="編輯"><img src="/etravel/public/images/edit.png" @click="editGroupShow(index);"></div>
                            <!--  <div class="editIcon"><img src="/etravel/public/images/appointAdd.png" @click="addGroupShow();"></div> -->
                             <div class="editIcon" name="删除"><img src="/etravel/public/images/dele.png" @click="delGroup(group.user_id,group.id);"></div>
                         </td>
@@ -80,27 +80,27 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_group">
-                        <div class="item_title">班级</div>
+                        <div class="item_title">班級</div>
                         <div>
-                            <input class="item_input" placeholder="班级" type="text"  v-model="newGroup.group_class">
+                            <input class="item_input" placeholder="班級" type="text"  v-model="newGroup.group_class">
                         </div>
                     </div>
                     <div class="form_item_group">
-                        <div class="item_title">学生姓名</div>
+                        <div class="item_title">學生姓名</div>
                         <div>
-                            <input class="item_input" placeholder="学生姓名" type="text"  v-model="newGroup.group_name">
+                            <input class="item_input" placeholder="學生姓名" type="text"  v-model="newGroup.group_name">
                         </div>
                     </div>
                     <div class="form_item_group">
-                        <div class="item_title">房号</div>
+                        <div class="item_title">房號</div>
                         <div>
-                            <input class="item_input" placeholder="房号" type="text"  v-model="newGroup.group_room">
+                            <input class="item_input" placeholder="房號" type="text"  v-model="newGroup.group_room">
                         </div>
                     </div>
                     <div class="form_item_group">
-                        <div class="item_title">职责</div>
+                        <div class="item_title">職責</div>
                         <div>
-                            <input class="item_input" placeholder="职责" type="text"  v-model="newGroup.group_duty">
+                            <input class="item_input" placeholder="職責" type="text"  v-model="newGroup.group_duty">
                         </div>
                     </div>
                     <div class="issure">
@@ -113,27 +113,27 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_group">
-                        <div class="item_title">班级</div>
+                        <div class="item_title">班級</div>
                         <div>
-                            <input class="item_input" placeholder="填写班级" type="text" disabled="disabled"  v-model="edGroup.group_class">
+                            <input class="item_input" placeholder="填寫班級" type="text" disabled="disabled"  v-model="edGroup.group_class">
                         </div>
                     </div>
                     <div class="form_item_group">
-                        <div class="item_title">学生姓名</div>
+                        <div class="item_title">學生姓名</div>
                         <div>
-                            <input class="item_input" placeholder="填写学生姓名" type="text" disabled="disabled"  v-model="edGroup.group_name">
+                            <input class="item_input" placeholder="填寫學生姓名" type="text" disabled="disabled"  v-model="edGroup.group_name">
                         </div>
                     </div>
                     <div class="form_item_group">
-                        <div class="item_title">房号(必填)</div>
+                        <div class="item_title">房號(必填)</div>
                         <div>
-                            <input class="item_input" placeholder="填写房号" type="text"  v-model="edGroup.group_room">
+                            <input class="item_input" placeholder="填寫房號" type="text"  v-model="edGroup.group_room">
                         </div>
                     </div>
                     <div class="form_item_group">
-                        <div class="item_title">职责</div>
+                        <div class="item_title">職責</div>
                         <div>
-                            <input class="item_input" placeholder="填写职责" type="text"  v-model="edGroup.group_duty">
+                            <input class="item_input" placeholder="填寫職責" type="text"  v-model="edGroup.group_duty">
                         </div>
                     </div>
                     <div class="issure">
@@ -174,7 +174,7 @@
         },
         methods:{
             getGroups(){
-                // 获取分组详情
+                // 获取分组詳情
                 this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/groups?include=user.student',
                 {
                     headers: {
@@ -184,7 +184,7 @@
                     // console.log(res.data);
                     this.groups=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -246,10 +246,15 @@
                         this.$toast('修改成功');
                         this.isEditGroupShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast('修改失敗');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     console.log(err)
                 });
             },

@@ -33,7 +33,7 @@
                         <div class="coins_center">
                             <div class="coins_img"></div>
                             <div class="coins_info">
-                                <p class="fonts">您的剩余金币</p>
+                                <p class="fonts">您的剩餘金幣</p>
                                 <span class="num">{{userInfo.tokens}}</span>
                                 <a href=""><div class="pay">充值</div></a>
                             </div>
@@ -69,7 +69,7 @@
                     this.userInfo=res.data;
                 }).catch(err => {
                     console.log(err);
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                 });
             },
         },

@@ -36,13 +36,13 @@
             <table>
                 <thead>
                     <tr>
-                        <th>分组编号</th>
+                        <th>分組編號</th>
                         <th>房间编号</th>
-                        <th>班级</th>
+                        <th>班級</th>
                         <th>中文名</th>
                         <th>英文名</th>
-                        <th>职责</th>
-                        <th>编辑</th>
+                        <th>職責</th>
+                        <th>編輯</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,9 +73,9 @@
                         </div>
                     </div>
                     <div class="form_item_house">
-                        <div class="item_title">班级</div>
+                        <div class="item_title">班級</div>
                         <div>
-                            <input class="item_input" placeholder="班级" type="text"  v-model="newHouse.house_class">
+                            <input class="item_input" placeholder="班級" type="text"  v-model="newHouse.house_class">
                         </div>
                     </div>
                     <div class="form_item_house">
@@ -94,39 +94,39 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_house">
-                        <div class="item_title">分组编号</div>
+                        <div class="item_title">分組編號</div>
                         <div>
-                            <input class="item_input" placeholder="填写分组编号" type="text"  v-model="edHouse.house_group">
+                            <input class="item_input" placeholder="填寫分組編號" type="text"  v-model="edHouse.house_group">
                         </div>
                     </div>
                     <div class="form_item_house">
                         <div class="item_title">房间编号</div>
                         <div>
-                            <input class="item_input" placeholder="填写房间编号" type="text"  v-model="edHouse.house_room">
+                            <input class="item_input" placeholder="填寫房间编号" type="text"  v-model="edHouse.house_room">
                         </div>
                     </div>
                     <div class="form_item_house">
-                        <div class="item_title">班级</div>
+                        <div class="item_title">班級</div>
                         <div>
-                            <input class="item_input" placeholder="填写班级" type="text"  v-model="edHouse.house_class">
+                            <input class="item_input" placeholder="填寫班級" type="text"  v-model="edHouse.house_class">
                         </div>
                     </div>
                     <!-- <div class="form_item_house">
                         <div class="item_title">中文名</div>
                         <div>
-                            <input class="item_input" placeholder="填写中文名" type="text"  v-model="edHouse.name">
+                            <input class="item_input" placeholder="填寫中文名" type="text"  v-model="edHouse.name">
                         </div>
                     </div>
                     <div class="form_item_house">
                         <div class="item_title">英文名</div>
                         <div>
-                            <input class="item_input" placeholder="填写英文名" type="text"  v-model="edHouse.en_name">
+                            <input class="item_input" placeholder="填寫英文名" type="text"  v-model="edHouse.en_name">
                         </div>
                     </div> -->
                     <div class="form_item_house">
-                        <div class="item_title">职责</div>
+                        <div class="item_title">職責</div>
                         <div>
-                            <input class="item_input" placeholder="填写职责" type="text"  v-model="edHouse.house_duty">
+                            <input class="item_input" placeholder="填寫職責" type="text"  v-model="edHouse.house_duty">
                         </div>
                     </div>
                     <div class="issure">
@@ -179,7 +179,7 @@
                     // console.log(res.data);
                     this.houses=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -202,7 +202,7 @@
             //         this.newHouse.house_class='';
             //         this.newHouse.house_name='';
             //     }).catch(err => {
-            //         this.$toast('添加失败');
+            //         this.$toast('添加失敗');
             //         console.log(err)
             //     });
             // },
@@ -246,18 +246,23 @@
                         this.$toast('修改成功');
                         this.isEditHouseShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
             delHouse(userId,houseId){
                 // 删除分房信息
                 this.$dialog.confirm({
-                    title: '删除分组分房表信息',
-                    message: '是否删除该条信息'
+                    title: '删除分組分房表資訊',
+                    message: '是否删除該條資訊'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -271,10 +276,10 @@
                             this.getHouses();
                             this.$toast('删除成功');
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast('删除失敗');
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast('删除失敗');
                         console.log(err)
                     });
                 }).catch(err => {

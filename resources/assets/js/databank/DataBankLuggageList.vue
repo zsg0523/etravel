@@ -35,7 +35,7 @@
         <div class="pane_content_luggage" >
             <div class="form_content_luggageLists disflex">
                 <div class="form_item_luggageLists" v-for="(luggageList,index) in luggageLists">
-                    <div class="item_title">清单{{index+1}}</div>
+                    <div class="item_title">清單{{index+1}}</div>
                     <div class="input_icon disflex">
                         <input type="text" disabled="disabled"  :value="luggageList.rule_category_name">
                         <div @click="$router.push('/luggage/dataBankLuggageListInfo/'+luggageList.id)">
@@ -57,8 +57,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageLists">
-                        <div class="item_title">行李清单</div>
-                        <div><input class="item_input" placeholder="请填写清单内容" type="text" v-model="newLuggageList.rule_category_name"></div>
+                        <div class="item_title">行李清單</div>
+                        <div><input class="item_input" placeholder="請填寫清單内容" type="text" v-model="newLuggageList.rule_category_name"></div>
                     </div>
                     <div class="issure">
                         <button @click="addNewLuggageList()">添加</button>
@@ -70,8 +70,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageLists">
-                        <div class="item_title">行李清单</div>
-                        <div><input class="item_input" placeholder="请填写清单内容" type="text" v-model="edLuggageList.rule_category_name"></div>
+                        <div class="item_title">行李清單</div>
+                        <div><input class="item_input" placeholder="請填寫清單内容" type="text" v-model="edLuggageList.rule_category_name"></div>
                     </div>
                     <div class="issure">
                         <button @click="editLuggageList()">修改</button>
@@ -118,7 +118,7 @@
                     // console.log(res.data);
                     this.luggageLists=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -126,7 +126,7 @@
                 this.isNewLuggageListShow=true;
            },
            addNewLuggageList(){
-                // 新增行李清单
+                // 新增行李清單
                 this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',
                 this.newLuggageList,
                 {
@@ -140,7 +140,12 @@
                     this.getLuggageLists();  
                     this.newLuggageList.rule_category_name='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('添加失敗');
                     console.log(err)
                 });
            },
@@ -168,18 +173,23 @@
                         this.$toast('修改成功');
                         this.isEditLuggageListShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
            delLuggageList(luggageListId){
-                // 删除清单
+                // 删除清單
                 this.$dialog.confirm({
-                    title: '删除清单',
-                    message: '是否删除该清单'
+                    title: '删除清單',
+                    message: '是否删除该清單'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -193,10 +203,10 @@
                             this.getLuggageLists();
                             this.$toast('删除成功');
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast('删除失敗');
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast('删除失敗');
                         console.log(err)
                     });
                 }).catch(err => {

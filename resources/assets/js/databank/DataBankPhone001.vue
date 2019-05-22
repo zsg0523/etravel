@@ -149,7 +149,7 @@
                     // console.log(res.data);
                     this.phones=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
 

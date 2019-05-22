@@ -35,9 +35,9 @@
         <div class="pane_content_evaluation" >
             <div class="form_content_evaluations disflex">
                 <div class="form_item_evaluations" v-for="(evaluation,index) in evaluations">
-                    <div class="item_title">题目标题</div>
+                    <div class="item_title">題目標題</div>
                     <div class="input_icon disflex">
-                        <input placeholder="请填写题目标题" type="text" disabled="disabled"  :value="evaluation.title">
+                        <input placeholder="請填寫題目標題" type="text" disabled="disabled"  :value="evaluation.title">
                         <div @click="$router.push('/topic/dataBankEvaluationInfo/'+evaluation.id)">
                             <img src="/etravel/public/images/See-next.png" alt="">
                         </div>
@@ -57,8 +57,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluations">
-                        <div class="item_title">题目标题(必填)</div>
-                        <div><input class="item_input" placeholder="请填写题目标题" type="text" v-model="newEvaluation.title"></div>
+                        <div class="item_title">題目標題(必填)</div>
+                        <div><input class="item_input" placeholder="請填寫題目標題" type="text" v-model="newEvaluation.title"></div>
                     </div>
                     <div class="issure">
                         <button @click="addNewEvaluation()">添加</button>
@@ -70,8 +70,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluations">
-                        <div class="item_title">题目标题(必填)</div>
-                        <div><input class="item_input" placeholder="请填写题目标题" type="text" v-model="edEvaluation.title"></div>
+                        <div class="item_title">題目標題(必填)</div>
+                        <div><input class="item_input" placeholder="請填寫題目標題" type="text" v-model="edEvaluation.title"></div>
                     </div>
                     <div class="issure">
                         <button @click="editEvaluation()">修改</button>
@@ -116,7 +116,7 @@
                     // console.log(res.data);
                     this.evaluations=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -138,6 +138,11 @@
                     this.getEvaluations();  
                     this.newEvaluation.title='';
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('添加失败');
                     console.log(err)
                 });
@@ -168,6 +173,11 @@
                         this.$toast('修改失败');
                     }
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('修改失败');
                     console.log(err)
                 });

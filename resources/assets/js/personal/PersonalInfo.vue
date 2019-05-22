@@ -61,10 +61,10 @@
                 <div class="form_content_pe" id="view">
                     <div class="head_edit">
                         <div class="info_title">
-                            <span>基本资料</span><hr />
+                            <span>基本資料</span><hr />
                         </div>
                         <div class="info_photo">
-                            <p class="padding_none">头像</p>
+                            <p class="padding_none">頭像</p>
                             <div class="photo" v-if="personalInfos.avatar">
                                 <img class="photo-circle" :src="personalInfos.avatar" />                                                            
                             </div>
@@ -78,48 +78,48 @@
                                 <span>中文名：</span><input disabled="disabled" type="text" v-model="personalInfos.name"/>                                                                
                             </div>
                             <div class="info_view" v-else >
-                                <span>中文名：</span><input disabled="disabled" type="text" placeholder="未设置" />                                                                               
+                                <span>中文名：</span><input disabled="disabled" type="text" placeholder="未設定" />                                                                               
                             </div>
                             <!-- <p class="padding_none">英文名</p> -->
                             <div class="info_view" v-if="personalInfos.en_name" >
                                 <span>英文名：</span><input disabled="disabled" type="text" v-model="personalInfos.en_name"/>                                             
                             </div>
                             <div class="info_view" v-else >
-                                <span>英文名：</span><input disabled="disabled" type="text" placeholder="未设置" />                                                                               
+                                <span>英文名：</span><input disabled="disabled" type="text" placeholder="未設定" />                                                                               
                             </div>
                             <!-- <p class="padding_none">性别</p> -->
                             <div class="sex" v-if="personalInfos.sex==0">
-                                  <span>性别：</span><input disabled="disabled" type="text" value="女" />                                               
+                                  <span>性別：</span><input disabled="disabled" type="text" value="女" />                                               
                             </div>
                             <div class="sex" v-else-if="personalInfos.sex==1">
-                                  <span>性别：</span><input disabled="disabled" type="text" value="男" />                                               
+                                  <span>性別：</span><input disabled="disabled" type="text" value="男" />                                               
                             </div>
                             <div class="sex"  v-else>
-                                  <span>性别：</span><input disabled="disabled" type="text" placeholder="未设置" />                                            
+                                  <span>性別：</span><input disabled="disabled" type="text" placeholder="未設定" />                                            
                             </div>
                         </div>
                     </div>
                     <div class="information_edit">
                         <div class="info_title1">
-                            <span>个人信息</span><hr />
+                            <span>個人資訊</span><hr />
                         </div>
                         <div class="info_phone">
-                            <p class="padding_none">手机号</p>               
+                            <p class="padding_none">手機號</p>               
                             <div class="info_view" v-if="personalInfos.phone">
                                 <input disabled="disabled" type="text" v-model="personalInfos.phone"/>
                                 <div class="editPerson"><img src="/etravel/public/images/edit-all.png" @click="editPhoneShow()"></div>
                             </div>
                             <div class="info_view" v-else>
-                                <input disabled="disabled" type="text" placeholder="未设置" />
+                                <input disabled="disabled" type="text" placeholder="未設定" />
                                 <div class="editPerson"><img src="/etravel/public/images/edit-all.png" @click="editPhoneShow()"></div>
                             </div>
-                            <p class="padding_none">邮箱</p>
+                            <p class="padding_none">郵箱</p>
                             <div class="info_view" v-if="personalInfos.email">
                                 <input disabled="disabled" type="text" v-model="personalInfos.email"/>
                                 <div class="editPerson"><img src="/etravel/public/images/edit-all.png" @click="editEmailShow()"></div>
                             </div>
                             <div class="info_view" v-else>
-                                <input disabled="disabled" type="text" placeholder="未设置" />
+                                <input disabled="disabled" type="text" placeholder="未設定" />
                                 <div class="editPerson"><img src="/etravel/public/images/edit-all.png" @click="editEmailShow()"></div>
                             </div>      
                         </div>
@@ -149,24 +149,24 @@
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">性别</div>
+                        <div class="item_title">性別</div>
                         <div>
                             <select id="edTypeId" v-model="edInformation.sex">
-                                <option value="">--请选择--</option>
+                                <option value="">--請選擇--</option>
                                 <option v-for="item in optList" :value="item.value">{{ item.name }}</option>
                             </select>
                         </div>
                     </div>
                     <!-- <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">手机号<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
+                        <div class="item_title">手機號<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
                         <div>
-                            <input class="item_input" placeholder="手机号" type="text" v-model="edInformation.phone">
+                            <input class="item_input" placeholder="手機號" type="text" v-model="edInformation.phone">
                         </div>
                     </div> -->
                     <!-- <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">邮箱<span class="err" v-if="errors.email" v-text="errors.email[0]"></span></div>
+                        <div class="item_title">郵箱<span class="err" v-if="errors.email" v-text="errors.email[0]"></span></div>
                         <div>
-                            <input class="item_input" placeholder="邮箱" type="text" v-model="edInformation.email">
+                            <input class="item_input" placeholder="郵箱" type="text" v-model="edInformation.email">
                         </div>
                     </div> -->
                     
@@ -180,26 +180,26 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">旧区号</div>
+                        <div class="item_title">舊區號</div>
                         <div>
-                            <input class="item_input" placeholder="区号" type="text" disabled="disabled" v-model="personalInfos.code">
+                            <input class="item_input" placeholder="區號" type="text" disabled="disabled" v-model="personalInfos.code">
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">旧手机号</div>
+                        <div class="item_title">舊手機號</div>
                         <div>
-                            <input class="item_input" placeholder="手机号" type="text" disabled="disabled" v-model="personalInfos.phone">
+                            <input class="item_input" placeholder="手機號" type="text" disabled="disabled" v-model="personalInfos.phone">
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">验证码</div>
+                        <div class="item_title">驗證碼</div>
                         <div class="disflex" style="justify-content: space-between;">
-                            <input type="text" placeholder="验证码" v-model="phoneCode" style="width: 56%;">
+                            <input type="text" placeholder="驗證碼" v-model="phoneCode" style="width: 56%;">
                             <button class="tc sendCode" @click='getPhoneCode()' :disabled="disabled || time > 0">{{text}}</button>
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">区号</div>
+                        <div class="item_title">區號</div>
                         <div>
                             <div class="simulateShade01">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='areacode'></AreaCodeSelector>
@@ -207,9 +207,9 @@
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">新手机号</div>
+                        <div class="item_title">新手機號</div>
                         <div>
-                            <input class="item_input" placeholder="手机号" type="text" v-model="phone">
+                            <input class="item_input" placeholder="手機號" type="text" v-model="phone">
                         </div>
                     </div>
                     <div class="issure">
@@ -222,16 +222,16 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">新邮箱</div>
+                        <div class="item_title">新郵箱</div>
                         <div>
-                            <input class="item_input" placeholder="新邮箱" type="text" v-model="email">
+                            <input class="item_input" placeholder="新郵箱" type="text" v-model="email">
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">验证码</div>
+                        <div class="item_title">驗證碼</div>
                         <div class="disflex" style="justify-content: space-between;">
-                            <input type="text" placeholder="验证码" v-model="emailCode" style="width: 56%;">
-                            <button class="tc sendCode" @click='getEmailCode()' :disabled="emailDisabled">获取验证码</button>
+                            <input type="text" placeholder="驗證碼" v-model="emailCode" style="width: 56%;">
+                            <button class="tc sendCode" @click='getEmailCode()' :disabled="emailDisabled">獲取驗證碼</button>
                         </div>
                     </div>
                     <div class="issure">
@@ -286,7 +286,7 @@
         },
         methods:{
             getPersonalInfos(){
-                // 获取个人资料
+                // 獲取个人资料
                 this.$get(this.$config+'/api/user',
                 {
                     headers: {
@@ -295,7 +295,7 @@
                 }).then(res => {
                     this.personalInfos=res.data;               
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     // this.$router.push('/');
                     console.log(err);
                 });
@@ -333,10 +333,10 @@
                         this.$toast('修改成功');
                         this.isEditInformationShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast('修改失敗');
                     console.log(err)
                     this.errors=err.response.data.errors;
                 });
@@ -356,7 +356,7 @@
                             // this.setUserInfo(res)
                             this.run();
                             this.phoneKey=res.data.key;
-                            this.$toast('验证码已成功发送，请注意查收。');
+                            this.$toast('驗證碼已成功發送，請注意查收。');
                         } else {
                             this.$toast(res.data.message);
                         }
@@ -370,7 +370,7 @@
                         
                     });
                 } else {
-                    this.$toast('号码信息不全!');
+                    this.$toast('號碼資訊不全!');
                 }
             },
             editPhone(){
@@ -393,10 +393,10 @@
                         this.personalInfos.code=this.areacode;
                         this.isEditPhone=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast('修改失敗');
                     console.log(err)
                     this.errors=err.response.data.errors;
                 });
@@ -415,7 +415,7 @@
                             // this.setUserInfo(res)
                             this.emailKey=res.data.key;
                             this.emailDisabled=true;
-                            this.$toast('验证码已成功发送至您的邮箱，请注意查收。');
+                            this.$toast('驗證碼已成功發送至您的郵箱，請注意查收。');
                         } else {
                             this.$toast(res.data.message);
                         }
@@ -429,7 +429,7 @@
                         
                     });
                 } else {
-                    this.$toast('请填写邮箱');
+                    this.$toast('請填寫郵箱');
                 }
             },
             editEmail(){
@@ -450,7 +450,7 @@
                         this.personalInfos.email=this.email;
                         this.isEditEmail=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
                     console.log(err);
@@ -484,7 +484,7 @@
         },
         computed: {
             text() {
-                return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
+                return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
             }
         }
   	}

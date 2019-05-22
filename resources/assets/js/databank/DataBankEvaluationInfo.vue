@@ -47,9 +47,9 @@
             <div class="pane_content_eval">
                 <div class="form_content disflex"  v-for="(evaluationInfo,index) in evaluationInfos">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">题目{{index+1}}<span class="fr">类型:{{evaluationInfo.type}}</span></div>
+                        <div class="item_title">題目{{index+1}}<span class="fr">類型:{{evaluationInfo.type}}</span></div>
                         <div>
-                            <textarea class="item_area_eval" placeholder="题目详情" disabled="disabled"  :value="evaluationInfo.content"></textarea>
+                            <textarea class="item_area_eval" placeholder="題目詳情" disabled="disabled"  :value="evaluationInfo.content"></textarea>
                         </div>
                     </div>
                     <div class="editBtnGroup">
@@ -66,13 +66,13 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">题目详情(必填)</div>
+                        <div class="item_title">題目詳情(必填)</div>
                         <div>
-                            <textarea class="item_area_eval" placeholder="题目详情" v-model="newEvaluationInfo.content"></textarea>
+                            <textarea class="item_area_eval" placeholder="題目詳情" v-model="newEvaluationInfo.content"></textarea>
                         </div>
                     </div>
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">题目类型</div>
+                        <div class="item_title">題目類型</div>
                         <div>
                             <select id="edTypeId" v-model="newEvaluationInfo.type">
                                 <option v-for="item in optList" :value="item.value">{{ item.title }}</option>
@@ -89,13 +89,13 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">题目详情(必填)</div>
+                        <div class="item_title">題目詳情(必填)</div>
                         <div>
-                            <textarea class="item_area_eval" placeholder="题目详情" v-model="edEvaluationInfo.content"></textarea>
+                            <textarea class="item_area_eval" placeholder="題目詳情" v-model="edEvaluationInfo.content"></textarea>
                         </div>
                     </div>
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">题目类型</div>
+                        <div class="item_title">題目類型</div>
                         <div>
                             <select id="edTypeId" v-model="edEvaluationInfo.type">
                                 <option v-for="item in optList" :value="item.value">{{ item.title }}</option>
@@ -117,7 +117,7 @@
             return {
                 evaluationInfos:[],
                 eval:'',
-                optList: [{value:'1',title:'1(一个选项)'},{value:'2',title:'2(两个选项)'},{value:'3',title:'3(五个选项)'}],
+                optList: [{value:'1',title:'1(一個選項)'},{value:'2',title:'2(兩個選項)'},{value:'3',title:'3(五個選項)'}],
                 newEvaluationInfo:{
                     content:'',
                     type:'',
@@ -137,7 +137,7 @@
         },
         methods:{
             getEvaluationInfos(){
-                // 获取题目详情
+                // 获取題目詳情
                 this.$get(this.$config+'/api/evaluationCategories/'+this.$route.params.id+'?include=evaluations',
                 {
                     headers: {
@@ -148,7 +148,7 @@
                     this.eval=res.data;
                     this.evaluationInfos=res.data.evaluations.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -156,7 +156,7 @@
                 this.isNewEvaluationInfoShow=true;
             },
             addNewEvaluationInfo(){
-                // 新增题目
+                // 新增題目
                 this.$post(this.$config+'/api/evaluationCategories/'+this.$route.params.id+'/evaluations',this.newEvaluationInfo,
                 {
                     headers: {
@@ -170,7 +170,12 @@
                     this.newEvaluationInfo.content='';
                     this.newEvaluationInfo.type='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('添加失敗');
                     console.log(err)
                 });
             },
@@ -182,7 +187,7 @@
                 this.isEditEvaluationInfoShow=true;
             },
             editEvaluationInfo(){
-                // 修改题目信息/api/evaluationCategories/1/evaluations/51
+                // 修改題目信息/api/evaluationCategories/1/evaluations/51
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -200,18 +205,24 @@
                         this.$toast('修改成功');
                         this.isEditEvaluationInfoShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast('修改失敗');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     console.log(err)
+
                 });
             },
             delEvaluationInfo(evaluationInfoId){
                 // 删除行程
                 this.$dialog.confirm({
-                    title: '删除题目',
-                    message: '是否删除该题目'
+                    title: '删除題目',
+                    message: '是否删除该題目'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -225,10 +236,10 @@
                             this.getEvaluationInfos();
                             this.$toast('删除成功');
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast('删除失敗');
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast('删除失敗');
                         console.log(err)
                     });
                 }).catch(err => {

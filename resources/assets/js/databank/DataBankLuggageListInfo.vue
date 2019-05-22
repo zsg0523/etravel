@@ -47,15 +47,15 @@
             <table>
                 <thead>
                     <tr>
-                        <th>编号</th>
-                        <th>装备内容</th>
+                        <th>編號</th>
+                        <th>裝備內容</th>
                         <th>编辑</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>编号</td>
-                        <td>填写装备内容</td>
+                        <td>編號</td>
+                        <td>填寫裝備內容</td>
                         <td width="100px">
                             <!-- <div class="editIcon"><img src="/etravel/public/images/edit.png"></div> -->
                             <div class="editIcon"><img src="/etravel/public/images/appointAdd.png" @click="addLuggageListInfoShow();"></div>
@@ -78,9 +78,9 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageListInfo">
-                        <div class="item_title">装备内容</div>
+                        <div class="item_title">裝備內容</div>
                         <div>
-                            <textarea class="item_area" placeholder="填写装备内容" v-model="newLuggageListInfo.rule"></textarea>
+                            <textarea class="item_area" placeholder="填寫裝備內容" v-model="newLuggageListInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="issure">
@@ -93,9 +93,9 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageListInfo">
-                        <div class="item_title">装备内容</div>
+                        <div class="item_title">裝備內容</div>
                         <div>
-                            <textarea class="item_area" placeholder="填写装备内容" v-model="edLuggageListInfo.rule"></textarea>
+                            <textarea class="item_area" placeholder="填寫裝備內容" v-model="edLuggageListInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="issure">
@@ -144,7 +144,7 @@
                     this.luggageList=res.data;
                     this.luggageListInfos=res.data.rules.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -152,7 +152,7 @@
                 this.isNewLuggageListInfoShow=true;
             },
             addLuggageListInfo(){
-                // 新增守则详情
+                // 新增守则詳情
                 this.$post(this.$config+'/api/rules',this.newLuggageListInfo,
                 {
                     headers: {
@@ -165,6 +165,11 @@
                     this.isNewLuggageListInfoShow=false;
                     this.newLuggageListInfo.rule='';
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('添加失败');
                     console.log(err)
                 });
@@ -177,7 +182,7 @@
                 this.isEditLuggageListInfoShow=true;
             },
             editLuggageListInfo(){
-                // 修改守则详情信息
+                // 修改守则詳情信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -198,15 +203,20 @@
                         this.$toast('修改失败');
                     }
                 }).catch(err => {
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     this.$toast('修改失败');
                     console.log(err)
                 });
             },
             delLuggageListInfo(luggageListInfoId){
-                // 删除守则详情
+                // 删除守则詳情
                 this.$dialog.confirm({
-                    title: '删除装备详情',
-                    message: '是否删除该装备详情'
+                    title: '删除装备詳情',
+                    message: '是否删除该装备詳情'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

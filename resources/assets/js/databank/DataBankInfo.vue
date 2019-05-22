@@ -65,9 +65,9 @@
             <div class="tablist">
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#gather" aria-controls="gather" role="tab" data-toggle="tab">集合解散</a></li>
-                    <li role="presentation"><a href="#flight" aria-controls="flight" role="tab" data-toggle="tab">航班往返</a></li>
-                    <li role="presentation"><a href="#accommodationInfo" aria-controls="accommodationInfo" role="tab" data-toggle="tab">住宿资料</a></li>
-                    <li role="presentation"><a href="#leaderTeacher" aria-controls="leaderTeacher" role="tab" data-toggle="tab">领队老师</a></li>
+                    <li role="presentation"><a href="#flight" aria-controls="flight" role="tab" data-toggle="tab">班機往返</a></li>
+                    <li role="presentation"><a href="#accommodationInfo" aria-controls="accommodationInfo" role="tab" data-toggle="tab">住宿資料</a></li>
+                    <li role="presentation"><a href="#leaderTeacher" aria-controls="leaderTeacher" role="tab" data-toggle="tab">領隊老師</a></li>
                     <li role="presentation"><a href="#heavyWeather" aria-controls="heavyWeather" role="tab" data-toggle="tab">恶劣天气安排</a></li>
                 </ul>
                 <div class="tab-content">
@@ -79,13 +79,13 @@
                             </div>    
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">日期及时间</div>
-                                    <div><input class="item_input" placeholder="日期及时间" style="width:97%;" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
+                                    <div class="item_title">日期及時間</div>
+                                    <div><input class="item_input" placeholder="日期及時間" style="width:97%;" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
                                  </div>
                                 <div class="form_item_info" style="width:100%;min-height:120px;">
-                                    <div class="item_title">详细地址</div>
+                                    <div class="item_title">詳細地址</div>
                                     <div>
-                                        <textarea class="item_area" placeholder="详细地址" disabled="disabled" v-model="assemblePlaces.assembly_station"></textarea>
+                                        <textarea class="item_area" placeholder="詳細地址" disabled="disabled" v-model="assemblePlaces.assembly_station"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -96,13 +96,13 @@
                             </div>    
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">日期及时间</div>
-                                    <div><input class="item_input"  placeholder="日期及时间" style="width:97%;" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
+                                    <div class="item_title">日期及時間</div>
+                                    <div><input class="item_input"  placeholder="日期及時間" style="width:97%;" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;min-height:120px;">
                                     <div class="item_title">地址</div>
                                     <div>
-                                        <textarea class="item_area" placeholder="详细地址" disabled="disabled" v-model="assemblePlaces.dissolution_station"></textarea>
+                                        <textarea class="item_area" placeholder="詳細地址" disabled="disabled" v-model="assemblePlaces.dissolution_station"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -112,11 +112,11 @@
                         </div>
                     </div>
 
-                    <!-- 航班往返 -->
+                    <!-- 班機往返 -->
                     <div role="tabpanel" class="tab-pane" id="flight">
                         <div class="pane_content_info" v-for="(flight,index) in flights">
                             <div class="gather_info">
-                                <div class="gather_info_title"><span v-if="flight.is_return">返回</span><span v-else>出发</span><hr></div>
+                                <div class="gather_info_title"><span v-if="flight.is_return">返回</span><span v-else>出發</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
                                 <div class="form_item_info">
@@ -128,33 +128,33 @@
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.date"></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">出发时间</div>
+                                    <div class="item_title">出發時間</div>
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.takeoff_time"></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">到达时间</div>
+                                    <div class="item_title">到達時間</div>
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.arrival_time"></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">出发城市</div>
+                                    <div class="item_title">出發城市</div>
                                     <div>
                                         <div><input class="item_input" type="text" disabled="disabled"  :value="flight.from"></div>
                                     </div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">到达城市</div>
+                                    <div class="item_title">到達城市</div>
                                     <div>
                                         <div><input class="item_input" type="text" disabled="disabled"  :value="flight.to"></div>
                                     </div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">出发站点</div>
+                                    <div class="item_title">出發站點</div>
                                     <div>
                                         <div><input class="item_input" type="text" disabled="disabled"  :value="flight.from_flight"></div>
                                     </div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">到达站点</div>
+                                    <div class="item_title">到達站點</div>
                                     <div>
                                         <div><input class="item_input" type="text" disabled="disabled"  :value="flight.to_flight"></div>
                                     </div>
@@ -171,28 +171,28 @@
 
                     </div>
 
-                    <!-- 住宿资料 -->
+                    <!-- 住宿資料 -->
                     <div role="tabpanel" class="tab-pane" id="accommodationInfo">
                         <div class="pane_content_info" v-for="(hotel,index) in hotels">    
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">酒店名称</div>
+                                    <div class="item_title">酒店名稱</div>
                                     <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="hotel.hotel_name" ></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">入住时间</div>
+                                    <div class="item_title">入住時間</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.check_at" ></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">离开时间</div>
+                                    <div class="item_title">離開時間</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.leave_at" ></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">入住天数</div>
+                                    <div class="item_title">入住天數</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.times" ></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">联系电话</div>
+                                    <div class="item_title">聯繫電話</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_phone" ></div>
                                 </div>
                                 <div class="form_item_info" >
@@ -200,11 +200,11 @@
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_address" ></div>
                                 </div>
                                 <div class="form_item_info" >
-                                    <div class="item_title">酒店经纬度(必填)</div>
+                                    <div class="item_title">酒店經緯度(必填)</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_location" ></div>
                                 </div>
                                 <div class="form_item_info"  style="width:100%;">
-                                    <div class="item_title">酒店图片</div>
+                                    <div class="item_title">酒店圖片</div>
                                     <div><img style="width:97%;" :src="hotel.image"></div>
                                 </div>
                                 <div class="editBtnGroup">
@@ -219,24 +219,24 @@
 
                     </div>
 
-                    <!-- 领队老师 -->
+                    <!-- 領隊老師 -->
                     <div role="tabpanel" class="tab-pane" id="leaderTeacher">
                         <div class="pane_content_info" v-for="(leadTeacher,index) in leadTeachers">
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">老师姓名</div>
+                                    <div class="item_title">老師姓名</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.leader" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">区号</div>
+                                    <div class="item_title">區號</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.area_code" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">老师电话</div>
+                                    <div class="item_title">老師電話</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.phone" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">职责</div>
+                                    <div class="item_title">職責</div>
                                     <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="leadTeacher.duty"></div>
                                 </div>
                                 <div class="editBtnGroup">
@@ -280,23 +280,23 @@
                         <div class="gather_info_title"><span>集合</span><hr></div>
                     </div>   
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">日期及时间</div>
-                        <div><input class="item_input" placeholder="填写日期及时间(yyyy-mm-dd hh:mm)" type="text" v-model="edAssemblePlaces.assembly_at"></div>
+                        <div class="item_title">日期及時間</div>
+                        <div><input class="item_input" placeholder="填寫日期及時間(2020-01-01 hh:mm)" type="text" v-model="edAssemblePlaces.assembly_at"></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">地址</div>
-                        <div><input class="item_input" placeholder="填写地址" type="text" v-model="edAssemblePlaces.assembly_station"></div>
+                        <div><input class="item_input" placeholder="填寫地址" type="text" v-model="edAssemblePlaces.assembly_station"></div>
                     </div>
                     <div class="gather_info">
                         <div class="gather_info_title"><span>解散</span><hr></div>
                     </div>   
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">日期及时间</div>
-                        <div><input class="item_input" placeholder="填写日期及时间(yyyy-mm-dd hh:mm)" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
+                        <div class="item_title">日期及時間</div>
+                        <div><input class="item_input" placeholder="填寫日期及時間(2020-01-01 hh:mm)" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">地址</div>
-                        <div><input class="item_input" placeholder="填写地址" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
+                        <div><input class="item_input" placeholder="填寫地址" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
                     </div>
                     <div class="issure">
                         <button @click="editAssemblePlace()">确定</button>
@@ -309,38 +309,38 @@
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
                         <div class="item_title">航班信息(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写航班信息" v-model="newFlight.flight"></div>
+                        <div><input class="item_input" type="text" placeholder="填寫航班信息" v-model="newFlight.flight"></div>
                     </div> 
                     <div class="form_item_info">
                         <div class="item_title">日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写日期(yyyy-mm-dd)" v-model="newFlight.date"></div>
+                        <div><input class="item_input" type="text" placeholder="填寫日期(2020-01-01)" v-model="newFlight.date"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发时间(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写出发时间(hh:mm)" v-model="newFlight.takeoff_time"></div>
+                        <div class="item_title">出發時間(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="填寫出發時間(hh:mm)" v-model="newFlight.takeoff_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到达时间(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写到达时间(hh:mm)" v-model="newFlight.arrival_time"></div>
+                        <div class="item_title">到達時間(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="填寫到達時間(hh:mm)" v-model="newFlight.arrival_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发城市(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写出发城市" v-model="newFlight.from"></div>
+                        <div class="item_title">出發城市(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="填寫出發城市" v-model="newFlight.from"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">达到城市(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写达到城市" v-model="newFlight.to"></div>
+                        <div><input class="item_input" type="text" placeholder="填寫达到城市" v-model="newFlight.to"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发站点(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写出发站点" v-model="newFlight.from_flight"></div>
+                        <div class="item_title">出發站點(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="填寫出發站點" v-model="newFlight.from_flight"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">达到站点(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写达到站点" v-model="newFlight.to_flight"></div>
+                        <div class="item_title">达到站點(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="填寫达到站點" v-model="newFlight.to_flight"></div>
                     </div>
                     <div style="width:100%;height:50px;">
-                        <span style="width:70px;text-align: center;display: block;float:left;">出发</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="newFlight.is_return">
+                        <span style="width:70px;text-align: center;display: block;float:left;">出發</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="newFlight.is_return">
                         <span style="width:70px;text-align: center;display: block;float:left;">返回</span><input style="float:left" type="radio" value="1" class="bigRadio" v-model="newFlight.is_return">
                     </div>
                     <div class="issure">
@@ -355,38 +355,38 @@
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
                         <div class="item_title">航班信息(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写航班信息" v-model="edFlight.flight"></div>
+                        <div><input class="item_input" type="text" placeholder="填寫航班信息" v-model="edFlight.flight"></div>
                     </div> 
                     <div class="form_item_info">
                         <div class="item_title">日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写日期(yyyy-mm-dd)" v-model="edFlight.date"></div>
+                        <div><input class="item_input" type="text" placeholder="填寫日期(2020-01-01)" v-model="edFlight.date"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发时间(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写出发时间(hh:mm)" v-model="edFlight.takeoff_time"></div>
+                        <div class="item_title">出發時間(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="填寫出發時間(hh:mm)" v-model="edFlight.takeoff_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到达时间(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写到达时间(hh:mm)" v-model="edFlight.arrival_time"></div>
+                        <div class="item_title">到達時間(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="填寫到達時間(hh:mm)" v-model="edFlight.arrival_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发城市(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写出发城市" v-model="edFlight.from"></div>
+                        <div class="item_title">出發城市(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="填寫出發城市" v-model="edFlight.from"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到达城市(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写到达城市" v-model="edFlight.to"></div>
+                        <div class="item_title">到達城市(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="填寫到達城市" v-model="edFlight.to"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出发站点(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写出发站点" v-model="edFlight.from_flight"></div>
+                        <div class="item_title">出發站點(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="填寫出發站點" v-model="edFlight.from_flight"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到达站点(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填写到达站点" v-model="edFlight.to_flight"></div>
+                        <div class="item_title">到達站點(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="填寫到達站點" v-model="edFlight.to_flight"></div>
                     </div>
                     <div style="width:100%;height:50px;">
-                        <span style="width:70px;text-align: center;display: block;float:left;">出发</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="edFlight.is_return">
+                        <span style="width:70px;text-align: center;display: block;float:left;">出發</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="edFlight.is_return">
                         <span style="width:70px;text-align: center;display: block;float:left;">返回</span><input style="float:left" type="radio" value="1" class="bigRadio" v-model="edFlight.is_return">
                     </div>
                     <div class="issure">
@@ -400,36 +400,36 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">酒店名称(必填)</div>
-                        <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店名称" v-model="newHotel.hotel_name" ></div>
+                        <div class="item_title">酒店名稱(必填)</div>
+                        <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店名稱" v-model="newHotel.hotel_name" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">入住日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="入住日期(yyyy-mm-dd)" v-model="newHotel.check_at" ></div>
+                        <div><input class="item_input" type="text" placeholder="入住日期(2020-01-01)" v-model="newHotel.check_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">离开日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="离开日期(yyyy-mm-dd)" v-model="newHotel.leave_at" ></div>
+                        <div class="item_title">離開日期(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="離開日期(2020-01-01)" v-model="newHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">入住天数(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="入住天数" v-model="newHotel.times" ></div>
+                        <div class="item_title">入住天數(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="入住天數" v-model="newHotel.times" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">联系电话(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="联系电话" v-model="newHotel.hotel_phone" ></div>
+                        <div class="item_title">聯繫電話(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="聯繫電話" v-model="newHotel.hotel_phone" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">酒店地址(必填)</div>
                         <div><input class="item_input"  type="text" placeholder="酒店地址" v-model="newHotel.hotel_address" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">酒店经纬度(必填)</div>
-                        <div><input class="item_input"  type="text" placeholder="酒店经纬度" v-model="newHotel.hotel_location" ></div>
+                        <div class="item_title">酒店經緯度(必填)</div>
+                        <div><input class="item_input"  type="text" placeholder="酒店經緯度" v-model="newHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div style="width:93%;">
-                            酒店图片
+                            酒店圖片
                             <div class="imgIcon">
                                 <van-uploader style="width:50px;height:40px;float:right;" :after-read="onRead" accept="image/*">
                                     <img src="/etravel/public/images/sm-insert.png">
@@ -454,36 +454,36 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">酒店名称(必填)</div>
-                        <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店名称" v-model="edHotel.hotel_name" ></div>
+                        <div class="item_title">酒店名稱(必填)</div>
+                        <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店名稱" v-model="edHotel.hotel_name" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">入住日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="入住日期(yyyy-mm-dd)" v-model="edHotel.check_at" ></div>
+                        <div><input class="item_input" type="text" placeholder="入住日期(2020-01-01)" v-model="edHotel.check_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">离开日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="离开日期(yyyy-mm-dd)" v-model="edHotel.leave_at" ></div>
+                        <div class="item_title">離開日期(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="離開日期(2020-01-01)" v-model="edHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">入住天数(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="入住天数" v-model="edHotel.times" ></div>
+                        <div class="item_title">入住天數(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="入住天數" v-model="edHotel.times" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">联系电话(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="联系电话" v-model="edHotel.hotel_phone" ></div>
+                        <div class="item_title">聯繫電話(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="聯繫電話" v-model="edHotel.hotel_phone" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">酒店地址(必填)</div>
                         <div><input class="item_input" type="text" placeholder="酒店地址" v-model="edHotel.hotel_address" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">酒店经纬度(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="酒店经纬度(经度,纬度)" v-model="edHotel.hotel_location" ></div>
+                        <div class="item_title">酒店經緯度(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="酒店經緯度(经度,纬度)" v-model="edHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div style="width:93%;">
-                            酒店图片
+                            酒店圖片
                             <div class="imgIcon">
                                 <van-uploader style="width:50px;height:40px;float:right;" :after-read="onRead" accept="image/*">
                                     <img src="/etravel/public/images/sm-insert.png">
@@ -508,11 +508,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老师姓名</div>
-                        <div><input class="item_input" type="text" placeholder="老师姓名" v-model="newLeadTeacher.leader" ></div>
+                        <div class="item_title">老師姓名</div>
+                        <div><input class="item_input" type="text" placeholder="老師姓名" v-model="newLeadTeacher.leader" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">区号</div>
+                        <div class="item_title">區號</div>
                         <div>
                             <div class="simulateShade">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newLeadTeacher.area_code' v-model='newLeadTeacher.area_code'></AreaCodeSelector>
@@ -520,12 +520,12 @@
                         </div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老师电话</div>
-                        <div><input class="item_input" type="text" placeholder="老师电话" v-model="newLeadTeacher.phone" ></div>
+                        <div class="item_title">老師電話</div>
+                        <div><input class="item_input" type="text" placeholder="老師電話" v-model="newLeadTeacher.phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">职责</div>
-                        <div><input class="item_input" type="text" placeholder="职责" v-model="newLeadTeacher.duty"></div>
+                        <div class="item_title">職責</div>
+                        <div><input class="item_input" type="text" placeholder="職責" v-model="newLeadTeacher.duty"></div>
                     </div>
                     <div class="issure">
                         <button @click="addNewLeadTeacher()">添加</button>
@@ -537,11 +537,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老师姓名</div>
-                        <div><input class="item_input" type="text" placeholder="老师姓名" v-model="edLeadTeacher.leader" ></div>
+                        <div class="item_title">老師姓名</div>
+                        <div><input class="item_input" type="text" placeholder="老師姓名" v-model="edLeadTeacher.leader" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">区号</div>
+                        <div class="item_title">區號</div>
                         <div>
                             <div class="simulateShade">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='edLeadTeacher.area_code' v-model='edLeadTeacher.area_code'></AreaCodeSelector>
@@ -549,12 +549,12 @@
                         </div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老师电话</div>
-                        <div><input class="item_input" type="text" placeholder="老师电话" v-model="edLeadTeacher.phone" ></div>
+                        <div class="item_title">老師電話</div>
+                        <div><input class="item_input" type="text" placeholder="老師電話" v-model="edLeadTeacher.phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">职责</div>
-                        <div><input class="item_input" type="text" placeholder="职责" v-model="edLeadTeacher.duty"></div>
+                        <div class="item_title">職責</div>
+                        <div><input class="item_input" type="text" placeholder="職責" v-model="edLeadTeacher.duty"></div>
                     </div>
                     <div class="issure">
                         <button @click="editLeadTeacher()">修改</button>
@@ -704,7 +704,7 @@
                     this.edAssemblePlaces.dissolution_station=this.assemblePlaces.dissolution_station;
 
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -735,10 +735,15 @@
                         this.assemblePlaces.dissolution_station=this.edAssemblePlaces.dissolution_station;
                         this.isAssemblePlacePopupShow=false;
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
@@ -754,7 +759,7 @@
                     this.flights=res.data.data;
                     
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
 
@@ -784,7 +789,12 @@
                     this.newFlight.from_flight='';
                     this.newFlight.to_flight='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('添加失敗');
                     console.log(err)
                 });
             },
@@ -836,10 +846,15 @@
                         this.$toast('修改成功');
                         this.isEditFlightShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
@@ -861,10 +876,10 @@
                             this.getFlights();
                             this.$toast('删除成功');
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast('删除失敗');
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast('删除失敗');
                         console.log(err)
                     });
                 }).catch(err => {
@@ -883,7 +898,7 @@
                     this.hotels=res.data.data;
                     
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
 
@@ -913,7 +928,12 @@
                     this.newHotel.hotel_location='';
                     this.newHotel.image='http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('添加失敗');
                     console.log(err)
                 });
             },
@@ -962,10 +982,15 @@
                         this.$toast('修改成功');
                         this.isEditHotelShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
@@ -987,10 +1012,10 @@
                             this.getHotels();
                             this.$toast('删除成功');
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast('删除失敗');
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast('删除失敗');
                         console.log(err)
                     });
                 }).catch(err => {
@@ -998,7 +1023,7 @@
                 });
             },
             getLeadTeachers(){
-                // 获取领队老师信息
+                // 获取領隊老師信息
                 // this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/travels',
                 this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/leaders',
                 {
@@ -1009,7 +1034,7 @@
                     // console.log(res.data);
                     this.leadTeachers=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
 
@@ -1019,7 +1044,7 @@
                 this.isNew=true;
             },
             addNewLeadTeacher(){
-                // 新增领队
+                // 新增領隊
                 this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/leaders',this.newLeadTeacher,
                 {
                     headers: {
@@ -1035,7 +1060,12 @@
                     this.newLeadTeacher.area_code='';
                     this.newLeadTeacher.phone='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('添加失敗');
                     console.log(err)
                 });
             },
@@ -1050,7 +1080,7 @@
                 this.isNew=false;
             },
             editLeadTeacher(){
-                // 修改领队信息
+                // 修改領隊信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -1072,18 +1102,23 @@
                         this.$toast('修改成功');
                         this.isEditLeadTeacherShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
             delLeadTeacher(leadTeacherId){
-                // 删除领队
+                // 删除領隊
                 this.$dialog.confirm({
-                    title: '删除领队',
-                    message: '是否删除该领队'
+                    title: '删除領隊',
+                    message: '是否删除该領隊'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -1097,10 +1132,10 @@
                             this.getLeadTeachers();
                             this.$toast('删除成功');
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast('删除失敗');
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast('删除失敗');
                         console.log(err)
                     });
                 }).catch(err => {
@@ -1119,7 +1154,7 @@
                     this.badWeathers=res.data;
                     this.edBadWeather.urgency=res.data.urgency;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
 
@@ -1145,10 +1180,15 @@
                         this.badWeathers.urgency=this.edBadWeather.urgency;
                         this.isEditBadWeatherShow=false;
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast('修改失敗');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
@@ -1177,24 +1217,29 @@
                 }).then(res => {
                     console.log(res);
                     if(res.status==201){
-                        this.$toast('上传成功');
+                        this.$toast('上傳成功');
                         if(this.isNewImg){
                             this.newHotel.image=res.data.data.path;
                         }else{
                             this.edHotel.image=res.data.data.path;
                         }
                     }else{
-                        this.$toast('上传失败');
+                        this.$toast('上傳失敗');
                     }
                 }).catch(err => {
-                    this.$toast('上传失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('上傳失敗');
                     console.log(err)
                 });
             },
             resetImg(){
                 this.$dialog.confirm({
-                    title: '重置图片',
-                    message: '是否重置該图片'
+                    title: '重置圖片',
+                    message: '是否重置該圖片'
                 }).then(() => {
                     if(this.isNewImg){
                         this.newHotel.image="http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png";

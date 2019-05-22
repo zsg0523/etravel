@@ -6,7 +6,7 @@
 <template>
 		<div style="height:40px;width: 100%;border-radius: 8px;">
 	    	<select class="sel" v-model="idd_code" @change="changed();">
-	            <option value="">请选择区号</option>
+	            <option value="">請選擇區號</option>
 	            <option v-for="item in optList" :value="item.acnumber">{{ item.acname_cn }}({{item.acnumber}})</option>
 	        </select>
 	    </div>
@@ -21,18 +21,18 @@
             	idd_code:'',
 	    		optList:[{
                     acnumber:'86',
-                    acname_cn:'中国大陆'
+                    acname_cn:'中國大陸'
                 },{
                     acnumber:'852',
-                    acname_cn:'中国香港'
+                    acname_cn:'中國香港'
                 },
                 {
                     acnumber:'886',
-                    acname_cn:'中国台湾'
+                    acname_cn:'中國臺灣'
                 },
                 {
                     acnumber:'853',
-                    acname_cn:'中国澳门'
+                    acname_cn:'中國澳門'
                 },
                 {
                     acnumber:'1473',

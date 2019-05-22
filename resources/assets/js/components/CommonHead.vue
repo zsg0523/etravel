@@ -69,7 +69,7 @@
 		        	this.setUserInfo(res.data);
 		        }).catch(err => {
 		          	console.log(err);
-		          	this.$toast('登录失效');
+		          	this.$toast('登入失效');
 		          	sessionStorage.clear();
 					this.setUserInfo('');
 					this.setTravels('');
@@ -79,8 +79,8 @@
 	  		},
 			logout(){
 				this.$dialog.confirm({
-                    title: '退出登录',
-                    message: '是否退出登录'
+                    title: '登出',
+                    message: '是否登出'
                 }).then(() => {
 					sessionStorage.clear();
 					this.setUserInfo('');

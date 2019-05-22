@@ -49,7 +49,7 @@
                     <div role="tabpanel" class="tab-pane pane-answer active" id="gather">
                         <div class="sheetGroup" v-for="(sheetInfo,index) in sheetInfos">
                             <div class="sheetTitle" v-text="sheetInfo.title"></div>
-                            <div class="sheetContent" v-html="sheetInfo.body"></div>
+                            <!-- <div class="sheetContent" v-html="sheetInfo.body"></div> -->
                             <template v-if="sheetInfo.questions.data">
                                 <div class="sheetQuestion" v-for="(question,index) in sheetInfo.questions.data">
                                     <div class="questTitle">
@@ -62,7 +62,7 @@
                                     </template>
                                     <template v-else>
                                         <div class="questContent" style="color: red;">
-                                            暂无回答
+                                            暫無回答
                                         </div>  
                                     </template>
                                     
@@ -70,7 +70,7 @@
                             </template>
                             <template v-else>
                                 <div class="sheetQuestion">
-                                    未设置问题
+                                    未設定問題
                                 </div>
                             </template>
                             
@@ -132,7 +132,7 @@
                             </template>
                             <template v-else>
                                 <div class="evaluationQuestions">
-                                    <h4>暂无题目</h4>
+                                    <h4>暫無題目</h4>
                                 </div>
                             </template>
                         </div>
@@ -149,21 +149,21 @@
                                     <img :src="perception.writes.data[0].image">
                                 </div>
                                 <div class="feelImg" v-else>
-                                    <h4>未上传图片</h4>
+                                    <h4>未上傳圖片</h4>
                                 </div> 
                                 <div class="feelContent" v-if="perception.writes.data[0].content">
                                     {{perception.writes.data[0].content}}
                                 </div>
                                 <div class="feelContent" v-else style="color: red;">
-                                    暂无回答
+                                    暫無回答
                                 </div>  
                             </template>
                             <template v-else>
                                 <div class="feelImg">
-                                    <h4>未上传图片</h4>
+                                    <h4>未上傳圖片</h4>
                                 </div> 
                                 <div class="feelContent" style="color: red;">
-                                    暂无回答
+                                    暫無回答
                                 </div>  
                             </template>
                         </div>
@@ -210,7 +210,12 @@
                     // console.log(res.data);
                     this.sheetInfos=res.data.data;
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -226,7 +231,12 @@
                     this.evaluations=res.data.data;
                     
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
 
@@ -243,7 +253,12 @@
                     this.perceptions=res.data.data;
                     
                 }).catch(err => {
-                    this.$toast('获取失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
+                    this.$toast('獲取失敗');
                     console.log(err);
                 });
 

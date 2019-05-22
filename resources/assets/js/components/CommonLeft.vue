@@ -22,7 +22,7 @@
             <router-link tag='li' to='/promise'><div >我的承諾<!-- <input type="checkbox" class="checke"> --></div></router-link>
             <!-- <router-link tag='li' to='/dataBankGroup'><div >師生名單分組<input type="checkbox" class="checke"></div></router-link> -->
             <router-link tag='li' to='/dataBankLocalCulture'><div >當地文化<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/dataBankHouseTable'><div >分組分房錶<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/dataBankHouseTable'><div >分組分房表<!-- <input type="checkbox" class="checke"> --></div></router-link>
             <router-link tag='li' to='/luggage'><div >行李清單<!-- <input type="checkbox" class="checke"> --></div></router-link>
             <router-link tag='li' to='/journey'><div >行程<!-- <input type="checkbox" class="checke"> --></div></router-link>
             <router-link tag='li' to='/study'><div >學習工作紙<!-- <input type="checkbox" class="checke"> --></div></router-link>
