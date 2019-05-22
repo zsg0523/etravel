@@ -23006,6 +23006,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -23108,7 +23109,9 @@ var render = function() {
       _c("div", { staticClass: "info disflex" }, [
         _c("div", [_vm._v(_vm._s(_vm.userInfo.name))]),
         _vm._v(" "),
-        _c("div", [_vm._v("金幣：" + _vm._s(_vm.userInfo.tokens))])
+        _c("div", [_vm._v("金幣：" + _vm._s(_vm.userInfo.tokens))]),
+        _vm._v(" "),
+        _c("div", [_vm._v("ID：" + _vm._s(_vm.userInfo.id))])
       ]),
       _vm._v(" "),
       _c(
@@ -40687,7 +40690,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "酒店經緯度" },
+                    attrs: {
+                      type: "text",
+                      placeholder: "酒店經緯度(经度,纬度)"
+                    },
                     domProps: { value: _vm.newHotel.hotel_location },
                     on: {
                       input: function($event) {
