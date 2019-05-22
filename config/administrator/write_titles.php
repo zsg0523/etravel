@@ -4,15 +4,15 @@
  * @Author: Eden
  * @Date:   2019-01-21 17:57:48
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-21 18:00:22
+ * @Last Modified time: 2019-05-22 11:12:28
  */
 use App\Models\WriteTitle;
 
 return [
 
-	'title' => '感想分类',
+	'title' => '感想分類',
 
-	'single' => '分类',
+	'single' => '分類',
 
 	'model' => WriteTitle::class,
 
@@ -21,7 +21,7 @@ return [
 			'title' => 'ID',
 		],
 		'title' => [
-			'title' => '标题',
+			'title' => '標題',
 			'sortable' => false,
 		],
 		'operation' => [
@@ -32,7 +32,7 @@ return [
 
 	'edit_fields' => [
 		'title' => [
-			'title' => '标题'
+			'title' => '標題'
 		],
 	],
 

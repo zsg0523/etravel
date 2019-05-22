@@ -4,15 +4,15 @@
  * @Author: Eden
  * @Date:   2019-01-24 17:25:36
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-24 17:35:31
+ * @Last Modified time: 2019-05-22 10:28:14
  */
 use App\Models\EvaluationCategory;
 
 return [
 
-	'title' => '评估分类',
+	'title' => '評估分類',
 
-	'single' => '评估分类',
+	'single' => '評估分類',
 
 	'model' => EvaluationCategory::class,
 
@@ -21,14 +21,14 @@ return [
 			'title' => 'ID',
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->travel->travel_name;
 			},
 		],
 		'title' => [
-			'title' => '标识',
+			'title' => '標識',
 			'sortable' => true,
 		],
 		'operation' => [
@@ -39,7 +39,7 @@ return [
 
 	'edit_fields' => [
 		'travel' => [
-			'title'        => '旅游',
+			'title'        => '旅遊',
 			'type'         => 'relationship',
 			'name_field'   => 'travel_name',
 			// 自动补全
@@ -50,7 +50,7 @@ return [
 			'options_sort_field' => 'id',
 		],
 		'title' => [
-			'title' => '标识'
+			'title' => '標識'
 		],
 	],
 
@@ -59,7 +59,7 @@ return [
 			'title' => 'ID'
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'type' => 'relationship',
 			'name_field' => 'travel_name',
 			'autocomplete' => true,
@@ -74,7 +74,7 @@ return [
 	],
 
 	'messages' => [
-        'travel_id.required' => '请选择旅游项目',
+        'travel_id.required' => '請選擇旅遊項目',
     ],
 
 

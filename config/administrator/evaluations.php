@@ -4,15 +4,15 @@
  * @Author: Eden
  * @Date:   2019-01-24 17:42:04
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-24 17:59:47
+ * @Last Modified time: 2019-05-22 10:31:38
  */
 use App\Models\Evaluation;
 
 return [
 
-	'title' => '评估选项',
+	'title' => '評估選項',
 
-	'single' => '评估选项',
+	'single' => '評估選項',
 
 	'model' => Evaluation::class,
 
@@ -21,18 +21,18 @@ return [
 			'title' => 'ID',
 		],
 		'evaluation_category' => [
-			'title' => '旅游日程',
+			'title' => '旅遊日程',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->evaluation_category->tag;
 			},
 		],
 		'content' => [
-			'title' => '内容',
+			'title' => '內容',
 			'sortable' => false,
 		],
 		'type' => [
-			'title' => '类型',
+			'title' => '類型',
 			'sortable' => false,
 		],
 		'operation' => [
@@ -43,7 +43,7 @@ return [
 
 	'edit_fields' => [
 		'evaluation_category' => [
-			'title'        => '旅游日程',
+			'title'        => '旅遊日程',
 			'type'         => 'relationship',
 			'name_field'   => 'tag',
 			// 自动补全
@@ -54,11 +54,11 @@ return [
 			'options_sort_field' => 'id',
 		],
 		'content' => [
-			'title' => '地点',
+			'title' => '地點',
 		],
 		'type' => [
-			'title' => '类型',
-			'hint' => '1-单选/2-Yes or No/3-任意选项'
+			'title' => '類型',
+			'hint' => '1-單選/2-Yes or No/3-任意選項'
 		]
 	],
 
@@ -67,7 +67,7 @@ return [
 			'title' => 'ID'
 		],
 		'evaluation_category' => [
-			'title' => '旅游日程',
+			'title' => '旅遊日程',
 			'type' => 'relationship',
 			'name_field' => 'tag',
 			'autocomplete' => true,
@@ -83,7 +83,7 @@ return [
 	],
 
 	'messages' => [
-        'evaluation_category_id.required' => '请选择评估分类',
+        'evaluation_category_id.required' => '請選擇評估分類',
     ],
 
 

@@ -4,15 +4,15 @@
  * @Author: Eden
  * @Date:   2019-01-10 11:17:25
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-12 16:30:38
+ * @Last Modified time: 2019-05-22 10:20:01
  */
 use App\Models\Assembly;
 
 return [
 
-	'title' => '领队老师',
+	'title' => '領隊老師',
 
-	'single' => '领队老师',
+	'single' => '領隊老師',
 
 	'model' => Assembly::class,
 
@@ -23,7 +23,7 @@ return [
 		],
 
 		'travel' => [
-			'title' => '旅游项目',
+			'title' => '旅遊項目',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->travel->travel_name;
@@ -31,17 +31,17 @@ return [
 		],
 
 		'leader' => [
-			'title' => '领队',
+			'title' => '領隊',
 			'sortable' => false,
 		],
 
 		'phone' => [
-			'title' => '联系电话',
+			'title' => '聯繫電話',
 			'sortable' => false,
 		],
 
 		'duty' => [
-			'title' => '职责',
+			'title' => '職責',
 			'sortable' => false,
 		],
 
@@ -54,7 +54,7 @@ return [
 	'edit_fields' => [
 
 		'travel' => [
-			'title'        => '旅游',
+			'title'        => '旅遊',
 			'type'         => 'relationship',
 			'name_field'   => 'travel_name',
 			// 自动补全
@@ -66,15 +66,15 @@ return [
 		],
 
 		'leader' => [
-			'title' => '领队',
+			'title' => '領隊',
 		],
 
 		'phone' => [
-			'title' => '联系电话',
+			'title' => '聯繫電話',
 		],
 
 		'duty' => [
-			'title' => '职责',
+			'title' => '職責',
 		],
 	],
 
@@ -83,7 +83,7 @@ return [
 			'title' => 'ID'
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'type' => 'relationship',
 			'name_field' => 'travel_name',
 			'autocomplete' => true,
@@ -100,7 +100,7 @@ return [
 	],
 
 	'messages' => [
-        'travel_id.required' => '请选择旅游项目',
+        'travel_id.required' => '請選擇旅遊項目',
     ],
 
 

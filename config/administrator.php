@@ -59,13 +59,13 @@ return array(
      *	)
      */
     'menu' => [
-        '学校' => 'schools',
-        '用户与权限' => [
+        '學校' => 'schools',
+        '用戶與權限' => [
             'users',
             'roles',
             'permissions',
         ],
-        '旅游项目' => [
+        '旅遊項目' => [
             'travels',
             'relevant',
             'telephones'
@@ -77,7 +77,7 @@ return array(
             'hotels',
             'assemblies'
         ],
-        '团员守则' => [
+        '團員守則' => [
             'categories',
             'rules'
         ],
@@ -86,7 +86,7 @@ return array(
             // 'foods',
             // 'sceneries'
         ],
-        '学习纸' => [
+        '學習紙' => [
             'studies',
             'questions',
             'answers'
@@ -95,13 +95,13 @@ return array(
             'write_titles',
             'writes'
         ],
-        '自我评估' => [
+        '自我評估' => [
             'evaluateCategories',
             'evaluations'
         ],
-        '区号管理' => 'areacodes',
-        '紧急联人管理' => 'emergencies',
-        '公司紧急联系人管理' => 'companies'
+        '區號管理' => 'areacodes',
+        '緊急聯繫人管理' => 'emergencies',
+        '公司緊急聯繫人管理' => 'companies'
     ],
 
     /*
@@ -111,7 +111,7 @@ return array(
      * @type closure
      */
     'permission' => function () {
-        // 只要是能管理内容的用户，就允许访问后台
+        // 只要是能管理内容的用戶，就允许访问后台
         return Auth::check() && Auth::user()->can('manage_contents');
     },
 

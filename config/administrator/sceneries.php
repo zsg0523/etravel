@@ -4,15 +4,15 @@
  * @Author: Eden
  * @Date:   2019-01-17 17:35:50
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-17 17:42:24
+ * @Last Modified time: 2019-05-22 11:05:34
  */
 use App\Models\Scenery;
 
 return [
 
-	'title' => '景点安排',
+	'title' => '景點安排',
 
-	'single' => '景点资料',
+	'single' => '景點資料',
 
 	'model' => Scenery::class,
 
@@ -21,22 +21,22 @@ return [
 			'title' => 'ID',
 		],
 		'route' => [
-			'title' => '旅游日程',
+			'title' => '旅遊日程',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->route->tag;
 			},
 		],
 		'content' => [
-			'title' => '景点',
+			'title' => '景點',
 			'sortable' => false,
 		],
 		'time' => [
-			'title' => '时间',
+			'title' => '時間',
 			'sortable' => false,
 		],
 		'description' => [
-			'title' => '简介',
+			'title' => '簡介',
 			'sortable' => false,
 		],
 		'operation' => [
@@ -47,7 +47,7 @@ return [
 
 	'edit_fields' => [
 		'route' => [
-			'title'        => '旅游日程',
+			'title'        => '旅遊日程',
 			'type'         => 'relationship',
 			'name_field'   => 'tag',
 			// 自动补全
@@ -58,15 +58,15 @@ return [
 			'options_sort_field' => 'id',
 		],
 		'content' => [
-			'title' => '景点'
+			'title' => '景點'
 		],
 		'time' => [
-			'title' => '时间',
+			'title' => '時間',
 			'type' => 'time',
 			'time_format' => 'HH:mm',
 		],
 		'description' => [
-			'title' => '简介',
+			'title' => '簡介',
 			'type' => 'textarea',
 		],
 	],
@@ -76,7 +76,7 @@ return [
 			'title' => 'ID'
 		],
 		'route' => [
-			'title' => '旅游日程',
+			'title' => '旅遊日程',
 			'type' => 'relationship',
 			'name_field' => 'tag',
 			'autocomplete' => true,
@@ -84,10 +84,10 @@ return [
 			'options_sort_field' => 'id'
 		],
 		'content' => [
-			'title' => '景点'
+			'title' => '景點'
 		],
 		'time' => [
-			'title' => '时间',
+			'title' => '時間',
 			'type' => 'time',
 			'time_format' => 'HH:mm',
 		],
@@ -101,7 +101,7 @@ return [
 	],
 
 	'messages' => [
-        'route_id.required' => '请选择旅游日程',
+        'route_id.required' => '請選擇旅遊日程',
     ],
 
 

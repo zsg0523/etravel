@@ -3,9 +3,9 @@ use App\Models\Emergency;
 
 return [
 
-	'title' => '紧急联系人管理',
+	'title' => '緊急聯繫人管理',
 
-	'single' => '紧急联系人管理',
+	'single' => '緊急聯繫人管理',
 
 	'model' => Emergency::class,
 
@@ -14,30 +14,30 @@ return [
 			'title' => 'ID',
 		],
 		'user' => [
-			'title' => '所属',
+			'title' => '所屬',
 			'sortable' => false,
 			'output' => function ($value, $model) {
-				return !empty($model->user->name) ? "用户：".$model->user->name : "旅游团：".$model->travel->travel_name;
+				return !empty($model->user->name) ? "用戶：".$model->user->name : "旅遊團：".$model->travel->travel_name;
 			},
 
 		],
 		'code_one' => [
-			'title' => '区号A',
+			'title' => '區號A',
 		],
 		'emergency_phone_one' => [
-			'title' => '电话A',
+			'title' => '電話A',
 		],
 		'emergency_email_one' => [
-			'title' => '邮箱A',
+			'title' => '郵箱A',
 		],
 		'code_two' => [
-			'title' => '区号B',
+			'title' => '區號B',
 		],
 		'emergency_phone_two' => [
-			'title' => '电话B',
+			'title' => '電話B',
 		],
 		'emergency_email_two' => [
-			'title' => '邮箱B',
+			'title' => '郵箱B',
 		],
 		'operation' => [
 			'title' => '管理',
@@ -56,22 +56,22 @@ return [
 			'name_field' => 'travel_name',
 		],
 		'code_one' => [
-			'title' => '区号A',
+			'title' => '區號A',
 		],
 		'emergency_phone_one' => [
-			'title' => '电话A',
+			'title' => '電話A',
 		],
 		'emergency_email_one' => [
-			'title' => '邮箱A',
+			'title' => '郵箱A',
 		],
 		'code_two' => [
-			'title' => '区号B',
+			'title' => '區號B',
 		],
 		'emergency_phone_two' => [
-			'title' => '电话B',
+			'title' => '電話B',
 		],
 		'emergency_email_two' => [
-			'title' => '邮箱B',
+			'title' => '郵箱B',
 		],
 	],
 

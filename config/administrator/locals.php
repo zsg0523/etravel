@@ -4,15 +4,15 @@
  * @Author: Eden
  * @Date:   2019-01-22 15:22:52
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-23 10:47:29
+ * @Last Modified time: 2019-05-22 10:49:56
  */
 use App\Models\Local;
 
 return [
 
-	'title' => '当地文化',
+	'title' => '當地文化',
 
-	'single' => '当地文化',
+	'single' => '當地文化',
 
 	'model' => Local::class,
 
@@ -23,18 +23,18 @@ return [
 		],
 
 		'travel' => [
-			'title' => '旅游项目',
+			'title' => '旅遊項目',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->travel->travel_name;
 			}
 		],
 		'title' => [
-			'title' => '标题',
+			'title' => '標題',
 			'sortable' => false,
 		],
 		'content' => [
-			'title' => '简介',
+			'title' => '簡介',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return '<div style="max-width:500px; min-width:300px;">' . html_entity_decode($value) . '</div>';
@@ -49,7 +49,7 @@ return [
 	'edit_fields' => [
 
 		'travel' => [
-			'title'        => '旅游',
+			'title'        => '旅遊',
 			'type'         => 'relationship',
 			'name_field'   => 'travel_name',
 			// 自动补全
@@ -61,11 +61,11 @@ return [
 		],
 
 		'title' => [
-			'title' => '标题',
+			'title' => '標題',
 		],
 
 		'content' => [
-			'title' => '简介',
+			'title' => '簡介',
 			'type'  => 'wysiwyg'
 		],
 	],
@@ -75,7 +75,7 @@ return [
 			'title' => 'ID'
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'type' => 'relationship',
 			'name_field' => 'travel_name',
 			'autocomplete' => true,
@@ -91,7 +91,7 @@ return [
 	],
 
 	'messages' => [
-        'travel_id.required' => '请选择旅游项目',
+        'travel_id.required' => '請選擇旅遊項目',
     ],
 
 

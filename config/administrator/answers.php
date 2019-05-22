@@ -4,13 +4,13 @@
  * @Author: Eden
  * @Date:   2019-01-18 12:32:10
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-18 12:56:43
+ * @Last Modified time: 2019-05-22 10:13:51
  */
 use App\Models\Answer;
 
 return [
 
-	'title' => '学习纸答案',
+	'title' => '學習紙答案',
 
 	'single' => '答案',
 
@@ -21,28 +21,28 @@ return [
 			'title' => 'ID',
 		],
 		'user' => [
-			'title' => '用户',
+			'title' => '用戶',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->user->name;
 			},
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->question->travel;
 			},
 		],
 		'day' => [
-			'title' => '工作纸编号',
+			'title' => '工作紙編號',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->question->day;
 			},
 		],
 		'question' => [
-			'title' => '问题',
+			'title' => '問題',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->question->content;
@@ -60,7 +60,7 @@ return [
 
 	'edit_fields' => [
 		'question' => [
-			'title'        => '问题',
+			'title'        => '問題',
 			'type'         => 'relationship',
 			'name_field'   => 'content',
 			// 自动补全
@@ -80,7 +80,7 @@ return [
 			'title' => 'ID'
 		],
 		'question' => [
-			'title' => '问题',
+			'title' => '問題',
 			'type' => 'relationship',
 			'name_field' => 'content',
 			'autocomplete' => true,
@@ -95,7 +95,7 @@ return [
 	],
 
 	'messages' => [
-        'question_id.required' => '请选择问题',
+        'question_id.required' => '請選擇問題',
     ],
 
 

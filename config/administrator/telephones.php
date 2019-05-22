@@ -4,15 +4,15 @@
  * @Author: Eden
  * @Date:   2019-01-12 16:19:28
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-12 16:32:20
+ * @Last Modified time: 2019-05-22 11:08:01
  */
 use App\Models\Telephone;
 
 return [
 
-	'title' => '常用电话',
+	'title' => '常用電話',
 
-	'single' => '联系方式',
+	'single' => '聯繫方式',
 
 	'model' => Telephone::class,
 
@@ -23,7 +23,7 @@ return [
 		],
 
 		'travel' => [
-			'title' => '旅游项目',
+			'title' => '旅遊項目',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->travel->travel_name;
@@ -36,12 +36,12 @@ return [
 		],
 
 		'phone' => [
-			'title' => '电话',
+			'title' => '電話',
 			'sortable' => false,
 		],
 
 		'area_code' => [
-			'title' => '区号',
+			'title' => '區號',
 			'sortable' => false,
 		],
 
@@ -54,7 +54,7 @@ return [
 	'edit_fields' => [
 
 		'travel' => [
-			'title'        => '旅游',
+			'title'        => '旅遊',
 			'type'         => 'relationship',
 			'name_field'   => 'travel_name',
 			// 自动补全
@@ -70,11 +70,11 @@ return [
 		],
 
 		'phone' => [
-			'title' => '电话',
+			'title' => '電話',
 		],
 
 		'area_code' => [
-			'title' => '区号',
+			'title' => '區號',
 		],
 	],
 
@@ -83,7 +83,7 @@ return [
 			'title' => 'ID'
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'type' => 'relationship',
 			'name_field' => 'travel_name',
 			'autocomplete' => true,
@@ -100,8 +100,8 @@ return [
 	],
 
 	'messages' => [
-        'travel_id.required' => '请选择旅游项目',
-        'area_code.required' => '请填写区号'
+        'travel_id.required' => '請選擇旅遊項目',
+        'area_code.required' => '請填寫區號'
     ],
 
 
