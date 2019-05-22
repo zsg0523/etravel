@@ -119,7 +119,7 @@
             </div>
             <div class="travelInfoItem">
                 <div>旅遊簡介</div>
-                <div><input class="item_input_school" placeholder="旅遊簡介" v-model="travelInfo.introduction" type="text"></div>
+                <div><input class="item_input_school" placeholder="旅遊簡介" v-model="travelInfo.travel_introduction" type="text"></div>
             </div> 
             <div class="travelInfoItem">
                 <div>學校名稱</div>

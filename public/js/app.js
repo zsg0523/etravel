@@ -28673,19 +28673,23 @@ var render = function() {
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.travelInfo.introduction,
-                expression: "travelInfo.introduction"
+                value: _vm.travelInfo.travel_introduction,
+                expression: "travelInfo.travel_introduction"
               }
             ],
             staticClass: "item_input_school",
             attrs: { placeholder: "旅遊簡介", type: "text" },
-            domProps: { value: _vm.travelInfo.introduction },
+            domProps: { value: _vm.travelInfo.travel_introduction },
             on: {
               input: function($event) {
                 if ($event.target.composing) {
                   return
                 }
-                _vm.$set(_vm.travelInfo, "introduction", $event.target.value)
+                _vm.$set(
+                  _vm.travelInfo,
+                  "travel_introduction",
+                  $event.target.value
+                )
               }
             }
           })
