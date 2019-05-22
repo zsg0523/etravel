@@ -25557,12 +25557,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                     _this3.$toast('修改失败');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失败');
                 _this3.errors = err.response.data.errors;
             });
         },
@@ -25676,13 +25676,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this6.searchStudent = {};
                 _this6.isSearchStudentShow = false;
             }).catch(function (err) {
+                console.log(err.response);
+                _this6.$toast('添加失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this6.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                console.log(err.response);
-                _this6.$toast('添加失败');
                 _this6.errors = err.response.data.errors;
                 // if(err.response.data.errors.duty){
                 //     this.$toast(err.response.data.errors.duty[0]);
@@ -28512,6 +28512,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }).catch(function (err) {
                 _this2.$toast('修改失败');
+                if (err.response.data.errors) {
+                    for (var key in err.response.data.errors) {
+                        _this2.$toast(err.response.data.errors[key][0]);
+                    }
+                }
                 console.log(err);
             });
         },
@@ -28541,6 +28546,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }).catch(function (err) {
                 _this3.$toast('上传失败');
+                if (err.response.data.errors) {
+                    for (var key in err.response.data.errors) {
+                        _this3.$toast(err.response.data.errors[key][0]);
+                    }
+                }
                 console.log(err);
             });
         },
@@ -33187,12 +33197,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this2.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this2.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('修改失敗');
                 console.log(err);
             });
         },
@@ -33300,12 +33310,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this5.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this5.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this5.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this5.$toast('修改失敗');
                 console.log(err);
             });
         },
@@ -33379,12 +33389,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this8.newHotel.hotel_location = '';
                 _this8.newHotel.image = 'http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png';
             }).catch(function (err) {
+                _this8.$toast('添加失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this8.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this8.$toast('添加失敗');
                 console.log(err);
             });
         },
@@ -33438,12 +33448,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this9.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this9.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this9.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this9.$toast('修改失敗');
                 console.log(err);
             });
         },
@@ -33514,12 +33524,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this12.newLeadTeacher.area_code = '';
                 _this12.newLeadTeacher.phone = '';
             }).catch(function (err) {
+                _this12.$toast('添加失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this12.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this12.$toast('添加失敗');
                 console.log(err);
             });
         },
@@ -33561,12 +33571,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this13.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this13.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this13.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this13.$toast('修改失敗');
                 console.log(err);
             });
         },
@@ -33641,12 +33651,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this16.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this16.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this16.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this16.$toast('修改失敗');
                 console.log(err);
             });
         },
@@ -33687,12 +33697,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this17.$toast('上傳失敗');
                 }
             }).catch(function (err) {
+                _this17.$toast('上傳失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this17.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this17.$toast('上傳失敗');
                 console.log(err);
             });
         },
@@ -41982,12 +41992,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.newPhone.phone = '';
                 _this2.newPhone.duty = '';
             }).catch(function (err) {
+                _this2.$toast('添加失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失败');
                 console.log(err);
             });
         },
@@ -42029,12 +42039,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.$toast('修改失败');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失败');
                 console.log(err);
             });
         },
@@ -42852,12 +42862,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.isNewRuleShow = false;
                 _this2.newRule.rule_category_name = '';
             }).catch(function (err) {
+                _this2.$toast('添加失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失败');
                 console.log(err);
             });
         },
@@ -42889,12 +42899,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.$toast('修改失败');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失败');
                 console.log(err);
             });
         },
@@ -43417,12 +43427,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.isNewRuleInfoShow = false;
                 _this2.newRuleInfo.rule = '';
             }).catch(function (err) {
+                _this2.$toast('添加失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失敗');
                 console.log(err);
             });
         },
@@ -43457,12 +43467,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失敗');
                 console.log(err);
             });
         },
@@ -44088,12 +44098,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.isNewRuleShow = false;
                 _this2.newRule.rule_category_name = '';
             }).catch(function (err) {
+                _this2.$toast('添加失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失败');
                 console.log(err);
             });
         },
@@ -44125,12 +44135,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.$toast('修改失败');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失败');
                 console.log(err);
             });
         },
@@ -44653,12 +44663,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.isNewRuleInfoShow = false;
                 _this2.newRuleInfo.rule = '';
             }).catch(function (err) {
+                _this2.$toast('添加失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失败');
                 console.log(err);
             });
         },
@@ -44693,12 +44703,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.$toast('修改失败');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失败');
                 console.log(err);
             });
         },
@@ -45964,12 +45974,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this2.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this2.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('修改失敗');
                 console.log(err);
             });
         },
@@ -46653,12 +46663,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this2.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this2.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('修改失敗');
                 console.log(err);
             });
         },
@@ -47884,12 +47894,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.newMeal.content = '';
                 _this2.newMeal.description = '';
             }).catch(function (err) {
+                _this2.$toast('添加失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失败');
                 console.log(err);
             });
         },
@@ -47927,12 +47937,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.$toast('修改失败');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失败');
                 console.log(err);
             });
         },
@@ -49358,12 +49368,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.newSheet.title = '';
                 _this2.newSheet.body = '';
             }).catch(function (err) {
+                _this2.$toast('添加失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失敗');
                 console.log(err);
             });
         },
@@ -49399,12 +49409,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失敗');
                 console.log(err);
             });
         },
@@ -49994,12 +50004,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.isNewSheetInfoShow = false;
                 _this2.newSheetInfo.content = '';
             }).catch(function (err) {
+                _this2.$toast('添加失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失敗');
                 console.log(err);
             });
         },
@@ -50031,12 +50041,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失敗');
                 console.log(err);
             });
         },
@@ -50603,12 +50613,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.newLocal.content = '';
                 // this.newLocal.sites='';
             }).catch(function (err) {
+                _this2.$toast('添加失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失敗');
                 console.log(err);
             });
         },
@@ -50647,12 +50657,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失敗');
                 console.log(err);
             });
         },
@@ -51249,12 +51259,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.getLuggageLists();
                 _this2.newLuggageList.rule_category_name = '';
             }).catch(function (err) {
+                _this2.$toast('添加失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失敗');
                 console.log(err);
             });
         },
@@ -51287,12 +51297,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失敗');
                 console.log(err);
             });
         },
@@ -51828,12 +51838,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.isNewLuggageListInfoShow = false;
                 _this2.newLuggageListInfo.rule = '';
             }).catch(function (err) {
+                _this2.$toast('添加失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失败');
                 console.log(err);
             });
         },
@@ -51868,12 +51878,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.$toast('修改失败');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失败');
                 console.log(err);
             });
         },
@@ -52532,7 +52542,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失败');
+                // this.$toast('添加失败');
                 console.log(err);
             });
         },
@@ -52569,7 +52579,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('修改失败');
+                // this.$toast('修改失败');
                 console.log(err);
             });
         },
@@ -53117,7 +53127,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('添加失敗');
+                // this.$toast('添加失敗');
                 console.log(err);
             });
         },
@@ -54773,7 +54783,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         _this.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this.$toast('獲取失敗');
+                // this.$toast('獲取失敗');
                 console.log(err);
             });
         },
@@ -54794,7 +54804,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this2.$toast('獲取失敗');
+                // this.$toast('獲取失敗');
                 console.log(err);
             });
         },
@@ -54815,7 +54825,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this3.$toast('獲取失敗');
+                // this.$toast('獲取失敗');
                 console.log(err);
             });
         }
