@@ -425,7 +425,7 @@
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">酒店經緯度(必填)</div>
-                        <div><input class="item_input"  type="text" placeholder="酒店經緯度" v-model="newHotel.hotel_location" ></div>
+                        <div><input class="item_input"  type="text" placeholder="酒店經緯度(经度,纬度)" v-model="newHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div style="width:93%;">

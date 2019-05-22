@@ -32,6 +32,7 @@
 	        <div class="info disflex">
 	            <div>{{userInfo.name}}</div>
 	            <div>金幣：{{userInfo.tokens}}</div>
+	            <div>ID：{{userInfo.id}}</div>
 	            <!-- <div v-if="userInfo.manage_contents" onclick="window.location.assign('/admin')">管理系统</div> -->
 	        </div>
 	        <div class="exit disflex" @click="logout();">
