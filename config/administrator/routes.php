@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-17 16:50:16
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-17 17:33:05
+ * @Last Modified time: 2019-05-22 10:58:27
  */
 use App\Models\Route;
 
@@ -12,7 +12,7 @@ return [
 
 	'title' => '基本信息',
 
-	'single' => '旅游行程',
+	'single' => '旅遊行程',
 
 	'model' => Route::class,
 
@@ -21,14 +21,14 @@ return [
 			'title' => 'ID',
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->travel->travel_name;
 			},
 		],
 		'day' => [
-			'title' => '编号',
+			'title' => '編號',
 			'sortable' => true,
 		],
 		'date' => [
@@ -36,7 +36,7 @@ return [
 			'sortable' => true,
 		],
 		'description' => [
-			'title' => '简介',
+			'title' => '簡介',
 			'sortable' => false,
 		],
 		'operation' => [
@@ -47,7 +47,7 @@ return [
 
 	'edit_fields' => [
 		'travel' => [
-			'title'        => '旅游',
+			'title'        => '旅遊',
 			'type'         => 'relationship',
 			'name_field'   => 'travel_name',
 			// 自动补全
@@ -58,14 +58,14 @@ return [
 			'options_sort_field' => 'id',
 		],
 		'day' => [
-			'title' => '编号'
+			'title' => '編號'
 		],
 		'date' => [
 			'title' => '日期',
 			'type' => 'date'
 		],
 		'description' => [
-			'title' => '简介',
+			'title' => '簡介',
 			'type' => 'textarea',
 		],
 	],
@@ -75,7 +75,7 @@ return [
 			'title' => 'ID'
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'type' => 'relationship',
 			'name_field' => 'travel_name',
 			'autocomplete' => true,
@@ -92,7 +92,7 @@ return [
 	],
 
 	'messages' => [
-        'travel_id.required' => '请选择旅游项目',
+        'travel_id.required' => '請選擇旅遊項目',
     ],
 
 

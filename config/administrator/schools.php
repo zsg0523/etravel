@@ -4,14 +4,14 @@
  * @Author: Eden
  * @Date:   2019-02-22 11:58:49
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-02-22 12:32:51
+ * @Last Modified time: 2019-05-22 11:06:08
  */
 use App\Models\School;
 
 return [
 
-	'title' => '学校信息',
-	'single' => '学校',
+	'title' => '學校信息',
+	'single' => '學校',
 	'model' => School::class,
 
 	'columns' => [
@@ -19,11 +19,11 @@ return [
 			'title' => 'ID',
 		],
 		'school_name' => [
-			'title' => '名称',
+			'title' => '名稱',
 			'sortable' => false,
 		],
 		'school_introduction' => [
-			'title' => '简介',
+			'title' => '簡介',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return '<div style="max-width:500px; min-width:300px;">' . html_entity_decode($value) . '</div>';
@@ -41,10 +41,10 @@ return [
 
 	'edit_fields' => [
 		'school_name' => [
-			'title' => '名称'
+			'title' => '名稱'
 		],
 		'school_introduction' => [
-			'title' => '简介',
+			'title' => '簡介',
 			'type' => 'wysiwyg'
 		],
 		'school_address' => [
@@ -57,7 +57,7 @@ return [
 			'title' => 'ID'
 		],
 		'school_name' => [
-			'title' => '名称'
+			'title' => '名稱'
 		],
 	],
 

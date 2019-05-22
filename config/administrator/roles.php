@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-09 16:54:36
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-09 17:52:45
+ * @Last Modified time: 2019-05-22 10:57:23
  */
 use Spatie\Permission\Models\Role;
 
@@ -23,10 +23,10 @@ return [
             'title' => 'ID',
         ],
         'name' => [
-            'title' => '标识'
+            'title' => '標識'
         ],
         'permissions' => [
-            'title'  => '权限',
+            'title'  => '權限',
             'output' => function ($value, $model) {
                 $model->load('permissions');
                 $result = [];
@@ -49,11 +49,11 @@ return [
 
     'edit_fields' => [
         'name' => [
-            'title' => '标识',
+            'title' => '標識',
         ],
         'permissions' => [
             'type' => 'relationship',
-            'title' => '权限',
+            'title' => '權限',
             'name_field' => 'name',
         ],
     ],
@@ -63,7 +63,7 @@ return [
             'title' => 'ID',
         ],
         'name' => [
-            'title' => '标识',
+            'title' => '標識',
         ]
     ],
 
@@ -74,7 +74,7 @@ return [
 
     // 表单验证错误时定制错误消息
     'messages' => [
-        'name.required' => '标识不能为空',
-        'name.unique' => '标识已存在',
+        'name.required' => '標識不能為空',
+        'name.unique' => '標識已存在',
     ]
 ];

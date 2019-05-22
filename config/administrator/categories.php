@@ -4,15 +4,15 @@
  * @Author: Eden
  * @Date:   2019-01-15 16:44:54
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-17 11:17:10
+ * @Last Modified time: 2019-05-22 10:21:52
  */
 use App\Models\RuleCategory;
 
 return [
 
-	'title' => '守则分类',
+	'title' => '實則分類',
 
-	'single' => '守则分类',
+	'single' => '實則分類',
 
 	'model' => RuleCategory::class,
 
@@ -21,28 +21,28 @@ return [
 			'title' => 'ID',
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->travel->travel_name;
 			},
 		],
 		'rule_category_name' => [
-			'title' => '名称',
+			'title' => '名稱',
 			'sortable' => false,
 		],
 		'type' => [
-			'title' => '类型',
+			'title' => '類型',
 			'output' => function ($value, $model) {
 				switch ($model->type) {
 					case '10':
-						return "学生守则";
+						return "學生守則";
 						break;
 					case '20':
-						return "我的承诺";
+						return "我的承諾";
 						break;
 					case '30':
-						return "行李清单";
+						return "行李清單";
 						break;
 				}
 			},
@@ -56,7 +56,7 @@ return [
 
 	'edit_fields' => [
 		'travel' => [
-			'title'        => '旅游',
+			'title'        => '旅遊',
 			'type'         => 'relationship',
 			'name_field'   => 'travel_name', 
 			// 自动补全
@@ -67,12 +67,12 @@ return [
 			'options_sort_field' => 'id',
 		],
 		'rule_category_name' => [
-			'title' => '名称',
+			'title' => '名稱',
 		],
 		'type' => [
 			'enum_numeric_keys' => false,
-			'hint' => '10-学生守则,20-我的承诺,30-行李清单',
-	        'title' => '类型',
+			'hint' => '10-學生守則,20-我的承諾,30-行李清單',
+	        'title' => '類型',
 	        'type'  => 'enum',
 	        'options' => array(
 	            '10',
@@ -87,7 +87,7 @@ return [
 			'title' => 'ID'
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'type' => 'relationship',
 			'name_field' => 'travel_name',
 			'autocomplete' => true,
@@ -107,7 +107,7 @@ return [
 	],
 
 	'messages' => [
-        'travel_id.required' => '请选择旅游项目',
+        'travel_id.required' => '請選擇旅遊項目',
     ],
 
 

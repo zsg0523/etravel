@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-10 11:17:20
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-24 16:19:24
+ * @Last Modified time: 2019-05-22 10:48:07
  */
 use App\Models\Hotel;
 
@@ -23,7 +23,7 @@ return [
 		],
 
 		'travel' => [
-			'title' => '旅游项目',
+			'title' => '旅遊項目',
 
 			'sortable' => false,
 
@@ -33,7 +33,7 @@ return [
 		],
 
 		'hotel_name' => [
-			'title' => '酒店名称',
+			'title' => '酒店名稱',
 			'sortable' => false,
 		],
 
@@ -48,17 +48,17 @@ return [
 		],
 
 		'leave_at' => [
-			'title' => '离开日期',
+			'title' => '離開日期',
 			'sortable' => false,
 		],
 
 		'times' => [
-			'title' => '共几晚',
+			'title' => '共幾晚',
 			'sortable' => false,
 		],
 
 		'image' => [
-			'title' => '酒店图片',
+			'title' => '酒店圖片',
 			// 默认情况直接输出数据，可是使用 output 选项来定制输出内容
 			'output' => function($image, $model)
 			{
@@ -70,7 +70,7 @@ return [
 		],
 
 		'hotel_phone' => [
-			'title' => '联系电话',
+			'title' => '聯繫電話',
 			'sortable' => false,
 		],
 
@@ -83,7 +83,7 @@ return [
 	'edit_fields' => [
 
 		'travel' => [
-			'title'        => '旅游',
+			'title'        => '旅遊',
 			'type'         => 'relationship',
 			'name_field'   => 'travel_name',
 			// 自动补全
@@ -95,11 +95,11 @@ return [
 		],
 
 		'hotel_name' => [
-			'title' => '酒店名称',
+			'title' => '酒店名稱',
 		],
 
 		'hotel_address' => [
-			'title' => '详细地址',
+			'title' => '詳細地址',
 		],
 
 		'check_at' => [
@@ -108,23 +108,23 @@ return [
 		],
 
 		'leave_at' => [
-			'title' => '离开日期',
+			'title' => '離開日期',
 			'type' => 'date',
 		],
 
 		'times' => [
-			'title' => '共几晚',
+			'title' => '共幾晚',
 		],
 
 		'image' => [
-			'title' => '酒店图片',
+			'title' => '酒店圖片',
 			'type' => 'image',
 			// 图片上传路径
 			'location' => public_path() . '/uploads/images/hotels/'
 		],
 
 		'hotel_phone' => [
-			'title' => '联系电话',
+			'title' => '聯繫電話',
 		]
 	],
 
@@ -133,7 +133,7 @@ return [
 			'title' => 'ID'
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'type' => 'relationship',
 			'name_field' => 'travel_name',
 			'autocomplete' => true,
@@ -154,7 +154,7 @@ return [
 	],
 
 	'messages' => [
-        'travel_id.required' => '请选择旅游项目',
+        'travel_id.required' => '請選擇旅遊項目',
     ],
 
 

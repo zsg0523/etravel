@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-10 11:17:30
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-12 16:31:23
+ * @Last Modified time: 2019-05-22 10:34:26
  */
 use App\Models\Flight;
 
@@ -21,7 +21,7 @@ return [
 			'title' => 'ID',
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->travel->travel_name;
@@ -32,11 +32,11 @@ return [
 			'sortable' => false,
 		],
 		'from' => [
-			'title' => '出发地',
+			'title' => '出發地',
 			'sortable' => false,
 		],
 		'to' => [
-			'title' => '到达地',
+			'title' => '到達地',
 			'sortable' => false,
 		],
 		'flight' => [
@@ -44,11 +44,11 @@ return [
 			'sortable' => false,
 		],
 		'takeoff_time' => [
-			'title' => '起飞时间',
+			'title' => '起飛時間',
 			'sortable' => false,
 		],
 		'arrival_time' => [
-			'title' => '到达时间',
+			'title' => '到達時間',
 			'sortable' => false,
 		],
 		'is_return' => [
@@ -66,7 +66,7 @@ return [
 
 	'edit_fields' => [
 		'travel' => [
-			'title'        => '旅游',
+			'title'        => '旅遊',
 			'type'         => 'relationship',
 			'name_field'   => 'travel_name',
 			// 自动补全
@@ -81,20 +81,20 @@ return [
 			'type' => 'date'
 		],
 		'from' => [
-			'title' => '出发地'
+			'title' => '出發地'
 		],
 		'to' => [
-			'title' => '到达地',
+			'title' => '到達地',
 		],
 		'flight' => [
 			'title' => '航班'
 		],
 		'takeoff_time' => [
-			'title' => '起飞时间',
+			'title' => '起飛時間',
 			'type' => 'datetime'
 		],
 		'arrival_time' => [
-			'title' => '到达时间',
+			'title' => '到達時間',
 			'type' => 'datetime'
 		],
 		'is_return' => [
@@ -108,7 +108,7 @@ return [
 			'title' => 'ID'
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'type' => 'relationship',
 			'name_field' => 'travel_name',
 			'autocomplete' => true,
@@ -128,7 +128,7 @@ return [
 	],
 
 	'messages' => [
-        'travel_id.required' => '请选择旅游项目',
+        'travel_id.required' => '請選擇旅遊項目',
     ],
 
 

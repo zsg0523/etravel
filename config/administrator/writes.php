@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-21 18:01:03
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-21 18:18:14
+ * @Last Modified time: 2019-05-22 11:13:28
  */
 use App\Models\Write;
 
@@ -21,7 +21,7 @@ return [
 			'title' => 'ID',
 		],
 		'write_title' => [
-			'title' => '感想分类',
+			'title' => '感想分類',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->write_title->title;
@@ -35,7 +35,7 @@ return [
 			},
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->travel->travel_name;
@@ -56,7 +56,7 @@ return [
 
 	'edit_fields' => [
 		'write_title' => [
-			'title'        => '分类',
+			'title'        => '分類',
 			'type'         => 'relationship',
 			'name_field'   => 'title',
 			// 自动补全
@@ -67,7 +67,7 @@ return [
 			'options_sort_field' => 'id',
 		],
 		'user' => [
-			'title'        => '用户',
+			'title'        => '用戶',
 			'type'         => 'relationship',
 			'name_field'   => 'name',
 			// 自动补全
@@ -78,7 +78,7 @@ return [
 			'options_sort_field' => 'id',
 		],
 		'travel' => [
-			'title'        => '旅游',
+			'title'        => '旅遊',
 			'type'         => 'relationship',
 			'name_field'   => 'travel_name',
 			// 自动补全
@@ -99,7 +99,7 @@ return [
 			'title' => 'ID'
 		],
 		'write_title' => [
-			'title' => '分类',
+			'title' => '分類',
 			'type' => 'relationship',
 			'name_field' => 'title',
 			'autocomplete' => true,
@@ -107,7 +107,7 @@ return [
 			'options_sort_field' => 'id'
 		],
 		'user' => [
-			'title' => '用户',
+			'title' => '用戶',
 			'type' => 'relationship',
 			'name_field' => 'name',
 			'autocomplete' => true,
@@ -115,7 +115,7 @@ return [
 			'options_sort_field' => 'id'
 		],
 		'travel' => [
-			'title' => '旅游',
+			'title' => '旅遊',
 			'type' => 'relationship',
 			'name_field' => 'travel_name',
 			'autocomplete' => true,
@@ -132,9 +132,9 @@ return [
 	],
 
 	'messages' => [
-        'travel_id.required' => '请选择旅游项目',
-        'write_title_id.required' => '请选择感想分类',
-        'user_id.required' => '请选择用户',
+        'travel_id.required' => '請選擇旅遊項目',
+        'write_title_id.required' => '請選擇感想分類',
+        'user_id.required' => '請選擇用戶',
     ],
 
 

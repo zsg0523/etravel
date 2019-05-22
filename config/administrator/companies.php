@@ -14,25 +14,25 @@ return [
 			'title' => 'ID',
 		],
 		'name' => [
-			'title' => '公司名称'
+			'title' => '公司名稱'
 		],
 		'code_one' => [
-			'title' => '区号A',
+			'title' => '區號A',
 		],
 		'emergency_phone_one' => [
-			'title' => '电话A',
+			'title' => '電話A',
 		],
 		'emergency_email_one' => [
-			'title' => '邮箱A',
+			'title' => '郵箱A',
 		],
 		'code_two' => [
-			'title' => '区号B',
+			'title' => '區號B',
 		],
 		'emergency_phone_two' => [
-			'title' => '电话B',
+			'title' => '電話B',
 		],
 		'emergency_email_two' => [
-			'title' => '邮箱B',
+			'title' => '郵箱B',
 		],
 		'show' => [
 			'title' => '是否使用',
@@ -46,25 +46,25 @@ return [
 
 	'edit_fields' => [
 		'name' => [
-			'title' => '公司名称'
+			'title' => '公司名稱'
 		],
 		'code_one' => [
-			'title' => '区号A',
+			'title' => '區號A',
 		],
 		'emergency_phone_one' => [
-			'title' => '电话A',
+			'title' => '電話A',
 		],
 		'emergency_email_one' => [
-			'title' => '邮箱A',
+			'title' => '郵箱A',
 		],
 		'code_two' => [
-			'title' => '区号B',
+			'title' => '區號B',
 		],
 		'emergency_phone_two' => [
-			'title' => '电话B',
+			'title' => '電話B',
 		],
 		'emergency_email_two' => [
-			'title' => '邮箱B',
+			'title' => '郵箱B',
 		],
 		'show' => [
 			'type' => 'bool',

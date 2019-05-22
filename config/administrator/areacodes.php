@@ -4,14 +4,14 @@
  * @Author: Eden
  * @Date:   2019-01-10 10:11:36
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-23 10:45:04
+ * @Last Modified time: 2019-05-22 10:16:36
  */
 use App\Models\Areacode;
 
 return [
 
-	'title' => '区号选择',
-	'single' => '区号',
+	'title' => '區號選擇',
+	'single' => '區號',
 	'model' => Areacode::class,
 
 	'columns' => [
@@ -26,17 +26,17 @@ return [
 			'title' => '中文名',
 		],
 		'codename' => [
-			'title' => '代号',
+			'title' => '代號',
 		],
 		'acnumber' => [
-			'title' => '区号',
+			'title' => '區號',
 		],
 		'order_number' => [
 			'title' => '排序',
 		],
 		'show' => [
-			'title' => '是否显示',
-			'select' => "IF((:table).show, '显示', '不显示')"
+			'title' => '是否顯示',
+			'select' => "IF((:table).show, '顯示', '不顯示')"
 		],
 		'operation' => [
 			'title' => '管理',
@@ -51,19 +51,19 @@ return [
 			'title' => '中文名',
 		],
 		'codename' => [
-			'title' => '代号',
+			'title' => '代號',
 		],
 		'acnumber' => [
-			'title' => '区号',
+			'title' => '區號',
 		],
 		'order_number' => [
 			'title' => '排序',
-			'hint' => '数值越大，选项卡里出现越早'
+			'hint' => '數值越大，選項卡出現越早'
 		],
 		'show' => [
 			'type' => 'bool',
-			'title' => '是否显示',
-			'hint' => '选项卡是否需要显示'
+			'title' => '是否顯示',
+			'hint' => '選項卡是否需要顯示'
 		],
 	],
 
@@ -87,10 +87,10 @@ return [
 	],
 
 	'messages' => [
-        'acname_en.required' => '英文名不能为空',
-        'acname_cn.required' => '中文名不能为空',
-        'codename.required' => '代号不能为空',
-        'acnumber.required' => '区号不能为空',
+        'acname_en.required' => '英文名不能為空',
+        'acname_cn.required' => '中文名不能為空',
+        'codename.required' => '代號不能為空',
+        'acnumber.required' => '區號不能為空',
     ],
 
 ];

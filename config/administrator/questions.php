@@ -4,15 +4,15 @@
  * @Author: Eden
  * @Date:   2019-01-18 12:05:10
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-01-18 12:19:09
+ * @Last Modified time: 2019-05-22 10:53:05
  */
 use App\Models\Question;
 
 return [
 
-	'title' => '学习纸问题',
+	'title' => '學習紙問題',
 
-	'single' => '问题',
+	'single' => '問題',
 
 	'model' => Question::class,
 
@@ -21,14 +21,14 @@ return [
 			'title' => 'ID',
 		],
 		'study' => [
-			'title' => '旅游工作纸',
+			'title' => '旅遊工作紙',
 			'sortable' => false,
 			'output' => function ($value, $model) {
 				return $model->study->tag;
 			},
 		],
 		'content' => [
-			'title' => '问题',
+			'title' => '問題',
 			'sortable' => false,
 		],
 		'operation' => [
@@ -39,7 +39,7 @@ return [
 
 	'edit_fields' => [
 		'study' => [
-			'title'        => '旅游工作纸',
+			'title'        => '旅遊工作紙',
 			'type'         => 'relationship',
 			'name_field'   => 'tag',
 			// 自动补全
@@ -50,7 +50,7 @@ return [
 			'options_sort_field' => 'id',
 		],
 		'content' => [
-			'title' => '问题',
+			'title' => '問題',
 		],
 	],
 
@@ -59,7 +59,7 @@ return [
 			'title' => 'ID'
 		],
 		'study' => [
-			'title' => '旅游工作纸',
+			'title' => '旅遊工作紙',
 			'type' => 'relationship',
 			'name_field' => 'tag',
 			'autocomplete' => true,
@@ -74,7 +74,7 @@ return [
 	],
 
 	'messages' => [
-        'study_id.required' => '请选择工作纸',
+        'study_id.required' => '請選擇工作紙',
     ],
 
 
