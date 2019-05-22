@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-05 10:11:20
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-05-22 15:30:13
+ * @Last Modified time: 2019-05-22 16:13:27
  */
 namespace App\Transformers;
 
@@ -34,8 +34,8 @@ class TravelTransformer extends TransformerAbstract
 			'view_plan' => $travel->view_plan,
 			'meal_plan' => $travel->meal_plan,
 			'travel_status' => $travel->travel_status,
-			'code_one' => isset($travel->emergency) ? $travel->emergency->code_one : '',
-			'code_two' => isset($travel->emergency) ? $travel->emergency->code_two : '',
+			'code_one' => isset($travel->emergency) ? ($travel->emergency->code_one ?? '') : '',
+			'code_two' => isset($travel->emergency) ? ($travel->emergency->code_two ?? '') : '',
 			'emergency_phone_one' => isset($travel->emergency) ? $travel->emergency->emergency_phone_one : '',
 			'emergency_phone_two' => isset($travel->emergency) ? $travel->emergency->emergency_phone_two : '',
 			'emergency_email_one' => isset($travel->emergency) ? $travel->emergency->emergency_email_one : '',
