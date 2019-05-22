@@ -56750,7 +56750,8 @@ module.exports = function spread(callback) {
 
 
 // const baseUrl='https://www.bunchparty.com/etravel/public';//公司线上地址
-var baseUrl = 'http://app.ateamtravel.hk/etravel/public'; //学游线上地址
+// const baseUrl='http://app.ateamtravel.hk/etravel/public';//学游线上地址1
+var baseUrl = 'http://app.study2go.net/etravel/public'; //学游线上地址2
 // const baseUrl='';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
