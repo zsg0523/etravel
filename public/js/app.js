@@ -24026,7 +24026,7 @@ var render = function() {
                       ],
                       staticClass: "item_input",
                       attrs: {
-                        placeholder: "出行日期（例：2020-01-01）",
+                        placeholder: "出行日期（例：yyyy-mm-dd）",
                         type: "text"
                       },
                       domProps: { value: _vm.newTravel.travel_at },
@@ -24071,7 +24071,7 @@ var render = function() {
                       ],
                       staticClass: "item_input",
                       attrs: {
-                        placeholder: "回程日期（例：2020-01-01）",
+                        placeholder: "回程日期（例：yyyy-mm-dd）",
                         type: "text"
                       },
                       domProps: { value: _vm.newTravel.travel_return },
@@ -24215,7 +24215,7 @@ var render = function() {
                       ],
                       staticClass: "item_input",
                       attrs: {
-                        placeholder: "出行日期（例：2020-01-01）",
+                        placeholder: "出行日期（例：yyyy-mm-dd）",
                         type: "text"
                       },
                       domProps: { value: _vm.edTravel.travel_at },
@@ -24260,7 +24260,7 @@ var render = function() {
                       ],
                       staticClass: "item_input",
                       attrs: {
-                        placeholder: "回程日期（例：2020-01-01）",
+                        placeholder: "回程日期（例：yyyy-mm-dd）",
                         type: "text"
                       },
                       domProps: { value: _vm.edTravel.travel_return },
@@ -33248,12 +33248,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this4.newFlight.from_flight = '';
                 _this4.newFlight.to_flight = '';
             }).catch(function (err) {
+                _this4.$toast('添加失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this4.$toast(err.response.data.errors[key][0]);
                     }
                 }
-                _this4.$toast('添加失敗');
                 console.log(err);
             });
         },
@@ -39579,7 +39579,7 @@ var render = function() {
                       ],
                       staticClass: "item_input",
                       attrs: {
-                        placeholder: "填寫日期及時間(2020-01-01 hh:mm)",
+                        placeholder: "填寫日期及時間(yyyy-mm-dd hh:mm)",
                         type: "text"
                       },
                       domProps: { value: _vm.edAssemblePlaces.assembly_at },
@@ -39671,7 +39671,7 @@ var render = function() {
                       ],
                       staticClass: "item_input",
                       attrs: {
-                        placeholder: "填寫日期及時間(2020-01-01 hh:mm)",
+                        placeholder: "填寫日期及時間(yyyy-mm-dd hh:mm)",
                         type: "text"
                       },
                       domProps: { value: _vm.edAssemblePlaces.dissolution_at },
@@ -39814,7 +39814,7 @@ var render = function() {
                     staticClass: "item_input",
                     attrs: {
                       type: "text",
-                      placeholder: "填寫日期(2020-01-01)"
+                      placeholder: "填寫日期(yyyy-mm-dd)"
                     },
                     domProps: { value: _vm.newFlight.date },
                     on: {
@@ -40172,7 +40172,7 @@ var render = function() {
                     staticClass: "item_input",
                     attrs: {
                       type: "text",
-                      placeholder: "填寫日期(2020-01-01)"
+                      placeholder: "填寫日期(yyyy-mm-dd)"
                     },
                     domProps: { value: _vm.edFlight.date },
                     on: {
@@ -40538,7 +40538,7 @@ var render = function() {
                     staticClass: "item_input",
                     attrs: {
                       type: "text",
-                      placeholder: "入住日期(2020-01-01)"
+                      placeholder: "入住日期(yyyy-mm-dd)"
                     },
                     domProps: { value: _vm.newHotel.check_at },
                     on: {
@@ -40571,7 +40571,7 @@ var render = function() {
                     staticClass: "item_input",
                     attrs: {
                       type: "text",
-                      placeholder: "離開日期(2020-01-01)"
+                      placeholder: "離開日期(yyyy-mm-dd)"
                     },
                     domProps: { value: _vm.newHotel.leave_at },
                     on: {
@@ -40880,7 +40880,7 @@ var render = function() {
                     staticClass: "item_input",
                     attrs: {
                       type: "text",
-                      placeholder: "入住日期(2020-01-01)"
+                      placeholder: "入住日期(yyyy-mm-dd)"
                     },
                     domProps: { value: _vm.edHotel.check_at },
                     on: {
@@ -40913,7 +40913,7 @@ var render = function() {
                     staticClass: "item_input",
                     attrs: {
                       type: "text",
-                      placeholder: "離開日期(2020-01-01)"
+                      placeholder: "離開日期(yyyy-mm-dd)"
                     },
                     domProps: { value: _vm.edHotel.leave_at },
                     on: {
@@ -48957,7 +48957,7 @@ var render = function() {
                     ],
                     staticClass: "item_input",
                     attrs: {
-                      placeholder: "填寫日期(2020-01-01)",
+                      placeholder: "填寫日期(yyyy-mm-dd)",
                       type: "text"
                     },
                     domProps: { value: _vm.newJourney.date },
@@ -49049,7 +49049,7 @@ var render = function() {
                     ],
                     staticClass: "item_input",
                     attrs: {
-                      placeholder: "填寫日期(2020-01-01)",
+                      placeholder: "填寫日期(yyyy-mm-dd)",
                       type: "text"
                     },
                     domProps: { value: _vm.edJourney.date },

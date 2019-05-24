@@ -119,25 +119,25 @@
                 <div class="form_item_pro">
                     <div class="item_title">出行日期<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="出行日期（例：2020-01-01）" type="text"  v-model="newTravel.travel_at">
+                        <input class="item_input" placeholder="出行日期（例：yyyy-mm-dd）" type="text"  v-model="newTravel.travel_at">
                     </div>
                 </div>
                 <div class="form_item_pro">
                     <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="回程日期（例：2020-01-01）" type="text"  v-model="newTravel.travel_return">
+                        <input class="item_input" placeholder="回程日期（例：yyyy-mm-dd）" type="text"  v-model="newTravel.travel_return">
                     </div>
                 </div>
                 <!-- <div class="form_item_pro">
                     <div class="item_title">出行日期<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="出行日期（例：2020-01-01）" type="text"  v-model="newTravel.travel_at" readonly="readonly" @click="pickTimeShow('newTravel')">
+                        <input class="item_input" placeholder="出行日期（例：yyyy-mm-dd）" type="text"  v-model="newTravel.travel_at" readonly="readonly" @click="pickTimeShow('newTravel')">
                     </div>
                 </div>
                 <div class="form_item_pro">
                     <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="回程日期（例：2020-01-01）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
+                        <input class="item_input" placeholder="回程日期（例：yyyy-mm-dd）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
                     </div>
                 </div> -->
                 <div class="form_item_pro">
@@ -161,25 +161,25 @@
                 <div class="form_item_pro">
                     <div class="item_title">出行日期</div>
                     <div>
-                        <input class="item_input" placeholder="出行日期（例：2020-01-01）" type="text"  v-model="edTravel.travel_at">
+                        <input class="item_input" placeholder="出行日期（例：yyyy-mm-dd）" type="text"  v-model="edTravel.travel_at">
                     </div>
                 </div>
                 <div class="form_item_pro">
                     <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="回程日期（例：2020-01-01）" type="text"  v-model="edTravel.travel_return">
+                        <input class="item_input" placeholder="回程日期（例：yyyy-mm-dd）" type="text"  v-model="edTravel.travel_return">
                     </div>
                 </div>
                 <!-- <div class="form_item_pro">
                     <div class="item_title">出行日期</div>
                     <div>
-                        <input class="item_input" placeholder="出行日期（例：2020-01-01）" type="text"  v-model="edTravel.travel_at" readonly="readonly" @click="pickTimeShow('edTravel')">
+                        <input class="item_input" placeholder="出行日期（例：yyyy-mm-dd）" type="text"  v-model="edTravel.travel_at" readonly="readonly" @click="pickTimeShow('edTravel')">
                     </div>
                 </div>
                 <div class="form_item_pro">
                     <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="回程日期（例：2020-01-01）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
+                        <input class="item_input" placeholder="回程日期（例：yyyy-mm-dd）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
                     </div>
                 </div> -->
                 <div class="form_item_pro">
