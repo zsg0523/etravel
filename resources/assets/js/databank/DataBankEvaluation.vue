@@ -143,7 +143,7 @@
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('添加失败');
+                    // this.$toast('添加失败');
                     console.log(err)
                 });
             },
@@ -178,7 +178,7 @@
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('修改失败');
+                    // this.$toast('修改失败');
                     console.log(err)
                 });
             },

@@ -238,6 +238,11 @@
                     }
                 }).catch(err => {
                     this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     console.log(err);
                 });
             },
@@ -265,6 +270,11 @@
                     }
                 }).catch(err => {
                     this.$toast('上传失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }
                     console.log(err)
                 });
             },

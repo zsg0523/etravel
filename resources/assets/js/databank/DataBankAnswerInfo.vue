@@ -215,7 +215,7 @@
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('獲取失敗');
+                    // this.$toast('獲取失敗');
                     console.log(err);
                 });
             },
@@ -236,7 +236,7 @@
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('獲取失敗');
+                    // this.$toast('獲取失敗');
                     console.log(err);
                 });
 
@@ -258,7 +258,7 @@
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('獲取失敗');
+                    // this.$toast('獲取失敗');
                     console.log(err);
                 });
 

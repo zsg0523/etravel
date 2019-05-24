@@ -628,12 +628,12 @@
                         this.$toast('修改失败');
                     }
                 }).catch(err => {
+                    this.$toast('修改失败');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('修改失败');
                     this.errors=err.response.data.errors;
 
                 });
@@ -747,13 +747,13 @@
                     this.isSearchStudentShow=false;
 
                 }).catch(err => {
+                    console.log(err.response);
+                    this.$toast('添加失败');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    console.log(err.response);
-                    this.$toast('添加失败');
                     this.errors=err.response.data.errors;
                     // if(err.response.data.errors.duty){
                     //     this.$toast(err.response.data.errors.duty[0]);

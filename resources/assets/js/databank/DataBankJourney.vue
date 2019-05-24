@@ -167,12 +167,12 @@
                         this.$toast('修改失敗');
                     }
                 }).catch(err => {
+                    this.$toast('修改失敗');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('修改失敗');
                     console.log(err);
                 });
             },

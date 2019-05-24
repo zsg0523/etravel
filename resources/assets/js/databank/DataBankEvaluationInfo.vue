@@ -175,7 +175,7 @@
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('添加失敗');
+                    // this.$toast('添加失敗');
                     console.log(err)
                 });
             },

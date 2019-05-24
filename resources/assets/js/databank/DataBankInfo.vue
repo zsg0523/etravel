@@ -281,7 +281,7 @@
                     </div>   
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">日期及時間</div>
-                        <div><input class="item_input" placeholder="填寫日期及時間(2020-01-01 hh:mm)" type="text" v-model="edAssemblePlaces.assembly_at"></div>
+                        <div><input class="item_input" placeholder="填寫日期及時間(yyyy-mm-dd hh:mm)" type="text" v-model="edAssemblePlaces.assembly_at"></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">地址</div>
@@ -292,7 +292,7 @@
                     </div>   
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">日期及時間</div>
-                        <div><input class="item_input" placeholder="填寫日期及時間(2020-01-01 hh:mm)" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
+                        <div><input class="item_input" placeholder="填寫日期及時間(yyyy-mm-dd hh:mm)" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div class="item_title">地址</div>
@@ -313,7 +313,7 @@
                     </div> 
                     <div class="form_item_info">
                         <div class="item_title">日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫日期(2020-01-01)" v-model="newFlight.date"></div>
+                        <div><input class="item_input" type="text" placeholder="填寫日期(yyyy-mm-dd)" v-model="newFlight.date"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出發時間(必填)</div>
@@ -359,7 +359,7 @@
                     </div> 
                     <div class="form_item_info">
                         <div class="item_title">日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫日期(2020-01-01)" v-model="edFlight.date"></div>
+                        <div><input class="item_input" type="text" placeholder="填寫日期(yyyy-mm-dd)" v-model="edFlight.date"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出發時間(必填)</div>
@@ -405,11 +405,11 @@
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">入住日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="入住日期(2020-01-01)" v-model="newHotel.check_at" ></div>
+                        <div><input class="item_input" type="text" placeholder="入住日期(yyyy-mm-dd)" v-model="newHotel.check_at" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">離開日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="離開日期(2020-01-01)" v-model="newHotel.leave_at" ></div>
+                        <div><input class="item_input" type="text" placeholder="離開日期(yyyy-mm-dd)" v-model="newHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">入住天數(必填)</div>
@@ -459,11 +459,11 @@
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">入住日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="入住日期(2020-01-01)" v-model="edHotel.check_at" ></div>
+                        <div><input class="item_input" type="text" placeholder="入住日期(yyyy-mm-dd)" v-model="edHotel.check_at" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">離開日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="離開日期(2020-01-01)" v-model="edHotel.leave_at" ></div>
+                        <div><input class="item_input" type="text" placeholder="離開日期(yyyy-mm-dd)" v-model="edHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">入住天數(必填)</div>
@@ -738,12 +738,12 @@
                         this.$toast('修改失敗');
                     }
                 }).catch(err => {
+                    this.$toast('修改失敗');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
@@ -789,12 +789,12 @@
                     this.newFlight.from_flight='';
                     this.newFlight.to_flight='';
                 }).catch(err => {
+                    this.$toast('添加失敗');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('添加失敗');
                     console.log(err)
                 });
             },
@@ -849,12 +849,12 @@
                         this.$toast('修改失敗');
                     }
                 }).catch(err => {
+                    this.$toast('修改失敗');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
@@ -928,12 +928,12 @@
                     this.newHotel.hotel_location='';
                     this.newHotel.image='http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png';
                 }).catch(err => {
+                    this.$toast('添加失敗');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('添加失敗');
                     console.log(err)
                 });
             },
@@ -985,12 +985,12 @@
                         this.$toast('修改失敗');
                     }
                 }).catch(err => {
+                    this.$toast('修改失敗');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
@@ -1060,12 +1060,12 @@
                     this.newLeadTeacher.area_code='';
                     this.newLeadTeacher.phone='';
                 }).catch(err => {
+                    this.$toast('添加失敗');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('添加失敗');
                     console.log(err)
                 });
             },
@@ -1105,12 +1105,12 @@
                         this.$toast('修改失敗');
                     }
                 }).catch(err => {
+                    this.$toast('修改失敗');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
@@ -1183,12 +1183,12 @@
                         this.$toast('修改失敗');
                     }
                 }).catch(err => {
+                    this.$toast('修改失敗');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('修改失敗');
                     console.log(err)
                 });
             },
@@ -1227,12 +1227,12 @@
                         this.$toast('上傳失敗');
                     }
                 }).catch(err => {
+                    this.$toast('上傳失敗');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
                     }
-                    this.$toast('上傳失敗');
                     console.log(err)
                 });
             },
