@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-09 12:52:11
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-05-27 10:22:29
+ * @Last Modified time: 2019-05-27 10:29:04
  */
 use App\Models\User;
 
@@ -46,6 +46,9 @@ return [
 		],
 		'email' => [
 			'title' => '郵箱',
+		],
+		'code' => [
+			'code' => '區號',
 		],
 		'phone' => [
 			'phone' => '電話'
@@ -94,8 +97,11 @@ return [
 		'email' => [
 			'title' => '郵箱',
 		],
+		'code' => [
+			'code' => '區號',
+		],
 		'phone' => [
-			'phone' => '電話'
+			'phone' => '電話',
 		],
 		'avatar' => [
 			'title' => '用戶頭像',
@@ -133,6 +139,9 @@ return [
 		],
 		'email' => [
 			'title' => '郵箱'
+		],
+		'phone' => [
+			'phone' => '電話'
 		],
 	],
 
