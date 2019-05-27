@@ -68,7 +68,7 @@
                     <li role="presentation"><a href="#flight" aria-controls="flight" role="tab" data-toggle="tab">班機往返</a></li>
                     <li role="presentation"><a href="#accommodationInfo" aria-controls="accommodationInfo" role="tab" data-toggle="tab">住宿資料</a></li>
                     <li role="presentation"><a href="#leaderTeacher" aria-controls="leaderTeacher" role="tab" data-toggle="tab">領隊老師</a></li>
-                    <li role="presentation"><a href="#heavyWeather" aria-controls="heavyWeather" role="tab" data-toggle="tab">恶劣天气安排</a></li>
+                    <li role="presentation"><a href="#heavyWeather" aria-controls="heavyWeather" role="tab" data-toggle="tab">惡劣天氣安排</a></li>
                 </ul>
                 <div class="tab-content">
                     <!-- 集合解散 -->
@@ -425,7 +425,7 @@
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">酒店經緯度(必填)</div>
-                        <div><input class="item_input"  type="text" placeholder="酒店經緯度(经度,纬度)" v-model="newHotel.hotel_location" ></div>
+                        <div><input class="item_input"  type="text" placeholder="酒店經緯度(經度,緯度)" v-model="newHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div style="width:93%;">
@@ -479,7 +479,7 @@
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">酒店經緯度(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="酒店經緯度(经度,纬度)" v-model="edHotel.hotel_location" ></div>
+                        <div><input class="item_input" type="text" placeholder="酒店經緯度(經度,緯度)" v-model="edHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div style="width:93%;">
@@ -862,7 +862,11 @@
                 // 删除航班
                 this.$dialog.confirm({
                     title: '删除航班',
-                    message: '是否删除该航班'
+                    message: '是否删除该航班',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -998,7 +1002,11 @@
                 // 删除酒店
                 this.$dialog.confirm({
                     title: '删除酒店',
-                    message: '是否删除该酒店'
+                    message: '是否删除该酒店',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -1118,7 +1126,11 @@
                 // 删除領隊
                 this.$dialog.confirm({
                     title: '删除領隊',
-                    message: '是否删除该領隊'
+                    message: '是否删除该領隊',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -1239,7 +1251,11 @@
             resetImg(){
                 this.$dialog.confirm({
                     title: '重置圖片',
-                    message: '是否重置該圖片'
+                    message: '是否重置該圖片',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     if(this.isNewImg){
                         this.newHotel.image="http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png";

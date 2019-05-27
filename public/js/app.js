@@ -23046,7 +23046,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 			this.$dialog.confirm({
 				title: '登出',
-				message: '是否登出'
+				message: '是否登出',
+				cancelButtonText: '取消',
+				cancelButtonColor: '#ccc',
+				confirmButtonText: '確定',
+				confirmButtonColor: '#000'
 			}).then(function () {
 				sessionStorage.clear();
 				_this2.setUserInfo('');
@@ -23082,8 +23086,6 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("div", { staticClass: "right disflex" }, [
-      _vm._m(0),
-      _vm._v(" "),
       _vm.userInfo.avatar
         ? _c("div", { staticClass: "person_icon disflex" }, [
             _c("img", {
@@ -23129,16 +23131,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "letter disflex" }, [
-      _c("img", { attrs: { src: "/etravel/public/images/letter.png" } })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -23676,7 +23669,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             // 新增旅游
             this.$dialog.confirm({
                 title: '新建項目',
-                message: '新建項目將會消耗您一枚金幣，是否創建？'
+                message: '新建項目將會消耗您一枚金幣，是否創建？',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 if (_this2.$store.state.userInfo.tokens >= 1) {
                     _this2.$post(_this2.$config + '/api/travels', {
@@ -23720,7 +23717,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             // 删除旅游
             this.$dialog.confirm({
                 title: '删除項目',
-                message: '是否删除該項目'
+                message: '是否删除該項目',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this3.$ajax({
                     method: 'DELETE',
@@ -23862,84 +23863,82 @@ var render = function() {
               ),
               _vm._v(" "),
               _vm._l(_vm.travels, function(travel, index) {
-                return _c("div", { staticClass: "project disflex" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "project_left disflex yellowbg",
-                      on: {
-                        click: function($event) {
-                          return _vm.$router.push("/projectDetail/" + travel.id)
-                        }
+                return _c(
+                  "div",
+                  {
+                    staticClass: "project disflex",
+                    on: {
+                      click: function($event) {
+                        $event.stopPropagation()
+                        return _vm.$router.push("/projectDetail/" + travel.id)
                       }
-                    },
-                    [
-                      _c("img", {
-                        attrs: { src: "/etravel/public/images/plane-icon.png" }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "project_right disflex" }, [
-                    _c("div", { staticClass: "edit_name" }, [
-                      travel.travel_status == 10
-                        ? _c("div", { staticClass: "edit_icon disflex fl" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "/etravel/public/images/Not_progress.png"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("未進行")])
-                          ])
-                        : travel.travel_status == 20
-                        ? _c("div", { staticClass: "edit_icon disflex fl" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "/etravel/public/images/In_progress.png"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("進行中")])
-                          ])
-                        : _c("div", { staticClass: "edit_icon disflex fl" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "/etravel/public/images/ending.png"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("已結束")])
-                          ])
+                    }
+                  },
+                  [
+                    _vm._m(2, true),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "project_right disflex" }, [
+                      _c("div", { staticClass: "edit_name" }, [
+                        travel.travel_status == 10
+                          ? _c("div", { staticClass: "edit_icon disflex fl" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/etravel/public/images/Not_progress.png"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("未進行")])
+                            ])
+                          : travel.travel_status == 20
+                          ? _c("div", { staticClass: "edit_icon disflex fl" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/etravel/public/images/In_progress.png"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("進行中")])
+                            ])
+                          : _c("div", { staticClass: "edit_icon disflex fl" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/etravel/public/images/ending.png"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("已結束")])
+                            ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "project_name" }, [
+                        _c("p", { staticClass: "overdot" }, [
+                          _vm._v(_vm._s(travel.travel_name))
+                        ])
+                      ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "project_name" }, [
-                      _c("p", { staticClass: "overdot" }, [
-                        _vm._v(_vm._s(travel.travel_name))
-                      ])
+                    _c("div", { staticClass: "project_icon disflex" }, [
+                      _c(
+                        "div",
+                        {
+                          on: {
+                            click: function($event) {
+                              $event.stopPropagation()
+                              return _vm.delTravel(travel.id, index)
+                            }
+                          }
+                        },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src: "/etravel/public/images/rush_small.png"
+                            }
+                          })
+                        ]
+                      )
                     ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "project_icon disflex" }, [
-                    _c(
-                      "div",
-                      {
-                        on: {
-                          click: function($event) {
-                            return _vm.delTravel(travel.id, index)
-                          }
-                        }
-                      },
-                      [
-                        _c("img", {
-                          attrs: {
-                            src: "/etravel/public/images/rush_small.png"
-                          }
-                        })
-                      ]
-                    )
-                  ])
-                ])
+                  ]
+                )
               })
             ],
             2
@@ -24348,6 +24347,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "project_right disflex" }, [
       _c("span", { staticClass: "addnew" }, [_vm._v("新建項目")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "project_left disflex yellowbg" }, [
+      _c("img", { attrs: { src: "/etravel/public/images/plane-icon.png" } })
     ])
   }
 ]
@@ -25426,7 +25433,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         getStudents: function getStudents() {
             var _this = this;
 
-            // 获取学员信息/api/travels/1/groups?include=user.student.school
+            // 获取團員資訊/api/travels/1/groups?include=user.student.school
             this.$ajax({
                 method: 'GET',
                 headers: {
@@ -25449,7 +25456,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         addNewStudent: function addNewStudent() {
             var _this2 = this;
 
-            // 新增学员信息/api/userGroup
+            // 新增團員資訊/api/userGroup
             this.$post(this.$config + '/api/userGroup', this.newStudent, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
@@ -25508,7 +25515,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         editStudent: function editStudent() {
             var _this3 = this;
 
-            // 修改学员信息信息/api/users/:user/groups/:group/information
+            // 修改團員資訊信息/api/users/:user/groups/:group/information
             this.$ajax({
                 method: 'PATCH',
                 headers: {
@@ -25569,10 +25576,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         delStudent: function delStudent() {
             var _this4 = this;
 
-            // 删除学员信息/api/users/:user/travels/:travel/groups/:group
+            // 删除團員資訊/api/users/:user/travels/:travel/groups/:group
             this.$dialog.confirm({
-                title: '删除学员信息',
-                message: '是否删除该学员信息'
+                title: '删除團員資訊',
+                message: '是否删除该團員資訊',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -25635,11 +25646,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                         _this5.searchStudentShow();
                     }
                 }).catch(function (err) {
-                    _this5.$toast('请输入正确的用戶ID');
+                    _this5.$toast('請輸入正確的用戶ID');
                     // console.log(err);
                 });
             } else {
-                this.$toast('请输入用戶ID');
+                this.$toast('請輸入用戶ID');
             }
         },
         cancelAdd: function cancelAdd() {
@@ -25701,7 +25712,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             };
         },
 
-        //接收区号组件返回的值
+        //接收區號组件返回的值
         selectedAreaCode: function selectedAreaCode(value) {
             this.newStudent.code = value;
         },
@@ -25837,7 +25848,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getAreacode: function getAreacode() {
             var _this = this;
 
-            // 获取区号列表
+            // 获取區號列表
             this.$get(this.$config + '/api/areacode', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
@@ -26145,7 +26156,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("電話区号")
+                        _vm._v("電話區號")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -26153,7 +26164,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填寫電話区号",
+                            placeholder: "填寫電話區號",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -26185,7 +26196,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("区号A")
+                        _vm._v("區號A")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -26193,7 +26204,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填寫区号A",
+                            placeholder: "填寫區號A",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -26227,7 +26238,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form_item_student" }, [
                       _c("div", { staticClass: "item_title" }, [
-                        _vm._v("区号B")
+                        _vm._v("區號B")
                       ]),
                       _vm._v(" "),
                       _c("div", [
@@ -26235,7 +26246,7 @@ var render = function() {
                           staticClass: "item_input",
                           attrs: {
                             type: "text",
-                            placeholder: "填寫区号B",
+                            placeholder: "填寫區號B",
                             disabled: "disabled"
                           },
                           domProps: {
@@ -26592,7 +26603,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("電話区号(不可编辑)"),
+                              _vm._v("電話區號(不可编辑)"),
                               _vm.errors.code
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26616,7 +26627,7 @@ var render = function() {
                                 staticClass: "item_input",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "填寫電話区号",
+                                  placeholder: "填寫電話區號",
                                   disabled: "disabled"
                                 },
                                 domProps: { value: _vm.edStudent.code },
@@ -26684,7 +26695,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("区号A")
+                              _vm._v("區號A")
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -26745,7 +26756,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("区号B")
+                              _vm._v("區號B")
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -27179,7 +27190,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("電話区号(不可编辑)")
+                    _vm._v("電話區號(不可编辑)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -27195,7 +27206,7 @@ var render = function() {
                       staticClass: "item_input",
                       attrs: {
                         type: "text",
-                        placeholder: "填寫電話区号",
+                        placeholder: "填寫電話區號",
                         disabled: "disabled"
                       },
                       domProps: { value: _vm.searchStudent.code },
@@ -27254,7 +27265,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("区号A")]),
+                  _c("div", { staticClass: "item_title" }, [_vm._v("區號A")]),
                   _vm._v(" "),
                   _c("div", [
                     _c(
@@ -27308,7 +27319,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("区号B")]),
+                  _c("div", { staticClass: "item_title" }, [_vm._v("區號B")]),
                   _vm._v(" "),
                   _c("div", [
                     _c(
@@ -27760,7 +27771,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("電話区号(必填)"),
+                    _vm._v("電話區號(必填)"),
                     _vm.errors.code
                       ? _c("span", {
                           staticClass: "err",
@@ -27815,7 +27826,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("区号A")]),
+                  _c("div", { staticClass: "item_title" }, [_vm._v("區號A")]),
                   _vm._v(" "),
                   _c("div", [
                     _c(
@@ -27867,7 +27878,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("区号B")]),
+                  _c("div", { staticClass: "item_title" }, [_vm._v("區號B")]),
                   _vm._v(" "),
                   _c("div", [
                     _c(
@@ -28629,7 +28640,10 @@ var render = function() {
               ],
               staticClass: "item_input_school",
               staticStyle: { width: "90%" },
-              attrs: { placeholder: "出行日期", type: "text" },
+              attrs: {
+                placeholder: "出行日期（例：yyyy-mm-dd）",
+                type: "text"
+              },
               domProps: { value: _vm.travelInfo.travel_at },
               on: {
                 input: function($event) {
@@ -28662,7 +28676,10 @@ var render = function() {
               ],
               staticClass: "item_input_school",
               staticStyle: { width: "90%" },
-              attrs: { placeholder: "結束日期", type: "text" },
+              attrs: {
+                placeholder: "結束日期（例：yyyy-mm-dd）",
+                type: "text"
+              },
               domProps: { value: _vm.travelInfo.travel_return },
               on: {
                 input: function($event) {
@@ -28841,7 +28858,7 @@ var render = function() {
         "div",
         { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
         [
-          _c("div", [_vm._v("区号A")]),
+          _c("div", [_vm._v("區號A")]),
           _vm._v(" "),
           _c("div", [
             _c(
@@ -28900,7 +28917,7 @@ var render = function() {
         "div",
         { staticClass: "travelInfoItem", staticStyle: { width: "50%" } },
         [
-          _c("div", [_vm._v("区号B")]),
+          _c("div", [_vm._v("區號B")]),
           _vm._v(" "),
           _c("div", [
             _c(
@@ -29344,18 +29361,12 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/personalSetting" } }, [
-          _c("div", [_vm._v("帳戶設定")])
+          _c("div", [_vm._v("修改密碼")])
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { tag: "li", to: "/personalCoin" } }, [
           _c("div", [_vm._v("金幣管理")])
-        ]),
-        _vm._v(" "),
-        _c(
-          "router-link",
-          { attrs: { tag: "li", to: "/personalInformation" } },
-          [_c("div", [_vm._v("資訊中心")])]
-        )
+        ])
       ],
       1
     )
@@ -31065,6 +31076,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -31090,7 +31103,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }).then(function (res) {
             // console.log(res.data);
             _this.phoneNumber = res.data.phone;
-            _this.idd_code = res.data.idd_code;
+            _this.idd_code = res.data.code;
         }).catch(function (err) {
             console.log(err);
             _this.$toast('登入失效');
@@ -31198,32 +31211,42 @@ var render = function() {
           _c("div", { staticClass: "form_item_password" }, [
             _c("div", { staticClass: "item_title" }, [_vm._v("區號")]),
             _vm._v(" "),
-            _c("div", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.idd_code,
-                    expression: "idd_code"
-                  }
-                ],
-                attrs: {
-                  type: "text",
-                  placeholder: "區號",
-                  disabled: "disabled"
-                },
-                domProps: { value: _vm.idd_code },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+            _vm.idd_code
+              ? _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.idd_code,
+                        expression: "idd_code"
+                      }
+                    ],
+                    attrs: {
+                      type: "text",
+                      placeholder: "區號",
+                      disabled: "disabled"
+                    },
+                    domProps: { value: _vm.idd_code },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.idd_code = $event.target.value
+                      }
                     }
-                    _vm.idd_code = $event.target.value
-                  }
-                }
-              })
-            ])
+                  })
+                ])
+              : _c("div", [
+                  _c("input", {
+                    attrs: {
+                      type: "text",
+                      placeholder: "未設定區號",
+                      disabled: "disabled"
+                    }
+                  })
+                ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "form_item_password" }, [
@@ -31479,7 +31502,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.personal_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_promise{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.form_content{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_promise{width: 100%;min-height:100px;\n}\n.form_item_promise>div{width: 96%;min-height: 45px;\n}\n.item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.van-dialog{width:50%;\n}\n/*金币管理*/\n.personal_right .coins_center{  width:100%;text-align: center;display: inline-block;margin-top: 80px;\n}\n.coins_center .coins_img{width: 346px;height: 180px;background: url(/etravel/public/images/Gold-BJ.png) no-repeat;display: inline-block;background-size: 100% 100%;\n}\n.coins_center .coins_info{width: 100%;margin-top: 30px;font-size: 18px;\n}\n.coins_info p.fonts{display: inline-block;height: 80px;line-height: 80px;\n}\n.coins_info span.num{font-size: 45px;color: #ffde01;margin: 0px 30px;display: inline-block;\n}\n.coins_info a{display: inline-block;\n}\n.coins_info a .pay{height: 50px;line-height: 50px;padding: 0px 55px;background: #E3E3E3;color: #666666;border-radius: 8px;\n}\n\n", ""]);
+exports.push([module.i, "\n.personal_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_promise{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.form_content{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_promise{width: 100%;min-height:100px;\n}\n.form_item_promise>div{width: 96%;min-height: 45px;\n}\n.item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.van-dialog{width:50%;\n}\n/*金币管理*/\n.personal_right .coins_center{  width:100%;text-align: center;display: inline-block;margin-top: 80px;\n}\n.coins_center .coins_img{width: 346px;height: 180px;background: url(/etravel/public/images/Gold-BJ.png) no-repeat;display: inline-block;background-size: 100% 100%;\n}\n.coins_center .coins_info{width: 100%;margin-top: 30px;font-size: 18px;\n}\n.coins_info p.fonts{display: inline-block;height: 80px;line-height: 80px;\n}\n.coins_info span.num{font-size: 45px;color: #ffde01;margin: 0px 30px;display: inline-block;\n}\n.coins_info div{display: inline-block;\n}\n.coins_info div .pay{height: 50px;line-height: 50px;padding: 0px 55px;background: #E3E3E3;color: #666666;border-radius: 8px;\n}\n\n", ""]);
 
 // exports
 
@@ -31606,9 +31629,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "" } }, [
-      _c("div", { staticClass: "pay" }, [_vm._v("充值")])
-    ])
+    return _c("div", [_c("div", { staticClass: "pay" }, [_vm._v("充值")])])
   }
 ]
 render._withStripped = true
@@ -33325,7 +33346,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除航班
             this.$dialog.confirm({
                 title: '删除航班',
-                message: '是否删除该航班'
+                message: '是否删除该航班',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this6.$ajax({
                     method: 'DELETE',
@@ -33463,7 +33488,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除酒店
             this.$dialog.confirm({
                 title: '删除酒店',
-                message: '是否删除该酒店'
+                message: '是否删除该酒店',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this10.$ajax({
                     method: 'DELETE',
@@ -33586,7 +33615,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除領隊
             this.$dialog.confirm({
                 title: '删除領隊',
-                message: '是否删除该領隊'
+                message: '是否删除该領隊',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this14.$ajax({
                     method: 'DELETE',
@@ -33711,7 +33744,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$dialog.confirm({
                 title: '重置圖片',
-                message: '是否重置該圖片'
+                message: '是否重置該圖片',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 if (_this18.isNewImg) {
                     _this18.newHotel.image = "http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png";
@@ -40702,7 +40739,7 @@ var render = function() {
                     staticClass: "item_input",
                     attrs: {
                       type: "text",
-                      placeholder: "酒店經緯度(经度,纬度)"
+                      placeholder: "酒店經緯度(經度,緯度)"
                     },
                     domProps: { value: _vm.newHotel.hotel_location },
                     on: {
@@ -41044,7 +41081,7 @@ var render = function() {
                     staticClass: "item_input",
                     attrs: {
                       type: "text",
-                      placeholder: "酒店經緯度(经度,纬度)"
+                      placeholder: "酒店經緯度(經度,緯度)"
                     },
                     domProps: { value: _vm.edHotel.hotel_location },
                     on: {
@@ -41659,7 +41696,7 @@ var staticRenderFns = [
                 "data-toggle": "tab"
               }
             },
-            [_vm._v("恶劣天气安排")]
+            [_vm._v("惡劣天氣安排")]
           )
         ])
       ]
@@ -42054,7 +42091,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除领队
             this.$dialog.confirm({
                 title: '删除联系人',
-                message: '是否删除该联系人'
+                message: '是否删除该联系人',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -42914,7 +42955,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除準則
             this.$dialog.confirm({
                 title: '删除準則',
-                message: '是否删除该準則'
+                message: '是否删除该準則',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -44150,7 +44195,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除承诺
             this.$dialog.confirm({
                 title: '删除承诺',
-                message: '是否删除该承诺'
+                message: '是否删除该承诺',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -44718,7 +44767,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除承诺詳情
             this.$dialog.confirm({
                 title: '删除承诺詳情',
-                message: '是否删除该承诺詳情'
+                message: '是否删除该承诺詳情',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -45334,7 +45387,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除分房信息
             this.$dialog.confirm({
                 title: '删除分组信息',
-                message: '是否删除该分组'
+                message: '是否删除该分组',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this3.$ajax({
                     method: 'DELETE',
@@ -45989,7 +46046,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除分房信息
             this.$dialog.confirm({
                 title: '删除分組分房表資訊',
-                message: '是否删除該條資訊'
+                message: '是否删除該條分組分房表資訊和該團員資訊',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this3.$ajax({
                     method: 'DELETE',
@@ -46124,7 +46185,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form_item_house" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("房间编号")]),
+                _c("div", { staticClass: "item_title" }, [_vm._v("房间編號")]),
                 _vm._v(" "),
                 _c("div", [
                   _c("input", {
@@ -46137,7 +46198,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "填寫房间编号", type: "text" },
+                    attrs: { placeholder: "填寫房间編號", type: "text" },
                     domProps: { value: _vm.edHouse.house_room },
                     on: {
                       input: function($event) {
@@ -46241,7 +46302,7 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("分組編號")]),
         _vm._v(" "),
-        _c("th", [_vm._v("房间编号")]),
+        _c("th", [_vm._v("房间編號")]),
         _vm._v(" "),
         _c("th", [_vm._v("班級")]),
         _vm._v(" "),
@@ -47271,7 +47332,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除景点
             this.$dialog.confirm({
                 title: '删除景点',
-                message: '是否删除该景点'
+                message: '是否删除该景点',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -47952,7 +48017,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除膳食
             this.$dialog.confirm({
                 title: '删除膳食',
-                message: '是否删除该膳食'
+                message: '是否删除该膳食',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -48783,7 +48852,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除行程
             this.$dialog.confirm({
                 title: '删除行程',
-                message: '是否删除该行程'
+                message: '是否删除该行程',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -49424,7 +49497,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除學習工作紙
             this.$dialog.confirm({
                 title: '删除學習工作紙',
-                message: '是否删除该學習工作紙'
+                message: '是否删除该學習工作紙',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -50056,7 +50133,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除問題
             this.$dialog.confirm({
                 title: '删除問題',
-                message: '是否删除该問題'
+                message: '是否删除该問題',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -50672,7 +50753,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除当地文化
             this.$dialog.confirm({
                 title: '删除当地文化',
-                message: '是否删除该当地文化'
+                message: '是否删除该当地文化',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -51312,7 +51397,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除清單
             this.$dialog.confirm({
                 title: '删除清單',
-                message: '是否删除该清單'
+                message: '是否删除该清單',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -51893,7 +51982,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除守则詳情
             this.$dialog.confirm({
                 title: '删除装备詳情',
-                message: '是否删除该装备詳情'
+                message: '是否删除该装备詳情',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -52589,7 +52682,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除题目类型
             this.$dialog.confirm({
                 title: '删除题目类型',
-                message: '是否删除该题目类型'
+                message: '是否删除该题目类型',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -53177,7 +53274,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除行程
             this.$dialog.confirm({
                 title: '删除題目',
-                message: '是否删除该題目'
+                message: '是否删除该題目',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',
@@ -53826,7 +53927,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 删除感想
             this.$dialog.confirm({
                 title: '删除感想',
-                message: '是否删除该感想'
+                message: '是否删除该感想',
+                cancelButtonText: '取消',
+                cancelButtonColor: '#ccc',
+                confirmButtonText: '確定',
+                confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
                     method: 'DELETE',

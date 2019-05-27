@@ -71,4 +71,9 @@ table,table tr th,table tr td {
     border: 1px solid #000;
     text-align: center;
 }
-body,html{font-size: 16px;}
+body,html{font-size: 16px !important;}
+.van-dialog__header{font-size: 18px !important;}
+.van-dialog__message{font-size: 16px !important;}
+.van-button{font-size: 18px !important;}
+.van-button__text{color:#000 !important;} 
+.van-dialog__confirm, .van-dialog__confirm:active{color:#000 !important;} 

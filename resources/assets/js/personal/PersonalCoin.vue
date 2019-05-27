@@ -19,8 +19,8 @@
     .coins_center .coins_info{width: 100%;margin-top: 30px;font-size: 18px;}
     .coins_info p.fonts{display: inline-block;height: 80px;line-height: 80px;}
     .coins_info span.num{font-size: 45px;color: #ffde01;margin: 0px 30px;display: inline-block;}
-    .coins_info a{display: inline-block;}
-    .coins_info a .pay{height: 50px;line-height: 50px;padding: 0px 55px;background: #E3E3E3;color: #666666;border-radius: 8px;}
+    .coins_info div{display: inline-block;}
+    .coins_info div .pay{height: 50px;line-height: 50px;padding: 0px 55px;background: #E3E3E3;color: #666666;border-radius: 8px;}
 
 </style>
 
@@ -35,7 +35,7 @@
                             <div class="coins_info">
                                 <p class="fonts">您的剩餘金幣</p>
                                 <span class="num">{{userInfo.tokens}}</span>
-                                <a href=""><div class="pay">充值</div></a>
+                                <div><div class="pay">充值</div></div>
                             </div>
                         </div>
                     </div>

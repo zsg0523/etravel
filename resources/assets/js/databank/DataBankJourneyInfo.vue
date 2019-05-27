@@ -220,7 +220,11 @@
                 // 删除景点
                 this.$dialog.confirm({
                     title: '删除景点',
-                    message: '是否删除该景点'
+                    message: '是否删除该景点',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

@@ -219,7 +219,11 @@
                 // 删除學習工作紙
                 this.$dialog.confirm({
                     title: '删除學習工作紙',
-                    message: '是否删除该學習工作紙'
+                    message: '是否删除该學習工作紙',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

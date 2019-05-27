@@ -222,7 +222,11 @@
                 // 删除行程
                 this.$dialog.confirm({
                     title: '删除題目',
-                    message: '是否删除该題目'
+                    message: '是否删除该題目',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

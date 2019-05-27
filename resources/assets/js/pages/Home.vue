@@ -62,8 +62,8 @@
                 </div>
     		</div>
     		
-    		<div class="project disflex" v-for="(travel,index) in travels">
-    			<div class="project_left disflex yellowbg"  @click="$router.push('/projectDetail/'+travel.id)">
+    		<div class="project disflex" v-for="(travel,index) in travels" @click.stop="$router.push('/projectDetail/'+travel.id)">
+    			<div class="project_left disflex yellowbg">
     				<img src="/etravel/public/images/plane-icon.png">
     			</div>
     			<div class="project_right disflex">
@@ -98,7 +98,7 @@
     				</div>
     			</div>
                 <div class="project_icon disflex">
-                    <div @click="delTravel(travel.id,index)"><img src="/etravel/public/images/rush_small.png"></div>
+                    <div @click.stop="delTravel(travel.id,index)"><img src="/etravel/public/images/rush_small.png"></div>
                     <!-- <div><img src="/etravel/public/images/Released.png"></div>        -->
 
                 </div>
@@ -277,7 +277,11 @@
                 // 新增旅游
                 this.$dialog.confirm({
                     title: '新建項目',
-                    message: '新建項目將會消耗您一枚金幣，是否創建？'
+                    message: '新建項目將會消耗您一枚金幣，是否創建？',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     if(this.$store.state.userInfo.tokens>=1){
                         this.$post(this.$config+'/api/travels',{
@@ -324,7 +328,11 @@
                 // 删除旅游
                 this.$dialog.confirm({
                     title: '删除項目',
-                    message: '是否删除該項目'
+                    message: '是否删除該項目',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

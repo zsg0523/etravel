@@ -262,7 +262,11 @@
                 // 删除分房信息
                 this.$dialog.confirm({
                     title: '删除分组信息',
-                    message: '是否删除该分组'
+                    message: '是否删除该分组',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

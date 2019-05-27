@@ -189,7 +189,11 @@
                 // 删除清單
                 this.$dialog.confirm({
                     title: '删除清單',
-                    message: '是否删除该清單'
+                    message: '是否删除该清單',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

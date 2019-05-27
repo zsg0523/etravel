@@ -189,7 +189,11 @@
              // 删除感想
             this.$dialog.confirm({
                 title: '删除感想',
-                message: '是否删除该感想'
+                message: '是否删除该感想',
+                cancelButtonText:'取消',
+                cancelButtonColor:'#ccc',
+                confirmButtonText:'確定',
+                confirmButtonColor:'#000',
             }).then(() => {
                 this.$ajax({
                     method: 'DELETE',

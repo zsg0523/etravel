@@ -241,7 +241,11 @@
                 // 删除当地文化
                 this.$dialog.confirm({
                     title: '删除当地文化',
-                    message: '是否删除该当地文化'
+                    message: '是否删除该当地文化',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
