@@ -57004,10 +57004,10 @@ module.exports = function spread(callback) {
 "use strict";
 
 
-// const baseUrl='https://www.bunchparty.com/etravel/public';//公司线上地址
+var baseUrl = 'https://www.bunchparty.com/etravel/public'; //公司线上地址
 // const baseUrl='http://app.ateamtravel.hk/etravel/public';//学游线上地址1
 // const baseUrl='http://app.study2go.net/etravel/public';//学游线上地址2
-var baseUrl = '';
+// const baseUrl='';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),
