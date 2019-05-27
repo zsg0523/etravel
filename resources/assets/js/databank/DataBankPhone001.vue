@@ -41,7 +41,7 @@
                     <div><input class="item_input_phone" placeholder="职责" type="text" disabled="disabled" :value="phone.duty"></div>
                 </div>
                 <div class="form_item_phone">
-                    <div class="item_title">电话区号</div>
+                    <div class="item_title">电话區號</div>
                     <div><input class="item_input_phone" type="text" disabled="disabled" :value="phone.area_code"></div>
                 </div>
                 <div class="form_item_phone">
@@ -69,8 +69,8 @@
                         <div><input class="item_input_phone" placeholder="职责" type="text"  v-model="newPhone.duty"></div>
                     </div>
 		            <div class="form_item_phone">
-		                <div class="item_title">电话区号</div>
-		                <div><input class="item_input_phone" type="text" placeholder="电话区号"  v-model="newPhone.area_code"></div>
+		                <div class="item_title">电话區號</div>
+		                <div><input class="item_input_phone" type="text" placeholder="电话區號"  v-model="newPhone.area_code"></div>
 		            </div>
 		            <div class="form_item_phone">
 		                <div class="item_title">联系电话</div>
@@ -94,8 +94,8 @@
                         <div><input class="item_input_phone" placeholder="职责" type="text"  v-model="edPhone.duty"></div>
                     </div>
 		            <div class="form_item_phone">
-		                <div class="item_title">电话区号</div>
-		                <div><input class="item_input_phone" type="text" placeholder="电话区号"  v-model="edPhone.area_code"></div>
+		                <div class="item_title">电话區號</div>
+		                <div><input class="item_input_phone" type="text" placeholder="电话區號"  v-model="edPhone.area_code"></div>
 		            </div>
 		            <div class="form_item_phone">
 		                <div class="item_title">联系电话</div>
@@ -221,7 +221,11 @@
                 // 删除领队
                 this.$dialog.confirm({
                     title: '删除联系人',
-                    message: '是否删除该联系人'
+                    message: '是否删除该联系人',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

@@ -70,7 +70,7 @@
         },
         methods: {
             getAreacode(){
-                // 获取区号列表
+                // 获取區號列表
                 this.$get(this.$config+'/api/areacode',
                 {
                     headers: {

@@ -20,7 +20,7 @@
 	        <img src="/etravel/public/images/logo.png">
 	    </div>
 	    <div class="right disflex">
-	        <div class="letter disflex"><img src="/etravel/public/images/letter.png"></div>
+	        <!-- <div class="letter disflex"><img src="/etravel/public/images/letter.png"></div> -->
 
 	        <div class="person_icon disflex" v-if="userInfo.avatar">
 	        	<img :src="userInfo.avatar" @click="$router.push('/personalInfo')">
@@ -81,7 +81,11 @@
 			logout(){
 				this.$dialog.confirm({
                     title: '登出',
-                    message: '是否登出'
+                    message: '是否登出',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
 					sessionStorage.clear();
 					this.setUserInfo('');

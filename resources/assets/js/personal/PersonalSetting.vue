@@ -28,7 +28,9 @@
                 <div class="form_content disflex">
                     <div class="form_item_password">
                         <div class="item_title">區號</div>
-                        <div><input type="text" placeholder="區號" disabled="disabled" v-model="idd_code"></div>
+                        <div v-if="idd_code"><input type="text" placeholder="區號" disabled="disabled" v-model="idd_code"></div>
+                        <div v-else><input type="text" placeholder="未設定區號" disabled="disabled"></div>
+                        <!-- <div><input type="text" placeholder="區號" disabled="disabled" v-model="idd_code"></div> -->
                     </div>
                     <div class="form_item_password">
                         <div class="item_title">手機號碼</div>
@@ -88,7 +90,7 @@
             }).then(res => {
                 // console.log(res.data);
                 this.phoneNumber=res.data.phone;
-                this.idd_code=res.data.idd_code;
+                this.idd_code=res.data.code;
             }).catch(err => {
                 console.log(err);
                 this.$toast('登入失效');

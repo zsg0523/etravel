@@ -111,11 +111,11 @@
             </div>
             <div class="travelInfoItem" style="width:50%;">
                 <div>出行日期</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_at" placeholder="出行日期" type="text"></div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_at" placeholder="出行日期（例：yyyy-mm-dd）" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
                 <div>結束日期</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_return" placeholder="結束日期" type="text"></div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_return" placeholder="結束日期（例：yyyy-mm-dd）" type="text"></div>
             </div>
             <div class="travelInfoItem">
                 <div>旅遊簡介</div>
@@ -150,9 +150,9 @@
                 </div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>区号A</div>
+                <div>區號A</div>
                 <div>
-                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_one" placeholder="区号A" type="text"> -->
+                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_one" placeholder="區號A" type="text"> -->
                     <div class="simulateShade">
                         <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='travelInfo.code_one'></AreaCodeSelector>
                     </div>
@@ -163,9 +163,9 @@
                 <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_phone_one" placeholder="緊急電話A" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>区号B</div>
+                <div>區號B</div>
                 <div>
-                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_two" placeholder="区号B" type="text"> -->
+                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_two" placeholder="區號B" type="text"> -->
                     <div class="simulateShade">
                         <AreaCodeSelector @selectedAreaCode='selectedAreaCode1' :areaCode='travelInfo.code_two'></AreaCodeSelector>
                     </div>

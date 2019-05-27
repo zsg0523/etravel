@@ -94,8 +94,8 @@
                             <div><input class="item_input" type="text" placeholder="填寫團員英文名" disabled="disabled" :value="students[actIndex].user.en_name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">電話区号</div>
-                            <div><input class="item_input" type="text" placeholder="填寫電話区号" disabled="disabled" :value="students[actIndex].user.code"></div>
+                            <div class="item_title">電話區號</div>
+                            <div><input class="item_input" type="text" placeholder="填寫電話區號" disabled="disabled" :value="students[actIndex].user.code"></div>
                         </div>
                         <div class="form_item_student">
                             <div class="item_title">聯繫電話</div>
@@ -103,16 +103,16 @@
                         </div>
                         <!-- 紧急联系人 -->
                         <div class="form_item_student">
-                            <div class="item_title">区号A</div>
-                            <div><input class="item_input" type="text" placeholder="填寫区号A" disabled="disabled" :value="students[actIndex].user.code_one"></div>
+                            <div class="item_title">區號A</div>
+                            <div><input class="item_input" type="text" placeholder="填寫區號A" disabled="disabled" :value="students[actIndex].user.code_one"></div>
                         </div>
                         <div class="form_item_student">
                             <div class="item_title">緊急電話A</div>
                             <div><input class="item_input" type="text" placeholder="填寫緊急電話A" disabled="disabled" :value="students[actIndex].user.emergency_phone_one"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">区号B</div>
-                            <div><input class="item_input" type="text" placeholder="填寫区号B" disabled="disabled" :value="students[actIndex].user.code_two"></div>
+                            <div class="item_title">區號B</div>
+                            <div><input class="item_input" type="text" placeholder="填寫區號B" disabled="disabled" :value="students[actIndex].user.code_two"></div>
                         </div>
                         <div class="form_item_student">
                             <div class="item_title">緊急電話B</div>
@@ -169,8 +169,8 @@
                                     <div><input class="item_input" type="text" placeholder="填寫團員英文名" disabled="disabled" v-model="edStudent.en_name"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">電話区号(不可编辑)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填寫電話区号" disabled="disabled" v-model="edStudent.code"></div>
+                                    <div class="item_title">電話區號(不可编辑)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
+                                    <div><input class="item_input" type="text" placeholder="填寫電話區號" disabled="disabled" v-model="edStudent.code"></div>
                                 </div>
                                 <div class="form_item_student">
                                     <div class="item_title">聯繫電話(不可编辑)<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
@@ -178,12 +178,12 @@
                                 </div>
                                 <!-- 紧急联系人 -->
                                 <div class="form_item_student">
-                                    <div class="item_title">区号A</div>
+                                    <div class="item_title">區號A</div>
                                     <div>
                                         <div class="simulateShade">
                                             <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='edStudent.code_one'></AreaCodeSelector>
                                         </div>
-                                        <!-- <input class="item_input" type="text" placeholder="填寫区号A" v-model="edStudent.code_one"> -->
+                                        <!-- <input class="item_input" type="text" placeholder="填寫區號A" v-model="edStudent.code_one"> -->
                                     </div>
                                 </div>
                                 <div class="form_item_student">
@@ -191,12 +191,12 @@
                                     <div><input class="item_input" type="text" placeholder="填寫緊急電話A" v-model="edStudent.emergency_phone_one"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">区号B</div>
+                                    <div class="item_title">區號B</div>
                                     <div>
                                         <div class="simulateShade">
                                             <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='edStudent.code_two'></AreaCodeSelector>
                                         </div>
-                                        <!-- <input class="item_input" type="text" placeholder="填寫区号B" v-model="edStudent.code_two"> -->
+                                        <!-- <input class="item_input" type="text" placeholder="填寫區號B" v-model="edStudent.code_two"> -->
                                     </div>
                                 </div>
                                 <div class="form_item_student">
@@ -256,8 +256,8 @@
                             <div><input class="item_input" type="text" placeholder="填寫團員英文名" disabled="disabled" :value="searchStudent.en_name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">電話区号(不可编辑)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫電話区号" disabled="disabled" v-model="searchStudent.code"></div>
+                            <div class="item_title">電話區號(不可编辑)</div>
+                            <div><input class="item_input" type="text" placeholder="填寫電話區號" disabled="disabled" v-model="searchStudent.code"></div>
                         </div>
                         <div class="form_item_student">
                             <div class="item_title">聯繫電話(不可编辑)</div>
@@ -265,12 +265,12 @@
                         </div>
                         <!-- 紧急联系人 -->
                         <div class="form_item_student">
-                            <div class="item_title">区号A</div>
+                            <div class="item_title">區號A</div>
                             <div>
                                 <div class="simulateShade">
                                     <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='searchStudent.code_one'></AreaCodeSelector>
                                 </div>
-                                <!-- <input class="item_input" type="text" placeholder="填寫区号A" v-model="searchStudent.code_one"> -->
+                                <!-- <input class="item_input" type="text" placeholder="填寫區號A" v-model="searchStudent.code_one"> -->
                             </div>
                         </div>
                         <div class="form_item_student">
@@ -278,12 +278,12 @@
                             <div><input class="item_input" type="text" placeholder="填寫緊急電話A" v-model="searchStudent.emergency_phone_one"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">区号B</div>
+                            <div class="item_title">區號B</div>
                             <div>
                                 <div class="simulateShade">
                                     <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='searchStudent.code_two'></AreaCodeSelector>
                                 </div>
-                                <!-- <input class="item_input" type="text" placeholder="填寫区号B" v-model="searchStudent.code_two"> -->
+                                <!-- <input class="item_input" type="text" placeholder="填寫區號B" v-model="searchStudent.code_two"> -->
                             </div>
                         </div>
                         <div class="form_item_student">
@@ -339,12 +339,12 @@
                             <div><input class="item_input" type="text" placeholder="填寫團員英文名" v-model="newStudent.en_name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">電話区号(必填)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
+                            <div class="item_title">電話區號(必填)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
                             <div>
                                 <div class="simulateShade">
                                     <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newStudent.code'></AreaCodeSelector>
                                 </div>
-                                <!-- <input class="item_input" type="text" placeholder="填寫電話区号" v-model="newStudent.code"> -->
+                                <!-- <input class="item_input" type="text" placeholder="填寫電話區號" v-model="newStudent.code"> -->
                             </div>
                         </div>
                         <div class="form_item_student">
@@ -354,12 +354,12 @@
 
                         <!-- 紧急联系人 -->
                         <div class="form_item_student">
-                            <div class="item_title">区号A</div>
+                            <div class="item_title">區號A</div>
                             <div>
                                 <div class="simulateShade">
                                     <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='newStudent.code_one'></AreaCodeSelector>
                                 </div>
-                                <!-- <input class="item_input" type="text" placeholder="填寫区号A" v-model="newStudent.code_one"> -->
+                                <!-- <input class="item_input" type="text" placeholder="填寫區號A" v-model="newStudent.code_one"> -->
                             </div>
                         </div>
                         <div class="form_item_student">
@@ -367,12 +367,12 @@
                             <div><input class="item_input" type="text" placeholder="填寫緊急電話A" v-model="newStudent.emergency_phone_one"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">区号B</div>
+                            <div class="item_title">區號B</div>
                             <div>
                                 <div class="simulateShade">
                                     <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='newStudent.code_two'></AreaCodeSelector>
                                 </div>
-                                <!-- <input class="item_input" type="text" placeholder="填寫区号B" v-model="newStudent.code_two"> -->
+                                <!-- <input class="item_input" type="text" placeholder="填寫區號B" v-model="newStudent.code_two"> -->
                             </div>
                         </div>
                         <div class="form_item_student">
@@ -499,7 +499,7 @@
         },
         methods:{
             getStudents(){
-                // 获取学员信息/api/travels/1/groups?include=user.student.school
+                // 获取團員資訊/api/travels/1/groups?include=user.student.school
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -520,7 +520,7 @@
                 this.selectStatus='new';
             },
             addNewStudent(){
-                // 新增学员信息/api/userGroup
+                // 新增團員資訊/api/userGroup
                 this.$post(this.$config+'/api/userGroup',this.newStudent,
                 {
                     headers: {
@@ -579,7 +579,7 @@
                 this.selectStatus='edit';
             },
             editStudent(){
-                // 修改学员信息信息/api/users/:user/groups/:group/information
+                // 修改團員資訊信息/api/users/:user/groups/:group/information
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -639,10 +639,14 @@
                 });
             },
             delStudent(){
-                // 删除学员信息/api/users/:user/travels/:travel/groups/:group
+                // 删除團員資訊/api/users/:user/travels/:travel/groups/:group
                 this.$dialog.confirm({
-                    title: '删除学员信息',
-                    message: '是否删除该学员信息'
+                    title: '删除團員資訊',
+                    message: '是否删除该團員資訊',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -705,11 +709,11 @@
                             this.searchStudentShow();
                         }
                     }).catch(err => {
-                        this.$toast('请输入正确的用戶ID');
+                        this.$toast('請輸入正確的用戶ID');
                         // console.log(err);
                     });
                 }else{
-                    this.$toast('请输入用戶ID');
+                    this.$toast('請輸入用戶ID');
                 }  
             },
             cancelAdd(){
@@ -771,7 +775,7 @@
                     act: index==this.actIndex? true:false,
                 }
             },
-            //接收区号组件返回的值
+            //接收區號组件返回的值
             selectedAreaCode(value){
                 this.newStudent.code=value;
             },

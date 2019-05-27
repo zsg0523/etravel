@@ -250,7 +250,11 @@
                 // 删除领队
                 this.$dialog.confirm({
                     title: '删除联系人',
-                    message: '是否删除该联系人'
+                    message: '是否删除该联系人',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

@@ -52,7 +52,7 @@
                                 <div><input class="item_input" placeholder="职责" type="text" disabled="disabled" :value="phone.duty"></div>
                             </div>
                             <div class="form_item_journey">
-                                <div class="item_title">电话区号</div>
+                                <div class="item_title">电话區號</div>
                                 <div><input class="item_input" type="text" disabled="disabled" :value="phone.area_code"></div>
                             </div>
                             <div class="form_item_journey">
@@ -83,7 +83,7 @@
                                 <div><input class="item_input" placeholder="职责" type="text" disabled="disabled" :value="phone.duty"></div>
                             </div>
                             <div class="form_item_journey">
-                                <div class="item_title">电话区号</div>
+                                <div class="item_title">电话區號</div>
                                 <div><input class="item_input" type="text" disabled="disabled" :value="phone.area_code"></div>
                             </div>
                             <div class="form_item_journey">
@@ -115,8 +115,8 @@
                         <div><input class="item_input" placeholder="职责" type="text"  v-model="newPhone.duty"></div>
                     </div>
                     <div class="form_item_journey">
-                        <div class="item_title">电话区号</div>
-                        <div><input class="item_input" type="text" placeholder="电话区号"  v-model="newPhone.area_code"></div>
+                        <div class="item_title">电话區號</div>
+                        <div><input class="item_input" type="text" placeholder="电话區號"  v-model="newPhone.area_code"></div>
                     </div>
                     <div class="form_item_journey">
                         <div class="item_title">联系电话</div>
@@ -140,8 +140,8 @@
                         <div><input class="item_input" placeholder="职责" type="text"  v-model="edPhone.duty"></div>
                     </div>
                     <div class="form_item_journey">
-                        <div class="item_title">电话区号</div>
-                        <div><input class="item_input" type="text" placeholder="电话区号"  v-model="edPhone.area_code"></div>
+                        <div class="item_title">电话區號</div>
+                        <div><input class="item_input" type="text" placeholder="电话區號"  v-model="edPhone.area_code"></div>
                     </div>
                     <div class="form_item_journey">
                         <div class="item_title">联系电话</div>

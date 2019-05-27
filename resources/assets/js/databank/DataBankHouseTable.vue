@@ -37,7 +37,7 @@
                 <thead>
                     <tr>
                         <th>分組編號</th>
-                        <th>房间编号</th>
+                        <th>房间編號</th>
                         <th>班級</th>
                         <th>中文名</th>
                         <th>英文名</th>
@@ -69,7 +69,7 @@
                     <div class="form_item_house">
                         <div class="item_title">房间</div>
                         <div>
-                            <input class="item_input" placeholder="房间编号" type="text"  v-model="newHouse.house_room">
+                            <input class="item_input" placeholder="房间編號" type="text"  v-model="newHouse.house_room">
                         </div>
                     </div>
                     <div class="form_item_house">
@@ -100,9 +100,9 @@
                         </div>
                     </div>
                     <div class="form_item_house">
-                        <div class="item_title">房间编号</div>
+                        <div class="item_title">房间編號</div>
                         <div>
-                            <input class="item_input" placeholder="填寫房间编号" type="text"  v-model="edHouse.house_room">
+                            <input class="item_input" placeholder="填寫房间編號" type="text"  v-model="edHouse.house_room">
                         </div>
                     </div>
                     <div class="form_item_house">
@@ -262,7 +262,11 @@
                 // 删除分房信息
                 this.$dialog.confirm({
                     title: '删除分組分房表資訊',
-                    message: '是否删除該條資訊'
+                    message: '是否删除該條分組分房表資訊和該團員資訊',
+                    cancelButtonText:'取消',
+                    cancelButtonColor:'#ccc',
+                    confirmButtonText:'確定',
+                    confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',
@@ -273,7 +277,7 @@
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
-                            this.getHouses();
+                            this.getHouses(); 
                             this.$toast('删除成功');
                         }else{
                             this.$toast('删除失敗');
