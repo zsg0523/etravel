@@ -231,7 +231,7 @@
                         <div class="item_title">驗證碼</div>
                         <div class="disflex" style="justify-content: space-between;">
                             <input type="text" placeholder="驗證碼" v-model="emailCode" style="width: 56%;">
-                            <button class="tc sendCode" @click='getEmailCode()' :disabled="emailDisabled">獲取驗證碼</button>
+                            <button class="tc sendCode" @click='getEmailCode()' :disabled="emailDisabled || emailTime > 0">{{emailText}}</button>
                         </div>
                     </div>
                     <div class="issure">
@@ -270,6 +270,7 @@
                 isEditPhone:false,
                 isEditEmail:false,
                 time: 0,
+                emailTime:600,
                 disabled:false,
                 phone:'',
                 phoneCode:'',
@@ -339,6 +340,13 @@
                     this.$toast('修改失敗');
                     console.log(err)
                     this.errors=err.response.data.errors;
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }else{
+                        this.$toast(err.response.data.message);
+                    }
                 });
             },
             editPhoneShow(){
@@ -366,6 +374,8 @@
                             for(var key in err.response.data.errors){
                                 this.$toast(err.response.data.errors[key][0]);
                             }
+                        }else{
+                            this.$toast(err.response.data.message);
                         }
                         
                     });
@@ -398,7 +408,14 @@
                 }).catch(err => {
                     this.$toast('修改失敗');
                     console.log(err)
-                    this.errors=err.response.data.errors;
+                    // this.errors=err.response.data.errors;
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }else{
+                        this.$toast(err.response.data.message);
+                    }
                 });
             },
             editEmailShow(){
@@ -425,6 +442,8 @@
                             for(var key in err.response.data.errors){
                                 this.$toast(err.response.data.errors[key][0]);
                             }
+                        }else{
+                            this.$toast(err.response.data.message);
                         }
                         
                     });
@@ -458,17 +477,33 @@
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
+                    }else{
+                        this.$toast(err.response.data.message);
                     }
                 });
             },
             run() {
                 this.time=60;
-                this.timer();
+                this.emailTime();
+            },
+            emailRun() {
+                this.time=600;
+                this.emailTimer();
             },
             setDisabled: function(val){
                 this.disabled = val;
             },
             timer() {
+                if (this.time > 0) {
+                    this.time--;
+                    this.disabled = true;
+                    setTimeout(this.timer, 1000);
+                }else{
+                    this.disabled = false;
+                    this.time=0;
+                }
+            },
+            emailTimer() {
                 if (this.time > 0) {
                     this.time--;
                     this.disabled = true;
@@ -484,6 +519,9 @@
         },
         computed: {
             text() {
+                return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
+            },
+            emailText() {
                 return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
             }
         }

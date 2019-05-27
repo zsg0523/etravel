@@ -142,6 +142,8 @@
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
+                    }else{
+                        this.$toast(err.response.data.message);
                     }
                     // this.$toast('添加失败');
                     console.log(err)
@@ -177,6 +179,8 @@
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
+                    }else{
+                        this.$toast(err.response.data.message);
                     }
                     // this.$toast('修改失败');
                     console.log(err)

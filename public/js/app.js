@@ -25569,6 +25569,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 _this3.errors = err.response.data.errors;
             });
@@ -25693,6 +25695,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                     for (var key in err.response.data.errors) {
                         _this6.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this6.$toast(err.response.data.message);
                 }
                 _this6.errors = err.response.data.errors;
                 // if(err.response.data.errors.duty){
@@ -28527,6 +28531,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -28561,6 +28567,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -29810,6 +29818,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             isEditPhone: false,
             isEditEmail: false,
             time: 0,
+            emailTime: 600,
             disabled: false,
             phone: '',
             phoneCode: '',
@@ -29883,6 +29892,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.$toast('修改失敗');
                 console.log(err);
                 _this2.errors = err.response.data.errors;
+                if (err.response.data.errors) {
+                    for (var key in err.response.data.errors) {
+                        _this2.$toast(err.response.data.errors[key][0]);
+                    }
+                } else {
+                    _this2.$toast(err.response.data.message);
+                }
             });
         },
         editPhoneShow: function editPhoneShow() {
@@ -29912,6 +29928,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         for (var key in err.response.data.errors) {
                             _this3.$toast(err.response.data.errors[key][0]);
                         }
+                    } else {
+                        _this3.$toast(err.response.data.message);
                     }
                 });
             } else {
@@ -29945,7 +29963,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (err) {
                 _this4.$toast('修改失敗');
                 console.log(err);
-                _this4.errors = err.response.data.errors;
+                // this.errors=err.response.data.errors;
+                if (err.response.data.errors) {
+                    for (var key in err.response.data.errors) {
+                        _this4.$toast(err.response.data.errors[key][0]);
+                    }
+                } else {
+                    _this4.$toast(err.response.data.message);
+                }
             });
         },
         editEmailShow: function editEmailShow() {
@@ -29974,6 +29999,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         for (var key in err.response.data.errors) {
                             _this5.$toast(err.response.data.errors[key][0]);
                         }
+                    } else {
+                        _this5.$toast(err.response.data.message);
                     }
                 });
             } else {
@@ -30008,12 +30035,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this6.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this6.$toast(err.response.data.message);
                 }
             });
         },
         run: function run() {
             this.time = 60;
-            this.timer();
+            this.emailTime();
+        },
+        emailRun: function emailRun() {
+            this.time = 600;
+            this.emailTimer();
         },
 
         setDisabled: function setDisabled(val) {
@@ -30029,12 +30062,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.time = 0;
             }
         },
+        emailTimer: function emailTimer() {
+            if (this.time > 0) {
+                this.time--;
+                this.disabled = true;
+                setTimeout(this.timer, 1000);
+            } else {
+                this.disabled = false;
+                this.time = 0;
+            }
+        },
         selectedAreaCode: function selectedAreaCode(value) {
             this.areacode = value;
         }
     },
     computed: {
         text: function text() {
+            return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
+        },
+        emailText: function emailText() {
             return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
         }
     }
@@ -30848,14 +30894,16 @@ var render = function() {
                         "button",
                         {
                           staticClass: "tc sendCode",
-                          attrs: { disabled: _vm.emailDisabled },
+                          attrs: {
+                            disabled: _vm.emailDisabled || _vm.emailTime > 0
+                          },
                           on: {
                             click: function($event) {
                               return _vm.getEmailCode()
                             }
                           }
                         },
-                        [_vm._v("獲取驗證碼")]
+                        [_vm._v(_vm._s(_vm.emailText))]
                       )
                     ]
                   )
@@ -33223,6 +33271,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33274,6 +33324,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this4.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this4.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33336,6 +33388,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this5.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this5.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33419,6 +33473,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this8.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this8.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33478,6 +33534,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this9.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this9.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33558,6 +33616,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this12.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this12.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33605,6 +33665,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this13.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this13.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33689,6 +33751,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this16.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this16.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33735,6 +33799,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this17.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this17.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -42034,6 +42100,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -42081,6 +42149,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -42908,6 +42978,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -42945,6 +43017,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -43477,6 +43551,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -43517,6 +43593,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -44148,6 +44226,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -44185,6 +44265,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -44717,6 +44799,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -44757,6 +44841,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -45377,6 +45463,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -46036,6 +46124,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -46729,6 +46819,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -47964,6 +48056,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -48007,6 +48101,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -49446,6 +49542,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -49487,6 +49585,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -50086,6 +50186,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -50123,6 +50225,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -50699,6 +50803,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -50743,6 +50849,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -51349,6 +51457,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -51387,6 +51497,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -51932,6 +52044,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -51972,6 +52086,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -52634,6 +52750,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 // this.$toast('添加失败');
                 console.log(err);
@@ -52671,6 +52789,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 // this.$toast('修改失败');
                 console.log(err);
@@ -53223,6 +53343,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 // this.$toast('添加失敗');
                 console.log(err);
@@ -53264,6 +53386,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -54887,6 +55011,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this.$toast(err.response.data.message);
                 }
                 // this.$toast('獲取失敗');
                 console.log(err);
@@ -54908,6 +55034,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 // this.$toast('獲取失敗');
                 console.log(err);
@@ -54929,6 +55057,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 // this.$toast('獲取失敗');
                 console.log(err);
@@ -56876,8 +57006,8 @@ module.exports = function spread(callback) {
 
 // const baseUrl='https://www.bunchparty.com/etravel/public';//公司线上地址
 // const baseUrl='http://app.ateamtravel.hk/etravel/public';//学游线上地址1
-var baseUrl = 'http://app.study2go.net/etravel/public'; //学游线上地址2
-// const baseUrl='';
+// const baseUrl='http://app.study2go.net/etravel/public';//学游线上地址2
+var baseUrl = '';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),

@@ -149,6 +149,8 @@
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
+                    }else{
+                        this.$toast(err.response.data.message);
                     }
                     console.log(err)
                 });
@@ -184,6 +186,8 @@
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
+                    }else{
+                        this.$toast(err.response.data.message);
                     }
                     console.log(err)
                 });
