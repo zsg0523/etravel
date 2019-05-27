@@ -85,7 +85,7 @@ $api->version('v1', [
 			// 修改用户手机号码
 			$api->patch('phone','UsersController@updatePhone')->name('api.user.updatePhone');
 			// 修改用户邮箱地址
-			$api->post('email','UsersController@editEmail')->name('api.user.editEmail');
+			$api->patch('email','UsersController@editEmail')->name('api.user.editEmail');
 			// 紧急求助
 			$api->get('travel/{travel}/sos', 'UsersController@sos');
 
