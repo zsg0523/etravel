@@ -45,7 +45,8 @@ class UserRequest extends FormRequest
 
                 return [
                     'name' => 'between:2,25' . $userId,
-                    'email' => 'email',
+                    'email' => 'email|unique:users,email',
+                    'phone' => 'unique:users,phone',
                     'introduction' => 'max:80',
                     'avatar_image_id' => 'exists:images,id,type,avatar,user_id,' . $userId,
                     'en_name' => 'between:2,25'
