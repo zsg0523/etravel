@@ -56,8 +56,7 @@
 <template>
     <div style="width:100%;">
         <div class="personal_input_form disflex">
-            <div class="pane_content_promise">
-
+            <div class="pane_content_promise" v-if="personalInfos">
                 <div class="form_content_pe" id="view">
                     <div class="head_edit">
                         <div class="info_title">
@@ -270,7 +269,7 @@
                 isEditPhone:false,
                 isEditEmail:false,
                 time: 0,
-                emailTime:600,
+                emailTime:0,
                 disabled:false,
                 phone:'',
                 phoneCode:'',
@@ -430,6 +429,7 @@
                         console.log(res.data);
                         if (res.data.key) {
                             // this.setUserInfo(res)
+                            this.emailRun();
                             this.emailKey=res.data.key;
                             this.emailDisabled=true;
                             this.$toast('驗證碼已成功發送至您的郵箱，請注意查收。');
@@ -471,7 +471,13 @@
                     }else{
                         this.$toast('修改失敗');
                     }
+                    this.emailCode='';
+                    this.emailDisabled=true;
+                    this.emailTime=0;
                 }).catch(err => {
+                    this.emailCode='';
+                    this.emailDisabled=true;
+                    this.emailTime=0;
                     console.log(err);
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
@@ -487,7 +493,7 @@
                 this.emailTime();
             },
             emailRun() {
-                this.time=600;
+                this.emailTime=600;
                 this.emailTimer();
             },
             setDisabled: function(val){
@@ -504,13 +510,13 @@
                 }
             },
             emailTimer() {
-                if (this.time > 0) {
-                    this.time--;
-                    this.disabled = true;
-                    setTimeout(this.timer, 1000);
+                if (this.emailTime > 0) {
+                    this.emailTime--;
+                    this.emailDisabled = true;
+                    setTimeout(this.emailTimer, 1000);
                 }else{
-                    this.disabled = false;
-                    this.time=0;
+                    this.emailDisabled = false;
+                    this.emailTime=0;
                 }
             },
             selectedAreaCode(value){
@@ -522,7 +528,7 @@
                 return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
             },
             emailText() {
-                return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
+                return this.emailTime > 0 ? this.emailTime + 's 後重獲取' : '獲取驗證碼';
             }
         }
   	}

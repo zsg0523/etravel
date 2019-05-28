@@ -29790,7 +29790,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -29818,7 +29817,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             isEditPhone: false,
             isEditEmail: false,
             time: 0,
-            emailTime: 600,
+            emailTime: 0,
             disabled: false,
             phone: '',
             phoneCode: '',
@@ -29987,6 +29986,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     console.log(res.data);
                     if (res.data.key) {
                         // this.setUserInfo(res)
+                        _this5.emailRun();
                         _this5.emailKey = res.data.key;
                         _this5.emailDisabled = true;
                         _this5.$toast('驗證碼已成功發送至您的郵箱，請注意查收。');
@@ -30029,7 +30029,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 } else {
                     _this6.$toast('修改失敗');
                 }
+                _this6.emailCode = '';
+                _this6.emailDisabled = true;
+                _this6.emailTime = 0;
             }).catch(function (err) {
+                _this6.emailCode = '';
+                _this6.emailDisabled = true;
+                _this6.emailTime = 0;
                 console.log(err);
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
@@ -30045,7 +30051,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.emailTime();
         },
         emailRun: function emailRun() {
-            this.time = 600;
+            this.emailTime = 600;
             this.emailTimer();
         },
 
@@ -30063,13 +30069,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         emailTimer: function emailTimer() {
-            if (this.time > 0) {
-                this.time--;
-                this.disabled = true;
-                setTimeout(this.timer, 1000);
+            if (this.emailTime > 0) {
+                this.emailTime--;
+                this.emailDisabled = true;
+                setTimeout(this.emailTimer, 1000);
             } else {
-                this.disabled = false;
-                this.time = 0;
+                this.emailDisabled = false;
+                this.emailTime = 0;
             }
         },
         selectedAreaCode: function selectedAreaCode(value) {
@@ -30081,7 +30087,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
         },
         emailText: function emailText() {
-            return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
+            return this.emailTime > 0 ? this.emailTime + 's 後重獲取' : '獲取驗證碼';
         }
     }
 });
@@ -30099,289 +30105,311 @@ var render = function() {
     { staticStyle: { width: "100%" } },
     [
       _c("div", { staticClass: "personal_input_form disflex" }, [
-        _c("div", { staticClass: "pane_content_promise" }, [
-          _c("div", { staticClass: "form_content_pe", attrs: { id: "view" } }, [
-            _c("div", { staticClass: "head_edit" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", { staticClass: "info_photo" }, [
-                _c("p", { staticClass: "padding_none" }, [_vm._v("頭像")]),
-                _vm._v(" "),
-                _vm.personalInfos.avatar
-                  ? _c("div", { staticClass: "photo" }, [
-                      _c("img", {
-                        staticClass: "photo-circle",
-                        attrs: { src: _vm.personalInfos.avatar }
-                      })
-                    ])
-                  : _c("div", { staticClass: "photo" }, [
-                      _c("img", {
-                        staticClass: "photo-circle",
-                        attrs: { src: "/etravel/public/images/poto-icon.png" }
-                      })
-                    ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "info_name" }, [
-                _vm.personalInfos.name
-                  ? _c("div", { staticClass: "info_view" }, [
-                      _c("span", [_vm._v("中文名：")]),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.personalInfos.name,
-                            expression: "personalInfos.name"
-                          }
-                        ],
-                        attrs: { disabled: "disabled", type: "text" },
-                        domProps: { value: _vm.personalInfos.name },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.personalInfos,
-                              "name",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    ])
-                  : _c("div", { staticClass: "info_view" }, [
-                      _c("span", [_vm._v("中文名：")]),
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          placeholder: "未設定"
-                        }
-                      })
+        _vm.personalInfos
+          ? _c("div", { staticClass: "pane_content_promise" }, [
+              _c(
+                "div",
+                { staticClass: "form_content_pe", attrs: { id: "view" } },
+                [
+                  _c("div", { staticClass: "head_edit" }, [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "info_photo" }, [
+                      _c("p", { staticClass: "padding_none" }, [
+                        _vm._v("頭像")
+                      ]),
+                      _vm._v(" "),
+                      _vm.personalInfos.avatar
+                        ? _c("div", { staticClass: "photo" }, [
+                            _c("img", {
+                              staticClass: "photo-circle",
+                              attrs: { src: _vm.personalInfos.avatar }
+                            })
+                          ])
+                        : _c("div", { staticClass: "photo" }, [
+                            _c("img", {
+                              staticClass: "photo-circle",
+                              attrs: {
+                                src: "/etravel/public/images/poto-icon.png"
+                              }
+                            })
+                          ])
                     ]),
-                _vm._v(" "),
-                _vm.personalInfos.en_name
-                  ? _c("div", { staticClass: "info_view" }, [
-                      _c("span", [_vm._v("英文名：")]),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.personalInfos.en_name,
-                            expression: "personalInfos.en_name"
-                          }
-                        ],
-                        attrs: { disabled: "disabled", type: "text" },
-                        domProps: { value: _vm.personalInfos.en_name },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.personalInfos,
-                              "en_name",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
+                    _vm._v(" "),
+                    _c("div", { staticClass: "info_name" }, [
+                      _vm.personalInfos.name
+                        ? _c("div", { staticClass: "info_view" }, [
+                            _c("span", [_vm._v("中文名：")]),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.personalInfos.name,
+                                  expression: "personalInfos.name"
+                                }
+                              ],
+                              attrs: { disabled: "disabled", type: "text" },
+                              domProps: { value: _vm.personalInfos.name },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.personalInfos,
+                                    "name",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ])
+                        : _c("div", { staticClass: "info_view" }, [
+                            _c("span", [_vm._v("中文名：")]),
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                placeholder: "未設定"
+                              }
+                            })
+                          ]),
+                      _vm._v(" "),
+                      _vm.personalInfos.en_name
+                        ? _c("div", { staticClass: "info_view" }, [
+                            _c("span", [_vm._v("英文名：")]),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.personalInfos.en_name,
+                                  expression: "personalInfos.en_name"
+                                }
+                              ],
+                              attrs: { disabled: "disabled", type: "text" },
+                              domProps: { value: _vm.personalInfos.en_name },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.personalInfos,
+                                    "en_name",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ])
+                        : _c("div", { staticClass: "info_view" }, [
+                            _c("span", [_vm._v("英文名：")]),
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                placeholder: "未設定"
+                              }
+                            })
+                          ]),
+                      _vm._v(" "),
+                      _vm.personalInfos.sex == 0
+                        ? _c("div", { staticClass: "sex" }, [
+                            _c("span", [_vm._v("性別：")]),
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                value: "女"
+                              }
+                            })
+                          ])
+                        : _vm.personalInfos.sex == 1
+                        ? _c("div", { staticClass: "sex" }, [
+                            _c("span", [_vm._v("性別：")]),
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                value: "男"
+                              }
+                            })
+                          ])
+                        : _c("div", { staticClass: "sex" }, [
+                            _c("span", [_vm._v("性別：")]),
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                placeholder: "未設定"
+                              }
+                            })
+                          ])
                     ])
-                  : _c("div", { staticClass: "info_view" }, [
-                      _c("span", [_vm._v("英文名：")]),
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          placeholder: "未設定"
-                        }
-                      })
-                    ]),
-                _vm._v(" "),
-                _vm.personalInfos.sex == 0
-                  ? _c("div", { staticClass: "sex" }, [
-                      _c("span", [_vm._v("性別：")]),
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          value: "女"
-                        }
-                      })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "information_edit" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "info_phone" }, [
+                      _c("p", { staticClass: "padding_none" }, [
+                        _vm._v("手機號")
+                      ]),
+                      _vm._v(" "),
+                      _vm.personalInfos.phone
+                        ? _c("div", { staticClass: "info_view" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.personalInfos.phone,
+                                  expression: "personalInfos.phone"
+                                }
+                              ],
+                              attrs: { disabled: "disabled", type: "text" },
+                              domProps: { value: _vm.personalInfos.phone },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.personalInfos,
+                                    "phone",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "editPerson" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/etravel/public/images/edit-all.png"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.editPhoneShow()
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        : _c("div", { staticClass: "info_view" }, [
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                placeholder: "未設定"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "editPerson" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/etravel/public/images/edit-all.png"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.editPhoneShow()
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "padding_none" }, [
+                        _vm._v("郵箱")
+                      ]),
+                      _vm._v(" "),
+                      _vm.personalInfos.email
+                        ? _c("div", { staticClass: "info_view" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.personalInfos.email,
+                                  expression: "personalInfos.email"
+                                }
+                              ],
+                              attrs: { disabled: "disabled", type: "text" },
+                              domProps: { value: _vm.personalInfos.email },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.personalInfos,
+                                    "email",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "editPerson" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/etravel/public/images/edit-all.png"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.editEmailShow()
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        : _c("div", { staticClass: "info_view" }, [
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                placeholder: "未設定"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "editPerson" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/etravel/public/images/edit-all.png"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.editEmailShow()
+                                  }
+                                }
+                              })
+                            ])
+                          ])
                     ])
-                  : _vm.personalInfos.sex == 1
-                  ? _c("div", { staticClass: "sex" }, [
-                      _c("span", [_vm._v("性別：")]),
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          value: "男"
-                        }
-                      })
-                    ])
-                  : _c("div", { staticClass: "sex" }, [
-                      _c("span", [_vm._v("性別：")]),
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          placeholder: "未設定"
-                        }
-                      })
-                    ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "information_edit" }, [
-              _vm._m(1),
+                  ])
+                ]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "info_phone" }, [
-                _c("p", { staticClass: "padding_none" }, [_vm._v("手機號")]),
-                _vm._v(" "),
-                _vm.personalInfos.phone
-                  ? _c("div", { staticClass: "info_view" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.personalInfos.phone,
-                            expression: "personalInfos.phone"
-                          }
-                        ],
-                        attrs: { disabled: "disabled", type: "text" },
-                        domProps: { value: _vm.personalInfos.phone },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.personalInfos,
-                              "phone",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "editPerson" }, [
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/edit-all.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.editPhoneShow()
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _c("div", { staticClass: "info_view" }, [
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          placeholder: "未設定"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "editPerson" }, [
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/edit-all.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.editPhoneShow()
-                            }
-                          }
-                        })
-                      ])
-                    ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "padding_none" }, [_vm._v("郵箱")]),
-                _vm._v(" "),
-                _vm.personalInfos.email
-                  ? _c("div", { staticClass: "info_view" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.personalInfos.email,
-                            expression: "personalInfos.email"
-                          }
-                        ],
-                        attrs: { disabled: "disabled", type: "text" },
-                        domProps: { value: _vm.personalInfos.email },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.personalInfos,
-                              "email",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "editPerson" }, [
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/edit-all.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.editEmailShow()
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _c("div", { staticClass: "info_view" }, [
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          placeholder: "未設定"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "editPerson" }, [
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/edit-all.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.editEmailShow()
-                            }
-                          }
-                        })
-                      ])
-                    ])
-              ])
+              _c(
+                "div",
+                {
+                  staticClass: "personalEditBtn",
+                  on: {
+                    click: function($event) {
+                      return _vm.edInformationInfoShow()
+                    }
+                  }
+                },
+                [
+                  _c("img", {
+                    attrs: { src: "/etravel/public/images/edit-all.png" }
+                  })
+                ]
+              )
             ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "personalEditBtn",
-              on: {
-                click: function($event) {
-                  return _vm.edInformationInfoShow()
-                }
-              }
-            },
-            [
-              _c("img", {
-                attrs: { src: "/etravel/public/images/edit-all.png" }
-              })
-            ]
-          )
-        ])
+          : _vm._e()
       ]),
       _vm._v(" "),
       _c(
