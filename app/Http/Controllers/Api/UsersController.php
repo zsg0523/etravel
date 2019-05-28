@@ -129,9 +129,9 @@ class UsersController extends Controller
     {   
         $manager = $this->user();
 
-        if ( ! $manager->can('manage_contents') ) {
-            return $this->response->errorBadRequest();
-        }
+        // if ( ! $manager->can('manage_contents') ) {
+        //     return $this->response->errorBadRequest();
+        // }
 
         // 更新学生基本信息
         $user->update($request->all());
