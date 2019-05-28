@@ -22741,7 +22741,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("立即注册")]
+            [_vm._v("立即註冊")]
           )
         ]),
         _vm._v(" "),
@@ -26047,7 +26047,7 @@ var render = function() {
                     expression: "searchId"
                   }
                 ],
-                attrs: { type: "text", placeholder: "请输入想查找的ID" },
+                attrs: { type: "text", placeholder: "請輸入想查找的ID" },
                 domProps: { value: _vm.searchId },
                 on: {
                   input: function($event) {
@@ -55786,7 +55786,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 						// this.$toast('数据');
 						if (res.data.meta.access_token) {
 							// this.setUserInfo(res)
-							_this.$toast('注册成功');
+							_this.$toast('註冊成功');
 							_this.$router.push('/');
 						} else {
 							_this.$toast(res.data.message);
@@ -56091,7 +56091,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("注册")]
+            [_vm._v("註冊")]
           )
         ])
       ])

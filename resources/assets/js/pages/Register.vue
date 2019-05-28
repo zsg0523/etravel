@@ -43,7 +43,7 @@
                 <div><input type="password" placeholder="密碼" v-model="password"></div>
                 <div><input type="password" placeholder="確認密碼" v-model="repassword"></div>  
                 <div style="height: 40px;"><a href="javascript:void(0);" @click="$router.push('/');" class="fl">已有帳號？立即登入</a></div>
-                <div><button type="button" @click="register();">注册</button></div>
+                <div><button type="button" @click="register();">註冊</button></div>
             </div>
         </div>
     </div>
@@ -98,7 +98,7 @@
 				        	// this.$toast('数据');
 				          	if (res.data.meta.access_token) {
 				            	// this.setUserInfo(res)
-				            	this.$toast('注册成功');
+				            	this.$toast('註冊成功');
 				            	this.$router.push('/');
 				          	} else {
 				              	this.$toast(res.data.message);

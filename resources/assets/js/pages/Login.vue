@@ -24,7 +24,7 @@
                 <div><input type="text" v-model="loginName" placeholder="手機號碼或郵箱帳號" ></div>
                 <div><input type="password" v-model="password" placeholder="密碼" ></div>
                 <div style="height: 40px;">
-                	<a href="javascript:void(0);" @click="$router.push('/register')" class="fl">立即注册</a>
+                	<a href="javascript:void(0);" @click="$router.push('/register')" class="fl">立即註冊</a>
                 	<!-- <a href="javascript:void(0);" @click="$router.push('/forgotPsd')" class="fr">忘记密码</a> -->
                 </div>
                 <div><button type="button" @click="login();">登入</button></div>
