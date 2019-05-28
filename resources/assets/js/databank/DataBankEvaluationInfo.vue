@@ -47,7 +47,11 @@
             <div class="pane_content_eval">
                 <div class="form_content disflex"  v-for="(evaluationInfo,index) in evaluationInfos">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">題目{{index+1}}<span class="fr">類型:{{evaluationInfo.type}}</span></div>
+                        <div class="item_title">題目{{index+1}}
+                            <span class="fr" v-if="evaluationInfo.type==1">一個選項</span>
+                            <span class="fr" v-else-if="evaluationInfo.type==2">兩個選項</span>
+                            <span class="fr" v-else-if="evaluationInfo.type==3">五個選項</span>
+                        </div>
                         <div>
                             <textarea class="item_area_eval" placeholder="題目詳情" disabled="disabled"  :value="evaluationInfo.content"></textarea>
                         </div>

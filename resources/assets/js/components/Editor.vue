@@ -118,11 +118,11 @@
                     // 'quote',  // 引用
                     // 'emoticon',  // 表情
                     'image',  // 插入图片
-                    'table',  // 表格
+                    // 'table',  // 表格
                     // 'video',  // 插入视频
                     // 'code',  // 插入代码
                     'undo',  // 撤销
-                    'redo'  // 重复
+                    // 'redo'  // 重复
                 ];//配置菜单
                 this.editor.customConfig.uploadImgServer=this.$config+'/api/images';// 上传图片到服务器地址
                 this.editor.customConfig.uploadFileName = 'image'//自定义filename
