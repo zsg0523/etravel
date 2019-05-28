@@ -338,7 +338,7 @@
                 }).catch(err => {
                     this.$toast('修改失敗');
                     console.log(err)
-                    this.errors=err.response.data.errors;
+                    // this.errors=err.response.data.errors;
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);

@@ -306,7 +306,7 @@
                             this.getUserInfo();
                         }).catch(err => {
                             this.$toast('創建失敗');
-                            this.errors=err.response.data.errors;
+                            // this.errors=err.response.data.errors;
                             if(err.response.data.errors){
                                 for(var key in err.response.data.errors){
                                     this.$toast(err.response.data.errors[key][0]);
@@ -409,7 +409,7 @@
                     this.editPopupHiden();
                 }).catch(err => {
                     this.$toast('修改失敗');
-                    this.errors=err.response.data.errors;
+                    // this.errors=err.response.data.errors;
                     console.log(err)
                 });
 
