@@ -22741,7 +22741,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("立即注册")]
+            [_vm._v("立即註冊")]
           )
         ]),
         _vm._v(" "),
@@ -24571,23 +24571,6 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "detail_info" }, [_vm._v("團員信息")])
       ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "detail_btn",
-        on: {
-          click: function($event) {
-            return _vm.$router.push("/photo")
-          }
-        }
-      },
-      [
-        _vm._m(3),
-        _vm._v(" "),
-        _c("div", { staticClass: "detail_info" }, [_vm._v("圖庫")])
-      ]
     )
   ])
 }
@@ -24614,14 +24597,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "detail_icon disflex" }, [
       _c("img", { attrs: { src: "/etravel/public/images/IDmage-icon.png" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "detail_icon disflex" }, [
-      _c("img", { attrs: { src: "/etravel/public/images/poto-icon.png" } })
     ])
   }
 ]
@@ -26047,7 +26022,7 @@ var render = function() {
                     expression: "searchId"
                   }
                 ],
-                attrs: { type: "text", placeholder: "请输入想查找的ID" },
+                attrs: { type: "text", placeholder: "請輸入想查找的ID" },
                 domProps: { value: _vm.searchId },
                 on: {
                   input: function($event) {
@@ -30055,7 +30030,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         run: function run() {
             this.time = 60;
-            this.emailTime();
+            this.timer();
         },
         emailRun: function emailRun() {
             this.emailTime = 600;
@@ -34072,12 +34047,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 'quote',  // 引用
             // 'emoticon',  // 表情
             'image', // 插入图片
-            'table', // 表格
+            // 'table',  // 表格
             // 'video',  // 插入视频
             // 'code',  // 插入代码
-            'undo', // 撤销
-            'redo' // 重复
-            ]; //配置菜单
+            'undo']; //配置菜单
             this.editor.customConfig.uploadImgServer = this.$config + '/api/images'; // 上传图片到服务器地址
             this.editor.customConfig.uploadFileName = 'image'; //自定义filename
             this.editor.customConfig.uploadImgParams = {
@@ -53312,6 +53285,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -53498,10 +53475,18 @@ var render = function() {
             return _c("div", { staticClass: "form_content disflex" }, [
               _c("div", { staticClass: "form_item_evaluationInfo" }, [
                 _c("div", { staticClass: "item_title" }, [
-                  _vm._v("題目" + _vm._s(index + 1)),
-                  _c("span", { staticClass: "fr" }, [
-                    _vm._v("類型:" + _vm._s(evaluationInfo.type))
-                  ])
+                  _vm._v(
+                    "題目" +
+                      _vm._s(index + 1) +
+                      "\n                            "
+                  ),
+                  evaluationInfo.type == 1
+                    ? _c("span", { staticClass: "fr" }, [_vm._v("一個選項")])
+                    : evaluationInfo.type == 2
+                    ? _c("span", { staticClass: "fr" }, [_vm._v("兩個選項")])
+                    : evaluationInfo.type == 3
+                    ? _c("span", { staticClass: "fr" }, [_vm._v("五個選項")])
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
                 _c("div", [
@@ -55786,7 +55771,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 						// this.$toast('数据');
 						if (res.data.meta.access_token) {
 							// this.setUserInfo(res)
-							_this.$toast('注册成功');
+							_this.$toast('註冊成功');
 							_this.$router.push('/');
 						} else {
 							_this.$toast(res.data.message);
@@ -56091,7 +56076,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("注册")]
+            [_vm._v("註冊")]
           )
         ])
       ])

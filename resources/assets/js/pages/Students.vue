@@ -69,7 +69,7 @@
             <div class="students_right disflex">
                 <div class="students_right_title">
                     <div class="search_input disflex">
-                        <input type="text" placeholder="请输入想查找的ID" v-model="searchId">
+                        <input type="text" placeholder="請輸入想查找的ID" v-model="searchId">
                         <div class="search_icon" @click="toSearchStudent()">
                             <img src="/etravel/public/images/search.png">
                         </div>

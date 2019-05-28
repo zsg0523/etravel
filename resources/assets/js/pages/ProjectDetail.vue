@@ -26,12 +26,12 @@
             </div>
             <div class="detail_info">團員信息</div>
         </div>
-        <div class="detail_btn" @click="$router.push('/photo')">
+        <!-- <div class="detail_btn" @click="$router.push('/photo')">
             <div class="detail_icon disflex">
                 <img src="/etravel/public/images/poto-icon.png">
             </div>
             <div class="detail_info">圖庫</div>
-        </div>
+        </div> -->
     </div>
 </template>
 <script>
