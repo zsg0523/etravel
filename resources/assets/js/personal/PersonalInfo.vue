@@ -490,7 +490,7 @@
             },
             run() {
                 this.time=60;
-                this.emailTime();
+                this.timer();
             },
             emailRun() {
                 this.emailTime=600;

@@ -30030,7 +30030,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         run: function run() {
             this.time = 60;
-            this.emailTime();
+            this.timer();
         },
         emailRun: function emailRun() {
             this.emailTime = 600;
