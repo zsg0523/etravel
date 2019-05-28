@@ -23697,7 +23697,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                         _this2.getUserInfo();
                     }).catch(function (err) {
                         _this2.$toast('創建失敗');
-                        _this2.errors = err.response.data.errors;
+                        // this.errors=err.response.data.errors;
                         if (err.response.data.errors) {
                             for (var key in err.response.data.errors) {
                                 _this2.$toast(err.response.data.errors[key][0]);
@@ -23798,7 +23798,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 _this4.editPopupHiden();
             }).catch(function (err) {
                 _this4.$toast('修改失敗');
-                _this4.errors = err.response.data.errors;
+                // this.errors=err.response.data.errors;
                 console.log(err);
             });
         },
@@ -25484,7 +25484,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this2.newStudent.emergency_email_two = '';
             }).catch(function (err) {
                 _this2.$toast('添加失败');
-                _this2.errors = err.response.data.errors;
+                if (err.response.data.errors) {
+                    for (var key in err.response.data.errors) {
+                        _this2.$toast(err.response.data.errors[key][0]);
+                    }
+                } else {
+                    _this2.$toast(err.response.data.message);
+                }
+                // this.errors=err.response.data.errors;
                 console.log(err.response.data);
             });
         },
@@ -25572,7 +25579,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 } else {
                     _this3.$toast(err.response.data.message);
                 }
-                _this3.errors = err.response.data.errors;
+                // this.errors=err.response.data.errors;
             });
         },
         delStudent: function delStudent() {
@@ -25698,7 +25705,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 } else {
                     _this6.$toast(err.response.data.message);
                 }
-                _this6.errors = err.response.data.errors;
+                // this.errors=err.response.data.errors;
                 // if(err.response.data.errors.duty){
                 //     this.$toast(err.response.data.errors.duty[0]);
                 // }
@@ -29890,7 +29897,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (err) {
                 _this2.$toast('修改失敗');
                 console.log(err);
-                _this2.errors = err.response.data.errors;
+                // this.errors=err.response.data.errors;
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
@@ -34060,7 +34067,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 'foreColor',  // 文字颜色
             'backColor', // 背景颜色
             // 'link',  // 插入链接
-            'list', // 列表
+            // 'list',  // 列表
             'justify', // 对齐方式
             // 'quote',  // 引用
             // 'emoticon',  // 表情
