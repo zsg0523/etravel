@@ -56,8 +56,7 @@
 <template>
     <div style="width:100%;">
         <div class="personal_input_form disflex">
-            <div class="pane_content_promise">
-
+            <div class="pane_content_promise" v-if="personalInfos">
                 <div class="form_content_pe" id="view">
                     <div class="head_edit">
                         <div class="info_title">
@@ -231,7 +230,7 @@
                         <div class="item_title">驗證碼</div>
                         <div class="disflex" style="justify-content: space-between;">
                             <input type="text" placeholder="驗證碼" v-model="emailCode" style="width: 56%;">
-                            <button class="tc sendCode" @click='getEmailCode()' :disabled="emailDisabled">獲取驗證碼</button>
+                            <button class="tc sendCode" @click='getEmailCode()' :disabled="emailDisabled || emailTime > 0">{{emailText}}</button>
                         </div>
                     </div>
                     <div class="issure">
@@ -270,6 +269,7 @@
                 isEditPhone:false,
                 isEditEmail:false,
                 time: 0,
+                emailTime:0,
                 disabled:false,
                 phone:'',
                 phoneCode:'',
@@ -339,6 +339,13 @@
                     this.$toast('修改失敗');
                     console.log(err)
                     this.errors=err.response.data.errors;
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }else{
+                        this.$toast(err.response.data.message);
+                    }
                 });
             },
             editPhoneShow(){
@@ -366,6 +373,8 @@
                             for(var key in err.response.data.errors){
                                 this.$toast(err.response.data.errors[key][0]);
                             }
+                        }else{
+                            this.$toast(err.response.data.message);
                         }
                         
                     });
@@ -398,7 +407,14 @@
                 }).catch(err => {
                     this.$toast('修改失敗');
                     console.log(err)
-                    this.errors=err.response.data.errors;
+                    // this.errors=err.response.data.errors;
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }else{
+                        this.$toast(err.response.data.message);
+                    }
                 });
             },
             editEmailShow(){
@@ -413,6 +429,7 @@
                         console.log(res.data);
                         if (res.data.key) {
                             // this.setUserInfo(res)
+                            this.emailRun();
                             this.emailKey=res.data.key;
                             this.emailDisabled=true;
                             this.$toast('驗證碼已成功發送至您的郵箱，請注意查收。');
@@ -425,6 +442,8 @@
                             for(var key in err.response.data.errors){
                                 this.$toast(err.response.data.errors[key][0]);
                             }
+                        }else{
+                            this.$toast(err.response.data.message);
                         }
                         
                     });
@@ -452,18 +471,30 @@
                     }else{
                         this.$toast('修改失敗');
                     }
+                    this.emailCode='';
+                    this.emailDisabled=true;
+                    this.emailTime=0;
                 }).catch(err => {
+                    this.emailCode='';
+                    this.emailDisabled=true;
+                    this.emailTime=0;
                     console.log(err);
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
+                    }else{
+                        this.$toast(err.response.data.message);
                     }
                 });
             },
             run() {
                 this.time=60;
-                this.timer();
+                this.emailTime();
+            },
+            emailRun() {
+                this.emailTime=600;
+                this.emailTimer();
             },
             setDisabled: function(val){
                 this.disabled = val;
@@ -478,6 +509,16 @@
                     this.time=0;
                 }
             },
+            emailTimer() {
+                if (this.emailTime > 0) {
+                    this.emailTime--;
+                    this.emailDisabled = true;
+                    setTimeout(this.emailTimer, 1000);
+                }else{
+                    this.emailDisabled = false;
+                    this.emailTime=0;
+                }
+            },
             selectedAreaCode(value){
                 this.areacode=value;
             },
@@ -485,6 +526,9 @@
         computed: {
             text() {
                 return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
+            },
+            emailText() {
+                return this.emailTime > 0 ? this.emailTime + 's 後重獲取' : '獲取驗證碼';
             }
         }
   	}

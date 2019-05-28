@@ -633,6 +633,8 @@
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
+                    }else{
+                        this.$toast(err.response.data.message);
                     }
                     this.errors=err.response.data.errors;
 
@@ -757,6 +759,8 @@
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
                         }
+                    }else{
+                        this.$toast(err.response.data.message);
                     }
                     this.errors=err.response.data.errors;
                     // if(err.response.data.errors.duty){

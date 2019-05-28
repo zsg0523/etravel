@@ -25569,6 +25569,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 _this3.errors = err.response.data.errors;
             });
@@ -25693,6 +25695,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                     for (var key in err.response.data.errors) {
                         _this6.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this6.$toast(err.response.data.message);
                 }
                 _this6.errors = err.response.data.errors;
                 // if(err.response.data.errors.duty){
@@ -28527,6 +28531,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -28561,6 +28567,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -29782,7 +29790,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -29810,6 +29817,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             isEditPhone: false,
             isEditEmail: false,
             time: 0,
+            emailTime: 0,
             disabled: false,
             phone: '',
             phoneCode: '',
@@ -29883,6 +29891,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.$toast('修改失敗');
                 console.log(err);
                 _this2.errors = err.response.data.errors;
+                if (err.response.data.errors) {
+                    for (var key in err.response.data.errors) {
+                        _this2.$toast(err.response.data.errors[key][0]);
+                    }
+                } else {
+                    _this2.$toast(err.response.data.message);
+                }
             });
         },
         editPhoneShow: function editPhoneShow() {
@@ -29912,6 +29927,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         for (var key in err.response.data.errors) {
                             _this3.$toast(err.response.data.errors[key][0]);
                         }
+                    } else {
+                        _this3.$toast(err.response.data.message);
                     }
                 });
             } else {
@@ -29945,7 +29962,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (err) {
                 _this4.$toast('修改失敗');
                 console.log(err);
-                _this4.errors = err.response.data.errors;
+                // this.errors=err.response.data.errors;
+                if (err.response.data.errors) {
+                    for (var key in err.response.data.errors) {
+                        _this4.$toast(err.response.data.errors[key][0]);
+                    }
+                } else {
+                    _this4.$toast(err.response.data.message);
+                }
             });
         },
         editEmailShow: function editEmailShow() {
@@ -29962,6 +29986,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     console.log(res.data);
                     if (res.data.key) {
                         // this.setUserInfo(res)
+                        _this5.emailRun();
                         _this5.emailKey = res.data.key;
                         _this5.emailDisabled = true;
                         _this5.$toast('驗證碼已成功發送至您的郵箱，請注意查收。');
@@ -29974,6 +29999,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         for (var key in err.response.data.errors) {
                             _this5.$toast(err.response.data.errors[key][0]);
                         }
+                    } else {
+                        _this5.$toast(err.response.data.message);
                     }
                 });
             } else {
@@ -30002,18 +30029,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 } else {
                     _this6.$toast('修改失敗');
                 }
+                _this6.emailCode = '';
+                _this6.emailDisabled = true;
+                _this6.emailTime = 0;
             }).catch(function (err) {
+                _this6.emailCode = '';
+                _this6.emailDisabled = true;
+                _this6.emailTime = 0;
                 console.log(err);
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this6.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this6.$toast(err.response.data.message);
                 }
             });
         },
         run: function run() {
             this.time = 60;
-            this.timer();
+            this.emailTime();
+        },
+        emailRun: function emailRun() {
+            this.emailTime = 600;
+            this.emailTimer();
         },
 
         setDisabled: function setDisabled(val) {
@@ -30029,6 +30068,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.time = 0;
             }
         },
+        emailTimer: function emailTimer() {
+            if (this.emailTime > 0) {
+                this.emailTime--;
+                this.emailDisabled = true;
+                setTimeout(this.emailTimer, 1000);
+            } else {
+                this.emailDisabled = false;
+                this.emailTime = 0;
+            }
+        },
         selectedAreaCode: function selectedAreaCode(value) {
             this.areacode = value;
         }
@@ -30036,6 +30085,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: {
         text: function text() {
             return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
+        },
+        emailText: function emailText() {
+            return this.emailTime > 0 ? this.emailTime + 's 後重獲取' : '獲取驗證碼';
         }
     }
 });
@@ -30053,289 +30105,311 @@ var render = function() {
     { staticStyle: { width: "100%" } },
     [
       _c("div", { staticClass: "personal_input_form disflex" }, [
-        _c("div", { staticClass: "pane_content_promise" }, [
-          _c("div", { staticClass: "form_content_pe", attrs: { id: "view" } }, [
-            _c("div", { staticClass: "head_edit" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", { staticClass: "info_photo" }, [
-                _c("p", { staticClass: "padding_none" }, [_vm._v("頭像")]),
-                _vm._v(" "),
-                _vm.personalInfos.avatar
-                  ? _c("div", { staticClass: "photo" }, [
-                      _c("img", {
-                        staticClass: "photo-circle",
-                        attrs: { src: _vm.personalInfos.avatar }
-                      })
-                    ])
-                  : _c("div", { staticClass: "photo" }, [
-                      _c("img", {
-                        staticClass: "photo-circle",
-                        attrs: { src: "/etravel/public/images/poto-icon.png" }
-                      })
-                    ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "info_name" }, [
-                _vm.personalInfos.name
-                  ? _c("div", { staticClass: "info_view" }, [
-                      _c("span", [_vm._v("中文名：")]),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.personalInfos.name,
-                            expression: "personalInfos.name"
-                          }
-                        ],
-                        attrs: { disabled: "disabled", type: "text" },
-                        domProps: { value: _vm.personalInfos.name },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.personalInfos,
-                              "name",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    ])
-                  : _c("div", { staticClass: "info_view" }, [
-                      _c("span", [_vm._v("中文名：")]),
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          placeholder: "未設定"
-                        }
-                      })
+        _vm.personalInfos
+          ? _c("div", { staticClass: "pane_content_promise" }, [
+              _c(
+                "div",
+                { staticClass: "form_content_pe", attrs: { id: "view" } },
+                [
+                  _c("div", { staticClass: "head_edit" }, [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "info_photo" }, [
+                      _c("p", { staticClass: "padding_none" }, [
+                        _vm._v("頭像")
+                      ]),
+                      _vm._v(" "),
+                      _vm.personalInfos.avatar
+                        ? _c("div", { staticClass: "photo" }, [
+                            _c("img", {
+                              staticClass: "photo-circle",
+                              attrs: { src: _vm.personalInfos.avatar }
+                            })
+                          ])
+                        : _c("div", { staticClass: "photo" }, [
+                            _c("img", {
+                              staticClass: "photo-circle",
+                              attrs: {
+                                src: "/etravel/public/images/poto-icon.png"
+                              }
+                            })
+                          ])
                     ]),
-                _vm._v(" "),
-                _vm.personalInfos.en_name
-                  ? _c("div", { staticClass: "info_view" }, [
-                      _c("span", [_vm._v("英文名：")]),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.personalInfos.en_name,
-                            expression: "personalInfos.en_name"
-                          }
-                        ],
-                        attrs: { disabled: "disabled", type: "text" },
-                        domProps: { value: _vm.personalInfos.en_name },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.personalInfos,
-                              "en_name",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
+                    _vm._v(" "),
+                    _c("div", { staticClass: "info_name" }, [
+                      _vm.personalInfos.name
+                        ? _c("div", { staticClass: "info_view" }, [
+                            _c("span", [_vm._v("中文名：")]),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.personalInfos.name,
+                                  expression: "personalInfos.name"
+                                }
+                              ],
+                              attrs: { disabled: "disabled", type: "text" },
+                              domProps: { value: _vm.personalInfos.name },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.personalInfos,
+                                    "name",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ])
+                        : _c("div", { staticClass: "info_view" }, [
+                            _c("span", [_vm._v("中文名：")]),
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                placeholder: "未設定"
+                              }
+                            })
+                          ]),
+                      _vm._v(" "),
+                      _vm.personalInfos.en_name
+                        ? _c("div", { staticClass: "info_view" }, [
+                            _c("span", [_vm._v("英文名：")]),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.personalInfos.en_name,
+                                  expression: "personalInfos.en_name"
+                                }
+                              ],
+                              attrs: { disabled: "disabled", type: "text" },
+                              domProps: { value: _vm.personalInfos.en_name },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.personalInfos,
+                                    "en_name",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ])
+                        : _c("div", { staticClass: "info_view" }, [
+                            _c("span", [_vm._v("英文名：")]),
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                placeholder: "未設定"
+                              }
+                            })
+                          ]),
+                      _vm._v(" "),
+                      _vm.personalInfos.sex == 0
+                        ? _c("div", { staticClass: "sex" }, [
+                            _c("span", [_vm._v("性別：")]),
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                value: "女"
+                              }
+                            })
+                          ])
+                        : _vm.personalInfos.sex == 1
+                        ? _c("div", { staticClass: "sex" }, [
+                            _c("span", [_vm._v("性別：")]),
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                value: "男"
+                              }
+                            })
+                          ])
+                        : _c("div", { staticClass: "sex" }, [
+                            _c("span", [_vm._v("性別：")]),
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                placeholder: "未設定"
+                              }
+                            })
+                          ])
                     ])
-                  : _c("div", { staticClass: "info_view" }, [
-                      _c("span", [_vm._v("英文名：")]),
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          placeholder: "未設定"
-                        }
-                      })
-                    ]),
-                _vm._v(" "),
-                _vm.personalInfos.sex == 0
-                  ? _c("div", { staticClass: "sex" }, [
-                      _c("span", [_vm._v("性別：")]),
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          value: "女"
-                        }
-                      })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "information_edit" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "info_phone" }, [
+                      _c("p", { staticClass: "padding_none" }, [
+                        _vm._v("手機號")
+                      ]),
+                      _vm._v(" "),
+                      _vm.personalInfos.phone
+                        ? _c("div", { staticClass: "info_view" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.personalInfos.phone,
+                                  expression: "personalInfos.phone"
+                                }
+                              ],
+                              attrs: { disabled: "disabled", type: "text" },
+                              domProps: { value: _vm.personalInfos.phone },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.personalInfos,
+                                    "phone",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "editPerson" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/etravel/public/images/edit-all.png"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.editPhoneShow()
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        : _c("div", { staticClass: "info_view" }, [
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                placeholder: "未設定"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "editPerson" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/etravel/public/images/edit-all.png"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.editPhoneShow()
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "padding_none" }, [
+                        _vm._v("郵箱")
+                      ]),
+                      _vm._v(" "),
+                      _vm.personalInfos.email
+                        ? _c("div", { staticClass: "info_view" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.personalInfos.email,
+                                  expression: "personalInfos.email"
+                                }
+                              ],
+                              attrs: { disabled: "disabled", type: "text" },
+                              domProps: { value: _vm.personalInfos.email },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.personalInfos,
+                                    "email",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "editPerson" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/etravel/public/images/edit-all.png"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.editEmailShow()
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        : _c("div", { staticClass: "info_view" }, [
+                            _c("input", {
+                              attrs: {
+                                disabled: "disabled",
+                                type: "text",
+                                placeholder: "未設定"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "editPerson" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/etravel/public/images/edit-all.png"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.editEmailShow()
+                                  }
+                                }
+                              })
+                            ])
+                          ])
                     ])
-                  : _vm.personalInfos.sex == 1
-                  ? _c("div", { staticClass: "sex" }, [
-                      _c("span", [_vm._v("性別：")]),
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          value: "男"
-                        }
-                      })
-                    ])
-                  : _c("div", { staticClass: "sex" }, [
-                      _c("span", [_vm._v("性別：")]),
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          placeholder: "未設定"
-                        }
-                      })
-                    ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "information_edit" }, [
-              _vm._m(1),
+                  ])
+                ]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "info_phone" }, [
-                _c("p", { staticClass: "padding_none" }, [_vm._v("手機號")]),
-                _vm._v(" "),
-                _vm.personalInfos.phone
-                  ? _c("div", { staticClass: "info_view" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.personalInfos.phone,
-                            expression: "personalInfos.phone"
-                          }
-                        ],
-                        attrs: { disabled: "disabled", type: "text" },
-                        domProps: { value: _vm.personalInfos.phone },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.personalInfos,
-                              "phone",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "editPerson" }, [
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/edit-all.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.editPhoneShow()
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _c("div", { staticClass: "info_view" }, [
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          placeholder: "未設定"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "editPerson" }, [
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/edit-all.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.editPhoneShow()
-                            }
-                          }
-                        })
-                      ])
-                    ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "padding_none" }, [_vm._v("郵箱")]),
-                _vm._v(" "),
-                _vm.personalInfos.email
-                  ? _c("div", { staticClass: "info_view" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.personalInfos.email,
-                            expression: "personalInfos.email"
-                          }
-                        ],
-                        attrs: { disabled: "disabled", type: "text" },
-                        domProps: { value: _vm.personalInfos.email },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.personalInfos,
-                              "email",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "editPerson" }, [
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/edit-all.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.editEmailShow()
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _c("div", { staticClass: "info_view" }, [
-                      _c("input", {
-                        attrs: {
-                          disabled: "disabled",
-                          type: "text",
-                          placeholder: "未設定"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "editPerson" }, [
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/edit-all.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.editEmailShow()
-                            }
-                          }
-                        })
-                      ])
-                    ])
-              ])
+              _c(
+                "div",
+                {
+                  staticClass: "personalEditBtn",
+                  on: {
+                    click: function($event) {
+                      return _vm.edInformationInfoShow()
+                    }
+                  }
+                },
+                [
+                  _c("img", {
+                    attrs: { src: "/etravel/public/images/edit-all.png" }
+                  })
+                ]
+              )
             ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "personalEditBtn",
-              on: {
-                click: function($event) {
-                  return _vm.edInformationInfoShow()
-                }
-              }
-            },
-            [
-              _c("img", {
-                attrs: { src: "/etravel/public/images/edit-all.png" }
-              })
-            ]
-          )
-        ])
+          : _vm._e()
       ]),
       _vm._v(" "),
       _c(
@@ -30848,14 +30922,16 @@ var render = function() {
                         "button",
                         {
                           staticClass: "tc sendCode",
-                          attrs: { disabled: _vm.emailDisabled },
+                          attrs: {
+                            disabled: _vm.emailDisabled || _vm.emailTime > 0
+                          },
                           on: {
                             click: function($event) {
                               return _vm.getEmailCode()
                             }
                           }
                         },
-                        [_vm._v("獲取驗證碼")]
+                        [_vm._v(_vm._s(_vm.emailText))]
                       )
                     ]
                   )
@@ -33223,6 +33299,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33274,6 +33352,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this4.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this4.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33336,6 +33416,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this5.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this5.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33419,6 +33501,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this8.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this8.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33478,6 +33562,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this9.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this9.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33558,6 +33644,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this12.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this12.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33605,6 +33693,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this13.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this13.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33689,6 +33779,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this16.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this16.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -33735,6 +33827,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this17.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this17.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -42034,6 +42128,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -42081,6 +42177,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -42908,6 +43006,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -42945,6 +43045,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -43477,6 +43579,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -43517,6 +43621,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -44148,6 +44254,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -44185,6 +44293,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -44717,6 +44827,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -44757,6 +44869,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -45377,6 +45491,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -46036,6 +46152,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -46729,6 +46847,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -47964,6 +48084,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -48007,6 +48129,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -49446,6 +49570,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -49487,6 +49613,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -50086,6 +50214,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -50123,6 +50253,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -50699,6 +50831,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -50743,6 +50877,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -51349,6 +51485,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -51387,6 +51525,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -51932,6 +52072,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -51972,6 +52114,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -52634,6 +52778,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 // this.$toast('添加失败');
                 console.log(err);
@@ -52671,6 +52817,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 // this.$toast('修改失败');
                 console.log(err);
@@ -53223,6 +53371,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 // this.$toast('添加失敗');
                 console.log(err);
@@ -53264,6 +53414,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 console.log(err);
             });
@@ -54887,6 +55039,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this.$toast(err.response.data.message);
                 }
                 // this.$toast('獲取失敗');
                 console.log(err);
@@ -54908,6 +55062,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
                 // this.$toast('獲取失敗');
                 console.log(err);
@@ -54929,6 +55085,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
                 // this.$toast('獲取失敗');
                 console.log(err);
