@@ -67,8 +67,8 @@ class UserRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => '名称不能为空！',
-            'en_name.required' => '英文名称不能为空！',
+            'name.required' => '名稱不能為空！',
+            'en_name.required' => '英文名稱不能為空！',
         ];
     }
 
