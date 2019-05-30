@@ -136,7 +136,7 @@
                 this.editor.create();
                 this.editor.txt.html(this.childData);
             },
-            destroyEditor(){  // 销毁编辑器，
+            destroyEditor(){  // 销毁編輯器，
                 // this.editor.destroy();  // 这个没有完全销毁实例，只是作了隐藏
                 // $('#account--editor').remove();  // 不报错的话，这一步可以省略
                 this.editor = null;

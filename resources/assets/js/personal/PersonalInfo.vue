@@ -133,7 +133,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="gather_info">
-                        <div class="gather_info_title"><span>编辑</span><hr></div>
+                        <div class="gather_info_title"><span>編輯</span><hr></div>
                     </div>   
                     <div class="form_item_information" style="width:100%;">
                         <div class="item_title">中文名</div>

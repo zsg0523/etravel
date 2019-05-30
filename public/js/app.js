@@ -23866,7 +23866,7 @@ var render = function() {
                 return _c(
                   "div",
                   {
-                    staticClass: "project disflex",
+                    staticClass: "project disflex cursorPoint",
                     on: {
                       click: function($event) {
                         $event.stopPropagation()
@@ -26419,7 +26419,7 @@ var render = function() {
                         _c("div", { staticClass: "editBoxContent disflex" }, [
                           _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("用戶ID(不可编辑)")
+                              _vm._v("用戶ID(不可編輯)")
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -26457,7 +26457,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("團員密碼(不可编辑)")
+                              _vm._v("團員密碼(不可編輯)")
                             ]),
                             _vm._v(" "),
                             _c("div", [
@@ -26497,7 +26497,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("團員中文名(不可编辑)"),
+                              _vm._v("團員中文名(不可編輯)"),
                               _vm.errors.name
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26543,7 +26543,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("團員英文名(不可编辑)"),
+                              _vm._v("團員英文名(不可編輯)"),
                               _vm.errors.en_name
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26589,7 +26589,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("電話區號(不可编辑)"),
+                              _vm._v("電話區號(不可編輯)"),
                               _vm.errors.code
                                 ? _c("span", {
                                     staticClass: "err",
@@ -26635,7 +26635,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "form_item_student" }, [
                             _c("div", { staticClass: "item_title" }, [
-                              _vm._v("聯繫電話(不可编辑)"),
+                              _vm._v("聯繫電話(不可編輯)"),
                               _vm.errors.phone
                                 ? _c("span", {
                                     staticClass: "err",
@@ -27104,7 +27104,7 @@ var render = function() {
               _c("div", { staticClass: "editBoxContent disflex" }, [
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("用戶ID(不可编辑)")
+                    _vm._v("用戶ID(不可編輯)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -27122,7 +27122,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("團員密碼(不可编辑)")
+                    _vm._v("團員密碼(不可編輯)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -27140,7 +27140,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("團員中文名(不可编辑)")
+                    _vm._v("團員中文名(不可編輯)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -27158,7 +27158,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("團員英文名(不可编辑)")
+                    _vm._v("團員英文名(不可編輯)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -27176,7 +27176,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("電話區號(不可编辑)")
+                    _vm._v("電話區號(不可編輯)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -27214,7 +27214,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form_item_student" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("聯繫電話(不可编辑)")
+                    _vm._v("聯繫電話(不可編輯)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -30411,7 +30411,7 @@ var render = function() {
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "gather_info" }, [
                 _c("div", { staticClass: "gather_info_title" }, [
-                  _c("span", [_vm._v("编辑")]),
+                  _c("span", [_vm._v("編輯")]),
                   _c("hr")
                 ])
               ]),
@@ -34064,7 +34064,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.editor.txt.html(this.childData);
         },
         destroyEditor: function destroyEditor() {
-            // 销毁编辑器，
+            // 销毁編輯器，
             // this.editor.destroy();  // 这个没有完全销毁实例，只是作了隐藏
             // $('#account--editor').remove();  // 不报错的话，这一步可以省略
             this.editor = null;
@@ -52374,7 +52374,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("裝備內容")]),
         _vm._v(" "),
-        _c("th", [_vm._v("编辑")])
+        _c("th", [_vm._v("編輯")])
       ])
     ])
   }
@@ -54046,7 +54046,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 data: {
                     title: this.edFeel.title
                 },
-                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles' + this.edFeel.id
+                url: this.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles/' + this.edFeel.id
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.feels[_this3.edFeel.index].title = _this3.edFeel.title;
@@ -54670,6 +54670,7 @@ var render = function() {
               _c(
                 "td",
                 {
+                  staticClass: "cursorPoint",
                   on: {
                     click: function($event) {
                       return _vm.$router.push(

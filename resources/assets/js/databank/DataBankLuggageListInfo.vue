@@ -49,7 +49,7 @@
                     <tr>
                         <th>編號</th>
                         <th>裝備內容</th>
-                        <th>编辑</th>
+                        <th>編輯</th>
                     </tr>
                 </thead>
                 <tbody>

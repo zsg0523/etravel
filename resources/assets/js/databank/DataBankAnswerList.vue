@@ -54,7 +54,7 @@
                         <td>{{group.user.name}}</td>
                         <td>{{group.user.en_name}}</td>
                         <td>{{group.duty}}</td>
-                        <td @click="$router.push('/answer/dataBankAnswerInfo/'+group.user_id)">查看答題紙></td>
+                        <td class="cursorPoint" @click="$router.push('/answer/dataBankAnswerInfo/'+group.user_id)">查看答題紙></td>
                     </tr>
                    
                 </tbody>

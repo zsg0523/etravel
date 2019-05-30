@@ -166,7 +166,7 @@
                 data:{
                     title:this.edFeel.title,
                 },
-                url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles'+this.edFeel.id,
+                url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles/'+this.edFeel.id,
             }).then(res => {
                 if(res.status==200){
                     this.feels[this.edFeel.index].title=this.edFeel.title;
