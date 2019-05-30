@@ -29,7 +29,7 @@ class ImageRequest extends FormRequest
     public function messages()
     {
         return [
-            'image.dimensions' => '图片清晰度不够，宽和高需要 200px 以上'
+            'image.dimensions' => '圖片清晰度不夠，寬和高需 200px 以上'
         ];
     }
 

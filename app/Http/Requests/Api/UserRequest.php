@@ -45,8 +45,8 @@ class UserRequest extends FormRequest
 
                 return [
                     'name' => 'between:2,25' . $userId,
-                    'email' => 'email|unique:users,email',
-                    // 'phone' => 'unique:users,phone',
+                    'email' => 'email|unique:users,email,' . $userId,
+                    'phone' => 'unique:users,phone,' . $userId,
                     'introduction' => 'max:80',
                     'avatar_image_id' => 'exists:images,id,type,avatar,user_id,' . $userId,
                     'en_name' => 'between:2,25'
@@ -67,8 +67,8 @@ class UserRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => '名称不能为空！',
-            'en_name.required' => '英文名称不能为空！',
+            'name.required' => '名稱不能為空！',
+            'en_name.required' => '英文名稱不能為空！',
         ];
     }
 

@@ -34,9 +34,9 @@ class TravelRequest extends FormRequest
     public function messages()
     {
         return [
-            'travel_name.required' => "项目名称不能为空！",
-            'travel_introduction.required' => "项目介绍不能为空！",
-            'travel_at' => "时间不能空！"
+            'travel_name.required' => "項目名稱不能為空！",
+            'travel_introduction.required' => "項目介紹不能為空！",
+            'travel_at' => "時間不能為空！"
         ];
     }
 }
