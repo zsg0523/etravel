@@ -54082,7 +54082,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     headers: {
                         "Authorization": 'Bearer ' + sessionStorage.token
                     },
-                    url: _this4.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles' + feelId
+                    url: _this4.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles/' + feelId
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {

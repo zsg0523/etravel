@@ -200,7 +200,7 @@
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
-                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles'+feelId,
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles/'+feelId,
                 }).then(res => {
                     // console.log(res);
                     if(res.status==204){
