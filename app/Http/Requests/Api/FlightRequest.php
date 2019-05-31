@@ -14,7 +14,7 @@ class FlightRequest extends FormRequest
         switch ($this->method()) {
             case 'POST':
                 return [
-                    'date' => 'required|date',
+                    'date' => 'required|date_format:"Y-m-d"',
                     'from' => 'required',
                     'to' => 'required',
                     'flight' => 'required',
@@ -27,7 +27,7 @@ class FlightRequest extends FormRequest
             
             case 'PATCH':
                 return [
-                    'date' => 'string|date',
+                    'date' => 'string|date_format:"Y-m-d"',
                     'from' => 'string',
                     'to' => 'string',
                     'flight' => 'string',

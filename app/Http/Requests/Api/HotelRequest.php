@@ -16,8 +16,8 @@ class HotelRequest extends FormRequest
                 return [
                     'travel_id' => 'required|integer',
                     'hotel_name' => 'required',
-                    'check_at' => 'required|date',
-                    'leave_at' => 'required|date',
+                    'check_at' => 'required|date_format:"Y-m-d"',
+                    'leave_at' => 'required|date_format:"Y-m-d"',
                     'times' => 'required|integer',
                     'hotel_address' => 'required',
                     'hotel_phone' => 'required',
@@ -29,8 +29,8 @@ class HotelRequest extends FormRequest
                 return [
                     'travel_id' => 'integer',
                     'hotel_name' => 'string',
-                    'check_at' => 'date',
-                    'leave_at' => 'date',
+                    'check_at' => 'date_format:"Y-m-d"',
+                    'leave_at' => 'date_format:"Y-m-d"',
                     'times' => 'integer',
                     'hotel_address' => 'string',
                     'hotel_phone' => 'string',

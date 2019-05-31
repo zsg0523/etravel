@@ -16,7 +16,7 @@ class RouteRequest extends FormRequest
             case 'POST':
                 return [
                    'day' => 'string',
-                   'date' => 'date',
+                   'date' => 'date_format:"Y-m-d"',
                    'description' => 'string'
                 ];
                 break;
@@ -24,7 +24,7 @@ class RouteRequest extends FormRequest
             case 'PATCH':
                 return [
                     'day' => 'string',
-                    'date' => 'date',
+                    'date' => 'date_format:"Y-m-d"',
                     'description' => 'string'
                 ];
                 break;
