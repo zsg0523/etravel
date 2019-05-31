@@ -43,14 +43,23 @@ class UserRequest extends FormRequest
             case 'PATCH':
                 $userId = isset($this->user_id) ? $this->user_id :  \Auth::guard('api')->id();
 
-                return [
-                    'name' => 'between:2,25' . $userId,
-                    'email' => 'email|unique:users,email,' . $userId,
-                    'phone' => 'unique:users,phone,' . $userId,
-                    'introduction' => 'max:80',
-                    'avatar_image_id' => 'exists:images,id,type,avatar,user_id,' . $userId,
-                    'en_name' => 'between:2,25'
-                ];      
+                if($this->verification_key) {
+                    return [
+                        'phone' => 'unique:users,phone,' . $userId,
+                        'verification_key' => 'required|string',
+                        'verification_code' => 'required|integer',
+                        'code' => 'required|integer'
+                    ];
+                } else {
+                    return [
+                        'name' => 'between:2,25' . $userId,
+                        'email' => 'email|unique:users,email,' . $userId,
+                        'phone' => 'unique:users,phone,' . $userId,
+                        'introduction' => 'max:80',
+                        'avatar_image_id' => 'exists:images,id,type,avatar,user_id,' . $userId,
+                        'en_name' => 'between:2,25'
+                    ];
+                }      
                 break;
         }
     }
@@ -69,6 +78,8 @@ class UserRequest extends FormRequest
         return [
             'name.required' => '名稱不能為空！',
             'en_name.required' => '英文名稱不能為空！',
+            'code.required' =>'區號不能為空！',
+            'verification_code.required' => '短信驗證碼不能為空！'
         ];
     }
 

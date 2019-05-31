@@ -128,9 +128,9 @@ class UsersController extends Controller
     public function information(UserRequest $request, User $user, Group $group, Emergency $emergency)
     {   
         $manager = $this->user();
-
+        // return $this->errorResponse(403, '您还没有通过认证', 1003);
         // if ( ! $manager->can('manage_contents') ) {
-        //     return $this->response->errorBadRequest();
+            // return $this->response->errorBadRequest();
         // }
 
         // 更新学生基本信息
