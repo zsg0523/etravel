@@ -55,7 +55,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_feel">
-                        <div class="item_title">感想</div>
+                        <div class="item_title">感想(必填)</div>
                         <div>
                             <textarea class="item_area" placeholder="感想" v-model="newFeel.title"></textarea>
                         </div>
@@ -70,7 +70,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_feel">
-                        <div class="item_title">感想</div>
+                        <div class="item_title">感想(必填)</div>
                         <div>
                             <textarea class="item_area" placeholder="感想" v-model="edFeel.title"></textarea>
                         </div>
@@ -166,7 +166,7 @@
                 data:{
                     title:this.edFeel.title,
                 },
-                url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles'+this.edFeel.id,
+                url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles/'+this.edFeel.id,
             }).then(res => {
                 if(res.status==200){
                     this.feels[this.edFeel.index].title=this.edFeel.title;
@@ -200,7 +200,7 @@
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
-                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles'+feelId,
+                    url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles/'+feelId,
                 }).then(res => {
                     // console.log(res);
                     if(res.status==204){

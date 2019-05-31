@@ -92,15 +92,15 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">早/中/晚餐</div>
+		                <div class="item_title">早/中/晚餐(必填)</div>
 		                <div><input class="item_input_journeyInfo" placeholder="早/中/晚餐" type="text"  v-model="edMeal.title"></div>
 		            </div>
 		            <div class="form_item_journeyInfo">
-		                <div class="item_title">膳食内容</div>
+		                <div class="item_title">膳食内容(必填)</div>
 		                <div><input class="item_input_journeyInfo" placeholder="膳食内容" type="text" v-model="edMeal.content" ></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">膳食介紹</div>
+                        <div class="item_title">膳食介紹(必填)</div>
                         <div>
                             <textarea class="item_area"  placeholder="膳食介紹" v-model="edMeal.description"></textarea>
                         </div>

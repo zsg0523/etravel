@@ -224,19 +224,19 @@
                         <div class="pane_content_info" v-for="(leadTeacher,index) in leadTeachers">
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">老師姓名</div>
+                                    <div class="item_title">老師姓名(必填)</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.leader" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">區號</div>
+                                    <div class="item_title">區號(必填)</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.area_code" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">老師電話</div>
+                                    <div class="item_title">老師電話(必填)</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.phone" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">職責</div>
+                                    <div class="item_title">職責(必填)</div>
                                     <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="leadTeacher.duty"></div>
                                 </div>
                                 <div class="editBtnGroup">
@@ -332,12 +332,12 @@
                         <div><input class="item_input" type="text" placeholder="填寫达到城市" v-model="newFlight.to"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出發站點(必填)</div>
+                        <div class="item_title">出發站點</div>
                         <div><input class="item_input" type="text" placeholder="填寫出發站點" v-model="newFlight.from_flight"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">达到站點(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫达到站點" v-model="newFlight.to_flight"></div>
+                        <div class="item_title">到達站點</div>
+                        <div><input class="item_input" type="text" placeholder="填寫到達站點" v-model="newFlight.to_flight"></div>
                     </div>
                     <div style="width:100%;height:50px;">
                         <span style="width:70px;text-align: center;display: block;float:left;">出發</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="newFlight.is_return">
@@ -378,11 +378,11 @@
                         <div><input class="item_input" type="text" placeholder="填寫到達城市" v-model="edFlight.to"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出發站點(必填)</div>
+                        <div class="item_title">出發站點</div>
                         <div><input class="item_input" type="text" placeholder="填寫出發站點" v-model="edFlight.from_flight"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到達站點(必填)</div>
+                        <div class="item_title">到達站點</div>
                         <div><input class="item_input" type="text" placeholder="填寫到達站點" v-model="edFlight.to_flight"></div>
                     </div>
                     <div style="width:100%;height:50px;">
@@ -508,11 +508,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老師姓名</div>
+                        <div class="item_title">老師姓名(必填)</div>
                         <div><input class="item_input" type="text" placeholder="老師姓名" v-model="newLeadTeacher.leader" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">區號</div>
+                        <div class="item_title">區號(必填)</div>
                         <div>
                             <div class="simulateShade">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newLeadTeacher.area_code' v-model='newLeadTeacher.area_code'></AreaCodeSelector>
@@ -520,11 +520,11 @@
                         </div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老師電話</div>
+                        <div class="item_title">老師電話(必填)</div>
                         <div><input class="item_input" type="text" placeholder="老師電話" v-model="newLeadTeacher.phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">職責</div>
+                        <div class="item_title">職責(必填)</div>
                         <div><input class="item_input" type="text" placeholder="職責" v-model="newLeadTeacher.duty"></div>
                     </div>
                     <div class="issure">
@@ -537,11 +537,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老師姓名</div>
+                        <div class="item_title">老師姓名(必填)</div>
                         <div><input class="item_input" type="text" placeholder="老師姓名" v-model="edLeadTeacher.leader" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">區號</div>
+                        <div class="item_title">區號(必填)</div>
                         <div>
                             <div class="simulateShade">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='edLeadTeacher.area_code' v-model='edLeadTeacher.area_code'></AreaCodeSelector>
@@ -549,11 +549,11 @@
                         </div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老師電話</div>
+                        <div class="item_title">老師電話(必填)</div>
                         <div><input class="item_input" type="text" placeholder="老師電話" v-model="edLeadTeacher.phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">職責</div>
+                        <div class="item_title">職責(必填)</div>
                         <div><input class="item_input" type="text" placeholder="職責" v-model="edLeadTeacher.duty"></div>
                     </div>
                     <div class="issure">

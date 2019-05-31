@@ -153,27 +153,27 @@
                         <div class="editBox" >
                             <div class="editBoxContent disflex">
                                 <div class="form_item_student">
-                                    <div class="item_title">用戶ID(不可编辑)</div>
+                                    <div class="item_title">用戶ID(不可編輯)</div>
                                     <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" v-model="edStudent.user_id"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">團員密碼(不可编辑)</div>
+                                    <div class="item_title">團員密碼(不可編輯)</div>
                                     <div><input class="item_input" type="text" placeholder="填寫團員密碼" disabled="disabled" v-model="edStudent.original_password"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">團員中文名(不可编辑)<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
+                                    <div class="item_title">團員中文名(不可編輯)<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填寫團員中文名" disabled="disabled" v-model="edStudent.name"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">團員英文名(不可编辑)<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
+                                    <div class="item_title">團員英文名(不可編輯)<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填寫團員英文名" disabled="disabled" v-model="edStudent.en_name"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">電話區號(不可编辑)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
+                                    <div class="item_title">電話區號(不可編輯)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填寫電話區號" disabled="disabled" v-model="edStudent.code"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">聯繫電話(不可编辑)<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
+                                    <div class="item_title">聯繫電話(不可編輯)<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" v-model="edStudent.phone"></div>
                                 </div>
                                 <!-- 紧急联系人 -->
@@ -240,27 +240,27 @@
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
                         <div class="form_item_student">
-                            <div class="item_title">用戶ID(不可编辑)</div>
+                            <div class="item_title">用戶ID(不可編輯)</div>
                             <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" :value="searchStudent.id"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">團員密碼(不可编辑)</div>
+                            <div class="item_title">團員密碼(不可編輯)</div>
                             <div><input class="item_input" type="text" placeholder="填寫團員密碼" disabled="disabled" :value="searchStudent.original_password"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">團員中文名(不可编辑)</div>
+                            <div class="item_title">團員中文名(不可編輯)</div>
                             <div><input class="item_input" type="text" placeholder="填寫團員中文名" disabled="disabled" :value="searchStudent.name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">團員英文名(不可编辑)</div>
+                            <div class="item_title">團員英文名(不可編輯)</div>
                             <div><input class="item_input" type="text" placeholder="填寫團員英文名" disabled="disabled" :value="searchStudent.en_name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">電話區號(不可编辑)</div>
+                            <div class="item_title">電話區號(不可編輯)</div>
                             <div><input class="item_input" type="text" placeholder="填寫電話區號" disabled="disabled" v-model="searchStudent.code"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">聯繫電話(不可编辑)</div>
+                            <div class="item_title">聯繫電話(不可編輯)</div>
                             <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" v-model="searchStudent.phone"></div>
                         </div>
                         <!-- 紧急联系人 -->

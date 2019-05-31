@@ -79,7 +79,7 @@
             <div class="editBox_sheetInfo" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_sheetInfo">
-		                <div class="item_title">問題</div>
+		                <div class="item_title">問題(必填)</div>
                         <div>
                             <textarea class="item_area_sheetInfo"  placeholder="問題" v-model="newSheetInfo.content"></textarea>
                         </div>
@@ -94,7 +94,7 @@
             <div class="editBox_sheetInfo" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_sheetInfo">
-		                <div class="item_title">問題</div>
+		                <div class="item_title">問題(必填)</div>
                         <div>
                             <textarea class="item_area_sheetInfo"  placeholder="問題" v-model="edSheetInfo.content"></textarea>
                         </div>

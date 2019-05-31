@@ -49,7 +49,7 @@
                     <tr>
                         <th>編號</th>
                         <th>裝備內容</th>
-                        <th>编辑</th>
+                        <th>編輯</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -78,7 +78,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageListInfo">
-                        <div class="item_title">裝備內容</div>
+                        <div class="item_title">裝備內容(必填)</div>
                         <div>
                             <textarea class="item_area" placeholder="填寫裝備內容" v-model="newLuggageListInfo.rule"></textarea>
                         </div>
@@ -93,7 +93,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageListInfo">
-                        <div class="item_title">裝備內容</div>
+                        <div class="item_title">裝備內容(必填)</div>
                         <div>
                             <textarea class="item_area" placeholder="填寫裝備內容" v-model="edLuggageListInfo.rule"></textarea>
                         </div>

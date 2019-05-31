@@ -62,7 +62,7 @@
                 </div>
     		</div>
     		
-    		<div class="project disflex" v-for="(travel,index) in travels" @click.stop="$router.push('/projectDetail/'+travel.id)">
+    		<div class="project disflex cursorPoint" v-for="(travel,index) in travels" @click.stop="$router.push('/projectDetail/'+travel.id)">
     			<div class="project_left disflex yellowbg">
     				<img src="/etravel/public/images/plane-icon.png">
     			</div>

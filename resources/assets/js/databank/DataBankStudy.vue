@@ -60,11 +60,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
-		                <div class="item_title">景點</div>
+		                <div class="item_title">景點(必填)</div>
 		                <div><input class="item_input" placeholder="景點" type="text"  v-model="newJourney.day"></div>
 		            </div>
 		            <div class="form_item_journey">
-		                <div class="item_title">日期</div>
+		                <div class="item_title">日期(必填)</div>
 		                <div><input class="item_input" placeholder="填寫日期(yyyy-mm-dd)" type="text"  v-model="newJourney.date"></div>
 		            </div>
                     <div class="issure">
@@ -77,11 +77,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
-		                <div class="item_title">景點</div>
+		                <div class="item_title">景點(必填)</div>
 		                <div><input class="item_input" placeholder="景點" type="text"  v-model="edJourney.day"></div>
 		            </div>
 		            <div class="form_item_journey">
-		                <div class="item_title">日期</div>
+		                <div class="item_title">日期(必填)</div>
 		                <div><input class="item_input" placeholder="填寫日期(yyyy-mm-dd)" type="text"  v-model="edJourney.date"></div>
 		            </div>
                     <div class="issure">

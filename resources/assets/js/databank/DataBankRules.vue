@@ -56,7 +56,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
-		                <div class="item_title">準則</div>
+		                <div class="item_title">準則(必填)</div>
 		                <div><input class="item_input" placeholder="準則" type="text"  v-model="newRule.rule_category_name"></div>
 		            </div>
                     <div class="issure">
@@ -69,7 +69,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
-		                <div class="item_title">準則</div>
+		                <div class="item_title">準則(必填)</div>
 		                <div><input class="item_input" placeholder="準則" type="text"  v-model="edRule.rule_category_name"></div>
 		            </div>
                     <div class="issure">

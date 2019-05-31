@@ -125,7 +125,7 @@
                         </div>
                     </div>
                     <div class="form_item_group">
-                        <div class="item_title">房號(必填)</div>
+                        <div class="item_title">房號</div>
                         <div>
                             <input class="item_input" placeholder="填寫房號" type="text"  v-model="edGroup.group_room">
                         </div>

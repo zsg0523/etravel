@@ -62,7 +62,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_ruleInfo">
-                        <div class="item_title">準則詳情</div>
+                        <div class="item_title">準則詳情(必填)</div>
                         <div>
                             <textarea class="item_area" placeholder="準則詳情" v-model="newRuleInfo.rule"></textarea>
                         </div>
@@ -77,7 +77,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_ruleInfo">
-                        <div class="item_title">準則詳情</div>
+                        <div class="item_title">準則詳情(必填)</div>
                         <div>
                             <textarea class="item_area" placeholder="準則詳情" v-model="edRuleInfo.rule"></textarea>
                         </div>
