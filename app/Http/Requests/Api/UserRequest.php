@@ -78,7 +78,7 @@ class UserRequest extends FormRequest
         return [
             'name.required' => '名稱不能為空！',
             'en_name.required' => '英文名稱不能為空！',
-            'code.required' =>'區號不能為空！',
+            // 'code.required' =>'區號不能為空！',
             'verification_code.required' => '短信驗證碼不能為空！'
         ];
     }
