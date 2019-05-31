@@ -1,4 +1,4 @@
-<style>
+<(必填)style>
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
     .pane_content_sheet{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
     
@@ -67,11 +67,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">標題</div>
+		                <div class="item_title">標題(必填)</div>
 		                <div><input class="item_input_journeyInfo" placeholder="標題" type="text" v-model="newSheet.title"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">内容</div>
+                        <div class="item_title">内容(必填)</div>
                         <div><Editor @catchData='catchData' :childData='newSheet.body'></Editor></div>
                     </div>
                     <div class="issure">
@@ -84,11 +84,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">標題</div>
+		                <div class="item_title">標題(必填)</div>
 		                <div><input class="item_input_journeyInfo" placeholder="標題" type="text"  v-model="edSheet.title"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">内容</div>
+                        <div class="item_title">内容(必填)</div>
                         <!-- <div>
                             <textarea class="item_area"  placeholder="内容" v-model="edSheet.body"></textarea>
                         </div> -->

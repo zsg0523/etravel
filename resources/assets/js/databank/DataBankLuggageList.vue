@@ -57,7 +57,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageLists">
-                        <div class="item_title">行李清單</div>
+                        <div class="item_title">行李清單(必填)</div>
                         <div><input class="item_input" placeholder="請填寫清單内容" type="text" v-model="newLuggageList.rule_category_name"></div>
                     </div>
                     <div class="issure">
@@ -70,7 +70,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageLists">
-                        <div class="item_title">行李清單</div>
+                        <div class="item_title">行李清單(必填)</div>
                         <div><input class="item_input" placeholder="請填寫清單内容" type="text" v-model="edLuggageList.rule_category_name"></div>
                     </div>
                     <div class="issure">

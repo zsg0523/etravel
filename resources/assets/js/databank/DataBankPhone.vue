@@ -62,15 +62,15 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_phone">
-		                <div class="item_title">聯繫人名稱</div>
+		                <div class="item_title">聯繫人名稱(必填)</div>
 		                <div><input class="item_input_phone" placeholder="聯繫人名稱" type="text"  v-model="newPhone.name"></div>
 		            </div>
                     <div class="form_item_phone">
-                        <div class="item_title">職責</div>
+                        <div class="item_title">職責(必填)</div>
                         <div><input class="item_input_phone" placeholder="職責" type="text"  v-model="newPhone.duty"></div>
                     </div>
 		            <div class="form_item_phone">
-		                <div class="item_title">電話區號</div>
+		                <div class="item_title">電話區號(必填)</div>
 		                <div>
                             <div class="areaSel">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newPhone.area_code' v-model='newPhone.area_code'></AreaCodeSelector>
@@ -78,7 +78,7 @@
                         </div>
 		            </div>
 		            <div class="form_item_phone">
-		                <div class="item_title">聯繫電話</div>
+		                <div class="item_title">聯繫電話(必填)</div>
 		                <div><input class="item_input_phone" type="text" placeholder="聯繫電話"  v-model="newPhone.phone"></div>
 		            </div>
                     <div class="issure">
@@ -91,15 +91,15 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_phone">
-		                <div class="item_title">聯繫人名稱</div>
+		                <div class="item_title">聯繫人名稱(必填)</div>
 		                <div><input class="item_input_phone" placeholder="聯繫人名稱" type="text"  v-model="edPhone.name"></div>
 		            </div>
                     <div class="form_item_phone">
-                        <div class="item_title">職責</div>
+                        <div class="item_title">職責(必填)</div>
                         <div><input class="item_input_phone" placeholder="職責" type="text"  v-model="edPhone.duty"></div>
                     </div>
 		            <div class="form_item_phone">
-		                <div class="item_title">電話區號</div>
+		                <div class="item_title">電話區號(必填)</div>
                         <!-- <div><input class="item_input_phone" type="text" placeholder="電話區號"  v-model="edPhone.area_code"></div> -->
 		                <div>
                             <div class="areaSel">
@@ -109,7 +109,7 @@
 		            </div>
 
 		            <div class="form_item_phone">
-		                <div class="item_title">聯繫電話</div>
+		                <div class="item_title">聯繫電話(必填)</div>
 		                <div><input class="item_input_phone" type="text" placeholder="聯繫電話"  v-model="edPhone.phone"></div>
 		            </div>
                     <div class="issure">

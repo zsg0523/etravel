@@ -56,7 +56,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_promise">
-                        <div class="item_title">承諾</div>
+                        <div class="item_title">承諾(必填)</div>
                         <div>
                             <textarea class="item_area" placeholder="承諾" v-model="newPromise.rule_category_name"></textarea>
                         </div>
@@ -71,7 +71,7 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_promise">
-                        <div class="item_title">承諾</div>
+                        <div class="item_title">承諾(必填)</div>
                         <div>
                             <textarea class="item_area" placeholder="承諾" v-model="edPromise.rule_category_name"></textarea>
                         </div>

@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">題目類型</div>
+                        <div class="item_title">題目類型(必填)</div>
                         <div>
                             <select id="edTypeId" v-model="newEvaluationInfo.type">
                                 <option v-for="item in optList" :value="item.value">{{ item.title }}</option>
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">題目類型</div>
+                        <div class="item_title">題目類型(必填)</div>
                         <div>
                             <select id="edTypeId" v-model="edEvaluationInfo.type">
                                 <option v-for="item in optList" :value="item.value">{{ item.title }}</option>
