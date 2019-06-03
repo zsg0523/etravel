@@ -25720,6 +25720,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 this.newStudent.code_two = value;
             }
         }
+    },
+    filters: {
+        formatPhoneDate: function formatPhoneDate(val) {
+            if (val.length >= 7) {
+                return val.substr(0, 3) + '****' + val.substr(7);
+            } else {
+                return val;
+            }
+        }
     }
 });
 
@@ -26174,7 +26183,9 @@ var render = function() {
                             disabled: "disabled"
                           },
                           domProps: {
-                            value: _vm.students[_vm.actIndex].user.phone
+                            value: _vm._f("formatPhoneDate")(
+                              _vm.students[_vm.actIndex].user.phone
+                            )
                           }
                         })
                       ])
@@ -27219,32 +27230,16 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", [
                     _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.searchStudent.phone,
-                          expression: "searchStudent.phone"
-                        }
-                      ],
                       staticClass: "item_input",
                       attrs: {
                         type: "text",
                         placeholder: "填寫聯繫電話",
                         disabled: "disabled"
                       },
-                      domProps: { value: _vm.searchStudent.phone },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.searchStudent,
-                            "phone",
-                            $event.target.value
-                          )
-                        }
+                      domProps: {
+                        value: _vm._f("formatPhoneDate")(
+                          _vm.searchStudent.phone
+                        )
                       }
                     })
                   ])
@@ -50413,7 +50408,7 @@ var render = function() {
               )
             : _c("div", { staticClass: "form_content_sheetInfo" }, [
                 _vm._v(
-                  "\n                        暂未添加任何問題，请添加。\n                    "
+                  "\n                        暫未添加任何問題，請添加\n                    "
                 ),
                 _c("div", { staticStyle: { "text-align": "center" } })
               ])

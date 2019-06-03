@@ -99,7 +99,7 @@
                         </div>
                         <div class="form_item_student">
                             <div class="item_title">聯繫電話</div>
-                            <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" :value="students[actIndex].user.phone"></div>
+                            <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" :value="students[actIndex].user.phone|formatPhoneDate"></div>
                         </div>
                         <!-- 紧急聯繫人 -->
                         <div class="form_item_student">
@@ -261,7 +261,7 @@
                         </div>
                         <div class="form_item_student">
                             <div class="item_title">聯繫電話(不可編輯)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" v-model="searchStudent.phone"></div>
+                            <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" :value="searchStudent.phone|formatPhoneDate"></div>
                         </div>
                         <!-- 紧急聯繫人 -->
                         <div class="form_item_student">
@@ -808,6 +808,15 @@
                     this.newStudent.code_two=value;
                 }
             },
+        },
+        filters: {
+            formatPhoneDate (val) {
+                if(val.length>=7){
+                    return val.substr(0, 3) + '****' + val.substr(7);   
+                }else{
+                    return val;
+                }
+            }
         },
     }
 </script>

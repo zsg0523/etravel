@@ -66,7 +66,7 @@
 		            </div>
 		        </div>
                 <div class="form_content_sheetInfo" v-else>
-                        暂未添加任何問題，请添加。
+                        暫未添加任何問題，請添加
                     <div style="text-align:center;" >
                     </div>
                 </div>
