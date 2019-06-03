@@ -106,7 +106,7 @@
         },
         methods:{
             getLuggageLists(){
-                // 获取题目类型
+                // 获取題目類型
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -158,7 +158,7 @@
                 this.isEditLuggageListShow=true;
             },
             editLuggageList(){
-                // 修改题目类型
+                // 修改題目類型
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -193,7 +193,7 @@
                 // 删除清單
                 this.$dialog.confirm({
                     title: '删除清單',
-                    message: '是否删除该清單',
+                    message: '是否删除該清單',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

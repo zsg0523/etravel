@@ -1,4 +1,4 @@
-<(必填)style>
+<style>
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
     .pane_content_sheet{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
     
@@ -223,7 +223,7 @@
                 // 删除學習工作紙
                 this.$dialog.confirm({
                     title: '删除學習工作紙',
-                    message: '是否删除该學習工作紙',
+                    message: '是否删除該學習工作紙',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

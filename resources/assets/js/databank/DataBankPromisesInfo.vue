@@ -43,9 +43,9 @@
             <div class="pane_content">
                 <div class="form_content disflex" v-for="(ruleInfo,index) in ruleInfos">
                     <div class="form_item_ruleInfo">
-                        <div class="item_title">承诺詳情{{index+1}}</div>
+                        <div class="item_title">承諾詳情{{index+1}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="承诺詳情" disabled="disabled" :value="ruleInfo.rule"></textarea>
+                            <textarea class="item_area" placeholder="承諾詳情" disabled="disabled" :value="ruleInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="editBtnGroup">
@@ -62,9 +62,9 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_ruleInfo">
-                        <div class="item_title">承诺詳情(必填)</div>
+                        <div class="item_title">承諾詳情(必填)</div>
                         <div>
-                            <textarea class="item_area" placeholder="承诺詳情" v-model="newRuleInfo.rule"></textarea>
+                            <textarea class="item_area" placeholder="承諾詳情" v-model="newRuleInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="issure">
@@ -77,9 +77,9 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_ruleInfo">
-                        <div class="item_title">承诺詳情(必填)</div>
+                        <div class="item_title">承諾詳情(必填)</div>
                         <div>
-                            <textarea class="item_area" placeholder="承诺詳情" v-model="edRuleInfo.rule"></textarea>
+                            <textarea class="item_area" placeholder="承諾詳情" v-model="edRuleInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="issure">
@@ -116,7 +116,7 @@
         },
         methods:{
             getRuleInfos(){
-                // 获取承诺詳情/api/categories/3?include=rules
+                // 获取承諾詳情/api/categories/3?include=rules
                 this.$get(this.$config+'/api/categories/'+this.$route.params.id+'?include=rules',
                 {
                     headers: {
@@ -136,7 +136,7 @@
                 this.isNewRuleInfoShow=true;
             },
             addNewRuleInfo(){
-                // 新增承诺詳情
+                // 新增承諾詳情
                 this.$post(this.$config+'/api/rules',this.newRuleInfo,
                 {
                     headers: {
@@ -168,7 +168,7 @@
                 this.isEditRuleInfoShow=true;
             },
             editRuleInfo(){
-                // 修改承诺詳情信息
+                // 修改承諾詳情信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -201,10 +201,10 @@
                 });
             },
             delRuleInfo(RuleInfoId){
-                // 删除承诺詳情
+                // 删除承諾詳情
                 this.$dialog.confirm({
-                    title: '删除承诺詳情',
-                    message: '是否删除该承诺詳情',
+                    title: '删除承諾詳情',
+                    message: '是否删除該承諾詳情',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

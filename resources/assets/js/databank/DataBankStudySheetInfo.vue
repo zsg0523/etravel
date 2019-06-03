@@ -216,7 +216,7 @@
                 // 删除問題
                 this.$dialog.confirm({
                     title: '删除問題',
-                    message: '是否删除该問題',
+                    message: '是否删除該問題',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

@@ -189,7 +189,7 @@
              // 删除感想
             this.$dialog.confirm({
                 title: '删除感想',
-                message: '是否删除该感想',
+                message: '是否删除該感想',
                 cancelButtonText:'取消',
                 cancelButtonColor:'#ccc',
                 confirmButtonText:'確定',

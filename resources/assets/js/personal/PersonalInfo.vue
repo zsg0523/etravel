@@ -383,39 +383,47 @@
                 }
             },
             editPhone(){
-                this.$ajax({
-                    method: 'PATCH',
-                    headers: {
-                        "Authorization": 'Bearer '+sessionStorage.token,
-                    },
-                    data:{
-                        code: this.areacode,
-                        phone: this.phone,
-                        verification_code: this.phoneCode,
-                        verification_key: this.phoneKey,       
-                    },
-                    url: this.$config+'/api/phone',
-                }).then(res => {
-                    if(res.status==200){
-                        this.$toast('修改成功');
-                        this.personalInfos.phone=this.phone;
-                        this.personalInfos.code=this.areacode;
-                        this.isEditPhone=false;    
+                if(this.phoneCode){
+                    if(this.phone){
+                        this.$ajax({
+                            method: 'PATCH',
+                            headers: {
+                                "Authorization": 'Bearer '+sessionStorage.token,
+                            },
+                            data:{
+                                code: this.areacode,
+                                phone: this.phone,
+                                verification_code: this.phoneCode,
+                                verification_key: this.phoneKey,       
+                            },
+                            url: this.$config+'/api/phone',
+                        }).then(res => {
+                            if(res.status==200){
+                                this.$toast('修改成功');
+                                this.personalInfos.phone=this.phone;
+                                this.personalInfos.code=this.areacode;
+                                this.isEditPhone=false;    
+                            }else{
+                                this.$toast('修改失敗');
+                            }
+                        }).catch(err => {
+                            this.$toast('修改失敗');
+                            console.log(err)
+                            // this.errors=err.response.data.errors;
+                            if(err.response.data.errors){
+                                for(var key in err.response.data.errors){
+                                    this.$toast(err.response.data.errors[key][0]);
+                                }
+                            }else{
+                                this.$toast(err.response.data.message);
+                            }
+                        });
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast('請輸入手機號碼');
                     }
-                }).catch(err => {
-                    this.$toast('修改失敗');
-                    console.log(err)
-                    // this.errors=err.response.data.errors;
-                    if(err.response.data.errors){
-                        for(var key in err.response.data.errors){
-                            this.$toast(err.response.data.errors[key][0]);
-                        }
-                    }else{
-                        this.$toast(err.response.data.message);
-                    }
-                });
+                }else{
+                    this.$toast('請輸入驗證碼');
+                }
             },
             editEmailShow(){
                 this.isEditEmail=true;

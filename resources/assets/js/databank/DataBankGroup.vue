@@ -192,7 +192,7 @@
             //     this.isNewGroupShow=true;
             // },
             // addGroup(){
-            //     //新增房间api/users/:user/travels/:travel/groups
+            //     //新增房間api/users/:user/travels/:travel/groups
             //      this.$post(this.$config+'/ap/users'+sessionStorage.user_id+'/travels/'+sessionStorage.actTravelId+'/groups',this.newGroup,
             //     {
             //         headers: {
@@ -264,7 +264,7 @@
                 // 删除分房信息
                 this.$dialog.confirm({
                     title: '删除分组信息',
-                    message: '是否删除该分组',
+                    message: '是否删除該分组',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

@@ -33,8 +33,8 @@
         <div class="pane_content_phone" v-for="(phone,index) in phones">
             <div class="form_content_phone disflex">
                 <div class="form_item_phone">
-                    <div class="item_title">联系人名称</div>
-                    <div><input class="item_input_phone" placeholder="联系人名称" type="text" disabled="disabled" :value="phone.name"></div>
+                    <div class="item_title">聯繫人名称</div>
+                    <div><input class="item_input_phone" placeholder="聯繫人名称" type="text" disabled="disabled" :value="phone.name"></div>
                 </div>
                 <div class="form_item_phone">
                     <div class="item_title">职责</div>
@@ -61,8 +61,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_phone">
-		                <div class="item_title">联系人姓名</div>
-		                <div><input class="item_input_phone" placeholder="联系人姓名" type="text"  v-model="newPhone.name"></div>
+		                <div class="item_title">聯繫人姓名</div>
+		                <div><input class="item_input_phone" placeholder="聯繫人姓名" type="text"  v-model="newPhone.name"></div>
 		            </div>
                     <div class="form_item_phone">
                         <div class="item_title">职责</div>
@@ -86,8 +86,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_phone">
-		                <div class="item_title">联系人姓名</div>
-		                <div><input class="item_input_phone" placeholder="联系人姓名" type="text"  v-model="edPhone.name"></div>
+		                <div class="item_title">聯繫人姓名</div>
+		                <div><input class="item_input_phone" placeholder="聯繫人姓名" type="text"  v-model="edPhone.name"></div>
 		            </div>
                     <div class="form_item_phone">
                         <div class="item_title">职责</div>
@@ -139,7 +139,7 @@
         },
         methods:{
             getPhones(){
-                // 获取常用联系人
+                // 获取常用聯繫人
                 this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/telephones',
                 {
                     headers: {
@@ -158,7 +158,7 @@
                 this.isNewPhoneShow=true;
             },
             addNewPhone(){
-                // 新增联系人
+                // 新增聯繫人
                 this.$post(this.$config+'/api/telephones',this.newPhone,
                 {
                     headers: {
@@ -188,7 +188,7 @@
                 this.isEditPhoneShow=true;
             },
             editPhone(){
-                // 修改联系人信息
+                // 修改聯繫人信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -220,8 +220,8 @@
             delPhone(phoneId){
                 // 删除领队
                 this.$dialog.confirm({
-                    title: '删除联系人',
-                    message: '是否删除该联系人',
+                    title: '删除聯繫人',
+                    message: '是否删除該聯繫人',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

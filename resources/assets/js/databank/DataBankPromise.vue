@@ -196,7 +196,7 @@
                 // 删除承諾
                 this.$dialog.confirm({
                     title: '删除承諾',
-                    message: '是否删除该承諾',
+                    message: '是否删除該承諾',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

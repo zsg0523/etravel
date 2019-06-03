@@ -204,7 +204,7 @@
                 // 删除準則詳情
                 this.$dialog.confirm({
                     title: '删除準則詳情',
-                    message: '是否删除该準則詳情'
+                    message: '是否删除該準則詳情'
                 }).then(() => {
                     this.$ajax({
                         method: 'DELETE',

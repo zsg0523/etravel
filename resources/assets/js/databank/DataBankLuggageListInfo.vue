@@ -220,7 +220,7 @@
                 // 删除守则詳情
                 this.$dialog.confirm({
                     title: '删除装备詳情',
-                    message: '是否删除该装备詳情',
+                    message: '是否删除該装备詳情',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

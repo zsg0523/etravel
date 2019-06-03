@@ -200,7 +200,7 @@
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_address" ></div>
                                 </div>
                                 <div class="form_item_info" >
-                                    <div class="item_title">酒店經緯度(必填)</div>
+                                    <div class="item_title">酒店經緯度</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_location" ></div>
                                 </div>
                                 <div class="form_item_info"  style="width:100%;">
@@ -299,7 +299,7 @@
                         <div><input class="item_input" placeholder="填寫地址" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
                     </div>
                     <div class="issure">
-                        <button @click="editAssemblePlace()">确定</button>
+                        <button @click="editAssemblePlace()">確定</button>
                     </div>
                 </div>
             </div>
@@ -328,8 +328,8 @@
                         <div><input class="item_input" type="text" placeholder="填寫出發城市" v-model="newFlight.from"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">达到城市(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫达到城市" v-model="newFlight.to"></div>
+                        <div class="item_title">到達城市(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="填寫到達城市" v-model="newFlight.to"></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">出發站點</div>
@@ -868,7 +868,7 @@
                 // 删除航班
                 this.$dialog.confirm({
                     title: '删除航班',
-                    message: '是否删除该航班',
+                    message: '是否删除該航班',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',
@@ -1012,7 +1012,7 @@
                 // 删除酒店
                 this.$dialog.confirm({
                     title: '删除酒店',
-                    message: '是否删除该酒店',
+                    message: '是否删除該酒店',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',
@@ -1140,7 +1140,7 @@
                 // 删除領隊
                 this.$dialog.confirm({
                     title: '删除領隊',
-                    message: '是否删除该領隊',
+                    message: '是否删除該領隊',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

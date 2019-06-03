@@ -234,7 +234,7 @@
                 // 删除膳食
                 this.$dialog.confirm({
                     title: '删除膳食',
-                    message: '是否删除该膳食',
+                    message: '是否删除該膳食',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

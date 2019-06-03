@@ -156,7 +156,7 @@
         },
         methods:{
             getPhones(){
-                // 获取常用联系人
+                // 获取常用聯繫人
                 this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/telephones',
                 {
                     headers: {
@@ -176,7 +176,7 @@
                 this.isNew=true;
             },
             addNewPhone(){
-                // 新增联系人
+                // 新增聯繫人
                 this.$post(this.$config+'/api/telephones',this.newPhone,
                 {
                     headers: {
@@ -214,7 +214,7 @@
                 this.isNew=false;
             },
             editPhone(){
-                // 修改联系人信息
+                // 修改聯繫人信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -253,8 +253,8 @@
             delPhone(phoneId){
                 // 删除领队
                 this.$dialog.confirm({
-                    title: '删除联系人',
-                    message: '是否删除该联系人',
+                    title: '删除聯繫人',
+                    message: '是否删除該聯繫人',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

@@ -104,7 +104,7 @@ y<style>
         },
         methods:{
             getRules(){
-                // 获取承诺分类
+                // 获取承諾分类
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -127,7 +127,7 @@ y<style>
                 this.isNewRuleShow=true;
             },
             addNewRule(){
-                // 新增承诺
+                // 新增承諾
                 this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',this.newRule,
                 {
                     headers: {
@@ -158,7 +158,7 @@ y<style>
                 this.isEditRuleShow=true;
             },
             editRule(){
-                // 修改承诺信息
+                // 修改承諾信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -189,10 +189,10 @@ y<style>
                 });
             },
             delRule(ruleId){
-                // 删除承诺
+                // 删除承諾
                 this.$dialog.confirm({
-                    title: '删除承诺',
-                    message: '是否删除该承诺',
+                    title: '删除承諾',
+                    message: '是否删除該承諾',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

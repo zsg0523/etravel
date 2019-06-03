@@ -184,7 +184,14 @@
                         this.$toast('修改失败');
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    // this.$toast('修改失败');
+                    if(err.response.data.errors){
+                        for(var key in err.response.data.errors){
+                            this.$toast(err.response.data.errors[key][0]);
+                        }
+                    }else{
+                        this.$toast(err.response.data.message);
+                    }
                     console.log(err)
                 });
             },
@@ -192,7 +199,7 @@
                 // 删除行程
                 this.$dialog.confirm({
                     title: '删除行程',
-                    message: '是否删除该行程',
+                    message: '是否删除該行程',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

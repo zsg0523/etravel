@@ -104,7 +104,7 @@
         },
         methods:{
             getEvaluations(){
-                // 获取题目类型
+                // 获取題目類型
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -124,7 +124,7 @@
                 this.isNewEvaluationShow=true;
             },
             addNewEvaluation(){
-                // 新增题目类型
+                // 新增題目類型
                 this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/evaluationCategories',
                 this.newEvaluation,
                 {
@@ -156,7 +156,7 @@
                 this.isEditevaluationShow=true;
             },
             editEvaluation(){
-                // 修改题目类型
+                // 修改題目類型
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -187,10 +187,10 @@
                 });
             },
             delEvaluation(evaluationId){
-                // 删除题目类型
+                // 删除題目類型
                 this.$dialog.confirm({
-                    title: '删除题目类型',
-                    message: '是否删除该题目类型',
+                    title: '删除題目類型',
+                    message: '是否删除該題目類型',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

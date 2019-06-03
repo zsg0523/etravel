@@ -101,7 +101,7 @@
                             <div class="item_title">聯繫電話</div>
                             <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" :value="students[actIndex].user.phone"></div>
                         </div>
-                        <!-- 紧急联系人 -->
+                        <!-- 紧急聯繫人 -->
                         <div class="form_item_student">
                             <div class="item_title">區號A</div>
                             <div><input class="item_input" type="text" placeholder="填寫區號A" disabled="disabled" :value="students[actIndex].user.code_one"></div>
@@ -176,7 +176,7 @@
                                     <div class="item_title">聯繫電話(不可編輯)<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
                                     <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" v-model="edStudent.phone"></div>
                                 </div>
-                                <!-- 紧急联系人 -->
+                                <!-- 紧急聯繫人 -->
                                 <div class="form_item_student">
                                     <div class="item_title">區號A</div>
                                     <div>
@@ -263,7 +263,7 @@
                             <div class="item_title">聯繫電話(不可編輯)</div>
                             <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" v-model="searchStudent.phone"></div>
                         </div>
-                        <!-- 紧急联系人 -->
+                        <!-- 紧急聯繫人 -->
                         <div class="form_item_student">
                             <div class="item_title">區號A</div>
                             <div>
@@ -352,7 +352,7 @@
                             <div><input class="item_input" type="text" placeholder="填寫聯繫電話" v-model="newStudent.phone"></div>
                         </div>
 
-                        <!-- 紧急联系人 -->
+                        <!-- 紧急聯繫人 -->
                         <div class="form_item_student">
                             <div class="item_title">區號A</div>
                             <div>
@@ -651,7 +651,7 @@
                 // 删除團員資訊/api/users/:user/travels/:travel/groups/:group
                 this.$dialog.confirm({
                     title: '删除團員資訊',
-                    message: '是否删除该團員資訊',
+                    message: '是否删除該團員資訊',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

@@ -152,7 +152,7 @@
         },
         methods:{
             getLocals(){
-                // 获取当地文化/api/travels/1/locals
+                // 获取當地文化/api/travels/1/locals
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -171,7 +171,7 @@
                 this.status='newLocal';
             },
             addNewLocal(){
-                // 新增当地文化/api/route/21/food
+                // 新增當地文化/api/route/21/food
                 this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/locals',this.newLocal,
                 {
                     headers: {
@@ -207,7 +207,7 @@
                 this.status='edLocal';
             },
             editLocal(){
-                // 修改当地文化信息/api/travels/1/locals/22
+                // 修改當地文化信息/api/travels/1/locals/22
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -242,10 +242,10 @@
                 });
             },
             delLocal(localId){
-                // 删除当地文化
+                // 删除當地文化
                 this.$dialog.confirm({
-                    title: '删除当地文化',
-                    message: '是否删除该当地文化',
+                    title: '删除當地文化',
+                    message: '是否删除該當地文化',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

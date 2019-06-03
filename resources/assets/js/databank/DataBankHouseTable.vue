@@ -37,7 +37,7 @@
                 <thead>
                     <tr>
                         <th>分組編號</th>
-                        <th>房间編號</th>
+                        <th>房間編號</th>
                         <th>班級</th>
                         <th>中文名</th>
                         <th>英文名</th>
@@ -67,9 +67,9 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_house">
-                        <div class="item_title">房间</div>
+                        <div class="item_title">房間</div>
                         <div>
-                            <input class="item_input" placeholder="房间編號" type="text"  v-model="newHouse.house_room">
+                            <input class="item_input" placeholder="房間編號" type="text"  v-model="newHouse.house_room">
                         </div>
                     </div>
                     <div class="form_item_house">
@@ -100,9 +100,9 @@
                         </div>
                     </div>
                     <div class="form_item_house">
-                        <div class="item_title">房间編號</div>
+                        <div class="item_title">房間編號</div>
                         <div>
-                            <input class="item_input" placeholder="填寫房间編號" type="text"  v-model="edHouse.house_room">
+                            <input class="item_input" placeholder="填寫房間編號" type="text"  v-model="edHouse.house_room">
                         </div>
                     </div>
                     <div class="form_item_house">
@@ -187,7 +187,7 @@
             //      this.isNewHouseShow=true;
             // },
             // addNewHouse(){
-            //     //新增房间
+            //     //新增房間
             //      this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',this.newHouse,
             //     {
             //         headers: {
@@ -219,7 +219,7 @@
                 this.isEditHouseShow=true;
             },
             editHouse(){
-                // 修改房间表信息
+                // 修改房間表信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
