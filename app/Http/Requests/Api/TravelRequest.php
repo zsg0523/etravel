@@ -17,7 +17,7 @@ class TravelRequest extends FormRequest
                 return [
                     'travel_name' => 'required|max:50',
                     'travel_introduction' => 'required|max:255',
-                    'travel_at' => 'required|date'
+                    'travel_at' => 'required|date_format:"Y-m-d"'
                 ];
                 break;
             
@@ -25,7 +25,7 @@ class TravelRequest extends FormRequest
                 return [
                     'travel_name' => 'string',
                     'travel_introduction' => 'string',
-                    'travel_at' => 'date'
+                    'travel_at' => 'date_format:"Y-m-d"'
                 ];
                 break;
         }
