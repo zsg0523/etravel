@@ -171,6 +171,9 @@ return [
         'time'                  => '時間',
         'available'             => '可用的',
         'size'                  => '大小',
+
         'code'                  => '區號',
+        'body'                  => '內容',
+        'duty'                  => '職責',
     ],
 ];
