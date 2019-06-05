@@ -16,14 +16,12 @@ class LeaderRequest extends FormRequest
             case 'POST':
                 return [
                     'leader' => 'required|string|max:50',
-                    'duty' => 'required|string'
                 ];
                 break;
             
             case 'PATCH':
                 return [
                     'leader' =>'string',
-                    'duty' => 'string'
                 ];
                 break;
         }
