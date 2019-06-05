@@ -66,7 +66,7 @@
 		                <div><input class="item_input_phone" placeholder="聯繫人名稱" type="text"  v-model="newPhone.name"></div>
 		            </div>
                     <div class="form_item_phone">
-                        <div class="item_title">職責(必填)</div>
+                        <div class="item_title">職責</div>
                         <div><input class="item_input_phone" placeholder="職責" type="text"  v-model="newPhone.duty"></div>
                     </div>
 		            <div class="form_item_phone">
@@ -95,7 +95,7 @@
 		                <div><input class="item_input_phone" placeholder="聯繫人名稱" type="text"  v-model="edPhone.name"></div>
 		            </div>
                     <div class="form_item_phone">
-                        <div class="item_title">職責(必填)</div>
+                        <div class="item_title">職責</div>
                         <div><input class="item_input_phone" placeholder="職責" type="text"  v-model="edPhone.duty"></div>
                     </div>
 		            <div class="form_item_phone">
