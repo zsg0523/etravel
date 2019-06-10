@@ -88,7 +88,7 @@
         mounted() {
             this.createEditor();
             var preview=this.$refs.preview;
-            console.log(preview);
+            // console.log(preview);
             preview.setAttribute('style','z-index:10001;display:block;');
             this.$refs.editor.firstChild.appendChild(preview);
         },
@@ -101,6 +101,7 @@
                 this.editor.customConfig.onchange = (html) => {
                     this.editorContent = html;
                     this.$emit('catchData',this.editorContent);
+                    // console.log(html);
                 }
                 this.editor.customConfig.menus = [
                     'head',  // 标题
@@ -121,7 +122,7 @@
                     // 'table',  // 表格
                     // 'video',  // 插入视频
                     // 'code',  // 插入代码
-                    'undo',  // 撤销
+                    // 'undo',  // 撤销
                     // 'redo'  // 重复
                 ];//配置菜单
                 this.editor.customConfig.uploadImgServer=this.$config+'/api/images';// 上传图片到服务器地址

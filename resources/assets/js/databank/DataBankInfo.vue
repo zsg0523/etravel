@@ -100,7 +100,7 @@
                                     <div><input class="item_input"  placeholder="日期及時間" style="width:97%;" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;min-height:120px;">
-                                    <div class="item_title">地址</div>
+                                    <div class="item_title">詳細地址</div>
                                     <div>
                                         <textarea class="item_area" placeholder="詳細地址" disabled="disabled" v-model="assemblePlaces.dissolution_station"></textarea>
                                     </div>
@@ -224,19 +224,19 @@
                         <div class="pane_content_info" v-for="(leadTeacher,index) in leadTeachers">
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">老師姓名(必填)</div>
+                                    <div class="item_title">老師姓名</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.leader" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">區號(必填)</div>
+                                    <div class="item_title">區號</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.area_code" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">老師電話(必填)</div>
+                                    <div class="item_title">老師電話</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.phone" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">職責(必填)</div>
+                                    <div class="item_title">職責</div>
                                     <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="leadTeacher.duty"></div>
                                 </div>
                                 <div class="editBtnGroup">
@@ -284,8 +284,8 @@
                         <div><input class="item_input" placeholder="填寫日期及時間(yyyy-mm-dd hh:mm)" type="text" v-model="edAssemblePlaces.assembly_at"></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">地址</div>
-                        <div><input class="item_input" placeholder="填寫地址" type="text" v-model="edAssemblePlaces.assembly_station"></div>
+                        <div class="item_title">詳細地址</div>
+                        <div><input class="item_input" placeholder="填寫詳細地址" type="text" v-model="edAssemblePlaces.assembly_station"></div>
                     </div>
                     <div class="gather_info">
                         <div class="gather_info_title"><span>解散</span><hr></div>
@@ -295,8 +295,8 @@
                         <div><input class="item_input" placeholder="填寫日期及時間(yyyy-mm-dd hh:mm)" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">地址</div>
-                        <div><input class="item_input" placeholder="填寫地址" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
+                        <div class="item_title">詳細地址</div>
+                        <div><input class="item_input" placeholder="填寫詳細地址" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
                     </div>
                     <div class="issure">
                         <button @click="editAssemblePlace()">確定</button>
@@ -512,7 +512,7 @@
                         <div><input class="item_input" type="text" placeholder="老師姓名" v-model="newLeadTeacher.leader" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">區號(必填)</div>
+                        <div class="item_title">區號</div>
                         <div>
                             <div class="simulateShade">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newLeadTeacher.area_code' v-model='newLeadTeacher.area_code'></AreaCodeSelector>
@@ -520,11 +520,11 @@
                         </div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老師電話(必填)</div>
+                        <div class="item_title">老師電話</div>
                         <div><input class="item_input" type="text" placeholder="老師電話" v-model="newLeadTeacher.phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">職責(必填)</div>
+                        <div class="item_title">職責</div>
                         <div><input class="item_input" type="text" placeholder="職責" v-model="newLeadTeacher.duty"></div>
                     </div>
                     <div class="issure">
@@ -541,7 +541,7 @@
                         <div><input class="item_input" type="text" placeholder="老師姓名" v-model="edLeadTeacher.leader" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">區號(必填)</div>
+                        <div class="item_title">區號</div>
                         <div>
                             <div class="simulateShade">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='edLeadTeacher.area_code' v-model='edLeadTeacher.area_code'></AreaCodeSelector>
@@ -549,11 +549,11 @@
                         </div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老師電話(必填)</div>
+                        <div class="item_title">老師電話</div>
                         <div><input class="item_input" type="text" placeholder="老師電話" v-model="edLeadTeacher.phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">職責(必填)</div>
+                        <div class="item_title">職責</div>
                         <div><input class="item_input" type="text" placeholder="職責" v-model="edLeadTeacher.duty"></div>
                     </div>
                     <div class="issure">
