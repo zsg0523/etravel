@@ -37,19 +37,19 @@ class ResetPasswordController extends Controller
 
 
         if ( ! $verifyData) {
-            return $this->response->error('验证码已失效', 422);
+            return $this->response->error('驗證碼已失效', 422);
         }
 
         if ( ! hash_equals($verifyData['code'], $request->verification_code)) {
             // 返回401
-            return $this->response->errorUnauthorized('验证码错误');
+            return $this->response->errorUnauthorized('驗證碼錯誤');
         }
 
         $user = User::where('phone', $verifyData['phone'])->first();
 
         $response = $this->resetPassword($user, $request->password);
         
-        return $this->response->array(['message' => "修改密码成功！"]);
+        return $this->response->array(['message' => "修改密碼成功！"]);
         
     }
 
@@ -96,8 +96,8 @@ class ResetPasswordController extends Controller
     protected function validationErrorMessages()
     {
         return [
-        	'verification_key.required' => 'verification_key 不能为空！',
-        	'verification_code.required' => '验证码不能为空！',
+        	'verification_key.required' => 'verification_key 不能為空！',
+        	'verification_code.required' => '驗證碼不能為空！',
         ];
     }
 

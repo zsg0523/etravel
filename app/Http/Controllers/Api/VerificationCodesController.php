@@ -32,7 +32,7 @@ class VerificationCodesController extends Controller
 			    ]);
 			} catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $exception) {
 			    $message = $exception->getException('qcloud')->getMessage();
-			    return $this->response->errorInternal($message ?: '短信发送异常');
+			    return $this->response->errorInternal($message ?: '短信發送異常');
 			}
     	}
 
@@ -75,7 +75,7 @@ class VerificationCodesController extends Controller
 			    ]);
 			} catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $exception) {
 			    $message = $exception->getException('qcloud')->getMessage();
-			    return $this->response->errorInternal($message ?: '短信发送异常');
+			    return $this->response->errorInternal($message ?: '短信發送異常');
 			}
     	}
 
