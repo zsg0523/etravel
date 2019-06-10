@@ -29,12 +29,12 @@ class UsersController extends Controller
         $verifyData = \Cache::get($request->verification_key);
 
         if ( ! $verifyData) {
-            return $this->response->error('验证码已失效', 422);
+            return $this->response->error('驗證碼已失效', 422);
         }
 
         if ( ! hash_equals($verifyData['code'], $request->verification_code)) {
             // 返回401
-            return $this->response->errorUnauthorized('验证码错误');
+            return $this->response->errorUnauthorized('驗證碼錯誤');
         }
 
         $user = User::create([
@@ -96,7 +96,7 @@ class UsersController extends Controller
         $travel_ids = $user->travels->pluck('id')->toArray();
 
         if(in_array($request->travel_id, $travel_ids)) {
-           return $this->response->array(['message' => '该用户已参加！'])->setStatusCode(202);
+           return $this->response->array(['message' => '該用戶已參加！'])->setStatusCode(202);
         }
 
         return $this->response->item($user, new UserTransformer());
@@ -150,12 +150,12 @@ class UsersController extends Controller
         // 获取缓存的手机号和区号，以及验证码
         $verifyData = \Cache::get($request->verification_key);
         if ( ! $verifyData) {
-            return $this->response->error('验证码已失效', 422);
+            return $this->response->error('驗證碼已失效', 422);
         }
 
         if ( ! hash_equals($verifyData['code'], $request->verification_code)) {
             // 返回401
-            return $this->response->errorUnauthorized('验证码错误');
+            return $this->response->errorUnauthorized('驗證碼錯誤！');
         }
 
         $user = $this->user();
@@ -176,12 +176,12 @@ class UsersController extends Controller
         $verifyData = \Cache::get($request->key);
 
         if ( ! $verifyData) {
-            return $this->response->error('验证码已失效', 422);
+            return $this->response->error('驗證碼已失效', 422);
         }
 
         if ( ! hash_equals($verifyData['code'], $request->code)) {
             // 返回401
-            return $this->response->errorUnauthorized('验证码错误');
+            return $this->response->errorUnauthorized('驗證碼錯誤！');
         }
         
         $user = $this->user();
@@ -232,7 +232,7 @@ class UsersController extends Controller
                         $this->sendMail($company_emergency->emergency_email_one, $company_emergency->emergency_email_two, $this->user);
                     }
                 } finally {
-                    return $this->response->array(['message' => '求救短信和邮箱已发出！']);
+                    return $this->response->array(['message' => '求救短信和郵箱已發出']);
                 }  
             }
         }

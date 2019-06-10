@@ -43,7 +43,7 @@ class TravelsController extends Controller
     public function store(TravelRequest $request, Travel $travel)
     {
         if ($this->user()->tokens < config('user.tokens')) {
-            return $this->response->error('金币不足，无法创建项目！', 422);
+            return $this->response->error('金幣不足，無法創建項目！', 422);
         }
 
         if (isset($request->travel_image_id)) {

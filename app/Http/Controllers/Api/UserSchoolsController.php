@@ -15,7 +15,7 @@ class UserSchoolsController extends Controller
             $user->addSchool($school->id);
         }
 
-        return $this->response->array(['message' => $user->name . '添加学校成功！'])->setStatusCode(201);
+        return $this->response->array(['message' => $user->name . '添加學校成功！'])->setStatusCode(201);
 
     }
 
