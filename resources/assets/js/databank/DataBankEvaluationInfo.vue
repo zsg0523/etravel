@@ -40,7 +40,7 @@
             <div class="title_icon" @click="$router.push('/topic/dataBankEvaluation')">
                 <img src="/etravel/public/images/back.png">
             </div>
-            {{eval.title}}
+            <div class="overText" style="margin: 0 40px;">{{eval.title}}</div>
         </div>
 
         <div class="dataBank_input_form disflex">

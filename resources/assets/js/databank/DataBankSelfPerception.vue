@@ -9,7 +9,7 @@
     .form_item_feel>div{width: 96%;min-height: 45px;}
 
     .item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;}
-
+    .item_input{height:40px;padding-left:10px;outline: none;width:97%;border-radius: 8px;}
     .active{font-size: 18px;}        
 
     .dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
@@ -36,9 +36,10 @@
             <div class="pane_content_feel">
                 <div class="form_content disflex" v-for="(feel,index) in feels">
                     <div class="form_item_feel">
-                        <div class="item_title">感想{{index+1}}</div>
+                        <div class="item_title">感想標題{{index+1}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="感想" disabled="disabled" :value="feel.title" ></textarea>
+                            <!-- <textarea class="item_area" placeholder="感想標題" disabled="disabled" :value="feel.title" ></textarea> -->
+                            <input class="item_input"  placeholder="感想標題"  type="text" disabled="disabled" :value="feel.title">
                         </div>
                     </div>
                     <div class="editBtnGroup">
@@ -55,9 +56,10 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_feel">
-                        <div class="item_title">感想(必填)</div>
+                        <div class="item_title">感想標題(必填)</div>
                         <div>
-                            <textarea class="item_area" placeholder="感想" v-model="newFeel.title"></textarea>
+                            <!-- <textarea class="item_area" placeholder="感想標題" v-model="newFeel.title"></textarea> -->
+                            <input class="item_input"  placeholder="感想標題"  type="text" v-model="newFeel.title">
                         </div>
                     </div>
                     <div class="issure">
@@ -70,9 +72,10 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_feel">
-                        <div class="item_title">感想(必填)</div>
+                        <div class="item_title">感想標題(必填)</div>
                         <div>
-                            <textarea class="item_area" placeholder="感想" v-model="edFeel.title"></textarea>
+                            <!-- <textarea class="item_area" placeholder="感想標題" v-model="edFeel.title"></textarea> -->
+                            <input class="item_input"  placeholder="感想標題"  type="text" v-model="edFeel.title">
                         </div>
                     </div>
                     <div class="issure">
@@ -106,7 +109,7 @@
     },
     methods:{
         getFeels(){
-            // 获取感想
+            // 获取感想標題
             this.$ajax({
                 method: 'GET',
                 headers: {
@@ -128,7 +131,7 @@
              this.isAddFeelShow=true;
         },
         addFeel(){
-            // 新增感想
+            // 新增感想標題
             this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/titles',this.newFeel,
             {
                 headers: {
@@ -141,12 +144,14 @@
                 this.isAddFeelShow=false;
                 this.newFeel.title='';
             }).catch(err => {
+                this.$toast('添加失敗');
                 if(err.response.data.errors){
                     for(var key in err.response.data.errors){
                         this.$toast(err.response.data.errors[key][0]);
                     }
+                }else{
+                    this.$toast(err.response.data.message);
                 }
-                this.$toast('添加失敗');
                 console.log(err)
             });
         },
@@ -157,7 +162,7 @@
             this.isEditFeelShow=true;
         },
         editFeel(){
-            // 修改感想信息
+            // 修改感想標題信息
             this.$ajax({
                 method: 'PATCH',
                 headers: {
@@ -176,20 +181,22 @@
                     this.$toast('修改失敗');
                 }
             }).catch(err => {
+                this.$toast('修改失敗');
                 if(err.response.data.errors){
                     for(var key in err.response.data.errors){
                         this.$toast(err.response.data.errors[key][0]);
                     }
+                }else{
+                    this.$toast(err.response.data.message);
                 }
-                this.$toast('修改失敗');
                 console.log(err)
             });
         },
         delFeel(feelId){
-             // 删除感想
+             // 删除感想標題
             this.$dialog.confirm({
-                title: '删除感想',
-                message: '是否删除該感想',
+                title: '删除感想標題',
+                message: '是否删除該感想標題',
                 cancelButtonText:'取消',
                 cancelButtonColor:'#ccc',
                 confirmButtonText:'確定',
