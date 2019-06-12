@@ -50,7 +50,7 @@
     }
 </style>
 <template>
-    <div style="width: 100%;">
+    <div style="width: 100%;line-height:auto;">
         <div ref="editor" style="text-align:left;width:100%;">
             
         </div>
@@ -98,11 +98,13 @@
         methods: {
             createEditor(){
                 this.editor = new E(this.$refs.editor);            
+
                 this.editor.customConfig.onchange = (html) => {
-                    this.editorContent = html;
+                    this.editorContent =this.removeWordXml(html);
+                };
+                this.editor.customConfig.onblur= (html) => {
                     this.$emit('catchData',this.editorContent);
-                    // console.log(html);
-                }
+                };
                 this.editor.customConfig.menus = [
                     'head',  // 标题
                     'bold',  // 粗体
@@ -125,8 +127,10 @@
                     // 'undo',  // 撤销
                     // 'redo'  // 重复
                 ];//配置菜单
+                this.editor.customConfig.pasteFilterStyle=true;
                 this.editor.customConfig.uploadImgServer=this.$config+'/api/images';// 上传图片到服务器地址
                 this.editor.customConfig.uploadFileName = 'image'//自定义filename
+                this.editor.customConfig.uploadImgTimeout =20000;//自定义s上传时间
                 this.editor.customConfig.uploadImgParams = {
                     type: 'travel',
                     platform:1,
@@ -146,7 +150,23 @@
             toPreview(){
                 this.editorContent=this.editor.txt.html()
                 this.isPreviewShow='block';
-            } 
+            },
+            removeWordXml(text){
+                var html = text;
+                html = html.replace(/<\/?SPANYES[^>]*>/gi, "");//  Remove  all  SPAN  tags
+                // html = html.replace(/<(\w[^>]*)  class=([^|>]*)([^>]*)/gi, "<$1$3");  //  Remove  Class  attributes
+                // html = html.replace(/<(\w[^>]*)  style="([^"]*)"([^>]*)/gi, "<$1$3");  //  Remove  Style  attributes
+                html = html.replace(/<(\w[^>]*)  lang=([^|>]*)([^>]*)/gi, "<$1$3");//  Remove  Lang  attributes
+                html = html.replace(/<\\?\?xml[^>]*>/gi, "");//  Remove  XML  elements  and  declarations
+                html = html.replace(/<\/?\w+:[^>]*>/gi, "");//  Remove  Tags  with  XML  namespace  declarations:  <o:p></o:p>
+                html = html.replace(/&nbsp;/, "");//  Replace  the  &nbsp;
+                html = html.replace(/\n(\n)*( )*(\n)*\n/gi, '\n');
+                //  Transform  <P>  to  <DIV>
+                // var  re  =  new  RegExp("(<P)([^>]*>.*?)(<//P>)","gi")  ;            //  Different  because  of  a  IE  5.0  error
+                //        html = html.replace(re, "<div$2</div>");
+                return html;
+            },
+
         },
         watch:{
             childData(){

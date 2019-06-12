@@ -30,6 +30,14 @@
                 <div><button type="button" @click="login();">登入</button></div>
             </div>
         </div>
+        <van-loading 
+	        class="loading"
+	        type="spinner"
+	        :style="{display:isLoading,position:'fixed',top: '50%',left: '50%',zIndex: '20000'}"
+	        size="50px"
+	        text-size="25px"
+	        color="#333">
+		</van-loading>
     </div>
 </template>
 
@@ -41,6 +49,7 @@
 	    	return {
 	      		loginName: '',
 	      		password: '',
+	      		isLoading:'none',
 	    	}
 	  	},
 	  	methods: {
@@ -48,6 +57,7 @@
 	  		...mapActions(['setToken']),
 		    login() {
 		      	if (this.password && this.loginName) {
+		      		this.isLoading='block';
 		        	this.$post(this.$config+'/api/authorizations', {
 			          	username: this.loginName,
 			          	password: this.password
@@ -63,6 +73,7 @@
 						        	"Authorization": 'Bearer '+sessionStorage.token,
 						    	}
 						    }).then(res => {
+						    	this.isLoading='none';
 					        	// console.log(res.data);
 					        	this.setUserInfo(res.data);
 					        	sessionStorage.setItem('userId', res.data.id);
@@ -72,15 +83,18 @@
 					            },1000);
 			            		
 					        }).catch(err => {
+					        	this.isLoading='none';
 					        	this.$toast('帳號或密碼錯誤')
 					          	console.log(err);
 					        });
 			            	
 			          	} else {
+			          		this.isLoading='none';
 			              	this.$toast('帳號或密碼錯誤')
 			              	this.password = ''
 			          	}
 			        }).catch(err => {
+			        	this.isLoading='none';
 			        	this.$toast(err.response.data.message);
 			          	console.log(err);
 			        });

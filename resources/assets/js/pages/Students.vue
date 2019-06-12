@@ -811,7 +811,7 @@
         },
         filters: {
             formatPhoneDate (val) {
-                if(val.length>=7){
+                if(val&&val.length>=7){
                     return val.substr(0, 3) + '****' + val.substr(7);   
                 }else{
                     return val;
