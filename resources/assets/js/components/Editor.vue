@@ -98,11 +98,9 @@
         methods: {
             createEditor(){
                 this.editor = new E(this.$refs.editor);            
-
+                this.editor.customConfig.onchangeTimeout = 1000;
                 this.editor.customConfig.onchange = (html) => {
                     this.editorContent =this.removeWordXml(html);
-                };
-                this.editor.customConfig.onblur= (html) => {
                     this.$emit('catchData',this.editorContent);
                 };
                 this.editor.customConfig.menus = [
