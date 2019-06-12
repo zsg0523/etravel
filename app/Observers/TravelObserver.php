@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-03-05 12:26:49
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-04-12 16:50:56
+ * @Last Modified time: 2019-06-11 17:57:52
  */
 namespace App\Observers;
 
@@ -36,6 +36,9 @@ class TravelObserver
 		if (empty($travel->image)) {
 			$travel->image = 'http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555059034_CNDm3c7vCL.png';
 		}
+
+		// 过滤富文本输入
+		$travel->urgency = clean($travel->urgency, 'user_topic_body');
 	}
 
 }
