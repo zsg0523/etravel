@@ -50,7 +50,7 @@
     }
 </style>
 <template>
-    <div style="width: 100%;line-height:auto;">
+    <div style="width: 100%;line-height:normal;">
         <div ref="editor" style="text-align:left;width:100%;">
             
         </div>
@@ -98,7 +98,7 @@
         methods: {
             createEditor(){
                 this.editor = new E(this.$refs.editor);            
-                this.editor.customConfig.onchangeTimeout = 800;
+                this.editor.customConfig.onchangeTimeout = 1000;
                 this.editor.customConfig.onchange = (html) => {
                     this.editorContent =this.removeWordXml(html);
                     this.$emit('catchData',this.editorContent);

@@ -1,5 +1,5 @@
 
-<style>
+<style scoped>
     .main{flex-direction: column;align-items: center;justify-content: flex-start;}
     .content{width: 90%;min-height: 700px;border-radius: 20px;box-shadow: 0 0 15px #ccc;background-color: #fff;}
     .dataBank{width: 100%;min-height: 700px;justify-content: flex-start;align-items:center;flex-direction: column;background-color: #fff;}

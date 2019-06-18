@@ -1,4 +1,4 @@
-<style>
+<style scoped>
 	.dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;}
     .dataBank_input_form>table{margin-top: 20px;width: 90%;}
 

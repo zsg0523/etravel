@@ -1,4 +1,4 @@
-y<style scoped>
+<style scoped>
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
     .pane_content_rule{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
 
@@ -35,10 +35,10 @@ y<style scoped>
         <div class="pane_content_rule" >
             <div class="form_content_rules disflex">
                 <div class="form_item_rules"  v-for="(rule,index) in ruless">
-                    <div class="item_title">承諾標題{{index+1}}</div>
+                    <div class="item_title">準則{{index+1}}</div>
                     <div class="input_icon disflex">
-                        <input placeholder="承諾標題" type="text" disabled="disabled" :value="rule.rule_category_name">
-                        <div @click="$router.push('/promise/dataBankPromisesInfo/'+rule.id)">
+                        <input placeholder="準則" type="text" disabled="disabled" :value="rule.rule_category_name">
+                        <div @click="$router.push('/rule/dataBankRulesInfo/'+rule.id)">
                             <img src="/etravel/public/images/See-next.png" alt="">
                         </div>
                     </div>
@@ -56,8 +56,8 @@ y<style scoped>
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
-		                <div class="item_title">承諾標題(必填)</div>
-		                <div><input class="item_input" placeholder="承諾標題" type="text"  v-model="newRule.rule_category_name"></div>
+		                <div class="item_title">準則(必填)</div>
+		                <div><input class="item_input" placeholder="準則" type="text"  v-model="newRule.rule_category_name"></div>
 		            </div>
                     <div class="issure">
                         <button @click="addNewRule()">添加</button>
@@ -69,8 +69,8 @@ y<style scoped>
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
-		                <div class="item_title">承諾標題(必填)</div>
-		                <div><input class="item_input" placeholder="承諾標題" type="text"  v-model="edRule.rule_category_name"></div>
+		                <div class="item_title">準則(必填)</div>
+		                <div><input class="item_input" placeholder="準則" type="text"  v-model="edRule.rule_category_name"></div>
 		            </div>
                     <div class="issure">
                         <button @click="editRule()">修改</button>
@@ -88,7 +88,7 @@ y<style scoped>
 	        	ruless:[],
 	        	newRule:{
 	        		rule_category_name:'',
-	        		type:20,
+	        		type:10,
 	        	},
 	        	edRule:{
 	        		rule_category_name:'',
@@ -104,14 +104,14 @@ y<style scoped>
         },
         methods:{
             getRules(){
-                // 获取承諾分类
+                // 获取準則分类
                 this.$ajax({
                     method: 'GET',
                     headers: {
                         "Authorization": 'Bearer '+sessionStorage.token,
                     },
                     params:{
-                        type:20,
+                        type:10,
                     },
                     url: this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',
                 }).then(res => {
@@ -127,7 +127,7 @@ y<style scoped>
                 this.isNewRuleShow=true;
             },
             addNewRule(){
-                // 新增承諾
+                // 新增準則
                 this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',this.newRule,
                 {
                     headers: {
@@ -158,7 +158,7 @@ y<style scoped>
                 this.isEditRuleShow=true;
             },
             editRule(){
-                // 修改承諾信息
+                // 修改準則信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -189,10 +189,10 @@ y<style scoped>
                 });
             },
             delRule(ruleId){
-                // 删除承諾
+                // 删除準則
                 this.$dialog.confirm({
-                    title: '删除承諾',
-                    message: '是否删除該承諾',
+                    title: '删除準則',
+                    message: '是否删除該準則',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',

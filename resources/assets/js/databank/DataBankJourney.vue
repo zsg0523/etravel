@@ -1,4 +1,4 @@
-<style>
+<style scoped>
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
     .tablist{width:100%;}
     .nav-tabs>li>a{color: #000;}
