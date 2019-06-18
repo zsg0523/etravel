@@ -50,7 +50,7 @@
     }
 </style>
 <template>
-    <div style="width: 100%;line-height:auto;">
+    <div style="width: 100%;line-height:normal;">
         <div ref="editor" style="text-align:left;width:100%;">
             
         </div>

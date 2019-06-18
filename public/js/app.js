@@ -1091,7 +1091,7 @@ module.exports = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_functional__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_router__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__icon__ = __webpack_require__(8);
 
 
@@ -1182,7 +1182,7 @@ Cell.props = Object(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_exten
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vue_babel_helper_vue_jsx_merge_props___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__vue_babel_helper_vue_jsx_merge_props__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_functional__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_router__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__loading__ = __webpack_require__(13);
 
 
@@ -3086,6 +3086,58 @@ var GRAY_DARK = '#969799';
 
 /***/ }),
 /* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(176)
+  __webpack_require__(178)
+}
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(180)
+/* template */
+var __vue_template__ = __webpack_require__(182)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-4a6f37e4"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Editor.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4a6f37e4", Component.options)
+  } else {
+    hotAPI.reload("data-v-4a6f37e4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3148,7 +3200,7 @@ var _use = Object(__WEBPACK_IMPORTED_MODULE_0__utils__["k" /* use */])('popup'),
 }));
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3177,58 +3229,6 @@ var routeProps = {
   replace: Boolean,
   to: [String, Object]
 };
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(176)
-  __webpack_require__(178)
-}
-var normalizeComponent = __webpack_require__(3)
-/* script */
-var __vue_script__ = __webpack_require__(180)
-/* template */
-var __vue_template__ = __webpack_require__(182)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-4a6f37e4"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/Editor.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4a6f37e4", Component.options)
-  } else {
-    hotAPI.reload("data-v-4a6f37e4", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
 
 /***/ }),
 /* 25 */
@@ -32287,13 +32287,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(444)
+  __webpack_require__(163)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(165)
 /* template */
-var __vue_template__ = __webpack_require__(446)
+var __vue_template__ = __webpack_require__(171)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -32332,8 +32332,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 163 */,
-/* 164 */,
+/* 163 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(164);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("cd703076", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-794f40ed\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBank.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-794f40ed\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBank.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.main[data-v-794f40ed]{-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.content[data-v-794f40ed]{width: 90%;min-height: 700px;border-radius: 20px;-webkit-box-shadow: 0 0 15px #ccc;box-shadow: 0 0 15px #ccc;background-color: #fff;\n}\n.dataBank[data-v-794f40ed]{width: 100%;min-height: 700px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;background-color: #fff;\n}\n.dataBankList[data-v-794f40ed]{width: 100%;height: 100%;-ms-flex-line-pack: start;align-content: flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;\n}\n.dataBank_left[data-v-794f40ed]{width: 18%;min-height:100%;border-right: 3px solid #d6d6d6;\n}\n.dataBank_left>ul[data-v-794f40ed]{width: 100%;height: auto;\n}\n.dataBank_left>ul>li[data-v-794f40ed]{width: 100%;height:50px;line-height: 50px;font-size: 16px;\n}\n.dataBank_left>ul>li>div[data-v-794f40ed]{width: 90%;height:50px;line-height: 50px;margin-left: 5%;\n}\n.dataBank_right[data-v-794f40ed]{width: 82%;min-height:100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 165 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -32610,20 +32648,76 @@ if (false) {
 }
 
 /***/ }),
-/* 171 */,
+/* 171 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "main disflex",
+      staticStyle: {
+        "background-color": "#e7e7e7",
+        "min-height": "100vh",
+        color: "#000"
+      },
+      attrs: { id: "app-home" }
+    },
+    [
+      _c("CommonHead"),
+      _vm._v(" "),
+      _c("HistoryLink"),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [
+        _c("div", { staticClass: "dataBank disflex" }, [
+          _c(
+            "div",
+            { staticClass: "dataBankList disflex" },
+            [
+              _c("CommonLeft"),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "dataBank_right disflex" },
+                [_c("router-view")],
+                1
+              )
+            ],
+            1
+          )
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-794f40ed", module.exports)
+  }
+}
+
+/***/ }),
 /* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(447)
+  __webpack_require__(173)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(175)
 /* template */
-var __vue_template__ = __webpack_require__(449)
+var __vue_template__ = __webpack_require__(183)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -32662,8 +32756,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 173 */,
-/* 174 */,
+/* 173 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(174);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("0c57462c", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0153d03b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankInfo.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0153d03b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankInfo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 174 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-0153d03b]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist[data-v-0153d03b]{width:100%;\n}\n.nav-tabs>li>a[data-v-0153d03b]{color: #000;\n}\n.tab-pane[data-v-0153d03b]{position: relative;\n}\n.pane_content_info[data-v-0153d03b]{width:70%;margin-left: 15%;height:auto;margin: 0 auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info[data-v-0153d03b]{width:100%;height: auto;\n}\n.gather_info_title[data-v-0153d03b]{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span[data-v-0153d03b]{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr[data-v-0153d03b]{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content[data-v-0153d03b]{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_info[data-v-0153d03b]{width: 50%;min-height:100px;\n}\n.form_item_info>div[data-v-0153d03b]{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input[data-v-0153d03b]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2[data-v-0153d03b]{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area[data-v-0153d03b]{width:97%;min-height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active[data-v-0153d03b]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-0153d03b]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-0153d03b]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-0153d03b]{width:50px;height: 50px;\n}\n.editBox[data-v-0153d03b]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-0153d03b]{width:90%;margin-left: 5%;min-height:200px;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-0153d03b]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-0153d03b]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-0153d03b]{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-0153d03b]{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.simulateShade[data-v-0153d03b]{width:90%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;\n}\n.bigRadio[data-v-0153d03b]{width:20px;height:20px;\n}\n.van-dialog[data-v-0153d03b]{width:50%;\n}\n.imgIcon[data-v-0153d03b]{\n    width:100px;\n    height: 40px;\n    float: right;\n}\n.imgIcon img[data-v-0153d03b]{\n    height: 35px;\n    float: right;\n}\n.imgs[data-v-0153d03b]{\n    width:95%;\n    position: relative;\n}\n.travelImg[data-v-0153d03b]{\n    width:100%;\n    border-radius: 15px;\n}\n.cancelImg[data-v-0153d03b]{\n    width:30px;\n    height: 30px;\n    top: 15px;\n    right: 15px;\n    position: absolute;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 175 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -32671,7 +32803,7 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_AreaCodeSelector_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Editor_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Editor_vue__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Editor_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Editor_vue__);
 //
 //
@@ -38928,63 +39060,67 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticStyle: { width: "100%", "line-height": "auto" } }, [
-    _c("div", {
-      ref: "editor",
-      staticStyle: { "text-align": "left", width: "100%" }
-    }),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "previewBox", style: { display: _vm.isPreviewShow } },
-      [
-        _c("div", {
-          staticClass: "showContent",
-          domProps: { innerHTML: _vm._s(_vm.editorContent) }
-        }),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "closePreviewBox",
-            on: {
-              click: function($event) {
-                _vm.isPreviewShow = "none"
+  return _c(
+    "div",
+    { staticStyle: { width: "100%", "line-height": "normal" } },
+    [
+      _c("div", {
+        ref: "editor",
+        staticStyle: { "text-align": "left", width: "100%" }
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "previewBox", style: { display: _vm.isPreviewShow } },
+        [
+          _c("div", {
+            staticClass: "showContent",
+            domProps: { innerHTML: _vm._s(_vm.editorContent) }
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "closePreviewBox",
+              on: {
+                click: function($event) {
+                  _vm.isPreviewShow = "none"
+                }
               }
-            }
-          },
-          [
-            _c("img", {
-              attrs: { src: "/etravel/public/images/delete.png", alt: "關閉" }
-            })
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        ref: "preview",
-        staticClass: "w-e-menu",
-        staticStyle: { display: "none" }
-      },
-      [
-        _c(
-          "span",
-          {
-            staticClass: "_wangEditor_btn_fullscreen",
-            on: {
-              click: function($event) {
-                return _vm.toPreview()
+            },
+            [
+              _c("img", {
+                attrs: { src: "/etravel/public/images/delete.png", alt: "關閉" }
+              })
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          ref: "preview",
+          staticClass: "w-e-menu",
+          staticStyle: { display: "none" }
+        },
+        [
+          _c(
+            "span",
+            {
+              staticClass: "_wangEditor_btn_fullscreen",
+              on: {
+                click: function($event) {
+                  return _vm.toPreview()
+                }
               }
-            }
-          },
-          [_vm._v("預覽")]
-        )
-      ]
-    )
-  ])
+            },
+            [_vm._v("預覽")]
+          )
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38997,20 +39133,2984 @@ if (false) {
 }
 
 /***/ }),
-/* 183 */,
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c("div", { staticClass: "tablist" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "tab-content" }, [
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane active",
+                attrs: { role: "tabpanel", id: "gather" }
+              },
+              [
+                _c("div", { staticClass: "pane_content_info" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form_content disflex" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form_item_info",
+                        staticStyle: { width: "100%" }
+                      },
+                      [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("日期及時間")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.assemblePlaces.assembly_at,
+                                expression: "assemblePlaces.assembly_at"
+                              }
+                            ],
+                            staticClass: "item_input",
+                            staticStyle: { width: "97%" },
+                            attrs: {
+                              placeholder: "日期及時間",
+                              disabled: "disabled",
+                              type: "text"
+                            },
+                            domProps: { value: _vm.assemblePlaces.assembly_at },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.assemblePlaces,
+                                  "assembly_at",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form_item_info",
+                        staticStyle: { width: "100%", "min-height": "120px" }
+                      },
+                      [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("詳細地址")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.assemblePlaces.assembly_station,
+                                expression: "assemblePlaces.assembly_station"
+                              }
+                            ],
+                            staticClass: "item_area",
+                            attrs: {
+                              placeholder: "詳細地址",
+                              disabled: "disabled"
+                            },
+                            domProps: {
+                              value: _vm.assemblePlaces.assembly_station
+                            },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.assemblePlaces,
+                                  "assembly_station",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "pane_content_info" }, [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form_content disflex" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form_item_info",
+                        staticStyle: { width: "100%" }
+                      },
+                      [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("日期及時間")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.assemblePlaces.dissolution_at,
+                                expression: "assemblePlaces.dissolution_at"
+                              }
+                            ],
+                            staticClass: "item_input",
+                            staticStyle: { width: "97%" },
+                            attrs: {
+                              placeholder: "日期及時間",
+                              type: "text",
+                              disabled: "disabled"
+                            },
+                            domProps: {
+                              value: _vm.assemblePlaces.dissolution_at
+                            },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.assemblePlaces,
+                                  "dissolution_at",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form_item_info",
+                        staticStyle: { width: "100%", "min-height": "120px" }
+                      },
+                      [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("詳細地址")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.assemblePlaces.dissolution_station,
+                                expression: "assemblePlaces.dissolution_station"
+                              }
+                            ],
+                            staticClass: "item_area",
+                            attrs: {
+                              placeholder: "詳細地址",
+                              disabled: "disabled"
+                            },
+                            domProps: {
+                              value: _vm.assemblePlaces.dissolution_station
+                            },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.assemblePlaces,
+                                  "dissolution_station",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn",
+                    on: {
+                      click: function($event) {
+                        return _vm.assemblePlacePopupShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/edit-all.png" }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "flight" }
+              },
+              [
+                _vm._l(_vm.flights, function(flight, index) {
+                  return _c("div", { staticClass: "pane_content_info" }, [
+                    _c("div", { staticClass: "gather_info" }, [
+                      _c("div", { staticClass: "gather_info_title" }, [
+                        flight.is_return
+                          ? _c("span", [_vm._v("返回")])
+                          : _c("span", [_vm._v("出發")]),
+                        _c("hr")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form_content disflex" }, [
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("航班信息")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: flight.flight }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("日期")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: flight.date }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("出發時間")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: flight.takeoff_time }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("到達時間")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: flight.arrival_time }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("出發城市")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: flight.from }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("到達城市")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: flight.to }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("出發站點")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: flight.from_flight }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("到達站點")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: flight.to_flight }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "editBtnGroup" }, [
+                      _c("img", {
+                        attrs: { src: "/etravel/public/images/rush-icon.png" },
+                        on: {
+                          click: function($event) {
+                            return _vm.delFlight(flight.id)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("img", {
+                        attrs: { src: "/etravel/public/images/edit-all.png" },
+                        on: {
+                          click: function($event) {
+                            return _vm.editFlightShow(index)
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn",
+                    on: {
+                      click: function($event) {
+                        return _vm.newFlightShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/add_y.png" }
+                    })
+                  ]
+                )
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "accommodationInfo" }
+              },
+              [
+                _vm._l(_vm.hotels, function(hotel, index) {
+                  return _c("div", { staticClass: "pane_content_info" }, [
+                    _c("div", { staticClass: "form_content disflex" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("住宿名稱")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              staticStyle: { width: "97%" },
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: hotel.hotel_name }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("入住時間")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: hotel.check_at }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("離開時間")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: hotel.leave_at }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("入住天數")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: hotel.times }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("聯繫電話")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: hotel.hotel_phone }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("住宿地址")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: hotel.hotel_address }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form_item_info" }, [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("住宿經緯度")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            staticClass: "item_input",
+                            attrs: { type: "text", disabled: "disabled" },
+                            domProps: { value: hotel.hotel_location }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("住宿圖片")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("img", {
+                              staticStyle: { width: "97%" },
+                              attrs: { src: hotel.image }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "editBtnGroup" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/etravel/public/images/rush-icon.png"
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.delHotel(hotel.id)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          attrs: { src: "/etravel/public/images/edit-all.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.editHotelShow(index)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn",
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewHotelShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/add_y.png" }
+                    })
+                  ]
+                )
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "leaderTeacher" }
+              },
+              [
+                _vm._l(_vm.leadTeachers, function(leadTeacher, index) {
+                  return _c("div", { staticClass: "pane_content_info" }, [
+                    _c("div", { staticClass: "form_content disflex" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("老師姓名")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              staticStyle: { width: "97%" },
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: leadTeacher.leader }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("區號")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              staticStyle: { width: "97%" },
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: leadTeacher.area_code }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("老師電話")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              staticStyle: { width: "97%" },
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: leadTeacher.phone }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "form_item_info",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("div", { staticClass: "item_title" }, [
+                            _vm._v("職責")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("input", {
+                              staticClass: "item_input",
+                              staticStyle: { width: "97%" },
+                              attrs: { type: "text", disabled: "disabled" },
+                              domProps: { value: leadTeacher.duty }
+                            })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "editBtnGroup" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/etravel/public/images/rush-icon.png"
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.delLeadTeacher(leadTeacher.id)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          attrs: { src: "/etravel/public/images/edit-all.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.editLeadTeacherShow(index)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  ])
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn",
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewLeadTeacherShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/add_y.png" }
+                    })
+                  ]
+                )
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "heavyWeather" }
+              },
+              [
+                _c("div", { staticClass: "pane_content_info" }, [
+                  _c("div", { staticClass: "form_content disflex" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form_item_info",
+                        staticStyle: { width: "100%", "min-height": "120px" }
+                      },
+                      [
+                        _c("div", { staticClass: "item_title" }, [
+                          _vm._v("安排")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", {
+                          staticStyle: {
+                            border: "1px solid #ccc",
+                            "border-radius": "8px",
+                            width: "97%",
+                            "background-color": "#eeeeee",
+                            "line-height": "25px"
+                          },
+                          domProps: {
+                            innerHTML: _vm._s(_vm.badWeathers.urgency)
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn",
+                    on: {
+                      click: function($event) {
+                        return _vm.editBadWeatherShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/edit-all.png" }
+                    })
+                  ]
+                )
+              ]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isAssemblePlacePopupShow,
+            callback: function($$v) {
+              _vm.isAssemblePlacePopupShow = $$v
+            },
+            expression: "isAssemblePlacePopupShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "gather_info" }, [
+                _c("div", { staticClass: "gather_info_title" }, [
+                  _c("span", [_vm._v("集合")]),
+                  _c("hr")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("日期及時間")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edAssemblePlaces.assembly_at,
+                          expression: "edAssemblePlaces.assembly_at"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: {
+                        placeholder: "填寫日期及時間(yyyy-mm-dd hh:mm)",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.edAssemblePlaces.assembly_at },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edAssemblePlaces,
+                            "assembly_at",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("詳細地址")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edAssemblePlaces.assembly_station,
+                          expression: "edAssemblePlaces.assembly_station"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { placeholder: "填寫詳細地址", type: "text" },
+                      domProps: {
+                        value: _vm.edAssemblePlaces.assembly_station
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edAssemblePlaces,
+                            "assembly_station",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "gather_info" }, [
+                _c("div", { staticClass: "gather_info_title" }, [
+                  _c("span", [_vm._v("解散")]),
+                  _c("hr")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("日期及時間")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edAssemblePlaces.dissolution_at,
+                          expression: "edAssemblePlaces.dissolution_at"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: {
+                        placeholder: "填寫日期及時間(yyyy-mm-dd hh:mm)",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.edAssemblePlaces.dissolution_at },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edAssemblePlaces,
+                            "dissolution_at",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("詳細地址")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edAssemblePlaces.dissolution_station,
+                          expression: "edAssemblePlaces.dissolution_station"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { placeholder: "填寫詳細地址", type: "text" },
+                      domProps: {
+                        value: _vm.edAssemblePlaces.dissolution_station
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edAssemblePlaces,
+                            "dissolution_station",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editAssemblePlace()
+                      }
+                    }
+                  },
+                  [_vm._v("確定")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewFlightShow,
+            callback: function($$v) {
+              _vm.isNewFlightShow = $$v
+            },
+            expression: "isNewFlightShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("航班信息(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.flight,
+                        expression: "newFlight.flight"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫航班信息" },
+                    domProps: { value: _vm.newFlight.flight },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newFlight, "flight", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("日期(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.date,
+                        expression: "newFlight.date"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "填寫日期(yyyy-mm-dd)"
+                    },
+                    domProps: { value: _vm.newFlight.date },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newFlight, "date", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("出發時間(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.takeoff_time,
+                        expression: "newFlight.takeoff_time"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫出發時間(hh:mm)" },
+                    domProps: { value: _vm.newFlight.takeoff_time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newFlight,
+                          "takeoff_time",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("到達時間(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.arrival_time,
+                        expression: "newFlight.arrival_time"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫到達時間(hh:mm)" },
+                    domProps: { value: _vm.newFlight.arrival_time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newFlight,
+                          "arrival_time",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("出發城市(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.from,
+                        expression: "newFlight.from"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫出發城市" },
+                    domProps: { value: _vm.newFlight.from },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newFlight, "from", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("到達城市(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.to,
+                        expression: "newFlight.to"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫到達城市" },
+                    domProps: { value: _vm.newFlight.to },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newFlight, "to", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("出發站點")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.from_flight,
+                        expression: "newFlight.from_flight"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫出發站點" },
+                    domProps: { value: _vm.newFlight.from_flight },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newFlight,
+                          "from_flight",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("到達站點")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFlight.to_flight,
+                        expression: "newFlight.to_flight"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫到達站點" },
+                    domProps: { value: _vm.newFlight.to_flight },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newFlight,
+                          "to_flight",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticStyle: { width: "100%", height: "50px" } }, [
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      width: "70px",
+                      "text-align": "center",
+                      display: "block",
+                      float: "left"
+                    }
+                  },
+                  [_vm._v("出發")]
+                ),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.newFlight.is_return,
+                      expression: "newFlight.is_return"
+                    }
+                  ],
+                  staticClass: "bigRadio",
+                  staticStyle: { float: "left" },
+                  attrs: { type: "radio", value: "0" },
+                  domProps: { checked: _vm._q(_vm.newFlight.is_return, "0") },
+                  on: {
+                    change: function($event) {
+                      return _vm.$set(_vm.newFlight, "is_return", "0")
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      width: "70px",
+                      "text-align": "center",
+                      display: "block",
+                      float: "left"
+                    }
+                  },
+                  [_vm._v("返回")]
+                ),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.newFlight.is_return,
+                      expression: "newFlight.is_return"
+                    }
+                  ],
+                  staticClass: "bigRadio",
+                  staticStyle: { float: "left" },
+                  attrs: { type: "radio", value: "1" },
+                  domProps: { checked: _vm._q(_vm.newFlight.is_return, "1") },
+                  on: {
+                    change: function($event) {
+                      return _vm.$set(_vm.newFlight, "is_return", "1")
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewFlight()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditFlightShow,
+            callback: function($$v) {
+              _vm.isEditFlightShow = $$v
+            },
+            expression: "isEditFlightShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("航班信息(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.flight,
+                        expression: "edFlight.flight"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫航班信息" },
+                    domProps: { value: _vm.edFlight.flight },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFlight, "flight", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("日期(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.date,
+                        expression: "edFlight.date"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "填寫日期(yyyy-mm-dd)"
+                    },
+                    domProps: { value: _vm.edFlight.date },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFlight, "date", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("出發時間(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.takeoff_time,
+                        expression: "edFlight.takeoff_time"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫出發時間(hh:mm)" },
+                    domProps: { value: _vm.edFlight.takeoff_time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edFlight,
+                          "takeoff_time",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("到達時間(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.arrival_time,
+                        expression: "edFlight.arrival_time"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫到達時間(hh:mm)" },
+                    domProps: { value: _vm.edFlight.arrival_time },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edFlight,
+                          "arrival_time",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("出發城市(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.from,
+                        expression: "edFlight.from"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫出發城市" },
+                    domProps: { value: _vm.edFlight.from },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFlight, "from", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("到達城市(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.to,
+                        expression: "edFlight.to"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫到達城市" },
+                    domProps: { value: _vm.edFlight.to },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFlight, "to", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("出發站點")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.from_flight,
+                        expression: "edFlight.from_flight"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫出發站點" },
+                    domProps: { value: _vm.edFlight.from_flight },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edFlight,
+                          "from_flight",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("到達站點")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFlight.to_flight,
+                        expression: "edFlight.to_flight"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "填寫到達站點" },
+                    domProps: { value: _vm.edFlight.to_flight },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFlight, "to_flight", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticStyle: { width: "100%", height: "50px" } }, [
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      width: "70px",
+                      "text-align": "center",
+                      display: "block",
+                      float: "left"
+                    }
+                  },
+                  [_vm._v("出發")]
+                ),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.edFlight.is_return,
+                      expression: "edFlight.is_return"
+                    }
+                  ],
+                  staticClass: "bigRadio",
+                  staticStyle: { float: "left" },
+                  attrs: { type: "radio", value: "0" },
+                  domProps: { checked: _vm._q(_vm.edFlight.is_return, "0") },
+                  on: {
+                    change: function($event) {
+                      return _vm.$set(_vm.edFlight, "is_return", "0")
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      width: "70px",
+                      "text-align": "center",
+                      display: "block",
+                      float: "left"
+                    }
+                  },
+                  [_vm._v("返回")]
+                ),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.edFlight.is_return,
+                      expression: "edFlight.is_return"
+                    }
+                  ],
+                  staticClass: "bigRadio",
+                  staticStyle: { float: "left" },
+                  attrs: { type: "radio", value: "1" },
+                  domProps: { checked: _vm._q(_vm.edFlight.is_return, "1") },
+                  on: {
+                    change: function($event) {
+                      return _vm.$set(_vm.edFlight, "is_return", "1")
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editFlight()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewHotelShow,
+            callback: function($$v) {
+              _vm.isNewHotelShow = $$v
+            },
+            expression: "isNewHotelShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("住宿名稱(必填)")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newHotel.hotel_name,
+                          expression: "newHotel.hotel_name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: { type: "text", placeholder: "住宿名稱" },
+                      domProps: { value: _vm.newHotel.hotel_name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newHotel,
+                            "hotel_name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("入住日期(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHotel.check_at,
+                        expression: "newHotel.check_at"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "入住日期(yyyy-mm-dd)"
+                    },
+                    domProps: { value: _vm.newHotel.check_at },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newHotel, "check_at", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("離開日期(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHotel.leave_at,
+                        expression: "newHotel.leave_at"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "離開日期(yyyy-mm-dd)"
+                    },
+                    domProps: { value: _vm.newHotel.leave_at },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newHotel, "leave_at", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("入住天數(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHotel.times,
+                        expression: "newHotel.times"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "入住天數" },
+                    domProps: { value: _vm.newHotel.times },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newHotel, "times", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("聯繫電話(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHotel.hotel_phone,
+                        expression: "newHotel.hotel_phone"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "聯繫電話" },
+                    domProps: { value: _vm.newHotel.hotel_phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newHotel,
+                          "hotel_phone",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("住宿地址(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHotel.hotel_address,
+                        expression: "newHotel.hotel_address"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "住宿地址" },
+                    domProps: { value: _vm.newHotel.hotel_address },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newHotel,
+                          "hotel_address",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("住宿經緯度(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newHotel.hotel_location,
+                        expression: "newHotel.hotel_location"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "住宿經緯度(經度,緯度)"
+                    },
+                    domProps: { value: _vm.newHotel.hotel_location },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newHotel,
+                          "hotel_location",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticStyle: { width: "93%" } }, [
+                    _vm._v(
+                      "\n                        住宿圖片\n                        "
+                    ),
+                    _c(
+                      "div",
+                      { staticClass: "imgIcon" },
+                      [
+                        _c(
+                          "van-uploader",
+                          {
+                            staticStyle: {
+                              width: "50px",
+                              height: "40px",
+                              float: "right"
+                            },
+                            attrs: {
+                              "after-read": _vm.onRead,
+                              accept: "image/*"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "/etravel/public/images/sm-insert.png"
+                              }
+                            })
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticStyle: { width: "93%" } }, [
+                    _c(
+                      "div",
+                      { staticClass: "imgs", staticStyle: { width: "97%" } },
+                      [
+                        _c("img", {
+                          staticClass: "travelImg",
+                          attrs: { src: _vm.newHotel.image }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          staticClass: "cancelImg",
+                          attrs: { src: "/etravel/public/images/delete.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.resetImg()
+                            }
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewHotel()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditHotelShow,
+            callback: function($$v) {
+              _vm.isEditHotelShow = $$v
+            },
+            expression: "isEditHotelShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("住宿名稱(必填)")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edHotel.hotel_name,
+                          expression: "edHotel.hotel_name"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      staticStyle: { width: "97%" },
+                      attrs: { type: "text", placeholder: "住宿名稱" },
+                      domProps: { value: _vm.edHotel.hotel_name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edHotel,
+                            "hotel_name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("入住日期(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.check_at,
+                        expression: "edHotel.check_at"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "入住日期(yyyy-mm-dd)"
+                    },
+                    domProps: { value: _vm.edHotel.check_at },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHotel, "check_at", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("離開日期(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.leave_at,
+                        expression: "edHotel.leave_at"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "離開日期(yyyy-mm-dd)"
+                    },
+                    domProps: { value: _vm.edHotel.leave_at },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHotel, "leave_at", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("入住天數(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.times,
+                        expression: "edHotel.times"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "入住天數" },
+                    domProps: { value: _vm.edHotel.times },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHotel, "times", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("聯繫電話(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.hotel_phone,
+                        expression: "edHotel.hotel_phone"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "聯繫電話" },
+                    domProps: { value: _vm.edHotel.hotel_phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHotel,
+                          "hotel_phone",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("住宿地址(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.hotel_address,
+                        expression: "edHotel.hotel_address"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { type: "text", placeholder: "住宿地址" },
+                    domProps: { value: _vm.edHotel.hotel_address },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHotel,
+                          "hotel_address",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_info" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("住宿經緯度(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHotel.hotel_location,
+                        expression: "edHotel.hotel_location"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "住宿經緯度(經度,緯度)"
+                    },
+                    domProps: { value: _vm.edHotel.hotel_location },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHotel,
+                          "hotel_location",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticStyle: { width: "93%" } }, [
+                    _vm._v(
+                      "\n                        住宿圖片\n                        "
+                    ),
+                    _c(
+                      "div",
+                      { staticClass: "imgIcon" },
+                      [
+                        _c(
+                          "van-uploader",
+                          {
+                            staticStyle: {
+                              width: "50px",
+                              height: "40px",
+                              float: "right"
+                            },
+                            attrs: {
+                              "after-read": _vm.onRead,
+                              accept: "image/*"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "/etravel/public/images/sm-insert.png"
+                              }
+                            })
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "div",
+                      { staticClass: "imgs", staticStyle: { width: "97%" } },
+                      [
+                        _c("img", {
+                          staticClass: "travelImg",
+                          attrs: { src: _vm.edHotel.image }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          staticClass: "cancelImg",
+                          attrs: { src: "/etravel/public/images/delete.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.resetImg()
+                            }
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editHotel()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewLeadTeacherShow,
+            callback: function($$v) {
+              _vm.isNewLeadTeacherShow = $$v
+            },
+            expression: "isNewLeadTeacherShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("老師姓名(必填)")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newLeadTeacher.leader,
+                          expression: "newLeadTeacher.leader"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "老師姓名" },
+                      domProps: { value: _vm.newLeadTeacher.leader },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newLeadTeacher,
+                            "leader",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("區號")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "div",
+                      { staticClass: "simulateShade" },
+                      [
+                        _c("AreaCodeSelector", {
+                          attrs: { areaCode: _vm.newLeadTeacher.area_code },
+                          on: { selectedAreaCode: _vm.selectedAreaCode },
+                          model: {
+                            value: _vm.newLeadTeacher.area_code,
+                            callback: function($$v) {
+                              _vm.$set(_vm.newLeadTeacher, "area_code", $$v)
+                            },
+                            expression: "newLeadTeacher.area_code"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("老師電話")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newLeadTeacher.phone,
+                          expression: "newLeadTeacher.phone"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "老師電話" },
+                      domProps: { value: _vm.newLeadTeacher.phone },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newLeadTeacher,
+                            "phone",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newLeadTeacher.duty,
+                          expression: "newLeadTeacher.duty"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "職責" },
+                      domProps: { value: _vm.newLeadTeacher.duty },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.newLeadTeacher,
+                            "duty",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewLeadTeacher()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditLeadTeacherShow,
+            callback: function($$v) {
+              _vm.isEditLeadTeacherShow = $$v
+            },
+            expression: "isEditLeadTeacherShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("老師姓名(必填)")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edLeadTeacher.leader,
+                          expression: "edLeadTeacher.leader"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "老師姓名" },
+                      domProps: { value: _vm.edLeadTeacher.leader },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edLeadTeacher,
+                            "leader",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("區號")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "div",
+                      { staticClass: "simulateShade" },
+                      [
+                        _c("AreaCodeSelector", {
+                          attrs: { areaCode: _vm.edLeadTeacher.area_code },
+                          on: { selectedAreaCode: _vm.selectedAreaCode },
+                          model: {
+                            value: _vm.edLeadTeacher.area_code,
+                            callback: function($$v) {
+                              _vm.$set(_vm.edLeadTeacher, "area_code", $$v)
+                            },
+                            expression: "edLeadTeacher.area_code"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("老師電話")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edLeadTeacher.phone,
+                          expression: "edLeadTeacher.phone"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "老師電話" },
+                      domProps: { value: _vm.edLeadTeacher.phone },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edLeadTeacher,
+                            "phone",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edLeadTeacher.duty,
+                          expression: "edLeadTeacher.duty"
+                        }
+                      ],
+                      staticClass: "item_input",
+                      attrs: { type: "text", placeholder: "職責" },
+                      domProps: { value: _vm.edLeadTeacher.duty },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.edLeadTeacher,
+                            "duty",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editLeadTeacher()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditBadWeatherShow,
+            callback: function($$v) {
+              _vm.isEditBadWeatherShow = $$v
+            },
+            expression: "isEditBadWeatherShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "form_item_info",
+                  staticStyle: { width: "100%" }
+                },
+                [
+                  _c("div", { staticClass: "item_title" }, [_vm._v("安排")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "div",
+                      [
+                        _c("Editor", {
+                          attrs: { childData: _vm.edBadWeather.urgency },
+                          on: { catchData: _vm.catchData }
+                        })
+                      ],
+                      1
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editBadWeather()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
+      [
+        _c("li", { staticClass: "active", attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#gather",
+                "aria-controls": "gather",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("集合解散")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#flight",
+                "aria-controls": "flight",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("班機往返")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#accommodationInfo",
+                "aria-controls": "accommodationInfo",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("住宿資料")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#leaderTeacher",
+                "aria-controls": "leaderTeacher",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("領隊老師")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#heavyWeather",
+                "aria-controls": "heavyWeather",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("惡劣天氣安排")]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "gather_info" }, [
+      _c("div", { staticClass: "gather_info_title" }, [
+        _c("span", [_vm._v("集合")]),
+        _c("hr")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "gather_info" }, [
+      _c("div", { staticClass: "gather_info_title" }, [
+        _c("span", [_vm._v("解散")]),
+        _c("hr")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-0153d03b", module.exports)
+  }
+}
+
+/***/ }),
 /* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(450)
+  __webpack_require__(185)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(187)
 /* template */
-var __vue_template__ = __webpack_require__(452)
+var __vue_template__ = __webpack_require__(188)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -39049,8 +42149,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 185 */,
-/* 186 */,
+/* 185 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(186);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("51aa2df6", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b5f0709e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankPhone.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b5f0709e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankPhone.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-b5f0709e]{width: 100%;min-height:650px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist[data-v-b5f0709e]{width:100%;\n}\n.nav-tabs>li>a[data-v-b5f0709e]{color: #000;\n}\n.pane_content_phone[data-v-b5f0709e]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;border:1px solid #ccc;border-radius: 15px;margin-top:20px;\n}\n.form_content_phone[data-v-b5f0709e]{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_phone[data-v-b5f0709e]{width: 100%;min-height:100px;\n}\n.form_item_phone>div[data-v-b5f0709e]{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_phone[data-v-b5f0709e]{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.active[data-v-b5f0709e]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-b5f0709e]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-b5f0709e]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-b5f0709e]{width:50px;height: 50px;\n}\n.editBox[data-v-b5f0709e]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-b5f0709e]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-b5f0709e]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-b5f0709e]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-b5f0709e]{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-b5f0709e]{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.areaSel[data-v-b5f0709e]{width:100%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;\n}\n.van-dialog[data-v-b5f0709e]{width:50%;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 187 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -39357,7 +42495,422 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 188 */,
+/* 188 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "dataBank_input_form disflex" },
+    [
+      _vm._l(_vm.phones, function(phone, index) {
+        return _c("div", { staticClass: "pane_content_phone" }, [
+          _c("div", { staticClass: "form_content_phone disflex" }, [
+            _c("div", { staticClass: "form_item_phone" }, [
+              _c("div", { staticClass: "item_title" }, [_vm._v("聯繫人名稱")]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  staticClass: "item_input_phone",
+                  attrs: {
+                    placeholder: "聯繫人名稱",
+                    type: "text",
+                    disabled: "disabled"
+                  },
+                  domProps: { value: phone.name }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form_item_phone" }, [
+              _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  staticClass: "item_input_phone",
+                  attrs: {
+                    placeholder: "職責",
+                    type: "text",
+                    disabled: "disabled"
+                  },
+                  domProps: { value: phone.duty }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form_item_phone" }, [
+              _c("div", { staticClass: "item_title" }, [_vm._v("電話區號")]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  staticClass: "item_input_phone",
+                  attrs: { type: "text", disabled: "disabled" },
+                  domProps: { value: phone.area_code }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form_item_phone" }, [
+              _c("div", { staticClass: "item_title" }, [_vm._v("聯繫電話")]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  staticClass: "item_input_phone",
+                  attrs: { type: "text", disabled: "disabled" },
+                  domProps: { value: phone.phone }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "editBtnGroup" }, [
+            _c("img", {
+              attrs: { src: "/etravel/public/images/rush-icon.png" },
+              on: {
+                click: function($event) {
+                  return _vm.delPhone(phone.id)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("img", {
+              attrs: { src: "/etravel/public/images/edit-all.png" },
+              on: {
+                click: function($event) {
+                  return _vm.editPhoneShow(index)
+                }
+              }
+            })
+          ])
+        ])
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "dataBankAddBtn",
+          on: {
+            click: function($event) {
+              return _vm.addNewPhoneShow()
+            }
+          }
+        },
+        [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewPhoneShow,
+            callback: function($$v) {
+              _vm.isNewPhoneShow = $$v
+            },
+            expression: "isNewPhoneShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_phone" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("聯繫人名稱(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newPhone.name,
+                        expression: "newPhone.name"
+                      }
+                    ],
+                    staticClass: "item_input_phone",
+                    attrs: { placeholder: "聯繫人名稱", type: "text" },
+                    domProps: { value: _vm.newPhone.name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newPhone, "name", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_phone" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newPhone.duty,
+                        expression: "newPhone.duty"
+                      }
+                    ],
+                    staticClass: "item_input_phone",
+                    attrs: { placeholder: "職責", type: "text" },
+                    domProps: { value: _vm.newPhone.duty },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newPhone, "duty", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_phone" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("電話區號(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c(
+                    "div",
+                    { staticClass: "areaSel" },
+                    [
+                      _c("AreaCodeSelector", {
+                        attrs: { areaCode: _vm.newPhone.area_code },
+                        on: { selectedAreaCode: _vm.selectedAreaCode },
+                        model: {
+                          value: _vm.newPhone.area_code,
+                          callback: function($$v) {
+                            _vm.$set(_vm.newPhone, "area_code", $$v)
+                          },
+                          expression: "newPhone.area_code"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_phone" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("聯繫電話(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newPhone.phone,
+                        expression: "newPhone.phone"
+                      }
+                    ],
+                    staticClass: "item_input_phone",
+                    attrs: { type: "text", placeholder: "聯繫電話" },
+                    domProps: { value: _vm.newPhone.phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newPhone, "phone", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewPhone()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditPhoneShow,
+            callback: function($$v) {
+              _vm.isEditPhoneShow = $$v
+            },
+            expression: "isEditPhoneShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_phone" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("聯繫人名稱(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edPhone.name,
+                        expression: "edPhone.name"
+                      }
+                    ],
+                    staticClass: "item_input_phone",
+                    attrs: { placeholder: "聯繫人名稱", type: "text" },
+                    domProps: { value: _vm.edPhone.name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edPhone, "name", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_phone" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edPhone.duty,
+                        expression: "edPhone.duty"
+                      }
+                    ],
+                    staticClass: "item_input_phone",
+                    attrs: { placeholder: "職責", type: "text" },
+                    domProps: { value: _vm.edPhone.duty },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edPhone, "duty", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_phone" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("電話區號(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c(
+                    "div",
+                    { staticClass: "areaSel" },
+                    [
+                      _c("AreaCodeSelector", {
+                        attrs: { areaCode: _vm.edPhone.area_code },
+                        on: { selectedAreaCode: _vm.selectedAreaCode },
+                        model: {
+                          value: _vm.edPhone.area_code,
+                          callback: function($$v) {
+                            _vm.$set(_vm.edPhone, "area_code", $$v)
+                          },
+                          expression: "edPhone.area_code"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_phone" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("聯繫電話(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edPhone.phone,
+                        expression: "edPhone.phone"
+                      }
+                    ],
+                    staticClass: "item_input_phone",
+                    attrs: { type: "text", placeholder: "聯繫電話" },
+                    domProps: { value: _vm.edPhone.phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edPhone, "phone", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editPhone()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-b5f0709e", module.exports)
+  }
+}
+
+/***/ }),
 /* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39490,13 +43043,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(435)
+  __webpack_require__(195)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(197)
 /* template */
-var __vue_template__ = __webpack_require__(437)
+var __vue_template__ = __webpack_require__(198)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -39535,33 +43088,53 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 195 */,
-/* 196 */,
+/* 195 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(196);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("f1ef7cd0", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66b6e6ba\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankRules.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66b6e6ba\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankRules.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-66b6e6ba]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_rule[data-v-66b6e6ba]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_rules[data-v-66b6e6ba]{width: 94%;min-height: 110px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_rules[data-v-66b6e6ba]{width: 100%;min-height:100px;\n}\n.form_item_rules>div[data-v-66b6e6ba]{min-height: 45px;line-height: 45px;\n}\n.item_input[data-v-66b6e6ba]{min-height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.dataBankAddBtn[data-v-66b6e6ba]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-66b6e6ba]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-66b6e6ba]{width:50px;height: 50px;\n}\n.editBox[data-v-66b6e6ba]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-66b6e6ba]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;height: 100%;\n}\n.issure[data-v-66b6e6ba]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-66b6e6ba]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules[data-v-66b6e6ba]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img[data-v-66b6e6ba]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-66b6e6ba]{width:50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 197 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__);
 //
 //
 //
@@ -39626,21 +43199,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        Editor: __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue___default.a
+    },
     data: function data() {
         return {
             ruless: [],
             newRule: {
-                rule_category_name: '',
+                content: '',
+                rule_category_name: '團隊守則',
                 type: 10
             },
-            edRule: {
-                rule_category_name: '',
-                id: '',
-                index: ''
-            },
-            isNewRuleShow: false,
-            isEditRuleShow: false
+            isNewRuleShow: false
         };
     },
 
@@ -39651,7 +43223,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getRules: function getRules() {
             var _this = this;
 
-            // 获取準則分类
+            // 获取團隊守則分类
             this.$ajax({
                 method: 'GET',
                 headers: {
@@ -39664,6 +43236,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).then(function (res) {
                 // console.log(res.data);
                 _this.ruless = res.data.data;
+                _this.newRule.content = res.data.data[0].content;
             }).catch(function (err) {
                 _this.$toast('獲取失敗');
                 console.log(err);
@@ -39675,19 +43248,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         addNewRule: function addNewRule() {
             var _this2 = this;
 
-            // 新增準則
+            // 新增團隊守則
             this.$post(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/categories', this.newRule, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
             }).then(function (res) {
                 // console.log(res.data);
-                _this2.$toast('添加成功');
+                _this2.$toast('修改成功');
                 _this2.getRules();
                 _this2.isNewRuleShow = false;
-                _this2.newRule.rule_category_name = '';
             }).catch(function (err) {
-                _this2.$toast('添加失败');
+                _this2.$toast('修改失败');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
@@ -39707,7 +43279,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         editRule: function editRule() {
             var _this3 = this;
 
-            // 修改準則信息
+            // 修改團隊守則信息
             this.$ajax({
                 method: 'PATCH',
                 headers: {
@@ -39740,10 +43312,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         delRule: function delRule(ruleId) {
             var _this4 = this;
 
-            // 删除準則
+            // 删除團隊守則
             this.$dialog.confirm({
-                title: '删除準則',
-                message: '是否删除該準則',
+                title: '删除團隊守則',
+                message: '是否删除該團隊守則',
                 cancelButtonText: '取消',
                 cancelButtonColor: '#ccc',
                 confirmButtonText: '確定',
@@ -39768,25 +43340,171 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     console.log(err);
                 });
             }).catch(function (err) {});
+        },
+        catchData: function catchData(value) {
+            this.newRule.content = value;
         }
     }
 });
 
 /***/ }),
-/* 198 */,
+/* 198 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "dataBank_input_form disflex",
+      staticStyle: { position: "relative" }
+    },
+    [
+      _c("div", { staticClass: "pane_content_rule" }, [
+        _vm.ruless
+          ? _c("div", { staticClass: "form_content_rules disflex" }, [
+              _c("div", { staticClass: "form_item_rules" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("團隊守則")]),
+                _vm._v(" "),
+                _c("div", {
+                  staticStyle: {
+                    border: "1px solid #ccc",
+                    width: "97%",
+                    "background-color": "#eeeeee",
+                    "line-height": "normal",
+                    "min-height": "45px"
+                  },
+                  domProps: { innerHTML: _vm._s(_vm.ruless[0].content) }
+                })
+              ])
+            ])
+          : _c("div", { staticClass: "form_content_rules disflex" }, [
+              _vm._m(0)
+            ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "dataBankAddBtn",
+            on: {
+              click: function($event) {
+                return _vm.addNewRuleShow()
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/edit-all.png" } })]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewRuleShow,
+            callback: function($$v) {
+              _vm.isNewRuleShow = $$v
+            },
+            expression: "isNewRuleShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_rules" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("團隊守則(必填)")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  [
+                    _c("Editor", {
+                      attrs: { childData: _vm.newRule.content },
+                      on: { catchData: _vm.catchData },
+                      model: {
+                        value: _vm.newRule.content,
+                        callback: function($$v) {
+                          _vm.$set(_vm.newRule, "content", $$v)
+                        },
+                        expression: "newRule.content"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewRule()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form_item_rules" }, [
+      _c("div", { staticClass: "item_title" }, [_vm._v("團隊守則")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticStyle: {
+            border: "1px solid #ccc",
+            width: "97%",
+            "background-color": "#eeeeee",
+            "line-height": "40px",
+            "min-height": "45px"
+          }
+        },
+        [_vm._v("\n                        暫無團隊守則\n                    ")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-66b6e6ba", module.exports)
+  }
+}
+
+/***/ }),
 /* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(432)
+  __webpack_require__(200)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(202)
 /* template */
-var __vue_template__ = __webpack_require__(434)
+var __vue_template__ = __webpack_require__(203)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -39825,8 +43543,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 200 */,
-/* 201 */,
+/* 200 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(201);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("632f0403", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-03a9c788\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankRulesInfo.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-03a9c788\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankRulesInfo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 201 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-03a9c788]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content[data-v-03a9c788]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-03a9c788]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-03a9c788]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-03a9c788]{width:28px;height: 28px;\n}\n.form_content[data-v-03a9c788]{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_ruleInfo[data-v-03a9c788]{width: 100%;min-height:100px;\n}\n.form_item_ruleInfo>div[data-v-03a9c788]{width: 96%;min-height: 45px;\n}\n.item_area[data-v-03a9c788]{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active[data-v-03a9c788]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-03a9c788]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-03a9c788]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-03a9c788]{width:50px;height: 50px;\n}\n.editBox[data-v-03a9c788]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-03a9c788]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-03a9c788]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-03a9c788]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-03a9c788]{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-03a9c788]{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog[data-v-03a9c788]{width:50%;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 202 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -40070,7 +43826,233 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 203 */,
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "right_title" }, [
+        _c(
+          "div",
+          {
+            staticClass: "title_icon",
+            on: {
+              click: function($event) {
+                return _vm.$router.push("/rule/dataBankRules")
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
+        ),
+        _vm._v(
+          "\n            " + _vm._s(_vm.rule.rule_category_name) + "\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c(
+          "div",
+          { staticClass: "pane_content" },
+          _vm._l(_vm.ruleInfos, function(ruleInfo, index) {
+            return _c("div", { staticClass: "form_content disflex" }, [
+              _c("div", { staticClass: "form_item_ruleInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("準則詳情" + _vm._s(index + 1))
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    staticClass: "item_area",
+                    attrs: { placeholder: "準則詳情", disabled: "disabled" },
+                    domProps: { value: ruleInfo.rule }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "editBtnGroup" }, [
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/rush-icon.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.delRuleInfo(ruleInfo.id)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/edit-all.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.editRuleInfoShow(index)
+                    }
+                  }
+                })
+              ])
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "dataBankAddBtn",
+            on: {
+              click: function($event) {
+                return _vm.addNewRuleInfoShow()
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewRuleInfoShow,
+            callback: function($$v) {
+              _vm.isNewRuleInfoShow = $$v
+            },
+            expression: "isNewRuleInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_ruleInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("準則詳情(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newRuleInfo.rule,
+                        expression: "newRuleInfo.rule"
+                      }
+                    ],
+                    staticClass: "item_area",
+                    attrs: { placeholder: "準則詳情" },
+                    domProps: { value: _vm.newRuleInfo.rule },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newRuleInfo, "rule", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewRuleInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditRuleInfoShow,
+            callback: function($$v) {
+              _vm.isEditRuleInfoShow = $$v
+            },
+            expression: "isEditRuleInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_ruleInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("準則詳情(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edRuleInfo.rule,
+                        expression: "edRuleInfo.rule"
+                      }
+                    ],
+                    staticClass: "item_area",
+                    attrs: { placeholder: "準則詳情" },
+                    domProps: { value: _vm.edRuleInfo.rule },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edRuleInfo, "rule", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editRuleInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-03a9c788", module.exports)
+  }
+}
+
+/***/ }),
 /* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -40203,13 +44185,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(438)
+  __webpack_require__(210)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(212)
 /* template */
-var __vue_template__ = __webpack_require__(440)
+var __vue_template__ = __webpack_require__(213)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -40248,8 +44230,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 210 */,
-/* 211 */,
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(211);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("2d56049c", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-75328276\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankPromises.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-75328276\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankPromises.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-75328276]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_rule[data-v-75328276]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_rules[data-v-75328276]{width: 94%;min-height: 110px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_rules[data-v-75328276]{width: 100%;min-height:100px;\n}\n.form_item_rules>div[data-v-75328276]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-75328276]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input_icon[data-v-75328276]{width: 100%;height: 50px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.input_icon>input[data-v-75328276]{width: 80%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.input_icon>div[data-v-75328276]{width: 80px;height: 45px;\n}\n.input_icon>div>img[data-v-75328276]{width:40px;height: 40px;float: right;\n}\n.input_icon>div>img[data-v-75328276]:hover{cursor: pointer;\n}\n.active[data-v-75328276]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-75328276]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-75328276]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-75328276]{width:50px;height: 50px;\n}\n.editBox[data-v-75328276]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-75328276]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-75328276]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-75328276]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules[data-v-75328276]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img[data-v-75328276]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-75328276]{width:50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 212 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -40486,20 +44506,261 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 213 */,
+/* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "dataBank_input_form disflex",
+      staticStyle: { position: "relative" }
+    },
+    [
+      _c("div", { staticClass: "pane_content_rule" }, [
+        _c(
+          "div",
+          { staticClass: "form_content_rules disflex" },
+          _vm._l(_vm.ruless, function(rule, index) {
+            return _c("div", { staticClass: "form_item_rules" }, [
+              _c("div", { staticClass: "item_title" }, [
+                _vm._v("承諾標題" + _vm._s(index + 1))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input_icon disflex" }, [
+                _c("input", {
+                  attrs: {
+                    placeholder: "承諾標題",
+                    type: "text",
+                    disabled: "disabled"
+                  },
+                  domProps: { value: rule.rule_category_name }
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.$router.push(
+                          "/promise/dataBankPromisesInfo/" + rule.id
+                        )
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: "/etravel/public/images/See-next.png",
+                        alt: ""
+                      }
+                    })
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "editBtnGroup_rules" }, [
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/rush-icon.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.delRule(rule.id)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/edit-all.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.editRuleShow(index)
+                    }
+                  }
+                })
+              ])
+            ])
+          }),
+          0
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "dataBankAddBtn",
+          on: {
+            click: function($event) {
+              return _vm.addNewRuleShow()
+            }
+          }
+        },
+        [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewRuleShow,
+            callback: function($$v) {
+              _vm.isNewRuleShow = $$v
+            },
+            expression: "isNewRuleShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_rules" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("承諾標題(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newRule.rule_category_name,
+                        expression: "newRule.rule_category_name"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "承諾標題", type: "text" },
+                    domProps: { value: _vm.newRule.rule_category_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newRule,
+                          "rule_category_name",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewRule()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditRuleShow,
+            callback: function($$v) {
+              _vm.isEditRuleShow = $$v
+            },
+            expression: "isEditRuleShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_rules" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("承諾標題(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edRule.rule_category_name,
+                        expression: "edRule.rule_category_name"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "承諾標題", type: "text" },
+                    domProps: { value: _vm.edRule.rule_category_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edRule,
+                          "rule_category_name",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editRule()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-75328276", module.exports)
+  }
+}
+
+/***/ }),
 /* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(441)
+  __webpack_require__(215)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(217)
 /* template */
-var __vue_template__ = __webpack_require__(443)
+var __vue_template__ = __webpack_require__(218)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -40538,8 +44799,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 215 */,
-/* 216 */,
+/* 215 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(216);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("70e23d5b", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5748a213\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankPromisesInfo.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5748a213\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankPromisesInfo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-5748a213]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content[data-v-5748a213]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-5748a213]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-5748a213]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-5748a213]{width:28px;height: 28px;\n}\n.form_content[data-v-5748a213]{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_ruleInfo[data-v-5748a213]{width: 100%;min-height:100px;\n}\n.form_item_ruleInfo>div[data-v-5748a213]{width: 96%;min-height: 45px;\n}\n.item_area[data-v-5748a213]{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active[data-v-5748a213]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-5748a213]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-5748a213]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-5748a213]{width:50px;height: 50px;\n}\n.editBox[data-v-5748a213]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-5748a213]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-5748a213]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-5748a213]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-5748a213]{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-5748a213]{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog[data-v-5748a213]{width:50%;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 217 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -40787,20 +45086,246 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 218 */,
+/* 218 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "right_title" }, [
+        _c(
+          "div",
+          {
+            staticClass: "title_icon",
+            on: {
+              click: function($event) {
+                return _vm.$router.push("/promise/dataBankPromises")
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
+        ),
+        _vm._v(
+          "\n            " + _vm._s(_vm.rule.rule_category_name) + "\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c(
+          "div",
+          { staticClass: "pane_content" },
+          _vm._l(_vm.ruleInfos, function(ruleInfo, index) {
+            return _c("div", { staticClass: "form_content disflex" }, [
+              _c("div", { staticClass: "form_item_ruleInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("承諾詳情" + _vm._s(index + 1))
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    staticClass: "item_area",
+                    attrs: { placeholder: "承諾詳情", disabled: "disabled" },
+                    domProps: { value: ruleInfo.rule }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "editBtnGroup" }, [
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/rush-icon.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.delRuleInfo(ruleInfo.id)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/edit-all.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.editRuleInfoShow(index)
+                    }
+                  }
+                })
+              ])
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "dataBankAddBtn",
+            on: {
+              click: function($event) {
+                return _vm.addNewRuleInfoShow()
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewRuleInfoShow,
+            callback: function($$v) {
+              _vm.isNewRuleInfoShow = $$v
+            },
+            expression: "isNewRuleInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_ruleInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("承諾詳情(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newRuleInfo.rule,
+                        expression: "newRuleInfo.rule"
+                      }
+                    ],
+                    staticClass: "item_area",
+                    attrs: { placeholder: "承諾詳情" },
+                    domProps: { value: _vm.newRuleInfo.rule },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newRuleInfo, "rule", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewRuleInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditRuleInfoShow,
+            callback: function($$v) {
+              _vm.isEditRuleInfoShow = $$v
+            },
+            expression: "isEditRuleInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_ruleInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("承諾詳情(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edRuleInfo.rule,
+                        expression: "edRuleInfo.rule"
+                      }
+                    ],
+                    staticClass: "item_area",
+                    attrs: { placeholder: "承諾詳情" },
+                    domProps: { value: _vm.edRuleInfo.rule },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edRuleInfo, "rule", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editRuleInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-5748a213", module.exports)
+  }
+}
+
+/***/ }),
 /* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(453)
+  __webpack_require__(220)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(222)
 /* template */
-var __vue_template__ = __webpack_require__(455)
+var __vue_template__ = __webpack_require__(223)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -40839,8 +45364,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 220 */,
-/* 221 */,
+/* 220 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(221);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("13a3f835", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ec0edf7c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankGroup.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ec0edf7c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankGroup.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 221 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-ec0edf7c]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.dataBank_input_form>table[data-v-ec0edf7c]{margin-top: 20px;width: 96%;\n}\n.dataBank_input_form table th[data-v-ec0edf7c]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form table td[data-v-ec0edf7c]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form thead[data-v-ec0edf7c]{background-color: #ffde01;\n}\n.dataBank_input_form thead th[data-v-ec0edf7c]{text-align: center;\n}\n.dataBank_input_form td>input[data-v-ec0edf7c]{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item_group[data-v-ec0edf7c]{width: 100%;min-height:100px;\n}\n.form_item_group>div[data-v-ec0edf7c]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-ec0edf7c]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon[data-v-ec0edf7c]{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon[data-v-ec0edf7c]:hover{cursor: pointer;\n}\n.editIcon>img[data-v-ec0edf7c]{width:25px;height:25px;\n}\n.active[data-v-ec0edf7c]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-ec0edf7c]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-ec0edf7c]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-ec0edf7c]{width:50px;height: 50px;\n}\n.editBox[data-v-ec0edf7c]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-ec0edf7c]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-ec0edf7c]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-ec0edf7c]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules[data-v-ec0edf7c]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img[data-v-ec0edf7c]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-ec0edf7c]{width:50%;\n}    \n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 222 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -41149,20 +45712,278 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 223 */,
+/* 223 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c("table", [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.groups, function(group, index) {
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(index + 1))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(group.class))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(group.user.name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(group.room))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(group.duty))]),
+                _vm._v(" "),
+                _c("td", { attrs: { width: "100px" } }, [
+                  _c(
+                    "div",
+                    { staticClass: "editIcon", attrs: { name: "編輯" } },
+                    [
+                      _c("img", {
+                        attrs: { src: "/etravel/public/images/edit.png" },
+                        on: {
+                          click: function($event) {
+                            return _vm.editGroupShow(index)
+                          }
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "editIcon", attrs: { name: "删除" } },
+                    [
+                      _c("img", {
+                        attrs: { src: "/etravel/public/images/dele.png" },
+                        on: {
+                          click: function($event) {
+                            return _vm.delGroup(group.user_id, group.id)
+                          }
+                        }
+                      })
+                    ]
+                  )
+                ])
+              ])
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditGroupShow,
+            callback: function($$v) {
+              _vm.isEditGroupShow = $$v
+            },
+            expression: "isEditGroupShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_group" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("班級")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edGroup.group_class,
+                        expression: "edGroup.group_class"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      placeholder: "填寫班級",
+                      type: "text",
+                      disabled: "disabled"
+                    },
+                    domProps: { value: _vm.edGroup.group_class },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edGroup,
+                          "group_class",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_group" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("學生姓名")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edGroup.group_name,
+                        expression: "edGroup.group_name"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      placeholder: "填寫學生姓名",
+                      type: "text",
+                      disabled: "disabled"
+                    },
+                    domProps: { value: _vm.edGroup.group_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edGroup, "group_name", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_group" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("房號")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edGroup.group_room,
+                        expression: "edGroup.group_room"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "填寫房號", type: "text" },
+                    domProps: { value: _vm.edGroup.group_room },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edGroup, "group_room", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_group" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edGroup.group_duty,
+                        expression: "edGroup.group_duty"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "填寫職責", type: "text" },
+                    domProps: { value: _vm.edGroup.group_duty },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edGroup, "group_duty", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editGroup()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("編號")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("班級")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("學生姓名")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("房號")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("職責")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("編輯")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-ec0edf7c", module.exports)
+  }
+}
+
+/***/ }),
 /* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(456)
+  __webpack_require__(225)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(227)
 /* template */
-var __vue_template__ = __webpack_require__(458)
+var __vue_template__ = __webpack_require__(228)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -41201,8 +46022,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 225 */,
-/* 226 */,
+/* 225 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(226);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("81746f30", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-583fe85b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankHouseTable.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-583fe85b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankHouseTable.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 226 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-583fe85b]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.dataBank_input_form>table[data-v-583fe85b]{margin-top: 20px;width: 90%;\n}\n.dataBank_input_form table th[data-v-583fe85b]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form table td[data-v-583fe85b]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form thead[data-v-583fe85b]{background-color: #ffde01;\n}\n.dataBank_input_form td>input[data-v-583fe85b]{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item_house[data-v-583fe85b]{width: 100%;min-height:100px;\n}\n.form_item_house>div[data-v-583fe85b]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-583fe85b]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon[data-v-583fe85b]{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon[data-v-583fe85b]:hover{cursor: pointer;\n}\n.editIcon>img[data-v-583fe85b]{width:25px;height:25px;\n}\n.active[data-v-583fe85b]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-583fe85b]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-583fe85b]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-583fe85b]{width:50px;height: 50px;\n}\n.editBox[data-v-583fe85b]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-583fe85b]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-583fe85b]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-583fe85b]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules[data-v-583fe85b]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img[data-v-583fe85b]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-583fe85b]{width:50%;\n}    \n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 227 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -41512,7 +46371,257 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 228 */,
+/* 228 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c("table", [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.houses, function(house, index) {
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(house.group))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(house.room))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(house.class))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(house.user.name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(house.user.en_name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(house.duty))]),
+                _vm._v(" "),
+                _c("td", { attrs: { width: "100px" } }, [
+                  _c("div", { staticClass: "editIcon" }, [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/edit.png" },
+                      on: {
+                        click: function($event) {
+                          return _vm.editHouseShow(index)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "editIcon" }, [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/dele.png" },
+                      on: {
+                        click: function($event) {
+                          return _vm.delHouse(house.user_id, house.id)
+                        }
+                      }
+                    })
+                  ])
+                ])
+              ])
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditHouseShow,
+            callback: function($$v) {
+              _vm.isEditHouseShow = $$v
+            },
+            expression: "isEditHouseShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_house" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("分組編號")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHouse.house_group,
+                        expression: "edHouse.house_group"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "填寫分組編號", type: "text" },
+                    domProps: { value: _vm.edHouse.house_group },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHouse,
+                          "house_group",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_house" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("房間編號")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHouse.house_room,
+                        expression: "edHouse.house_room"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "填寫房間編號", type: "text" },
+                    domProps: { value: _vm.edHouse.house_room },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHouse, "house_room", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_house" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("班級")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHouse.house_class,
+                        expression: "edHouse.house_class"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "填寫班級", type: "text" },
+                    domProps: { value: _vm.edHouse.house_class },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edHouse,
+                          "house_class",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_house" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edHouse.house_duty,
+                        expression: "edHouse.house_duty"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "填寫職責", type: "text" },
+                    domProps: { value: _vm.edHouse.house_duty },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edHouse, "house_duty", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editHouse()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("分組編號")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("房間編號")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("班級")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("中文名")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("英文名")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("職責")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("編輯")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-583fe85b", module.exports)
+  }
+}
+
+/***/ }),
 /* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41645,13 +46754,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(459)
+  __webpack_require__(235)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(237)
 /* template */
-var __vue_template__ = __webpack_require__(461)
+var __vue_template__ = __webpack_require__(238)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -41690,14 +46799,52 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 235 */,
-/* 236 */,
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(236);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("2148e7f7", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-05f6c243\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankJourney.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-05f6c243\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankJourney.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 236 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-05f6c243]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist[data-v-05f6c243]{width:100%;\n}\n.nav-tabs>li>a[data-v-05f6c243]{color: #000;\n}\n.pane_content_journey[data-v-05f6c243]{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_journey[data-v-05f6c243]{width: 94%;min-height: 120px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journey[data-v-05f6c243]{width: 100%;min-height:50px;\n}\n.form_item_journey>div[data-v-05f6c243]{min-height: 50px;line-height: 50px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_input[data-v-05f6c243]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.item_left[data-v-05f6c243]{width:85%;border-radius: 8px;background-color: #d6d6d6;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_left>input[data-v-05f6c243]{height:40px;border-radius: 6px;\n}\n.item_right[data-v-05f6c243]{min-width:10%;line-height: 50px;text-align: center;\n}\n.item_right>img[data-v-05f6c243]{width:30px;height:30px;\n}\n.active[data-v-05f6c243]{font-size: 18px;\n}\n.dataBankAddBtn_journey[data-v-05f6c243]{width:50px;height: 50px;position: absolute;right: 5px;top: 55px;\n}\n.dataBankAddBtn_journey[data-v-05f6c243]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journey>img[data-v-05f6c243]{width:50px;height: 50px;\n}\n.editBox[data-v-05f6c243]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-05f6c243]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-05f6c243]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-05f6c243]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journey[data-v-05f6c243]{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journey>img[data-v-05f6c243]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-05f6c243]{width:50%;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 237 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__);
 //
 //
@@ -41894,20 +47041,281 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 238 */,
+/* 238 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "dataBank_input_form disflex" },
+    [
+      _c("div", { staticClass: "tablist" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "tab-content" }, [
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane active",
+              attrs: { role: "tabpanel", id: "journey" }
+            },
+            [
+              _c("div", { staticClass: "pane_content_journey" }, [
+                _c("div", { staticClass: "form_content_journey disflex" }, [
+                  _c("div", { staticClass: "form_item_journey" }, [
+                    _c("div", { staticClass: "item_title" }, [
+                      _vm._v("景點安排")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticStyle: {
+                        border: "1px solid #ccc",
+                        "border-radius": "8px",
+                        width: "97%",
+                        "background-color": "#eeeeee",
+                        "line-height": "25px"
+                      },
+                      domProps: { innerHTML: _vm._s(_vm.travelInfo.view_plan) }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn_journey",
+                    on: {
+                      click: function($event) {
+                        return _vm.editViewShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/edit-all.png" }
+                    })
+                  ]
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane",
+              attrs: { role: "tabpanel", id: "flight" }
+            },
+            [
+              _c("div", { staticClass: "pane_content_journey" }, [
+                _c("div", { staticClass: "form_content_journey disflex" }, [
+                  _c("div", { staticClass: "form_item_journey" }, [
+                    _c("div", { staticClass: "item_title" }, [
+                      _vm._v("膳食安排")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticStyle: {
+                        border: "1px solid #ccc",
+                        "border-radius": "8px",
+                        width: "97%",
+                        "background-color": "#eeeeee",
+                        "line-height": "25px"
+                      },
+                      domProps: { innerHTML: _vm._s(_vm.travelInfo.meal_plan) }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dataBankAddBtn_journey",
+                    on: {
+                      click: function($event) {
+                        return _vm.editMealShow()
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/edit-all.png" }
+                    })
+                  ]
+                )
+              ])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditViewShow,
+            callback: function($$v) {
+              _vm.isEditViewShow = $$v
+            },
+            expression: "isEditViewShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journey" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("景點安排")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  [
+                    _c("Editor", {
+                      attrs: { childData: _vm.view_plan },
+                      on: { catchData: _vm.catchData }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editTravelInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("保存")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditMealShow,
+            callback: function($$v) {
+              _vm.isEditMealShow = $$v
+            },
+            expression: "isEditMealShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journey" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("膳食安排")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  [
+                    _c("Editor", {
+                      attrs: { childData: _vm.meal_plan },
+                      on: { catchData: _vm.catchData }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editTravelInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("保存")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
+      [
+        _c("li", { staticClass: "active", attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#journey",
+                "aria-controls": "journey",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("景點安排")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#flight",
+                "aria-controls": "flight",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("膳食安排")]
+          )
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-05f6c243", module.exports)
+  }
+}
+
+/***/ }),
 /* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(462)
+  __webpack_require__(240)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(242)
 /* template */
-var __vue_template__ = __webpack_require__(464)
+var __vue_template__ = __webpack_require__(243)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -41946,8 +47354,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 240 */,
-/* 241 */,
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(241);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("18ecd896", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-010eb691\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankJourneyInfo.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-010eb691\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankJourneyInfo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 241 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-010eb691]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content[data-v-010eb691]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-010eb691]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-010eb691]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-010eb691]{width:28px;height: 28px;\n}\n.form_content_journeyInfo[data-v-010eb691]{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_journeyInfo[data-v-010eb691]{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div[data-v-010eb691]{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo[data-v-010eb691]{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area[data-v-010eb691]{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active[data-v-010eb691]{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo[data-v-010eb691]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo[data-v-010eb691]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img[data-v-010eb691]{width:50px;height: 50px;\n}\n.editBox[data-v-010eb691]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-010eb691]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-010eb691]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-010eb691]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journeyInfo[data-v-010eb691]{width:94%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journeyInfo>img[data-v-010eb691]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-010eb691]{width:50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 242 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42213,20 +47659,343 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 243 */,
+/* 243 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "right_title" }, [
+        _c(
+          "div",
+          {
+            staticClass: "title_icon",
+            on: {
+              click: function($event) {
+                return _vm.$router.push("/journey/dataBankJourney")
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "overText", staticStyle: { margin: "0 40px" } },
+          [_vm._v(_vm._s(_vm.journey.day))]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c(
+          "div",
+          { staticClass: "pane_content" },
+          _vm._l(_vm.journeyInfos, function(journeyInfo, index) {
+            return _c(
+              "div",
+              { staticClass: "form_content_journeyInfo disflex" },
+              [
+                _c("div", { staticClass: "form_item_journeyInfo" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("景点内容(必填)")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      staticClass: "item_input_journeyInfo",
+                      attrs: {
+                        placeholder: "景点内容",
+                        type: "text",
+                        disabled: "disabled"
+                      },
+                      domProps: { value: journeyInfo.content }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form_item_journeyInfo" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("景点介绍(必填)")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("textarea", {
+                      staticClass: "item_area",
+                      attrs: { disabled: "disabled", placeholder: "景点介绍" },
+                      domProps: { value: journeyInfo.description }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "editBtnGroup_journeyInfo" }, [
+                  _c("img", {
+                    attrs: { src: "/etravel/public/images/rush-icon.png" },
+                    on: {
+                      click: function($event) {
+                        return _vm.delJourneyInfo(journeyInfo.id)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    attrs: { src: "/etravel/public/images/edit-all.png" },
+                    on: {
+                      click: function($event) {
+                        return _vm.editJourneyInfoShow(index)
+                      }
+                    }
+                  })
+                ])
+              ]
+            )
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "dataBankAddBtn_journeyInfo",
+            on: {
+              click: function($event) {
+                return _vm.addNewJourneyInfoShow()
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewJourneyInfoShow,
+            callback: function($$v) {
+              _vm.isNewJourneyInfoShow = $$v
+            },
+            expression: "isNewJourneyInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("景点内容(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newJourneyInfo.content,
+                        expression: "newJourneyInfo.content"
+                      }
+                    ],
+                    staticClass: "item_input_journeyInfo",
+                    attrs: { placeholder: "景点内容", type: "text" },
+                    domProps: { value: _vm.newJourneyInfo.content },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newJourneyInfo,
+                          "content",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("景点介绍(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newJourneyInfo.description,
+                        expression: "newJourneyInfo.description"
+                      }
+                    ],
+                    staticClass: "item_area",
+                    attrs: { placeholder: "景点介绍" },
+                    domProps: { value: _vm.newJourneyInfo.description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newJourneyInfo,
+                          "description",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewJourneyInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditJourneyInfoShow,
+            callback: function($$v) {
+              _vm.isEditJourneyInfoShow = $$v
+            },
+            expression: "isEditJourneyInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edJourneyInfo.content,
+                        expression: "edJourneyInfo.content"
+                      }
+                    ],
+                    staticClass: "item_input_journeyInfo",
+                    attrs: { placeholder: "内容", type: "text" },
+                    domProps: { value: _vm.edJourneyInfo.content },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edJourneyInfo,
+                          "content",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("介绍")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edJourneyInfo.description,
+                        expression: "edJourneyInfo.description"
+                      }
+                    ],
+                    staticClass: "item_area",
+                    attrs: { placeholder: "介绍" },
+                    domProps: { value: _vm.edJourneyInfo.description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edJourneyInfo,
+                          "description",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editJourneyInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-010eb691", module.exports)
+  }
+}
+
+/***/ }),
 /* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(465)
+  __webpack_require__(245)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(247)
 /* template */
-var __vue_template__ = __webpack_require__(467)
+var __vue_template__ = __webpack_require__(248)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -42265,8 +48034,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 245 */,
-/* 246 */,
+/* 245 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(246);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("1feae85c", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-282ebaa1\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankMealsInfo.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-282ebaa1\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankMealsInfo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 246 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-282ebaa1]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content[data-v-282ebaa1]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-282ebaa1]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-282ebaa1]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-282ebaa1]{width:28px;height: 28px;\n}\n.form_content[data-v-282ebaa1]{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_journeyInfo[data-v-282ebaa1]{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div[data-v-282ebaa1]{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo[data-v-282ebaa1]{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area[data-v-282ebaa1]{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active[data-v-282ebaa1]{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo[data-v-282ebaa1]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo[data-v-282ebaa1]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img[data-v-282ebaa1]{width:50px;height: 50px;\n}\n.editBox[data-v-282ebaa1]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-282ebaa1]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-282ebaa1]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-282ebaa1]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journeyInfo[data-v-282ebaa1]{width:94%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journeyInfo>img[data-v-282ebaa1]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-282ebaa1]{width:50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 247 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42546,7 +48353,391 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 248 */,
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "right_title" }, [
+        _c(
+          "div",
+          {
+            staticClass: "title_icon",
+            on: {
+              click: function($event) {
+                return _vm.$router.push("/journey/dataBankJourney")
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
+        ),
+        _vm._v("\n            " + _vm._s(_vm.journey.day) + "\n        ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c(
+          "div",
+          { staticClass: "pane_content" },
+          _vm._l(_vm.meals, function(meal, index) {
+            return _c("div", { staticClass: "form_content disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("早/中/晚餐(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    staticClass: "item_input_journeyInfo",
+                    attrs: {
+                      placeholder: "早/中/晚餐",
+                      type: "text",
+                      disabled: "disabled"
+                    },
+                    domProps: { value: meal.title }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("膳食内容(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    staticClass: "item_input_journeyInfo",
+                    attrs: {
+                      placeholder: "膳食内容",
+                      type: "text",
+                      disabled: "disabled"
+                    },
+                    domProps: { value: meal.content }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("膳食介紹(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    staticClass: "item_area",
+                    attrs: { disabled: "disabled", placeholder: "膳食介紹" },
+                    domProps: { value: meal.description }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "editBtnGroup_journeyInfo" }, [
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/rush-icon.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.delMeal(meal.id)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/edit-all.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.editMealShow(index)
+                    }
+                  }
+                })
+              ])
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "dataBankAddBtn_journeyInfo",
+            on: {
+              click: function($event) {
+                return _vm.addNewMealShow()
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewMealShow,
+            callback: function($$v) {
+              _vm.isNewMealShow = $$v
+            },
+            expression: "isNewMealShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("早/中/晚餐(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newMeal.title,
+                        expression: "newMeal.title"
+                      }
+                    ],
+                    staticClass: "item_input_journeyInfo",
+                    attrs: { placeholder: "早/中/晚餐", type: "text" },
+                    domProps: { value: _vm.newMeal.title },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newMeal, "title", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("膳食内容(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newMeal.content,
+                        expression: "newMeal.content"
+                      }
+                    ],
+                    staticClass: "item_input_journeyInfo",
+                    attrs: { placeholder: "膳食内容", type: "text" },
+                    domProps: { value: _vm.newMeal.content },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newMeal, "content", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("膳食介紹(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newMeal.description,
+                        expression: "newMeal.description"
+                      }
+                    ],
+                    staticClass: "item_area",
+                    attrs: { placeholder: "膳食介紹" },
+                    domProps: { value: _vm.newMeal.description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newMeal,
+                          "description",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewMeal()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditMealShow,
+            callback: function($$v) {
+              _vm.isEditMealShow = $$v
+            },
+            expression: "isEditMealShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("早/中/晚餐(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edMeal.title,
+                        expression: "edMeal.title"
+                      }
+                    ],
+                    staticClass: "item_input_journeyInfo",
+                    attrs: { placeholder: "早/中/晚餐", type: "text" },
+                    domProps: { value: _vm.edMeal.title },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edMeal, "title", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("膳食内容(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edMeal.content,
+                        expression: "edMeal.content"
+                      }
+                    ],
+                    staticClass: "item_input_journeyInfo",
+                    attrs: { placeholder: "膳食内容", type: "text" },
+                    domProps: { value: _vm.edMeal.content },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edMeal, "content", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("膳食介紹(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edMeal.description,
+                        expression: "edMeal.description"
+                      }
+                    ],
+                    staticClass: "item_area",
+                    attrs: { placeholder: "膳食介紹" },
+                    domProps: { value: _vm.edMeal.description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edMeal, "description", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editMeal()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-282ebaa1", module.exports)
+  }
+}
+
+/***/ }),
 /* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42679,13 +48870,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(489)
+  __webpack_require__(255)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(257)
 /* template */
-var __vue_template__ = __webpack_require__(491)
+var __vue_template__ = __webpack_require__(258)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -42724,8 +48915,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 255 */,
-/* 256 */,
+/* 255 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(256);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("5fdb9a15", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f9e49aa8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankStudy.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f9e49aa8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankStudy.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-f9e49aa8]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist[data-v-f9e49aa8]{width:100%;\n}\n.nav-tabs>li>a[data-v-f9e49aa8]{color: #000;\n}\n.pane_content_study[data-v-f9e49aa8]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_journey[data-v-f9e49aa8]{width: 94%;min-height: 120px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journey[data-v-f9e49aa8]{width: 100%;min-height:50px;\n}\n.form_item_journey>div[data-v-f9e49aa8]{min-height: 50px;line-height: 50px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_input[data-v-f9e49aa8]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.item_left[data-v-f9e49aa8]{width:85%;border-radius: 8px;background-color: #d6d6d6;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_left>input[data-v-f9e49aa8]{height:40px;border-radius: 6px;\n}\n.item_right[data-v-f9e49aa8]{min-width:10%;line-height: 50px;text-align: center;\n}\n.item_right>img[data-v-f9e49aa8]{width:30px;height:30px;\n}\n.active[data-v-f9e49aa8]{font-size: 18px;\n}\n.dataBankAddBtn_journey[data-v-f9e49aa8]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journey[data-v-f9e49aa8]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journey>img[data-v-f9e49aa8]{width:50px;height: 50px;\n}\n.editBox[data-v-f9e49aa8]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-f9e49aa8]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-f9e49aa8]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-f9e49aa8]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journey[data-v-f9e49aa8]{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journey>img[data-v-f9e49aa8]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-f9e49aa8]{width:50%;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 257 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42977,20 +49206,315 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 258 */,
+/* 258 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "dataBank_input_form disflex" },
+    [
+      _c(
+        "div",
+        { staticClass: "pane_content_study" },
+        [
+          _vm._l(_vm.journeys, function(journey, index) {
+            return _c("div", { staticClass: "form_content_journey disflex" }, [
+              _c("div", { staticClass: "form_item_journey disflex" }, [
+                _c("div", { staticClass: "item_left disflex" }, [
+                  _c(
+                    "div",
+                    { staticStyle: { width: "40%", "margin-left": "5%" } },
+                    [_vm._v(_vm._s(journey.day))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticStyle: { width: "20%", "text-align": "center" } },
+                    [_vm._v("日期")]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticStyle: { width: "30%" },
+                    attrs: { type: "text", disabled: "disabled" },
+                    domProps: { value: journey.date }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item_right" }, [
+                  _c("img", {
+                    attrs: { src: "/etravel/public/images/See-next.png" },
+                    on: {
+                      click: function($event) {
+                        return _vm.$router.push(
+                          "/study/dataBankStudySheet/" + journey.id
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "editBtnGroup_journey" }, [
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/rush-icon.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.delJourney(journey.id)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/edit-all.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.editJourneyShow(index)
+                    }
+                  }
+                })
+              ])
+            ])
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "dataBankAddBtn_journey",
+              on: {
+                click: function($event) {
+                  return _vm.addNewJourneyShow()
+                }
+              }
+            },
+            [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+          )
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewJourneyShow,
+            callback: function($$v) {
+              _vm.isNewJourneyShow = $$v
+            },
+            expression: "isNewJourneyShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journey" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("景點(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newJourney.day,
+                        expression: "newJourney.day"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "景點", type: "text" },
+                    domProps: { value: _vm.newJourney.day },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newJourney, "day", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journey" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("日期(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newJourney.date,
+                        expression: "newJourney.date"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      placeholder: "填寫日期(yyyy-mm-dd)",
+                      type: "text"
+                    },
+                    domProps: { value: _vm.newJourney.date },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newJourney, "date", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewJourney()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditJourneyShow,
+            callback: function($$v) {
+              _vm.isEditJourneyShow = $$v
+            },
+            expression: "isEditJourneyShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journey" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("景點(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edJourney.day,
+                        expression: "edJourney.day"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "景點", type: "text" },
+                    domProps: { value: _vm.edJourney.day },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edJourney, "day", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journey" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("日期(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edJourney.date,
+                        expression: "edJourney.date"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: {
+                      placeholder: "填寫日期(yyyy-mm-dd)",
+                      type: "text"
+                    },
+                    domProps: { value: _vm.edJourney.date },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edJourney, "date", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editJourney()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-f9e49aa8", module.exports)
+  }
+}
+
+/***/ }),
 /* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(480)
+  __webpack_require__(260)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(262)
 /* template */
-var __vue_template__ = __webpack_require__(482)
+var __vue_template__ = __webpack_require__(263)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43029,14 +49553,52 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 260 */,
-/* 261 */,
+/* 260 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(261);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("0ac4f0d4", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2fb5fe3a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankStudySheet.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2fb5fe3a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankStudySheet.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 261 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-2fb5fe3a]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_sheet[data-v-2fb5fe3a]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-2fb5fe3a]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-2fb5fe3a]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-2fb5fe3a]{width:28px;height: 28px;\n}\n.form_content_sheet[data-v-2fb5fe3a]{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journeyInfo[data-v-2fb5fe3a]{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div[data-v-2fb5fe3a]{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo[data-v-2fb5fe3a]{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area[data-v-2fb5fe3a]{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.toNext[data-v-2fb5fe3a]{width:30px;height: 30px;text-align: center;line-height: 30px;float: right;margin-right: 15px;margin-top: 13px;\n}\n.active[data-v-2fb5fe3a]{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo[data-v-2fb5fe3a]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo[data-v-2fb5fe3a]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img[data-v-2fb5fe3a]{width:50px;height: 50px;\n}\n.editBox[data-v-2fb5fe3a]{width:760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-2fb5fe3a]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-2fb5fe3a]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-2fb5fe3a]{width:60%;height:50px;margin-left:20%;background-color:#ffde01;font-size:16px;border-radius: 8px;border:none;outline:none;\n}\n.editBtnGroup_journeyInfo[data-v-2fb5fe3a]{width:94%;height:50px;line-height:50px;\n}\n.editBtnGroup_journeyInfo>img[data-v-2fb5fe3a]{width:40px;height:40px;margin-left:25px;float:right;\n}\n.van-dialog[data-v-2fb5fe3a]{width:50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 262 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__);
 //
 //
@@ -43308,20 +49870,308 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 263 */,
+/* 263 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "right_title" }, [
+        _c(
+          "div",
+          {
+            staticClass: "title_icon",
+            on: {
+              click: function($event) {
+                return _vm.$router.push("/study/dataBankStudy")
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
+        ),
+        _vm._v("\n\t\t\t學習工作紙\n        ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c(
+          "div",
+          { staticClass: "pane_content_sheet" },
+          _vm._l(_vm.sheets, function(sheet, index) {
+            return _c("div", { staticClass: "form_content_sheet disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("標題 "),
+                  _c("img", {
+                    staticClass: "toNext",
+                    attrs: { src: "/etravel/public/images/See-next.png" },
+                    on: {
+                      click: function($event) {
+                        return _vm.$router.push(
+                          "/study/dataBankStudySheetInfo/" + sheet.id
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    staticClass: "item_input_journeyInfo",
+                    attrs: {
+                      placeholder: "標題",
+                      type: "text",
+                      disabled: "disabled"
+                    },
+                    domProps: { value: sheet.title }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _vm._v(" "),
+                _c("div", {
+                  staticStyle: {
+                    border: "1px solid #ccc",
+                    "border-radius": "8px",
+                    width: "93%",
+                    "background-color": "#eeeeee",
+                    "line-height": "25px"
+                  },
+                  domProps: { innerHTML: _vm._s(sheet.body) }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "editBtnGroup_journeyInfo" }, [
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/rush-icon.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.delSheet(sheet.id)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/edit-all.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.editSheetShow(index)
+                    }
+                  }
+                })
+              ])
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "dataBankAddBtn_journeyInfo",
+            on: {
+              click: function($event) {
+                return _vm.addNewSheetShow()
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewSheetShow,
+            callback: function($$v) {
+              _vm.isNewSheetShow = $$v
+            },
+            expression: "isNewSheetShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("標題(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newSheet.title,
+                        expression: "newSheet.title"
+                      }
+                    ],
+                    staticClass: "item_input_journeyInfo",
+                    attrs: { placeholder: "標題", type: "text" },
+                    domProps: { value: _vm.newSheet.title },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newSheet, "title", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("内容(必填)")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  [
+                    _c("Editor", {
+                      attrs: { childData: _vm.newSheet.body },
+                      on: { catchData: _vm.catchData }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewSheet()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditSheetShow,
+            callback: function($$v) {
+              _vm.isEditSheetShow = $$v
+            },
+            expression: "isEditSheetShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("標題(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edSheet.title,
+                        expression: "edSheet.title"
+                      }
+                    ],
+                    staticClass: "item_input_journeyInfo",
+                    attrs: { placeholder: "標題", type: "text" },
+                    domProps: { value: _vm.edSheet.title },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edSheet, "title", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("内容(必填)")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  [
+                    _c("Editor", {
+                      attrs: { childData: _vm.edSheet.body },
+                      on: { catchData: _vm.catchData }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editSheet()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-2fb5fe3a", module.exports)
+  }
+}
+
+/***/ }),
 /* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(483)
+  __webpack_require__(265)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(267)
 /* template */
-var __vue_template__ = __webpack_require__(485)
+var __vue_template__ = __webpack_require__(268)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43360,8 +50210,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 265 */,
-/* 266 */,
+/* 265 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(266);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("456fee68", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e286b59e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankStudySheetInfo.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e286b59e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankStudySheetInfo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 266 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-e286b59e]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_sheetInfo[data-v-e286b59e]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-e286b59e]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-e286b59e]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-e286b59e]{width:28px;height: 28px;\n}\n.form_content_sheetInfo[data-v-e286b59e]{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_sheetInfo[data-v-e286b59e]{width: 100%;min-height:90px;\n}\n.form_item_sheetInfo>div[data-v-e286b59e]{min-height:45px;line-height: 45px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_input_sheetInfo[data-v-e286b59e]{height:45px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.item_area_sheetInfo[data-v-e286b59e]{width:100%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.item_title_icon>img[data-v-e286b59e]{height:25px;margin-left:5px;\n}\n.item_title_icon>img[data-v-e286b59e]:hover{cursor: pointer;\n}\n.active[data-v-e286b59e]{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo[data-v-e286b59e]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo[data-v-e286b59e]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img[data-v-e286b59e]{width:50px;height: 50px;\n}\n.editBox_sheetInfo[data-v-e286b59e]{width: 760px;min-height:160px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-e286b59e]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-e286b59e]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-e286b59e]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-e286b59e]{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-e286b59e]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-e286b59e]{width:50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 267 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -43623,20 +50511,269 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 268 */,
+/* 268 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "right_title" }, [
+        _c(
+          "div",
+          {
+            staticClass: "title_icon",
+            on: {
+              click: function($event) {
+                return _vm.$router.push(
+                  "/study/dataBankStudySheet/" + _vm.sessionStorage.routeId
+                )
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "overText", staticStyle: { margin: "0 40px" } },
+          [_vm._v(_vm._s(_vm.sheet.title))]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c("div", { staticClass: "pane_content_sheetInfo" }, [
+          _vm.sheetInfos[0]
+            ? _c(
+                "div",
+                { staticClass: "form_content_sheetInfo disflex" },
+                _vm._l(_vm.sheetInfos, function(sheetInfo, index) {
+                  return _c("div", { staticClass: "form_item_sheetInfo" }, [
+                    _c("div", { staticClass: "item_title" }, [
+                      _vm._v(
+                        "\n\t\t                    問題" +
+                          _vm._s(index + 1) +
+                          "\n\t\t                    "
+                      ),
+                      _c("div", { staticClass: "fr item_title_icon" }, [
+                        _c("img", {
+                          attrs: { src: "/etravel/public/images/edit.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.editSheetInfoShow(index)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          attrs: { src: "/etravel/public/images/dele.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.delSheetInfo(sheetInfo.id)
+                            }
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("textarea", {
+                        staticClass: "item_area_sheetInfo",
+                        attrs: { placeholder: "内容", disabled: "disabled" },
+                        domProps: { value: sheetInfo.content }
+                      })
+                    ])
+                  ])
+                }),
+                0
+              )
+            : _c("div", { staticClass: "form_content_sheetInfo" }, [
+                _vm._v(
+                  "\n                        暫未添加任何問題，請添加\n                    "
+                ),
+                _c("div", { staticStyle: { "text-align": "center" } })
+              ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "dataBankAddBtn_journeyInfo",
+            on: {
+              click: function($event) {
+                return _vm.addNewSheetInfoShow()
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewSheetInfoShow,
+            callback: function($$v) {
+              _vm.isNewSheetInfoShow = $$v
+            },
+            expression: "isNewSheetInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox_sheetInfo" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_sheetInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("問題(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newSheetInfo.content,
+                        expression: "newSheetInfo.content"
+                      }
+                    ],
+                    staticClass: "item_area_sheetInfo",
+                    attrs: { placeholder: "問題" },
+                    domProps: { value: _vm.newSheetInfo.content },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newSheetInfo,
+                          "content",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewSheetInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditSheetInfoShow,
+            callback: function($$v) {
+              _vm.isEditSheetInfoShow = $$v
+            },
+            expression: "isEditSheetInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox_sheetInfo" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_sheetInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("問題(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edSheetInfo.content,
+                        expression: "edSheetInfo.content"
+                      }
+                    ],
+                    staticClass: "item_area_sheetInfo",
+                    attrs: { placeholder: "問題" },
+                    domProps: { value: _vm.edSheetInfo.content },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edSheetInfo,
+                          "content",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editSheetInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-e286b59e", module.exports)
+  }
+}
+
+/***/ }),
 /* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(468)
+  __webpack_require__(270)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(272)
 /* template */
-var __vue_template__ = __webpack_require__(470)
+var __vue_template__ = __webpack_require__(273)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43675,14 +50812,52 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 270 */,
-/* 271 */,
+/* 270 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(271);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("2ab57476", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5adc03d0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankLocalCulture.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5adc03d0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankLocalCulture.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 271 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-5adc03d0]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_localculture[data-v-5adc03d0]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-5adc03d0]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-5adc03d0]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-5adc03d0]{width:28px;height: 28px;\n}\n.form_content[data-v-5adc03d0]{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_journeyInfo[data-v-5adc03d0]{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div[data-v-5adc03d0]{width: 100%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo[data-v-5adc03d0]{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area[data-v-5adc03d0]{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active[data-v-5adc03d0]{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo[data-v-5adc03d0]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo[data-v-5adc03d0]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img[data-v-5adc03d0]{width:50px;height: 50px;\n}\n.editBox[data-v-5adc03d0]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-5adc03d0]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-5adc03d0]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-5adc03d0]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journeyInfo[data-v-5adc03d0]{width:94%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journeyInfo>img[data-v-5adc03d0]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-5adc03d0]{width:50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 272 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Editor_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Editor_vue__);
 //
 //
@@ -43976,7 +51151,193 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 273 */,
+/* 273 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c(
+          "div",
+          { staticClass: "pane_content_localculture" },
+          _vm._l(_vm.locals, function(local, index) {
+            return _c("div", { staticClass: "form_content disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _vm._v(" "),
+                _c("div", {
+                  staticStyle: {
+                    border: "1px solid #ccc",
+                    "border-radius": "8px",
+                    width: "97%",
+                    "background-color": "#eeeeee",
+                    "line-height": "25px"
+                  },
+                  domProps: { innerHTML: _vm._s(local.content) }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "editBtnGroup_journeyInfo" }, [
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/rush-icon.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.delLocal(local.id)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/edit-all.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.editLocalShow(index)
+                    }
+                  }
+                })
+              ])
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "dataBankAddBtn_journeyInfo",
+            on: {
+              click: function($event) {
+                return _vm.addNewLocalShow()
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewLocalShow,
+            callback: function($$v) {
+              _vm.isNewLocalShow = $$v
+            },
+            expression: "isNewLocalShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  [
+                    _c("Editor", {
+                      attrs: { childData: _vm.newLocal.content },
+                      on: { catchData: _vm.catchData },
+                      model: {
+                        value: _vm.newLocal.content,
+                        callback: function($$v) {
+                          _vm.$set(_vm.newLocal, "content", $$v)
+                        },
+                        expression: "newLocal.content"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewLocal()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditLocalShow,
+            callback: function($$v) {
+              _vm.isEditLocalShow = $$v
+            },
+            expression: "isEditLocalShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_journeyInfo" }, [
+                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  [
+                    _c("Editor", {
+                      attrs: { childData: _vm.edLocal.content },
+                      on: { catchData: _vm.catchData }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editLocal()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-5adc03d0", module.exports)
+  }
+}
+
+/***/ }),
 /* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44109,13 +51470,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(492)
+  __webpack_require__(280)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(282)
 /* template */
-var __vue_template__ = __webpack_require__(494)
+var __vue_template__ = __webpack_require__(283)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44154,8 +51515,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 280 */,
-/* 281 */,
+/* 280 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(281);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("f4be53da", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-20d425d2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankLuggageList.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-20d425d2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankLuggageList.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-20d425d2]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_luggage[data-v-20d425d2]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_luggageLists[data-v-20d425d2]{width: 94%;min-height: 110px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_luggageLists[data-v-20d425d2]{width: 100%;min-height:100px;\n}\n.form_item_luggageLists>div[data-v-20d425d2]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-20d425d2]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input_icon[data-v-20d425d2]{width: 100%;height: 50px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.input_icon>input[data-v-20d425d2]{width: 80%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.input_icon>div[data-v-20d425d2]{width: 80px;height: 45px;\n}\n.input_icon>div>img[data-v-20d425d2]{width:40px;height: 40px;float: right;\n}\n.input_icon>div>img[data-v-20d425d2]:hover{cursor: pointer;\n}\n.active[data-v-20d425d2]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-20d425d2]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-20d425d2]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-20d425d2]{width:50px;height: 50px;\n}\n.editBox[data-v-20d425d2]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-20d425d2]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-20d425d2]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-20d425d2]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_luggageLists[data-v-20d425d2]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_luggageLists>img[data-v-20d425d2]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-20d425d2]{width:50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 282 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -44393,20 +51792,257 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 283 */,
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "dataBank_input_form disflex",
+      staticStyle: { position: "relative" }
+    },
+    [
+      _c("div", { staticClass: "pane_content_luggage" }, [
+        _c(
+          "div",
+          { staticClass: "form_content_luggageLists disflex" },
+          _vm._l(_vm.luggageLists, function(luggageList, index) {
+            return _c("div", { staticClass: "form_item_luggageLists" }, [
+              _c("div", { staticClass: "item_title" }, [
+                _vm._v("清單" + _vm._s(index + 1))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input_icon disflex" }, [
+                _c("input", {
+                  attrs: { type: "text", disabled: "disabled" },
+                  domProps: { value: luggageList.rule_category_name }
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.$router.push(
+                          "/luggage/dataBankLuggageListInfo/" + luggageList.id
+                        )
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: "/etravel/public/images/See-next.png",
+                        alt: ""
+                      }
+                    })
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "editBtnGroup_luggageLists" }, [
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/rush-icon.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.delLuggageList(luggageList.id)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/edit-all.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.editLuggageListShow(index)
+                    }
+                  }
+                })
+              ])
+            ])
+          }),
+          0
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "dataBankAddBtn",
+          on: {
+            click: function($event) {
+              return _vm.addNewLuggageListShow()
+            }
+          }
+        },
+        [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewLuggageListShow,
+            callback: function($$v) {
+              _vm.isNewLuggageListShow = $$v
+            },
+            expression: "isNewLuggageListShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_luggageLists" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("行李清單(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newLuggageList.rule_category_name,
+                        expression: "newLuggageList.rule_category_name"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "請填寫清單内容", type: "text" },
+                    domProps: { value: _vm.newLuggageList.rule_category_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newLuggageList,
+                          "rule_category_name",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewLuggageList()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditLuggageListShow,
+            callback: function($$v) {
+              _vm.isEditLuggageListShow = $$v
+            },
+            expression: "isEditLuggageListShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_luggageLists" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("行李清單(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edLuggageList.rule_category_name,
+                        expression: "edLuggageList.rule_category_name"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "請填寫清單内容", type: "text" },
+                    domProps: { value: _vm.edLuggageList.rule_category_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edLuggageList,
+                          "rule_category_name",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editLuggageList()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-20d425d2", module.exports)
+  }
+}
+
+/***/ }),
 /* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(495)
+  __webpack_require__(285)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(287)
 /* template */
-var __vue_template__ = __webpack_require__(497)
+var __vue_template__ = __webpack_require__(288)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44445,8 +52081,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 285 */,
-/* 286 */,
+/* 285 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(286);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("2658b1b7", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5eb45765\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankLuggageListInfo.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5eb45765\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankLuggageListInfo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 286 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-5eb45765]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.dataBank_input_form>table[data-v-5eb45765]{margin-top: 20px;width: 90%;\n}\n.dataBank_input_form table th[data-v-5eb45765]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form table td[data-v-5eb45765]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;word-break: normal;\n}\n.dataBank_input_form thead[data-v-5eb45765]{background-color: #ffde01;\n}\n.dataBank_input_form td>input[data-v-5eb45765]{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item[data-v-5eb45765]{width: 100%;min-height:100px;\n}\n.form_item>div[data-v-5eb45765]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-5eb45765]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon[data-v-5eb45765]{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon[data-v-5eb45765]:hover{cursor: pointer;\n}\n.editIcon>img[data-v-5eb45765]{width:25px;height:25px;\n}\n.active[data-v-5eb45765]{font-size: 18px;\n}\n.form_item_luggageListInfo[data-v-5eb45765]{width: 100%;min-height:100px;\n}\n.form_item_luggageListInfo>div[data-v-5eb45765]{width: 100%;min-height: 45px;\n}\n.item_area[data-v-5eb45765]{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.editBox[data-v-5eb45765]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-5eb45765]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-5eb45765]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-5eb45765]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules[data-v-5eb45765]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img[data-v-5eb45765]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.right_title[data-v-5eb45765]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-5eb45765]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-5eb45765]{width:28px;height: 28px;\n}\n.van-dialog[data-v-5eb45765]{width:50%;\n}    \n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 287 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -44711,7 +52385,264 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 288 */,
+/* 288 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "right_title" }, [
+        _c(
+          "div",
+          {
+            staticClass: "title_icon",
+            on: {
+              click: function($event) {
+                return _vm.$router.push("/luggage/dataBankLuggageList")
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "overText", staticStyle: { margin: "0 40px" } },
+          [_vm._v(_vm._s(_vm.luggageList.rule_category_name))]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c("table", [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            [
+              _c("tr", [
+                _c("td", [_vm._v("編號")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("填寫裝備內容")]),
+                _vm._v(" "),
+                _c("td", { attrs: { width: "100px" } }, [
+                  _c("div", { staticClass: "editIcon" }, [
+                    _c("img", {
+                      attrs: { src: "/etravel/public/images/appointAdd.png" },
+                      on: {
+                        click: function($event) {
+                          return _vm.addLuggageListInfoShow()
+                        }
+                      }
+                    })
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.luggageListInfos, function(luggageListInfo, index) {
+                return _c("tr", [
+                  _c("td", [_vm._v(_vm._s(index + 1))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(luggageListInfo.rule))]),
+                  _vm._v(" "),
+                  _c("td", { attrs: { width: "100px" } }, [
+                    _c("div", { staticClass: "editIcon" }, [
+                      _c("img", {
+                        attrs: { src: "/etravel/public/images/edit.png" },
+                        on: {
+                          click: function($event) {
+                            return _vm.editLuggageListInfoShow(index)
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "editIcon" }, [
+                      _c("img", {
+                        attrs: { src: "/etravel/public/images/dele.png" },
+                        on: {
+                          click: function($event) {
+                            return _vm.delLuggageListInfo(luggageListInfo.id)
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ])
+              })
+            ],
+            2
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewLuggageListInfoShow,
+            callback: function($$v) {
+              _vm.isNewLuggageListInfoShow = $$v
+            },
+            expression: "isNewLuggageListInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_luggageListInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("裝備內容(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newLuggageListInfo.rule,
+                        expression: "newLuggageListInfo.rule"
+                      }
+                    ],
+                    staticClass: "item_area",
+                    attrs: { placeholder: "填寫裝備內容" },
+                    domProps: { value: _vm.newLuggageListInfo.rule },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newLuggageListInfo,
+                          "rule",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addLuggageListInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditLuggageListInfoShow,
+            callback: function($$v) {
+              _vm.isEditLuggageListInfoShow = $$v
+            },
+            expression: "isEditLuggageListInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_luggageListInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("裝備內容(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edLuggageListInfo.rule,
+                        expression: "edLuggageListInfo.rule"
+                      }
+                    ],
+                    staticClass: "item_area",
+                    attrs: { placeholder: "填寫裝備內容" },
+                    domProps: { value: _vm.edLuggageListInfo.rule },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edLuggageListInfo,
+                          "rule",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editLuggageListInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("編號")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("裝備內容")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("編輯")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-5eb45765", module.exports)
+  }
+}
+
+/***/ }),
 /* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44844,13 +52775,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(498)
+  __webpack_require__(295)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(297)
 /* template */
-var __vue_template__ = __webpack_require__(500)
+var __vue_template__ = __webpack_require__(298)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44889,8 +52820,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 295 */,
-/* 296 */,
+/* 295 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(296);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("14c9424a", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-568143e9\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankEvaluation.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-568143e9\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankEvaluation.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 296 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-568143e9]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_evaluation[data-v-568143e9]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_evaluations[data-v-568143e9]{width: 94%;min-height: 110px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_evaluations[data-v-568143e9]{width: 100%;min-height:100px;\n}\n.form_item_evaluations>div[data-v-568143e9]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-568143e9]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input_icon[data-v-568143e9]{width: 100%;height: 50px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.input_icon>input[data-v-568143e9]{width: 80%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.input_icon>div[data-v-568143e9]{width: 80px;height: 45px;\n}\n.input_icon>div>img[data-v-568143e9]{width:40px;height: 40px;float: right;\n}\n.input_icon>div>img[data-v-568143e9]:hover{cursor: pointer;\n}\n.active[data-v-568143e9]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-568143e9]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-568143e9]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-568143e9]{width:50px;height: 50px;\n}\n.editBox[data-v-568143e9]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-568143e9]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-568143e9]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-568143e9]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_evaluations[data-v-568143e9]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_evaluations>img[data-v-568143e9]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-568143e9]{width:50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 297 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -45125,20 +53094,255 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 298 */,
+/* 298 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "dataBank_input_form disflex",
+      staticStyle: { position: "relative" }
+    },
+    [
+      _c("div", { staticClass: "pane_content_evaluation" }, [
+        _c(
+          "div",
+          { staticClass: "form_content_evaluations disflex" },
+          _vm._l(_vm.evaluations, function(evaluation, index) {
+            return _c("div", { staticClass: "form_item_evaluations" }, [
+              _c("div", { staticClass: "item_title" }, [_vm._v("題目標題")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input_icon disflex" }, [
+                _c("input", {
+                  attrs: {
+                    placeholder: "請填寫題目標題",
+                    type: "text",
+                    disabled: "disabled"
+                  },
+                  domProps: { value: evaluation.title }
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.$router.push(
+                          "/topic/dataBankEvaluationInfo/" + evaluation.id
+                        )
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: "/etravel/public/images/See-next.png",
+                        alt: ""
+                      }
+                    })
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "editBtnGroup_evaluations" }, [
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/rush-icon.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.delEvaluation(evaluation.id)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/edit-all.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.editEvaluationShow(index)
+                    }
+                  }
+                })
+              ])
+            ])
+          }),
+          0
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "dataBankAddBtn",
+          on: {
+            click: function($event) {
+              return _vm.addNewEvaluationShow()
+            }
+          }
+        },
+        [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewEvaluationShow,
+            callback: function($$v) {
+              _vm.isNewEvaluationShow = $$v
+            },
+            expression: "isNewEvaluationShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_evaluations" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("題目標題(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newEvaluation.title,
+                        expression: "newEvaluation.title"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "請填寫題目標題", type: "text" },
+                    domProps: { value: _vm.newEvaluation.title },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newEvaluation,
+                          "title",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewEvaluation()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditevaluationShow,
+            callback: function($$v) {
+              _vm.isEditevaluationShow = $$v
+            },
+            expression: "isEditevaluationShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_evaluations" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("題目標題(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edEvaluation.title,
+                        expression: "edEvaluation.title"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "請填寫題目標題", type: "text" },
+                    domProps: { value: _vm.edEvaluation.title },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edEvaluation, "title", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editEvaluation()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-568143e9", module.exports)
+  }
+}
+
+/***/ }),
 /* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(471)
+  __webpack_require__(300)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(302)
 /* template */
-var __vue_template__ = __webpack_require__(473)
+var __vue_template__ = __webpack_require__(303)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -45177,8 +53381,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 300 */,
-/* 301 */,
+/* 300 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(301);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("4148e95c", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-372cdd52\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankEvaluationInfo.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-372cdd52\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankEvaluationInfo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 301 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-372cdd52]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_eval[data-v-372cdd52]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-372cdd52]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-372cdd52]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-372cdd52]{width:28px;height: 28px;\n}\n.form_content[data-v-372cdd52]{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_evaluationInfo[data-v-372cdd52]{width: 100%;min-height:50px;\n}\n.form_item_evaluationInfo>div[data-v-372cdd52]{width: 96%;min-height: 35px;\n}\n.item_area_eval[data-v-372cdd52]{width:100%;min-height:40px;border-radius: 8px;resize:none;line-height:38px;font-size: 14px;outline: none;overflow: hidden;padding: 0 10px;\n}\nselect[data-v-372cdd52]{width:100%;min-height:40px;border-radius: 8px;line-height:38px;font-size: 14px;outline: none;overflow: hidden;padding: 0 10px;\n}\noption[data-v-372cdd52]{ border:1px solid #CCC;border-radius: 8px;background: #fff;\n}\noption[data-v-372cdd52]:hover{background-color: #ffde01;\n}\n.active[data-v-372cdd52]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-372cdd52]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-372cdd52]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-372cdd52]{width:50px;height: 50px;\n}\n.editBox[data-v-372cdd52]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-372cdd52]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-372cdd52]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-372cdd52]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-372cdd52]{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-372cdd52]{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog[data-v-372cdd52]{width:50%;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 302 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -45452,20 +53694,364 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 303 */,
+/* 303 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "right_title" }, [
+        _c(
+          "div",
+          {
+            staticClass: "title_icon",
+            on: {
+              click: function($event) {
+                return _vm.$router.push("/topic/dataBankEvaluation")
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "overText", staticStyle: { margin: "0 40px" } },
+          [_vm._v(_vm._s(_vm.eval.title))]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c(
+          "div",
+          { staticClass: "pane_content_eval" },
+          _vm._l(_vm.evaluationInfos, function(evaluationInfo, index) {
+            return _c("div", { staticClass: "form_content disflex" }, [
+              _c("div", { staticClass: "form_item_evaluationInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v(
+                    "題目" +
+                      _vm._s(index + 1) +
+                      "\n                            "
+                  ),
+                  evaluationInfo.type == 1
+                    ? _c("span", { staticClass: "fr" }, [_vm._v("一個選項")])
+                    : evaluationInfo.type == 2
+                    ? _c("span", { staticClass: "fr" }, [_vm._v("兩個選項")])
+                    : evaluationInfo.type == 3
+                    ? _c("span", { staticClass: "fr" }, [_vm._v("五個選項")])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    staticClass: "item_area_eval",
+                    attrs: { placeholder: "題目詳情", disabled: "disabled" },
+                    domProps: { value: evaluationInfo.content }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "editBtnGroup" }, [
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/rush-icon.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.delEvaluationInfo(evaluationInfo.id)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/edit-all.png" },
+                  on: {
+                    click: function($event) {
+                      return _vm.editEvaluationInfoShow(index)
+                    }
+                  }
+                })
+              ])
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "dataBankAddBtn",
+            on: {
+              click: function($event) {
+                return _vm.addNewEvaluationInfoShow()
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isNewEvaluationInfoShow,
+            callback: function($$v) {
+              _vm.isNewEvaluationInfoShow = $$v
+            },
+            expression: "isNewEvaluationInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_evaluationInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("題目詳情(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newEvaluationInfo.content,
+                        expression: "newEvaluationInfo.content"
+                      }
+                    ],
+                    staticClass: "item_area_eval",
+                    attrs: { placeholder: "題目詳情" },
+                    domProps: { value: _vm.newEvaluationInfo.content },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newEvaluationInfo,
+                          "content",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_evaluationInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("題目類型(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.newEvaluationInfo.type,
+                          expression: "newEvaluationInfo.type"
+                        }
+                      ],
+                      attrs: { id: "edTypeId" },
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            _vm.newEvaluationInfo,
+                            "type",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        }
+                      }
+                    },
+                    _vm._l(_vm.optList, function(item) {
+                      return _c("option", { domProps: { value: item.value } }, [
+                        _vm._v(_vm._s(item.title))
+                      ])
+                    }),
+                    0
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addNewEvaluationInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditEvaluationInfoShow,
+            callback: function($$v) {
+              _vm.isEditEvaluationInfoShow = $$v
+            },
+            expression: "isEditEvaluationInfoShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_evaluationInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("題目詳情(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edEvaluationInfo.content,
+                        expression: "edEvaluationInfo.content"
+                      }
+                    ],
+                    staticClass: "item_area_eval",
+                    attrs: { placeholder: "題目詳情" },
+                    domProps: { value: _vm.edEvaluationInfo.content },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edEvaluationInfo,
+                          "content",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_item_evaluationInfo" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("題目類型(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.edEvaluationInfo.type,
+                          expression: "edEvaluationInfo.type"
+                        }
+                      ],
+                      attrs: { id: "edTypeId" },
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            _vm.edEvaluationInfo,
+                            "type",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        }
+                      }
+                    },
+                    _vm._l(_vm.optList, function(item) {
+                      return _c("option", { domProps: { value: item.value } }, [
+                        _vm._v(_vm._s(item.title))
+                      ])
+                    }),
+                    0
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editEvaluationInfo()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-372cdd52", module.exports)
+  }
+}
+
+/***/ }),
 /* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(486)
+  __webpack_require__(305)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(307)
 /* template */
-var __vue_template__ = __webpack_require__(488)
+var __vue_template__ = __webpack_require__(308)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -45504,8 +54090,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 305 */,
-/* 306 */,
+/* 305 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(306);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("24811419", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7ec610de\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankSelfPerception.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7ec610de\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankSelfPerception.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 306 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-7ec610de]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_feel[data-v-7ec610de]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-7ec610de]{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.form_content_feel[data-v-7ec610de]{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_feel[data-v-7ec610de]{width: 100%;min-height:100px;\n}\n.form_item_feel>div[data-v-7ec610de]{width: 96%;min-height: 45px;\n}\n.item_area[data-v-7ec610de]{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.item_input[data-v-7ec610de]{height:40px;padding-left:10px;outline: none;width:97%;border-radius: 8px;\n}\n.active[data-v-7ec610de]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-7ec610de]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-7ec610de]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-7ec610de]{width:50px;height: 50px;\n}\n.editBox[data-v-7ec610de]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-7ec610de]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-7ec610de]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-7ec610de]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-7ec610de]{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-7ec610de]{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog[data-v-7ec610de]{width:50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 307 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -45747,7 +54371,229 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 308 */,
+/* 308 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { width: "100%" } },
+    [
+      _c("div", { staticClass: "right_title" }, [
+        _vm._v("\n        自我感想\n    ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dataBank_input_form disflex" }, [
+        _c(
+          "div",
+          { staticClass: "pane_content_feel" },
+          [
+            _vm._l(_vm.feels, function(feel, index) {
+              return _c("div", { staticClass: "form_content_feel disflex" }, [
+                _c("div", { staticClass: "form_item_feel" }, [
+                  _c("div", { staticClass: "item_title" }, [
+                    _vm._v("感想標題" + _vm._s(index + 1))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      staticClass: "item_input",
+                      attrs: {
+                        placeholder: "感想標題",
+                        type: "text",
+                        disabled: "disabled"
+                      },
+                      domProps: { value: feel.title }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "editBtnGroup" }, [
+                  _c("img", {
+                    attrs: { src: "/etravel/public/images/rush-icon.png" },
+                    on: {
+                      click: function($event) {
+                        return _vm.delFeel(feel.id)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    attrs: { src: "/etravel/public/images/edit-all.png" },
+                    on: {
+                      click: function($event) {
+                        return _vm.editFeelShow(index)
+                      }
+                    }
+                  })
+                ])
+              ])
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "dataBankAddBtn",
+                on: {
+                  click: function($event) {
+                    return _vm.addFeelShow()
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  attrs: { src: "/etravel/public/images/add_y.png" }
+                })
+              ]
+            )
+          ],
+          2
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isAddFeelShow,
+            callback: function($$v) {
+              _vm.isAddFeelShow = $$v
+            },
+            expression: "isAddFeelShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_feel" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("感想標題(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newFeel.title,
+                        expression: "newFeel.title"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "感想標題", type: "text" },
+                    domProps: { value: _vm.newFeel.title },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.newFeel, "title", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.addFeel()
+                      }
+                    }
+                  },
+                  [_vm._v("添加")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "van-popup",
+        {
+          attrs: { overlay: true },
+          model: {
+            value: _vm.isEditFeelShow,
+            callback: function($$v) {
+              _vm.isEditFeelShow = $$v
+            },
+            expression: "isEditFeelShow"
+          }
+        },
+        [
+          _c("div", { staticClass: "editBox" }, [
+            _c("div", { staticClass: "editBoxContent disflex" }, [
+              _c("div", { staticClass: "form_item_feel" }, [
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v("感想標題(必填)")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edFeel.title,
+                        expression: "edFeel.title"
+                      }
+                    ],
+                    staticClass: "item_input",
+                    attrs: { placeholder: "感想標題", type: "text" },
+                    domProps: { value: _vm.edFeel.title },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edFeel, "title", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "issure" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.editFeel()
+                      }
+                    }
+                  },
+                  [_vm._v("修改")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-7ec610de", module.exports)
+  }
+}
+
+/***/ }),
 /* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -45880,13 +54726,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(474)
+  __webpack_require__(315)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(317)
 /* template */
-var __vue_template__ = __webpack_require__(476)
+var __vue_template__ = __webpack_require__(318)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -45925,8 +54771,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 315 */,
-/* 316 */,
+/* 315 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(316);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("3372f68f", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4b0dc36e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankAnswerList.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4b0dc36e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankAnswerList.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 316 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_answer[data-v-4b0dc36e]{width: 100%;min-height:650px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column; font-size: 16px;\n}\n.dataBank_input_answer>table[data-v-4b0dc36e]{width: 90%;\n}\n.dataBank_input_answer table th[data-v-4b0dc36e]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_answer table td[data-v-4b0dc36e]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_answer td>input[data-v-4b0dc36e]{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item_group[data-v-4b0dc36e]{width: 100%;min-height:100px;\n}\n.form_item_group>div[data-v-4b0dc36e]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-4b0dc36e]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon[data-v-4b0dc36e]{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon[data-v-4b0dc36e]:hover{cursor: pointer;\n}\n.editIcon>img[data-v-4b0dc36e]{width:25px;height:25px;\n}\n.active[data-v-4b0dc36e]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-4b0dc36e]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-4b0dc36e]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-4b0dc36e]{width:50px;height: 50px;\n}\n.editBox[data-v-4b0dc36e]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-4b0dc36e]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-4b0dc36e]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-4b0dc36e]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules[data-v-4b0dc36e]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img[data-v-4b0dc36e]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.listTitle[data-v-4b0dc36e]{width:90%;height:45px;line-height:45px;text-align:center;background-color:#ffde01;font-size:18px;margin-top:20px;border-radius-top-left: 15px;border-radius-top-right: 15px;\n}\n.van-dialog[data-v-4b0dc36e]{width:50%;\n}    \n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 317 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -46031,20 +54915,105 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 318 */,
+/* 318 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticStyle: { width: "100%" } }, [
+    _c("div", { staticClass: "dataBank_input_answer disflex" }, [
+      _c("div", { staticClass: "listTitle" }, [_vm._v("學生名單")]),
+      _vm._v(" "),
+      _c("table", [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.groups, function(group, index) {
+            return _c("tr", [
+              _c("td", [_vm._v(_vm._s(group.group))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(group.student_number))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(group.class))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(group.user.name))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(group.user.en_name))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(group.duty))]),
+              _vm._v(" "),
+              _c(
+                "td",
+                {
+                  staticClass: "cursorPoint",
+                  on: {
+                    click: function($event) {
+                      return _vm.$router.push(
+                        "/answer/dataBankAnswerInfo/" + group.user_id
+                      )
+                    }
+                  }
+                },
+                [_vm._v("查看答題紙>")]
+              )
+            ])
+          }),
+          0
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("分組")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("學生學號")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("學生班級")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("中文名")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("英文名")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("學生職責")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("查看答題紙")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-4b0dc36e", module.exports)
+  }
+}
+
+/***/ }),
 /* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(477)
+  __webpack_require__(320)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(322)
 /* template */
-var __vue_template__ = __webpack_require__(479)
+var __vue_template__ = __webpack_require__(323)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -46083,8 +55052,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 320 */,
-/* 321 */,
+/* 320 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(321);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("0808dcda", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d6416b4e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankAnswerInfo.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d6416b4e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankAnswerInfo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 321 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dataBank_input_form[data-v-d6416b4e]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist[data-v-d6416b4e]{width:100%;\n}\n.nav-tabs>li>a[data-v-d6416b4e]{color: #000;\n}\n.active[data-v-d6416b4e]{font-size: 18px;\n}\n.tab-pane[data-v-d6416b4e]{\n}\n.pane-answer[data-v-d6416b4e]{width:70%;margin-left: 15%;\n}\n.back_icon[data-v-d6416b4e]{width:45px;height:45px;line-height: 45px;\n}\n.back_icon>img[data-v-d6416b4e]{width:28px;height: 28px;\n}\n.sheetGroup[data-v-d6416b4e]{width:100%;height:auto;margin:20px 0;border:2px solid #eee;\n}\n.sheetGroup>div[data-v-d6416b4e]{width:100%;text-indent: 1em;\n}\n.sheetTitle[data-v-d6416b4e]{min-height:45px;line-height: 45px;font-size: 18px;font-weight: bold;text-align: center;\n}\n.sheetContent[data-v-d6416b4e]{min-height:50px;\n}\n.sheetQuestion[data-v-d6416b4e]{height:auto;\n}\n.questTitle[data-v-d6416b4e]{width:100%;min-height:45px;line-height: 45px;font-size: 16px;font-weight: bold;\n}\n.questContent[data-v-d6416b4e]{width:100%;font-size: 14px;min-height:50px;line-height: 25px;word-break: break-all;\n}\n.feelTitle[data-v-d6416b4e]{font-size: 16px;font-weight: bold;min-height:45px;line-height: 45px;\n}\n.feelImg[data-v-d6416b4e]{height:auto;text-align: center;\n}\n.feelImg>img[data-v-d6416b4e]{width:70%;border:5px solid #fff;\n}\n.feelContent[data-v-d6416b4e]{min-height:50px;font-size: 14px;line-height: 25px;word-break: break-all;\n}\n.evaluationGroup[data-v-d6416b4e]{width:100%;height:auto;margin:20px 0;border:2px solid #eee;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationTitle[data-v-d6416b4e]{width:100%;height:45px;font-size: 18px;line-height: 45px;background-color: #ffde01;font-weight:bold;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationQuestions[data-v-d6416b4e]{min-height: 90px;\n}\n.evaluationQuestionTitle[data-v-d6416b4e]{width:100%;min-height: 45px;line-height:45px;background-color: #eee;font-size: 16px;\n}\n.evaluationQuestionContent[data-v-d6416b4e]{width:100%;height:45px;line-height: 45px;\n}\n.menuIcon[data-v-d6416b4e]{width:80px;height:45px;float: left;line-height: 45px;margin-left: 10px;\n}\n.menuIcon>img[data-v-d6416b4e]{width:20px;height:20px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 322 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -46360,7 +55367,488 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 323 */,
+/* 323 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticStyle: { width: "100%" } }, [
+    _c("div", { staticClass: "dataBank_input_form disflex" }, [
+      _c("div", { staticClass: "tablist" }, [
+        _c("ul", { staticClass: "nav nav-tabs", attrs: { role: "tablist" } }, [
+          _c(
+            "li",
+            {
+              staticStyle: { width: "50px", height: "45px" },
+              attrs: { role: "presentation" }
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "back_icon",
+                  on: {
+                    click: function($event) {
+                      return _vm.$router.push("/answer/dataBankAnswerList")
+                    }
+                  }
+                },
+                [
+                  _c("img", {
+                    attrs: { src: "/etravel/public/images/back.png" }
+                  })
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._m(2)
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "tab-content" }, [
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane pane-answer active",
+              attrs: { role: "tabpanel", id: "gather" }
+            },
+            _vm._l(_vm.sheetInfos, function(sheetInfo, index) {
+              return _c(
+                "div",
+                { staticClass: "sheetGroup" },
+                [
+                  _c("div", {
+                    staticClass: "sheetTitle",
+                    domProps: { textContent: _vm._s(sheetInfo.title) }
+                  }),
+                  _vm._v(" "),
+                  sheetInfo.questions.data
+                    ? _vm._l(sheetInfo.questions.data, function(
+                        question,
+                        index
+                      ) {
+                        return _c(
+                          "div",
+                          { staticClass: "sheetQuestion" },
+                          [
+                            _c("div", { staticClass: "questTitle" }, [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(index + 1) +
+                                  "." +
+                                  _vm._s(question.content) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            question.answer
+                              ? [
+                                  _c("div", { staticClass: "questContent" }, [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(question.answer.content) +
+                                        "\n                                    "
+                                    )
+                                  ])
+                                ]
+                              : [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "questContent",
+                                      staticStyle: { color: "red" }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                        暫無回答\n                                    "
+                                      )
+                                    ]
+                                  )
+                                ]
+                          ],
+                          2
+                        )
+                      })
+                    : [
+                        _c("div", { staticClass: "sheetQuestion" }, [
+                          _vm._v(
+                            "\n                                未設定問題\n                            "
+                          )
+                        ])
+                      ]
+                ],
+                2
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane pane-answer",
+              attrs: { role: "tabpanel", id: "flight" }
+            },
+            _vm._l(_vm.evaluations, function(evaluation, index) {
+              return _c(
+                "div",
+                { staticClass: "sheetGroup" },
+                [
+                  _c("div", { staticClass: "evaluationTitle" }, [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(evaluation.title) +
+                        "\n                        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  evaluation.evaluations.data[0]
+                    ? _vm._l(evaluation.evaluations.data, function(
+                        question,
+                        index
+                      ) {
+                        return _c(
+                          "div",
+                          { staticClass: "evaluationQuestions" },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "evaluationQuestionTitle" },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(index + 1) +
+                                    "." +
+                                    _vm._s(question.content) +
+                                    "\n                                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            question.type == 1
+                              ? _c(
+                                  "div",
+                                  { staticClass: "evaluationQuestionContent" },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "menuIcon" },
+                                      [
+                                        question.answer.option == 1
+                                          ? [
+                                              _c("img", {
+                                                attrs: {
+                                                  src:
+                                                    "/etravel/public/images/Options_sele.png"
+                                                }
+                                              })
+                                            ]
+                                          : [
+                                              _c("img", {
+                                                attrs: {
+                                                  src:
+                                                    "/etravel/public/images/Options.png"
+                                                }
+                                              })
+                                            ]
+                                      ],
+                                      2
+                                    )
+                                  ]
+                                )
+                              : question.type == 2
+                              ? _c(
+                                  "div",
+                                  { staticClass: "evaluationQuestionContent" },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "evaluationQuestionContent"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "menuIcon" },
+                                          [
+                                            question.answer.option == 1
+                                              ? [
+                                                  _c("img", {
+                                                    attrs: {
+                                                      src:
+                                                        "/etravel/public/images/Options_sele.png"
+                                                    }
+                                                  }),
+                                                  _vm._v(
+                                                    "YES     \n                                            "
+                                                  )
+                                                ]
+                                              : [
+                                                  _c("img", {
+                                                    attrs: {
+                                                      src:
+                                                        "/etravel/public/images/Options.png"
+                                                    }
+                                                  }),
+                                                  _vm._v(
+                                                    "YES\n                                            "
+                                                  )
+                                                ]
+                                          ],
+                                          2
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "menuIcon" },
+                                          [
+                                            question.answer.option == 2
+                                              ? [
+                                                  _c("img", {
+                                                    attrs: {
+                                                      src:
+                                                        "/etravel/public/images/Options_sele.png"
+                                                    }
+                                                  }),
+                                                  _vm._v(
+                                                    "NO       \n                                            "
+                                                  )
+                                                ]
+                                              : [
+                                                  _c("img", {
+                                                    attrs: {
+                                                      src:
+                                                        "/etravel/public/images/Options.png"
+                                                    }
+                                                  }),
+                                                  _vm._v(
+                                                    "NO\n                                            "
+                                                  )
+                                                ]
+                                          ],
+                                          2
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              : question.type == 3
+                              ? _c(
+                                  "div",
+                                  { staticClass: "evaluationQuestionContent" },
+                                  _vm._l(_vm.type3, function(typeLink, index) {
+                                    return _c(
+                                      "div",
+                                      { staticClass: "menuIcon" },
+                                      [
+                                        question.answer.option == index + 1
+                                          ? [
+                                              _c("img", {
+                                                attrs: {
+                                                  src:
+                                                    "/etravel/public/images/Options_sele.png"
+                                                }
+                                              })
+                                            ]
+                                          : [
+                                              _c("img", {
+                                                attrs: { src: typeLink }
+                                              })
+                                            ]
+                                      ],
+                                      2
+                                    )
+                                  }),
+                                  0
+                                )
+                              : _vm._e()
+                          ]
+                        )
+                      })
+                    : [_vm._m(3, true)]
+                ],
+                2
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane pane-answer",
+              attrs: { role: "tabpanel", id: "accommodationInfo" }
+            },
+            _vm._l(_vm.perceptions, function(perception, index) {
+              return _c(
+                "div",
+                { staticClass: "sheetGroup" },
+                [
+                  _c("div", { staticClass: "feelTitle" }, [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(index + 1) +
+                        "." +
+                        _vm._s(perception.title) +
+                        "\n                        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  perception.writes.data[0]
+                    ? [
+                        perception.writes.data[0].image
+                          ? _c("div", { staticClass: "feelImg" }, [
+                              _c("img", {
+                                attrs: { src: perception.writes.data[0].image }
+                              })
+                            ])
+                          : _c("div", { staticClass: "feelImg" }, [
+                              _c("h4", [_vm._v("未上傳圖片")])
+                            ]),
+                        _vm._v(" "),
+                        perception.writes.data[0].content
+                          ? _c("div", { staticClass: "feelContent" }, [
+                              _vm._v(
+                                "\n                                " +
+                                  _vm._s(perception.writes.data[0].content) +
+                                  "\n                            "
+                              )
+                            ])
+                          : _c(
+                              "div",
+                              {
+                                staticClass: "feelContent",
+                                staticStyle: { color: "red" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                暫無回答\n                            "
+                                )
+                              ]
+                            )
+                      ]
+                    : [
+                        _vm._m(4, true),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "feelContent",
+                            staticStyle: { color: "red" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                暫無回答\n                            "
+                            )
+                          ]
+                        )
+                      ]
+                ],
+                2
+              )
+            }),
+            0
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      { staticClass: "active", attrs: { role: "presentation" } },
+      [
+        _c(
+          "a",
+          {
+            attrs: {
+              href: "#gather",
+              "aria-controls": "gather",
+              role: "tab",
+              "data-toggle": "tab"
+            }
+          },
+          [_vm._v("學習工作紙")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { attrs: { role: "presentation" } }, [
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "#flight",
+            "aria-controls": "flight",
+            role: "tab",
+            "data-toggle": "tab"
+          }
+        },
+        [_vm._v("自我評估")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { attrs: { role: "presentation" } }, [
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "#accommodationInfo",
+            "aria-controls": "accommodationInfo",
+            role: "tab",
+            "data-toggle": "tab"
+          }
+        },
+        [_vm._v("自我感想")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "evaluationQuestions" }, [
+      _c("h4", [_vm._v("暫無題目")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "feelImg" }, [
+      _c("h4", [_vm._v("未上傳圖片")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-d6416b4e", module.exports)
+  }
+}
+
+/***/ }),
 /* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -47816,8 +57304,8 @@ module.exports = function spread(callback) {
 
 
 // const baseUrl='http://www.bunchparty.com/etravel/public';//线上地址
-// const baseUrl='http://app.study2go.net/etravel/public';//study2go线上地址
-var baseUrl = '';
+var baseUrl = 'http://app.study2go.net/etravel/public'; //study2go线上地址
+// const baseUrl='';
 /* harmony default export */ __webpack_exports__["a"] = (baseUrl);
 
 /***/ }),
@@ -47871,7 +57359,7 @@ var baseUrl = '';
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__panel__ = __webpack_require__(395);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__password_input__ = __webpack_require__(396);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__picker__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__popup__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__popup__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__progress__ = __webpack_require__(397);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pull_refresh__ = __webpack_require__(398);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__radio__ = __webpack_require__(38);
@@ -48079,7 +57567,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_popup__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__icon__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__loading__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__popup__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__popup__ = __webpack_require__(23);
 
 
 
@@ -48599,7 +58087,7 @@ function isSrc(url) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_validate_mobile__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__area__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__field__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__popup__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__popup__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__toast__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__button__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__dialog__ = __webpack_require__(36);
@@ -51440,7 +60928,7 @@ GoodsAction.props = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__button__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_functional__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_router__ = __webpack_require__(24);
 
 
 
@@ -51492,7 +60980,7 @@ GoodsActionBigBtn.props = Object(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_help
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__icon__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_functional__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_router__ = __webpack_require__(24);
 
 
 
@@ -52293,7 +61781,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.prototype.$notify = Notify;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_color__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_functional__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_popup__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__popup__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__popup__ = __webpack_require__(23);
 
 
 
@@ -53515,7 +63003,7 @@ __WEBPACK_IMPORTED_MODULE_0__Sku__["a" /* default */].skuConstants = __WEBPACK_I
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_extends__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__popup__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__popup__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__toast__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__image_preview__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_SkuHeader__ = __webpack_require__(69);
@@ -54747,7 +64235,7 @@ var _use = Object(__WEBPACK_IMPORTED_MODULE_0__utils__["k" /* use */])('tabbar')
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icon__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__info__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_router__ = __webpack_require__(24);
 
 
 
@@ -85464,9682 +94952,6 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 423 */,
-/* 424 */,
-/* 425 */,
-/* 426 */,
-/* 427 */,
-/* 428 */,
-/* 429 */,
-/* 430 */,
-/* 431 */,
-/* 432 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(433);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("632f0403", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-03a9c788\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankRulesInfo.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-03a9c788\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankRulesInfo.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 433 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-03a9c788]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content[data-v-03a9c788]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-03a9c788]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-03a9c788]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-03a9c788]{width:28px;height: 28px;\n}\n.form_content[data-v-03a9c788]{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_ruleInfo[data-v-03a9c788]{width: 100%;min-height:100px;\n}\n.form_item_ruleInfo>div[data-v-03a9c788]{width: 96%;min-height: 45px;\n}\n.item_area[data-v-03a9c788]{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active[data-v-03a9c788]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-03a9c788]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-03a9c788]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-03a9c788]{width:50px;height: 50px;\n}\n.editBox[data-v-03a9c788]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-03a9c788]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-03a9c788]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-03a9c788]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-03a9c788]{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-03a9c788]{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog[data-v-03a9c788]{width:50%;\n}\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 434 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "right_title" }, [
-        _c(
-          "div",
-          {
-            staticClass: "title_icon",
-            on: {
-              click: function($event) {
-                return _vm.$router.push("/rule/dataBankRules")
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
-        ),
-        _vm._v(
-          "\n            " + _vm._s(_vm.rule.rule_category_name) + "\n        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c(
-          "div",
-          { staticClass: "pane_content" },
-          _vm._l(_vm.ruleInfos, function(ruleInfo, index) {
-            return _c("div", { staticClass: "form_content disflex" }, [
-              _c("div", { staticClass: "form_item_ruleInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("準則詳情" + _vm._s(index + 1))
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    staticClass: "item_area",
-                    attrs: { placeholder: "準則詳情", disabled: "disabled" },
-                    domProps: { value: ruleInfo.rule }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editBtnGroup" }, [
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/rush-icon.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.delRuleInfo(ruleInfo.id)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/edit-all.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.editRuleInfoShow(index)
-                    }
-                  }
-                })
-              ])
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "dataBankAddBtn",
-            on: {
-              click: function($event) {
-                return _vm.addNewRuleInfoShow()
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewRuleInfoShow,
-            callback: function($$v) {
-              _vm.isNewRuleInfoShow = $$v
-            },
-            expression: "isNewRuleInfoShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_ruleInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("準則詳情(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newRuleInfo.rule,
-                        expression: "newRuleInfo.rule"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "準則詳情" },
-                    domProps: { value: _vm.newRuleInfo.rule },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newRuleInfo, "rule", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewRuleInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditRuleInfoShow,
-            callback: function($$v) {
-              _vm.isEditRuleInfoShow = $$v
-            },
-            expression: "isEditRuleInfoShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_ruleInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("準則詳情(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edRuleInfo.rule,
-                        expression: "edRuleInfo.rule"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "準則詳情" },
-                    domProps: { value: _vm.edRuleInfo.rule },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edRuleInfo, "rule", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editRuleInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-03a9c788", module.exports)
-  }
-}
-
-/***/ }),
-/* 435 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(436);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("f1ef7cd0", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66b6e6ba\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankRules.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66b6e6ba\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankRules.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 436 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-66b6e6ba]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_rule[data-v-66b6e6ba]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_rules[data-v-66b6e6ba]{width: 94%;min-height: 110px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_rules[data-v-66b6e6ba]{width: 100%;min-height:100px;\n}\n.form_item_rules>div[data-v-66b6e6ba]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-66b6e6ba]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input_icon[data-v-66b6e6ba]{width: 100%;height: 50px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.input_icon>input[data-v-66b6e6ba]{width: 80%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.input_icon>div[data-v-66b6e6ba]{width: 80px;height: 45px;\n}\n.input_icon>div>img[data-v-66b6e6ba]{width:40px;height: 40px;float: right;\n}\n.input_icon>div>img[data-v-66b6e6ba]:hover{cursor: pointer;\n}\n.active[data-v-66b6e6ba]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-66b6e6ba]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-66b6e6ba]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-66b6e6ba]{width:50px;height: 50px;\n}\n.editBox[data-v-66b6e6ba]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-66b6e6ba]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-66b6e6ba]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-66b6e6ba]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules[data-v-66b6e6ba]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img[data-v-66b6e6ba]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-66b6e6ba]{width:50%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 437 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "dataBank_input_form disflex",
-      staticStyle: { position: "relative" }
-    },
-    [
-      _c("div", { staticClass: "pane_content_rule" }, [
-        _c(
-          "div",
-          { staticClass: "form_content_rules disflex" },
-          _vm._l(_vm.ruless, function(rule, index) {
-            return _c("div", { staticClass: "form_item_rules" }, [
-              _c("div", { staticClass: "item_title" }, [
-                _vm._v("準則" + _vm._s(index + 1))
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "input_icon disflex" }, [
-                _c("input", {
-                  attrs: {
-                    placeholder: "準則",
-                    type: "text",
-                    disabled: "disabled"
-                  },
-                  domProps: { value: rule.rule_category_name }
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.$router.push(
-                          "/rule/dataBankRulesInfo/" + rule.id
-                        )
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      attrs: {
-                        src: "/etravel/public/images/See-next.png",
-                        alt: ""
-                      }
-                    })
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editBtnGroup_rules" }, [
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/rush-icon.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.delRule(rule.id)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/edit-all.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.editRuleShow(index)
-                    }
-                  }
-                })
-              ])
-            ])
-          }),
-          0
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "dataBankAddBtn",
-          on: {
-            click: function($event) {
-              return _vm.addNewRuleShow()
-            }
-          }
-        },
-        [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewRuleShow,
-            callback: function($$v) {
-              _vm.isNewRuleShow = $$v
-            },
-            expression: "isNewRuleShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_rules" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("準則(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newRule.rule_category_name,
-                        expression: "newRule.rule_category_name"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "準則", type: "text" },
-                    domProps: { value: _vm.newRule.rule_category_name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newRule,
-                          "rule_category_name",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewRule()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditRuleShow,
-            callback: function($$v) {
-              _vm.isEditRuleShow = $$v
-            },
-            expression: "isEditRuleShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_rules" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("準則(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edRule.rule_category_name,
-                        expression: "edRule.rule_category_name"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "準則", type: "text" },
-                    domProps: { value: _vm.edRule.rule_category_name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edRule,
-                          "rule_category_name",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editRule()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-66b6e6ba", module.exports)
-  }
-}
-
-/***/ }),
-/* 438 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(439);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("2d56049c", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-75328276\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankPromises.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-75328276\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankPromises.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 439 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-75328276]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_rule[data-v-75328276]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_rules[data-v-75328276]{width: 94%;min-height: 110px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_rules[data-v-75328276]{width: 100%;min-height:100px;\n}\n.form_item_rules>div[data-v-75328276]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-75328276]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input_icon[data-v-75328276]{width: 100%;height: 50px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.input_icon>input[data-v-75328276]{width: 80%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.input_icon>div[data-v-75328276]{width: 80px;height: 45px;\n}\n.input_icon>div>img[data-v-75328276]{width:40px;height: 40px;float: right;\n}\n.input_icon>div>img[data-v-75328276]:hover{cursor: pointer;\n}\n.active[data-v-75328276]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-75328276]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-75328276]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-75328276]{width:50px;height: 50px;\n}\n.editBox[data-v-75328276]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-75328276]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-75328276]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-75328276]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules[data-v-75328276]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img[data-v-75328276]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-75328276]{width:50%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 440 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "dataBank_input_form disflex",
-      staticStyle: { position: "relative" }
-    },
-    [
-      _c("div", { staticClass: "pane_content_rule" }, [
-        _c(
-          "div",
-          { staticClass: "form_content_rules disflex" },
-          _vm._l(_vm.ruless, function(rule, index) {
-            return _c("div", { staticClass: "form_item_rules" }, [
-              _c("div", { staticClass: "item_title" }, [
-                _vm._v("承諾標題" + _vm._s(index + 1))
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "input_icon disflex" }, [
-                _c("input", {
-                  attrs: {
-                    placeholder: "承諾標題",
-                    type: "text",
-                    disabled: "disabled"
-                  },
-                  domProps: { value: rule.rule_category_name }
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.$router.push(
-                          "/promise/dataBankPromisesInfo/" + rule.id
-                        )
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      attrs: {
-                        src: "/etravel/public/images/See-next.png",
-                        alt: ""
-                      }
-                    })
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editBtnGroup_rules" }, [
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/rush-icon.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.delRule(rule.id)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/edit-all.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.editRuleShow(index)
-                    }
-                  }
-                })
-              ])
-            ])
-          }),
-          0
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "dataBankAddBtn",
-          on: {
-            click: function($event) {
-              return _vm.addNewRuleShow()
-            }
-          }
-        },
-        [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewRuleShow,
-            callback: function($$v) {
-              _vm.isNewRuleShow = $$v
-            },
-            expression: "isNewRuleShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_rules" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("承諾標題(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newRule.rule_category_name,
-                        expression: "newRule.rule_category_name"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "承諾標題", type: "text" },
-                    domProps: { value: _vm.newRule.rule_category_name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newRule,
-                          "rule_category_name",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewRule()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditRuleShow,
-            callback: function($$v) {
-              _vm.isEditRuleShow = $$v
-            },
-            expression: "isEditRuleShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_rules" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("承諾標題(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edRule.rule_category_name,
-                        expression: "edRule.rule_category_name"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "承諾標題", type: "text" },
-                    domProps: { value: _vm.edRule.rule_category_name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edRule,
-                          "rule_category_name",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editRule()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-75328276", module.exports)
-  }
-}
-
-/***/ }),
-/* 441 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(442);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("70e23d5b", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5748a213\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankPromisesInfo.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5748a213\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankPromisesInfo.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 442 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-5748a213]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content[data-v-5748a213]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-5748a213]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-5748a213]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-5748a213]{width:28px;height: 28px;\n}\n.form_content[data-v-5748a213]{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_ruleInfo[data-v-5748a213]{width: 100%;min-height:100px;\n}\n.form_item_ruleInfo>div[data-v-5748a213]{width: 96%;min-height: 45px;\n}\n.item_area[data-v-5748a213]{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active[data-v-5748a213]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-5748a213]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-5748a213]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-5748a213]{width:50px;height: 50px;\n}\n.editBox[data-v-5748a213]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-5748a213]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-5748a213]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-5748a213]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-5748a213]{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-5748a213]{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog[data-v-5748a213]{width:50%;\n}\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 443 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "right_title" }, [
-        _c(
-          "div",
-          {
-            staticClass: "title_icon",
-            on: {
-              click: function($event) {
-                return _vm.$router.push("/promise/dataBankPromises")
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
-        ),
-        _vm._v(
-          "\n            " + _vm._s(_vm.rule.rule_category_name) + "\n        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c(
-          "div",
-          { staticClass: "pane_content" },
-          _vm._l(_vm.ruleInfos, function(ruleInfo, index) {
-            return _c("div", { staticClass: "form_content disflex" }, [
-              _c("div", { staticClass: "form_item_ruleInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("承諾詳情" + _vm._s(index + 1))
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    staticClass: "item_area",
-                    attrs: { placeholder: "承諾詳情", disabled: "disabled" },
-                    domProps: { value: ruleInfo.rule }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editBtnGroup" }, [
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/rush-icon.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.delRuleInfo(ruleInfo.id)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/edit-all.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.editRuleInfoShow(index)
-                    }
-                  }
-                })
-              ])
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "dataBankAddBtn",
-            on: {
-              click: function($event) {
-                return _vm.addNewRuleInfoShow()
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewRuleInfoShow,
-            callback: function($$v) {
-              _vm.isNewRuleInfoShow = $$v
-            },
-            expression: "isNewRuleInfoShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_ruleInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("承諾詳情(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newRuleInfo.rule,
-                        expression: "newRuleInfo.rule"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "承諾詳情" },
-                    domProps: { value: _vm.newRuleInfo.rule },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newRuleInfo, "rule", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewRuleInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditRuleInfoShow,
-            callback: function($$v) {
-              _vm.isEditRuleInfoShow = $$v
-            },
-            expression: "isEditRuleInfoShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_ruleInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("承諾詳情(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edRuleInfo.rule,
-                        expression: "edRuleInfo.rule"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "承諾詳情" },
-                    domProps: { value: _vm.edRuleInfo.rule },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edRuleInfo, "rule", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editRuleInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-5748a213", module.exports)
-  }
-}
-
-/***/ }),
-/* 444 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(445);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("cd703076", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-794f40ed\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBank.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-794f40ed\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBank.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 445 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.main[data-v-794f40ed]{-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.content[data-v-794f40ed]{width: 90%;min-height: 700px;border-radius: 20px;-webkit-box-shadow: 0 0 15px #ccc;box-shadow: 0 0 15px #ccc;background-color: #fff;\n}\n.dataBank[data-v-794f40ed]{width: 100%;min-height: 700px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;background-color: #fff;\n}\n.dataBankList[data-v-794f40ed]{width: 100%;height: 100%;-ms-flex-line-pack: start;align-content: flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;\n}\n.dataBank_left[data-v-794f40ed]{width: 18%;min-height:100%;border-right: 3px solid #d6d6d6;\n}\n.dataBank_left>ul[data-v-794f40ed]{width: 100%;height: auto;\n}\n.dataBank_left>ul>li[data-v-794f40ed]{width: 100%;height:50px;line-height: 50px;font-size: 16px;\n}\n.dataBank_left>ul>li>div[data-v-794f40ed]{width: 90%;height:50px;line-height: 50px;margin-left: 5%;\n}\n.dataBank_right[data-v-794f40ed]{width: 82%;min-height:100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 446 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "main disflex",
-      staticStyle: {
-        "background-color": "#e7e7e7",
-        "min-height": "100vh",
-        color: "#000"
-      },
-      attrs: { id: "app-home" }
-    },
-    [
-      _c("CommonHead"),
-      _vm._v(" "),
-      _c("HistoryLink"),
-      _vm._v(" "),
-      _c("div", { staticClass: "content" }, [
-        _c("div", { staticClass: "dataBank disflex" }, [
-          _c(
-            "div",
-            { staticClass: "dataBankList disflex" },
-            [
-              _c("CommonLeft"),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "dataBank_right disflex" },
-                [_c("router-view")],
-                1
-              )
-            ],
-            1
-          )
-        ])
-      ])
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-794f40ed", module.exports)
-  }
-}
-
-/***/ }),
-/* 447 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(448);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("0c57462c", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0153d03b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankInfo.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0153d03b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankInfo.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 448 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-0153d03b]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist[data-v-0153d03b]{width:100%;\n}\n.nav-tabs>li>a[data-v-0153d03b]{color: #000;\n}\n.tab-pane[data-v-0153d03b]{position: relative;\n}\n.pane_content_info[data-v-0153d03b]{width:70%;margin-left: 15%;height:auto;margin: 0 auto;margin-bottom: 30px;font-size: 16px;\n}\n.gather_info[data-v-0153d03b]{width:100%;height: auto;\n}\n.gather_info_title[data-v-0153d03b]{width:100%;height:50px;position: relative;\n}\n.gather_info_title>span[data-v-0153d03b]{width:60px;height:50px;display: block;line-height: 50px;left: 0;position: absolute; background-color:#fff;z-index: 2\n}\n.gather_info_title>hr[data-v-0153d03b]{width:94%;height:2px;background-color:#ffde01;z-index: 1;left: 0;position: absolute;\n}\n.form_content[data-v-0153d03b]{width: 100%;min-height: 100px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;\n}\n.form_item_info[data-v-0153d03b]{width: 50%;min-height:100px;\n}\n.form_item_info>div[data-v-0153d03b]{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input[data-v-0153d03b]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input2[data-v-0153d03b]{width:30%;height:40px;padding-left:10px;outline: none;border-radius: 8px;\n}\n.item_area[data-v-0153d03b]{width:97%;min-height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active[data-v-0153d03b]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-0153d03b]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-0153d03b]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-0153d03b]{width:50px;height: 50px;\n}\n.editBox[data-v-0153d03b]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-0153d03b]{width:90%;margin-left: 5%;min-height:200px;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-0153d03b]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-0153d03b]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-0153d03b]{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-0153d03b]{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.simulateShade[data-v-0153d03b]{width:90%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;\n}\n.bigRadio[data-v-0153d03b]{width:20px;height:20px;\n}\n.van-dialog[data-v-0153d03b]{width:50%;\n}\n.imgIcon[data-v-0153d03b]{\n    width:100px;\n    height: 40px;\n    float: right;\n}\n.imgIcon img[data-v-0153d03b]{\n    height: 35px;\n    float: right;\n}\n.imgs[data-v-0153d03b]{\n    width:95%;\n    position: relative;\n}\n.travelImg[data-v-0153d03b]{\n    width:100%;\n    border-radius: 15px;\n}\n.cancelImg[data-v-0153d03b]{\n    width:30px;\n    height: 30px;\n    top: 15px;\n    right: 15px;\n    position: absolute;\n}\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 449 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c("div", { staticClass: "tablist" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "tab-content" }, [
-            _c(
-              "div",
-              {
-                staticClass: "tab-pane active",
-                attrs: { role: "tabpanel", id: "gather" }
-              },
-              [
-                _c("div", { staticClass: "pane_content_info" }, [
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form_content disflex" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "form_item_info",
-                        staticStyle: { width: "100%" }
-                      },
-                      [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("日期及時間")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.assemblePlaces.assembly_at,
-                                expression: "assemblePlaces.assembly_at"
-                              }
-                            ],
-                            staticClass: "item_input",
-                            staticStyle: { width: "97%" },
-                            attrs: {
-                              placeholder: "日期及時間",
-                              disabled: "disabled",
-                              type: "text"
-                            },
-                            domProps: { value: _vm.assemblePlaces.assembly_at },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.assemblePlaces,
-                                  "assembly_at",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "form_item_info",
-                        staticStyle: { width: "100%", "min-height": "120px" }
-                      },
-                      [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("詳細地址")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("textarea", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.assemblePlaces.assembly_station,
-                                expression: "assemblePlaces.assembly_station"
-                              }
-                            ],
-                            staticClass: "item_area",
-                            attrs: {
-                              placeholder: "詳細地址",
-                              disabled: "disabled"
-                            },
-                            domProps: {
-                              value: _vm.assemblePlaces.assembly_station
-                            },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.assemblePlaces,
-                                  "assembly_station",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "pane_content_info" }, [
-                  _vm._m(2),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form_content disflex" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "form_item_info",
-                        staticStyle: { width: "100%" }
-                      },
-                      [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("日期及時間")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.assemblePlaces.dissolution_at,
-                                expression: "assemblePlaces.dissolution_at"
-                              }
-                            ],
-                            staticClass: "item_input",
-                            staticStyle: { width: "97%" },
-                            attrs: {
-                              placeholder: "日期及時間",
-                              type: "text",
-                              disabled: "disabled"
-                            },
-                            domProps: {
-                              value: _vm.assemblePlaces.dissolution_at
-                            },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.assemblePlaces,
-                                  "dissolution_at",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "form_item_info",
-                        staticStyle: { width: "100%", "min-height": "120px" }
-                      },
-                      [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("詳細地址")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("textarea", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.assemblePlaces.dissolution_station,
-                                expression: "assemblePlaces.dissolution_station"
-                              }
-                            ],
-                            staticClass: "item_area",
-                            attrs: {
-                              placeholder: "詳細地址",
-                              disabled: "disabled"
-                            },
-                            domProps: {
-                              value: _vm.assemblePlaces.dissolution_station
-                            },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.assemblePlaces,
-                                  "dissolution_station",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "dataBankAddBtn",
-                    on: {
-                      click: function($event) {
-                        return _vm.assemblePlacePopupShow()
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/edit-all.png" }
-                    })
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "tab-pane",
-                attrs: { role: "tabpanel", id: "flight" }
-              },
-              [
-                _vm._l(_vm.flights, function(flight, index) {
-                  return _c("div", { staticClass: "pane_content_info" }, [
-                    _c("div", { staticClass: "gather_info" }, [
-                      _c("div", { staticClass: "gather_info_title" }, [
-                        flight.is_return
-                          ? _c("span", [_vm._v("返回")])
-                          : _c("span", [_vm._v("出發")]),
-                        _c("hr")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form_content disflex" }, [
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("航班信息")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            staticClass: "item_input",
-                            attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: flight.flight }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("日期")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            staticClass: "item_input",
-                            attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: flight.date }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("出發時間")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            staticClass: "item_input",
-                            attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: flight.takeoff_time }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("到達時間")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            staticClass: "item_input",
-                            attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: flight.arrival_time }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("出發城市")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("div", [
-                            _c("input", {
-                              staticClass: "item_input",
-                              attrs: { type: "text", disabled: "disabled" },
-                              domProps: { value: flight.from }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("到達城市")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("div", [
-                            _c("input", {
-                              staticClass: "item_input",
-                              attrs: { type: "text", disabled: "disabled" },
-                              domProps: { value: flight.to }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("出發站點")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("div", [
-                            _c("input", {
-                              staticClass: "item_input",
-                              attrs: { type: "text", disabled: "disabled" },
-                              domProps: { value: flight.from_flight }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("到達站點")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("div", [
-                            _c("input", {
-                              staticClass: "item_input",
-                              attrs: { type: "text", disabled: "disabled" },
-                              domProps: { value: flight.to_flight }
-                            })
-                          ])
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "editBtnGroup" }, [
-                      _c("img", {
-                        attrs: { src: "/etravel/public/images/rush-icon.png" },
-                        on: {
-                          click: function($event) {
-                            return _vm.delFlight(flight.id)
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("img", {
-                        attrs: { src: "/etravel/public/images/edit-all.png" },
-                        on: {
-                          click: function($event) {
-                            return _vm.editFlightShow(index)
-                          }
-                        }
-                      })
-                    ])
-                  ])
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "dataBankAddBtn",
-                    on: {
-                      click: function($event) {
-                        return _vm.newFlightShow()
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/add_y.png" }
-                    })
-                  ]
-                )
-              ],
-              2
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "tab-pane",
-                attrs: { role: "tabpanel", id: "accommodationInfo" }
-              },
-              [
-                _vm._l(_vm.hotels, function(hotel, index) {
-                  return _c("div", { staticClass: "pane_content_info" }, [
-                    _c("div", { staticClass: "form_content disflex" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "form_item_info",
-                          staticStyle: { width: "100%" }
-                        },
-                        [
-                          _c("div", { staticClass: "item_title" }, [
-                            _vm._v("住宿名稱")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", [
-                            _c("input", {
-                              staticClass: "item_input",
-                              staticStyle: { width: "97%" },
-                              attrs: { type: "text", disabled: "disabled" },
-                              domProps: { value: hotel.hotel_name }
-                            })
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("入住時間")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            staticClass: "item_input",
-                            attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: hotel.check_at }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("離開時間")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            staticClass: "item_input",
-                            attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: hotel.leave_at }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("入住天數")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            staticClass: "item_input",
-                            attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: hotel.times }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("聯繫電話")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            staticClass: "item_input",
-                            attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: hotel.hotel_phone }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("住宿地址")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            staticClass: "item_input",
-                            attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: hotel.hotel_address }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_item_info" }, [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("住宿經緯度")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            staticClass: "item_input",
-                            attrs: { type: "text", disabled: "disabled" },
-                            domProps: { value: hotel.hotel_location }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "form_item_info",
-                          staticStyle: { width: "100%" }
-                        },
-                        [
-                          _c("div", { staticClass: "item_title" }, [
-                            _vm._v("住宿圖片")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", [
-                            _c("img", {
-                              staticStyle: { width: "97%" },
-                              attrs: { src: hotel.image }
-                            })
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "editBtnGroup" }, [
-                        _c("img", {
-                          attrs: {
-                            src: "/etravel/public/images/rush-icon.png"
-                          },
-                          on: {
-                            click: function($event) {
-                              return _vm.delHotel(hotel.id)
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/edit-all.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.editHotelShow(index)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "dataBankAddBtn",
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewHotelShow()
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/add_y.png" }
-                    })
-                  ]
-                )
-              ],
-              2
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "tab-pane",
-                attrs: { role: "tabpanel", id: "leaderTeacher" }
-              },
-              [
-                _vm._l(_vm.leadTeachers, function(leadTeacher, index) {
-                  return _c("div", { staticClass: "pane_content_info" }, [
-                    _c("div", { staticClass: "form_content disflex" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "form_item_info",
-                          staticStyle: { width: "100%" }
-                        },
-                        [
-                          _c("div", { staticClass: "item_title" }, [
-                            _vm._v("老師姓名")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", [
-                            _c("input", {
-                              staticClass: "item_input",
-                              staticStyle: { width: "97%" },
-                              attrs: { type: "text", disabled: "disabled" },
-                              domProps: { value: leadTeacher.leader }
-                            })
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "form_item_info",
-                          staticStyle: { width: "100%" }
-                        },
-                        [
-                          _c("div", { staticClass: "item_title" }, [
-                            _vm._v("區號")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", [
-                            _c("input", {
-                              staticClass: "item_input",
-                              staticStyle: { width: "97%" },
-                              attrs: { type: "text", disabled: "disabled" },
-                              domProps: { value: leadTeacher.area_code }
-                            })
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "form_item_info",
-                          staticStyle: { width: "100%" }
-                        },
-                        [
-                          _c("div", { staticClass: "item_title" }, [
-                            _vm._v("老師電話")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", [
-                            _c("input", {
-                              staticClass: "item_input",
-                              staticStyle: { width: "97%" },
-                              attrs: { type: "text", disabled: "disabled" },
-                              domProps: { value: leadTeacher.phone }
-                            })
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "form_item_info",
-                          staticStyle: { width: "100%" }
-                        },
-                        [
-                          _c("div", { staticClass: "item_title" }, [
-                            _vm._v("職責")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", [
-                            _c("input", {
-                              staticClass: "item_input",
-                              staticStyle: { width: "97%" },
-                              attrs: { type: "text", disabled: "disabled" },
-                              domProps: { value: leadTeacher.duty }
-                            })
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "editBtnGroup" }, [
-                        _c("img", {
-                          attrs: {
-                            src: "/etravel/public/images/rush-icon.png"
-                          },
-                          on: {
-                            click: function($event) {
-                              return _vm.delLeadTeacher(leadTeacher.id)
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/edit-all.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.editLeadTeacherShow(index)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  ])
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "dataBankAddBtn",
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewLeadTeacherShow()
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/add_y.png" }
-                    })
-                  ]
-                )
-              ],
-              2
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "tab-pane",
-                attrs: { role: "tabpanel", id: "heavyWeather" }
-              },
-              [
-                _c("div", { staticClass: "pane_content_info" }, [
-                  _c("div", { staticClass: "form_content disflex" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "form_item_info",
-                        staticStyle: { width: "100%", "min-height": "120px" }
-                      },
-                      [
-                        _c("div", { staticClass: "item_title" }, [
-                          _vm._v("安排")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", {
-                          staticStyle: {
-                            border: "1px solid #ccc",
-                            "border-radius": "8px",
-                            width: "97%",
-                            "background-color": "#eeeeee",
-                            "line-height": "25px"
-                          },
-                          domProps: {
-                            innerHTML: _vm._s(_vm.badWeathers.urgency)
-                          }
-                        })
-                      ]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "dataBankAddBtn",
-                    on: {
-                      click: function($event) {
-                        return _vm.editBadWeatherShow()
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/edit-all.png" }
-                    })
-                  ]
-                )
-              ]
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isAssemblePlacePopupShow,
-            callback: function($$v) {
-              _vm.isAssemblePlacePopupShow = $$v
-            },
-            expression: "isAssemblePlacePopupShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "gather_info" }, [
-                _c("div", { staticClass: "gather_info_title" }, [
-                  _c("span", [_vm._v("集合")]),
-                  _c("hr")
-                ])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("日期及時間")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edAssemblePlaces.assembly_at,
-                          expression: "edAssemblePlaces.assembly_at"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: {
-                        placeholder: "填寫日期及時間(yyyy-mm-dd hh:mm)",
-                        type: "text"
-                      },
-                      domProps: { value: _vm.edAssemblePlaces.assembly_at },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.edAssemblePlaces,
-                            "assembly_at",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("詳細地址")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edAssemblePlaces.assembly_station,
-                          expression: "edAssemblePlaces.assembly_station"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { placeholder: "填寫詳細地址", type: "text" },
-                      domProps: {
-                        value: _vm.edAssemblePlaces.assembly_station
-                      },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.edAssemblePlaces,
-                            "assembly_station",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "gather_info" }, [
-                _c("div", { staticClass: "gather_info_title" }, [
-                  _c("span", [_vm._v("解散")]),
-                  _c("hr")
-                ])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("日期及時間")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edAssemblePlaces.dissolution_at,
-                          expression: "edAssemblePlaces.dissolution_at"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: {
-                        placeholder: "填寫日期及時間(yyyy-mm-dd hh:mm)",
-                        type: "text"
-                      },
-                      domProps: { value: _vm.edAssemblePlaces.dissolution_at },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.edAssemblePlaces,
-                            "dissolution_at",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("詳細地址")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edAssemblePlaces.dissolution_station,
-                          expression: "edAssemblePlaces.dissolution_station"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { placeholder: "填寫詳細地址", type: "text" },
-                      domProps: {
-                        value: _vm.edAssemblePlaces.dissolution_station
-                      },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.edAssemblePlaces,
-                            "dissolution_station",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editAssemblePlace()
-                      }
-                    }
-                  },
-                  [_vm._v("確定")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewFlightShow,
-            callback: function($$v) {
-              _vm.isNewFlightShow = $$v
-            },
-            expression: "isNewFlightShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("航班信息(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newFlight.flight,
-                        expression: "newFlight.flight"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫航班信息" },
-                    domProps: { value: _vm.newFlight.flight },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newFlight, "flight", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("日期(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newFlight.date,
-                        expression: "newFlight.date"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: {
-                      type: "text",
-                      placeholder: "填寫日期(yyyy-mm-dd)"
-                    },
-                    domProps: { value: _vm.newFlight.date },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newFlight, "date", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("出發時間(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newFlight.takeoff_time,
-                        expression: "newFlight.takeoff_time"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫出發時間(hh:mm)" },
-                    domProps: { value: _vm.newFlight.takeoff_time },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newFlight,
-                          "takeoff_time",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("到達時間(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newFlight.arrival_time,
-                        expression: "newFlight.arrival_time"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫到達時間(hh:mm)" },
-                    domProps: { value: _vm.newFlight.arrival_time },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newFlight,
-                          "arrival_time",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("出發城市(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newFlight.from,
-                        expression: "newFlight.from"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫出發城市" },
-                    domProps: { value: _vm.newFlight.from },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newFlight, "from", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("到達城市(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newFlight.to,
-                        expression: "newFlight.to"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫到達城市" },
-                    domProps: { value: _vm.newFlight.to },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newFlight, "to", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("出發站點")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newFlight.from_flight,
-                        expression: "newFlight.from_flight"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫出發站點" },
-                    domProps: { value: _vm.newFlight.from_flight },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newFlight,
-                          "from_flight",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("到達站點")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newFlight.to_flight,
-                        expression: "newFlight.to_flight"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫到達站點" },
-                    domProps: { value: _vm.newFlight.to_flight },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newFlight,
-                          "to_flight",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticStyle: { width: "100%", height: "50px" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      width: "70px",
-                      "text-align": "center",
-                      display: "block",
-                      float: "left"
-                    }
-                  },
-                  [_vm._v("出發")]
-                ),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.newFlight.is_return,
-                      expression: "newFlight.is_return"
-                    }
-                  ],
-                  staticClass: "bigRadio",
-                  staticStyle: { float: "left" },
-                  attrs: { type: "radio", value: "0" },
-                  domProps: { checked: _vm._q(_vm.newFlight.is_return, "0") },
-                  on: {
-                    change: function($event) {
-                      return _vm.$set(_vm.newFlight, "is_return", "0")
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      width: "70px",
-                      "text-align": "center",
-                      display: "block",
-                      float: "left"
-                    }
-                  },
-                  [_vm._v("返回")]
-                ),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.newFlight.is_return,
-                      expression: "newFlight.is_return"
-                    }
-                  ],
-                  staticClass: "bigRadio",
-                  staticStyle: { float: "left" },
-                  attrs: { type: "radio", value: "1" },
-                  domProps: { checked: _vm._q(_vm.newFlight.is_return, "1") },
-                  on: {
-                    change: function($event) {
-                      return _vm.$set(_vm.newFlight, "is_return", "1")
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewFlight()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditFlightShow,
-            callback: function($$v) {
-              _vm.isEditFlightShow = $$v
-            },
-            expression: "isEditFlightShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("航班信息(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edFlight.flight,
-                        expression: "edFlight.flight"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫航班信息" },
-                    domProps: { value: _vm.edFlight.flight },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edFlight, "flight", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("日期(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edFlight.date,
-                        expression: "edFlight.date"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: {
-                      type: "text",
-                      placeholder: "填寫日期(yyyy-mm-dd)"
-                    },
-                    domProps: { value: _vm.edFlight.date },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edFlight, "date", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("出發時間(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edFlight.takeoff_time,
-                        expression: "edFlight.takeoff_time"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫出發時間(hh:mm)" },
-                    domProps: { value: _vm.edFlight.takeoff_time },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edFlight,
-                          "takeoff_time",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("到達時間(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edFlight.arrival_time,
-                        expression: "edFlight.arrival_time"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫到達時間(hh:mm)" },
-                    domProps: { value: _vm.edFlight.arrival_time },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edFlight,
-                          "arrival_time",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("出發城市(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edFlight.from,
-                        expression: "edFlight.from"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫出發城市" },
-                    domProps: { value: _vm.edFlight.from },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edFlight, "from", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("到達城市(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edFlight.to,
-                        expression: "edFlight.to"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫到達城市" },
-                    domProps: { value: _vm.edFlight.to },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edFlight, "to", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("出發站點")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edFlight.from_flight,
-                        expression: "edFlight.from_flight"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫出發站點" },
-                    domProps: { value: _vm.edFlight.from_flight },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edFlight,
-                          "from_flight",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("到達站點")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edFlight.to_flight,
-                        expression: "edFlight.to_flight"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "填寫到達站點" },
-                    domProps: { value: _vm.edFlight.to_flight },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edFlight, "to_flight", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticStyle: { width: "100%", height: "50px" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      width: "70px",
-                      "text-align": "center",
-                      display: "block",
-                      float: "left"
-                    }
-                  },
-                  [_vm._v("出發")]
-                ),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.edFlight.is_return,
-                      expression: "edFlight.is_return"
-                    }
-                  ],
-                  staticClass: "bigRadio",
-                  staticStyle: { float: "left" },
-                  attrs: { type: "radio", value: "0" },
-                  domProps: { checked: _vm._q(_vm.edFlight.is_return, "0") },
-                  on: {
-                    change: function($event) {
-                      return _vm.$set(_vm.edFlight, "is_return", "0")
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      width: "70px",
-                      "text-align": "center",
-                      display: "block",
-                      float: "left"
-                    }
-                  },
-                  [_vm._v("返回")]
-                ),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.edFlight.is_return,
-                      expression: "edFlight.is_return"
-                    }
-                  ],
-                  staticClass: "bigRadio",
-                  staticStyle: { float: "left" },
-                  attrs: { type: "radio", value: "1" },
-                  domProps: { checked: _vm._q(_vm.edFlight.is_return, "1") },
-                  on: {
-                    change: function($event) {
-                      return _vm.$set(_vm.edFlight, "is_return", "1")
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editFlight()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewHotelShow,
-            callback: function($$v) {
-              _vm.isNewHotelShow = $$v
-            },
-            expression: "isNewHotelShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("住宿名稱(必填)")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newHotel.hotel_name,
-                          expression: "newHotel.hotel_name"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      staticStyle: { width: "97%" },
-                      attrs: { type: "text", placeholder: "住宿名稱" },
-                      domProps: { value: _vm.newHotel.hotel_name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.newHotel,
-                            "hotel_name",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("入住日期(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newHotel.check_at,
-                        expression: "newHotel.check_at"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: {
-                      type: "text",
-                      placeholder: "入住日期(yyyy-mm-dd)"
-                    },
-                    domProps: { value: _vm.newHotel.check_at },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newHotel, "check_at", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("離開日期(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newHotel.leave_at,
-                        expression: "newHotel.leave_at"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: {
-                      type: "text",
-                      placeholder: "離開日期(yyyy-mm-dd)"
-                    },
-                    domProps: { value: _vm.newHotel.leave_at },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newHotel, "leave_at", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("入住天數(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newHotel.times,
-                        expression: "newHotel.times"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "入住天數" },
-                    domProps: { value: _vm.newHotel.times },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newHotel, "times", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("聯繫電話(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newHotel.hotel_phone,
-                        expression: "newHotel.hotel_phone"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "聯繫電話" },
-                    domProps: { value: _vm.newHotel.hotel_phone },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newHotel,
-                          "hotel_phone",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("住宿地址(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newHotel.hotel_address,
-                        expression: "newHotel.hotel_address"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "住宿地址" },
-                    domProps: { value: _vm.newHotel.hotel_address },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newHotel,
-                          "hotel_address",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("住宿經緯度(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newHotel.hotel_location,
-                        expression: "newHotel.hotel_location"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: {
-                      type: "text",
-                      placeholder: "住宿經緯度(經度,緯度)"
-                    },
-                    domProps: { value: _vm.newHotel.hotel_location },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newHotel,
-                          "hotel_location",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticStyle: { width: "93%" } }, [
-                    _vm._v(
-                      "\n                        住宿圖片\n                        "
-                    ),
-                    _c(
-                      "div",
-                      { staticClass: "imgIcon" },
-                      [
-                        _c(
-                          "van-uploader",
-                          {
-                            staticStyle: {
-                              width: "50px",
-                              height: "40px",
-                              float: "right"
-                            },
-                            attrs: {
-                              "after-read": _vm.onRead,
-                              accept: "image/*"
-                            }
-                          },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "/etravel/public/images/sm-insert.png"
-                              }
-                            })
-                          ]
-                        )
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticStyle: { width: "93%" } }, [
-                    _c(
-                      "div",
-                      { staticClass: "imgs", staticStyle: { width: "97%" } },
-                      [
-                        _c("img", {
-                          staticClass: "travelImg",
-                          attrs: { src: _vm.newHotel.image }
-                        }),
-                        _vm._v(" "),
-                        _c("img", {
-                          staticClass: "cancelImg",
-                          attrs: { src: "/etravel/public/images/delete.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.resetImg()
-                            }
-                          }
-                        })
-                      ]
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewHotel()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditHotelShow,
-            callback: function($$v) {
-              _vm.isEditHotelShow = $$v
-            },
-            expression: "isEditHotelShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("住宿名稱(必填)")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edHotel.hotel_name,
-                          expression: "edHotel.hotel_name"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      staticStyle: { width: "97%" },
-                      attrs: { type: "text", placeholder: "住宿名稱" },
-                      domProps: { value: _vm.edHotel.hotel_name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.edHotel,
-                            "hotel_name",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("入住日期(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edHotel.check_at,
-                        expression: "edHotel.check_at"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: {
-                      type: "text",
-                      placeholder: "入住日期(yyyy-mm-dd)"
-                    },
-                    domProps: { value: _vm.edHotel.check_at },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edHotel, "check_at", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("離開日期(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edHotel.leave_at,
-                        expression: "edHotel.leave_at"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: {
-                      type: "text",
-                      placeholder: "離開日期(yyyy-mm-dd)"
-                    },
-                    domProps: { value: _vm.edHotel.leave_at },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edHotel, "leave_at", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("入住天數(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edHotel.times,
-                        expression: "edHotel.times"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "入住天數" },
-                    domProps: { value: _vm.edHotel.times },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edHotel, "times", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("聯繫電話(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edHotel.hotel_phone,
-                        expression: "edHotel.hotel_phone"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "聯繫電話" },
-                    domProps: { value: _vm.edHotel.hotel_phone },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edHotel,
-                          "hotel_phone",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("住宿地址(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edHotel.hotel_address,
-                        expression: "edHotel.hotel_address"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { type: "text", placeholder: "住宿地址" },
-                    domProps: { value: _vm.edHotel.hotel_address },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edHotel,
-                          "hotel_address",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_info" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("住宿經緯度(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edHotel.hotel_location,
-                        expression: "edHotel.hotel_location"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: {
-                      type: "text",
-                      placeholder: "住宿經緯度(經度,緯度)"
-                    },
-                    domProps: { value: _vm.edHotel.hotel_location },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edHotel,
-                          "hotel_location",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticStyle: { width: "93%" } }, [
-                    _vm._v(
-                      "\n                        住宿圖片\n                        "
-                    ),
-                    _c(
-                      "div",
-                      { staticClass: "imgIcon" },
-                      [
-                        _c(
-                          "van-uploader",
-                          {
-                            staticStyle: {
-                              width: "50px",
-                              height: "40px",
-                              float: "right"
-                            },
-                            attrs: {
-                              "after-read": _vm.onRead,
-                              accept: "image/*"
-                            }
-                          },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "/etravel/public/images/sm-insert.png"
-                              }
-                            })
-                          ]
-                        )
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c(
-                      "div",
-                      { staticClass: "imgs", staticStyle: { width: "97%" } },
-                      [
-                        _c("img", {
-                          staticClass: "travelImg",
-                          attrs: { src: _vm.edHotel.image }
-                        }),
-                        _vm._v(" "),
-                        _c("img", {
-                          staticClass: "cancelImg",
-                          attrs: { src: "/etravel/public/images/delete.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.resetImg()
-                            }
-                          }
-                        })
-                      ]
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editHotel()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewLeadTeacherShow,
-            callback: function($$v) {
-              _vm.isNewLeadTeacherShow = $$v
-            },
-            expression: "isNewLeadTeacherShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("老師姓名(必填)")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newLeadTeacher.leader,
-                          expression: "newLeadTeacher.leader"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "老師姓名" },
-                      domProps: { value: _vm.newLeadTeacher.leader },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.newLeadTeacher,
-                            "leader",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("區號")]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c(
-                      "div",
-                      { staticClass: "simulateShade" },
-                      [
-                        _c("AreaCodeSelector", {
-                          attrs: { areaCode: _vm.newLeadTeacher.area_code },
-                          on: { selectedAreaCode: _vm.selectedAreaCode },
-                          model: {
-                            value: _vm.newLeadTeacher.area_code,
-                            callback: function($$v) {
-                              _vm.$set(_vm.newLeadTeacher, "area_code", $$v)
-                            },
-                            expression: "newLeadTeacher.area_code"
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("老師電話")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newLeadTeacher.phone,
-                          expression: "newLeadTeacher.phone"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "老師電話" },
-                      domProps: { value: _vm.newLeadTeacher.phone },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.newLeadTeacher,
-                            "phone",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newLeadTeacher.duty,
-                          expression: "newLeadTeacher.duty"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "職責" },
-                      domProps: { value: _vm.newLeadTeacher.duty },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.newLeadTeacher,
-                            "duty",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewLeadTeacher()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditLeadTeacherShow,
-            callback: function($$v) {
-              _vm.isEditLeadTeacherShow = $$v
-            },
-            expression: "isEditLeadTeacherShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("老師姓名(必填)")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edLeadTeacher.leader,
-                          expression: "edLeadTeacher.leader"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "老師姓名" },
-                      domProps: { value: _vm.edLeadTeacher.leader },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.edLeadTeacher,
-                            "leader",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("區號")]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c(
-                      "div",
-                      { staticClass: "simulateShade" },
-                      [
-                        _c("AreaCodeSelector", {
-                          attrs: { areaCode: _vm.edLeadTeacher.area_code },
-                          on: { selectedAreaCode: _vm.selectedAreaCode },
-                          model: {
-                            value: _vm.edLeadTeacher.area_code,
-                            callback: function($$v) {
-                              _vm.$set(_vm.edLeadTeacher, "area_code", $$v)
-                            },
-                            expression: "edLeadTeacher.area_code"
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("老師電話")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edLeadTeacher.phone,
-                          expression: "edLeadTeacher.phone"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "老師電話" },
-                      domProps: { value: _vm.edLeadTeacher.phone },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.edLeadTeacher,
-                            "phone",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edLeadTeacher.duty,
-                          expression: "edLeadTeacher.duty"
-                        }
-                      ],
-                      staticClass: "item_input",
-                      attrs: { type: "text", placeholder: "職責" },
-                      domProps: { value: _vm.edLeadTeacher.duty },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.edLeadTeacher,
-                            "duty",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editLeadTeacher()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditBadWeatherShow,
-            callback: function($$v) {
-              _vm.isEditBadWeatherShow = $$v
-            },
-            expression: "isEditBadWeatherShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "form_item_info",
-                  staticStyle: { width: "100%" }
-                },
-                [
-                  _c("div", { staticClass: "item_title" }, [_vm._v("安排")]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c(
-                      "div",
-                      [
-                        _c("Editor", {
-                          attrs: { childData: _vm.edBadWeather.urgency },
-                          on: { catchData: _vm.catchData }
-                        })
-                      ],
-                      1
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editBadWeather()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "ul",
-      { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
-      [
-        _c("li", { staticClass: "active", attrs: { role: "presentation" } }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#gather",
-                "aria-controls": "gather",
-                role: "tab",
-                "data-toggle": "tab"
-              }
-            },
-            [_vm._v("集合解散")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { attrs: { role: "presentation" } }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#flight",
-                "aria-controls": "flight",
-                role: "tab",
-                "data-toggle": "tab"
-              }
-            },
-            [_vm._v("班機往返")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { attrs: { role: "presentation" } }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#accommodationInfo",
-                "aria-controls": "accommodationInfo",
-                role: "tab",
-                "data-toggle": "tab"
-              }
-            },
-            [_vm._v("住宿資料")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { attrs: { role: "presentation" } }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#leaderTeacher",
-                "aria-controls": "leaderTeacher",
-                role: "tab",
-                "data-toggle": "tab"
-              }
-            },
-            [_vm._v("領隊老師")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { attrs: { role: "presentation" } }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#heavyWeather",
-                "aria-controls": "heavyWeather",
-                role: "tab",
-                "data-toggle": "tab"
-              }
-            },
-            [_vm._v("惡劣天氣安排")]
-          )
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "gather_info" }, [
-      _c("div", { staticClass: "gather_info_title" }, [
-        _c("span", [_vm._v("集合")]),
-        _c("hr")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "gather_info" }, [
-      _c("div", { staticClass: "gather_info_title" }, [
-        _c("span", [_vm._v("解散")]),
-        _c("hr")
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-0153d03b", module.exports)
-  }
-}
-
-/***/ }),
-/* 450 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(451);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("51aa2df6", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b5f0709e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankPhone.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b5f0709e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankPhone.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 451 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-b5f0709e]{width: 100%;min-height:650px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist[data-v-b5f0709e]{width:100%;\n}\n.nav-tabs>li>a[data-v-b5f0709e]{color: #000;\n}\n.pane_content_phone[data-v-b5f0709e]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;border:1px solid #ccc;border-radius: 15px;margin-top:20px;\n}\n.form_content_phone[data-v-b5f0709e]{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_phone[data-v-b5f0709e]{width: 100%;min-height:100px;\n}\n.form_item_phone>div[data-v-b5f0709e]{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_phone[data-v-b5f0709e]{height:40px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.active[data-v-b5f0709e]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-b5f0709e]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-b5f0709e]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-b5f0709e]{width:50px;height: 50px;\n}\n.editBox[data-v-b5f0709e]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-b5f0709e]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-b5f0709e]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-b5f0709e]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-b5f0709e]{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-b5f0709e]{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.areaSel[data-v-b5f0709e]{width:100%;height: 44px;border-width: 2px;border-style: solid;border-top-color: #999;border-left-color: #999;border-right-color: #eee;border-bottom-color: #eee;border-radius: 8px;\n}\n.van-dialog[data-v-b5f0709e]{width:50%;\n}\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 452 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "dataBank_input_form disflex" },
-    [
-      _vm._l(_vm.phones, function(phone, index) {
-        return _c("div", { staticClass: "pane_content_phone" }, [
-          _c("div", { staticClass: "form_content_phone disflex" }, [
-            _c("div", { staticClass: "form_item_phone" }, [
-              _c("div", { staticClass: "item_title" }, [_vm._v("聯繫人名稱")]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  staticClass: "item_input_phone",
-                  attrs: {
-                    placeholder: "聯繫人名稱",
-                    type: "text",
-                    disabled: "disabled"
-                  },
-                  domProps: { value: phone.name }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form_item_phone" }, [
-              _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  staticClass: "item_input_phone",
-                  attrs: {
-                    placeholder: "職責",
-                    type: "text",
-                    disabled: "disabled"
-                  },
-                  domProps: { value: phone.duty }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form_item_phone" }, [
-              _c("div", { staticClass: "item_title" }, [_vm._v("電話區號")]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  staticClass: "item_input_phone",
-                  attrs: { type: "text", disabled: "disabled" },
-                  domProps: { value: phone.area_code }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form_item_phone" }, [
-              _c("div", { staticClass: "item_title" }, [_vm._v("聯繫電話")]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  staticClass: "item_input_phone",
-                  attrs: { type: "text", disabled: "disabled" },
-                  domProps: { value: phone.phone }
-                })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "editBtnGroup" }, [
-            _c("img", {
-              attrs: { src: "/etravel/public/images/rush-icon.png" },
-              on: {
-                click: function($event) {
-                  return _vm.delPhone(phone.id)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              attrs: { src: "/etravel/public/images/edit-all.png" },
-              on: {
-                click: function($event) {
-                  return _vm.editPhoneShow(index)
-                }
-              }
-            })
-          ])
-        ])
-      }),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "dataBankAddBtn",
-          on: {
-            click: function($event) {
-              return _vm.addNewPhoneShow()
-            }
-          }
-        },
-        [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewPhoneShow,
-            callback: function($$v) {
-              _vm.isNewPhoneShow = $$v
-            },
-            expression: "isNewPhoneShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_phone" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("聯繫人名稱(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newPhone.name,
-                        expression: "newPhone.name"
-                      }
-                    ],
-                    staticClass: "item_input_phone",
-                    attrs: { placeholder: "聯繫人名稱", type: "text" },
-                    domProps: { value: _vm.newPhone.name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newPhone, "name", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_phone" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newPhone.duty,
-                        expression: "newPhone.duty"
-                      }
-                    ],
-                    staticClass: "item_input_phone",
-                    attrs: { placeholder: "職責", type: "text" },
-                    domProps: { value: _vm.newPhone.duty },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newPhone, "duty", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_phone" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("電話區號(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "div",
-                    { staticClass: "areaSel" },
-                    [
-                      _c("AreaCodeSelector", {
-                        attrs: { areaCode: _vm.newPhone.area_code },
-                        on: { selectedAreaCode: _vm.selectedAreaCode },
-                        model: {
-                          value: _vm.newPhone.area_code,
-                          callback: function($$v) {
-                            _vm.$set(_vm.newPhone, "area_code", $$v)
-                          },
-                          expression: "newPhone.area_code"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_phone" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("聯繫電話(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newPhone.phone,
-                        expression: "newPhone.phone"
-                      }
-                    ],
-                    staticClass: "item_input_phone",
-                    attrs: { type: "text", placeholder: "聯繫電話" },
-                    domProps: { value: _vm.newPhone.phone },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newPhone, "phone", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewPhone()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditPhoneShow,
-            callback: function($$v) {
-              _vm.isEditPhoneShow = $$v
-            },
-            expression: "isEditPhoneShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_phone" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("聯繫人名稱(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edPhone.name,
-                        expression: "edPhone.name"
-                      }
-                    ],
-                    staticClass: "item_input_phone",
-                    attrs: { placeholder: "聯繫人名稱", type: "text" },
-                    domProps: { value: _vm.edPhone.name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edPhone, "name", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_phone" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edPhone.duty,
-                        expression: "edPhone.duty"
-                      }
-                    ],
-                    staticClass: "item_input_phone",
-                    attrs: { placeholder: "職責", type: "text" },
-                    domProps: { value: _vm.edPhone.duty },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edPhone, "duty", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_phone" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("電話區號(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "div",
-                    { staticClass: "areaSel" },
-                    [
-                      _c("AreaCodeSelector", {
-                        attrs: { areaCode: _vm.edPhone.area_code },
-                        on: { selectedAreaCode: _vm.selectedAreaCode },
-                        model: {
-                          value: _vm.edPhone.area_code,
-                          callback: function($$v) {
-                            _vm.$set(_vm.edPhone, "area_code", $$v)
-                          },
-                          expression: "edPhone.area_code"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_phone" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("聯繫電話(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edPhone.phone,
-                        expression: "edPhone.phone"
-                      }
-                    ],
-                    staticClass: "item_input_phone",
-                    attrs: { type: "text", placeholder: "聯繫電話" },
-                    domProps: { value: _vm.edPhone.phone },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edPhone, "phone", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editPhone()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-b5f0709e", module.exports)
-  }
-}
-
-/***/ }),
-/* 453 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(454);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("13a3f835", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ec0edf7c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankGroup.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ec0edf7c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankGroup.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 454 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-ec0edf7c]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.dataBank_input_form>table[data-v-ec0edf7c]{margin-top: 20px;width: 96%;\n}\n.dataBank_input_form table th[data-v-ec0edf7c]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form table td[data-v-ec0edf7c]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form thead[data-v-ec0edf7c]{background-color: #ffde01;\n}\n.dataBank_input_form thead th[data-v-ec0edf7c]{text-align: center;\n}\n.dataBank_input_form td>input[data-v-ec0edf7c]{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item_group[data-v-ec0edf7c]{width: 100%;min-height:100px;\n}\n.form_item_group>div[data-v-ec0edf7c]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-ec0edf7c]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon[data-v-ec0edf7c]{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon[data-v-ec0edf7c]:hover{cursor: pointer;\n}\n.editIcon>img[data-v-ec0edf7c]{width:25px;height:25px;\n}\n.active[data-v-ec0edf7c]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-ec0edf7c]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-ec0edf7c]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-ec0edf7c]{width:50px;height: 50px;\n}\n.editBox[data-v-ec0edf7c]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-ec0edf7c]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-ec0edf7c]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-ec0edf7c]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules[data-v-ec0edf7c]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img[data-v-ec0edf7c]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-ec0edf7c]{width:50%;\n}    \n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 455 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c("table", [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.groups, function(group, index) {
-              return _c("tr", [
-                _c("td", [_vm._v(_vm._s(index + 1))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(group.class))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(group.user.name))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(group.room))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(group.duty))]),
-                _vm._v(" "),
-                _c("td", { attrs: { width: "100px" } }, [
-                  _c(
-                    "div",
-                    { staticClass: "editIcon", attrs: { name: "編輯" } },
-                    [
-                      _c("img", {
-                        attrs: { src: "/etravel/public/images/edit.png" },
-                        on: {
-                          click: function($event) {
-                            return _vm.editGroupShow(index)
-                          }
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "editIcon", attrs: { name: "删除" } },
-                    [
-                      _c("img", {
-                        attrs: { src: "/etravel/public/images/dele.png" },
-                        on: {
-                          click: function($event) {
-                            return _vm.delGroup(group.user_id, group.id)
-                          }
-                        }
-                      })
-                    ]
-                  )
-                ])
-              ])
-            }),
-            0
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditGroupShow,
-            callback: function($$v) {
-              _vm.isEditGroupShow = $$v
-            },
-            expression: "isEditGroupShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_group" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("班級")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edGroup.group_class,
-                        expression: "edGroup.group_class"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: {
-                      placeholder: "填寫班級",
-                      type: "text",
-                      disabled: "disabled"
-                    },
-                    domProps: { value: _vm.edGroup.group_class },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edGroup,
-                          "group_class",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_group" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("學生姓名")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edGroup.group_name,
-                        expression: "edGroup.group_name"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: {
-                      placeholder: "填寫學生姓名",
-                      type: "text",
-                      disabled: "disabled"
-                    },
-                    domProps: { value: _vm.edGroup.group_name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edGroup, "group_name", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_group" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("房號")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edGroup.group_room,
-                        expression: "edGroup.group_room"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "填寫房號", type: "text" },
-                    domProps: { value: _vm.edGroup.group_room },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edGroup, "group_room", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_group" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edGroup.group_duty,
-                        expression: "edGroup.group_duty"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "填寫職責", type: "text" },
-                    domProps: { value: _vm.edGroup.group_duty },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edGroup, "group_duty", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editGroup()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("編號")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("班級")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("學生姓名")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("房號")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("職責")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("編輯")])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-ec0edf7c", module.exports)
-  }
-}
-
-/***/ }),
-/* 456 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(457);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("81746f30", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-583fe85b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankHouseTable.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-583fe85b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankHouseTable.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 457 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-583fe85b]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.dataBank_input_form>table[data-v-583fe85b]{margin-top: 20px;width: 90%;\n}\n.dataBank_input_form table th[data-v-583fe85b]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form table td[data-v-583fe85b]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form thead[data-v-583fe85b]{background-color: #ffde01;\n}\n.dataBank_input_form td>input[data-v-583fe85b]{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item_house[data-v-583fe85b]{width: 100%;min-height:100px;\n}\n.form_item_house>div[data-v-583fe85b]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-583fe85b]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon[data-v-583fe85b]{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon[data-v-583fe85b]:hover{cursor: pointer;\n}\n.editIcon>img[data-v-583fe85b]{width:25px;height:25px;\n}\n.active[data-v-583fe85b]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-583fe85b]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-583fe85b]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-583fe85b]{width:50px;height: 50px;\n}\n.editBox[data-v-583fe85b]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-583fe85b]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-583fe85b]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-583fe85b]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules[data-v-583fe85b]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img[data-v-583fe85b]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-583fe85b]{width:50%;\n}    \n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 458 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c("table", [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.houses, function(house, index) {
-              return _c("tr", [
-                _c("td", [_vm._v(_vm._s(house.group))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(house.room))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(house.class))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(house.user.name))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(house.user.en_name))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(house.duty))]),
-                _vm._v(" "),
-                _c("td", { attrs: { width: "100px" } }, [
-                  _c("div", { staticClass: "editIcon" }, [
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/edit.png" },
-                      on: {
-                        click: function($event) {
-                          return _vm.editHouseShow(index)
-                        }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "editIcon" }, [
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/dele.png" },
-                      on: {
-                        click: function($event) {
-                          return _vm.delHouse(house.user_id, house.id)
-                        }
-                      }
-                    })
-                  ])
-                ])
-              ])
-            }),
-            0
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditHouseShow,
-            callback: function($$v) {
-              _vm.isEditHouseShow = $$v
-            },
-            expression: "isEditHouseShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_house" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("分組編號")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edHouse.house_group,
-                        expression: "edHouse.house_group"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "填寫分組編號", type: "text" },
-                    domProps: { value: _vm.edHouse.house_group },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edHouse,
-                          "house_group",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_house" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("房間編號")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edHouse.house_room,
-                        expression: "edHouse.house_room"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "填寫房間編號", type: "text" },
-                    domProps: { value: _vm.edHouse.house_room },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edHouse, "house_room", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_house" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("班級")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edHouse.house_class,
-                        expression: "edHouse.house_class"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "填寫班級", type: "text" },
-                    domProps: { value: _vm.edHouse.house_class },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edHouse,
-                          "house_class",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_house" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("職責")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edHouse.house_duty,
-                        expression: "edHouse.house_duty"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "填寫職責", type: "text" },
-                    domProps: { value: _vm.edHouse.house_duty },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edHouse, "house_duty", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editHouse()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("分組編號")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("房間編號")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("班級")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("中文名")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("英文名")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("職責")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("編輯")])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-583fe85b", module.exports)
-  }
-}
-
-/***/ }),
-/* 459 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(460);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("2148e7f7", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-05f6c243\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankJourney.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-05f6c243\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankJourney.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 460 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-05f6c243]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist[data-v-05f6c243]{width:100%;\n}\n.nav-tabs>li>a[data-v-05f6c243]{color: #000;\n}\n.pane_content_journey[data-v-05f6c243]{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_journey[data-v-05f6c243]{width: 94%;min-height: 120px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journey[data-v-05f6c243]{width: 100%;min-height:50px;\n}\n.form_item_journey>div[data-v-05f6c243]{min-height: 50px;line-height: 50px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_input[data-v-05f6c243]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.item_left[data-v-05f6c243]{width:85%;border-radius: 8px;background-color: #d6d6d6;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_left>input[data-v-05f6c243]{height:40px;border-radius: 6px;\n}\n.item_right[data-v-05f6c243]{min-width:10%;line-height: 50px;text-align: center;\n}\n.item_right>img[data-v-05f6c243]{width:30px;height:30px;\n}\n.active[data-v-05f6c243]{font-size: 18px;\n}\n.dataBankAddBtn_journey[data-v-05f6c243]{width:50px;height: 50px;position: absolute;right: 5px;top: 55px;\n}\n.dataBankAddBtn_journey[data-v-05f6c243]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journey>img[data-v-05f6c243]{width:50px;height: 50px;\n}\n.editBox[data-v-05f6c243]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-05f6c243]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-05f6c243]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-05f6c243]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journey[data-v-05f6c243]{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journey>img[data-v-05f6c243]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-05f6c243]{width:50%;\n}\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 461 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "dataBank_input_form disflex" },
-    [
-      _c("div", { staticClass: "tablist" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "tab-content" }, [
-          _c(
-            "div",
-            {
-              staticClass: "tab-pane active",
-              attrs: { role: "tabpanel", id: "journey" }
-            },
-            [
-              _c("div", { staticClass: "pane_content_journey" }, [
-                _c("div", { staticClass: "form_content_journey disflex" }, [
-                  _c("div", { staticClass: "form_item_journey" }, [
-                    _c("div", { staticClass: "item_title" }, [
-                      _vm._v("景點安排")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", {
-                      staticStyle: {
-                        border: "1px solid #ccc",
-                        "border-radius": "8px",
-                        width: "97%",
-                        "background-color": "#eeeeee",
-                        "line-height": "25px"
-                      },
-                      domProps: { innerHTML: _vm._s(_vm.travelInfo.view_plan) }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "dataBankAddBtn_journey",
-                    on: {
-                      click: function($event) {
-                        return _vm.editViewShow()
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/edit-all.png" }
-                    })
-                  ]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "tab-pane",
-              attrs: { role: "tabpanel", id: "flight" }
-            },
-            [
-              _c("div", { staticClass: "pane_content_journey" }, [
-                _c("div", { staticClass: "form_content_journey disflex" }, [
-                  _c("div", { staticClass: "form_item_journey" }, [
-                    _c("div", { staticClass: "item_title" }, [
-                      _vm._v("膳食安排")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", {
-                      staticStyle: {
-                        border: "1px solid #ccc",
-                        "border-radius": "8px",
-                        width: "97%",
-                        "background-color": "#eeeeee",
-                        "line-height": "25px"
-                      },
-                      domProps: { innerHTML: _vm._s(_vm.travelInfo.meal_plan) }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "dataBankAddBtn_journey",
-                    on: {
-                      click: function($event) {
-                        return _vm.editMealShow()
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/edit-all.png" }
-                    })
-                  ]
-                )
-              ])
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditViewShow,
-            callback: function($$v) {
-              _vm.isEditViewShow = $$v
-            },
-            expression: "isEditViewShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journey" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("景點安排")]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  [
-                    _c("Editor", {
-                      attrs: { childData: _vm.view_plan },
-                      on: { catchData: _vm.catchData }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editTravelInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("保存")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditMealShow,
-            callback: function($$v) {
-              _vm.isEditMealShow = $$v
-            },
-            expression: "isEditMealShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journey" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("膳食安排")]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  [
-                    _c("Editor", {
-                      attrs: { childData: _vm.meal_plan },
-                      on: { catchData: _vm.catchData }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editTravelInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("保存")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "ul",
-      { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
-      [
-        _c("li", { staticClass: "active", attrs: { role: "presentation" } }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#journey",
-                "aria-controls": "journey",
-                role: "tab",
-                "data-toggle": "tab"
-              }
-            },
-            [_vm._v("景點安排")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { attrs: { role: "presentation" } }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#flight",
-                "aria-controls": "flight",
-                role: "tab",
-                "data-toggle": "tab"
-              }
-            },
-            [_vm._v("膳食安排")]
-          )
-        ])
-      ]
-    )
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-05f6c243", module.exports)
-  }
-}
-
-/***/ }),
-/* 462 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(463);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("18ecd896", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-010eb691\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankJourneyInfo.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-010eb691\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankJourneyInfo.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 463 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-010eb691]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content[data-v-010eb691]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-010eb691]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-010eb691]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-010eb691]{width:28px;height: 28px;\n}\n.form_content_journeyInfo[data-v-010eb691]{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_journeyInfo[data-v-010eb691]{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div[data-v-010eb691]{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo[data-v-010eb691]{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area[data-v-010eb691]{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active[data-v-010eb691]{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo[data-v-010eb691]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo[data-v-010eb691]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img[data-v-010eb691]{width:50px;height: 50px;\n}\n.editBox[data-v-010eb691]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-010eb691]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-010eb691]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-010eb691]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journeyInfo[data-v-010eb691]{width:94%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journeyInfo>img[data-v-010eb691]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-010eb691]{width:50%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 464 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "right_title" }, [
-        _c(
-          "div",
-          {
-            staticClass: "title_icon",
-            on: {
-              click: function($event) {
-                return _vm.$router.push("/journey/dataBankJourney")
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "overText", staticStyle: { margin: "0 40px" } },
-          [_vm._v(_vm._s(_vm.journey.day))]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c(
-          "div",
-          { staticClass: "pane_content" },
-          _vm._l(_vm.journeyInfos, function(journeyInfo, index) {
-            return _c(
-              "div",
-              { staticClass: "form_content_journeyInfo disflex" },
-              [
-                _c("div", { staticClass: "form_item_journeyInfo" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("景点内容(必填)")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      staticClass: "item_input_journeyInfo",
-                      attrs: {
-                        placeholder: "景点内容",
-                        type: "text",
-                        disabled: "disabled"
-                      },
-                      domProps: { value: journeyInfo.content }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form_item_journeyInfo" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("景点介绍(必填)")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("textarea", {
-                      staticClass: "item_area",
-                      attrs: { disabled: "disabled", placeholder: "景点介绍" },
-                      domProps: { value: journeyInfo.description }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "editBtnGroup_journeyInfo" }, [
-                  _c("img", {
-                    attrs: { src: "/etravel/public/images/rush-icon.png" },
-                    on: {
-                      click: function($event) {
-                        return _vm.delJourneyInfo(journeyInfo.id)
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("img", {
-                    attrs: { src: "/etravel/public/images/edit-all.png" },
-                    on: {
-                      click: function($event) {
-                        return _vm.editJourneyInfoShow(index)
-                      }
-                    }
-                  })
-                ])
-              ]
-            )
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "dataBankAddBtn_journeyInfo",
-            on: {
-              click: function($event) {
-                return _vm.addNewJourneyInfoShow()
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewJourneyInfoShow,
-            callback: function($$v) {
-              _vm.isNewJourneyInfoShow = $$v
-            },
-            expression: "isNewJourneyInfoShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("景点内容(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newJourneyInfo.content,
-                        expression: "newJourneyInfo.content"
-                      }
-                    ],
-                    staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "景点内容", type: "text" },
-                    domProps: { value: _vm.newJourneyInfo.content },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newJourneyInfo,
-                          "content",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("景点介绍(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newJourneyInfo.description,
-                        expression: "newJourneyInfo.description"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "景点介绍" },
-                    domProps: { value: _vm.newJourneyInfo.description },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newJourneyInfo,
-                          "description",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewJourneyInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditJourneyInfoShow,
-            callback: function($$v) {
-              _vm.isEditJourneyInfoShow = $$v
-            },
-            expression: "isEditJourneyInfoShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edJourneyInfo.content,
-                        expression: "edJourneyInfo.content"
-                      }
-                    ],
-                    staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "内容", type: "text" },
-                    domProps: { value: _vm.edJourneyInfo.content },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edJourneyInfo,
-                          "content",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("介绍")]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edJourneyInfo.description,
-                        expression: "edJourneyInfo.description"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "介绍" },
-                    domProps: { value: _vm.edJourneyInfo.description },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edJourneyInfo,
-                          "description",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editJourneyInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-010eb691", module.exports)
-  }
-}
-
-/***/ }),
-/* 465 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(466);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("1feae85c", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-282ebaa1\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankMealsInfo.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-282ebaa1\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankMealsInfo.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 466 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-282ebaa1]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content[data-v-282ebaa1]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-282ebaa1]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-282ebaa1]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-282ebaa1]{width:28px;height: 28px;\n}\n.form_content[data-v-282ebaa1]{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_journeyInfo[data-v-282ebaa1]{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div[data-v-282ebaa1]{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo[data-v-282ebaa1]{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area[data-v-282ebaa1]{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active[data-v-282ebaa1]{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo[data-v-282ebaa1]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo[data-v-282ebaa1]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img[data-v-282ebaa1]{width:50px;height: 50px;\n}\n.editBox[data-v-282ebaa1]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-282ebaa1]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-282ebaa1]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-282ebaa1]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journeyInfo[data-v-282ebaa1]{width:94%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journeyInfo>img[data-v-282ebaa1]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-282ebaa1]{width:50%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 467 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "right_title" }, [
-        _c(
-          "div",
-          {
-            staticClass: "title_icon",
-            on: {
-              click: function($event) {
-                return _vm.$router.push("/journey/dataBankJourney")
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
-        ),
-        _vm._v("\n            " + _vm._s(_vm.journey.day) + "\n        ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c(
-          "div",
-          { staticClass: "pane_content" },
-          _vm._l(_vm.meals, function(meal, index) {
-            return _c("div", { staticClass: "form_content disflex" }, [
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("早/中/晚餐(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    staticClass: "item_input_journeyInfo",
-                    attrs: {
-                      placeholder: "早/中/晚餐",
-                      type: "text",
-                      disabled: "disabled"
-                    },
-                    domProps: { value: meal.title }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("膳食内容(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    staticClass: "item_input_journeyInfo",
-                    attrs: {
-                      placeholder: "膳食内容",
-                      type: "text",
-                      disabled: "disabled"
-                    },
-                    domProps: { value: meal.content }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("膳食介紹(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    staticClass: "item_area",
-                    attrs: { disabled: "disabled", placeholder: "膳食介紹" },
-                    domProps: { value: meal.description }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editBtnGroup_journeyInfo" }, [
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/rush-icon.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.delMeal(meal.id)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/edit-all.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.editMealShow(index)
-                    }
-                  }
-                })
-              ])
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "dataBankAddBtn_journeyInfo",
-            on: {
-              click: function($event) {
-                return _vm.addNewMealShow()
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewMealShow,
-            callback: function($$v) {
-              _vm.isNewMealShow = $$v
-            },
-            expression: "isNewMealShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("早/中/晚餐(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newMeal.title,
-                        expression: "newMeal.title"
-                      }
-                    ],
-                    staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "早/中/晚餐", type: "text" },
-                    domProps: { value: _vm.newMeal.title },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newMeal, "title", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("膳食内容(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newMeal.content,
-                        expression: "newMeal.content"
-                      }
-                    ],
-                    staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "膳食内容", type: "text" },
-                    domProps: { value: _vm.newMeal.content },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newMeal, "content", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("膳食介紹(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newMeal.description,
-                        expression: "newMeal.description"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "膳食介紹" },
-                    domProps: { value: _vm.newMeal.description },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newMeal,
-                          "description",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewMeal()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditMealShow,
-            callback: function($$v) {
-              _vm.isEditMealShow = $$v
-            },
-            expression: "isEditMealShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("早/中/晚餐(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edMeal.title,
-                        expression: "edMeal.title"
-                      }
-                    ],
-                    staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "早/中/晚餐", type: "text" },
-                    domProps: { value: _vm.edMeal.title },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edMeal, "title", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("膳食内容(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edMeal.content,
-                        expression: "edMeal.content"
-                      }
-                    ],
-                    staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "膳食内容", type: "text" },
-                    domProps: { value: _vm.edMeal.content },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edMeal, "content", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("膳食介紹(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edMeal.description,
-                        expression: "edMeal.description"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "膳食介紹" },
-                    domProps: { value: _vm.edMeal.description },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edMeal, "description", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editMeal()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-282ebaa1", module.exports)
-  }
-}
-
-/***/ }),
-/* 468 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(469);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("2ab57476", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5adc03d0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankLocalCulture.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5adc03d0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankLocalCulture.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 469 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-5adc03d0]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_localculture[data-v-5adc03d0]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-5adc03d0]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-5adc03d0]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-5adc03d0]{width:28px;height: 28px;\n}\n.form_content[data-v-5adc03d0]{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_journeyInfo[data-v-5adc03d0]{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div[data-v-5adc03d0]{width: 100%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo[data-v-5adc03d0]{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area[data-v-5adc03d0]{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.active[data-v-5adc03d0]{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo[data-v-5adc03d0]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo[data-v-5adc03d0]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img[data-v-5adc03d0]{width:50px;height: 50px;\n}\n.editBox[data-v-5adc03d0]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-5adc03d0]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-5adc03d0]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-5adc03d0]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journeyInfo[data-v-5adc03d0]{width:94%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journeyInfo>img[data-v-5adc03d0]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-5adc03d0]{width:50%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 470 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c(
-          "div",
-          { staticClass: "pane_content_localculture" },
-          _vm._l(_vm.locals, function(local, index) {
-            return _c("div", { staticClass: "form_content disflex" }, [
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
-                _vm._v(" "),
-                _c("div", {
-                  staticStyle: {
-                    border: "1px solid #ccc",
-                    "border-radius": "8px",
-                    width: "97%",
-                    "background-color": "#eeeeee",
-                    "line-height": "25px"
-                  },
-                  domProps: { innerHTML: _vm._s(local.content) }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editBtnGroup_journeyInfo" }, [
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/rush-icon.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.delLocal(local.id)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/edit-all.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.editLocalShow(index)
-                    }
-                  }
-                })
-              ])
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "dataBankAddBtn_journeyInfo",
-            on: {
-              click: function($event) {
-                return _vm.addNewLocalShow()
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewLocalShow,
-            callback: function($$v) {
-              _vm.isNewLocalShow = $$v
-            },
-            expression: "isNewLocalShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  [
-                    _c("Editor", {
-                      attrs: { childData: _vm.newLocal.content },
-                      on: { catchData: _vm.catchData },
-                      model: {
-                        value: _vm.newLocal.content,
-                        callback: function($$v) {
-                          _vm.$set(_vm.newLocal, "content", $$v)
-                        },
-                        expression: "newLocal.content"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewLocal()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditLocalShow,
-            callback: function($$v) {
-              _vm.isEditLocalShow = $$v
-            },
-            expression: "isEditLocalShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  [
-                    _c("Editor", {
-                      attrs: { childData: _vm.edLocal.content },
-                      on: { catchData: _vm.catchData }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editLocal()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-5adc03d0", module.exports)
-  }
-}
-
-/***/ }),
-/* 471 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(472);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("4148e95c", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-372cdd52\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankEvaluationInfo.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-372cdd52\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankEvaluationInfo.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 472 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-372cdd52]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_eval[data-v-372cdd52]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-372cdd52]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-372cdd52]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-372cdd52]{width:28px;height: 28px;\n}\n.form_content[data-v-372cdd52]{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_evaluationInfo[data-v-372cdd52]{width: 100%;min-height:50px;\n}\n.form_item_evaluationInfo>div[data-v-372cdd52]{width: 96%;min-height: 35px;\n}\n.item_area_eval[data-v-372cdd52]{width:100%;min-height:40px;border-radius: 8px;resize:none;line-height:38px;font-size: 14px;outline: none;overflow: hidden;padding: 0 10px;\n}\nselect[data-v-372cdd52]{width:100%;min-height:40px;border-radius: 8px;line-height:38px;font-size: 14px;outline: none;overflow: hidden;padding: 0 10px;\n}\noption[data-v-372cdd52]{ border:1px solid #CCC;border-radius: 8px;background: #fff;\n}\noption[data-v-372cdd52]:hover{background-color: #ffde01;\n}\n.active[data-v-372cdd52]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-372cdd52]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-372cdd52]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-372cdd52]{width:50px;height: 50px;\n}\n.editBox[data-v-372cdd52]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-372cdd52]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-372cdd52]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-372cdd52]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-372cdd52]{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-372cdd52]{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog[data-v-372cdd52]{width:50%;\n}\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 473 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "right_title" }, [
-        _c(
-          "div",
-          {
-            staticClass: "title_icon",
-            on: {
-              click: function($event) {
-                return _vm.$router.push("/topic/dataBankEvaluation")
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "overText", staticStyle: { margin: "0 40px" } },
-          [_vm._v(_vm._s(_vm.eval.title))]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c(
-          "div",
-          { staticClass: "pane_content_eval" },
-          _vm._l(_vm.evaluationInfos, function(evaluationInfo, index) {
-            return _c("div", { staticClass: "form_content disflex" }, [
-              _c("div", { staticClass: "form_item_evaluationInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v(
-                    "題目" +
-                      _vm._s(index + 1) +
-                      "\n                            "
-                  ),
-                  evaluationInfo.type == 1
-                    ? _c("span", { staticClass: "fr" }, [_vm._v("一個選項")])
-                    : evaluationInfo.type == 2
-                    ? _c("span", { staticClass: "fr" }, [_vm._v("兩個選項")])
-                    : evaluationInfo.type == 3
-                    ? _c("span", { staticClass: "fr" }, [_vm._v("五個選項")])
-                    : _vm._e()
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    staticClass: "item_area_eval",
-                    attrs: { placeholder: "題目詳情", disabled: "disabled" },
-                    domProps: { value: evaluationInfo.content }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editBtnGroup" }, [
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/rush-icon.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.delEvaluationInfo(evaluationInfo.id)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/edit-all.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.editEvaluationInfoShow(index)
-                    }
-                  }
-                })
-              ])
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "dataBankAddBtn",
-            on: {
-              click: function($event) {
-                return _vm.addNewEvaluationInfoShow()
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewEvaluationInfoShow,
-            callback: function($$v) {
-              _vm.isNewEvaluationInfoShow = $$v
-            },
-            expression: "isNewEvaluationInfoShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_evaluationInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("題目詳情(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newEvaluationInfo.content,
-                        expression: "newEvaluationInfo.content"
-                      }
-                    ],
-                    staticClass: "item_area_eval",
-                    attrs: { placeholder: "題目詳情" },
-                    domProps: { value: _vm.newEvaluationInfo.content },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newEvaluationInfo,
-                          "content",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_evaluationInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("題目類型(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newEvaluationInfo.type,
-                          expression: "newEvaluationInfo.type"
-                        }
-                      ],
-                      attrs: { id: "edTypeId" },
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.$set(
-                            _vm.newEvaluationInfo,
-                            "type",
-                            $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          )
-                        }
-                      }
-                    },
-                    _vm._l(_vm.optList, function(item) {
-                      return _c("option", { domProps: { value: item.value } }, [
-                        _vm._v(_vm._s(item.title))
-                      ])
-                    }),
-                    0
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewEvaluationInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditEvaluationInfoShow,
-            callback: function($$v) {
-              _vm.isEditEvaluationInfoShow = $$v
-            },
-            expression: "isEditEvaluationInfoShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_evaluationInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("題目詳情(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edEvaluationInfo.content,
-                        expression: "edEvaluationInfo.content"
-                      }
-                    ],
-                    staticClass: "item_area_eval",
-                    attrs: { placeholder: "題目詳情" },
-                    domProps: { value: _vm.edEvaluationInfo.content },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edEvaluationInfo,
-                          "content",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_evaluationInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("題目類型(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edEvaluationInfo.type,
-                          expression: "edEvaluationInfo.type"
-                        }
-                      ],
-                      attrs: { id: "edTypeId" },
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.$set(
-                            _vm.edEvaluationInfo,
-                            "type",
-                            $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          )
-                        }
-                      }
-                    },
-                    _vm._l(_vm.optList, function(item) {
-                      return _c("option", { domProps: { value: item.value } }, [
-                        _vm._v(_vm._s(item.title))
-                      ])
-                    }),
-                    0
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editEvaluationInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-372cdd52", module.exports)
-  }
-}
-
-/***/ }),
-/* 474 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(475);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("3372f68f", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4b0dc36e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankAnswerList.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4b0dc36e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankAnswerList.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 475 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_answer[data-v-4b0dc36e]{width: 100%;min-height:650px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column; font-size: 16px;\n}\n.dataBank_input_answer>table[data-v-4b0dc36e]{width: 90%;\n}\n.dataBank_input_answer table th[data-v-4b0dc36e]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_answer table td[data-v-4b0dc36e]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_answer td>input[data-v-4b0dc36e]{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item_group[data-v-4b0dc36e]{width: 100%;min-height:100px;\n}\n.form_item_group>div[data-v-4b0dc36e]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-4b0dc36e]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon[data-v-4b0dc36e]{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon[data-v-4b0dc36e]:hover{cursor: pointer;\n}\n.editIcon>img[data-v-4b0dc36e]{width:25px;height:25px;\n}\n.active[data-v-4b0dc36e]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-4b0dc36e]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-4b0dc36e]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-4b0dc36e]{width:50px;height: 50px;\n}\n.editBox[data-v-4b0dc36e]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-4b0dc36e]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-4b0dc36e]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-4b0dc36e]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules[data-v-4b0dc36e]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img[data-v-4b0dc36e]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.listTitle[data-v-4b0dc36e]{width:90%;height:45px;line-height:45px;text-align:center;background-color:#ffde01;font-size:18px;margin-top:20px;border-radius-top-left: 15px;border-radius-top-right: 15px;\n}\n.van-dialog[data-v-4b0dc36e]{width:50%;\n}    \n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 476 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticStyle: { width: "100%" } }, [
-    _c("div", { staticClass: "dataBank_input_answer disflex" }, [
-      _c("div", { staticClass: "listTitle" }, [_vm._v("學生名單")]),
-      _vm._v(" "),
-      _c("table", [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "tbody",
-          _vm._l(_vm.groups, function(group, index) {
-            return _c("tr", [
-              _c("td", [_vm._v(_vm._s(group.group))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(group.student_number))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(group.class))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(group.user.name))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(group.user.en_name))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(group.duty))]),
-              _vm._v(" "),
-              _c(
-                "td",
-                {
-                  staticClass: "cursorPoint",
-                  on: {
-                    click: function($event) {
-                      return _vm.$router.push(
-                        "/answer/dataBankAnswerInfo/" + group.user_id
-                      )
-                    }
-                  }
-                },
-                [_vm._v("查看答題紙>")]
-              )
-            ])
-          }),
-          0
-        )
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("分組")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("學生學號")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("學生班級")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("中文名")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("英文名")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("學生職責")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("查看答題紙")])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-4b0dc36e", module.exports)
-  }
-}
-
-/***/ }),
-/* 477 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(478);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("0808dcda", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d6416b4e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankAnswerInfo.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d6416b4e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankAnswerInfo.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 478 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-d6416b4e]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.tablist[data-v-d6416b4e]{width:100%;\n}\n.nav-tabs>li>a[data-v-d6416b4e]{color: #000;\n}\n.active[data-v-d6416b4e]{font-size: 18px;\n}\n.tab-pane[data-v-d6416b4e]{\n}\n.pane-answer[data-v-d6416b4e]{width:70%;margin-left: 15%;\n}\n.back_icon[data-v-d6416b4e]{width:45px;height:45px;line-height: 45px;\n}\n.back_icon>img[data-v-d6416b4e]{width:28px;height: 28px;\n}\n.sheetGroup[data-v-d6416b4e]{width:100%;height:auto;margin:20px 0;border:2px solid #eee;\n}\n.sheetGroup>div[data-v-d6416b4e]{width:100%;text-indent: 1em;\n}\n.sheetTitle[data-v-d6416b4e]{min-height:45px;line-height: 45px;font-size: 18px;font-weight: bold;text-align: center;\n}\n.sheetContent[data-v-d6416b4e]{min-height:50px;\n}\n.sheetQuestion[data-v-d6416b4e]{height:auto;\n}\n.questTitle[data-v-d6416b4e]{width:100%;min-height:45px;line-height: 45px;font-size: 16px;font-weight: bold;\n}\n.questContent[data-v-d6416b4e]{width:100%;font-size: 14px;min-height:50px;line-height: 25px;word-break: break-all;\n}\n.feelTitle[data-v-d6416b4e]{font-size: 16px;font-weight: bold;min-height:45px;line-height: 45px;\n}\n.feelImg[data-v-d6416b4e]{height:auto;text-align: center;\n}\n.feelImg>img[data-v-d6416b4e]{width:70%;border:5px solid #fff;\n}\n.feelContent[data-v-d6416b4e]{min-height:50px;font-size: 14px;line-height: 25px;word-break: break-all;\n}\n.evaluationGroup[data-v-d6416b4e]{width:100%;height:auto;margin:20px 0;border:2px solid #eee;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationTitle[data-v-d6416b4e]{width:100%;height:45px;font-size: 18px;line-height: 45px;background-color: #ffde01;font-weight:bold;border-radius-top-left:8px;border-top-right-radius: 8px;\n}\n.evaluationQuestions[data-v-d6416b4e]{min-height: 90px;\n}\n.evaluationQuestionTitle[data-v-d6416b4e]{width:100%;min-height: 45px;line-height:45px;background-color: #eee;font-size: 16px;\n}\n.evaluationQuestionContent[data-v-d6416b4e]{width:100%;height:45px;line-height: 45px;\n}\n.menuIcon[data-v-d6416b4e]{width:80px;height:45px;float: left;line-height: 45px;margin-left: 10px;\n}\n.menuIcon>img[data-v-d6416b4e]{width:20px;height:20px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 479 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticStyle: { width: "100%" } }, [
-    _c("div", { staticClass: "dataBank_input_form disflex" }, [
-      _c("div", { staticClass: "tablist" }, [
-        _c("ul", { staticClass: "nav nav-tabs", attrs: { role: "tablist" } }, [
-          _c(
-            "li",
-            {
-              staticStyle: { width: "50px", height: "45px" },
-              attrs: { role: "presentation" }
-            },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "back_icon",
-                  on: {
-                    click: function($event) {
-                      return _vm.$router.push("/answer/dataBankAnswerList")
-                    }
-                  }
-                },
-                [
-                  _c("img", {
-                    attrs: { src: "/etravel/public/images/back.png" }
-                  })
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _vm._m(2)
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "tab-content" }, [
-          _c(
-            "div",
-            {
-              staticClass: "tab-pane pane-answer active",
-              attrs: { role: "tabpanel", id: "gather" }
-            },
-            _vm._l(_vm.sheetInfos, function(sheetInfo, index) {
-              return _c(
-                "div",
-                { staticClass: "sheetGroup" },
-                [
-                  _c("div", {
-                    staticClass: "sheetTitle",
-                    domProps: { textContent: _vm._s(sheetInfo.title) }
-                  }),
-                  _vm._v(" "),
-                  sheetInfo.questions.data
-                    ? _vm._l(sheetInfo.questions.data, function(
-                        question,
-                        index
-                      ) {
-                        return _c(
-                          "div",
-                          { staticClass: "sheetQuestion" },
-                          [
-                            _c("div", { staticClass: "questTitle" }, [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(index + 1) +
-                                  "." +
-                                  _vm._s(question.content) +
-                                  "\n                                "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            question.answer
-                              ? [
-                                  _c("div", { staticClass: "questContent" }, [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(question.answer.content) +
-                                        "\n                                    "
-                                    )
-                                  ])
-                                ]
-                              : [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "questContent",
-                                      staticStyle: { color: "red" }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                        暫無回答\n                                    "
-                                      )
-                                    ]
-                                  )
-                                ]
-                          ],
-                          2
-                        )
-                      })
-                    : [
-                        _c("div", { staticClass: "sheetQuestion" }, [
-                          _vm._v(
-                            "\n                                未設定問題\n                            "
-                          )
-                        ])
-                      ]
-                ],
-                2
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "tab-pane pane-answer",
-              attrs: { role: "tabpanel", id: "flight" }
-            },
-            _vm._l(_vm.evaluations, function(evaluation, index) {
-              return _c(
-                "div",
-                { staticClass: "sheetGroup" },
-                [
-                  _c("div", { staticClass: "evaluationTitle" }, [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(evaluation.title) +
-                        "\n                        "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  evaluation.evaluations.data[0]
-                    ? _vm._l(evaluation.evaluations.data, function(
-                        question,
-                        index
-                      ) {
-                        return _c(
-                          "div",
-                          { staticClass: "evaluationQuestions" },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "evaluationQuestionTitle" },
-                              [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(index + 1) +
-                                    "." +
-                                    _vm._s(question.content) +
-                                    "\n                                "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            question.type == 1
-                              ? _c(
-                                  "div",
-                                  { staticClass: "evaluationQuestionContent" },
-                                  [
-                                    _c(
-                                      "div",
-                                      { staticClass: "menuIcon" },
-                                      [
-                                        question.answer.option == 1
-                                          ? [
-                                              _c("img", {
-                                                attrs: {
-                                                  src:
-                                                    "/etravel/public/images/Options_sele.png"
-                                                }
-                                              })
-                                            ]
-                                          : [
-                                              _c("img", {
-                                                attrs: {
-                                                  src:
-                                                    "/etravel/public/images/Options.png"
-                                                }
-                                              })
-                                            ]
-                                      ],
-                                      2
-                                    )
-                                  ]
-                                )
-                              : question.type == 2
-                              ? _c(
-                                  "div",
-                                  { staticClass: "evaluationQuestionContent" },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "evaluationQuestionContent"
-                                      },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "menuIcon" },
-                                          [
-                                            question.answer.option == 1
-                                              ? [
-                                                  _c("img", {
-                                                    attrs: {
-                                                      src:
-                                                        "/etravel/public/images/Options_sele.png"
-                                                    }
-                                                  }),
-                                                  _vm._v(
-                                                    "YES     \n                                            "
-                                                  )
-                                                ]
-                                              : [
-                                                  _c("img", {
-                                                    attrs: {
-                                                      src:
-                                                        "/etravel/public/images/Options.png"
-                                                    }
-                                                  }),
-                                                  _vm._v(
-                                                    "YES\n                                            "
-                                                  )
-                                                ]
-                                          ],
-                                          2
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "menuIcon" },
-                                          [
-                                            question.answer.option == 2
-                                              ? [
-                                                  _c("img", {
-                                                    attrs: {
-                                                      src:
-                                                        "/etravel/public/images/Options_sele.png"
-                                                    }
-                                                  }),
-                                                  _vm._v(
-                                                    "NO       \n                                            "
-                                                  )
-                                                ]
-                                              : [
-                                                  _c("img", {
-                                                    attrs: {
-                                                      src:
-                                                        "/etravel/public/images/Options.png"
-                                                    }
-                                                  }),
-                                                  _vm._v(
-                                                    "NO\n                                            "
-                                                  )
-                                                ]
-                                          ],
-                                          2
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              : question.type == 3
-                              ? _c(
-                                  "div",
-                                  { staticClass: "evaluationQuestionContent" },
-                                  _vm._l(_vm.type3, function(typeLink, index) {
-                                    return _c(
-                                      "div",
-                                      { staticClass: "menuIcon" },
-                                      [
-                                        question.answer.option == index + 1
-                                          ? [
-                                              _c("img", {
-                                                attrs: {
-                                                  src:
-                                                    "/etravel/public/images/Options_sele.png"
-                                                }
-                                              })
-                                            ]
-                                          : [
-                                              _c("img", {
-                                                attrs: { src: typeLink }
-                                              })
-                                            ]
-                                      ],
-                                      2
-                                    )
-                                  }),
-                                  0
-                                )
-                              : _vm._e()
-                          ]
-                        )
-                      })
-                    : [_vm._m(3, true)]
-                ],
-                2
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "tab-pane pane-answer",
-              attrs: { role: "tabpanel", id: "accommodationInfo" }
-            },
-            _vm._l(_vm.perceptions, function(perception, index) {
-              return _c(
-                "div",
-                { staticClass: "sheetGroup" },
-                [
-                  _c("div", { staticClass: "feelTitle" }, [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(index + 1) +
-                        "." +
-                        _vm._s(perception.title) +
-                        "\n                        "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  perception.writes.data[0]
-                    ? [
-                        perception.writes.data[0].image
-                          ? _c("div", { staticClass: "feelImg" }, [
-                              _c("img", {
-                                attrs: { src: perception.writes.data[0].image }
-                              })
-                            ])
-                          : _c("div", { staticClass: "feelImg" }, [
-                              _c("h4", [_vm._v("未上傳圖片")])
-                            ]),
-                        _vm._v(" "),
-                        perception.writes.data[0].content
-                          ? _c("div", { staticClass: "feelContent" }, [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(perception.writes.data[0].content) +
-                                  "\n                            "
-                              )
-                            ])
-                          : _c(
-                              "div",
-                              {
-                                staticClass: "feelContent",
-                                staticStyle: { color: "red" }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                暫無回答\n                            "
-                                )
-                              ]
-                            )
-                      ]
-                    : [
-                        _vm._m(4, true),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "feelContent",
-                            staticStyle: { color: "red" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                暫無回答\n                            "
-                            )
-                          ]
-                        )
-                      ]
-                ],
-                2
-              )
-            }),
-            0
-          )
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "li",
-      { staticClass: "active", attrs: { role: "presentation" } },
-      [
-        _c(
-          "a",
-          {
-            attrs: {
-              href: "#gather",
-              "aria-controls": "gather",
-              role: "tab",
-              "data-toggle": "tab"
-            }
-          },
-          [_vm._v("學習工作紙")]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { attrs: { role: "presentation" } }, [
-      _c(
-        "a",
-        {
-          attrs: {
-            href: "#flight",
-            "aria-controls": "flight",
-            role: "tab",
-            "data-toggle": "tab"
-          }
-        },
-        [_vm._v("自我評估")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { attrs: { role: "presentation" } }, [
-      _c(
-        "a",
-        {
-          attrs: {
-            href: "#accommodationInfo",
-            "aria-controls": "accommodationInfo",
-            role: "tab",
-            "data-toggle": "tab"
-          }
-        },
-        [_vm._v("自我感想")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "evaluationQuestions" }, [
-      _c("h4", [_vm._v("暫無題目")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "feelImg" }, [
-      _c("h4", [_vm._v("未上傳圖片")])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-d6416b4e", module.exports)
-  }
-}
-
-/***/ }),
-/* 480 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(481);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("0ac4f0d4", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2fb5fe3a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankStudySheet.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2fb5fe3a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankStudySheet.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 481 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-2fb5fe3a]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_sheet[data-v-2fb5fe3a]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-2fb5fe3a]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-2fb5fe3a]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-2fb5fe3a]{width:28px;height: 28px;\n}\n.form_content_sheet[data-v-2fb5fe3a]{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journeyInfo[data-v-2fb5fe3a]{width: 100%;min-height:80px;\n}\n.form_item_journeyInfo>div[data-v-2fb5fe3a]{width: 96%;min-height: 45px;line-height: 45px;\n}\n.item_input_journeyInfo[data-v-2fb5fe3a]{height:40px;padding-left:10px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_area[data-v-2fb5fe3a]{width:97%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.toNext[data-v-2fb5fe3a]{width:30px;height: 30px;text-align: center;line-height: 30px;float: right;margin-right: 15px;margin-top: 13px;\n}\n.active[data-v-2fb5fe3a]{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo[data-v-2fb5fe3a]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo[data-v-2fb5fe3a]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img[data-v-2fb5fe3a]{width:50px;height: 50px;\n}\n.editBox[data-v-2fb5fe3a]{width:760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-2fb5fe3a]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-2fb5fe3a]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-2fb5fe3a]{width:60%;height:50px;margin-left:20%;background-color:#ffde01;font-size:16px;border-radius: 8px;border:none;outline:none;\n}\n.editBtnGroup_journeyInfo[data-v-2fb5fe3a]{width:94%;height:50px;line-height:50px;\n}\n.editBtnGroup_journeyInfo>img[data-v-2fb5fe3a]{width:40px;height:40px;margin-left:25px;float:right;\n}\n.van-dialog[data-v-2fb5fe3a]{width:50%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 482 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "right_title" }, [
-        _c(
-          "div",
-          {
-            staticClass: "title_icon",
-            on: {
-              click: function($event) {
-                return _vm.$router.push("/study/dataBankStudy")
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
-        ),
-        _vm._v("\n\t\t\t學習工作紙\n        ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c(
-          "div",
-          { staticClass: "pane_content_sheet" },
-          _vm._l(_vm.sheets, function(sheet, index) {
-            return _c("div", { staticClass: "form_content_sheet disflex" }, [
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("標題 "),
-                  _c("img", {
-                    staticClass: "toNext",
-                    attrs: { src: "/etravel/public/images/See-next.png" },
-                    on: {
-                      click: function($event) {
-                        return _vm.$router.push(
-                          "/study/dataBankStudySheetInfo/" + sheet.id
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    staticClass: "item_input_journeyInfo",
-                    attrs: {
-                      placeholder: "標題",
-                      type: "text",
-                      disabled: "disabled"
-                    },
-                    domProps: { value: sheet.title }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
-                _vm._v(" "),
-                _c("div", {
-                  staticStyle: {
-                    border: "1px solid #ccc",
-                    "border-radius": "8px",
-                    width: "93%",
-                    "background-color": "#eeeeee",
-                    "line-height": "25px"
-                  },
-                  domProps: { innerHTML: _vm._s(sheet.body) }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editBtnGroup_journeyInfo" }, [
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/rush-icon.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.delSheet(sheet.id)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/edit-all.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.editSheetShow(index)
-                    }
-                  }
-                })
-              ])
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "dataBankAddBtn_journeyInfo",
-            on: {
-              click: function($event) {
-                return _vm.addNewSheetShow()
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewSheetShow,
-            callback: function($$v) {
-              _vm.isNewSheetShow = $$v
-            },
-            expression: "isNewSheetShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("標題(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newSheet.title,
-                        expression: "newSheet.title"
-                      }
-                    ],
-                    staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "標題", type: "text" },
-                    domProps: { value: _vm.newSheet.title },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newSheet, "title", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("内容(必填)")
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  [
-                    _c("Editor", {
-                      attrs: { childData: _vm.newSheet.body },
-                      on: { catchData: _vm.catchData }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewSheet()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditSheetShow,
-            callback: function($$v) {
-              _vm.isEditSheetShow = $$v
-            },
-            expression: "isEditSheetShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("標題(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edSheet.title,
-                        expression: "edSheet.title"
-                      }
-                    ],
-                    staticClass: "item_input_journeyInfo",
-                    attrs: { placeholder: "標題", type: "text" },
-                    domProps: { value: _vm.edSheet.title },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edSheet, "title", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("内容(必填)")
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  [
-                    _c("Editor", {
-                      attrs: { childData: _vm.edSheet.body },
-                      on: { catchData: _vm.catchData }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editSheet()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-2fb5fe3a", module.exports)
-  }
-}
-
-/***/ }),
-/* 483 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(484);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("456fee68", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e286b59e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankStudySheetInfo.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e286b59e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankStudySheetInfo.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 484 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-e286b59e]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_sheetInfo[data-v-e286b59e]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-e286b59e]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-e286b59e]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-e286b59e]{width:28px;height: 28px;\n}\n.form_content_sheetInfo[data-v-e286b59e]{width: 94%;min-height: 210px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;margin-top: 10px;\n}\n.form_item_sheetInfo[data-v-e286b59e]{width: 100%;min-height:90px;\n}\n.form_item_sheetInfo>div[data-v-e286b59e]{min-height:45px;line-height: 45px;outline: none;width: 97%;border-radius: 8px;\n}\n.item_input_sheetInfo[data-v-e286b59e]{height:45px;padding-left:10px;outline: none;width: 100%;border-radius: 8px;\n}\n.item_area_sheetInfo[data-v-e286b59e]{width:100%;min-height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.item_title_icon>img[data-v-e286b59e]{height:25px;margin-left:5px;\n}\n.item_title_icon>img[data-v-e286b59e]:hover{cursor: pointer;\n}\n.active[data-v-e286b59e]{font-size: 18px;\n}\n.dataBankAddBtn_journeyInfo[data-v-e286b59e]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journeyInfo[data-v-e286b59e]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journeyInfo>img[data-v-e286b59e]{width:50px;height: 50px;\n}\n.editBox_sheetInfo[data-v-e286b59e]{width: 760px;min-height:160px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-e286b59e]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-e286b59e]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-e286b59e]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-e286b59e]{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-e286b59e]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-e286b59e]{width:50%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 485 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "right_title" }, [
-        _c(
-          "div",
-          {
-            staticClass: "title_icon",
-            on: {
-              click: function($event) {
-                return _vm.$router.push(
-                  "/study/dataBankStudySheet/" + _vm.sessionStorage.routeId
-                )
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "overText", staticStyle: { margin: "0 40px" } },
-          [_vm._v(_vm._s(_vm.sheet.title))]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c("div", { staticClass: "pane_content_sheetInfo" }, [
-          _vm.sheetInfos[0]
-            ? _c(
-                "div",
-                { staticClass: "form_content_sheetInfo disflex" },
-                _vm._l(_vm.sheetInfos, function(sheetInfo, index) {
-                  return _c("div", { staticClass: "form_item_sheetInfo" }, [
-                    _c("div", { staticClass: "item_title" }, [
-                      _vm._v(
-                        "\n\t\t                    問題" +
-                          _vm._s(index + 1) +
-                          "\n\t\t                    "
-                      ),
-                      _c("div", { staticClass: "fr item_title_icon" }, [
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/edit.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.editSheetInfoShow(index)
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("img", {
-                          attrs: { src: "/etravel/public/images/dele.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.delSheetInfo(sheetInfo.id)
-                            }
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("textarea", {
-                        staticClass: "item_area_sheetInfo",
-                        attrs: { placeholder: "内容", disabled: "disabled" },
-                        domProps: { value: sheetInfo.content }
-                      })
-                    ])
-                  ])
-                }),
-                0
-              )
-            : _c("div", { staticClass: "form_content_sheetInfo" }, [
-                _vm._v(
-                  "\n                        暫未添加任何問題，請添加\n                    "
-                ),
-                _c("div", { staticStyle: { "text-align": "center" } })
-              ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "dataBankAddBtn_journeyInfo",
-            on: {
-              click: function($event) {
-                return _vm.addNewSheetInfoShow()
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewSheetInfoShow,
-            callback: function($$v) {
-              _vm.isNewSheetInfoShow = $$v
-            },
-            expression: "isNewSheetInfoShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox_sheetInfo" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_sheetInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("問題(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newSheetInfo.content,
-                        expression: "newSheetInfo.content"
-                      }
-                    ],
-                    staticClass: "item_area_sheetInfo",
-                    attrs: { placeholder: "問題" },
-                    domProps: { value: _vm.newSheetInfo.content },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newSheetInfo,
-                          "content",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewSheetInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditSheetInfoShow,
-            callback: function($$v) {
-              _vm.isEditSheetInfoShow = $$v
-            },
-            expression: "isEditSheetInfoShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox_sheetInfo" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_sheetInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("問題(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edSheetInfo.content,
-                        expression: "edSheetInfo.content"
-                      }
-                    ],
-                    staticClass: "item_area_sheetInfo",
-                    attrs: { placeholder: "問題" },
-                    domProps: { value: _vm.edSheetInfo.content },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edSheetInfo,
-                          "content",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editSheetInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-e286b59e", module.exports)
-  }
-}
-
-/***/ }),
-/* 486 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(487);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("24811419", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7ec610de\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankSelfPerception.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7ec610de\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./DataBankSelfPerception.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 487 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-7ec610de]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_feel[data-v-7ec610de]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title[data-v-7ec610de]{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.form_content_feel[data-v-7ec610de]{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_feel[data-v-7ec610de]{width: 100%;min-height:100px;\n}\n.form_item_feel>div[data-v-7ec610de]{width: 96%;min-height: 45px;\n}\n.item_area[data-v-7ec610de]{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.item_input[data-v-7ec610de]{height:40px;padding-left:10px;outline: none;width:97%;border-radius: 8px;\n}\n.active[data-v-7ec610de]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-7ec610de]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-7ec610de]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-7ec610de]{width:50px;height: 50px;\n}\n.editBox[data-v-7ec610de]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-7ec610de]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-7ec610de]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-7ec610de]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup[data-v-7ec610de]{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img[data-v-7ec610de]{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog[data-v-7ec610de]{width:50%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 488 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "right_title" }, [
-        _vm._v("\n        自我感想\n    ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c(
-          "div",
-          { staticClass: "pane_content_feel" },
-          [
-            _vm._l(_vm.feels, function(feel, index) {
-              return _c("div", { staticClass: "form_content_feel disflex" }, [
-                _c("div", { staticClass: "form_item_feel" }, [
-                  _c("div", { staticClass: "item_title" }, [
-                    _vm._v("感想標題" + _vm._s(index + 1))
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("input", {
-                      staticClass: "item_input",
-                      attrs: {
-                        placeholder: "感想標題",
-                        type: "text",
-                        disabled: "disabled"
-                      },
-                      domProps: { value: feel.title }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "editBtnGroup" }, [
-                  _c("img", {
-                    attrs: { src: "/etravel/public/images/rush-icon.png" },
-                    on: {
-                      click: function($event) {
-                        return _vm.delFeel(feel.id)
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("img", {
-                    attrs: { src: "/etravel/public/images/edit-all.png" },
-                    on: {
-                      click: function($event) {
-                        return _vm.editFeelShow(index)
-                      }
-                    }
-                  })
-                ])
-              ])
-            }),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "dataBankAddBtn",
-                on: {
-                  click: function($event) {
-                    return _vm.addFeelShow()
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/add_y.png" }
-                })
-              ]
-            )
-          ],
-          2
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isAddFeelShow,
-            callback: function($$v) {
-              _vm.isAddFeelShow = $$v
-            },
-            expression: "isAddFeelShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_feel" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("感想標題(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newFeel.title,
-                        expression: "newFeel.title"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "感想標題", type: "text" },
-                    domProps: { value: _vm.newFeel.title },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newFeel, "title", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addFeel()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditFeelShow,
-            callback: function($$v) {
-              _vm.isEditFeelShow = $$v
-            },
-            expression: "isEditFeelShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_feel" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("感想標題(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edFeel.title,
-                        expression: "edFeel.title"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "感想標題", type: "text" },
-                    domProps: { value: _vm.edFeel.title },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edFeel, "title", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editFeel()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-7ec610de", module.exports)
-  }
-}
-
-/***/ }),
-/* 489 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(490);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("5fdb9a15", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f9e49aa8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankStudy.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f9e49aa8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankStudy.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 490 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-f9e49aa8]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist[data-v-f9e49aa8]{width:100%;\n}\n.nav-tabs>li>a[data-v-f9e49aa8]{color: #000;\n}\n.pane_content_study[data-v-f9e49aa8]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_journey[data-v-f9e49aa8]{width: 94%;min-height: 120px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journey[data-v-f9e49aa8]{width: 100%;min-height:50px;\n}\n.form_item_journey>div[data-v-f9e49aa8]{min-height: 50px;line-height: 50px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_input[data-v-f9e49aa8]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.item_left[data-v-f9e49aa8]{width:85%;border-radius: 8px;background-color: #d6d6d6;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_left>input[data-v-f9e49aa8]{height:40px;border-radius: 6px;\n}\n.item_right[data-v-f9e49aa8]{min-width:10%;line-height: 50px;text-align: center;\n}\n.item_right>img[data-v-f9e49aa8]{width:30px;height:30px;\n}\n.active[data-v-f9e49aa8]{font-size: 18px;\n}\n.dataBankAddBtn_journey[data-v-f9e49aa8]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journey[data-v-f9e49aa8]:hover{cursor:pointer;\n}\n.dataBankAddBtn_journey>img[data-v-f9e49aa8]{width:50px;height: 50px;\n}\n.editBox[data-v-f9e49aa8]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-f9e49aa8]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-f9e49aa8]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-f9e49aa8]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journey[data-v-f9e49aa8]{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journey>img[data-v-f9e49aa8]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-f9e49aa8]{width:50%;\n}\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 491 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "dataBank_input_form disflex" },
-    [
-      _c(
-        "div",
-        { staticClass: "pane_content_study" },
-        [
-          _vm._l(_vm.journeys, function(journey, index) {
-            return _c("div", { staticClass: "form_content_journey disflex" }, [
-              _c("div", { staticClass: "form_item_journey disflex" }, [
-                _c("div", { staticClass: "item_left disflex" }, [
-                  _c(
-                    "div",
-                    { staticStyle: { width: "40%", "margin-left": "5%" } },
-                    [_vm._v(_vm._s(journey.day))]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticStyle: { width: "20%", "text-align": "center" } },
-                    [_vm._v("日期")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticStyle: { width: "30%" },
-                    attrs: { type: "text", disabled: "disabled" },
-                    domProps: { value: journey.date }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "item_right" }, [
-                  _c("img", {
-                    attrs: { src: "/etravel/public/images/See-next.png" },
-                    on: {
-                      click: function($event) {
-                        return _vm.$router.push(
-                          "/study/dataBankStudySheet/" + journey.id
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editBtnGroup_journey" }, [
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/rush-icon.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.delJourney(journey.id)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/edit-all.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.editJourneyShow(index)
-                    }
-                  }
-                })
-              ])
-            ])
-          }),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "dataBankAddBtn_journey",
-              on: {
-                click: function($event) {
-                  return _vm.addNewJourneyShow()
-                }
-              }
-            },
-            [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-          )
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewJourneyShow,
-            callback: function($$v) {
-              _vm.isNewJourneyShow = $$v
-            },
-            expression: "isNewJourneyShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journey" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("景點(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newJourney.day,
-                        expression: "newJourney.day"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "景點", type: "text" },
-                    domProps: { value: _vm.newJourney.day },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newJourney, "day", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journey" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("日期(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newJourney.date,
-                        expression: "newJourney.date"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: {
-                      placeholder: "填寫日期(yyyy-mm-dd)",
-                      type: "text"
-                    },
-                    domProps: { value: _vm.newJourney.date },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.newJourney, "date", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewJourney()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditJourneyShow,
-            callback: function($$v) {
-              _vm.isEditJourneyShow = $$v
-            },
-            expression: "isEditJourneyShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_journey" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("景點(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edJourney.day,
-                        expression: "edJourney.day"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "景點", type: "text" },
-                    domProps: { value: _vm.edJourney.day },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edJourney, "day", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form_item_journey" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("日期(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edJourney.date,
-                        expression: "edJourney.date"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: {
-                      placeholder: "填寫日期(yyyy-mm-dd)",
-                      type: "text"
-                    },
-                    domProps: { value: _vm.edJourney.date },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edJourney, "date", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editJourney()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-f9e49aa8", module.exports)
-  }
-}
-
-/***/ }),
-/* 492 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(493);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("f4be53da", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-20d425d2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankLuggageList.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-20d425d2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankLuggageList.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 493 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-20d425d2]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_luggage[data-v-20d425d2]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_luggageLists[data-v-20d425d2]{width: 94%;min-height: 110px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_luggageLists[data-v-20d425d2]{width: 100%;min-height:100px;\n}\n.form_item_luggageLists>div[data-v-20d425d2]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-20d425d2]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input_icon[data-v-20d425d2]{width: 100%;height: 50px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.input_icon>input[data-v-20d425d2]{width: 80%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.input_icon>div[data-v-20d425d2]{width: 80px;height: 45px;\n}\n.input_icon>div>img[data-v-20d425d2]{width:40px;height: 40px;float: right;\n}\n.input_icon>div>img[data-v-20d425d2]:hover{cursor: pointer;\n}\n.active[data-v-20d425d2]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-20d425d2]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-20d425d2]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-20d425d2]{width:50px;height: 50px;\n}\n.editBox[data-v-20d425d2]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-20d425d2]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-20d425d2]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-20d425d2]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_luggageLists[data-v-20d425d2]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_luggageLists>img[data-v-20d425d2]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-20d425d2]{width:50%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 494 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "dataBank_input_form disflex",
-      staticStyle: { position: "relative" }
-    },
-    [
-      _c("div", { staticClass: "pane_content_luggage" }, [
-        _c(
-          "div",
-          { staticClass: "form_content_luggageLists disflex" },
-          _vm._l(_vm.luggageLists, function(luggageList, index) {
-            return _c("div", { staticClass: "form_item_luggageLists" }, [
-              _c("div", { staticClass: "item_title" }, [
-                _vm._v("清單" + _vm._s(index + 1))
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "input_icon disflex" }, [
-                _c("input", {
-                  attrs: { type: "text", disabled: "disabled" },
-                  domProps: { value: luggageList.rule_category_name }
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.$router.push(
-                          "/luggage/dataBankLuggageListInfo/" + luggageList.id
-                        )
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      attrs: {
-                        src: "/etravel/public/images/See-next.png",
-                        alt: ""
-                      }
-                    })
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editBtnGroup_luggageLists" }, [
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/rush-icon.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.delLuggageList(luggageList.id)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/edit-all.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.editLuggageListShow(index)
-                    }
-                  }
-                })
-              ])
-            ])
-          }),
-          0
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "dataBankAddBtn",
-          on: {
-            click: function($event) {
-              return _vm.addNewLuggageListShow()
-            }
-          }
-        },
-        [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewLuggageListShow,
-            callback: function($$v) {
-              _vm.isNewLuggageListShow = $$v
-            },
-            expression: "isNewLuggageListShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_luggageLists" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("行李清單(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newLuggageList.rule_category_name,
-                        expression: "newLuggageList.rule_category_name"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "請填寫清單内容", type: "text" },
-                    domProps: { value: _vm.newLuggageList.rule_category_name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newLuggageList,
-                          "rule_category_name",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewLuggageList()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditLuggageListShow,
-            callback: function($$v) {
-              _vm.isEditLuggageListShow = $$v
-            },
-            expression: "isEditLuggageListShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_luggageLists" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("行李清單(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edLuggageList.rule_category_name,
-                        expression: "edLuggageList.rule_category_name"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "請填寫清單内容", type: "text" },
-                    domProps: { value: _vm.edLuggageList.rule_category_name },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edLuggageList,
-                          "rule_category_name",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editLuggageList()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-20d425d2", module.exports)
-  }
-}
-
-/***/ }),
-/* 495 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(496);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("2658b1b7", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5eb45765\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankLuggageListInfo.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5eb45765\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankLuggageListInfo.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 496 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-5eb45765]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.dataBank_input_form>table[data-v-5eb45765]{margin-top: 20px;width: 90%;\n}\n.dataBank_input_form table th[data-v-5eb45765]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form table td[data-v-5eb45765]{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;word-break: normal;\n}\n.dataBank_input_form thead[data-v-5eb45765]{background-color: #ffde01;\n}\n.dataBank_input_form td>input[data-v-5eb45765]{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item[data-v-5eb45765]{width: 100%;min-height:100px;\n}\n.form_item>div[data-v-5eb45765]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-5eb45765]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon[data-v-5eb45765]{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon[data-v-5eb45765]:hover{cursor: pointer;\n}\n.editIcon>img[data-v-5eb45765]{width:25px;height:25px;\n}\n.active[data-v-5eb45765]{font-size: 18px;\n}\n.form_item_luggageListInfo[data-v-5eb45765]{width: 100%;min-height:100px;\n}\n.form_item_luggageListInfo>div[data-v-5eb45765]{width: 100%;min-height: 45px;\n}\n.item_area[data-v-5eb45765]{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.editBox[data-v-5eb45765]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-5eb45765]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-5eb45765]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-5eb45765]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules[data-v-5eb45765]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img[data-v-5eb45765]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.right_title[data-v-5eb45765]{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon[data-v-5eb45765]{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img[data-v-5eb45765]{width:28px;height: 28px;\n}\n.van-dialog[data-v-5eb45765]{width:50%;\n}    \n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 497 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "100%" } },
-    [
-      _c("div", { staticClass: "right_title" }, [
-        _c(
-          "div",
-          {
-            staticClass: "title_icon",
-            on: {
-              click: function($event) {
-                return _vm.$router.push("/luggage/dataBankLuggageList")
-              }
-            }
-          },
-          [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "overText", staticStyle: { margin: "0 40px" } },
-          [_vm._v(_vm._s(_vm.luggageList.rule_category_name))]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dataBank_input_form disflex" }, [
-        _c("table", [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            [
-              _c("tr", [
-                _c("td", [_vm._v("編號")]),
-                _vm._v(" "),
-                _c("td", [_vm._v("填寫裝備內容")]),
-                _vm._v(" "),
-                _c("td", { attrs: { width: "100px" } }, [
-                  _c("div", { staticClass: "editIcon" }, [
-                    _c("img", {
-                      attrs: { src: "/etravel/public/images/appointAdd.png" },
-                      on: {
-                        click: function($event) {
-                          return _vm.addLuggageListInfoShow()
-                        }
-                      }
-                    })
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.luggageListInfos, function(luggageListInfo, index) {
-                return _c("tr", [
-                  _c("td", [_vm._v(_vm._s(index + 1))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(luggageListInfo.rule))]),
-                  _vm._v(" "),
-                  _c("td", { attrs: { width: "100px" } }, [
-                    _c("div", { staticClass: "editIcon" }, [
-                      _c("img", {
-                        attrs: { src: "/etravel/public/images/edit.png" },
-                        on: {
-                          click: function($event) {
-                            return _vm.editLuggageListInfoShow(index)
-                          }
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "editIcon" }, [
-                      _c("img", {
-                        attrs: { src: "/etravel/public/images/dele.png" },
-                        on: {
-                          click: function($event) {
-                            return _vm.delLuggageListInfo(luggageListInfo.id)
-                          }
-                        }
-                      })
-                    ])
-                  ])
-                ])
-              })
-            ],
-            2
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewLuggageListInfoShow,
-            callback: function($$v) {
-              _vm.isNewLuggageListInfoShow = $$v
-            },
-            expression: "isNewLuggageListInfoShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_luggageListInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("裝備內容(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newLuggageListInfo.rule,
-                        expression: "newLuggageListInfo.rule"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "填寫裝備內容" },
-                    domProps: { value: _vm.newLuggageListInfo.rule },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newLuggageListInfo,
-                          "rule",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addLuggageListInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditLuggageListInfoShow,
-            callback: function($$v) {
-              _vm.isEditLuggageListInfoShow = $$v
-            },
-            expression: "isEditLuggageListInfoShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_luggageListInfo" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("裝備內容(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edLuggageListInfo.rule,
-                        expression: "edLuggageListInfo.rule"
-                      }
-                    ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "填寫裝備內容" },
-                    domProps: { value: _vm.edLuggageListInfo.rule },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.edLuggageListInfo,
-                          "rule",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editLuggageListInfo()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("編號")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("裝備內容")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("編輯")])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-5eb45765", module.exports)
-  }
-}
-
-/***/ }),
-/* 498 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(499);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("14c9424a", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-568143e9\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankEvaluation.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-568143e9\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.3@vue-loader/lib/selector.js?type=styles&index=0!./dataBankEvaluation.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 499 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.dataBank_input_form[data-v-568143e9]{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_evaluation[data-v-568143e9]{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_evaluations[data-v-568143e9]{width: 94%;min-height: 110px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_evaluations[data-v-568143e9]{width: 100%;min-height:100px;\n}\n.form_item_evaluations>div[data-v-568143e9]{height: 45px;line-height: 45px;\n}\n.item_input[data-v-568143e9]{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.input_icon[data-v-568143e9]{width: 100%;height: 50px;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size: 18px;\n}\n.input_icon>input[data-v-568143e9]{width: 80%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;\n}\n.input_icon>div[data-v-568143e9]{width: 80px;height: 45px;\n}\n.input_icon>div>img[data-v-568143e9]{width:40px;height: 40px;float: right;\n}\n.input_icon>div>img[data-v-568143e9]:hover{cursor: pointer;\n}\n.active[data-v-568143e9]{font-size: 18px;\n}\n.dataBankAddBtn[data-v-568143e9]{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn[data-v-568143e9]:hover{cursor:pointer;\n}\n.dataBankAddBtn>img[data-v-568143e9]{width:50px;height: 50px;\n}\n.editBox[data-v-568143e9]{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent[data-v-568143e9]{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure[data-v-568143e9]{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button[data-v-568143e9]{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_evaluations[data-v-568143e9]{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_evaluations>img[data-v-568143e9]{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog[data-v-568143e9]{width:50%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 500 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "dataBank_input_form disflex",
-      staticStyle: { position: "relative" }
-    },
-    [
-      _c("div", { staticClass: "pane_content_evaluation" }, [
-        _c(
-          "div",
-          { staticClass: "form_content_evaluations disflex" },
-          _vm._l(_vm.evaluations, function(evaluation, index) {
-            return _c("div", { staticClass: "form_item_evaluations" }, [
-              _c("div", { staticClass: "item_title" }, [_vm._v("題目標題")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "input_icon disflex" }, [
-                _c("input", {
-                  attrs: {
-                    placeholder: "請填寫題目標題",
-                    type: "text",
-                    disabled: "disabled"
-                  },
-                  domProps: { value: evaluation.title }
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.$router.push(
-                          "/topic/dataBankEvaluationInfo/" + evaluation.id
-                        )
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      attrs: {
-                        src: "/etravel/public/images/See-next.png",
-                        alt: ""
-                      }
-                    })
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "editBtnGroup_evaluations" }, [
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/rush-icon.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.delEvaluation(evaluation.id)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: { src: "/etravel/public/images/edit-all.png" },
-                  on: {
-                    click: function($event) {
-                      return _vm.editEvaluationShow(index)
-                    }
-                  }
-                })
-              ])
-            ])
-          }),
-          0
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "dataBankAddBtn",
-          on: {
-            click: function($event) {
-              return _vm.addNewEvaluationShow()
-            }
-          }
-        },
-        [_c("img", { attrs: { src: "/etravel/public/images/add_y.png" } })]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isNewEvaluationShow,
-            callback: function($$v) {
-              _vm.isNewEvaluationShow = $$v
-            },
-            expression: "isNewEvaluationShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_evaluations" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("題目標題(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newEvaluation.title,
-                        expression: "newEvaluation.title"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "請填寫題目標題", type: "text" },
-                    domProps: { value: _vm.newEvaluation.title },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newEvaluation,
-                          "title",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.addNewEvaluation()
-                      }
-                    }
-                  },
-                  [_vm._v("添加")]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "van-popup",
-        {
-          attrs: { overlay: true },
-          model: {
-            value: _vm.isEditevaluationShow,
-            callback: function($$v) {
-              _vm.isEditevaluationShow = $$v
-            },
-            expression: "isEditevaluationShow"
-          }
-        },
-        [
-          _c("div", { staticClass: "editBox" }, [
-            _c("div", { staticClass: "editBoxContent disflex" }, [
-              _c("div", { staticClass: "form_item_evaluations" }, [
-                _c("div", { staticClass: "item_title" }, [
-                  _vm._v("題目標題(必填)")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.edEvaluation.title,
-                        expression: "edEvaluation.title"
-                      }
-                    ],
-                    staticClass: "item_input",
-                    attrs: { placeholder: "請填寫題目標題", type: "text" },
-                    domProps: { value: _vm.edEvaluation.title },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.edEvaluation, "title", $event.target.value)
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "issure" }, [
-                _c(
-                  "button",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.editEvaluation()
-                      }
-                    }
-                  },
-                  [_vm._v("修改")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-568143e9", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);
