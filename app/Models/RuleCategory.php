@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class RuleCategory extends Model
 {
-	protected $fillable = ['travel_id', 'rule_category_name', 'type'];
+	protected $fillable = ['travel_id', 'rule_category_name', 'type', 'content'];
 	
 
     public function travel()
