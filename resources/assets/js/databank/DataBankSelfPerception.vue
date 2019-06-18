@@ -1,9 +1,9 @@
-<style>
+<style scoped>
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
     .pane_content_feel{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
     
     .right_title{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;}
-    .form_content{width: 94%;min-height: 150px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
+    .form_content_feel{width: 94%;min-height: 150px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
 
     .form_item_feel{width: 100%;min-height:100px;}
     .form_item_feel>div{width: 96%;min-height: 45px;}
@@ -34,7 +34,7 @@
         </div>
         <div class="dataBank_input_form disflex">
             <div class="pane_content_feel">
-                <div class="form_content disflex" v-for="(feel,index) in feels">
+                <div class="form_content_feel disflex" v-for="(feel,index) in feels">
                     <div class="form_item_feel">
                         <div class="item_title">感想標題{{index+1}}</div>
                         <div>

@@ -1,4 +1,4 @@
-<style>
+<style scoped>
 	.dataBank_input_answer{width: 100%;min-height:650px;align-items:center;flex-direction: column; font-size: 16px;}
     .dataBank_input_answer>table{width: 90%;}
 

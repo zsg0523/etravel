@@ -1,4 +1,4 @@
-y<style>
+y<style scoped>
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;position: relative;}
     .pane_content_rule{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;}
 

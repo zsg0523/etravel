@@ -1,4 +1,4 @@
-<style>
+<style scoped>
     .dataBank_input_form{width: 100%;min-height:650px;justify-content: center;align-items:flex-start;font-size: 16px;}
     .tablist{width:100%;}
     .nav-tabs>li>a{color: #000;}
@@ -176,7 +176,7 @@
                         <div class="pane_content_info" v-for="(hotel,index) in hotels">    
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">酒店名稱</div>
+                                    <div class="item_title">住宿名稱</div>
                                     <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="hotel.hotel_name" ></div>
                                 </div>
                                 <div class="form_item_info">
@@ -196,15 +196,15 @@
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_phone" ></div>
                                 </div>
                                 <div class="form_item_info" >
-                                    <div class="item_title">酒店地址</div>
+                                    <div class="item_title">住宿地址</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_address" ></div>
                                 </div>
                                 <div class="form_item_info" >
-                                    <div class="item_title">酒店經緯度</div>
+                                    <div class="item_title">住宿經緯度</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_location" ></div>
                                 </div>
                                 <div class="form_item_info"  style="width:100%;">
-                                    <div class="item_title">酒店圖片</div>
+                                    <div class="item_title">住宿圖片</div>
                                     <div><img style="width:97%;" :src="hotel.image"></div>
                                 </div>
                                 <div class="editBtnGroup">
@@ -400,8 +400,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">酒店名稱(必填)</div>
-                        <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店名稱" v-model="newHotel.hotel_name" ></div>
+                        <div class="item_title">住宿名稱(必填)</div>
+                        <div><input class="item_input" style="width:97%;" type="text" placeholder="住宿名稱" v-model="newHotel.hotel_name" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">入住日期(必填)</div>
@@ -420,16 +420,16 @@
                         <div><input class="item_input" type="text" placeholder="聯繫電話" v-model="newHotel.hotel_phone" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">酒店地址(必填)</div>
-                        <div><input class="item_input"  type="text" placeholder="酒店地址" v-model="newHotel.hotel_address" ></div>
+                        <div class="item_title">住宿地址(必填)</div>
+                        <div><input class="item_input"  type="text" placeholder="住宿地址" v-model="newHotel.hotel_address" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">酒店經緯度(必填)</div>
-                        <div><input class="item_input"  type="text" placeholder="酒店經緯度(經度,緯度)" v-model="newHotel.hotel_location" ></div>
+                        <div class="item_title">住宿經緯度(必填)</div>
+                        <div><input class="item_input"  type="text" placeholder="住宿經緯度(經度,緯度)" v-model="newHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div style="width:93%;">
-                            酒店圖片
+                            住宿圖片
                             <div class="imgIcon">
                                 <van-uploader style="width:50px;height:40px;float:right;" :after-read="onRead" accept="image/*">
                                     <img src="/etravel/public/images/sm-insert.png">
@@ -454,8 +454,8 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">酒店名稱(必填)</div>
-                        <div><input class="item_input" style="width:97%;" type="text" placeholder="酒店名稱" v-model="edHotel.hotel_name" ></div>
+                        <div class="item_title">住宿名稱(必填)</div>
+                        <div><input class="item_input" style="width:97%;" type="text" placeholder="住宿名稱" v-model="edHotel.hotel_name" ></div>
                     </div>
                     <div class="form_item_info">
                         <div class="item_title">入住日期(必填)</div>
@@ -474,16 +474,16 @@
                         <div><input class="item_input" type="text" placeholder="聯繫電話" v-model="edHotel.hotel_phone" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">酒店地址(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="酒店地址" v-model="edHotel.hotel_address" ></div>
+                        <div class="item_title">住宿地址(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="住宿地址" v-model="edHotel.hotel_address" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">酒店經緯度(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="酒店經緯度(經度,緯度)" v-model="edHotel.hotel_location" ></div>
+                        <div class="item_title">住宿經緯度(必填)</div>
+                        <div><input class="item_input" type="text" placeholder="住宿經緯度(經度,緯度)" v-model="edHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div style="width:93%;">
-                            酒店圖片
+                            住宿圖片
                             <div class="imgIcon">
                                 <van-uploader style="width:50px;height:40px;float:right;" :after-read="onRead" accept="image/*">
                                     <img src="/etravel/public/images/sm-insert.png">
@@ -897,7 +897,7 @@
                 });
             },
             getHotels(){
-                // 获取旅游的住宿酒店
+                // 获取旅游的住宿住宿
                 this.$get(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/hotels',
                 {
                     headers: {
@@ -918,7 +918,7 @@
                 this.isNewImg=true;
             },
             addNewHotel(){
-                // 新增酒店
+                // 新增住宿
                 this.$post(this.$config+'/api/hotels',this.newHotel,
                 {
                     headers: {
@@ -964,7 +964,7 @@
                 this.isNewImg=false;
             },
             editHotel(){
-                // 修改酒店信息
+                // 修改住宿信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -1009,10 +1009,10 @@
                 });
             },
             delHotel(hotelId){
-                // 删除酒店
+                // 删除住宿
                 this.$dialog.confirm({
-                    title: '删除酒店',
-                    message: '是否删除該酒店',
+                    title: '删除住宿',
+                    message: '是否删除該住宿',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',
