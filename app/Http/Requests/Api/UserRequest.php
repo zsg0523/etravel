@@ -16,11 +16,11 @@ class UserRequest extends FormRequest
                 if(isset($this->verification_key) && $this->verification_code)
                 {
                     return [
-                        'name' => 'required|between:2,25|unique:users,name',
+                        'name' => 'required',
                         'password' => 'required|string|min:6',
                         'verification_key' => 'required|string',
                         'verification_code' => 'required|string',
-                        'en_name' => 'required|between:2,25|unique:users,en_name'
+                        'en_name' => 'required'
                     ]; 
                 } else if(isset($this->key) && $this->code) {
                     return [
@@ -32,11 +32,11 @@ class UserRequest extends FormRequest
                     ];
                 } else {
                     return [
-                        'name' => 'required|between:2,25|unique:users,name',
+                        'name' => 'required',
                         'original_password' => 'required|string|min:6',
                         'email' => 'unique:users,email',
                         'phone' => 'required|unique:users,phone',
-                        'en_name' => 'required|between:2,25|unique:users,en_name'
+                        'en_name' => 'required'
                     ];
                 }
                 break;
@@ -52,12 +52,10 @@ class UserRequest extends FormRequest
                     ];
                 } else {
                     return [
-                        'name' => 'between:2,25' . $userId,
                         'email' => 'email|unique:users,email,' . $userId,
                         'phone' => 'unique:users,phone,' . $userId,
                         'introduction' => 'max:80',
                         'avatar_image_id' => 'exists:images,id,type,avatar,user_id,' . $userId,
-                        'en_name' => 'between:2,25'
                     ];
                 }      
                 break;
@@ -78,7 +76,6 @@ class UserRequest extends FormRequest
         return [
             'name.required' => '名稱不能為空！',
             'en_name.required' => '英文名稱不能為空！',
-            // 'code.required' =>'區號不能為空！',
             'verification_code.required' => '短信驗證碼不能為空！'
         ];
     }
