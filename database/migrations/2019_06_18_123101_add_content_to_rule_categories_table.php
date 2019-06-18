@@ -14,6 +14,7 @@ class AddContentToRuleCategoriesTable extends Migration
     public function up()
     {
         Schema::table('rule_categories', function (Blueprint $table) {
+            $table->string('rule_category_name')->nullable()->change();
             $table->text('content')->after('rule_category_name')->nullable()->comment('团队守则内容');
         });
     }
@@ -27,6 +28,7 @@ class AddContentToRuleCategoriesTable extends Migration
     {
         Schema::table('rule_categories', function (Blueprint $table) {
             $table->dropColumn('content');
+            $table->string('rule_category_name')->change();
         });
     }
 }

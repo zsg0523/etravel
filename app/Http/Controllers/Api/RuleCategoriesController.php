@@ -31,9 +31,20 @@ class RuleCategoriesController extends Controller
     /** [store 创建分类] */
     public function store(CategoryRequest $request,Travel $travel, RuleCategory $category)
     {
-    	$category->fill($request->all());
-        $category->travel_id = $travel->id;
-    	$category->save();
+        switch ($request->type) {
+            case '10':
+                $category = $category->updateOrCreate(
+                    ['travel_id' => $travel->id, 'type'=>$request->type],
+                    ['content' => $request->content]
+                );
+                break;
+            
+            default:
+                $category->fill($request->all());
+                $category->travel_id = $travel->id;
+                $category->save();
+                break;
+        }
 
     	return $this->response->item($category, new RuleCategoryTransformer(null));
     }
