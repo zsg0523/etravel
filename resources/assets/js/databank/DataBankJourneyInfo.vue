@@ -36,7 +36,7 @@
             <div class="title_icon" @click="$router.push('/journey/dataBankJourney')">
                 <img src="/etravel/public/images/back.png">
             </div>
-            {{journey.day}}
+            <div class="overText" style="margin: 0 40px;">{{journey.day}}</div>
         </div>
         <div class="dataBank_input_form disflex">
             <div class="pane_content">

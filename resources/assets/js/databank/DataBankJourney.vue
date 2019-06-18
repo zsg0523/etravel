@@ -15,7 +15,7 @@
     .item_right>img{width:30px;height:30px;}
     .active{font-size: 18px;}        
 
-	.dataBankAddBtn_journey{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
+	.dataBankAddBtn_journey{width:50px;height: 50px;position: absolute;right: 5px;top: 55px;}
     .dataBankAddBtn_journey:hover{cursor:pointer;}
     .dataBankAddBtn_journey>img{width:50px;height: 50px;}
 	

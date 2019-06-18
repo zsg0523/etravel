@@ -7549,7 +7549,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vant__["d" /* Popup */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["a" /* Button */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["e" /* Toast */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["c" /* Dialog */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["f" /* Uploader */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["b" /* DatetimePicker */]);
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vant__["e" /* Popup */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["a" /* Button */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["f" /* Toast */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["c" /* Dialog */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["g" /* Uploader */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["d" /* Loading */]).use(__WEBPACK_IMPORTED_MODULE_5_vant__["b" /* DatetimePicker */]);
 
 __webpack_require__(417);
 
@@ -22845,6 +22845,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -22852,7 +22860,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	data: function data() {
 		return {
 			loginName: '',
-			password: ''
+			password: '',
+			isLoading: 'none'
 		};
 	},
 
@@ -22861,6 +22870,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			var _this = this;
 
 			if (this.password && this.loginName) {
+				this.isLoading = 'block';
 				this.$post(this.$config + '/api/authorizations', {
 					username: this.loginName,
 					password: this.password
@@ -22875,6 +22885,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 								"Authorization": 'Bearer ' + sessionStorage.token
 							}
 						}).then(function (res) {
+							_this.isLoading = 'none';
 							// console.log(res.data);
 							_this.setUserInfo(res.data);
 							sessionStorage.setItem('userId', res.data.id);
@@ -22883,14 +22894,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 								_this.$router.push("/home");
 							}, 1000);
 						}).catch(function (err) {
+							_this.isLoading = 'none';
 							_this.$toast('帳號或密碼錯誤');
 							console.log(err);
 						});
 					} else {
+						_this.isLoading = 'none';
 						_this.$toast('帳號或密碼錯誤');
 						_this.password = '';
 					}
 				}).catch(function (err) {
+					_this.isLoading = 'none';
 					_this.$toast(err.response.data.message);
 					console.log(err);
 				});
@@ -22909,92 +22923,114 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "disflex mainLogin" }, [
-    _c("div", { staticClass: "disflex contentLogin" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "disflex login" }, [
-        _c("div", { staticClass: "title tc" }, [_vm._v("Study2go")]),
+  return _c(
+    "div",
+    { staticClass: "disflex mainLogin" },
+    [
+      _c("div", { staticClass: "disflex contentLogin" }, [
+        _vm._m(0),
         _vm._v(" "),
-        _c("div", [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.loginName,
-                expression: "loginName"
-              }
-            ],
-            attrs: { type: "text", placeholder: "手機號碼或郵箱帳號" },
-            domProps: { value: _vm.loginName },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+        _c("div", { staticClass: "disflex login" }, [
+          _c("div", { staticClass: "title tc" }, [_vm._v("Study2go")]),
+          _vm._v(" "),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.loginName,
+                  expression: "loginName"
                 }
-                _vm.loginName = $event.target.value
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.password,
-                expression: "password"
-              }
-            ],
-            attrs: { type: "password", placeholder: "密碼" },
-            domProps: { value: _vm.password },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.password = $event.target.value
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticStyle: { height: "40px" } }, [
-          _c(
-            "a",
-            {
-              staticClass: "fl",
-              attrs: { href: "javascript:void(0);" },
+              ],
+              attrs: { type: "text", placeholder: "手機號碼或郵箱帳號" },
+              domProps: { value: _vm.loginName },
               on: {
-                click: function($event) {
-                  return _vm.$router.push("/register")
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.loginName = $event.target.value
                 }
               }
-            },
-            [_vm._v("立即註冊")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "button",
-            {
-              attrs: { type: "button" },
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.password,
+                  expression: "password"
+                }
+              ],
+              attrs: { type: "password", placeholder: "密碼" },
+              domProps: { value: _vm.password },
               on: {
-                click: function($event) {
-                  return _vm.login()
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.password = $event.target.value
                 }
               }
-            },
-            [_vm._v("登入")]
-          )
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticStyle: { height: "40px" } }, [
+            _c(
+              "a",
+              {
+                staticClass: "fl",
+                attrs: { href: "javascript:void(0);" },
+                on: {
+                  click: function($event) {
+                    return _vm.$router.push("/register")
+                  }
+                }
+              },
+              [_vm._v("立即註冊")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "button",
+              {
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.login()
+                  }
+                }
+              },
+              [_vm._v("登入")]
+            )
+          ])
         ])
-      ])
-    ])
-  ])
+      ]),
+      _vm._v(" "),
+      _c("van-loading", {
+        staticClass: "loading",
+        style: {
+          display: _vm.isLoading,
+          position: "fixed",
+          top: "50%",
+          left: "50%",
+          zIndex: "20000"
+        },
+        attrs: {
+          type: "spinner",
+          size: "50px",
+          "text-size": "25px",
+          color: "#333"
+        }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
@@ -25956,7 +25992,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     filters: {
         formatPhoneDate: function formatPhoneDate(val) {
-            if (val.length >= 7) {
+            if (val && val.length >= 7) {
                 return val.substr(0, 3) + '****' + val.substr(7);
             } else {
                 return val;
@@ -34147,7 +34183,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -34264,10 +34300,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             this.editor = new __WEBPACK_IMPORTED_MODULE_0_wangeditor___default.a(this.$refs.editor);
+            this.editor.customConfig.onchangeTimeout = 800;
             this.editor.customConfig.onchange = function (html) {
-                _this.editorContent = html;
+                _this.editorContent = _this.removeWordXml(html);
                 _this.$emit('catchData', _this.editorContent);
-                // console.log(html);
+            };
+            this.editor.customConfig.onblur = function (html) {
+                _this.$emit('catchData', _this.editorContent);
             };
             this.editor.customConfig.menus = ['head', // 标题
             'bold', // 粗体
@@ -34284,8 +34323,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // 'quote',  // 引用
             // 'emoticon',  // 表情
             'image']; //配置菜单
+            this.editor.customConfig.pasteFilterStyle = true;
             this.editor.customConfig.uploadImgServer = this.$config + '/api/images'; // 上传图片到服务器地址
             this.editor.customConfig.uploadFileName = 'image'; //自定义filename
+            this.editor.customConfig.uploadImgTimeout = 20000; //自定义s上传时间
             this.editor.customConfig.uploadImgParams = {
                 type: 'travel',
                 platform: 1
@@ -34306,6 +34347,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         toPreview: function toPreview() {
             this.editorContent = this.editor.txt.html();
             this.isPreviewShow = 'block';
+        },
+        removeWordXml: function removeWordXml(text) {
+            var html = text;
+            html = html.replace(/<\/?SPANYES[^>]*>/gi, ""); //  Remove  all  SPAN  tags
+            // html = html.replace(/<(\w[^>]*)  class=([^|>]*)([^>]*)/gi, "<$1$3");  //  Remove  Class  attributes
+            // html = html.replace(/<(\w[^>]*)  style="([^"]*)"([^>]*)/gi, "<$1$3");  //  Remove  Style  attributes
+            html = html.replace(/<(\w[^>]*)  lang=([^|>]*)([^>]*)/gi, "<$1$3"); //  Remove  Lang  attributes
+            html = html.replace(/<\\?\?xml[^>]*>/gi, ""); //  Remove  XML  elements  and  declarations
+            html = html.replace(/<\/?\w+:[^>]*>/gi, ""); //  Remove  Tags  with  XML  namespace  declarations:  <o:p></o:p>
+            html = html.replace(/&nbsp;/, ""); //  Replace  the  &nbsp;
+            html = html.replace(/\n(\n)*( )*(\n)*\n/gi, '\n');
+            //  Transform  <P>  to  <DIV>
+            // var  re  =  new  RegExp("(<P)([^>]*>.*?)(<//P>)","gi")  ;            //  Different  because  of  a  IE  5.0  error
+            //        html = html.replace(re, "<div$2</div>");
+            return html;
         }
     },
     watch: {
@@ -39004,7 +39060,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticStyle: { width: "100%" } }, [
+  return _c("div", { staticStyle: { width: "100%", "line-height": "auto" } }, [
     _c("div", {
       ref: "editor",
       staticStyle: { "text-align": "left", width: "100%" }
@@ -46887,7 +46943,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.pane_content_journey{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_journey{width: 94%;min-height: 120px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journey{width: 100%;min-height:50px;\n}\n.form_item_journey>div{min-height: 50px;line-height: 50px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.item_left{width:85%;border-radius: 8px;background-color: #d6d6d6;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_left>input{height:40px;border-radius: 6px;\n}\n.item_right{min-width:10%;line-height: 50px;text-align: center;\n}\n.item_right>img{width:30px;height:30px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journey{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn_journey:hover{cursor:pointer;\n}\n.dataBankAddBtn_journey>img{width:50px;height: 50px;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journey{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journey>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.tablist{width:100%;\n}\n.nav-tabs>li>a{color: #000;\n}\n.pane_content_journey{width:70%;margin-left: 15%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.form_content_journey{width: 94%;min-height: 120px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_journey{width: 100%;min-height:50px;\n}\n.form_item_journey>div{min-height: 50px;line-height: 50px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.item_left{width:85%;border-radius: 8px;background-color: #d6d6d6;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;\n}\n.item_left>input{height:40px;border-radius: 6px;\n}\n.item_right{min-width:10%;line-height: 50px;text-align: center;\n}\n.item_right>img{width:30px;height:30px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn_journey{width:50px;height: 50px;position: absolute;right: 5px;top: 55px;\n}\n.dataBankAddBtn_journey:hover{cursor:pointer;\n}\n.dataBankAddBtn_journey>img{width:50px;height: 50px;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_journey{width:85%;height:50px;line-height: 50px;\n}\n.editBtnGroup_journey>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n\n", ""]);
 
 // exports
 
@@ -47737,7 +47793,12 @@ var render = function() {
           },
           [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
         ),
-        _vm._v("\n            " + _vm._s(_vm.journey.day) + "\n        ")
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "overText", staticStyle: { margin: "0 40px" } },
+          [_vm._v(_vm._s(_vm.journey.day))]
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "dataBank_input_form disflex" }, [
@@ -49167,6 +49228,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.newJourney.date = '';
             }).catch(function (err) {
                 _this2.$toast('添加失败');
+                if (err.response.data.errors) {
+                    for (var key in err.response.data.errors) {
+                        _this2.$toast(err.response.data.errors[key][0]);
+                    }
+                } else {
+                    _this2.$toast(err.response.data.message);
+                }
                 console.log(err);
             });
         },
@@ -50579,7 +50647,12 @@ var render = function() {
           },
           [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
         ),
-        _vm._v("\n\t\t    " + _vm._s(_vm.sheet.title) + "\n\t\t")
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "overText", staticStyle: { margin: "0 40px" } },
+          [_vm._v(_vm._s(_vm.sheet.title))]
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "dataBank_input_form disflex" }, [
@@ -52152,7 +52225,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.dataBank_input_form>table{margin-top: 20px;width: 90%;\n}\n.dataBank_input_form table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form thead{background-color: #ffde01;\n}\n.dataBank_input_form td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item{width: 100%;min-height:100px;\n}\n.form_item>div{height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon:hover{cursor: pointer;\n}\n.editIcon>img{width:25px;height:25px;\n}\n.active{font-size: 18px;\n}\n.form_item_luggageListInfo{width: 100%;min-height:100px;\n}\n.form_item_luggageListInfo>div{width: 100%;min-height: 45px;\n}\n.item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.van-dialog{width:50%;\n}    \n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;\n}\n.dataBank_input_form>table{margin-top: 20px;width: 90%;\n}\n.dataBank_input_form table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;\n}\n.dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;word-break: normal;\n}\n.dataBank_input_form thead{background-color: #ffde01;\n}\n.dataBank_input_form td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;\n}\n.form_item{width: 100%;min-height:100px;\n}\n.form_item>div{height: 45px;line-height: 45px;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;\n}\n.editIcon{width:40px;height:40px;line-height: 40px;float: left;margin-left: 5px;\n}\n.editIcon:hover{cursor: pointer;\n}\n.editIcon>img{width:25px;height:25px;\n}\n.active{font-size: 18px;\n}\n.form_item_luggageListInfo{width: 100%;min-height:100px;\n}\n.form_item_luggageListInfo>div{width: 100%;min-height: 45px;\n}\n.item_area{width:97%;height:75px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup_rules{width:80%;height:50px;line-height: 50px;\n}\n.editBtnGroup_rules>img{width:40px;height: 40px;margin-left: 25px;float: right;\n}\n.right_title{width:100%;height:50px;line-height: 50px;position: relative;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.title_icon{width:35px;height:35px;position: absolute;left: 8px;top:8px;line-height: 35px;\n}\n.title_icon>img{width:28px;height: 28px;\n}\n.van-dialog{width:50%;\n}    \n", ""]);
 
 // exports
 
@@ -52446,10 +52519,11 @@ var render = function() {
           },
           [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
         ),
-        _vm._v(
-          "\n            " +
-            _vm._s(_vm.luggageList.rule_category_name) +
-            "\n        "
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "overText", staticStyle: { margin: "0 40px" } },
+          [_vm._v(_vm._s(_vm.luggageList.rule_category_name))]
         )
       ]),
       _vm._v(" "),
@@ -53754,7 +53828,12 @@ var render = function() {
           },
           [_c("img", { attrs: { src: "/etravel/public/images/back.png" } })]
         ),
-        _vm._v("\n            " + _vm._s(_vm.eval.title) + "\n        ")
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "overText", staticStyle: { margin: "0 40px" } },
+          [_vm._v(_vm._s(_vm.eval.title))]
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "dataBank_input_form disflex" }, [
@@ -54155,7 +54234,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_feel{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.form_content{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_feel{width: 100%;min-height:100px;\n}\n.form_item_feel>div{width: 96%;min-height: 45px;\n}\n.item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
+exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;font-size: 16px;position: relative;\n}\n.pane_content_feel{width:70%;height:auto;margin-bottom: 30px;font-size: 16px;margin-top:20px;\n}\n.right_title{width:100%;height:50px;line-height: 50px;text-align: center;font-size: 20px;border-bottom: 1px solid #d6d6d6;\n}\n.form_content{width: 94%;min-height: 150px;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-left: 3%;\n}\n.form_item_feel{width: 100%;min-height:100px;\n}\n.form_item_feel>div{width: 96%;min-height: 45px;\n}\n.item_area{width:97%;height:80px;border-radius: 8px;resize:none;line-height:25px;font-size: 14px;outline: none;overflow: hidden;background-color: #eee;\n}\n.item_input{height:40px;padding-left:10px;outline: none;width:97%;border-radius: 8px;\n}\n.active{font-size: 18px;\n}\n.dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;\n}\n.dataBankAddBtn:hover{cursor:pointer;\n}\n.dataBankAddBtn>img{width:50px;height: 50px;\n}\n.editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;\n}\n.editBoxContent{width:90%;margin-left: 5%;margin-top:20px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;\n}\n.issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;\n}\n.issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;\n}\n.editBtnGroup{width:97%;height:50px;line-height: 50px;\n}\n.editBtnGroup>img{width:40px;height: 40px;margin-right: 25px;float: right;\n}\n.van-dialog{width:50%;\n}\n", ""]);
 
 // exports
 
@@ -54166,6 +54245,9 @@ exports.push([module.i, "\n.dataBank_input_form{width: 100%;min-height:650px;-we
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -54277,7 +54359,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getFeels: function getFeels() {
             var _this = this;
 
-            // 获取感想
+            // 获取感想標題
             this.$ajax({
                 method: 'GET',
                 headers: {
@@ -54301,7 +54383,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         addFeel: function addFeel() {
             var _this2 = this;
 
-            // 新增感想
+            // 新增感想標題
             this.$post(this.$config + '/api/travels/' + sessionStorage.actTravelId + '/titles', this.newFeel, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
@@ -54313,12 +54395,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.isAddFeelShow = false;
                 _this2.newFeel.title = '';
             }).catch(function (err) {
+                _this2.$toast('添加失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this2.$toast(err.response.data.message);
                 }
-                _this2.$toast('添加失敗');
                 console.log(err);
             });
         },
@@ -54331,7 +54415,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         editFeel: function editFeel() {
             var _this3 = this;
 
-            // 修改感想信息
+            // 修改感想標題信息
             this.$ajax({
                 method: 'PATCH',
                 headers: {
@@ -54350,22 +54434,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this3.$toast('修改失敗');
                 }
             }).catch(function (err) {
+                _this3.$toast('修改失敗');
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
                     }
+                } else {
+                    _this3.$toast(err.response.data.message);
                 }
-                _this3.$toast('修改失敗');
                 console.log(err);
             });
         },
         delFeel: function delFeel(feelId) {
             var _this4 = this;
 
-            // 删除感想
+            // 删除感想標題
             this.$dialog.confirm({
-                title: '删除感想',
-                message: '是否删除該感想',
+                title: '删除感想標題',
+                message: '是否删除該感想標題',
                 cancelButtonText: '取消',
                 cancelButtonColor: '#ccc',
                 confirmButtonText: '確定',
@@ -54419,13 +54505,17 @@ var render = function() {
               return _c("div", { staticClass: "form_content disflex" }, [
                 _c("div", { staticClass: "form_item_feel" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v("感想" + _vm._s(index + 1))
+                    _vm._v("感想標題" + _vm._s(index + 1))
                   ]),
                   _vm._v(" "),
                   _c("div", [
-                    _c("textarea", {
-                      staticClass: "item_area",
-                      attrs: { placeholder: "感想", disabled: "disabled" },
+                    _c("input", {
+                      staticClass: "item_input",
+                      attrs: {
+                        placeholder: "感想標題",
+                        type: "text",
+                        disabled: "disabled"
+                      },
                       domProps: { value: feel.title }
                     })
                   ])
@@ -54491,11 +54581,11 @@ var render = function() {
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_feel" }, [
                 _c("div", { staticClass: "item_title" }, [
-                  _vm._v("感想(必填)")
+                  _vm._v("感想標題(必填)")
                 ]),
                 _vm._v(" "),
                 _c("div", [
-                  _c("textarea", {
+                  _c("input", {
                     directives: [
                       {
                         name: "model",
@@ -54504,8 +54594,8 @@ var render = function() {
                         expression: "newFeel.title"
                       }
                     ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "感想" },
+                    staticClass: "item_input",
+                    attrs: { placeholder: "感想標題", type: "text" },
                     domProps: { value: _vm.newFeel.title },
                     on: {
                       input: function($event) {
@@ -54554,11 +54644,11 @@ var render = function() {
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_feel" }, [
                 _c("div", { staticClass: "item_title" }, [
-                  _vm._v("感想(必填)")
+                  _vm._v("感想標題(必填)")
                 ]),
                 _vm._v(" "),
                 _c("div", [
-                  _c("textarea", {
+                  _c("input", {
                     directives: [
                       {
                         name: "model",
@@ -54567,8 +54657,8 @@ var render = function() {
                         expression: "edFeel.title"
                       }
                     ],
-                    staticClass: "item_area",
-                    attrs: { placeholder: "感想" },
+                    staticClass: "item_input",
+                    attrs: { placeholder: "感想標題", type: "text" },
                     domProps: { value: _vm.edFeel.title },
                     on: {
                       input: function($event) {
@@ -57440,7 +57530,7 @@ var baseUrl = 'http://app.study2go.net/etravel/public'; //study2go线上地址
 /* unused harmony reexport Info */
 /* unused harmony reexport Lazyload */
 /* unused harmony reexport List */
-/* unused harmony reexport Loading */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_33__loading__["a"]; });
 /* unused harmony reexport Locale */
 /* unused harmony reexport NavBar */
 /* unused harmony reexport NoticeBar */
@@ -57451,7 +57541,7 @@ var baseUrl = 'http://app.study2go.net/etravel/public'; //study2go线上地址
 /* unused harmony reexport Panel */
 /* unused harmony reexport PasswordInput */
 /* unused harmony reexport Picker */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_44__popup__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_44__popup__["a"]; });
 /* unused harmony reexport Progress */
 /* unused harmony reexport PullRefresh */
 /* unused harmony reexport Radio */
@@ -57475,9 +57565,9 @@ var baseUrl = 'http://app.study2go.net/etravel/public'; //study2go线上地址
 /* unused harmony reexport TabbarItem */
 /* unused harmony reexport Tabs */
 /* unused harmony reexport Tag */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_68__toast__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_68__toast__["a"]; });
 /* unused harmony reexport TreeSelect */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_70__uploader__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_70__uploader__["a"]; });
 /* unused harmony reexport Waterfall */
 /* eslint-disable */
 // This file is auto gererated by build/build-entry.js

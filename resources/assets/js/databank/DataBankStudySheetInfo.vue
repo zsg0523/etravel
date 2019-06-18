@@ -38,7 +38,7 @@
 		    <div class="title_icon" @click="$router.push('/study/dataBankStudySheet/'+sessionStorage.routeId)">
 		        <img src="/etravel/public/images/back.png">
 		    </div>
-		    {{sheet.title}}
+		    <div class="overText" style="margin: 0 40px;">{{sheet.title}}</div>
 		</div>
 		<div class="dataBank_input_form disflex">
 		    <div class="pane_content_sheetInfo">

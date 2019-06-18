@@ -3,7 +3,7 @@
     .dataBank_input_form>table{margin-top: 20px;width: 90%;}
 
     .dataBank_input_form table th{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;}
-    .dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;}
+    .dataBank_input_form table td{border:1px solid #d6d6d6;height:40px;line-height:40px;padding:0px;margin: 0px;text-align: center;word-break: normal;}
     .dataBank_input_form thead{background-color: #ffde01;}
     .dataBank_input_form td>input{padding:0px;margin: 0px;border: none;padding-left: 5px;}
     .form_item{width: 100%;min-height:100px;}
@@ -41,7 +41,7 @@
             <div class="title_icon" @click="$router.push('/luggage/dataBankLuggageList')">
                 <img src="/etravel/public/images/back.png">
             </div>
-            {{luggageList.rule_category_name}}
+            <div class="overText" style="margin: 0 40px;">{{luggageList.rule_category_name}}</div>
         </div>
         <div class="dataBank_input_form disflex"> 
             <table>

@@ -10,6 +10,7 @@ import {
   Dialog,
   Uploader,
   DatetimePicker,
+  Loading,
 } from 'vant';
 
 Vue
@@ -18,6 +19,7 @@ Vue
 	.use(Toast)
 	.use(Dialog)
 	.use(Uploader)
+	.use(Loading)
 	.use(DatetimePicker);
 
 require('./bootstrap');
