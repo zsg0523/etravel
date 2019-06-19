@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-10 10:11:36
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-05-22 11:11:02
+ * @Last Modified time: 2019-06-18 18:02:31
  */
 use App\Models\Travel;
 
@@ -18,12 +18,12 @@ return [
 		'id' => [
 			'title' => 'ID',
 		],
-		'school_id' => [
-			'title' => '關聯學校名稱',
-			'output' => function ($value, $model) {
-				return empty($model->school->school_name) ? 'N/A' : $model->school->school_name;
-			},
-		],
+		// 'school_id' => [
+		// 	'title' => '關聯學校名稱',
+		// 	'output' => function ($value, $model) {
+		// 		return empty($model->school->school_name) ? 'N/A' : $model->school->school_name;
+		// 	},
+		// ],
 		'school_name' => [
 			'title' => '自定義學校名稱',
 			'sortable' => false,
@@ -87,11 +87,11 @@ return [
 	],
 
 	'edit_fields' => [
-		'school' => [
-			'title' => '關聯學校名稱',
-			'type' => 'relationship',
-			'name_field' => 'school_name',
-		],
+		// 'school' => [
+		// 	'title' => '關聯學校名稱',
+		// 	'type' => 'relationship',
+		// 	'name_field' => 'school_name',
+		// ],
 		'school_name' => [
 			'title' => '自定義學校名稱'
 		],
