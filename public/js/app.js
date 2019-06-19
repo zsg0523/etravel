@@ -43363,7 +43363,7 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "pane_content_rule" }, [
-        _vm.ruless
+        _vm.ruless[0]
           ? _c("div", { staticClass: "form_content_rules disflex" }, [
               _c("div", { staticClass: "form_item_rules" }, [
                 _c("div", { staticClass: "item_title" }, [_vm._v("團隊守則")]),

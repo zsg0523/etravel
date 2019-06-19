@@ -27,7 +27,7 @@
 <template>
     <div class="dataBank_input_form disflex" style="position:relative;">
         <div class="pane_content_rule" >
-            <div class="form_content_rules disflex" v-if="ruless">
+            <div class="form_content_rules disflex" v-if="ruless[0]">
                 <div class="form_item_rules">
                     <div class="item_title">團隊守則</div>
                     <div style="border:1px solid #ccc;width:97%;background-color:#eeeeee;line-height:normal;min-height:45px;" v-html="ruless[0].content"></div>
