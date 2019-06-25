@@ -52,7 +52,7 @@
                 <ul style="padding: 0;margin:0;">
                     <li>
                         <div class="left_title disflex">
-                            <span>團員信息</span>
+                            <span><!-- 團員信息 --></span>
                             <div class="left_title_icon">
                                 <div @click="delStudent()"> 
                                     <img src="/etravel/public/images/dele-inf.png" alt="">

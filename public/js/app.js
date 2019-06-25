@@ -26225,7 +26225,7 @@ var render = function() {
             [
               _c("li", [
                 _c("div", { staticClass: "left_title disflex" }, [
-                  _c("span", [_vm._v("團員信息")]),
+                  _c("span"),
                   _vm._v(" "),
                   _c("div", { staticClass: "left_title_icon" }, [
                     _c(
