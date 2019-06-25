@@ -30,7 +30,7 @@ class AnswerRequest extends FormRequest
     public function messages()
     {
         return [
-            'content.required' => "内容不能为空！"
+            'content.required' => "內容不能為空！"
         ];
     }
 }
