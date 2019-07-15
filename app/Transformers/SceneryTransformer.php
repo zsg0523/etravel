@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2018-12-13 16:50:28
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-07-15 16:29:43
+ * @Last Modified time: 2019-07-15 17:52:21
  */
 namespace App\Transformers;
 
@@ -20,8 +20,7 @@ class SceneryTransformer extends TransformerAbstract
 			'route_id' => $scenery->route_id,
 			'time' => $scenery->time,
 			'content' => $scenery->content,
-			'langitude' => $scenery->langitude,
-			'latitude' => $scenery->latitude,
+			'coordinate' => $scenery->coordinate,
 			'description' => $scenery->description
 		];
 	}

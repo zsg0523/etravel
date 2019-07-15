@@ -14,8 +14,7 @@ class AddLongitudeAndLatitudToSceneries extends Migration
     public function up()
     {
         Schema::table('sceneries', function (Blueprint $table) {
-            $table->string('langitude')->nullable()->after('description')->comment('经度');
-            $table->string('latitude')->nullable()->after('langitude')->comment('纬度');
+            $table->string('coordinate')->nullable()->after('description')->comment('经纬度');
         });
     }
 
@@ -27,8 +26,7 @@ class AddLongitudeAndLatitudToSceneries extends Migration
     public function down()
     {
         Schema::table('sceneries', function (Blueprint $table) {
-            $table->dropColumn('langitude');
-            $table->dropColumn('latitude');
+            $table->dropColumn('coordinate');
         });
     }
 }

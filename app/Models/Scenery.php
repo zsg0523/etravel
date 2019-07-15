@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Scenery extends Model
 {
-	protected $fillable = ['time','content','description', 'langitude', 'latitude'];
+	protected $fillable = ['time','content','description', 'coordinate'];
 
 
     public function route()
