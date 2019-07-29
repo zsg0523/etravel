@@ -5,16 +5,22 @@
     .form_content_rules{width: 94%;min-height: 110px;align-content:flex-start;flex-direction: row;flex-wrap: wrap;margin-left: 3%;}
 
     .form_item_rules{width: 100%;min-height:100px;}
-    .form_item_rules>div{min-height: 45px;line-height: 45px;}
-    .item_input{min-height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
+    .form_item_rules>div{height: 45px;line-height: 45px;}
+    .item_input{height:40px;padding-left:10px;outline: none;width: 90%;border-radius: 8px;}
 
+    .input_icon{width: 100%;height: 50px;justify-content: flex-start;align-items:center;font-size: 18px;}
+    .input_icon>input{width: 80%;height: 40px;border-radius: 8px;outline: none;padding-left:10px;}
+    .input_icon>div{width: 80px;height: 45px;}
+    .input_icon>div>img{width:40px;height: 40px;float: right;}
+    .input_icon>div>img:hover{cursor: pointer;}
+    .active{font-size: 18px;}   
 
     .dataBankAddBtn{width:50px;height: 50px;position: absolute;right: 5px;top: 5px;}
     .dataBankAddBtn:hover{cursor:pointer;}
     .dataBankAddBtn>img{width:50px;height: 50px;}
 	
     .editBox{width: 760px;min-height:240px;background-color: #fff;border-radius: 15px;}
-    .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;height: 100%;}
+    .editBoxContent{width:90%;margin-left: 5%;margin-top:20px;flex-flow:row wrap;justify-content: center;align-items: center;}
     .issure{width:100%;height:50px;margin-top: 20px;margin-bottom: 20px;}
     .issure>button{width:60%;height:50px;margin-left: 20%;background-color: #ffde01;font-size: 16px;border-radius: 8px;border: none;outline: none;}
 
@@ -27,55 +33,70 @@
 <template>
     <div class="dataBank_input_form disflex" style="position:relative;">
         <div class="pane_content_rule" >
-            <div class="form_content_rules disflex" v-if="ruless[0]">
-                <div class="form_item_rules">
-                    <div class="item_title">團隊守則</div>
-                    <div style="border:1px solid #ccc;width:97%;background-color:#eeeeee;line-height:normal;min-height:45px;" v-html="ruless[0].content"></div>
-                </div>
-            </div>
-            <div class="form_content_rules disflex" v-else>
-                <div class="form_item_rules">
-                    <div class="item_title">團隊守則</div>
-                    <div style="border:1px solid #ccc;width:97%;background-color:#eeeeee;line-height:40px;min-height: 45px;">
-                        暫無團隊守則
+            <div class="form_content_rules disflex">
+                <div class="form_item_rules"  v-for="(rule,index) in ruless">
+                    <div class="item_title">準則{{index+1}}</div>
+                    <div class="input_icon disflex">
+                        <input placeholder="準則" type="text" disabled="disabled" :value="rule.rule_category_name">
+                        <div @click="$router.push('/rule/dataBankRulesInfo/'+rule.id)">
+                            <img src="/etravel/public/images/See-next.png" alt="">
+                        </div>
                     </div>
+                    <div class="editBtnGroup_rules">
+		                <img @click="delRule(rule.id);" src="/etravel/public/images/rush-icon.png">
+		                <img @click="editRuleShow(index);" src="/etravel/public/images/edit-all.png">
+		            </div>
                 </div>
-            </div>
-            <div class="dataBankAddBtn" @click="addNewRuleShow();">
-                <img src="/etravel/public/images/edit-all.png">
             </div>
         </div>    
+        <div class="dataBankAddBtn" @click="addNewRuleShow();">
+            <img src="/etravel/public/images/add_y.png">
+        </div>
   		<van-popup v-model="isNewRuleShow" :overlay="true">
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
-		                <div class="item_title">團隊守則(必填)</div>
-                        <div><Editor @catchData='catchData' :childData='newRule.content' v-model='newRule.content'></Editor></div>
+		                <div class="item_title">準則(必填)</div>
+		                <div><input class="item_input" placeholder="準則" type="text"  v-model="newRule.rule_category_name"></div>
 		            </div>
                     <div class="issure">
-                        <button @click="addNewRule()">修改</button>
+                        <button @click="addNewRule()">添加</button>
                     </div>
                 </div>
             </div>
         </van-popup>
+        <van-popup v-model="isEditRuleShow" :overlay="true">
+            <div class="editBox" >
+                <div class="editBoxContent disflex">
+                    <div class="form_item_rules">
+		                <div class="item_title">準則(必填)</div>
+		                <div><input class="item_input" placeholder="準則" type="text"  v-model="edRule.rule_category_name"></div>
+		            </div>
+                    <div class="issure">
+                        <button @click="editRule()">修改</button>
+                    </div>
+                </div>
+            </div>
+        </van-popup> 
     </div>
 </template>
 
 <script>
-    import Editor from '../components/Editor.vue';
   	export default {
-        components: {
-            Editor,
-        },
   		data() {
             return {
 	        	ruless:[],
 	        	newRule:{
-	        		content:'',
-                    rule_category_name:'團隊守則',
+	        		rule_category_name:'',
 	        		type:10,
 	        	},
+	        	edRule:{
+	        		rule_category_name:'',
+	        		id:'',
+	        		index:'',
+	        	},
 	        	isNewRuleShow:false,
+	        	isEditRuleShow:false,
             }
         },
         mounted:function(){
@@ -83,7 +104,7 @@
         },
         methods:{
             getRules(){
-                // 获取團隊守則分类
+                // 获取準則分类
                 this.$ajax({
                     method: 'GET',
                     headers: {
@@ -96,7 +117,6 @@
                 }).then(res => {
                     // console.log(res.data);
                     this.ruless=res.data.data;
-                    this.newRule.content=res.data.data[0].content;
                 }).catch(err => {
                     this.$toast('獲取失敗');
                     console.log(err);
@@ -107,7 +127,7 @@
                 this.isNewRuleShow=true;
             },
             addNewRule(){
-                // 新增團隊守則
+                // 新增準則
                 this.$post(this.$config+'/api/travels/'+sessionStorage.actTravelId+'/categories',this.newRule,
                 {
                     headers: {
@@ -115,11 +135,12 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('修改成功');
+                    this.$toast('添加成功');
                     this.getRules();
                     this.isNewRuleShow=false;
+                    this.newRule.rule_category_name='';
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast('添加失败');
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -137,7 +158,7 @@
                 this.isEditRuleShow=true;
             },
             editRule(){
-                // 修改團隊守則信息
+                // 修改準則信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -168,10 +189,10 @@
                 });
             },
             delRule(ruleId){
-                // 删除團隊守則
+                // 删除準則
                 this.$dialog.confirm({
-                    title: '删除團隊守則',
-                    message: '是否删除該團隊守則',
+                    title: '删除準則',
+                    message: '是否删除該準則',
                     cancelButtonText:'取消',
                     cancelButtonColor:'#ccc',
                     confirmButtonText:'確定',
@@ -198,9 +219,6 @@
                 }).catch(err => {
 
                 });
-            },
-            catchData(value){
-                this.newRule.content=value;
             },
 
         },
