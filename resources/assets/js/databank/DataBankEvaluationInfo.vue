@@ -48,9 +48,9 @@
                 <div class="form_content disflex"  v-for="(evaluationInfo,index) in evaluationInfos">
                     <div class="form_item_evaluationInfo">
                         <div class="item_title">{{$t('dataBankEvaluationInfo.title')}}{{index+1}}
-                            <span class="fr" v-if="evaluationInfo.type==1">{{optList[type-1].title}}</span>
-                            <span class="fr" v-else-if="evaluationInfo.type==2">{{optList[type-1].title}}</span>
-                            <span class="fr" v-else-if="evaluationInfo.type==3">{{optList[type-1].title}}</span>
+                            <span class="fr" v-if="evaluationInfo.type==1">{{optList[evaluationInfo.type-1].title}}</span>
+                            <span class="fr" v-else-if="evaluationInfo.type==2">{{optList[evaluationInfo.type-1].title}}</span>
+                            <span class="fr" v-else-if="evaluationInfo.type==3">{{optList[evaluationInfo.type-1].title}}</span>
                         </div>
                         <div>
                             <textarea class="item_area_eval" :placeholder="$t('dataBankEvaluationInfo.content')" disabled="disabled"  :value="evaluationInfo.content"></textarea>

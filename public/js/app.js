@@ -55802,15 +55802,21 @@ var render = function() {
                   ),
                   evaluationInfo.type == 1
                     ? _c("span", { staticClass: "fr" }, [
-                        _vm._v(_vm._s(_vm.optList[_vm.type - 1].title))
+                        _vm._v(
+                          _vm._s(_vm.optList[evaluationInfo.type - 1].title)
+                        )
                       ])
                     : evaluationInfo.type == 2
                     ? _c("span", { staticClass: "fr" }, [
-                        _vm._v(_vm._s(_vm.optList[_vm.type - 1].title))
+                        _vm._v(
+                          _vm._s(_vm.optList[evaluationInfo.type - 1].title)
+                        )
                       ])
                     : evaluationInfo.type == 3
                     ? _c("span", { staticClass: "fr" }, [
-                        _vm._v(_vm._s(_vm.optList[_vm.type - 1].title))
+                        _vm._v(
+                          _vm._s(_vm.optList[evaluationInfo.type - 1].title)
+                        )
                       ])
                     : _vm._e()
                 ]),
