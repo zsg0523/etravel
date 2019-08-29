@@ -62056,7 +62056,7 @@ var m = {
 	},
 	dataBankStudySheet: {
 		studySheet: 'Assignments',
-		Title: 'Title',
+		title: 'Title',
 		body: 'Content',
 		delstudySheet: 'Delete worksheet',
 		confirmDelstudySheet: 'Do you want to delete the worksheet'
