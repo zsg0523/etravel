@@ -33,9 +33,9 @@
                         <div class="coins_center">
                             <div class="coins_img"></div>
                             <div class="coins_info">
-                                <p class="fonts">您的剩餘金幣</p>
+                                <p class="fonts">{{$t('personal.laveCoin')}}</p>
                                 <span class="num">{{userInfo.tokens}}</span>
-                                <div><div class="pay">充值</div></div>
+                                <div><div class="pay">{{$t('personal.recharge')}}</div></div>
                             </div>
                         </div>
                     </div>

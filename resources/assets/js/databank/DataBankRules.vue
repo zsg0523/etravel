@@ -29,15 +29,15 @@
         <div class="pane_content_rule" >
             <div class="form_content_rules disflex" v-if="ruless[0]">
                 <div class="form_item_rules">
-                    <div class="item_title">團隊守則</div>
+                    <div class="item_title">{{$t('dataBankRules.rule')}}</div>
                     <div style="border:1px solid #ccc;width:97%;background-color:#eeeeee;line-height:normal;min-height:45px;" v-html="ruless[0].content"></div>
                 </div>
             </div>
             <div class="form_content_rules disflex" v-else>
                 <div class="form_item_rules">
-                    <div class="item_title">團隊守則</div>
+                    <div class="item_title">{{$t('dataBankRules.rule')}}</div>
                     <div style="border:1px solid #ccc;width:97%;background-color:#eeeeee;line-height:40px;min-height: 45px;">
-                        暫無團隊守則
+                        {{$t('dataBankRules.noRule')}}
                     </div>
                 </div>
             </div>
@@ -49,11 +49,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
-		                <div class="item_title">團隊守則(必填)</div>
+		                <div class="item_title">{{$t('dataBankRules.rule')}}</div>
                         <div><Editor @catchData='catchData' :childData='newRule.content' v-model='newRule.content'></Editor></div>
 		            </div>
                     <div class="issure">
-                        <button @click="addNewRule()">修改</button>
+                        <button @click="addNewRule()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                     this.ruless=res.data.data;
                     this.newRule.content=res.data.data[0].content;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
 
@@ -115,11 +115,11 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('修改成功');
+                    this.$toast(this.$t('editSuccess'));
                     this.getRules();
                     this.isNewRuleShow=false;
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -150,13 +150,13 @@
                 }).then(res => {
                     if(res.status==200){
                         this.ruless[this.edRule.index].rule_category_name=this.edRule.rule_category_name;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditRuleShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);

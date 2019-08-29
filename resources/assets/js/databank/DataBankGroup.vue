@@ -51,10 +51,10 @@
                 <tbody>
                     <!-- <tr>
                         <td>編號</td>
-                        <td>填寫班級</td>
-                        <td>填寫名字</td>
-                        <td>填寫房號</td>
-                        <td>填寫職責</td>
+                        <td>班級</td>
+                        <td>名字</td>
+                        <td>房號</td>
+                        <td>職責</td>
                         <td width="100px">
                             <div class="editIcon"><img src="/etravel/public/images/edit.png"></div>
                             <div class="editIcon"><img src="/etravel/public/images/appointAdd.png"></div>
@@ -115,25 +115,25 @@
                     <div class="form_item_group">
                         <div class="item_title">班級</div>
                         <div>
-                            <input class="item_input" placeholder="填寫班級" type="text" disabled="disabled"  v-model="edGroup.group_class">
+                            <input class="item_input" placeholder="班級" type="text" disabled="disabled"  v-model="edGroup.group_class">
                         </div>
                     </div>
                     <div class="form_item_group">
                         <div class="item_title">學生姓名</div>
                         <div>
-                            <input class="item_input" placeholder="填寫學生姓名" type="text" disabled="disabled"  v-model="edGroup.group_name">
+                            <input class="item_input" placeholder="學生姓名" type="text" disabled="disabled"  v-model="edGroup.group_name">
                         </div>
                     </div>
                     <div class="form_item_group">
                         <div class="item_title">房號</div>
                         <div>
-                            <input class="item_input" placeholder="填寫房號" type="text"  v-model="edGroup.group_room">
+                            <input class="item_input" placeholder="房號" type="text"  v-model="edGroup.group_room">
                         </div>
                     </div>
                     <div class="form_item_group">
                         <div class="item_title">職責</div>
                         <div>
-                            <input class="item_input" placeholder="填寫職責" type="text"  v-model="edGroup.group_duty">
+                            <input class="item_input" placeholder="職責" type="text"  v-model="edGroup.group_duty">
                         </div>
                     </div>
                     <div class="issure">

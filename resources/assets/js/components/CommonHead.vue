@@ -31,7 +31,7 @@
 	        	
 	        <div class="info disflex">
 	            <div>{{userInfo.name}}</div>
-	            <div>金幣：{{userInfo.tokens}}</div>
+	            <div>{{$t('head.coin')}}：{{userInfo.tokens}}</div>
 	            <div>ID：{{userInfo.id}}</div>
 	            <!-- <div v-if="userInfo.manage_contents" onclick="window.location.assign('/admin')">管理系统</div> -->
 	        </div>
@@ -70,7 +70,7 @@
 		        	this.setUserInfo(res.data);
 		        }).catch(err => {
 		          	console.log(err);
-		          	this.$toast('登入失效');
+		          	this.$toast(this.$t('loginTimeout'));
 		          	sessionStorage.clear();
 					this.setUserInfo('');
 					this.setTravels('');
@@ -80,11 +80,11 @@
 	  		},
 			logout(){
 				this.$dialog.confirm({
-                    title: '登出',
-                    message: '是否登出',
-                    cancelButtonText:'取消',
+                    title: this.$t('head.logout'),
+                    message: this.$t('head.confirmMsg'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
 					sessionStorage.clear();

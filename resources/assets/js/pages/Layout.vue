@@ -23,7 +23,6 @@
         HistoryLink,
       },
       mounted(){
-        this.$store.state.links=[{link:'/home',linkName:'項目'}];
         // var obj=[{link:'/home',linkName:'項目'}];
         // sessionStorage.setItem("links",JSON.stringify(obj));
       }

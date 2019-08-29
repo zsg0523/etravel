@@ -36,13 +36,13 @@
             <table>
                 <thead>
                     <tr>
-                        <th>分組編號</th>
-                        <th>房間編號</th>
-                        <th>班級</th>
-                        <th>中文名</th>
-                        <th>英文名</th>
-                        <th>職責</th>
-                        <th>編輯</th>
+                        <th>{{$t('dataBankHouseTable.group')}}</th>
+                        <th>{{$t('dataBankHouseTable.room')}}</th>
+                        <th>{{$t('dataBankHouseTable.class')}}</th>
+                        <th>{{$t('dataBankHouseTable.name')}}</th>
+                        <th>{{$t('dataBankHouseTable.en_name')}}</th>
+                        <th>{{$t('dataBankHouseTable.duty')}}</th>
+                        <th>{{$t('patch')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div class="form_item_house">
-                        <div class="item_title">班級</div>
+                        <div class="item_title">{{$t('dataBankHouseTable.class')}}</div>
                         <div>
                             <input class="item_input" placeholder="班級" type="text"  v-model="newHouse.house_class">
                         </div>
@@ -94,43 +94,43 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_house">
-                        <div class="item_title">分組編號</div>
+                        <div class="item_title">{{$t('dataBankHouseTable.group')}}</div>
                         <div>
-                            <input class="item_input" placeholder="填寫分組編號" type="text"  v-model="edHouse.house_group">
+                            <input class="item_input" :placeholder="$t('dataBankHouseTable.group')" type="text"  v-model="edHouse.house_group">
                         </div>
                     </div>
                     <div class="form_item_house">
-                        <div class="item_title">房間編號</div>
+                        <div class="item_title">{{$t('dataBankHouseTable.room')}}</div>
                         <div>
-                            <input class="item_input" placeholder="填寫房間編號" type="text"  v-model="edHouse.house_room">
+                            <input class="item_input" :placeholder="$t('dataBankHouseTable.room')" type="text"  v-model="edHouse.house_room">
                         </div>
                     </div>
                     <div class="form_item_house">
-                        <div class="item_title">班級</div>
+                        <div class="item_title">{{$t('dataBankHouseTable.class')}}</div>
                         <div>
-                            <input class="item_input" placeholder="填寫班級" type="text"  v-model="edHouse.house_class">
+                            <input class="item_input" :placeholder="$t('dataBankHouseTable.class')" type="text"  v-model="edHouse.house_class">
                         </div>
                     </div>
                     <!-- <div class="form_item_house">
-                        <div class="item_title">中文名</div>
+                        <div class="item_title">{{$t('dataBankHouseTable.name')}}</div>
                         <div>
-                            <input class="item_input" placeholder="填寫中文名" type="text"  v-model="edHouse.name">
+                            <input class="item_input" placeholder="中文名" type="text"  v-model="edHouse.name">
                         </div>
                     </div>
                     <div class="form_item_house">
-                        <div class="item_title">英文名</div>
+                        <div class="item_title">{{$t('dataBankHouseTable.en_name')}}</div>
                         <div>
-                            <input class="item_input" placeholder="填寫英文名" type="text"  v-model="edHouse.en_name">
+                            <input class="item_input" placeholder="英文名" type="text"  v-model="edHouse.en_name">
                         </div>
                     </div> -->
                     <div class="form_item_house">
-                        <div class="item_title">職責</div>
+                        <div class="item_title">{{$t('dataBankHouseTable.duty')}}</div>
                         <div>
-                            <input class="item_input" placeholder="填寫職責" type="text"  v-model="edHouse.house_duty">
+                            <input class="item_input" :placeholder="$t('dataBankHouseTable.duty')" type="text"  v-model="edHouse.house_duty">
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="editHouse()">修改</button>
+                        <button @click="editHouse()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -179,7 +179,7 @@
                     // console.log(res.data);
                     this.houses=res.data.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },
@@ -243,13 +243,13 @@
                         // this.houses[this.edHouse.index].user.en_name=this.edHouse.en_name;
                         this.houses[this.edHouse.index].group=this.edHouse.house_group;
                         this.houses[this.edHouse.index].duty=this.edHouse.house_duty;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditHouseShow=false;    
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -263,11 +263,11 @@
             delHouse(userId,houseId){
                 // 删除分房信息
                 this.$dialog.confirm({
-                    title: '删除分組分房表資訊',
-                    message: '是否删除該條分組分房表資訊和該團員資訊',
-                    cancelButtonText:'取消',
+                    title: this.$t('dataBankHouseTable.delHouseTable'),
+                    message: this.$t('dataBankHouseTable.confirmDelHouseTable'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -280,12 +280,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getHouses(); 
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失敗');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失敗');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {

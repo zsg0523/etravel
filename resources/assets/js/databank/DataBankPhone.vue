@@ -34,19 +34,19 @@
         <div class="pane_content_phone" v-for="(phone,index) in phones">
             <div class="form_content_phone disflex">
                 <div class="form_item_phone">
-                    <div class="item_title">聯繫人名稱</div>
-                    <div><input class="item_input_phone" placeholder="聯繫人名稱" type="text" disabled="disabled" :value="phone.name"></div>
+                    <div class="item_title">{{$t('dataBankPhone.name')}}</div>
+                    <div><input class="item_input_phone" :placeholder="$t('dataBankPhone.name')" type="text" disabled="disabled" :value="phone.name"></div>
                 </div>
                 <div class="form_item_phone">
-                    <div class="item_title">職責</div>
-                    <div><input class="item_input_phone" placeholder="職責" type="text" disabled="disabled" :value="phone.duty"></div>
+                    <div class="item_title">{{$t('dataBankPhone.duty')}}</div>
+                    <div><input class="item_input_phone" :placeholder="$t('dataBankPhone.duty')" type="text" disabled="disabled" :value="phone.duty"></div>
                 </div>
                 <div class="form_item_phone">
-                    <div class="item_title">電話區號</div>
+                    <div class="item_title">{{$t('dataBankPhone.area_code')}}</div>
                     <div><input class="item_input_phone" type="text" disabled="disabled" :value="phone.area_code"></div>
                 </div>
                 <div class="form_item_phone">
-                    <div class="item_title">聯繫電話</div>
+                    <div class="item_title">{{$t('dataBankPhone.phone')}}</div>
                     <div><input class="item_input_phone" type="text" disabled="disabled" :value="phone.phone"></div>
                 </div>
             </div>
@@ -62,15 +62,15 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_phone">
-		                <div class="item_title">聯繫人名稱(必填)</div>
-		                <div><input class="item_input_phone" placeholder="聯繫人名稱" type="text"  v-model="newPhone.name"></div>
+		                <div class="item_title">{{$t('dataBankPhone.name')}}{{$t('filled')}}</div>
+		                <div><input class="item_input_phone" :placeholder="$t('dataBankPhone.name')" type="text"  v-model="newPhone.name"></div>
 		            </div>
                     <div class="form_item_phone">
-                        <div class="item_title">職責</div>
-                        <div><input class="item_input_phone" placeholder="職責" type="text"  v-model="newPhone.duty"></div>
+                        <div class="item_title">{{$t('dataBankPhone.duty')}}</div>
+                        <div><input class="item_input_phone" :placeholder="$t('dataBankPhone.duty')" type="text"  v-model="newPhone.duty"></div>
                     </div>
 		            <div class="form_item_phone">
-		                <div class="item_title">電話區號(必填)</div>
+		                <div class="item_title">{{$t('dataBankPhone.area_code')}}{{$t('filled')}}</div>
 		                <div>
                             <div class="areaSel">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newPhone.area_code' v-model='newPhone.area_code'></AreaCodeSelector>
@@ -78,11 +78,11 @@
                         </div>
 		            </div>
 		            <div class="form_item_phone">
-		                <div class="item_title">聯繫電話(必填)</div>
-		                <div><input class="item_input_phone" type="text" placeholder="聯繫電話"  v-model="newPhone.phone"></div>
+		                <div class="item_title">{{$t('dataBankPhone.phone')}}{{$t('filled')}}</div>
+		                <div><input class="item_input_phone" type="text" :placeholder="$t('dataBankPhone.phone')"  v-model="newPhone.phone"></div>
 		            </div>
                     <div class="issure">
-                        <button @click="addNewPhone()">添加</button>
+                        <button @click="addNewPhone()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -91,15 +91,15 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_phone">
-		                <div class="item_title">聯繫人名稱(必填)</div>
-		                <div><input class="item_input_phone" placeholder="聯繫人名稱" type="text"  v-model="edPhone.name"></div>
+		                <div class="item_title">{{$t('dataBankPhone.name')}}{{$t('filled')}}</div>
+		                <div><input class="item_input_phone" :placeholder="$t('dataBankPhone.name')" type="text"  v-model="edPhone.name"></div>
 		            </div>
                     <div class="form_item_phone">
-                        <div class="item_title">職責</div>
-                        <div><input class="item_input_phone" placeholder="職責" type="text"  v-model="edPhone.duty"></div>
+                        <div class="item_title">{{$t('dataBankPhone.duty')}}</div>
+                        <div><input class="item_input_phone" :placeholder="$t('dataBankPhone.duty')" type="text"  v-model="edPhone.duty"></div>
                     </div>
 		            <div class="form_item_phone">
-		                <div class="item_title">電話區號(必填)</div>
+		                <div class="item_title">{{$t('dataBankPhone.area_code')}}{{$t('filled')}}</div>
                         <!-- <div><input class="item_input_phone" type="text" placeholder="電話區號"  v-model="edPhone.area_code"></div> -->
 		                <div>
                             <div class="areaSel">
@@ -109,11 +109,11 @@
 		            </div>
 
 		            <div class="form_item_phone">
-		                <div class="item_title">聯繫電話(必填)</div>
-		                <div><input class="item_input_phone" type="text" placeholder="聯繫電話"  v-model="edPhone.phone"></div>
+		                <div class="item_title">{{$t('dataBankPhone.phone')}}{{$t('filled')}}</div>
+		                <div><input class="item_input_phone" type="text" :placeholder="$t('dataBankPhone.phone')"  v-model="edPhone.phone"></div>
 		            </div>
                     <div class="issure">
-                        <button @click="editPhone()">修改</button>
+                        <button @click="editPhone()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -166,7 +166,7 @@
                     // console.log(res.data);
                     this.phones=res.data.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
 
@@ -184,7 +184,7 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getPhones();
                     this.isNewPhoneShow=false;
                     this.newPhone.name='';
@@ -192,7 +192,7 @@
                     this.newPhone.phone='';
                     this.newPhone.duty='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -233,13 +233,13 @@
                         this.phones[this.edPhone.index].area_code=this.edPhone.area_code;
                         this.phones[this.edPhone.index].phone=this.edPhone.phone;
                         this.phones[this.edPhone.index].duty=this.edPhone.duty;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditPhoneShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -253,11 +253,11 @@
             delPhone(phoneId){
                 // 删除领队
                 this.$dialog.confirm({
-                    title: '删除聯繫人',
-                    message: '是否删除該聯繫人',
-                    cancelButtonText:'取消',
+                    title: this.$t('dataBankPhone.delPhone'),
+                    message: this.$t('dataBankPhone.confirmDelPhone'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -270,12 +270,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getPhones();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {

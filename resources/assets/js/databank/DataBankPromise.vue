@@ -31,15 +31,15 @@
 <template>
     <div style="width:100%;">
         <div class="right_title">
-            承諾書
+            {{$t('promise.promiseTitle')}}
         </div>
         <div class="dataBank_input_form disflex">
             <div class="pane_content_promise">
                 <div class="form_content disflex" v-for="(promise,index) in promises">
                     <div class="form_item_promise">
-                        <div class="item_title">承諾{{index+1}}</div>
+                        <div class="item_title">{{$t('promise.promise')}}{{index+1}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="承諾" disabled="disabled" :value="promise.rule_category_name" ></textarea>
+                            <textarea class="item_area" :placeholder="$t('promise.promise')" disabled="disabled" :value="promise.rule_category_name" ></textarea>
                         </div>
                     </div>
                     <div class="editBtnGroup">
@@ -56,13 +56,13 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_promise">
-                        <div class="item_title">承諾(必填)</div>
+                        <div class="item_title">{{$t('promise.promise')}}{{$t('filled')}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="承諾" v-model="newPromise.rule_category_name"></textarea>
+                            <textarea class="item_area" :placeholder="$t('promise.promise')" v-model="newPromise.rule_category_name"></textarea>
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="addNewPromise()">添加</button>
+                        <button @click="addNewPromise()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -71,13 +71,13 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_promise">
-                        <div class="item_title">承諾(必填)</div>
+                        <div class="item_title">{{$t('promise.promise')}}{{$t('filled')}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="承諾" v-model="edPromise.rule_category_name"></textarea>
+                            <textarea class="item_area" :placeholder="$t('promise.promise')" v-model="edPromise.rule_category_name"></textarea>
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="editPromise()">修改</button>
+                        <button @click="editPromise()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                     // console.log(res.data);
                     this.promises=res.data.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },
@@ -139,12 +139,12 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getPromises();
                     this.isNewPromiseShow=false;
                     this.newPromise.rule_category_name='';
                 }).catch(err => {
-                    this.$toast('添加失敗');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -175,13 +175,13 @@
                 }).then(res => {
                     if(res.status==200){
                         this.promises[this.edPromise.index].rule_category_name=this.edPromise.rule_category_name;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditPromiseShow=false;    
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -195,11 +195,11 @@
             delPromise(promiseId){
                 // 删除承諾
                 this.$dialog.confirm({
-                    title: '删除承諾',
-                    message: '是否删除該承諾',
-                    cancelButtonText:'取消',
+                    title: this.$t('promise.delPromise'),
+                    message: this.$t('promise.confirmDelPromise'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -212,12 +212,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getPromises();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失敗');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失敗');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {

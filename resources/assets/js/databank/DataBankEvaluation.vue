@@ -35,9 +35,9 @@
         <div class="pane_content_evaluation" >
             <div class="form_content_evaluations disflex">
                 <div class="form_item_evaluations" v-for="(evaluation,index) in evaluations">
-                    <div class="item_title">題目標題</div>
+                    <div class="item_title">{{$t('dataBankEvaluation.title')}}</div>
                     <div class="input_icon disflex">
-                        <input placeholder="請填寫題目標題" type="text" disabled="disabled"  :value="evaluation.title">
+                        <input :placeholder="$t('dataBankEvaluation.title')" type="text" disabled="disabled"  :value="evaluation.title">
                         <div @click="$router.push('/topic/dataBankEvaluationInfo/'+evaluation.id)">
                             <img src="/etravel/public/images/See-next.png" alt="">
                         </div>
@@ -57,11 +57,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluations">
-                        <div class="item_title">題目標題(必填)</div>
-                        <div><input class="item_input" placeholder="請填寫題目標題" type="text" v-model="newEvaluation.title"></div>
+                        <div class="item_title">{{$t('dataBankEvaluation.title')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" :placeholder="$t('dataBankEvaluation.title')" type="text" v-model="newEvaluation.title"></div>
                     </div>
                     <div class="issure">
-                        <button @click="addNewEvaluation()">添加</button>
+                        <button @click="addNewEvaluation()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -70,11 +70,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluations">
-                        <div class="item_title">題目標題(必填)</div>
-                        <div><input class="item_input" placeholder="請填寫題目標題" type="text" v-model="edEvaluation.title"></div>
+                        <div class="item_title">{{$t('dataBankEvaluation.title')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" :placeholder="$t('dataBankEvaluation.title')" type="text" v-model="edEvaluation.title"></div>
                     </div>
                     <div class="issure">
-                        <button @click="editEvaluation()">修改</button>
+                        <button @click="editEvaluation()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@
                     // console.log(res.data);
                     this.evaluations=res.data.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },
@@ -133,7 +133,7 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.isNewEvaluationShow=false;
                     this.getEvaluations();  
                     this.newEvaluation.title='';
@@ -169,10 +169,10 @@
                 }).then(res => {
                     if(res.status==200){
                         this.evaluations[this.edEvaluation.index].title=this.edEvaluation.title;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditevaluationShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
                     if(err.response.data.errors){
@@ -189,11 +189,11 @@
             delEvaluation(evaluationId){
                 // 删除題目類型
                 this.$dialog.confirm({
-                    title: '删除題目類型',
-                    message: '是否删除該題目類型',
-                    cancelButtonText:'取消',
+                    title: this.$t('dataBankEvaluation.delTitle'),
+                    message: this.$t('dataBankEvaluation.confirmDelTitle'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -206,12 +206,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getEvaluations();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {

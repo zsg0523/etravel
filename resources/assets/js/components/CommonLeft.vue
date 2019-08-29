@@ -16,20 +16,20 @@
 <template>
     <div class="dataBank_left">
         <ul style="padding: 0;margin:0;">
-            <router-link tag='li' to='/dataBankInfo'><div >重要資料<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/dataBankPhone'><div >常用電話<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/rule'><div >團隊守則<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/promise'><div >我的承諾<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/dataBankInfo'><div >{{$t('commonLeft.dataBankInfo')}}<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/dataBankPhone'><div >{{$t('commonLeft.dataBankPhone')}}<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/rule'><div >{{$t('commonLeft.rule')}}<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/promise'><div >{{$t('commonLeft.promise')}}<!-- <input type="checkbox" class="checke"> --></div></router-link>
             <!-- <router-link tag='li' to='/dataBankGroup'><div >師生名單分組<input type="checkbox" class="checke"></div></router-link> -->
-            <router-link tag='li' to='/dataBankLocalCulture'><div >當地文化<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/dataBankHouseTable'><div >分組分房表<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/luggage'><div >行李清單<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/journey'><div >行程<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/study'><div >學習工作紙<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/dataBankLocalCulture'><div >{{$t('commonLeft.dataBankLocalCulture')}}<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/dataBankHouseTable'><div >{{$t('commonLeft.dataBankHouseTable')}}<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/luggage'><div >{{$t('commonLeft.luggage')}}<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/journey'><div >{{$t('commonLeft.journey')}}<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/study'><div >{{$t('commonLeft.study')}}<!-- <input type="checkbox" class="checke"> --></div></router-link>
             <!-- <router-link tag='li' to='/'><div >每日记事<input type="checkbox" class="checke"></div></router-link> -->
-            <router-link tag='li' to='/topic'><div >自我評估<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/dataBankSelfPerception'><div >自我感想<!-- <input type="checkbox" class="checke"> --></div></router-link>
-            <router-link tag='li' to='/answer'><div >學生答題紙<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/topic'><div >{{$t('commonLeft.topic')}}<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/dataBankSelfPerception'><div >{{$t('commonLeft.dataBankSelfPerception')}}<!-- <input type="checkbox" class="checke"> --></div></router-link>
+            <router-link tag='li' to='/answer'><div >{{$t('commonLeft.answer')}}<!-- <input type="checkbox" class="checke"> --></div></router-link>
 
         </ul>
     </div>

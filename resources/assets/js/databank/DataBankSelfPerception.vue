@@ -30,16 +30,16 @@
 <template>
     <div style="width:100%;">
         <div class="right_title">
-            自我感想
+            {{$t('commonLeft.dataBankSelfPerception')}}
         </div>
         <div class="dataBank_input_form disflex">
             <div class="pane_content_feel">
                 <div class="form_content_feel disflex" v-for="(feel,index) in feels">
                     <div class="form_item_feel">
-                        <div class="item_title">感想標題{{index+1}}</div>
+                        <div class="item_title">{{$t('dataBankSelfPerception.title')}}{{index+1}}</div>
                         <div>
-                            <!-- <textarea class="item_area" placeholder="感想標題" disabled="disabled" :value="feel.title" ></textarea> -->
-                            <input class="item_input"  placeholder="感想標題"  type="text" disabled="disabled" :value="feel.title">
+                            <!-- <textarea class="item_area" placeholder="$t('dataBankSelfPerception.title')" disabled="disabled" :value="feel.title" ></textarea> -->
+                            <input class="item_input"  placeholder="$t('dataBankSelfPerception.title')"  type="text" disabled="disabled" :value="feel.title">
                         </div>
                     </div>
                     <div class="editBtnGroup">
@@ -56,14 +56,14 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_feel">
-                        <div class="item_title">感想標題(必填)</div>
+                        <div class="item_title">{{$t('dataBankSelfPerception.title')}}{{$t('filled')}}</div>
                         <div>
-                            <!-- <textarea class="item_area" placeholder="感想標題" v-model="newFeel.title"></textarea> -->
-                            <input class="item_input"  placeholder="感想標題"  type="text" v-model="newFeel.title">
+                            <!-- <textarea class="item_area" placeholder="$t('dataBankSelfPerception.title')" v-model="newFeel.title"></textarea> -->
+                            <input class="item_input"  placeholder="$t('dataBankSelfPerception.title')"  type="text" v-model="newFeel.title">
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="addFeel()">添加</button>
+                        <button @click="addFeel()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -72,14 +72,14 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_feel">
-                        <div class="item_title">感想標題(必填)</div>
+                        <div class="item_title">{{$t('dataBankSelfPerception.title')}}{{$t('filled')}}</div>
                         <div>
-                            <!-- <textarea class="item_area" placeholder="感想標題" v-model="edFeel.title"></textarea> -->
-                            <input class="item_input"  placeholder="感想標題"  type="text" v-model="edFeel.title">
+                            <!-- <textarea class="item_area" placeholder="$t('dataBankSelfPerception.title')" v-model="edFeel.title"></textarea> -->
+                            <input class="item_input"  placeholder="$t('dataBankSelfPerception.title')"  type="text" v-model="edFeel.title">
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="editFeel()">修改</button>
+                        <button @click="editFeel()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                 // console.log(res.data);
                 this.feels=res.data.data;
             }).catch(err => {
-                this.$toast('獲取失敗');
+                this.$toast(this.$t('loginTimeout'));
                 console.log(err);
             });
         },
@@ -139,12 +139,12 @@
                 }
             }).then(res => {
                 // console.log(res.data);
-                this.$toast('添加成功');
+                this.$toast(this.$t('addSuccess'));
                 this.getFeels();
                 this.isAddFeelShow=false;
                 this.newFeel.title='';
             }).catch(err => {
-                this.$toast('添加失敗');
+                this.$toast(this.$t('addFail'));
                 if(err.response.data.errors){
                     for(var key in err.response.data.errors){
                         this.$toast(err.response.data.errors[key][0]);
@@ -175,13 +175,13 @@
             }).then(res => {
                 if(res.status==200){
                     this.feels[this.edFeel.index].title=this.edFeel.title;
-                    this.$toast('修改成功');
+                    this.$toast(this.$t('editSuccess'));
                     this.isEditFeelShow=false;    
                 }else{
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                 }
             }).catch(err => {
-                this.$toast('修改失敗');
+                this.$toast(this.$t('editFail'));
                 if(err.response.data.errors){
                     for(var key in err.response.data.errors){
                         this.$toast(err.response.data.errors[key][0]);
@@ -195,11 +195,11 @@
         delFeel(feelId){
              // 删除感想標題
             this.$dialog.confirm({
-                title: '删除感想標題',
-                message: '是否删除該感想標題',
-                cancelButtonText:'取消',
+                title: this.$t('dataBankSelfPerception.delTitle'),
+                message: this.$t('dataBankSelfPerception.confirmDelTitle'),
+                cancelButtonText:this.$t('cancel'),
                 cancelButtonColor:'#ccc',
-                confirmButtonText:'確定',
+                confirmButtonText:this.$t('confirm'),
                 confirmButtonColor:'#000',
             }).then(() => {
                 this.$ajax({
@@ -212,12 +212,12 @@
                     // console.log(res);
                     if(res.status==204){
                         this.getFeels();
-                        this.$toast('删除成功');
+                        this.$toast(this.$t('delSuccess'));
                     }else{
-                        this.$toast('删除失敗');
+                        this.$toast(this.$t('delFail'));
                     }
                 }).catch(err => {
-                    this.$toast('删除失敗');
+                    this.$toast(this.$t('delFail'));
                     console.log(err)
                 });
             }).catch(err => {

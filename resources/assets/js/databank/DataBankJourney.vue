@@ -35,8 +35,8 @@
 	<div class="dataBank_input_form disflex">
         <div class="tablist">
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#journey" aria-controls="journey" role="tab" data-toggle="tab">景點安排</a></li>
-                <li role="presentation"><a href="#flight" aria-controls="flight" role="tab" data-toggle="tab">膳食安排</a></li>
+                <li role="presentation" class="active"><a href="#journey" aria-controls="journey" role="tab" data-toggle="tab">{{$t('journey.view_plan')}}</a></li>
+                <li role="presentation"><a href="#flight" aria-controls="flight" role="tab" data-toggle="tab">{{$t('journey.meal_plan')}}</a></li>
             </ul>
             <div class="tab-content">
                 <!-- 行程安排 -->
@@ -44,7 +44,7 @@
                     <div class="pane_content_journey">
                         <div class="form_content_journey disflex">
                             <div class="form_item_journey">
-                                <div class="item_title">景點安排</div>
+                                <div class="item_title">{{$t('journey.view_plan')}}</div>
                                 <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee;line-height:25px;" v-html="travelInfo.view_plan"></div>
                             </div>
                         </div>
@@ -54,12 +54,12 @@
                     </div>   
                 </div>
 
-                <!-- 膳食安排 -->
+                <!-- {{$t('journey.meal_plan')}} -->
                 <div role="tabpanel" class="tab-pane" id="flight">
                     <div class="pane_content_journey">
                         <div class="form_content_journey disflex">
                             <div class="form_item_journey">
-                                <div class="item_title">膳食安排</div>
+                                <div class="item_title">{{$t('journey.meal_plan')}}</div>
                                 <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee;line-height:25px;" v-html="travelInfo.meal_plan"></div>
                             </div>
                         </div>
@@ -74,11 +74,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
-                        <div class="item_title">景點安排</div>
+                        <div class="item_title">{{$t('journey.view_plan')}}</div>
                         <div><Editor @catchData='catchData' :childData='view_plan'></Editor></div>
                     </div>
                     <div class="issure">
-                        <button @click="editTravelInfo()">保存</button>
+                        <button @click="editTravelInfo()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -87,11 +87,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
-                        <div class="item_title">膳食安排</div>
+                        <div class="item_title">{{$t('journey.meal_plan')}}</div>
                         <div><Editor @catchData='catchData' :childData='meal_plan'></Editor></div>
                     </div>
                     <div class="issure">
-                        <button @click="editTravelInfo()">保存</button>
+                        <button @click="editTravelInfo()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                     this.view_plan=res.data.view_plan;
                     this.meal_plan=res.data.meal_plan;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },
@@ -158,16 +158,16 @@
                 }).then(res => {
                     // console.log(res);
                     if(res.status==200){
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.travelInfo.view_plan=this.view_plan;
                         this.travelInfo.meal_plan=this.meal_plan;
                         this.isEditViewShow=false;
                         this.isEditMealShow=false;
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);

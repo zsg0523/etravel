@@ -40,7 +40,7 @@
                 <div class="form_item_journey disflex">
                     <div class="item_left disflex">
                         <div style="width:40%;margin-left: 5%;">{{journey.day}}</div>
-                        <div style="width:20%;text-align: center;">日期</div>
+                        <div style="width:20%;text-align: center;">{{$t('dataBankStudy.date')}}</div>
                         <input type="text" style="width:30%;" disabled="disabled" :value="journey.date">
                     </div>
                     <div class="item_right">
@@ -60,15 +60,15 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
-		                <div class="item_title">景點(必填)</div>
-		                <div><input class="item_input" placeholder="景點" type="text"  v-model="newJourney.day"></div>
+		                <div class="item_title">{{$t('dataBankStudy.day')}}{{$t('filled')}}</div>
+		                <div><input class="item_input" :placeholder="$t('dataBankStudy.day')" type="text"  v-model="newJourney.day"></div>
 		            </div>
 		            <div class="form_item_journey">
-		                <div class="item_title">日期(必填)</div>
-		                <div><input class="item_input" placeholder="填寫日期(yyyy-mm-dd)" type="text"  v-model="newJourney.date"></div>
+		                <div class="item_title">{{$t('dataBankStudy.date')}}{{$t('filled')}}</div>
+		                <div><input class="item_input" :placeholder="$t('dataBankStudy.date')+'(yyyy-mm-dd)'" type="text"  v-model="newJourney.date"></div>
 		            </div>
                     <div class="issure">
-                        <button @click="addNewJourney()">添加</button>
+                        <button @click="addNewJourney()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -77,15 +77,15 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journey">
-		                <div class="item_title">景點(必填)</div>
-		                <div><input class="item_input" placeholder="景點" type="text"  v-model="edJourney.day"></div>
+		                <div class="item_title">{{$t('dataBankStudy.day')}}{{$t('filled')}}</div>
+		                <div><input class="item_input" :placeholder="$t('dataBankStudy.day')" type="text"  v-model="edJourney.day"></div>
 		            </div>
 		            <div class="form_item_journey">
-		                <div class="item_title">日期(必填)</div>
-		                <div><input class="item_input" placeholder="填寫日期(yyyy-mm-dd)" type="text"  v-model="edJourney.date"></div>
+		                <div class="item_title">{{$t('dataBankStudy.date')}}{{$t('filled')}}</div>
+		                <div><input class="item_input" :placeholder="$t('dataBankStudy.date')+'(yyyy-mm-dd)'" type="text"  v-model="edJourney.date"></div>
 		            </div>
                     <div class="issure">
-                        <button @click="editJourney()">修改</button>
+                        <button @click="editJourney()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                     // console.log(res.data);
                     this.journeys=res.data.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },
@@ -145,13 +145,13 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getJourneys();
                     this.isNewJourneyShow=false;
                     this.newJourney.day='';
                     this.newJourney.date='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -185,10 +185,10 @@
                     if(res.status==200){
                         this.journeys[this.edJourney.index].day=this.edJourney.day;
                         this.journeys[this.edJourney.index].date=this.edJourney.date;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditJourneyShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
                     // this.$toast('修改失败');
@@ -205,11 +205,11 @@
             delJourney(journeyId){
                 // 删除行程
                 this.$dialog.confirm({
-                    title: '删除行程',
-                    message: '是否删除該行程',
-                    cancelButtonText:'取消',
+                    title: this.$t('dataBankStudy.delStudy'),
+                    message: this.$t('dataBankStudy.confirmDelStudy'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -222,12 +222,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getJourneys();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {

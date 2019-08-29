@@ -37,17 +37,17 @@
             <div class="title_icon" @click="$router.push('/study/dataBankStudy')">
                 <img src="/etravel/public/images/back.png">
             </div>
-			學習工作紙
+			{{$t('dataBankStudySheet.studySheet')}}
         </div>
         <div class="dataBank_input_form disflex">
             <div class="pane_content_sheet">
                 <div class="form_content_sheet disflex" v-for="(sheet,index) in sheets">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">標題 <img class="toNext" @click="$router.push('/study/dataBankStudySheetInfo/'+sheet.id)" src="/etravel/public/images/See-next.png"></div>
-		                <div><input class="item_input_journeyInfo" placeholder="標題" type="text" disabled="disabled"  :value="sheet.title"></div>
+		                <div class="item_title">{{$t('dataBankStudySheet.title')}} <img class="toNext" @click="$router.push('/study/dataBankStudySheetInfo/'+sheet.id)" src="/etravel/public/images/See-next.png"></div>
+		                <div><input class="item_input_journeyInfo" :placeholder="$t('dataBankStudySheet.title')" type="text" disabled="disabled"  :value="sheet.title"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">内容</div>
+                        <div class="item_title">{{$t('dataBankStudySheet.body')}}</div>
                         <div style="border:1px solid #ccc;border-radius: 8px;width:93%;background-color:#eeeeee;line-height:25px;" v-html="sheet.body"></div>
                         <!-- <div>
                             <textarea class="item_area" disabled="disabled" placeholder="内容" :value="sheet.body"></textarea>
@@ -67,15 +67,15 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">標題(必填)</div>
-		                <div><input class="item_input_journeyInfo" placeholder="標題" type="text" v-model="newSheet.title"></div>
+		                <div class="item_title">{{$t('dataBankStudySheet.title')}}{{$t('filled')}}}</div>
+		                <div><input class="item_input_journeyInfo" :placeholder="$t('dataBankStudySheet.title')" type="text" v-model="newSheet.title"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">内容(必填)</div>
+                        <div class="item_title">{{$t('dataBankStudySheet.body')}}{{$t('filled')}}}</div>
                         <div><Editor @catchData='catchData' :childData='newSheet.body'></Editor></div>
                     </div>
                     <div class="issure">
-                        <button @click="addNewSheet()">添加</button>
+                        <button @click="addNewSheet()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -84,18 +84,18 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_journeyInfo">
-		                <div class="item_title">標題(必填)</div>
-		                <div><input class="item_input_journeyInfo" placeholder="標題" type="text"  v-model="edSheet.title"></div>
+		                <div class="item_title">{{$t('dataBankStudySheet.title')}}{{$t('filled')}}}</div>
+		                <div><input class="item_input_journeyInfo" :placeholder="$t('dataBankStudySheet.title')" type="text"  v-model="edSheet.title"></div>
 		            </div>
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">内容(必填)</div>
+                        <div class="item_title">{{$t('dataBankStudySheet.body')}}{{$t('filled')}}}</div>
                         <!-- <div>
                             <textarea class="item_area"  placeholder="内容" v-model="edSheet.body"></textarea>
                         </div> -->
                         <div><Editor @catchData='catchData' :childData='edSheet.body'></Editor></div>
                     </div>
                     <div class="issure">
-                        <button @click="editSheet()">修改</button>
+                        <button @click="editSheet()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -144,7 +144,7 @@
                 }).then(res => {
                     this.sheets=res.data.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },
@@ -161,13 +161,13 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getSheets();
                     this.isNewSheetShow=false;
                     this.newSheet.title='';
                     this.newSheet.body='';
                 }).catch(err => {
-                    this.$toast('添加失敗');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -202,13 +202,13 @@
                     if(res.status==200){
                         this.sheets[this.edSheet.index].title=this.edSheet.title;
                         this.sheets[this.edSheet.index].body=this.edSheet.body;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditSheetShow=false;    
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -222,11 +222,11 @@
             delSheet(sheetId){
                 // 删除學習工作紙
                 this.$dialog.confirm({
-                    title: '删除學習工作紙',
-                    message: '是否删除該學習工作紙',
-                    cancelButtonText:'取消',
+                    title: this.$t('dataBankStudySheet.delstudySheet'),
+                    message: this.$t('dataBankStudySheet.confirmDelstudySheet'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -239,12 +239,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getSheets();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失敗');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失敗');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {

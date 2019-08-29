@@ -40,9 +40,9 @@
                             <img src="/etravel/public/images/back.png">
                         </div>
                     </li>
-                    <li role="presentation" class="active"><a href="#gather" aria-controls="gather" role="tab" data-toggle="tab">學習工作紙</a></li>
-                    <li role="presentation"><a href="#flight" aria-controls="flight" role="tab" data-toggle="tab">自我評估</a></li>
-                    <li role="presentation"><a href="#accommodationInfo" aria-controls="accommodationInfo" role="tab" data-toggle="tab">自我感想</a></li>
+                    <li role="presentation" class="active"><a href="#gather" aria-controls="gather" role="tab" data-toggle="tab">{{$t('dataBankAnswerInfo.title1')}}</a></li>
+                    <li role="presentation"><a href="#flight" aria-controls="flight" role="tab" data-toggle="tab">{{$t('dataBankAnswerInfo.title2')}}</a></li>
+                    <li role="presentation"><a href="#accommodationInfo" aria-controls="accommodationInfo" role="tab" data-toggle="tab">{{$t('dataBankAnswerInfo.title3')}}</a></li>
                 </ul>
                 <div class="tab-content">
                     <!-- 學習工作紙 -->
@@ -62,7 +62,7 @@
                                     </template>
                                     <template v-else>
                                         <div class="questContent" style="color: red;">
-                                            暫無回答
+                                            {{$t('dataBankAnswerInfo.noAnswer')}}
                                         </div>  
                                     </template>
                                     
@@ -70,7 +70,7 @@
                             </template>
                             <template v-else>
                                 <div class="sheetQuestion">
-                                    未設定問題
+                                    {{$t('dataBankAnswerInfo.noQuestion')}}
                                 </div>
                             </template>
                             
@@ -132,7 +132,7 @@
                             </template>
                             <template v-else>
                                 <div class="evaluationQuestions">
-                                    <h4>暫無題目</h4>
+                                    <h4>{{$t('dataBankAnswerInfo.noQuestion')}}</h4>
                                 </div>
                             </template>
                         </div>
@@ -149,21 +149,21 @@
                                     <img :src="perception.writes.data[0].image">
                                 </div>
                                 <div class="feelImg" v-else>
-                                    <h4>未上傳圖片</h4>
+                                    <h4>{{$t('dataBankAnswerInfo.noImage')}}</h4>
                                 </div> 
                                 <div class="feelContent" v-if="perception.writes.data[0].content">
                                     {{perception.writes.data[0].content}}
                                 </div>
                                 <div class="feelContent" v-else style="color: red;">
-                                    暫無回答
+                                    {{$t('dataBankAnswerInfo.noAnswer')}}
                                 </div>  
                             </template>
                             <template v-else>
                                 <div class="feelImg">
-                                    <h4>未上傳圖片</h4>
+                                    <h4>{{$t('dataBankAnswerInfo.noImage')}}</h4>
                                 </div> 
                                 <div class="feelContent" style="color: red;">
-                                    暫無回答
+                                    {{$t('dataBankAnswerInfo.noAnswer')}}
                                 </div>  
                             </template>
                         </div>
