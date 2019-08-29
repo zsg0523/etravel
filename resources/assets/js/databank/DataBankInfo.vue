@@ -180,11 +180,11 @@
                                     <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="hotel.hotel_name" ></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">入住時間</div>
+                                    <div class="item_title">{{$t('dataBankInfo.check_at')}}</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.check_at" ></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">離開時間</div>
+                                    <div class="item_title">{{$t('dataBankInfo.leave_at')}}</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.leave_at" ></div>
                                 </div>
                                 <div class="form_item_info">

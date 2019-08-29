@@ -184,7 +184,7 @@ const m = {
 	},
 	promise:{
 		promiseTitle: 'commitment book',
-		Promise: 'Commitment',
+		promise: 'Commitment',
 		delPromise: 'Delete commitment',
 		confirmDelPromise: 'Do you want to delete this commitment',
 	},

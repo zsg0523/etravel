@@ -35,7 +35,7 @@ y<style scoped>
         <div class="pane_content_rule" >
             <div class="form_content_rules disflex">
                 <div class="form_item_rules"  v-for="(rule,index) in ruless">
-                    <div class="item_title">{{$t('promise.promise')}}{{index+1}}</div>
+                    <div class="item_title">{{$t('promise.promise')}}</div>
                     <div class="input_icon disflex">
                         <input :placeholder="$t('promise.promise')" type="text" disabled="disabled" :value="rule.rule_category_name">
                         <div @click="$router.push('/promise/dataBankPromisesInfo/'+rule.id)">

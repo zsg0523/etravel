@@ -41352,7 +41352,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "form_item_info" }, [
                         _c("div", { staticClass: "item_title" }, [
-                          _vm._v("入住時間")
+                          _vm._v(_vm._s(_vm.$t("dataBankInfo.check_at")))
                         ]),
                         _vm._v(" "),
                         _c("div", [
@@ -41366,7 +41366,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "form_item_info" }, [
                         _c("div", { staticClass: "item_title" }, [
-                          _vm._v("離開時間")
+                          _vm._v(_vm._s(_vm.$t("dataBankInfo.leave_at")))
                         ]),
                         _vm._v(" "),
                         _c("div", [
@@ -46445,7 +46445,7 @@ var render = function() {
           _vm._l(_vm.ruless, function(rule, index) {
             return _c("div", { staticClass: "form_item_rules" }, [
               _c("div", { staticClass: "item_title" }, [
-                _vm._v(_vm._s(_vm.$t("promise.promise")) + _vm._s(index + 1))
+                _vm._v(_vm._s(_vm.$t("promise.promise")))
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "input_icon disflex" }, [
@@ -46893,7 +46893,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getRuleInfos: function getRuleInfos() {
             var _this = this;
 
-            // 获取承諾詳情/api/categories/3?include=rules
+            // 获取{{$t('promise.promise')}}/api/categories/3?include=rules
             this.$get(this.$config + '/api/categories/' + this.$route.params.id + '?include=rules', {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
@@ -46903,7 +46903,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.rule = res.data;
                 _this.ruleInfos = res.data.rules.data;
             }).catch(function (err) {
-                _this.$toast('獲取失敗');
+                _this.$toast(_this.$t('loginTimeout'));
                 console.log(err);
             });
         },
@@ -46913,19 +46913,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         addNewRuleInfo: function addNewRuleInfo() {
             var _this2 = this;
 
-            // 新增承諾詳情
+            // 新增{{$t('promise.promise')}}
             this.$post(this.$config + '/api/rules', this.newRuleInfo, {
                 headers: {
                     "Authorization": 'Bearer ' + sessionStorage.token
                 }
             }).then(function (res) {
                 // console.log(res.data);
-                _this2.$toast('添加成功');
+                _this2.$toast(_this2.$t('addSuccess'));
                 _this2.getRuleInfos();
                 _this2.isNewRuleInfoShow = false;
                 _this2.newRuleInfo.rule = '';
             }).catch(function (err) {
-                _this2.$toast('添加失败');
+                _this2.$toast(_this2.$t('addFail'));
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
@@ -46946,7 +46946,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         editRuleInfo: function editRuleInfo() {
             var _this3 = this;
 
-            // 修改承諾詳情信息
+            // 修改{{$t('promise.promise')}}信息
             this.$ajax({
                 method: 'PATCH',
                 headers: {
@@ -46961,13 +46961,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 // console.log(res);
                 if (res.status == 200) {
                     _this3.ruleInfos[_this3.edRuleInfo.index].rule = _this3.edRuleInfo.rule;
-                    _this3.$toast('修改成功');
+                    _this3.$toast(_this3.$t('editSuccess'));
                     _this3.isEditRuleInfoShow = false;
                 } else {
-                    _this3.$toast('修改失败');
+                    _this3.$toast(_this3.$t('editFail'));
                 }
             }).catch(function (err) {
-                _this3.$toast('修改失败');
+                _this3.$toast(_this3.$t('editFail'));
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
@@ -46981,13 +46981,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         delRuleInfo: function delRuleInfo(RuleInfoId) {
             var _this4 = this;
 
-            // 删除承諾詳情
+            // 删除{{$t('promise.promise')}}
             this.$dialog.confirm({
-                title: '删除承諾詳情',
-                message: '是否删除該承諾詳情',
-                cancelButtonText: '取消',
+                title: this.$t('del') + this.$t('promise.promise'),
+                message: this.$t('del') + this.$t('promise.promise'),
+                cancelButtonText: this.$t('cancel'),
                 cancelButtonColor: '#ccc',
-                confirmButtonText: '確定',
+                confirmButtonText: this.$t('confirm'),
                 confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
@@ -47000,12 +47000,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     // console.log(res);
                     if (res.status == 204) {
                         _this4.getRuleInfos();
-                        _this4.$toast('删除成功');
+                        _this4.$toast(_this4.$t('delSuccess'));
                     } else {
-                        _this4.$toast('删除失败');
+                        _this4.$toast(_this4.$t('delFail'));
                     }
                 }).catch(function (err) {
-                    _this4.$toast('删除失败');
+                    _this4.$toast(_this4.$t('delFail'));
                     console.log(err);
                 });
             }).catch(function (err) {});
@@ -47051,13 +47051,16 @@ var render = function() {
             return _c("div", { staticClass: "form_content disflex" }, [
               _c("div", { staticClass: "form_item_ruleInfo" }, [
                 _c("div", { staticClass: "item_title" }, [
-                  _vm._v("承諾詳情" + _vm._s(index + 1))
+                  _vm._v(_vm._s(_vm.$t("promise.promise")))
                 ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("textarea", {
                     staticClass: "item_area",
-                    attrs: { placeholder: "承諾詳情", disabled: "disabled" },
+                    attrs: {
+                      placeholder: _vm.$t("promise.promise"),
+                      disabled: "disabled"
+                    },
                     domProps: { value: ruleInfo.rule }
                   })
                 ])
@@ -47118,7 +47121,9 @@ var render = function() {
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_ruleInfo" }, [
                 _c("div", { staticClass: "item_title" }, [
-                  _vm._v("承諾詳情(必填)")
+                  _vm._v(
+                    _vm._s(_vm.$t("promise.promise")) + _vm._s(_vm.$t("filled"))
+                  )
                 ]),
                 _vm._v(" "),
                 _c("div", [
@@ -47132,7 +47137,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_area",
-                    attrs: { placeholder: "承諾詳情" },
+                    attrs: { placeholder: _vm.$t("promise.promise") },
                     domProps: { value: _vm.newRuleInfo.rule },
                     on: {
                       input: function($event) {
@@ -47156,7 +47161,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("添加")]
+                  [_vm._v(_vm._s(_vm.$t("add")))]
                 )
               ])
             ])
@@ -47181,7 +47186,9 @@ var render = function() {
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_ruleInfo" }, [
                 _c("div", { staticClass: "item_title" }, [
-                  _vm._v("承諾詳情(必填)")
+                  _vm._v(
+                    _vm._s(_vm.$t("promise.promise")) + _vm._s(_vm.$t("filled"))
+                  )
                 ]),
                 _vm._v(" "),
                 _c("div", [
@@ -47195,7 +47202,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_area",
-                    attrs: { placeholder: "承諾詳情" },
+                    attrs: { placeholder: _vm.$t("promise.promise") },
                     domProps: { value: _vm.edRuleInfo.rule },
                     on: {
                       input: function($event) {
@@ -47219,7 +47226,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("修改")]
+                  [_vm._v(_vm._s(_vm.$t("edit")))]
                 )
               ])
             ])
@@ -62023,7 +62030,7 @@ var m = {
 	},
 	promise: {
 		promiseTitle: 'commitment book',
-		Promise: 'Commitment',
+		promise: 'Commitment',
 		delPromise: 'Delete commitment',
 		confirmDelPromise: 'Do you want to delete this commitment'
 	},

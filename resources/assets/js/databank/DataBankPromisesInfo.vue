@@ -43,9 +43,9 @@
             <div class="pane_content">
                 <div class="form_content disflex" v-for="(ruleInfo,index) in ruleInfos">
                     <div class="form_item_ruleInfo">
-                        <div class="item_title">承諾詳情{{index+1}}</div>
+                        <div class="item_title">{{$t('promise.promise')}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="承諾詳情" disabled="disabled" :value="ruleInfo.rule"></textarea>
+                            <textarea class="item_area" :placeholder="$t('promise.promise')" disabled="disabled" :value="ruleInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="editBtnGroup">
@@ -62,13 +62,13 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_ruleInfo">
-                        <div class="item_title">承諾詳情(必填)</div>
+                        <div class="item_title">{{$t('promise.promise')}}{{$t('filled')}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="承諾詳情" v-model="newRuleInfo.rule"></textarea>
+                            <textarea class="item_area" :placeholder="$t('promise.promise')" v-model="newRuleInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="addNewRuleInfo()">添加</button>
+                        <button @click="addNewRuleInfo()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -77,13 +77,13 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_ruleInfo">
-                        <div class="item_title">承諾詳情(必填)</div>
+                        <div class="item_title">{{$t('promise.promise')}}{{$t('filled')}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="承諾詳情" v-model="edRuleInfo.rule"></textarea>
+                            <textarea class="item_area" :placeholder="$t('promise.promise')" v-model="edRuleInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="editRuleInfo()">修改</button>
+                        <button @click="editRuleInfo()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@
         },
         methods:{
             getRuleInfos(){
-                // 获取承諾詳情/api/categories/3?include=rules
+                // 获取{{$t('promise.promise')}}/api/categories/3?include=rules
                 this.$get(this.$config+'/api/categories/'+this.$route.params.id+'?include=rules',
                 {
                     headers: {
@@ -127,7 +127,7 @@
                     this.rule=res.data;
                     this.ruleInfos=res.data.rules.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
 
@@ -136,7 +136,7 @@
                 this.isNewRuleInfoShow=true;
             },
             addNewRuleInfo(){
-                // 新增承諾詳情
+                // 新增{{$t('promise.promise')}}
                 this.$post(this.$config+'/api/rules',this.newRuleInfo,
                 {
                     headers: {
@@ -144,12 +144,12 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getRuleInfos();
                     this.isNewRuleInfoShow=false;
                     this.newRuleInfo.rule='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -168,7 +168,7 @@
                 this.isEditRuleInfoShow=true;
             },
             editRuleInfo(){
-                // 修改承諾詳情信息
+                // 修改{{$t('promise.promise')}}信息
                 this.$ajax({
                     method: 'PATCH',
                     headers: {
@@ -183,13 +183,13 @@
                 	// console.log(res);
                     if(res.status==200){
                         this.ruleInfos[this.edRuleInfo.index].rule=this.edRuleInfo.rule;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditRuleInfoShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                        this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -201,13 +201,13 @@
                 });
             },
             delRuleInfo(RuleInfoId){
-                // 删除承諾詳情
+                // 删除{{$t('promise.promise')}}
                 this.$dialog.confirm({
-                    title: '删除承諾詳情',
-                    message: '是否删除該承諾詳情',
-                    cancelButtonText:'取消',
+                    title: this.$t('del')+this.$t('promise.promise'),
+                    message: this.$t('del')+this.$t('promise.promise'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -220,12 +220,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getRuleInfos();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                            this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {
