@@ -207,7 +207,7 @@ y<style scoped>
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
-                            this.getPromises();
+                            this.getRules();
                             this.$toast(this.$t('delSuccess'));
                         }else{
                             this.$toast(this.$t('delFail'));

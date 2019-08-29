@@ -46409,7 +46409,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
-                        _this4.getPromises();
+                        _this4.getRules();
                         _this4.$toast(_this4.$t('delSuccess'));
                     } else {
                         _this4.$toast(_this4.$t('delFail'));
