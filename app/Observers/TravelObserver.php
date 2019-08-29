@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-03-05 12:26:49
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-06-11 17:57:52
+ * @Last Modified time: 2019-08-29 16:56:39
  */
 namespace App\Observers;
 
@@ -34,7 +34,7 @@ class TravelObserver
 	public function saving(Travel $travel)
 	{
 		if (empty($travel->image)) {
-			$travel->image = 'http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555059034_CNDm3c7vCL.png';
+			$travel->image = 'http://app.study2go.net/etravel/public/uploads/images/travels/201908/29/1_1567068835_takJtrEmXZ.png';
 		}
 
 		// 过滤富文本输入
