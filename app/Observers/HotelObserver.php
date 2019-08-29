@@ -4,7 +4,7 @@
  * @Author: Eden
  * @Date:   2019-01-24 15:42:27
  * @Last Modified by:   Eden
- * @Last Modified time: 2019-04-12 15:32:44
+ * @Last Modified time: 2019-08-29 16:56:27
  */
 namespace App\Observers;
 
@@ -15,7 +15,7 @@ class HotelObserver
 	public function saving(Hotel $hotel)
 	{
 		if (empty($hotel->image)) {
-			$hotel->image = 'http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png';
+			$hotel->image = 'http://app.study2go.net/etravel/public/uploads/images/travels/201908/29/1_1567068894_KtGqT1jriX.png';
 		}
 	}
 
