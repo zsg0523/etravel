@@ -35,9 +35,9 @@ y<style scoped>
         <div class="pane_content_rule" >
             <div class="form_content_rules disflex">
                 <div class="form_item_rules"  v-for="(rule,index) in ruless">
-                    <div class="item_title">承諾標題{{index+1}}</div>
+                    <div class="item_title">{{$t('promise.promise')}}{{index+1}}</div>
                     <div class="input_icon disflex">
-                        <input placeholder="承諾標題" type="text" disabled="disabled" :value="rule.rule_category_name">
+                        <input :placeholder="$t('promise.promise')" type="text" disabled="disabled" :value="rule.rule_category_name">
                         <div @click="$router.push('/promise/dataBankPromisesInfo/'+rule.id)">
                             <img src="/etravel/public/images/See-next.png" alt="">
                         </div>
@@ -56,11 +56,11 @@ y<style scoped>
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
-		                <div class="item_title">承諾標題(必填)</div>
-		                <div><input class="item_input" placeholder="承諾標題" type="text"  v-model="newRule.rule_category_name"></div>
+		                <div class="item_title">{{$t('promise.promise')}}{{$t('filled')}}</div>
+		                <div><input class="item_input" :placeholder="$t('promise.promise')" type="text"  v-model="newRule.rule_category_name"></div>
 		            </div>
                     <div class="issure">
-                        <button @click="addNewRule()">添加</button>
+                        <button @click="addNewRule()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -69,11 +69,11 @@ y<style scoped>
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_rules">
-		                <div class="item_title">承諾標題(必填)</div>
-		                <div><input class="item_input" placeholder="承諾標題" type="text"  v-model="edRule.rule_category_name"></div>
+		                <div class="item_title">{{$t('promise.promise')}}{{$t('filled')}}</div>
+		                <div><input class="item_input" :placeholder="$t('promise.promise')" type="text"  v-model="edRule.rule_category_name"></div>
 		            </div>
                     <div class="issure">
-                        <button @click="editRule()">修改</button>
+                        <button @click="editRule()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@ y<style scoped>
                     // console.log(res.data);
                     this.ruless=res.data.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
 
@@ -135,12 +135,12 @@ y<style scoped>
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getRules();
                     this.isNewRuleShow=false;
                     this.newRule.rule_category_name='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -171,13 +171,13 @@ y<style scoped>
                 }).then(res => {
                     if(res.status==200){
                         this.ruless[this.edRule.index].rule_category_name=this.edRule.rule_category_name;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditRuleShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -191,11 +191,11 @@ y<style scoped>
             delRule(ruleId){
                 // 删除承諾
                 this.$dialog.confirm({
-                    title: '删除承諾',
-                    message: '是否删除該承諾',
-                    cancelButtonText:'取消',
+                    title: this.$t('promise.delPromise'),
+                    message: this.$t('promise.confirmDelPromise'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -207,13 +207,13 @@ y<style scoped>
                     }).then(res => {
                         // console.log(res);
                         if(res.status==204){
-                            this.getRules();
-                            this.$toast('删除成功');
+                            this.getPromises();
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {

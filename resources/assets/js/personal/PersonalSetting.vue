@@ -39,7 +39,7 @@
                     <div class="form_item_password">
                         <div class="item_title">{{$t('personal.phoneCode')}}</div>
                         <div class="disflex" style="justify-content: space-between;">
-                            <input type="text" placeholder="$t('personal.phoneCode')" v-model="smscode" style="width: 56%;">
+                            <input type="text" :placeholder="$t('personal.phoneCode')" v-model="smscode" style="width: 56%;">
                             <button class="tc" id="sendCodeUser" @click='getCode()' :disabled="disabled || time > 0">{{text}}</button>
                         </div>
                     </div>

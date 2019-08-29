@@ -50,7 +50,7 @@
                         <div><textarea class="item_area" disabled="disabled" placeholder="内容" :value="local.content"></textarea></div>
                     </div> -->
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">内容</div>
+                        <div class="item_title">{{$t('dataBankLocalCulture.content')}}</div>
                         <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee;line-height:25px;" v-html="local.content"></div>
                     </div>
                     <div class="editBtnGroup_journeyInfo">
@@ -81,11 +81,11 @@
                         <div><textarea class="item_area" placeholder="内容" v-model="newLocal.content"></textarea></div>
                     </div> -->
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">内容</div>
+                        <div class="item_title">{{$t('dataBankLocalCulture.content')}}</div>
                         <div><Editor @catchData='catchData' :childData='newLocal.content' v-model='newLocal.content'></Editor></div>
                     </div>
                     <div class="issure">
-                        <button @click="addNewLocal()">添加</button>
+                        <button @click="addNewLocal()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -179,14 +179,14 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getLocals();
                     this.isNewLocalShow=false;
                     // this.newLocal.title='';
                     this.newLocal.content='';
                     // this.newLocal.sites='';
                 }).catch(err => {
-                    this.$toast('添加失敗');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -244,11 +244,11 @@
             delLocal(localId){
                 // 删除當地文化
                 this.$dialog.confirm({
-                    title: '删除當地文化',
-                    message: '是否删除該當地文化',
-                    cancelButtonText:'取消',
+                    title: this.$t('del'),
+                    message: this.$t('del')+this.$t('dataBankLocalCulture.content'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -261,12 +261,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getLocals();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失敗');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失敗');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {

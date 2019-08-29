@@ -7,7 +7,12 @@
 		<div style="height:40px;width: 100%;border-radius: 8px;">
 	    	<select class="sel" v-model="idd_code" @change="changed();">
 	            <option value="">{{$t('areacode.sel')}}</option>
-	            <option v-for="item in optList" :value="item.acnumber">{{ item.acname_cn }}({{item.acnumber}})</option>
+                <template v-if="$i18n.locale=='en'">
+	               <option v-for="item in optList" :value="item.acnumber">{{ item.acname_en }}({{item.acnumber}})</option>
+                </template>
+                 <template v-else>
+                   <option v-for="item in optList" :value="item.acnumber">{{ item.acname_cn }}({{item.acnumber}})</option>
+                </template>
 	        </select>
 	    </div>
     

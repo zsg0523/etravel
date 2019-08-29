@@ -289,7 +289,7 @@
                     cancelButtonText:this.$t('cancel'),
                     confirmButtonText:this.$t('confirm'),
                 }).then(() => {
-                    this.travelInfo.image='http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555059034_CNDm3c7vCL.png';
+                    this.travelInfo.image='http://app.study2go.net/etravel/public/uploads/images/travels/201908/29/1_1567068835_takJtrEmXZ.png';
                 }).catch(err => {
                 });
             },

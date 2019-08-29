@@ -36,10 +36,10 @@
             <div class="pane_content_feel">
                 <div class="form_content_feel disflex" v-for="(feel,index) in feels">
                     <div class="form_item_feel">
-                        <div class="item_title">{{$t('dataBankSelfPerception.title')}}{{index+1}}</div>
+                        <div class="item_title">{{$t('dataBankSelfPerception.title')}}</div>
                         <div>
-                            <!-- <textarea class="item_area" placeholder="$t('dataBankSelfPerception.title')" disabled="disabled" :value="feel.title" ></textarea> -->
-                            <input class="item_input"  placeholder="$t('dataBankSelfPerception.title')"  type="text" disabled="disabled" :value="feel.title">
+                            <!-- <textarea class="item_area" :placeholder="$t('dataBankSelfPerception.title')" disabled="disabled" :value="feel.title" ></textarea> -->
+                            <input class="item_input"  :placeholder="$t('dataBankSelfPerception.title')"  type="text" disabled="disabled" :value="feel.title">
                         </div>
                     </div>
                     <div class="editBtnGroup">
@@ -58,8 +58,8 @@
                     <div class="form_item_feel">
                         <div class="item_title">{{$t('dataBankSelfPerception.title')}}{{$t('filled')}}</div>
                         <div>
-                            <!-- <textarea class="item_area" placeholder="$t('dataBankSelfPerception.title')" v-model="newFeel.title"></textarea> -->
-                            <input class="item_input"  placeholder="$t('dataBankSelfPerception.title')"  type="text" v-model="newFeel.title">
+                            <!-- <textarea class="item_area" :placeholder="$t('dataBankSelfPerception.title')" v-model="newFeel.title"></textarea> -->
+                            <input class="item_input"  :placeholder="$t('dataBankSelfPerception.title')"  type="text" v-model="newFeel.title">
                         </div>
                     </div>
                     <div class="issure">
@@ -74,8 +74,8 @@
                     <div class="form_item_feel">
                         <div class="item_title">{{$t('dataBankSelfPerception.title')}}{{$t('filled')}}</div>
                         <div>
-                            <!-- <textarea class="item_area" placeholder="$t('dataBankSelfPerception.title')" v-model="edFeel.title"></textarea> -->
-                            <input class="item_input"  placeholder="$t('dataBankSelfPerception.title')"  type="text" v-model="edFeel.title">
+                            <!-- <textarea class="item_area" :placeholder="$t('dataBankSelfPerception.title')" v-model="edFeel.title"></textarea> -->
+                            <input class="item_input"  :placeholder="$t('dataBankSelfPerception.title')"  type="text" v-model="edFeel.title">
                         </div>
                     </div>
                     <div class="issure">

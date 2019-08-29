@@ -27476,6 +27476,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['areaCode'], //接收父组件的方法
@@ -27600,11 +27605,21 @@ var render = function() {
             _vm._v(_vm._s(_vm.$t("areacode.sel")))
           ]),
           _vm._v(" "),
-          _vm._l(_vm.optList, function(item) {
-            return _c("option", { domProps: { value: item.acnumber } }, [
-              _vm._v(_vm._s(item.acname_cn) + "(" + _vm._s(item.acnumber) + ")")
-            ])
-          })
+          _vm.$i18n.locale == "en"
+            ? _vm._l(_vm.optList, function(item) {
+                return _c("option", { domProps: { value: item.acnumber } }, [
+                  _vm._v(
+                    _vm._s(item.acname_en) + "(" + _vm._s(item.acnumber) + ")"
+                  )
+                ])
+              })
+            : _vm._l(_vm.optList, function(item) {
+                return _c("option", { domProps: { value: item.acnumber } }, [
+                  _vm._v(
+                    _vm._s(item.acname_cn) + "(" + _vm._s(item.acnumber) + ")"
+                  )
+                ])
+              })
         ],
         2
       )
@@ -30382,7 +30397,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 cancelButtonText: this.$t('cancel'),
                 confirmButtonText: this.$t('confirm')
             }).then(function () {
-                _this4.travelInfo.image = 'http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555059034_CNDm3c7vCL.png';
+                _this4.travelInfo.image = 'http://app.study2go.net/etravel/public/uploads/images/travels/201908/29/1_1567068835_takJtrEmXZ.png';
             }).catch(function (err) {});
         },
         selectedAreaCode: function selectedAreaCode(value) {
@@ -33249,7 +33264,7 @@ var render = function() {
                   staticStyle: { width: "56%" },
                   attrs: {
                     type: "text",
-                    placeholder: "$t('personal.phoneCode')"
+                    placeholder: _vm.$t("personal.phoneCode")
                   },
                   domProps: { value: _vm.smscode },
                   on: {
@@ -35080,7 +35095,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 hotel_address: '',
                 hotel_phone: '',
                 hotel_location: '',
-                image: 'http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png',
+                image: 'http://app.study2go.net/etravel/public/uploads/images/travels/201908/29/1_1567068894_KtGqT1jriX.png',
                 travel_id: sessionStorage.actTravelId
             },
             edHotel: {
@@ -35387,7 +35402,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this8.newHotel.hotel_address = '';
                 _this8.newHotel.hotel_phone = '';
                 _this8.newHotel.hotel_location = '';
-                _this8.newHotel.image = 'http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png';
+                _this8.newHotel.image = 'http://app.study2go.net/etravel/public/uploads/images/travels/201908/29/1_1567068894_KtGqT1jriX.png';
             }).catch(function (err) {
                 _this8.$toast(_this8.$t('addFail'));
                 if (err.response.data.errors) {
@@ -35738,9 +35753,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 confirmButtonColor: '#000'
             }).then(function () {
                 if (_this18.isNewImg) {
-                    _this18.newHotel.image = "http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png";
+                    _this18.newHotel.image = "http://app.study2go.net/etravel/public/uploads/images/travels/201908/29/1_1567068894_KtGqT1jriX.png";
                 } else {
-                    _this18.edHotel.image = "http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png";
+                    _this18.edHotel.image = "http://app.study2go.net/etravel/public/uploads/images/travels/201908/29/1_1567068894_KtGqT1jriX.png";
                 }
             }).catch(function (err) {});
         }
@@ -46301,7 +46316,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 // console.log(res.data);
                 _this.ruless = res.data.data;
             }).catch(function (err) {
-                _this.$toast('獲取失敗');
+                _this.$toast(_this.$t('loginTimeout'));
                 console.log(err);
             });
         },
@@ -46318,12 +46333,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }).then(function (res) {
                 // console.log(res.data);
-                _this2.$toast('添加成功');
+                _this2.$toast(_this2.$t('addSuccess'));
                 _this2.getRules();
                 _this2.isNewRuleShow = false;
                 _this2.newRule.rule_category_name = '';
             }).catch(function (err) {
-                _this2.$toast('添加失败');
+                _this2.$toast(_this2.$t('addFail'));
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
@@ -46356,13 +46371,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).then(function (res) {
                 if (res.status == 200) {
                     _this3.ruless[_this3.edRule.index].rule_category_name = _this3.edRule.rule_category_name;
-                    _this3.$toast('修改成功');
+                    _this3.$toast(_this3.$t('editSuccess'));
                     _this3.isEditRuleShow = false;
                 } else {
-                    _this3.$toast('修改失败');
+                    _this3.$toast(_this3.$t('editFail'));
                 }
             }).catch(function (err) {
-                _this3.$toast('修改失败');
+                _this3.$toast(_this3.$t('editFail'));
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this3.$toast(err.response.data.errors[key][0]);
@@ -46378,11 +46393,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             // 删除承諾
             this.$dialog.confirm({
-                title: '删除承諾',
-                message: '是否删除該承諾',
-                cancelButtonText: '取消',
+                title: this.$t('promise.delPromise'),
+                message: this.$t('promise.confirmDelPromise'),
+                cancelButtonText: this.$t('cancel'),
                 cancelButtonColor: '#ccc',
-                confirmButtonText: '確定',
+                confirmButtonText: this.$t('confirm'),
                 confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
@@ -46394,13 +46409,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }).then(function (res) {
                     // console.log(res);
                     if (res.status == 204) {
-                        _this4.getRules();
-                        _this4.$toast('删除成功');
+                        _this4.getPromises();
+                        _this4.$toast(_this4.$t('delSuccess'));
                     } else {
-                        _this4.$toast('删除失败');
+                        _this4.$toast(_this4.$t('delFail'));
                     }
                 }).catch(function (err) {
-                    _this4.$toast('删除失败');
+                    _this4.$toast(_this4.$t('delFail'));
                     console.log(err);
                 });
             }).catch(function (err) {});
@@ -46430,13 +46445,13 @@ var render = function() {
           _vm._l(_vm.ruless, function(rule, index) {
             return _c("div", { staticClass: "form_item_rules" }, [
               _c("div", { staticClass: "item_title" }, [
-                _vm._v("承諾標題" + _vm._s(index + 1))
+                _vm._v(_vm._s(_vm.$t("promise.promise")) + _vm._s(index + 1))
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "input_icon disflex" }, [
                 _c("input", {
                   attrs: {
-                    placeholder: "承諾標題",
+                    placeholder: _vm.$t("promise.promise"),
                     type: "text",
                     disabled: "disabled"
                   },
@@ -46520,7 +46535,9 @@ var render = function() {
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_rules" }, [
                 _c("div", { staticClass: "item_title" }, [
-                  _vm._v("承諾標題(必填)")
+                  _vm._v(
+                    _vm._s(_vm.$t("promise.promise")) + _vm._s(_vm.$t("filled"))
+                  )
                 ]),
                 _vm._v(" "),
                 _c("div", [
@@ -46534,7 +46551,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "承諾標題", type: "text" },
+                    attrs: {
+                      placeholder: _vm.$t("promise.promise"),
+                      type: "text"
+                    },
                     domProps: { value: _vm.newRule.rule_category_name },
                     on: {
                       input: function($event) {
@@ -46562,7 +46582,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("添加")]
+                  [_vm._v(_vm._s(_vm.$t("add")))]
                 )
               ])
             ])
@@ -46587,7 +46607,9 @@ var render = function() {
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_rules" }, [
                 _c("div", { staticClass: "item_title" }, [
-                  _vm._v("承諾標題(必填)")
+                  _vm._v(
+                    _vm._s(_vm.$t("promise.promise")) + _vm._s(_vm.$t("filled"))
+                  )
                 ]),
                 _vm._v(" "),
                 _c("div", [
@@ -46601,7 +46623,10 @@ var render = function() {
                       }
                     ],
                     staticClass: "item_input",
-                    attrs: { placeholder: "承諾標題", type: "text" },
+                    attrs: {
+                      placeholder: _vm.$t("promise.promise"),
+                      type: "text"
+                    },
                     domProps: { value: _vm.edRule.rule_category_name },
                     on: {
                       input: function($event) {
@@ -46629,7 +46654,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("修改")]
+                  [_vm._v(_vm._s(_vm.$t("edit")))]
                 )
               ])
             ])
@@ -53014,14 +53039,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }).then(function (res) {
                 // console.log(res.data);
-                _this2.$toast('添加成功');
+                _this2.$toast(_this2.$t('addSuccess'));
                 _this2.getLocals();
                 _this2.isNewLocalShow = false;
                 // this.newLocal.title='';
                 _this2.newLocal.content = '';
                 // this.newLocal.sites='';
             }).catch(function (err) {
-                _this2.$toast('添加失敗');
+                _this2.$toast(_this2.$t('addFail'));
                 if (err.response.data.errors) {
                     for (var key in err.response.data.errors) {
                         _this2.$toast(err.response.data.errors[key][0]);
@@ -53083,11 +53108,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             // 删除當地文化
             this.$dialog.confirm({
-                title: '删除當地文化',
-                message: '是否删除該當地文化',
-                cancelButtonText: '取消',
+                title: this.$t('del'),
+                message: this.$t('del') + this.$t('dataBankLocalCulture.content'),
+                cancelButtonText: this.$t('cancel'),
                 cancelButtonColor: '#ccc',
-                confirmButtonText: '確定',
+                confirmButtonText: this.$t('confirm'),
                 confirmButtonColor: '#000'
             }).then(function () {
                 _this4.$ajax({
@@ -53100,12 +53125,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     // console.log(res);
                     if (res.status == 204) {
                         _this4.getLocals();
-                        _this4.$toast('删除成功');
+                        _this4.$toast(_this4.$t('delSuccess'));
                     } else {
-                        _this4.$toast('删除失敗');
+                        _this4.$toast(_this4.$t('delFail'));
                     }
                 }).catch(function (err) {
-                    _this4.$toast('删除失敗');
+                    _this4.$toast(_this4.$t('delFail'));
                     console.log(err);
                 });
             }).catch(function (err) {});
@@ -53139,7 +53164,9 @@ var render = function() {
           _vm._l(_vm.locals, function(local, index) {
             return _c("div", { staticClass: "form_content disflex" }, [
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v(_vm._s(_vm.$t("dataBankLocalCulture.content")))
+                ]),
                 _vm._v(" "),
                 _c("div", {
                   staticStyle: {
@@ -53207,7 +53234,9 @@ var render = function() {
           _c("div", { staticClass: "editBox" }, [
             _c("div", { staticClass: "editBoxContent disflex" }, [
               _c("div", { staticClass: "form_item_journeyInfo" }, [
-                _c("div", { staticClass: "item_title" }, [_vm._v("内容")]),
+                _c("div", { staticClass: "item_title" }, [
+                  _vm._v(_vm._s(_vm.$t("dataBankLocalCulture.content")))
+                ]),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -53238,7 +53267,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("添加")]
+                  [_vm._v(_vm._s(_vm.$t("add")))]
                 )
               ])
             ])
@@ -56449,17 +56478,14 @@ var render = function() {
               return _c("div", { staticClass: "form_content_feel disflex" }, [
                 _c("div", { staticClass: "form_item_feel" }, [
                   _c("div", { staticClass: "item_title" }, [
-                    _vm._v(
-                      _vm._s(_vm.$t("dataBankSelfPerception.title")) +
-                        _vm._s(index + 1)
-                    )
+                    _vm._v(_vm._s(_vm.$t("dataBankSelfPerception.title")))
                   ]),
                   _vm._v(" "),
                   _c("div", [
                     _c("input", {
                       staticClass: "item_input",
                       attrs: {
-                        placeholder: "$t('dataBankSelfPerception.title')",
+                        placeholder: _vm.$t("dataBankSelfPerception.title"),
                         type: "text",
                         disabled: "disabled"
                       },
@@ -56546,7 +56572,7 @@ var render = function() {
                     ],
                     staticClass: "item_input",
                     attrs: {
-                      placeholder: "$t('dataBankSelfPerception.title')",
+                      placeholder: _vm.$t("dataBankSelfPerception.title"),
                       type: "text"
                     },
                     domProps: { value: _vm.newFeel.title },
@@ -56615,7 +56641,7 @@ var render = function() {
                     ],
                     staticClass: "item_input",
                     attrs: {
-                      placeholder: "$t('dataBankSelfPerception.title')",
+                      placeholder: _vm.$t("dataBankSelfPerception.title"),
                       type: "text"
                     },
                     domProps: { value: _vm.edFeel.title },

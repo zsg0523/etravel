@@ -634,7 +634,7 @@
                     hotel_address:'',
                     hotel_phone:'',
                     hotel_location:'',
-                    image:'http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png',
+                    image:'http://app.study2go.net/etravel/public/uploads/images/travels/201908/29/1_1567068894_KtGqT1jriX.png',
                     travel_id:sessionStorage.actTravelId,
                 },
                 edHotel:{
@@ -936,7 +936,7 @@
                     this.newHotel.hotel_address='';
                     this.newHotel.hotel_phone='';
                     this.newHotel.hotel_location='';
-                    this.newHotel.image='http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png';
+                    this.newHotel.image='http://app.study2go.net/etravel/public/uploads/images/travels/201908/29/1_1567068894_KtGqT1jriX.png';
                 }).catch(err => {
                     this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
@@ -1276,9 +1276,9 @@
                     confirmButtonColor:'#000',
                 }).then(() => {
                     if(this.isNewImg){
-                        this.newHotel.image="http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png";
+                        this.newHotel.image="http://app.study2go.net/etravel/public/uploads/images/travels/201908/29/1_1567068894_KtGqT1jriX.png";
                     }else{
-                        this.edHotel.image="http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png";
+                        this.edHotel.image="http://app.study2go.net/etravel/public/uploads/images/travels/201908/29/1_1567068894_KtGqT1jriX.png";
                     }
                 }).catch(err => {
 
