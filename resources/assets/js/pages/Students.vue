@@ -69,7 +69,7 @@
             <div class="students_right disflex">
                 <div class="students_right_title">
                     <div class="search_input disflex">
-                        <input type="text" placeholder="請輸入想查找的ID" v-model="searchId">
+                        <input type="text" :placeholder="$t('students.searchP')" v-model="searchId">
                         <div class="search_icon" @click="toSearchStudent()">
                             <img src="/etravel/public/images/search.png">
                         </div>
@@ -78,70 +78,70 @@
                 <div class="students_input_form disflex" v-if="students!=''">
                     <div class="form_content_student disflex"> 
                         <div class="form_item_student">
-                            <div class="item_title">用戶ID</div>
-                            <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" :value="students[actIndex].user.id"></div>
+                            <div class="item_title">{{$t('students.id')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.id')" disabled="disabled" :value="students[actIndex].user.id"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">團員密碼</div>
-                            <div><input class="item_input" type="text" placeholder="填寫團員密碼" disabled="disabled" :value="students[actIndex].user.original_password"></div>
+                            <div class="item_title">{{$t('students.original_password')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.original_password')" disabled="disabled" :value="students[actIndex].user.original_password"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">團員中文名</div>
-                            <div><input class="item_input" type="text" placeholder="填寫團員中文名" disabled="disabled" :value="students[actIndex].user.name"></div>
+                            <div class="item_title">{{$t('students.name')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.name')" disabled="disabled" :value="students[actIndex].user.name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">團員英文名</div>
-                            <div><input class="item_input" type="text" placeholder="填寫團員英文名" disabled="disabled" :value="students[actIndex].user.en_name"></div>
+                            <div class="item_title">{{$t('students.en_name')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.en_name')" disabled="disabled" :value="students[actIndex].user.en_name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">電話區號</div>
-                            <div><input class="item_input" type="text" placeholder="填寫電話區號" disabled="disabled" :value="students[actIndex].user.code"></div>
+                            <div class="item_title">{{$t('students.code')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.code')" disabled="disabled" :value="students[actIndex].user.code"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">聯繫電話</div>
-                            <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" :value="students[actIndex].user.phone|formatPhoneDate"></div>
+                            <div class="item_title">{{$t('students.phone')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.phone')" disabled="disabled" :value="students[actIndex].user.phone|formatPhoneDate"></div>
                         </div>
                         <!-- 紧急聯繫人 -->
                         <div class="form_item_student">
-                            <div class="item_title">區號A</div>
-                            <div><input class="item_input" type="text" placeholder="填寫區號A" disabled="disabled" :value="students[actIndex].user.code_one"></div>
+                            <div class="item_title">{{$t('students.code_one')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.code_one')" disabled="disabled" :value="students[actIndex].user.code_one"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">緊急電話A</div>
-                            <div><input class="item_input" type="text" placeholder="填寫緊急電話A" disabled="disabled" :value="students[actIndex].user.emergency_phone_one"></div>
+                            <div class="item_title">{{$t('students.emergency_phone_one')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.emergency_phone_one')" disabled="disabled" :value="students[actIndex].user.emergency_phone_one"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">區號B</div>
-                            <div><input class="item_input" type="text" placeholder="填寫區號B" disabled="disabled" :value="students[actIndex].user.code_two"></div>
+                            <div class="item_title">{{$t('students.code_two')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.code_two')" disabled="disabled" :value="students[actIndex].user.code_two"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">緊急電話B</div>
-                            <div><input class="item_input" type="text" placeholder="填寫緊急電話B" disabled="disabled" :value="students[actIndex].user.emergency_phone_two"></div>
+                            <div class="item_title">{{$t('students.emergency_phone_two')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.emergency_phone_two')" disabled="disabled" :value="students[actIndex].user.emergency_phone_two"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">緊急郵箱A</div>
-                            <div><input class="item_input" type="text" placeholder="填寫緊急郵箱A" disabled="disabled" :value="students[actIndex].user.emergency_email_one"></div>
+                            <div class="item_title">{{$t('students.emergency_email_one')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.emergency_email_one')" disabled="disabled" :value="students[actIndex].user.emergency_email_one"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">緊急郵箱B</div>
-                            <div><input class="item_input" type="text" placeholder="填寫緊急郵箱B" disabled="disabled" :value="students[actIndex].user.emergency_email_two"></div>
+                            <div class="item_title">{{$t('students.emergency_email_two')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.emergency_email_two')" disabled="disabled" :value="students[actIndex].user.emergency_email_two"></div>
                         </div>
                         <!-- 分组信息 -->
                         <div class="form_item_small">
-                            <div class="item_title">團員學號</div>
-                            <div><input class="item_input" type="text" placeholder="填寫團員學號" disabled="disabled" :value="students[actIndex].student_number"></div>
+                            <div class="item_title">{{$t('students.student_number')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.student_number')" disabled="disabled" :value="students[actIndex].student_number"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">團員班級</div>
-                            <div><input class="item_input" type="text"  placeholder="填寫團員班級" disabled="disabled" :value="students[actIndex].class"></div>
+                            <div class="item_title">{{$t('students.class')}}</div>
+                            <div><input class="item_input" type="text"  :placeholder="$t('students.class')" disabled="disabled" :value="students[actIndex].class"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">團員分組號</div>
-                            <div><input class="item_input" type="text"  placeholder="填寫團員分組號" disabled="disabled" :value="students[actIndex].group"></div>
+                            <div class="item_title">{{$t('students.group')}}</div>
+                            <div><input class="item_input" type="text"  :placeholder="$t('students.group')" disabled="disabled" :value="students[actIndex].group"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">團員職責</div>
-                            <div><input class="item_input" type="text"  placeholder="填寫團員職責" disabled="disabled" :value="students[actIndex].duty"></div>
+                            <div class="item_title">{{$t('students.duty')}}</div>
+                            <div><input class="item_input" type="text"  :placeholder="$t('students.duty')" disabled="disabled" :value="students[actIndex].duty"></div>
                         </div>
                         <!-- 撑高度 -->
                         <div class="form_item_small"></div>
@@ -153,83 +153,83 @@
                         <div class="editBox" >
                             <div class="editBoxContent disflex">
                                 <div class="form_item_student">
-                                    <div class="item_title">用戶ID(不可編輯)</div>
-                                    <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" v-model="edStudent.user_id"></div>
+                                    <div class="item_title">{{$t('students.id')}}{{$t('uneditable')}}</div>
+                                    <div><input class="item_input" type="text" :placeholder="$t('students.id')" disabled="disabled" v-model="edStudent.user_id"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">團員密碼(不可編輯)</div>
-                                    <div><input class="item_input" type="text" placeholder="填寫團員密碼" disabled="disabled" v-model="edStudent.original_password"></div>
+                                    <div class="item_title">{{$t('students.original_password')}}{{$t('uneditable')}}</div>
+                                    <div><input class="item_input" type="text" :placeholder="$t('students.original_password')" disabled="disabled" v-model="edStudent.original_password"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">團員中文名(不可編輯)<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填寫團員中文名" disabled="disabled" v-model="edStudent.name"></div>
+                                    <div class="item_title">{{$t('students.name')}}{{$t('uneditable')}}<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
+                                    <div><input class="item_input" type="text" :placeholder="$t('students.name')" disabled="disabled" v-model="edStudent.name"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">團員英文名(不可編輯)<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填寫團員英文名" disabled="disabled" v-model="edStudent.en_name"></div>
+                                    <div class="item_title">{{$t('students.en_name')}}{{$t('uneditable')}}<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
+                                    <div><input class="item_input" type="text" :placeholder="$t('students.en_name')" disabled="disabled" v-model="edStudent.en_name"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">電話區號(不可編輯)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填寫電話區號" disabled="disabled" v-model="edStudent.code"></div>
+                                    <div class="item_title">{{$t('students.code')}}{{$t('uneditable')}}<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
+                                    <div><input class="item_input" type="text" :placeholder="$t('students.code')" disabled="disabled" v-model="edStudent.code"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">聯繫電話(不可編輯)<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" v-model="edStudent.phone"></div>
+                                    <div class="item_title">{{$t('students.phone')}}{{$t('uneditable')}}<span class="err" v-if="errors.phone" v-text="errors.phone[0]"></span></div>
+                                    <div><input class="item_input" type="text" :placeholder="$t('students.phone')" disabled="disabled" v-model="edStudent.phone"></div>
                                 </div>
                                 <!-- 紧急聯繫人 -->
                                 <div class="form_item_student">
-                                    <div class="item_title">區號A</div>
+                                    <div class="item_title">{{$t('students.code_one')}}</div>
                                     <div>
                                         <div class="simulateShade">
                                             <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='edStudent.code_one'></AreaCodeSelector>
                                         </div>
-                                        <!-- <input class="item_input" type="text" placeholder="填寫區號A" v-model="edStudent.code_one"> -->
+                                        <!-- <input class="item_input" type="text" :placeholder="區號A" v-model="edStudent.code_one"> -->
                                     </div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">緊急電話A</div>
-                                    <div><input class="item_input" type="text" placeholder="填寫緊急電話A" v-model="edStudent.emergency_phone_one"></div>
+                                    <div class="item_title">{{$t('students.emergency_phone_one')}}</div>
+                                    <div><input class="item_input" type="text" :placeholder="$t('students.emergency_phone_one')" v-model="edStudent.emergency_phone_one"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">區號B</div>
+                                    <div class="item_title">{{$t('students.code_two')}}</div>
                                     <div>
                                         <div class="simulateShade">
                                             <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='edStudent.code_two'></AreaCodeSelector>
                                         </div>
-                                        <!-- <input class="item_input" type="text" placeholder="填寫區號B" v-model="edStudent.code_two"> -->
+                                        <!-- <input class="item_input" type="text" :placeholder="區號B" v-model="edStudent.code_two"> -->
                                     </div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">緊急電話B</div>
-                                    <div><input class="item_input" type="text" placeholder="填寫緊急電話B" v-model="edStudent.emergency_phone_two"></div>
+                                    <div class="item_title">{{$t('students.emergency_phone_two')}}</div>
+                                    <div><input class="item_input" type="text" :placeholder="$t('students.emergency_phone_two')" v-model="edStudent.emergency_phone_two"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">緊急郵箱A</div>
-                                    <div><input class="item_input" type="text" placeholder="填寫緊急郵箱A" v-model="edStudent.emergency_email_one"></div>
+                                    <div class="item_title">{{$t('students.emergency_email_one')}}</div>
+                                    <div><input class="item_input" type="text" :placeholder="$t('students.emergency_email_one')" v-model="edStudent.emergency_email_one"></div>
                                 </div>
                                 <div class="form_item_student">
-                                    <div class="item_title">緊急郵箱B</div>
-                                    <div><input class="item_input" type="text" placeholder="填寫緊急郵箱B" v-model="edStudent.emergency_email_two"></div>
+                                    <div class="item_title">{{$t('students.emergency_email_two')}}</div>
+                                    <div><input class="item_input" type="text" :placeholder="$t('students.emergency_email_two')" v-model="edStudent.emergency_email_two"></div>
                                 </div>
                                 <!-- 分组信息 -->
                                 <div class="form_item_small">
-                                    <div class="item_title">團員學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
-                                    <div><input class="item_input" type="text" placeholder="填寫團員學號" v-model="edStudent.student_number"></div>
+                                    <div class="item_title">{{$t('students.student_number')}}<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
+                                    <div><input class="item_input" type="text" :placeholder="$t('students.student_number')" v-model="edStudent.student_number"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">團員班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
-                                    <div><input class="item_input" type="text"  placeholder="填寫團員班級" v-model="edStudent.class"></div>
+                                    <div class="item_title">{{$t('students.class')}}<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
+                                    <div><input class="item_input" type="text"  :placeholder="$t('students.class')" v-model="edStudent.class"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">團員分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
-                                    <div><input class="item_input" type="text"  placeholder="填寫團員分組號" v-model="edStudent.group"></div>
+                                    <div class="item_title">{{$t('students.group')}}<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                                    <div><input class="item_input" type="text"  :placeholder="$t('students.group')" v-model="edStudent.group"></div>
                                 </div>
                                 <div class="form_item_small">
-                                    <div class="item_title">團員職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
-                                    <div><input class="item_input" type="text"  placeholder="填寫團員職責" v-model="edStudent.duty"></div>
+                                    <div class="item_title">{{$t('students.duty')}}<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
+                                    <div><input class="item_input" type="text"  :placeholder="$t('students.duty')" v-model="edStudent.duty"></div>
                                 </div>
                                 <div class="issureStu">
-                                    <button class="issureBtn" @click="editStudent()">修改</button>
+                                    <button class="issureBtn" @click="editStudent()">{{$t('edit')}}</button>
                                 </div>
                             </div>
                         </div>
@@ -240,85 +240,85 @@
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
                         <div class="form_item_student">
-                            <div class="item_title">用戶ID(不可編輯)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫用戶ID" disabled="disabled" :value="searchStudent.id"></div>
+                            <div class="item_title">{{$t('students.id')}}{{$t('uneditable')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.id')" disabled="disabled" :value="searchStudent.id"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">團員密碼(不可編輯)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫團員密碼" disabled="disabled" :value="searchStudent.original_password"></div>
+                            <div class="item_title">{{$t('students.original_password')}}{{$t('uneditable')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.original_password')" disabled="disabled" :value="searchStudent.original_password"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">團員中文名(不可編輯)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫團員中文名" disabled="disabled" :value="searchStudent.name"></div>
+                            <div class="item_title">{{$t('students.name')}}{{$t('uneditable')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.name')" disabled="disabled" :value="searchStudent.name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">團員英文名(不可編輯)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫團員英文名" disabled="disabled" :value="searchStudent.en_name"></div>
+                            <div class="item_title">{{$t('students.en_name')}}{{$t('uneditable')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.en_name')" disabled="disabled" :value="searchStudent.en_name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">電話區號(不可編輯)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫電話區號" disabled="disabled" v-model="searchStudent.code"></div>
+                            <div class="item_title">{{$t('students.code')}}{{$t('uneditable')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.code')" disabled="disabled" v-model="searchStudent.code"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">聯繫電話(不可編輯)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫聯繫電話" disabled="disabled" :value="searchStudent.phone|formatPhoneDate"></div>
+                            <div class="item_title">{{$t('students.phone')}}{{$t('uneditable')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.phone')" disabled="disabled" :value="searchStudent.phone|formatPhoneDate"></div>
                         </div>
                         <!-- 紧急聯繫人 -->
                         <div class="form_item_student">
-                            <div class="item_title">區號A</div>
+                            <div class="item_title">{{$t('students.code_one')}}</div>
                             <div>
                                 <div class="simulateShade">
                                     <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='searchStudent.code_one'></AreaCodeSelector>
                                 </div>
-                                <!-- <input class="item_input" type="text" placeholder="填寫區號A" v-model="searchStudent.code_one"> -->
+                                <!-- <input class="item_input" type="text" :placeholder="區號A" v-model="searchStudent.code_one"> -->
                             </div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">緊急電話A</div>
-                            <div><input class="item_input" type="text" placeholder="填寫緊急電話A" v-model="searchStudent.emergency_phone_one"></div>
+                            <div class="item_title">{{$t('students.emergency_phone_one')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.emergency_phone_one')" v-model="searchStudent.emergency_phone_one"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">區號B</div>
+                            <div class="item_title">{{$t('students.code_two')}}</div>
                             <div>
                                 <div class="simulateShade">
                                     <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='searchStudent.code_two'></AreaCodeSelector>
                                 </div>
-                                <!-- <input class="item_input" type="text" placeholder="填寫區號B" v-model="searchStudent.code_two"> -->
+                                <!-- <input class="item_input" type="text" :placeholder="區號B" v-model="searchStudent.code_two"> -->
                             </div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">緊急電話B</div>
-                            <div><input class="item_input" type="text" placeholder="填寫緊急電話B" v-model="searchStudent.emergency_phone_two"></div>
+                            <div class="item_title">{{$t('students.emergency_phone_two')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.emergency_phone_two')" v-model="searchStudent.emergency_phone_two"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">緊急郵箱A</div>
-                            <div><input class="item_input" type="text" placeholder="填寫緊急郵箱A" v-model="searchStudent.emergency_email_one"></div>
+                            <div class="item_title">{{$t('students.emergency_email_one')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.emergency_email_one')" v-model="searchStudent.emergency_email_one"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">緊急郵箱B</div>
-                            <div><input class="item_input" type="text" placeholder="填寫緊急郵箱B" v-model="searchStudent.emergency_email_two"></div>
+                            <div class="item_title">{{$t('students.emergency_email_two')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.emergency_email_two')" v-model="searchStudent.emergency_email_two"></div>
                         </div>
 
                         <!-- 分组信息 -->
                         <div class="form_item_small">
-                            <div class="item_title">團員學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填寫團員學號" v-model="searchStudent.student_number"></div>
+                            <div class="item_title">{{$t('students.student_number')}}<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.student_number')" v-model="searchStudent.student_number"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">團員班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫團員班級" v-model="searchStudent.class"></div>
+                            <div class="item_title">{{$t('students.class')}}<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
+                            <div><input class="item_input" type="text"  :placeholder="$t('students.class')" v-model="searchStudent.class"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">團員分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫團員分組號" v-model="searchStudent.group"></div>
+                            <div class="item_title">{{$t('students.group')}}<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                            <div><input class="item_input" type="text"  :placeholder="$t('students.group')" v-model="searchStudent.group"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">團員職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫團員職責" v-model="searchStudent.duty"></div>
+                            <div class="item_title">{{$t('students.duty')}}<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
+                            <div><input class="item_input" type="text"  :placeholder="$t('students.duty')" v-model="searchStudent.duty"></div>
                         </div>
                         <div class="issureStu">
-                            <button class="twoBtn cancel" @click="cancelAdd()">取消</button>
-                            <button class="twoBtn" style="background-color:#ffde01;border:none;" @click="addOldStudent()">添加學員</button>
+                            <button class="twoBtn cancel" @click="cancelAdd()">{{$t('cancel')}}</button>
+                            <button class="twoBtn" style="background-color:#ffde01;border:none;" @click="addOldStudent()">{{$t('add')}}</button>
                         </div>
                     </div>
                 </div>
@@ -327,85 +327,85 @@
                 <div class="editBox" >
                     <div class="editBoxContent disflex">
                         <div class="form_item_small">
-                            <div class="item_title">團員密碼(必填)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫團員密碼" v-model="newStudent.original_password"></div>
+                            <div class="item_title">{{$t('students.original_password')}}{{$t('filled')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.original_password')" v-model="newStudent.original_password"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">團員中文名(必填)<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填寫團員中文名" v-model="newStudent.name"></div>
+                            <div class="item_title">{{$t('students.name')}}{{$t('filled')}}<span class="err" v-if="errors.name" v-text="errors.name[0]"></span></div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.name')" v-model="newStudent.name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">團員英文名(必填)<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填寫團員英文名" v-model="newStudent.en_name"></div>
+                            <div class="item_title">{{$t('students.en_name')}}{{$t('filled')}}<span class="err" v-if="errors.en_name" v-text="errors.en_name[0]"></span></div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.en_name')" v-model="newStudent.en_name"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">電話區號(必填)<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
+                            <div class="item_title">{{$t('students.code')}}{{$t('filled')}}<span class="err" v-if="errors.code" v-text="errors.code[0]"></span></div>
                             <div>
                                 <div class="simulateShade">
                                     <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newStudent.code'></AreaCodeSelector>
                                 </div>
-                                <!-- <input class="item_input" type="text" placeholder="填寫電話區號" v-model="newStudent.code"> -->
+                                <!-- <input class="item_input" type="text" :placeholder="$t('students.code')" v-model="newStudent.code"> -->
                             </div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">聯繫電話(必填)</div>
-                            <div><input class="item_input" type="text" placeholder="填寫聯繫電話" v-model="newStudent.phone"></div>
+                            <div class="item_title">{{$t('students.phone')}}{{$t('filled')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.phone')" v-model="newStudent.phone"></div>
                         </div>
 
                         <!-- 紧急聯繫人 -->
                         <div class="form_item_student">
-                            <div class="item_title">區號A</div>
+                            <div class="item_title">{{$t('students.code_one')}}</div>
                             <div>
                                 <div class="simulateShade">
                                     <AreaCodeSelector @selectedAreaCode='selectedAreaCodeOne' :areaCode='newStudent.code_one'></AreaCodeSelector>
                                 </div>
-                                <!-- <input class="item_input" type="text" placeholder="填寫區號A" v-model="newStudent.code_one"> -->
+                                <!-- <input class="item_input" type="text" :placeholder="區號A" v-model="newStudent.code_one"> -->
                             </div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">緊急電話A</div>
-                            <div><input class="item_input" type="text" placeholder="填寫緊急電話A" v-model="newStudent.emergency_phone_one"></div>
+                            <div class="item_title">{{$t('students.emergency_phone_one')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.emergency_phone_one')" v-model="newStudent.emergency_phone_one"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">區號B</div>
+                            <div class="item_title">{{$t('students.code_two')}}</div>
                             <div>
                                 <div class="simulateShade">
                                     <AreaCodeSelector @selectedAreaCode='selectedAreaCodeTwo' :areaCode='newStudent.code_two'></AreaCodeSelector>
                                 </div>
-                                <!-- <input class="item_input" type="text" placeholder="填寫區號B" v-model="newStudent.code_two"> -->
+                                <!-- <input class="item_input" type="text" :placeholder="區號B" v-model="newStudent.code_two"> -->
                             </div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">緊急電話B</div>
-                            <div><input class="item_input" type="text" placeholder="填寫緊急電話B" v-model="newStudent.emergency_phone_two"></div>
+                            <div class="item_title">{{$t('students.emergency_phone_two')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.emergency_phone_two')" v-model="newStudent.emergency_phone_two"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">緊急郵箱A</div>
-                            <div><input class="item_input" type="text" placeholder="填寫緊急郵箱A" v-model="newStudent.emergency_email_one"></div>
+                            <div class="item_title">{{$t('students.emergency_email_one')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.emergency_email_one')" v-model="newStudent.emergency_email_one"></div>
                         </div>
                         <div class="form_item_student">
-                            <div class="item_title">緊急郵箱B</div>
-                            <div><input class="item_input" type="text" placeholder="填寫緊急郵箱B" v-model="newStudent.emergency_email_two"></div>
+                            <div class="item_title">{{$t('students.emergency_email_two')}}</div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.emergency_email_two')" v-model="newStudent.emergency_email_two"></div>
                         </div>
                         <!-- 分组信息 -->
                         <div class="form_item_small">
-                            <div class="item_title">團員學號<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
-                            <div><input class="item_input" type="text" placeholder="填寫團員學號" v-model="newStudent.student_number"></div>
+                            <div class="item_title">{{$t('students.student_number')}}<span class="err" v-if="errors.student_number" v-text="errors.student_number[0]"></span></div>
+                            <div><input class="item_input" type="text" :placeholder="$t('students.student_number')" v-model="newStudent.student_number"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">團員班級<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫團員班級" v-model="newStudent.class"></div>
+                            <div class="item_title">{{$t('students.class')}}<span class="err" v-if="errors.class" v-text="errors.class[0]"></span></div>
+                            <div><input class="item_input" type="text"  :placeholder="$t('students.class')" v-model="newStudent.class"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">團員分組號<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫團員分組號" v-model="newStudent.group"></div>
+                            <div class="item_title">{{$t('students.group')}}<span class="err" v-if="errors.group" v-text="errors.group[0]"></span></div>
+                            <div><input class="item_input" type="text"  :placeholder="$t('students.group')" v-model="newStudent.group"></div>
                         </div>
                         <div class="form_item_small">
-                            <div class="item_title">團員職責<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
-                            <div><input class="item_input" type="text"  placeholder="填寫團員職責" v-model="newStudent.duty"></div>
+                            <div class="item_title">{{$t('students.duty')}}<span class="err" v-if="errors.duty" v-text="errors.duty[0]"></span></div>
+                            <div><input class="item_input" type="text"  :placeholder="$t('students.duty')" v-model="newStudent.duty"></div>
                         </div>
                         <div class="issureStu">
-                            <button class="issureBtn" @click="addNewStudent()">添加</button>
+                            <button class="issureBtn" @click="addNewStudent()">{{$t('add')}}</button>
                         </div>
                     </div>
                 </div>
@@ -495,7 +495,7 @@
         },
         mounted:function(){
             this.getStudents();
-            this.$store.state.links=[{link:'/home',linkName:'項目'},{link:'/projectDetail/'+sessionStorage.actTravelId,linkName:'項目詳情'}];
+            this.$store.state.links=[{link:'/home',linkName:this.$t('links.project')},{link:'/projectDetail/'+sessionStorage.actTravelId,linkName:this.$t('links.projectDetail')}];
         },
         methods:{
             getStudents(){
@@ -528,7 +528,7 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getStudents();
                     this.isNewStudentShow=false;
                     this.newStudent.name='';
@@ -549,7 +549,7 @@
                     this.newStudent.emergency_email_two='';
 
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -629,13 +629,13 @@
                         this.students[this.actIndex].user.emergency_phone_two=this.edStudent.emergency_phone_two;
                         this.students[this.actIndex].user.emergency_email_one=this.edStudent.emergency_email_one;
                         this.students[this.actIndex].user.emergency_email_two=this.edStudent.emergency_email_two;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditStudentShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -650,11 +650,11 @@
             delStudent(){
                 // 删除團員資訊/api/users/:user/travels/:travel/groups/:group
                 this.$dialog.confirm({
-                    title: '删除團員資訊',
-                    message: '是否删除該團員資訊',
-                    cancelButtonText:'取消',
+                    title: this.$t('del'),
+                    message: this.$t('students.confirmDelMsg'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -668,12 +668,12 @@
                         if(res.status==204){
                             this.actIndex=0;
                             this.getStudents();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {
@@ -718,11 +718,11 @@
                             this.searchStudentShow();
                         }
                     }).catch(err => {
-                        this.$toast('請輸入正確的用戶ID');
+                        this.$toast(this.$t('students.useIdErr'));
                         // console.log(err);
                     });
                 }else{
-                    this.$toast('請輸入用戶ID');
+                    this.$toast(this.$t('students.useIdErr'));
                 }  
             },
             cancelAdd(){
@@ -753,7 +753,7 @@
                     }
                 }).then(res => {
                     // console.log(res);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getStudents();
                     this.searchId='';
                     this.searchStudent={}; 
@@ -761,7 +761,7 @@
 
                 }).catch(err => {
                     console.log(err.response);
-                    this.$toast('添加失败');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);

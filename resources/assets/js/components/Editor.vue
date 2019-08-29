@@ -65,7 +65,7 @@
             <div @click="isPreviewShow='none'" class="closePreviewBox"><img src="/etravel/public/images/delete.png" alt="關閉"></div>
         </div>
         <div class="w-e-menu" ref="preview" style="display: none;">
-            <span class="_wangEditor_btn_fullscreen" @click="toPreview()">預覽</span>
+            <span class="_wangEditor_btn_fullscreen" @click="toPreview()">{{$t('preview')}}</span>
         </div>
     </div>
 </template>

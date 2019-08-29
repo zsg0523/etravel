@@ -60,10 +60,10 @@
                 <div class="form_content_pe" id="view">
                     <div class="head_edit">
                         <div class="info_title">
-                            <span>基本資料</span><hr />
+                            <span>{{$t('personal.basicInfo')}}</span><hr />
                         </div>
                         <div class="info_photo">
-                            <p class="padding_none">頭像</p>
+                            <p class="padding_none">{{$t('personal.avatar')}}</p>
                             <div class="photo" v-if="personalInfos.avatar">
                                 <img class="photo-circle" :src="personalInfos.avatar" />                                                            
                             </div>
@@ -74,51 +74,51 @@
                         <div class="info_name">
                             <!-- <p class="padding_none">中文名</p> -->
                             <div class="info_view" v-if="personalInfos.name" >
-                                <span>中文名：</span><input disabled="disabled" type="text" v-model="personalInfos.name"/>                                                                
+                                <span>{{$t('personal.name')}}：</span><input disabled="disabled" type="text" v-model="personalInfos.name"/>                                                                
                             </div>
                             <div class="info_view" v-else >
-                                <span>中文名：</span><input disabled="disabled" type="text" placeholder="未設定" />                                                                               
+                                <span>{{$t('personal.name')}}：</span><input disabled="disabled" type="text" :placeholder="$t('personal.name')" />                                                                               
                             </div>
                             <!-- <p class="padding_none">英文名</p> -->
                             <div class="info_view" v-if="personalInfos.en_name" >
-                                <span>英文名：</span><input disabled="disabled" type="text" v-model="personalInfos.en_name"/>                                             
+                                <span>{{$t('personal.en_name')}}：</span><input disabled="disabled" type="text" v-model="personalInfos.en_name"/>                                             
                             </div>
                             <div class="info_view" v-else >
-                                <span>英文名：</span><input disabled="disabled" type="text" placeholder="未設定" />                                                                               
+                                <span>{{$t('personal.en_name')}}：</span><input disabled="disabled" type="text" :placeholder="$t('personal.en_name')" />                                                                               
                             </div>
                             <!-- <p class="padding_none">性别</p> -->
                             <div class="sex" v-if="personalInfos.sex==0">
-                                  <span>性別：</span><input disabled="disabled" type="text" value="女" />                                               
+                                  <span>{{$t('personal.sex')}}：</span><input disabled="disabled" type="text" :value="$t('man')" />                                               
                             </div>
                             <div class="sex" v-else-if="personalInfos.sex==1">
-                                  <span>性別：</span><input disabled="disabled" type="text" value="男" />                                               
+                                  <span>{{$t('personal.sex')}}：</span><input disabled="disabled" type="text" :value="$t('woman')" />                                               
                             </div>
                             <div class="sex"  v-else>
-                                  <span>性別：</span><input disabled="disabled" type="text" placeholder="未設定" />                                            
+                                  <span>{{$t('personal.sex')}}：</span><input disabled="disabled" type="text" :placeholder="$t('noset')" />                                            
                             </div>
                         </div>
                     </div>
                     <div class="information_edit">
                         <div class="info_title1">
-                            <span>個人資訊</span><hr />
+                            <span>{{$t('personal.personalInfo')}}</span><hr />
                         </div>
                         <div class="info_phone">
-                            <p class="padding_none">手機號</p>               
+                            <p class="padding_none">{{$t('personal.phone')}}</p>               
                             <div class="info_view" v-if="personalInfos.phone">
                                 <input disabled="disabled" type="text" v-model="personalInfos.phone"/>
                                 <div class="editPerson"><img src="/etravel/public/images/edit-all.png" @click="editPhoneShow()"></div>
                             </div>
                             <div class="info_view" v-else>
-                                <input disabled="disabled" type="text" placeholder="未設定" />
+                                <input disabled="disabled" type="text" :placeholder="$t('noset')" />
                                 <div class="editPerson"><img src="/etravel/public/images/edit-all.png" @click="editPhoneShow()"></div>
                             </div>
-                            <p class="padding_none">郵箱</p>
+                            <p class="padding_none">{{$t('personal.email')}}</p>
                             <div class="info_view" v-if="personalInfos.email">
                                 <input disabled="disabled" type="text" v-model="personalInfos.email"/>
                                 <div class="editPerson"><img src="/etravel/public/images/edit-all.png" @click="editEmailShow()"></div>
                             </div>
                             <div class="info_view" v-else>
-                                <input disabled="disabled" type="text" placeholder="未設定" />
+                                <input disabled="disabled" type="text" :placeholder="$t('noset')" />
                                 <div class="editPerson"><img src="/etravel/public/images/edit-all.png" @click="editEmailShow()"></div>
                             </div>      
                         </div>
@@ -133,25 +133,25 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="gather_info">
-                        <div class="gather_info_title"><span>編輯</span><hr></div>
+                        <div class="gather_info_title"><span>{{$t('edit')}}</span><hr></div>
                     </div>   
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">中文名</div>
+                        <div class="item_title">{{$t('personal.name')}}</div>
                         <div>
-                            <input class="item_input" placeholder="中文名" type="text" v-model="edInformation.name">
+                            <input class="item_input" :placeholder="$t('personal.name')" type="text" v-model="edInformation.name">
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">英文名</div>
+                        <div class="item_title">{{$t('personal.en_name')}}</div>
                         <div>
-                            <input class="item_input" placeholder="英文名" type="text" v-model="edInformation.en_name">
+                            <input class="item_input" :placeholder="$t('personal.en_name')" type="text" v-model="edInformation.en_name">
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">性別</div>
+                        <div class="item_title">{{$t('personal.sex')}}</div>
                         <div>
                             <select id="edTypeId" v-model="edInformation.sex">
-                                <option value="">--請選擇--</option>
+                                <option value="">--{{$t('pleaseChoose')}}--</option>
                                 <option v-for="item in optList" :value="item.value">{{ item.name }}</option>
                             </select>
                         </div>
@@ -170,7 +170,7 @@
                     </div> -->
                     
                     <div class="issure">
-                        <button @click="editInformation()">修改</button>
+                        <button @click="editInformation()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -179,26 +179,26 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">舊區號</div>
+                        <div class="item_title">{{$t('personal.oldCode')}}</div>
                         <div>
-                            <input class="item_input" placeholder="區號" type="text" disabled="disabled" v-model="personalInfos.code">
+                            <input class="item_input" :placeholder="$t('personal.oldCode')" type="text" disabled="disabled" v-model="personalInfos.code">
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">舊手機號</div>
+                        <div class="item_title">{{$t('personal.oldPhone')}}</div>
                         <div>
-                            <input class="item_input" placeholder="手機號" type="text" disabled="disabled" v-model="personalInfos.phone">
+                            <input class="item_input" :placeholder="$t('personal.oldPhone')" type="text" disabled="disabled" v-model="personalInfos.phone">
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">驗證碼</div>
+                        <div class="item_title">{{$t('personal.phoneCode')}}</div>
                         <div class="disflex" style="justify-content: space-between;">
-                            <input type="text" placeholder="驗證碼" v-model="phoneCode" style="width: 56%;">
+                            <input type="text" :placeholder="$t('personal.phoneCode')" v-model="phoneCode" style="width: 56%;">
                             <button class="tc sendCode" @click='getPhoneCode()' :disabled="disabled || time > 0">{{text}}</button>
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">區號</div>
+                        <div class="item_title">{{$t('personal.newCode')}}</div>
                         <div>
                             <div class="simulateShade01">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='areacode'></AreaCodeSelector>
@@ -206,13 +206,13 @@
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">新手機號</div>
+                        <div class="item_title">{{$t('personal.newPhone')}}</div>
                         <div>
-                            <input class="item_input" placeholder="手機號" type="text" v-model="phone">
+                            <input class="item_input" :placeholder="$t('personal.newPhone')" type="text" v-model="phone">
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="editPhone()">修改</button>
+                        <button @click="editPhone()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -221,20 +221,20 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">新郵箱</div>
+                        <div class="item_title">{{$t('personal.newEmail')}}</div>
                         <div>
-                            <input class="item_input" placeholder="新郵箱" type="text" v-model="email">
+                            <input class="item_input" :placeholder="$t('personal.newEmail')" type="text" v-model="email">
                         </div>
                     </div>
                     <div class="form_item_information" style="width:100%;">
-                        <div class="item_title">驗證碼</div>
+                        <div class="item_title">{{$t('personal.phoneCode')}}</div>
                         <div class="disflex" style="justify-content: space-between;">
-                            <input type="text" placeholder="驗證碼" v-model="emailCode" style="width: 56%;">
+                            <input type="text" :placeholder="$t('personal.phoneCode')" v-model="emailCode" style="width: 56%;">
                             <button class="tc sendCode" @click='getEmailCode()' :disabled="emailDisabled || emailTime > 0">{{emailText}}</button>
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="editEmail()">修改</button>
+                        <button @click="editEmail()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -253,10 +253,10 @@
                 personalInfos:[],
                 optList:[{
                     value:'0',
-                    name:'女'
+                    name:this.$t('man'),
                 },{
                     value:'1',
-                    name:'男'
+                    name:this.$t('weman'),
                 }],
                 edInformation:{
                     id:'',
@@ -295,7 +295,7 @@
                 }).then(res => {
                     this.personalInfos=res.data;               
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     // this.$router.push('/');
                     console.log(err);
                 });
@@ -330,13 +330,13 @@
                         // this.personalInfos.phone=this.edInformation.phone;
                         this.personalInfos.sex=this.edInformation.sex;
                         // this.personalInfos.email=this.edInformation.email;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditInformationShow=false;    
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     console.log(err)
                     // this.errors=err.response.data.errors;
                     if(err.response.data.errors){
@@ -363,7 +363,7 @@
                             // this.setUserInfo(res)
                             this.run();
                             this.phoneKey=res.data.key;
-                            this.$toast('驗證碼已成功發送，請注意查收。');
+                            this.$toast(this.$t('register.codeMsg'));
                         } else {
                             this.$toast(res.data.message);
                         }
@@ -379,7 +379,7 @@
                         
                     });
                 } else {
-                    this.$toast('號碼資訊不全!');
+                    this.$toast(this.$t('personal.oldPhoneErr'));
                 }
             },
             editPhone(){
@@ -399,15 +399,15 @@
                             url: this.$config+'/api/phone',
                         }).then(res => {
                             if(res.status==200){
-                                this.$toast('修改成功');
+                                this.$toast(this.$t('editSuccess'));
                                 this.personalInfos.phone=this.phone;
                                 this.personalInfos.code=this.areacode;
                                 this.isEditPhone=false;    
                             }else{
-                                this.$toast('修改失敗');
+                                this.$toast(this.$t('editFail'));
                             }
                         }).catch(err => {
-                            this.$toast('修改失敗');
+                            this.$toast(this.$t('editFail'));
                             console.log(err)
                             // this.errors=err.response.data.errors;
                             if(err.response.data.errors){
@@ -419,10 +419,10 @@
                             }
                         });
                     }else{
-                        this.$toast('請輸入手機號碼');
+                        this.$toast(this.$t('newPhoneErr'));
                     }
                 }else{
-                    this.$toast('請輸入驗證碼');
+                    this.$toast(this.$t('codeErr'));
                 }
             },
             editEmailShow(){
@@ -440,7 +440,7 @@
                             this.emailRun();
                             this.emailKey=res.data.key;
                             this.emailDisabled=true;
-                            this.$toast('驗證碼已成功發送至您的郵箱，請注意查收。');
+                            this.$toast(this.$t('register.codeMsg'));
                         } else {
                             this.$toast(res.data.message);
                         }
@@ -456,7 +456,7 @@
                         
                     });
                 } else {
-                    this.$toast('請填寫郵箱');
+                    this.$toast(this.$t('register.newEmailErr'));
                 }
             },
             editEmail(){
@@ -473,11 +473,11 @@
                     url: this.$config+'/api/email',
                 }).then(res => {
                     if(res.status==200){
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.personalInfos.email=this.email;
                         this.isEditEmail=false;    
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                     this.emailCode='';
                     this.emailDisabled=true;
@@ -533,10 +533,10 @@
         },
         computed: {
             text() {
-                return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
+                return this.time > 0 ? this.time + 's '+this.$t('register.laveTime') : this.$t('register.getCode');
             },
             emailText() {
-                return this.emailTime > 0 ? this.emailTime + 's 後重獲取' : '獲取驗證碼';
+                return this.emailTime > 0 ? this.emailTime + 's '+this.$t('register.laveTime') : this.$t('register.getCode');
             }
         }
   	}

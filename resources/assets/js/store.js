@@ -8,7 +8,7 @@ export default new Vuex.Store({
     userInfo: {},
     travels: {},
     token: '',
-    links:[{link:'/home',linkName:'項目'}],
+    links:[],
   },
   getters: {
     userInfo: state => state.userInfo,

@@ -64,45 +64,45 @@
         <div class="dataBank_input_form disflex">
             <div class="tablist">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#gather" aria-controls="gather" role="tab" data-toggle="tab">集合解散</a></li>
-                    <li role="presentation"><a href="#flight" aria-controls="flight" role="tab" data-toggle="tab">班機往返</a></li>
-                    <li role="presentation"><a href="#accommodationInfo" aria-controls="accommodationInfo" role="tab" data-toggle="tab">住宿資料</a></li>
-                    <li role="presentation"><a href="#leaderTeacher" aria-controls="leaderTeacher" role="tab" data-toggle="tab">領隊老師</a></li>
-                    <li role="presentation"><a href="#heavyWeather" aria-controls="heavyWeather" role="tab" data-toggle="tab">惡劣天氣安排</a></li>
+                    <li role="presentation" class="active"><a href="#gather" aria-controls="gather" role="tab" data-toggle="tab">{{$t('dataBankInfo.gather')}}</a></li>
+                    <li role="presentation"><a href="#flight" aria-controls="flight" role="tab" data-toggle="tab">{{$t('dataBankInfo.flight')}}</a></li>
+                    <li role="presentation"><a href="#accommodationInfo" aria-controls="accommodationInfo" role="tab" data-toggle="tab">{{$t('dataBankInfo.accommodationInfo')}}</a></li>
+                    <li role="presentation"><a href="#leaderTeacher" aria-controls="leaderTeacher" role="tab" data-toggle="tab">{{$t('dataBankInfo.leaderTeacher')}}</a></li>
+                    <li role="presentation"><a href="#heavyWeather" aria-controls="heavyWeather" role="tab" data-toggle="tab">{{$t('dataBankInfo.heavyWeather')}}</a></li>
                 </ul>
                 <div class="tab-content">
                     <!-- 集合解散 -->
                     <div role="tabpanel" class="tab-pane active" id="gather">
                         <div class="pane_content_info">
                             <div class="gather_info">
-                                <div class="gather_info_title"><span>集合</span><hr></div>
+                                <div class="gather_info_title"><span>{{$t('dataBankInfo.assembly')}}</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">日期及時間</div>
-                                    <div><input class="item_input" placeholder="日期及時間" style="width:97%;" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
+                                    <div class="item_title">{{$t('dataBankInfo.assembly_at')}}</div>
+                                    <div><input class="item_input" :placeholder="$t('dataBankInfo.assembly_at')" style="width:97%;" disabled="disabled" type="text" v-model="assemblePlaces.assembly_at"></div>
                                  </div>
                                 <div class="form_item_info" style="width:100%;min-height:120px;">
-                                    <div class="item_title">詳細地址</div>
+                                    <div class="item_title">{{$t('dataBankInfo.assembly_station')}}</div>
                                     <div>
-                                        <textarea class="item_area" placeholder="詳細地址" disabled="disabled" v-model="assemblePlaces.assembly_station"></textarea>
+                                        <textarea class="item_area" :placeholder="$t('dataBankInfo.assembly_station')" disabled="disabled" v-model="assemblePlaces.assembly_station"></textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="pane_content_info">
                             <div class="gather_info">
-                                <div class="gather_info_title"><span>解散</span><hr></div>
+                                <div class="gather_info_title"><span>{{$t('dataBankInfo.dissolution')}}</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">日期及時間</div>
-                                    <div><input class="item_input"  placeholder="日期及時間" style="width:97%;" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
+                                    <div class="item_title">{{$t('dataBankInfo.assembly_at')}}</div>
+                                    <div><input class="item_input"  :placeholder="$t('dataBankInfo.assembly_at')" style="width:97%;" type="text" disabled="disabled" v-model="assemblePlaces.dissolution_at"></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;min-height:120px;">
-                                    <div class="item_title">詳細地址</div>
+                                    <div class="item_title">{{$t('dataBankInfo.assembly_station')}}</div>
                                     <div>
-                                        <textarea class="item_area" placeholder="詳細地址" disabled="disabled" v-model="assemblePlaces.dissolution_station"></textarea>
+                                        <textarea class="item_area" :placeholder="$t('dataBankInfo.assembly_station')" disabled="disabled" v-model="assemblePlaces.dissolution_station"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -116,45 +116,45 @@
                     <div role="tabpanel" class="tab-pane" id="flight">
                         <div class="pane_content_info" v-for="(flight,index) in flights">
                             <div class="gather_info">
-                                <div class="gather_info_title"><span v-if="flight.is_return">返回</span><span v-else>出發</span><hr></div>
+                                <div class="gather_info_title"><span v-if="flight.is_return">{{$t('dataBankInfo.return')}}</span><span v-else>{{$t('dataBankInfo.go')}}</span><hr></div>
                             </div>    
                             <div class="form_content disflex">
                                 <div class="form_item_info">
-                                    <div class="item_title">航班信息</div>
+                                    <div class="item_title">{{$t('dataBankInfo.flight')}}</div>
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.flight"></div>
                                 </div> 
                                 <div class="form_item_info">
-                                    <div class="item_title">日期</div>
+                                    <div class="item_title">{{$t('dataBankInfo.date')}}</div>
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.date"></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">出發時間</div>
+                                    <div class="item_title">{{$t('dataBankInfo.takeoff_time')}}</div>
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.takeoff_time"></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">到達時間</div>
+                                    <div class="item_title">{{$t('dataBankInfo.arrival_time')}}</div>
                                     <div><input class="item_input" type="text" disabled="disabled"  :value="flight.arrival_time"></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">出發城市</div>
+                                    <div class="item_title">{{$t('dataBankInfo.from')}}</div>
                                     <div>
                                         <div><input class="item_input" type="text" disabled="disabled"  :value="flight.from"></div>
                                     </div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">到達城市</div>
+                                    <div class="item_title">{{$t('dataBankInfo.to')}}</div>
                                     <div>
                                         <div><input class="item_input" type="text" disabled="disabled"  :value="flight.to"></div>
                                     </div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">出發站點</div>
+                                    <div class="item_title">{{$t('dataBankInfo.from_flight')}}</div>
                                     <div>
                                         <div><input class="item_input" type="text" disabled="disabled"  :value="flight.from_flight"></div>
                                     </div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">到達站點</div>
+                                    <div class="item_title">{{$t('dataBankInfo.to_flight')}}</div>
                                     <div>
                                         <div><input class="item_input" type="text" disabled="disabled"  :value="flight.to_flight"></div>
                                     </div>
@@ -176,7 +176,7 @@
                         <div class="pane_content_info" v-for="(hotel,index) in hotels">    
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">住宿名稱</div>
+                                    <div class="item_title">{{$t('dataBankInfo.hotel_name')}}</div>
                                     <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="hotel.hotel_name" ></div>
                                 </div>
                                 <div class="form_item_info">
@@ -188,23 +188,23 @@
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.leave_at" ></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">入住天數</div>
+                                    <div class="item_title">{{$t('dataBankInfo.times')}}</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.times" ></div>
                                 </div>
                                 <div class="form_item_info">
-                                    <div class="item_title">聯繫電話</div>
+                                    <div class="item_title">{{$t('dataBankInfo.hotel_phone')}}</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_phone" ></div>
                                 </div>
                                 <div class="form_item_info" >
-                                    <div class="item_title">住宿地址</div>
+                                    <div class="item_title">{{$t('dataBankInfo.hotel_address')}}</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_address" ></div>
                                 </div>
                                 <div class="form_item_info" >
-                                    <div class="item_title">住宿經緯度</div>
+                                    <div class="item_title">{{$t('dataBankInfo.hotel_location')}}</div>
                                     <div><input class="item_input" type="text" disabled="disabled" :value="hotel.hotel_location" ></div>
                                 </div>
                                 <div class="form_item_info"  style="width:100%;">
-                                    <div class="item_title">住宿圖片</div>
+                                    <div class="item_title">{{$t('dataBankInfo.image')}}</div>
                                     <div><img style="width:97%;" :src="hotel.image"></div>
                                 </div>
                                 <div class="editBtnGroup">
@@ -224,19 +224,19 @@
                         <div class="pane_content_info" v-for="(leadTeacher,index) in leadTeachers">
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">老師姓名</div>
+                                    <div class="item_title">{{$t('dataBankInfo.leader')}}</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.leader" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">區號</div>
+                                    <div class="item_title">{{$t('personal.newCode')}}</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.area_code" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">老師電話</div>
+                                    <div class="item_title">{{$t('dataBankInfo.phone')}}</div>
                                     <div><input class="item_input" type="text" style="width:97%;" disabled="disabled" :value="leadTeacher.phone" ></div>
                                 </div>
                                 <div class="form_item_info" style="width:100%;">
-                                    <div class="item_title">職責</div>
+                                    <div class="item_title">{{$t('dataBankInfo.duty')}}</div>
                                     <div><input class="item_input" style="width:97%;" type="text" disabled="disabled" :value="leadTeacher.duty"></div>
                                 </div>
                                 <div class="editBtnGroup">
@@ -256,7 +256,7 @@
                         <div class="pane_content_info">
                             <div class="form_content disflex">
                                 <div class="form_item_info" style="width:100%;min-height:120px;">
-                                    <div class="item_title">安排</div>
+                                    <div class="item_title">{{$t('dataBankInfo.urgency')}}</div>
                                     <div style="border:1px solid #ccc;border-radius: 8px;width:97%;background-color:#eeeeee;line-height:25px;" v-html="badWeathers.urgency"></div>
                                     <!-- <div>
                                         <textarea class="item_area" placeholder="安排" disabled="disabled" :value="badWeathers.urgency"></textarea>
@@ -277,29 +277,29 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="gather_info">
-                        <div class="gather_info_title"><span>集合</span><hr></div>
+                        <div class="gather_info_title"><span>{{$t('dataBankInfo.assembly')}}</span><hr></div>
                     </div>   
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">日期及時間</div>
-                        <div><input class="item_input" placeholder="填寫日期及時間(yyyy-mm-dd hh:mm)" type="text" v-model="edAssemblePlaces.assembly_at"></div>
+                        <div class="item_title">{{$t('dataBankInfo.assembly_at')}}</div>
+                        <div><input class="item_input" :placeholder="$t('dataBankInfo.assembly_at')+'(yyyy-mm-dd hh:mm)'" type="text" v-model="edAssemblePlaces.assembly_at"></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">詳細地址</div>
-                        <div><input class="item_input" placeholder="填寫詳細地址" type="text" v-model="edAssemblePlaces.assembly_station"></div>
+                        <div class="item_title">{{$t('dataBankInfo.assembly_station')}}</div>
+                        <div><input class="item_input" :placeholder="$t('dataBankInfo.assembly_station')" type="text" v-model="edAssemblePlaces.assembly_station"></div>
                     </div>
                     <div class="gather_info">
-                        <div class="gather_info_title"><span>解散</span><hr></div>
+                        <div class="gather_info_title"><span>{{$t('dataBankInfo.dissolution')}}</span><hr></div>
                     </div>   
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">日期及時間</div>
-                        <div><input class="item_input" placeholder="填寫日期及時間(yyyy-mm-dd hh:mm)" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
+                        <div class="item_title">{{$t('dataBankInfo.assembly_at')}}</div>
+                        <div><input class="item_input" :placeholder="$t('dataBankInfo.assembly_at')+'(yyyy-mm-dd hh:mm)'" type="text" v-model="edAssemblePlaces.dissolution_at"></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">詳細地址</div>
-                        <div><input class="item_input" placeholder="填寫詳細地址" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
+                        <div class="item_title">{{$t('dataBankInfo.assembly_station')}}</div>
+                        <div><input class="item_input" :placeholder="$t('dataBankInfo.assembly_station')" type="text" v-model="edAssemblePlaces.dissolution_station"></div>
                     </div>
                     <div class="issure">
-                        <button @click="editAssemblePlace()">確定</button>
+                        <button @click="editAssemblePlace()">{{$t('confirm')}}</button>
                     </div>
                 </div>
             </div>
@@ -308,43 +308,43 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
-                        <div class="item_title">航班信息(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫航班信息" v-model="newFlight.flight"></div>
+                        <div class="item_title">{{$t('dataBankInfo.flight')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.flight')" v-model="newFlight.flight"></div>
                     </div> 
                     <div class="form_item_info">
-                        <div class="item_title">日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫日期(yyyy-mm-dd)" v-model="newFlight.date"></div>
+                        <div class="item_title">{{$t('dataBankInfo.date')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.date')+'(yyyy-mm-dd)'" v-model="newFlight.date"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出發時間(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫出發時間(hh:mm)" v-model="newFlight.takeoff_time"></div>
+                        <div class="item_title">{{$t('dataBankInfo.takeoff_time')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.takeoff_time')+'(hh:mm)'" v-model="newFlight.takeoff_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到達時間(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫到達時間(hh:mm)" v-model="newFlight.arrival_time"></div>
+                        <div class="item_title">{{$t('dataBankInfo.arrival_time')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.arrival_time')+'(hh:mm)'" v-model="newFlight.arrival_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出發城市(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫出發城市" v-model="newFlight.from"></div>
+                        <div class="item_title">{{$t('dataBankInfo.from')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.from')" v-model="newFlight.from"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到達城市(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫到達城市" v-model="newFlight.to"></div>
+                        <div class="item_title">{{$t('dataBankInfo.to')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.to')" v-model="newFlight.to"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出發站點</div>
-                        <div><input class="item_input" type="text" placeholder="填寫出發站點" v-model="newFlight.from_flight"></div>
+                        <div class="item_title">{{$t('dataBankInfo.from_flight')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.from_flight')" v-model="newFlight.from_flight"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到達站點</div>
-                        <div><input class="item_input" type="text" placeholder="填寫到達站點" v-model="newFlight.to_flight"></div>
+                        <div class="item_title">{{$t('dataBankInfo.to_flight')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.to_flight')" v-model="newFlight.to_flight"></div>
                     </div>
                     <div style="width:100%;height:50px;">
-                        <span style="width:70px;text-align: center;display: block;float:left;">出發</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="newFlight.is_return">
-                        <span style="width:70px;text-align: center;display: block;float:left;">返回</span><input style="float:left" type="radio" value="1" class="bigRadio" v-model="newFlight.is_return">
+                        <span style="width:70px;text-align: center;display: block;float:left;">{{$t('dataBankInfo.go')}}</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="newFlight.is_return">
+                        <span style="width:70px;text-align: center;display: block;float:left;">{{$t('dataBankInfo.return')}}</span><input style="float:left" type="radio" value="1" class="bigRadio" v-model="newFlight.is_return">
                     </div>
                     <div class="issure">
-                        <button @click="addNewFlight()">添加</button>
+                        <button @click="addNewFlight()">{{$t('add')}}</button>
                     </div>
                     
                 </div>
@@ -354,43 +354,43 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info">
-                        <div class="item_title">航班信息(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫航班信息" v-model="edFlight.flight"></div>
+                        <div class="item_title">{{$t('dataBankInfo.flight')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.flight')" v-model="edFlight.flight"></div>
                     </div> 
                     <div class="form_item_info">
-                        <div class="item_title">日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫日期(yyyy-mm-dd)" v-model="edFlight.date"></div>
+                        <div class="item_title">{{$t('dataBankInfo.date')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.date')+'(yyyy-mm-dd)'" v-model="edFlight.date"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出發時間(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫出發時間(hh:mm)" v-model="edFlight.takeoff_time"></div>
+                        <div class="item_title">{{$t('dataBankInfo.takeoff_time')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.takeoff_time')+'(hh:mm)'" v-model="edFlight.takeoff_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到達時間(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫到達時間(hh:mm)" v-model="edFlight.arrival_time"></div>
+                        <div class="item_title">{{$t('dataBankInfo.arrival_time')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.arrival_time')+'(hh:mm)'" v-model="edFlight.arrival_time"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出發城市(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫出發城市" v-model="edFlight.from"></div>
+                        <div class="item_title">{{$t('dataBankInfo.from')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.from')" v-model="edFlight.from"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到達城市(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="填寫到達城市" v-model="edFlight.to"></div>
+                        <div class="item_title">{{$t('dataBankInfo.to')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.to')" v-model="edFlight.to"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">出發站點</div>
-                        <div><input class="item_input" type="text" placeholder="填寫出發站點" v-model="edFlight.from_flight"></div>
+                        <div class="item_title">{{$t('dataBankInfo.from_flight')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.from_flight')" v-model="edFlight.from_flight"></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">到達站點</div>
-                        <div><input class="item_input" type="text" placeholder="填寫到達站點" v-model="edFlight.to_flight"></div>
+                        <div class="item_title">{{$t('dataBankInfo.to_flight')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.to_flight')" v-model="edFlight.to_flight"></div>
                     </div>
                     <div style="width:100%;height:50px;">
-                        <span style="width:70px;text-align: center;display: block;float:left;">出發</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="edFlight.is_return">
-                        <span style="width:70px;text-align: center;display: block;float:left;">返回</span><input style="float:left" type="radio" value="1" class="bigRadio" v-model="edFlight.is_return">
+                        <span style="width:70px;text-align: center;display: block;float:left;">{{$t('dataBankInfo.go')}}</span><input style="float:left" type="radio" value="0" class="bigRadio" v-model="edFlight.is_return">
+                        <span style="width:70px;text-align: center;display: block;float:left;">{{$t('dataBankInfo.return')}}</span><input style="float:left" type="radio" value="1" class="bigRadio" v-model="edFlight.is_return">
                     </div>
                     <div class="issure">
-                        <button @click="editFlight()">修改</button>
+                        <button @click="editFlight()">{{$t('edit')}}</button>
                     </div>
                     
                 </div>
@@ -400,36 +400,36 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">住宿名稱(必填)</div>
-                        <div><input class="item_input" style="width:97%;" type="text" placeholder="住宿名稱" v-model="newHotel.hotel_name" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.hotel_name')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" style="width:97%;" type="text" :placeholder="$t('dataBankInfo.hotel_name')" v-model="newHotel.hotel_name" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">入住日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="入住日期(yyyy-mm-dd)" v-model="newHotel.check_at" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.check_at')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.check_at')+'(yyyy-mm-dd)'" v-model="newHotel.check_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">離開日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="離開日期(yyyy-mm-dd)" v-model="newHotel.leave_at" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.leave_at')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.leave_at')+'(yyyy-mm-dd)'" v-model="newHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">入住天數(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="入住天數" v-model="newHotel.times" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.times')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.times')" v-model="newHotel.times" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">聯繫電話(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="聯繫電話" v-model="newHotel.hotel_phone" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.hotel_phone')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.hotel_phone')" v-model="newHotel.hotel_phone" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">住宿地址(必填)</div>
-                        <div><input class="item_input"  type="text" placeholder="住宿地址" v-model="newHotel.hotel_address" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.hotel_address')}}{{$t('filled')}}</div>
+                        <div><input class="item_input"  type="text" :placeholder="$t('dataBankInfo.hotel_address')" v-model="newHotel.hotel_address" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">住宿經緯度(必填)</div>
-                        <div><input class="item_input"  type="text" placeholder="住宿經緯度(經度,緯度)" v-model="newHotel.hotel_location" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.hotel_location')}}{{$t('filled')}}</div>
+                        <div><input class="item_input"  type="text" :placeholder="$t('dataBankInfo.hotel_location')+$t('dataBankInfo.location')" v-model="newHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div style="width:93%;">
-                            住宿圖片
+                            {{$t('dataBankInfo.image')}}
                             <div class="imgIcon">
                                 <van-uploader style="width:50px;height:40px;float:right;" :after-read="onRead" accept="image/*">
                                     <img src="/etravel/public/images/sm-insert.png">
@@ -444,7 +444,7 @@
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="addNewHotel()">添加</button>
+                        <button @click="addNewHotel()">{{$t('add')}}</button>
                     </div>
                     
                 </div>
@@ -454,36 +454,36 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">住宿名稱(必填)</div>
-                        <div><input class="item_input" style="width:97%;" type="text" placeholder="住宿名稱" v-model="edHotel.hotel_name" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.hotel_name')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" style="width:97%;" type="text" :placeholder="$t('dataBankInfo.hotel_name')" v-model="edHotel.hotel_name" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">入住日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="入住日期(yyyy-mm-dd)" v-model="edHotel.check_at" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.check_at')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.check_at')+'(yyyy-mm-dd)'" v-model="edHotel.check_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">離開日期(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="離開日期(yyyy-mm-dd)" v-model="edHotel.leave_at" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.leave_at')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.leave_at')+'(yyyy-mm-dd)'" v-model="edHotel.leave_at" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">入住天數(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="入住天數" v-model="edHotel.times" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.times')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.times')" v-model="edHotel.times" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">聯繫電話(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="聯繫電話" v-model="edHotel.hotel_phone" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.hotel_phone')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.hotel_phone')" v-model="edHotel.hotel_phone" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">住宿地址(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="住宿地址" v-model="edHotel.hotel_address" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.hotel_address')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.hotel_address')" v-model="edHotel.hotel_address" ></div>
                     </div>
                     <div class="form_item_info">
-                        <div class="item_title">住宿經緯度(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="住宿經緯度(經度,緯度)" v-model="edHotel.hotel_location" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.hotel_location')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.hotel_location')+$t('dataBankInfo.location')" v-model="edHotel.hotel_location" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
                         <div style="width:93%;">
-                            住宿圖片
+                            {{$t('dataBankInfo.image')}}
                             <div class="imgIcon">
                                 <van-uploader style="width:50px;height:40px;float:right;" :after-read="onRead" accept="image/*">
                                     <img src="/etravel/public/images/sm-insert.png">
@@ -498,7 +498,7 @@
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="editHotel()">修改</button>
+                        <button @click="editHotel()">{{$t('edit')}}</button>
                     </div>
                     
                 </div>
@@ -508,11 +508,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老師姓名(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="老師姓名" v-model="newLeadTeacher.leader" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.leader')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.leader')" v-model="newLeadTeacher.leader" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">區號</div>
+                        <div class="item_title">{{$t('personal.newCode')}}</div>
                         <div>
                             <div class="simulateShade">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='newLeadTeacher.area_code' v-model='newLeadTeacher.area_code'></AreaCodeSelector>
@@ -520,15 +520,15 @@
                         </div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老師電話</div>
-                        <div><input class="item_input" type="text" placeholder="老師電話" v-model="newLeadTeacher.phone" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.phone')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.phone')" v-model="newLeadTeacher.phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">職責</div>
-                        <div><input class="item_input" type="text" placeholder="職責" v-model="newLeadTeacher.duty"></div>
+                        <div class="item_title">{{$t('dataBankInfo.duty')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.duty')" v-model="newLeadTeacher.duty"></div>
                     </div>
                     <div class="issure">
-                        <button @click="addNewLeadTeacher()">添加</button>
+                        <button @click="addNewLeadTeacher()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -537,11 +537,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老師姓名(必填)</div>
-                        <div><input class="item_input" type="text" placeholder="老師姓名" v-model="edLeadTeacher.leader" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.leader')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.leader')" v-model="edLeadTeacher.leader" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">區號</div>
+                        <div class="item_title">{{$t('personal.newCode')}}</div>
                         <div>
                             <div class="simulateShade">
                                 <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='edLeadTeacher.area_code' v-model='edLeadTeacher.area_code'></AreaCodeSelector>
@@ -549,15 +549,15 @@
                         </div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">老師電話</div>
-                        <div><input class="item_input" type="text" placeholder="老師電話" v-model="edLeadTeacher.phone" ></div>
+                        <div class="item_title">{{$t('dataBankInfo.phone')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.phone')" v-model="edLeadTeacher.phone" ></div>
                     </div>
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">職責</div>
-                        <div><input class="item_input" type="text" placeholder="職責" v-model="edLeadTeacher.duty"></div>
+                        <div class="item_title">{{$t('dataBankInfo.duty')}}</div>
+                        <div><input class="item_input" type="text" :placeholder="$t('dataBankInfo.duty')" v-model="edLeadTeacher.duty"></div>
                     </div>
                     <div class="issure">
-                        <button @click="editLeadTeacher()">修改</button>
+                        <button @click="editLeadTeacher()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -566,14 +566,14 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_info" style="width:100%;">
-                        <div class="item_title">安排</div>
+                        <div class="item_title">{{$t('dataBankInfo.urgency')}}</div>
                         <div>
                             <!-- <textarea class="item_area" placeholder="安排" v-model="edBadWeather.urgency"></textarea> -->
                             <div><Editor @catchData='catchData' :childData='edBadWeather.urgency'></Editor></div>
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="editBadWeather()">修改</button>
+                        <button @click="editBadWeather()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -704,7 +704,7 @@
                     this.edAssemblePlaces.dissolution_station=this.assemblePlaces.dissolution_station;
 
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },
@@ -728,17 +728,17 @@
                 }).then(res => {
                     // console.log(res);
                     if(res.status==200){
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.assemblePlaces.assembly_at=this.edAssemblePlaces.assembly_at;
                         this.assemblePlaces.assembly_station=this.edAssemblePlaces.assembly_station;
                         this.assemblePlaces.dissolution_at=this.edAssemblePlaces.dissolution_at;
                         this.assemblePlaces.dissolution_station=this.edAssemblePlaces.dissolution_station;
                         this.isAssemblePlacePopupShow=false;
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -761,7 +761,7 @@
                     this.flights=res.data.data;
                     
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
 
@@ -778,7 +778,7 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getFlights();
                     this.isNewFlightShow=false;
                     this.newFlight.is_return='';
@@ -791,7 +791,7 @@
                     this.newFlight.from_flight='';
                     this.newFlight.to_flight='';
                 }).catch(err => {
-                    this.$toast('添加失敗');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -847,13 +847,13 @@
                         this.flights[this.edFlight.index].from_flight=this.edFlight.from_flight;
                         this.flights[this.edFlight.index].to_flight=this.edFlight.to_flight;
                         this.flights[this.edFlight.index].is_return=this.edFlight.is_return;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditFlightShow=false;    
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -867,11 +867,11 @@
             delFlight(flightId){
                 // 删除航班
                 this.$dialog.confirm({
-                    title: '删除航班',
-                    message: '是否删除該航班',
-                    cancelButtonText:'取消',
+                    title: this.$t('dataBankInfo.delFlight'),
+                    message: this.$t('dataBankInfo.confirmDelFlight'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -884,12 +884,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getFlights();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失敗');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失敗');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {
@@ -908,7 +908,7 @@
                     this.hotels=res.data.data;
                     
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
 
@@ -926,7 +926,7 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getHotels();
                     this.isNewHotelShow=false;
                     this.newHotel.check_at='';
@@ -938,7 +938,7 @@
                     this.newHotel.hotel_location='';
                     this.newHotel.image='http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555054305_j8Qwecy5fN.png';
                 }).catch(err => {
-                    this.$toast('添加失敗');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -991,13 +991,13 @@
                         this.hotels[this.edHotel.index].hotel_phone=this.edHotel.hotel_phone;
                         this.hotels[this.edHotel.index].hotel_location=this.edHotel.hotel_location;
                         this.hotels[this.edHotel.index].image=this.edHotel.image;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditHotelShow=false;    
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -1011,11 +1011,11 @@
             delHotel(hotelId){
                 // 删除住宿
                 this.$dialog.confirm({
-                    title: '删除住宿',
-                    message: '是否删除該住宿',
-                    cancelButtonText:'取消',
+                    title: this.$t('dataBankInfo.delHotel'),
+                    message: this.$t('dataBankInfo.confirmDelHotel'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -1028,12 +1028,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getHotels();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失敗');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失敗');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {
@@ -1052,7 +1052,7 @@
                     // console.log(res.data);
                     this.leadTeachers=res.data.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
 
@@ -1070,7 +1070,7 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getLeadTeachers();
                     this.isNewLeadTeacherShow=false;
                     this.newLeadTeacher.leader='';
@@ -1078,7 +1078,7 @@
                     this.newLeadTeacher.area_code='';
                     this.newLeadTeacher.phone='';
                 }).catch(err => {
-                    this.$toast('添加失敗');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -1119,13 +1119,13 @@
                         this.leadTeachers[this.edLeadTeacher.index].duty=this.edLeadTeacher.duty;
                         this.leadTeachers[this.edLeadTeacher.index].area_code=this.edLeadTeacher.area_code;
                         this.leadTeachers[this.edLeadTeacher.index].phone=this.edLeadTeacher.phone;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditLeadTeacherShow=false;    
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -1139,11 +1139,11 @@
             delLeadTeacher(leadTeacherId){
                 // 删除領隊
                 this.$dialog.confirm({
-                    title: '删除領隊',
-                    message: '是否删除該領隊',
-                    cancelButtonText:'取消',
+                    title: this.$t('dataBankInfo.delLeader'),
+                    message: this.$t('dataBankInfo.confirmDelLeader'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -1156,12 +1156,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getLeadTeachers();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失敗');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失敗');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {
@@ -1180,7 +1180,7 @@
                     this.badWeathers=res.data;
                     this.edBadWeather.urgency=res.data.urgency;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
 
@@ -1202,14 +1202,14 @@
                 }).then(res => {
                     // console.log(res);
                     if(res.status==200){
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.badWeathers.urgency=this.edBadWeather.urgency;
                         this.isEditBadWeatherShow=false;
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -1245,17 +1245,17 @@
                 }).then(res => {
                     console.log(res);
                     if(res.status==201){
-                        this.$toast('上傳成功');
+                        this.$toast(this.$t('uploadSuccess'));
                         if(this.isNewImg){
                             this.newHotel.image=res.data.data.path;
                         }else{
                             this.edHotel.image=res.data.data.path;
                         }
                     }else{
-                        this.$toast('上傳失敗');
+                        this.$toast(this.$t('uploadFail'));
                     }
                 }).catch(err => {
-                    this.$toast('上傳失敗');
+                    this.$toast(this.$t('uploadFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -1268,11 +1268,11 @@
             },
             resetImg(){
                 this.$dialog.confirm({
-                    title: '重置圖片',
-                    message: '是否重置該圖片',
-                    cancelButtonText:'取消',
+                    title: this.$t('resetImg'),
+                    message: this.$t('resetImgMsg'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     if(this.isNewImg){

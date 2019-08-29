@@ -106,36 +106,36 @@
 	<div class="linkSchool disflex">
         <div v-cloak class="travelInfo disflex">    
             <div class="travelInfoItem">
-                <div>旅遊名稱</div>
-                <div><input class="item_input_school" placeholder="旅遊名稱" v-model="travelInfo.travel_name" type="text"></div>
+                <div>{{$t('home.travel_name')}}</div>
+                <div><input class="item_input_school" :placeholder="$t('home.travel_name')" v-model="travelInfo.travel_name" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>出行日期</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_at" placeholder="出行日期（例：yyyy-mm-dd）" type="text"></div>
+                <div>{{$t('home.travel_at')}}</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_at" :placeholder="$t('home.travel_at')+'（yyyy-mm-dd）'" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>結束日期</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_return" placeholder="結束日期（例：yyyy-mm-dd）" type="text"></div>
+                <div>{{$t('home.travel_return')}}</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.travel_return" :placeholder="$t('home.travel_return')+'（yyyy-mm-dd）'" type="text"></div>
             </div>
             <div class="travelInfoItem">
-                <div>旅遊簡介</div>
-                <div><input class="item_input_school" placeholder="旅遊簡介" v-model="travelInfo.travel_introduction" type="text"></div>
+                <div>{{$t('home.travel_introduction')}}</div>
+                <div><input class="item_input_school" :placeholder="$t('home.travel_introduction')" v-model="travelInfo.travel_introduction" type="text"></div>
             </div> 
             <div class="travelInfoItem">
-                <div>學校名稱</div>
-                <div><input class="item_input_school" placeholder="學校名稱" v-model="travelInfo.school_name" type="text"></div>
+                <div>{{$t('linkSchool.school_name')}}</div>
+                <div><input class="item_input_school" :placeholder="$t('linkSchool.school_name')" v-model="travelInfo.school_name" type="text"></div>
             </div>
             <div class="travelInfoItem">
-                <div>項目進行狀態</div>
+                <div>{{$t('linkSchool.travel_status')}}</div>
                 <div class="travelStatus disflex" style="width:95%;">
-                    <div :class="{ actStatus: travelInfo.travel_status==10 }" @click="changeStatus(10);">未進行</div>
-                    <div :class="{ actStatus: travelInfo.travel_status==20 }" @click="changeStatus(20);">進行中</div>
-                    <div :class="{ actStatus: travelInfo.travel_status==30 }" @click="changeStatus(30);">已結束</div>
+                    <div :class="{ actStatus: travelInfo.travel_status==10 }" @click="changeStatus(10);">{{$t('home.notProgress')}}</div>
+                    <div :class="{ actStatus: travelInfo.travel_status==20 }" @click="changeStatus(20);">{{$t('home.progressing')}}</div>
+                    <div :class="{ actStatus: travelInfo.travel_status==30 }" @click="changeStatus(30);">{{$t('home.end')}}</div>
                 </div>
             </div>
             <div class="travelInfoItem">
                 <div style="width:95%;">
-                    背景圖
+                    {{$t('linkSchool.image')}}
                     <div class="imgIcon">
                         <van-uploader style="width:50px;height:40px;float:right;" :after-read="onRead" accept="image/*">
                             <img src="/etravel/public/images/sm-insert.png">
@@ -150,41 +150,41 @@
                 </div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>區號A</div>
+                <div>{{$t('students.code_one')}}</div>
                 <div>
-                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_one" placeholder="區號A" type="text"> -->
+                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_one" :placeholder="區號A" type="text"> -->
                     <div class="simulateShade">
                         <AreaCodeSelector @selectedAreaCode='selectedAreaCode' :areaCode='travelInfo.code_one'></AreaCodeSelector>
                     </div>
                 </div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>緊急電話A</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_phone_one" placeholder="緊急電話A" type="text"></div>
+                <div>{{$t('students.emergency_phone_one')}}</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_phone_one" :placeholder="$t('students.emergency_phone_one')" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>區號B</div>
+                <div>{{$t('students.code_two')}}</div>
                 <div>
-                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_two" placeholder="區號B" type="text"> -->
+                    <!-- <input class="item_input_school" style="width:90%;" v-model="travelInfo.code_two" :placeholder="區號B" type="text"> -->
                     <div class="simulateShade">
                         <AreaCodeSelector @selectedAreaCode='selectedAreaCode1' :areaCode='travelInfo.code_two'></AreaCodeSelector>
                     </div>
                 </div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>緊急電話B</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_phone_two" placeholder="緊急電話B" type="text"></div>
+                <div>{{$t('students.emergency_phone_two')}}</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_phone_two" :placeholder="$t('students.emergency_phone_two')" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>緊急郵箱A</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_email_one" placeholder="緊急郵箱A" type="text"></div>
+                <div>{{$t('students.emergency_email_one')}}</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_email_one" :placeholder="$t('students.emergency_email_one')" type="text"></div>
             </div>
             <div class="travelInfoItem" style="width:50%;">
-                <div>緊急郵箱B</div>
-                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_email_two" placeholder="緊急郵箱B" type="text"></div>
+                <div>{{$t('students.emergency_email_two')}}</div>
+                <div><input class="item_input_school" style="width:90%;" v-model="travelInfo.emergency_email_two" :placeholder="$t('students.emergency_email_two')" type="text"></div>
             </div>
             <div class="travelInfoItem">
-                <button class="changBtn" @click="editTravelInfo();">保存修改</button>
+                <button class="changBtn" @click="editTravelInfo();">{{$t('edit')}}</button>
             </div>
         </div>
     </div>
@@ -202,7 +202,7 @@
             }
         },
         mounted:function(){
-            this.$store.state.links=[{link:'/home',linkName:'項目'},{link:'/projectDetail/'+sessionStorage.actTravelId,linkName:'項目詳情'}];
+            this.$store.state.links=[{link:'/home',linkName:this.$t('links.project')},{link:'/projectDetail/'+sessionStorage.actTravelId,linkName:this.$t('links.projectDetail')}];
             this.getTravelInfo();
         },
         methods:{
@@ -232,12 +232,12 @@
                 }).then(res => {
                     // console.log(res);
                     if(res.status==200){
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast(this.$t('edtlFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast(this.$t('edtlFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -265,13 +265,13 @@
                 }).then(res => {
                     console.log(res);
                     if(res.status==201){
-                        this.$toast('上传成功');
+                        this.$toast(this.$t('uploadSuccess'));
                         this.travelInfo.image=res.data.data.path;
                     }else{
-                        this.$toast('上传失败');
+                        this.$toast(this.$t('uploadFail'));
                     }
                 }).catch(err => {
-                    this.$toast('上传失败');
+                    this.$toast(this.$t('uploadFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -284,8 +284,10 @@
             },
             resetImg(){
                 this.$dialog.confirm({
-                    title: '重置图片',
-                    message: '是否重置該图片'
+                    title: this.$t('resetImg'),
+                    message: this.$t('resetImgMsg'),
+                    cancelButtonText:this.$t('cancel'),
+                    confirmButtonText:this.$t('confirm'),
                 }).then(() => {
                     this.travelInfo.image='http://120.77.206.79/etravel/public/uploads/images/travels/201904/12/1_1555059034_CNDm3c7vCL.png';
                 }).catch(err => {

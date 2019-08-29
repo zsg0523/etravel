@@ -53,7 +53,7 @@
                     </div> -->
 		            <div class="form_item_sheetInfo" v-for="(sheetInfo,index) in sheetInfos">
 		                <div class="item_title">
-		                    問題{{index+1}}
+		                    {{$t('dataBankStudySheetInfo.question')}}{{index+1}}
 		                    <div class="fr item_title_icon">
 		                    	<!-- <img @click="addNewSheetInfoShow()" src="/etravel/public/images/appointAdd.png"> -->
 		                        <img @click="editSheetInfoShow(index)" src="/etravel/public/images/edit.png">
@@ -61,12 +61,12 @@
 		                    </div>
 		                </div>
                         <div>
-                            <textarea class="item_area_sheetInfo"  placeholder="内容" disabled="disabled" :value="sheetInfo.content"></textarea>
+                            <textarea class="item_area_sheetInfo"  placeholder="" disabled="disabled" :value="sheetInfo.content"></textarea>
                         </div>
 		            </div>
 		        </div>
                 <div class="form_content_sheetInfo" v-else>
-                        暫未添加任何問題，請添加
+                        {{$t('dataBankStudySheetInfo.questionP')}}
                     <div style="text-align:center;" >
                     </div>
                 </div>
@@ -79,13 +79,13 @@
             <div class="editBox_sheetInfo" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_sheetInfo">
-		                <div class="item_title">問題(必填)</div>
+		                <div class="item_title">{{$t('dataBankStudySheetInfo.question')}}{{$t('filled')}}</div>
                         <div>
-                            <textarea class="item_area_sheetInfo"  placeholder="問題" v-model="newSheetInfo.content"></textarea>
+                            <textarea class="item_area_sheetInfo"  :placeholder="$t('dataBankStudySheetInfo.question')" v-model="newSheetInfo.content"></textarea>
                         </div>
 		            </div>
                     <div class="issure">
-                        <button @click="addNewSheetInfo()">添加</button>
+                        <button @click="addNewSheetInfo()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -94,13 +94,13 @@
             <div class="editBox_sheetInfo" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_sheetInfo">
-		                <div class="item_title">問題(必填)</div>
+		                <div class="item_title">{{$t('dataBankStudySheetInfo.question')}}{{$t('filled')}}</div>
                         <div>
-                            <textarea class="item_area_sheetInfo"  placeholder="問題" v-model="edSheetInfo.content"></textarea>
+                            <textarea class="item_area_sheetInfo"  :placeholder="$t('dataBankStudySheetInfo.question')" v-model="edSheetInfo.content"></textarea>
                         </div>
 		            </div>
                     <div class="issure">
-                        <button @click="editSheetInfo()">修改</button>
+                        <button @click="editSheetInfo()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -143,7 +143,7 @@
                     this.sheetInfos=res.data.questions.data;
                     console.log(this.sheetInfos.length);
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },
@@ -159,12 +159,12 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getSheetInfos();
                     this.isNewSheetInfoShow=false;
                     this.newSheetInfo.content='';
                 }).catch(err => {
-                    this.$toast('添加失敗');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -195,13 +195,13 @@
                 }).then(res => {
                     if(res.status==200){
                         this.sheetInfos[this.edSheetInfo.index].content=this.edSheetInfo.content;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditSheetInfoShow=false;    
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -215,11 +215,11 @@
             delSheetInfo(sheetInfoId){
                 // 删除問題
                 this.$dialog.confirm({
-                    title: '删除問題',
-                    message: '是否删除該問題',
-                    cancelButtonText:'取消',
+                    title: this.$t('dataBankStudySheetInfo.delQuestion'),
+                    message: this.$t('dataBankStudySheetInfo.confirmDelQuestion'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -232,12 +232,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getSheetInfos();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{ 
-                            this.$toast('删除失敗');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失敗');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {

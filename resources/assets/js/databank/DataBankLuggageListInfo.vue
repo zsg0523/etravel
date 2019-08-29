@@ -47,15 +47,15 @@
             <table>
                 <thead>
                     <tr>
-                        <th>編號</th>
-                        <th>裝備內容</th>
-                        <th>編輯</th>
+                        <th>{{$t('dataBankLuggageListInfo.number')}}</th>
+                        <th>{{$t('dataBankLuggageListInfo.content')}}</th>
+                        <th>{{$t('patch')}}</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>編號</td>
-                        <td>填寫裝備內容</td>
+                        <td>{{$t('dataBankLuggageListInfo.number')}}</td>
+                        <td>{{$t('dataBankLuggageListInfo.content')}}</td>
                         <td width="100px">
                             <!-- <div class="editIcon"><img src="/etravel/public/images/edit.png"></div> -->
                             <div class="editIcon"><img src="/etravel/public/images/appointAdd.png" @click="addLuggageListInfoShow();"></div>
@@ -78,13 +78,13 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageListInfo">
-                        <div class="item_title">裝備內容(必填)</div>
+                        <div class="item_title">{{$t('dataBankLuggageListInfo.content')}}{{$t('filled')}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="填寫裝備內容" v-model="newLuggageListInfo.rule"></textarea>
+                            <textarea class="item_area" :placeholder="$t('dataBankLuggageListInfo.content')" v-model="newLuggageListInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="addLuggageListInfo()">添加</button>
+                        <button @click="addLuggageListInfo()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -93,13 +93,13 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageListInfo">
-                        <div class="item_title">裝備內容(必填)</div>
+                        <div class="item_title">{{$t('dataBankLuggageListInfo.content')}}{{$t('filled')}}</div>
                         <div>
-                            <textarea class="item_area" placeholder="填寫裝備內容" v-model="edLuggageListInfo.rule"></textarea>
+                            <textarea class="item_area" :placeholder="$t('dataBankLuggageListInfo.content')" v-model="edLuggageListInfo.rule"></textarea>
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="editLuggageListInfo()">修改</button>
+                        <button @click="editLuggageListInfo()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -144,7 +144,7 @@
                     this.luggageList=res.data;
                     this.luggageListInfos=res.data.rules.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },
@@ -160,12 +160,12 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getLuggageListInfos();
                     this.isNewLuggageListInfoShow=false;
                     this.newLuggageListInfo.rule='';
                 }).catch(err => {
-                    this.$toast('添加失败');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -199,13 +199,13 @@
                     // console.log(res);
                     if(res.status==200){
                         this.luggageListInfos[this.edLuggageListInfo.index].rule=this.edLuggageListInfo.rule;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditLuggageListInfoShow=false;    
                     }else{
-                        this.$toast('修改失败');
+                        this.$toast(this.$t('edltFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失败');
+                    this.$toast(this.$t('edltFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -219,11 +219,11 @@
             delLuggageListInfo(luggageListInfoId){
                 // 删除守则詳情
                 this.$dialog.confirm({
-                    title: '删除装备詳情',
-                    message: '是否删除該装备詳情',
-                    cancelButtonText:'取消',
+                    title: this.$t('dataBankLuggageListInfo.delContent'),
+                    message: this.$t('dataBankLuggageListInfo.confirmDelContent'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -236,12 +236,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getLuggageListInfos();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失败');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失败');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {

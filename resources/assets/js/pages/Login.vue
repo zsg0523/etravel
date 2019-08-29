@@ -1,4 +1,4 @@
-<style>
+<style scoped>
 	.mainLogin{width: 100%;height: 100vh;align-items: center;justify-content: center;}
     .contentLogin{width: 900px;height:570px;border-radius:10px;box-shadow: 0 0 10px #ccc;background-color: #ffde01;}
     .icon{width: 50%;height:570px;border-right: 1px solid #fff;align-items: center;justify-content: center;}
@@ -21,13 +21,13 @@
             </div>
             <div class="disflex login">
                 <div class="title tc">Study2go</div>
-                <div><input type="text" v-model="loginName" placeholder="手機號碼或郵箱帳號" ></div>
-                <div><input type="password" v-model="password" placeholder="密碼" ></div>
+                <div><input type="text" v-model="loginName" :placeholder="$t('login.loginNameP')" ></div>
+                <div><input type="password" v-model="password" :placeholder="$t('login.loginpasswordP')" ></div>
                 <div style="height: 40px;">
-                	<a href="javascript:void(0);" @click="$router.push('/register')" class="fl">立即註冊</a>
+                	<a href="javascript:void(0);" @click="$router.push('/register')" class="fl">{{$t('login.register')}}</a>
                 	<!-- <a href="javascript:void(0);" @click="$router.push('/forgotPsd')" class="fr">忘记密码</a> -->
                 </div>
-                <div><button type="button" @click="login();">登入</button></div>
+                <div><button type="button" @click="login();">{{$t('login.login')}}</button></div>
             </div>
         </div>
         <van-loading 
@@ -84,13 +84,13 @@
 			            		
 					        }).catch(err => {
 					        	this.isLoading='none';
-					        	this.$toast('帳號或密碼錯誤')
+					        	this.$toast(this.$t('login.loginErr'));
 					          	console.log(err);
 					        });
 			            	
 			          	} else {
 			          		this.isLoading='none';
-			              	this.$toast('帳號或密碼錯誤')
+			              	this.$toast(this.$t('login.loginErr'))
 			              	this.password = ''
 			          	}
 			        }).catch(err => {
@@ -99,7 +99,7 @@
 			          	console.log(err);
 			        });
 		      	} else {
-		        	this.$toast('請填寫帳號密碼');
+		        	this.$toast(this.$t('login.formErr'));
 		      	}
 		    },
 	  	}

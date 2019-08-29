@@ -27,38 +27,38 @@
             <div class="pane_content_promise">
                 <div class="form_content disflex">
                     <div class="form_item_password">
-                        <div class="item_title">區號</div>
-                        <div v-if="idd_code"><input type="text" placeholder="區號" disabled="disabled" v-model="idd_code"></div>
-                        <div v-else><input type="text" placeholder="未設定區號" disabled="disabled"></div>
+                        <div class="item_title">{{$t('personal.newCode')}}</div>
+                        <div v-if="idd_code"><input type="text" :placeholder="$t('personal.newCode')" disabled="disabled" v-model="idd_code"></div>
+                        <div v-else><input type="text" :placeholder="$t('personal.newCode')" disabled="disabled"></div>
                         <!-- <div><input type="text" placeholder="區號" disabled="disabled" v-model="idd_code"></div> -->
                     </div>
                     <div class="form_item_password">
-                        <div class="item_title">手機號碼</div>
-                        <div><input type="text" placeholder="手機號" disabled="disabled" v-model="phoneNumber"></div>
+                        <div class="item_title">{{$t('personal.phone')}}</div>
+                        <div><input type="text" :placeholder="$t('personal.phone')" disabled="disabled" v-model="phoneNumber"></div>
                     </div>
                     <div class="form_item_password">
-                        <div class="item_title">驗證碼</div>
+                        <div class="item_title">{{$t('personal.phoneCode')}}</div>
                         <div class="disflex" style="justify-content: space-between;">
-                            <input type="text" placeholder="驗證碼" v-model="smscode" style="width: 56%;">
+                            <input type="text" placeholder="$t('personal.phoneCode')" v-model="smscode" style="width: 56%;">
                             <button class="tc" id="sendCodeUser" @click='getCode()' :disabled="disabled || time > 0">{{text}}</button>
                         </div>
                     </div>
                     <div class="form_item_password">
-                        <div class="item_title">新密碼</div>
+                        <div class="item_title">{{$t('personal.newPassword')}}</div>
                         <div>
-                            <input type="password" placeholder="請輸入新密碼" v-model="password"/>
+                            <input type="password" :placeholder="$t('personal.newPassword')" v-model="password"/>
                         </div>
                     </div>
                     <div class="form_item_password">
-                        <div class="item_title">確認密碼</div>
+                        <div class="item_title">{{$t('personal.confirmPassword')}}}</div>
                         <div>
-                            <input type="password" placeholder="請輸入確認密碼" v-model="repassword"/>
+                            <input type="password" :placeholder="$t('personal.confirmPassword')" v-model="repassword"/>
                         </div>
                     </div>
                 </div>
                 <div class="password_btn">
                     <div class="editUser">
-                        <button @click="changePassword()">修改</button>
+                        <button @click="changePassword()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>       
@@ -93,7 +93,7 @@
                 this.idd_code=res.data.code;
             }).catch(err => {
                 console.log(err);
-                this.$toast('登入失效');
+                this.$toast(this.$t('loginTimeout'));
                 sessionStorage.clear();
                 this.setUserInfo('');
                 this.setTravels('');
@@ -120,11 +120,11 @@
                             console.log(err)
                         });
                     }else{
-                        this.$toast('兩次密碼不一致！');
+                        this.$toast(this.$t('personal.confirmPsdErr'));
                         this.repassword='';
                     }
                 } else {
-                    this.$toast('請填寫完整資訊');
+                    this.$toast(this.$t('personal.formErr'));
                 }
             },
             getCode() {
@@ -138,7 +138,7 @@
                         if (res.data.key) {
                             // this.setUserInfo(res)
                             this.key=res.data.key;
-                            this.$toast('驗證碼已成功發送，請注意查收。');
+                            this.$toast(this.$t('register.codeMsg'));
                         } else {
                             this.$toast(res.data.message);
                         }
@@ -146,11 +146,11 @@
                         if(err.response.data.errors){
                             console.log(err.response.data.errors.phone[0]);
                         }else{
-                            console.log('獲取驗證碼失敗');
+                            console.log(this.$t('register.contentErr'));
                         }
                     });
                 } else {
-                    this.$toast('請填寫手機號碼');
+                    this.$toast(this.$t('register.phoneErr'));
                 }
             },
             run() {
@@ -173,7 +173,7 @@
         },
         computed: {
             text() {
-                return this.time > 0 ? this.time + 's 後重獲取' : '獲取驗證碼';
+                return this.time > 0 ? this.time + 's '+this.$t('register.laveTime') : this.$t('register.getCode');
             }
         }
     }

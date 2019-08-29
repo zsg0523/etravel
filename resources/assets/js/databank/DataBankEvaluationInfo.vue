@@ -47,13 +47,13 @@
             <div class="pane_content_eval">
                 <div class="form_content disflex"  v-for="(evaluationInfo,index) in evaluationInfos">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">題目{{index+1}}
-                            <span class="fr" v-if="evaluationInfo.type==1">一個選項</span>
-                            <span class="fr" v-else-if="evaluationInfo.type==2">兩個選項</span>
-                            <span class="fr" v-else-if="evaluationInfo.type==3">五個選項</span>
+                        <div class="item_title">{{$t('dataBankEvaluationInfo.title')}}{{index+1}}
+                            <span class="fr" v-if="evaluationInfo.type==1">{{optList[type-1].title}}</span>
+                            <span class="fr" v-else-if="evaluationInfo.type==2">{{optList[type-1].title}}</span>
+                            <span class="fr" v-else-if="evaluationInfo.type==3">{{optList[type-1].title}}</span>
                         </div>
                         <div>
-                            <textarea class="item_area_eval" placeholder="題目詳情" disabled="disabled"  :value="evaluationInfo.content"></textarea>
+                            <textarea class="item_area_eval" :placeholder="$t('dataBankEvaluationInfo.content')" disabled="disabled"  :value="evaluationInfo.content"></textarea>
                         </div>
                     </div>
                     <div class="editBtnGroup">
@@ -70,13 +70,13 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">題目詳情(必填)</div>
+                        <div class="item_title">{{$t('dataBankEvaluationInfo.content')}}{{$t('filled')}}</div>
                         <div>
-                            <textarea class="item_area_eval" placeholder="題目詳情" v-model="newEvaluationInfo.content"></textarea>
+                            <textarea class="item_area_eval" :placeholder="$t('dataBankEvaluationInfo.content')" v-model="newEvaluationInfo.content"></textarea>
                         </div>
                     </div>
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">題目類型(必填)</div>
+                        <div class="item_title">{{$t('dataBankEvaluationInfo.type')}}{{$t('filled')}}</div>
                         <div>
                             <select id="edTypeId" v-model="newEvaluationInfo.type">
                                 <option v-for="item in optList" :value="item.value">{{ item.title }}</option>
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="addNewEvaluationInfo()">添加</button>
+                        <button @click="addNewEvaluationInfo()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -93,13 +93,13 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">題目詳情(必填)</div>
+                        <div class="item_title">{{$t('dataBankEvaluationInfo.content')}}{{$t('filled')}}</div>
                         <div>
-                            <textarea class="item_area_eval" placeholder="題目詳情" v-model="edEvaluationInfo.content"></textarea>
+                            <textarea class="item_area_eval" :placeholder="$t('dataBankEvaluationInfo.content')" v-model="edEvaluationInfo.content"></textarea>
                         </div>
                     </div>
                     <div class="form_item_evaluationInfo">
-                        <div class="item_title">題目類型(必填)</div>
+                        <div class="item_title">{{$t('dataBankEvaluationInfo.type')}}{{$t('filled')}}</div>
                         <div>
                             <select id="edTypeId" v-model="edEvaluationInfo.type">
                                 <option v-for="item in optList" :value="item.value">{{ item.title }}</option>
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <div class="issure">
-                        <button @click="editEvaluationInfo()">修改</button>
+                        <button @click="editEvaluationInfo()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -121,7 +121,18 @@
             return {
                 evaluationInfos:[],
                 eval:'',
-                optList: [{value:'1',title:'1(一個選項)'},{value:'2',title:'2(兩個選項)'},{value:'3',title:'3(五個選項)'}],
+                optList: [{
+                    value:'1',
+                    title:this.$t('dataBankEvaluationInfo.type1')
+                },
+                {
+                    value:'2',
+                    title:this.$t('dataBankEvaluationInfo.type2')
+                },
+                {
+                    value:'3',
+                    title:this.$t('dataBankEvaluationInfo.type3')
+                }],
                 newEvaluationInfo:{
                     content:'',
                     type:'',
@@ -152,7 +163,7 @@
                     this.eval=res.data;
                     this.evaluationInfos=res.data.evaluations.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },
@@ -168,7 +179,7 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.getEvaluationInfos();
                     this.isNewEvaluationInfoShow=false;
                     this.newEvaluationInfo.content='';
@@ -208,13 +219,13 @@
                     if(res.status==200){
                         this.evaluationInfos[this.edEvaluationInfo.index].type=this.edEvaluationInfo.type;
                         this.evaluationInfos[this.edEvaluationInfo.index].content=this.edEvaluationInfo.content;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditEvaluationInfoShow=false;    
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -229,11 +240,11 @@
             delEvaluationInfo(evaluationInfoId){
                 // 删除行程
                 this.$dialog.confirm({
-                    title: '删除題目',
-                    message: '是否删除該題目',
-                    cancelButtonText:'取消',
+                    title: this.$t('dataBankEvaluationInfo.delTitle'),
+                    message: this.$t('dataBankEvaluationInfo.confirmDelTitle'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -246,12 +257,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getEvaluationInfos();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失敗');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失敗');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {

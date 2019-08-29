@@ -35,7 +35,7 @@
         <div class="pane_content_luggage" >
             <div class="form_content_luggageLists disflex">
                 <div class="form_item_luggageLists" v-for="(luggageList,index) in luggageLists">
-                    <div class="item_title">清單{{index+1}}</div>
+                    <div class="item_title">{{$t('dataBankLuggageList.rule_category_name')}}{{index+1}}</div>
                     <div class="input_icon disflex">
                         <input type="text" disabled="disabled"  :value="luggageList.rule_category_name">
                         <div @click="$router.push('/luggage/dataBankLuggageListInfo/'+luggageList.id)">
@@ -57,11 +57,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageLists">
-                        <div class="item_title">行李清單(必填)</div>
-                        <div><input class="item_input" placeholder="請填寫清單内容" type="text" v-model="newLuggageList.rule_category_name"></div>
+                        <div class="item_title">{{$t('dataBankLuggageList.rule_category_name')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" :placeholder="$t('dataBankLuggageList.rule_category_name')" type="text" v-model="newLuggageList.rule_category_name"></div>
                     </div>
                     <div class="issure">
-                        <button @click="addNewLuggageList()">添加</button>
+                        <button @click="addNewLuggageList()">{{$t('add')}}</button>
                     </div>
                 </div>
             </div>
@@ -70,11 +70,11 @@
             <div class="editBox" >
                 <div class="editBoxContent disflex">
                     <div class="form_item_luggageLists">
-                        <div class="item_title">行李清單(必填)</div>
-                        <div><input class="item_input" placeholder="請填寫清單内容" type="text" v-model="edLuggageList.rule_category_name"></div>
+                        <div class="item_title">{{$t('dataBankLuggageList.rule_category_name')}}{{$t('filled')}}</div>
+                        <div><input class="item_input" :placeholder="$t('dataBankLuggageList.rule_category_name')" type="text" v-model="edLuggageList.rule_category_name"></div>
                     </div>
                     <div class="issure">
-                        <button @click="editLuggageList()">修改</button>
+                        <button @click="editLuggageList()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                     // console.log(res.data);
                     this.luggageLists=res.data.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },
@@ -135,12 +135,12 @@
                     }
                 }).then(res => {
                     // console.log(res.data);
-                    this.$toast('添加成功');
+                    this.$toast(this.$t('addSuccess'));
                     this.isNewLuggageListShow=false;
                     this.getLuggageLists();  
                     this.newLuggageList.rule_category_name='';
                 }).catch(err => {
-                    this.$toast('添加失敗');
+                    this.$toast(this.$t('addFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -172,13 +172,13 @@
                 }).then(res => {
                     if(res.status==200){
                         this.luggageLists[this.edLuggageList.index].rule_category_name=this.edLuggageList.rule_category_name;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditLuggageListShow=false;    
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);
@@ -192,11 +192,11 @@
            delLuggageList(luggageListId){
                 // 删除清單
                 this.$dialog.confirm({
-                    title: '删除清單',
-                    message: '是否删除該清單',
-                    cancelButtonText:'取消',
+                    title: this.$t('dataBankLuggageList.delLuggage'),
+                    message: this.$t('dataBankLuggageList.confirmDelLuggage'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -209,12 +209,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getLuggageLists();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失敗');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失敗');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                     });
                 }).catch(err => {

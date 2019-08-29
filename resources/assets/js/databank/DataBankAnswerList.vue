@@ -33,17 +33,17 @@
 <template>
     <div style="width:100%;">
         <div class="dataBank_input_answer disflex"> 
-            <div class="listTitle">學生名單</div>
+            <div class="listTitle">{{$t('dataBankAnswerList.studentList')}}</div>
             <table>
                 <thead>
                     <tr>
-                        <th>分組</th>
-                        <th>學生學號</th>
-                        <th>學生班級</th>
-                        <th>中文名</th>
-                        <th>英文名</th>
-                        <th>學生職責</th>
-                        <th>查看答題紙</th>
+                        <th>{{$t('dataBankAnswerList.group')}}</th>
+                        <th>{{$t('dataBankAnswerList.student_number')}}</th>
+                        <th>{{$t('dataBankAnswerList.class')}}</th>
+                        <th>{{$t('dataBankAnswerList.name')}}</th>
+                        <th>{{$t('dataBankAnswerList.en_name')}}</th>
+                        <th>{{$t('dataBankAnswerList.duty')}}</th>
+                        <th>{{$t('dataBankAnswerList.view')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,7 +54,7 @@
                         <td>{{group.user.name}}</td>
                         <td>{{group.user.en_name}}</td>
                         <td>{{group.duty}}</td>
-                        <td class="cursorPoint" @click="$router.push('/answer/dataBankAnswerInfo/'+group.user_id)">查看答題紙></td>
+                        <td class="cursorPoint" @click="$router.push('/answer/dataBankAnswerInfo/'+group.user_id)">{{$t('dataBankAnswerList.view')}}></td>
                     </tr>
                    
                 </tbody>
@@ -86,7 +86,7 @@
                     // console.log(res.data);
                     this.groups=res.data.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },

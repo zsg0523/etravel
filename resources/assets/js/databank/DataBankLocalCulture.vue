@@ -108,11 +108,11 @@
                         <div><textarea class="item_area" placeholder="内容" v-model="edLocal.content"></textarea></div>
                     </div> -->
                     <div class="form_item_journeyInfo">
-                        <div class="item_title">内容</div>
+                        <div class="item_title">{{$t('dataBankLocalCulture.content')}}</div>
                         <div><Editor @catchData='catchData' :childData='edLocal.content'></Editor></div>
                     </div>
                     <div class="issure">
-                        <button @click="editLocal()">修改</button>
+                        <button @click="editLocal()">{{$t('edit')}}</button>
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@
                 }).then(res => {
                     this.locals=res.data.data;
                 }).catch(err => {
-                    this.$toast('獲取失敗');
+                    this.$toast(this.$t('loginTimeout'));
                     console.log(err);
                 });
             },
@@ -224,13 +224,13 @@
                         // this.locals[this.edLocal.index].title=this.edLocal.title;
                         this.locals[this.edLocal.index].content=this.edLocal.content;
                         // this.locals[this.edLocal.index].sites=this.edLocal.sites;
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                         this.isEditLocalShow=false;    
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                     }
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     if(err.response.data.errors){
                         for(var key in err.response.data.errors){
                             this.$toast(err.response.data.errors[key][0]);

@@ -55,7 +55,7 @@
     				<img src="/etravel/public/images/add1.png">
     			</div>
     			<div class="project_right disflex">
-    				<span class="addnew" >新建項目</span>
+    				<span class="addnew" >{{$t('home.addNewPro')}}</span>
     			</div>
                 <div class="project_icon">
                     
@@ -74,15 +74,15 @@
     					</div> -->
                         <div class="edit_icon disflex fl" v-if="travel.travel_status==10">
                             <img src="/etravel/public/images/Not_progress.png">
-                            <span>未進行</span>
+                            <span>{{$t('home.notProgress')}}</span>
                         </div>
                         <div class="edit_icon disflex fl" v-else-if="travel.travel_status==20">
                             <img src="/etravel/public/images/In_progress.png">
-                            <span>進行中</span>
+                            <span>{{$t('home.progressing')}}</span>
                         </div>
                         <div class="edit_icon disflex fl" v-else="">
                             <img src="/etravel/public/images/ending.png">
-                            <span>已結束</span>
+                            <span>{{$t('home.end')}}</span>
                         </div>
     					<!-- <div class="project_type disflex fr" v-if="travel.pivot['is_promise'] == 1">
     						<img src="/etravel/public/images/sent.png">
@@ -111,98 +111,62 @@
         <van-popup v-model="isPopupShow" :overlay="true">
             <div class="addNewTravel disflex">
                 <div class="form_item_pro">
-                    <div class="item_title">項目名稱<span class="err" v-if="errors.travel_name" v-text="errors.travel_name[0]"></span></div>
+                    <div class="item_title">{{$t('home.travel_name')}}<span class="err" v-if="errors.travel_name" v-text="errors.travel_name[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="項目名稱" type="text"  v-model="newTravel.travel_name">
+                        <input class="item_input" :placeholder="$t('home.travel_name')" type="text"  v-model="newTravel.travel_name">
                     </div>
                 </div>
                 <div class="form_item_pro">
-                    <div class="item_title">出行日期<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
+                    <div class="item_title">{{$t('home.travel_at')}}<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="出行日期（例：yyyy-mm-dd）" type="text"  v-model="newTravel.travel_at">
+                        <input class="item_input" :placeholder="$t('home.travel_at')+'（yyyy-mm-dd）'" type="text"  v-model="newTravel.travel_at">
                     </div>
                 </div>
                 <div class="form_item_pro">
-                    <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
+                    <div class="item_title">{{$t('home.travel_return')}}<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="回程日期（例：yyyy-mm-dd）" type="text"  v-model="newTravel.travel_return">
-                    </div>
-                </div>
-                <!-- <div class="form_item_pro">
-                    <div class="item_title">出行日期<span class="err" v-if="errors.travel_at" v-text="errors.travel_at[0]"></span></div>
-                    <div>
-                        <input class="item_input" placeholder="出行日期（例：yyyy-mm-dd）" type="text"  v-model="newTravel.travel_at" readonly="readonly" @click="pickTimeShow('newTravel')">
+                        <input class="item_input" :placeholder="$t('home.travel_return')+'（yyyy-mm-dd）'" type="text"  v-model="newTravel.travel_return">
                     </div>
                 </div>
                 <div class="form_item_pro">
-                    <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
+                    <div class="item_title">{{$t('home.travel_introduction')}}<span class="err" v-if="errors.travel_introduction" v-text="errors.travel_introduction[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="回程日期（例：yyyy-mm-dd）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
-                    </div>
-                </div> -->
-                <div class="form_item_pro">
-                    <div class="item_title">項目簡介<span class="err" v-if="errors.travel_introduction" v-text="errors.travel_introduction[0]"></span></div>
-                    <div>
-                        <input class="item_input" placeholder="項目簡介" type="text"  v-model="newTravel.travel_introduction">
+                        <input class="item_input" :placeholder="$t('home.travel_introduction')" type="text"  v-model="newTravel.travel_introduction">
                     </div>
                 </div>
-                <button @click="addNewTravel()">確定</button>
+                <button @click="addNewTravel()">{{$t('confirm')}}</button>
             </div>
 
         </van-popup>
         <van-popup v-model="isEditPopupShow" :overlay="true"> 
             <div class="addNewTravel disflex">
                 <div class="form_item_pro">
-                    <div class="item_title">項目名稱</div>
+                    <div class="item_title">{{$t('home.end')}}</div>
                     <div>
-                        <input class="item_input" placeholder="項目名稱" type="text"  v-model="edTravel.travel_name">
+                        <input class="item_input" :placeholder="$t('home.end')" type="text"  v-model="edTravel.travel_name">
                     </div>
                 </div>
                 <div class="form_item_pro">
-                    <div class="item_title">出行日期</div>
+                    <div class="item_title">{{$t('home.travel_at')}}</div>
                     <div>
-                        <input class="item_input" placeholder="出行日期（例：yyyy-mm-dd）" type="text"  v-model="edTravel.travel_at">
+                        <input class="item_input" :placeholder="$t('home.travel_at')+'（yyyy-mm-dd）'" type="text"  v-model="edTravel.travel_at">
                     </div>
                 </div>
                 <div class="form_item_pro">
-                    <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
+                    <div class="item_title">{{$t('home.travel_return')}}<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
                     <div>
-                        <input class="item_input" placeholder="回程日期（例：yyyy-mm-dd）" type="text"  v-model="edTravel.travel_return">
-                    </div>
-                </div>
-                <!-- <div class="form_item_pro">
-                    <div class="item_title">出行日期</div>
-                    <div>
-                        <input class="item_input" placeholder="出行日期（例：yyyy-mm-dd）" type="text"  v-model="edTravel.travel_at" readonly="readonly" @click="pickTimeShow('edTravel')">
+                        <input class="item_input" :placeholder="$t('home.travel_return')+'（yyyy-mm-dd）'" type="text"  v-model="edTravel.travel_return">
                     </div>
                 </div>
                 <div class="form_item_pro">
-                    <div class="item_title">回程日期<span class="err" v-if="errors.travel_return" v-text="errors.travel_return[0]"></span></div>
+                    <div class="item_title">{{$t('home.travel_introduction')}}</div>
                     <div>
-                        <input class="item_input" placeholder="回程日期（例：yyyy-mm-dd）" type="text"  v-model="newTravel.travel_return" readonly="readonly" @click="pickTimeShow('newTravel')">
-                    </div>
-                </div> -->
-                <div class="form_item_pro">
-                    <div class="item_title">項目簡介</div>
-                    <div>
-                        <input class="item_input" placeholder="項目簡介" type="text"  v-model="edTravel.travel_introduction">
+                        <input class="item_input" :placeholder="$t('home.travel_introduction')" type="text"  v-model="edTravel.travel_introduction">
                     </div>
                 </div>
-                <button @click="editTravel()">確定</button>
+                <button @click="editTravel()">{{$t('confirm')}}</button>
             </div>
         </van-popup>
-       <!--  <van-popup v-model="isPickTimeShow" :overlay="true"> 
-            <div class="addNewTravel disflex">
-                <van-datetime-picker
-                    v-model="currentDate"
-                    type="date"
-                    :min-date="minDate"
-                    :max-date="maxDate"
-                    :formatter="formatter"
-                    @cancel="pickTimeCancel()"
-                    @confirm="pickTimeConfirm()"/>
-            </div>
-        </van-popup> -->
     </div>
 </template>
 
@@ -239,7 +203,7 @@
         },
         mounted:function(){
             this.getUserTravels();
-            this.$store.state.links=[{link:'/home',linkName:'項目'}];
+            this.$store.state.links=[];
         },
         methods:{
             ...mapActions(['setTravels']),
@@ -276,11 +240,11 @@
             addNewTravel(){
                 // 新增旅游
                 this.$dialog.confirm({
-                    title: '新建項目',
-                    message: '新建項目將會消耗您一枚金幣，是否創建？',
-                    cancelButtonText:'取消',
+                    title: this.$t('home.addNewPro'),
+                    message: this.$t('home.confirmAddMsg'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     if(this.$store.state.userInfo.tokens>=1){
@@ -298,14 +262,14 @@
                             // console.log(res.data);
                             this.getUserTravels();
                             this.popupHiden();
-                            this.$toast('創建成功');
+                            this.$toast(this.$t('createSuccess'));
                             this.newTravel.travel_name='';
                             this.newTravel.travel_at='';
                             this.newTravel.travel_return='';
                             this.newTravel.travel_introduction='';
                             this.getUserInfo();
                         }).catch(err => {
-                            this.$toast('創建失敗');
+                            this.$toast(this.$t('createFail'));
                             // this.errors=err.response.data.errors;
                             if(err.response.data.errors){
                                 for(var key in err.response.data.errors){
@@ -317,7 +281,7 @@
                         });
                         
                     }else{
-                        this.$toast('您的金幣不足!');
+                        this.$toast(this.$t('home.coinShort'));
                     }
                 }).catch(err => {
 
@@ -327,11 +291,11 @@
             delTravel(projectId,index){
                 // 删除旅游
                 this.$dialog.confirm({
-                    title: '删除項目',
-                    message: '是否删除該項目',
-                    cancelButtonText:'取消',
+                    title: this.$t('home.delPro'),
+                    message: this.$t('home.confirmDelMsg'),
+                    cancelButtonText:this.$t('cancel'),
                     cancelButtonColor:'#ccc',
-                    confirmButtonText:'確定',
+                    confirmButtonText:this.$t('confirm'),
                     confirmButtonColor:'#000',
                 }).then(() => {
                     this.$ajax({
@@ -344,12 +308,12 @@
                         // console.log(res);
                         if(res.status==204){
                             this.getUserTravels();
-                            this.$toast('删除成功');
+                            this.$toast(this.$t('delSuccess'));
                         }else{
-                            this.$toast('删除失敗');
+                            this.$toast(this.$t('delFail'));
                         }
                     }).catch(err => {
-                        this.$toast('删除失敗');
+                        this.$toast(this.$t('delFail'));
                         console.log(err)
                         if(err.response.data.errors){
                             for(var key in err.response.data.errors){
@@ -397,9 +361,9 @@
                         this.travels[this.edTravelIndex].travel_return=this.edTravel.travel_return;
                         this.travels[this.edTravelIndex].introduction=this.edTravel.travel_introduction;
                         // this.getUserTravels();
-                        this.$toast('修改成功');
+                        this.$toast(this.$t('editSuccess'));
                     }else{
-                        this.$toast('修改失敗');
+                        this.$toast(this.$t('editFail'));
                         if(err.response.data.errors){
                             for(var key in err.response.data.errors){
                                 this.$toast(err.response.data.errors[key][0]);
@@ -408,7 +372,7 @@
                     }
                     this.editPopupHiden();
                 }).catch(err => {
-                    this.$toast('修改失敗');
+                    this.$toast(this.$t('editFail'));
                     // this.errors=err.response.data.errors;
                     console.log(err)
                 });
@@ -426,7 +390,7 @@
                     this.setUserInfo(res.data);
                 }).catch(err => {
                     console.log(err);
-                    this.$toast('登录失效');
+                    this.$toast(this.$t('loginTimeout'));
                     sessionStorage.clear();
                     this.setUserInfo('');
                     this.setTravels('');
